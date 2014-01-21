@@ -4,13 +4,6 @@
 	"keywords": ["yii", "phpdoc", "apidoc", "api", "documentation", "dash", "docset"],
 	"type": "yii2-extension",
 	"license": "BSD-3-Clause",
-	"support": {
-		"issues": "https://github.com/yiisoft/yii2/issues?labels=ext%3Aapidoc",
-		"forum": "http://www.yiiframework.com/forum/",
-		"wiki": "http://www.yiiframework.com/wiki/",
-		"irc": "irc://irc.freenode.net/yii",
-		"source": "https://github.com/yiisoft/yii2"
-	},
 	"authors": [
 		{
 			"name": "Jacob Morrison",
