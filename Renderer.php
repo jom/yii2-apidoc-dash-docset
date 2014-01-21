@@ -1,41 +1,46 @@
 <?php
 /**
- * @link http://www.yiiframework.com/
- * @copyright Copyright (c) 2008 Yii Software LLC
- * @license http://www.yiiframework.com/license/
+ * @copyright Copyright (c) 2013 Jacob Morrison
+ * @license BSD-3-Clause
  */
 
 namespace yii\apidoc\templates\docset;
+
 use Yii;
 use SQLite3;
 
 /**
  *
- * @author Carsten Brandt <mail@cebe.cc>
- * @since 2.0
+ * @author Jacob Morrison <email@ofjacob.com>
  */
 class Renderer extends \yii\apidoc\templates\offline\Renderer
 {
 	public $db;
+	public $plistTemplate = __DIR__ . DIRECTORY_SEPARATOR . 'plist.php';
 
 	public function render($context, $controller)
 	{
 		if (substr($this->targetDir, -7) !== '.docset') {
 			$this->targetDir .= '.docset';
 		}
+
 		$originalTargetDir = $this->targetDir;
 		$sqliteDb = $originalTargetDir . DIRECTORY_SEPARATOR . 'Contents' . DIRECTORY_SEPARATOR .'Resources' . DIRECTORY_SEPARATOR. 'docSet.dsidx';
+		$plistPath = $originalTargetDir . DIRECTORY_SEPARATOR . 'Contents' .  DIRECTORY_SEPARATOR . 'Info.plist';
 		$this->targetDir = $originalTargetDir . DIRECTORY_SEPARATOR . 'Contents' . DIRECTORY_SEPARATOR .'Resources' . DIRECTORY_SEPARATOR . 'Documents';
 
 		if (!is_dir($this->targetDir)) {
 			mkdir($this->targetDir, 0755, true);
 		}
+
 		if (is_file($sqliteDb)) {
 			unlink($sqliteDb);
 		}
+
 		if(!($this->db = new SQLite3($sqliteDb))) {
 			return false;
 		}
+		file_put_contents($plistPath, include($this->plistTemplate));
 
     	$this->db->query('CREATE TABLE searchIndex(id INTEGER PRIMARY KEY, name TEXT, type TEXT, path TEXT);');
     	$this->db->query('CREATE UNIQUE INDEX anchor ON searchIndex (name, type, path);');
@@ -59,6 +64,7 @@ class Renderer extends \yii\apidoc\templates\offline\Renderer
 
 		return parent::render($context, $controller);
 	}
+
 	protected function typeHandle($type)
 	{
 		if (!empty($type->methods)) {
@@ -75,6 +81,7 @@ class Renderer extends \yii\apidoc\templates\offline\Renderer
 		}
 
 	}
+
 	protected function addType($name, $type, $path)
 	{
 		return $this->db->query('INSERT OR IGNORE INTO searchIndex(name, type, path) VALUES (\''.SQLite3::escapeString($name).'\', \''.SQLite3::escapeString($type).'\', \''.SQLite3::escapeString($path).'\');');
