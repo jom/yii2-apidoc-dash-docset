@@ -24,6 +24,6 @@
 		"phpdocumentor/reflection": "*"
 	},
 	"autoload": {
-		"psr-4": { "yii\\apidoc\\": "" }
+		"psr-4": { "yii\\apidoc\\templates\\docset": "" }
 	}
 }
