@@ -10,5 +10,7 @@
 	<string>yii2</string>
 	<key>isDashDocset</key>
 	<true/>
+	<key>dashIndexFilePath</key>
+	<string>index.html</string>
 </dict>
 </plist>
