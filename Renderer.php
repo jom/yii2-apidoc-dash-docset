@@ -16,7 +16,7 @@ use SQLite3;
 class Renderer extends \yii\apidoc\templates\offline\Renderer
 {
 	public $db;
-	public $plistTemplate = __DIR__ . DIRECTORY_SEPARATOR . 'plist.php';
+	public $plistTemplate = 'plist.php';
 
 	public function render($context, $controller)
 	{
@@ -40,6 +40,7 @@ class Renderer extends \yii\apidoc\templates\offline\Renderer
 		if(!($this->db = new SQLite3($sqliteDb))) {
 			return false;
 		}
+
 		file_put_contents($plistPath, include($this->plistTemplate));
 
     	$this->db->query('CREATE TABLE searchIndex(id INTEGER PRIMARY KEY, name TEXT, type TEXT, path TEXT);');
