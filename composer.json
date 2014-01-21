@@ -1,0 +1,29 @@
+{
+	"name": "jom/yii2-apidoc-dash-docset",
+	"description": "Generates a Dash compatible docset for Yii2",
+	"keywords": ["yii", "phpdoc", "apidoc", "api", "documentation", "dash", "docset"],
+	"type": "yii2-extension",
+	"license": "BSD-3-Clause",
+	"support": {
+		"issues": "https://github.com/yiisoft/yii2/issues?labels=ext%3Aapidoc",
+		"forum": "http://www.yiiframework.com/forum/",
+		"wiki": "http://www.yiiframework.com/wiki/",
+		"irc": "irc://irc.freenode.net/yii",
+		"source": "https://github.com/yiisoft/yii2"
+	},
+	"authors": [
+		{
+			"name": "Jacob Morrison",
+			"email": "email@ofjacob.com"
+		}
+	],
+    "minimum-stability": "dev",
+	"require": {
+		"yiisoft/yii2": "*",
+		"yiisoft/yii2-apidoc": "*",
+		"phpdocumentor/reflection": "*"
+	},
+	"autoload": {
+		"psr-4": { "yii\\apidoc\\": "" }
+	}
+}
