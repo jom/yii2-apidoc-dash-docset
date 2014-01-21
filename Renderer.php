@@ -1,6 +1,6 @@
 <?php
 /**
- * @copyright Copyright (c) 2013 Jacob Morrison
+ * @copyright Copyright (c) 2014 Jacob Morrison
  * @license BSD-3-Clause
  */
 
