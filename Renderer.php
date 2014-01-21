@@ -41,7 +41,7 @@ class Renderer extends \yii\apidoc\templates\offline\Renderer
 			return false;
 		}
 
-		file_put_contents($plistPath, include($this->plistTemplate));
+		copy($this->plistTemplate, $plistPath);
 
     	$this->db->query('CREATE TABLE searchIndex(id INTEGER PRIMARY KEY, name TEXT, type TEXT, path TEXT);');
     	$this->db->query('CREATE UNIQUE INDEX anchor ON searchIndex (name, type, path);');
