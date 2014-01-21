@@ -19,9 +19,7 @@
 	],
     "minimum-stability": "dev",
 	"require": {
-		"yiisoft/yii2": "*",
-		"yiisoft/yii2-apidoc": "*",
-		"phpdocumentor/reflection": "*"
+		"yiisoft/yii2-apidoc": "*"
 	},
 	"autoload": {
 		"psr-4": { "yii\\apidoc\\templates\\docset\\": "" }
