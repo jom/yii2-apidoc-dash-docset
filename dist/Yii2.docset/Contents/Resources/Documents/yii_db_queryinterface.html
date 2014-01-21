@@ -1,0 +1,651 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="language" content="en" />
+<link href="./assets/4138e429/api.css" rel="stylesheet">
+<link href="./assets/4138e429/style.css" rel="stylesheet">
+<script src="./assets/a91b37a6/jquery.js"></script><title>Yii Framework 2.0 API Documentation</title>
+</head>
+
+<body>
+	<div id="apiPage">
+
+		<div id="apiHeader">
+			<a href="http://www.yiiframework.com">Yii Framework</a> v2.0.0-dev Class Reference
+		</div><!-- end of header -->
+
+		<div id="content">
+		<h1>Interface yii\db\QueryInterface</h1>
+<div id="nav">
+	<a href="index.html">All Classes</a>
+				| <a href="#methods">Methods</a>
+			</div>
+
+<table class="summaryTable docClass">
+	<colgroup>
+		<col class="col-name" />
+		<col class="col-value" />
+	</colgroup>
+							<tr><th>Implemented by</th><td><a href="yii_db_activequery.html">yii\db\ActiveQuery</a>, <a href="yii_db_activerelation.html">yii\db\ActiveRelation</a>, <a href="yii_db_query.html">yii\db\Query</a></td></tr>
+					<tr><th>Available since version</th><td>2.0</td></tr>
+		<tr>
+	  <th>Source Code</th>
+	  <td></td>
+	</tr>
+</table>
+
+<div id="classDescription">
+	<strong>The QueryInterface defines the minimum set of methods to be implemented by a database query.</strong>
+	<p>The default implementation of this interface is provided by <a href="yii_db_querytrait.html">yii\db\QueryTrait</a>.</p>
+
+<p>It has support for getting <a href="yii_db_queryinterface.html#one()-detail">one()</a> instance or <a href="yii_db_queryinterface.html#all()-detail">all()</a>.
+Allows pagination via <a href="yii_db_queryinterface.html#limit()-detail">limit()</a> and <a href="yii_db_queryinterface.html#offset()-detail">offset()</a>.
+Sorting is supported via <a href="yii_db_queryinterface.html#orderBy()-detail">orderBy()</a> and items can be limited to match some conditions using <a href="yii_db_queryinterface.html#where()-detail">where()</a>.</p>
+
+<p>By calling <span style="background: #f00;">\yii\db\createCommand()</span>, we can get a <a href="yii_db_command.html">yii\db\Command</a> instance which can be further
+used to perform/execute the DB query against a database.</p>
+</div>
+
+<a name="properties"></a>
+
+<a name="methods"></a>
+
+<div class="summary docMethod">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr id="all()">
+		<td><a href="yii_db_queryinterface.html#all()-detail">all()</a></td>
+		<td>Executes the query and returns all results as an array.</td>
+		<td><a href="yii_db_queryinterface.html">yii\db\QueryInterface</a></td>
+	</tr>
+			<tr id="one()">
+		<td><a href="yii_db_queryinterface.html#one()-detail">one()</a></td>
+		<td>Executes the query and returns a single row of result.</td>
+		<td><a href="yii_db_queryinterface.html">yii\db\QueryInterface</a></td>
+	</tr>
+			<tr id="count()">
+		<td><a href="yii_db_queryinterface.html#count()-detail">count()</a></td>
+		<td>Returns the number of records.</td>
+		<td><a href="yii_db_queryinterface.html">yii\db\QueryInterface</a></td>
+	</tr>
+			<tr id="exists()">
+		<td><a href="yii_db_queryinterface.html#exists()-detail">exists()</a></td>
+		<td>Returns a value indicating whether the query result contains any row of data.</td>
+		<td><a href="yii_db_queryinterface.html">yii\db\QueryInterface</a></td>
+	</tr>
+			<tr id="indexBy()">
+		<td><a href="yii_db_queryinterface.html#indexBy()-detail">indexBy()</a></td>
+		<td>Sets the <a href="yii_db_queryinterface.html#indexBy()-detail">indexBy()</a> property.</td>
+		<td><a href="yii_db_queryinterface.html">yii\db\QueryInterface</a></td>
+	</tr>
+			<tr id="where()">
+		<td><a href="yii_db_queryinterface.html#where()-detail">where()</a></td>
+		<td>Sets the WHERE part of the query.</td>
+		<td><a href="yii_db_queryinterface.html">yii\db\QueryInterface</a></td>
+	</tr>
+			<tr id="andWhere()">
+		<td><a href="yii_db_queryinterface.html#andWhere()-detail">andWhere()</a></td>
+		<td>Adds an additional WHERE condition to the existing one.</td>
+		<td><a href="yii_db_queryinterface.html">yii\db\QueryInterface</a></td>
+	</tr>
+			<tr id="orWhere()">
+		<td><a href="yii_db_queryinterface.html#orWhere()-detail">orWhere()</a></td>
+		<td>Adds an additional WHERE condition to the existing one.</td>
+		<td><a href="yii_db_queryinterface.html">yii\db\QueryInterface</a></td>
+	</tr>
+			<tr id="orderBy()">
+		<td><a href="yii_db_queryinterface.html#orderBy()-detail">orderBy()</a></td>
+		<td>Sets the ORDER BY part of the query.</td>
+		<td><a href="yii_db_queryinterface.html">yii\db\QueryInterface</a></td>
+	</tr>
+			<tr id="addOrderBy()">
+		<td><a href="yii_db_queryinterface.html#addOrderBy()-detail">addOrderBy()</a></td>
+		<td>Adds additional ORDER BY columns to the query.</td>
+		<td><a href="yii_db_queryinterface.html">yii\db\QueryInterface</a></td>
+	</tr>
+			<tr id="limit()">
+		<td><a href="yii_db_queryinterface.html#limit()-detail">limit()</a></td>
+		<td>Sets the LIMIT part of the query.</td>
+		<td><a href="yii_db_queryinterface.html">yii\db\QueryInterface</a></td>
+	</tr>
+			<tr id="offset()">
+		<td><a href="yii_db_queryinterface.html#offset()-detail">offset()</a></td>
+		<td>Sets the OFFSET part of the query.</td>
+		<td><a href="yii_db_queryinterface.html">yii\db\QueryInterface</a></td>
+	</tr>
+	</table>
+</div>
+<a name="events"></a>
+
+<a name="constants"></a>
+
+<h2>Method Details</h2>
+
+
+	<div class="detailHeader" id="all()-detail">
+		all()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			array <a href="yii_db_queryinterface.html#all()-detail">all</a>( $db = null )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$db</td>
+				  <td class="paramTypeCol"><a href="yii_db_connection.html">yii\db\Connection</a></td>
+				  <td class="paramDescCol">The database connection used to execute the query.
+If this parameter is not given, the <code>db</code> application component will be used.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">the query results. If the query results in nothing, an empty array will be returned.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Executes the query and returns all results as an array.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="one()-detail">
+		one()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			array|boolean <a href="yii_db_queryinterface.html#one()-detail">one</a>( $db = null )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$db</td>
+				  <td class="paramTypeCol"><a href="yii_db_connection.html">yii\db\Connection</a></td>
+				  <td class="paramDescCol">The database connection used to execute the query.
+If this parameter is not given, the <code>db</code> application component will be used.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">array|boolean</td>
+				  <td class="paramDescCol">the first row (in terms of an array) of the query result. False is returned if the query
+results in nothing.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Executes the query and returns a single row of result.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="count()-detail">
+		count()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			integer <a href="yii_db_queryinterface.html#count()-detail">count</a>( $q = '*', $db = null )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$q</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The COUNT expression. Defaults to '*'.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$db</td>
+				  <td class="paramTypeCol"><a href="yii_db_connection.html">yii\db\Connection</a></td>
+				  <td class="paramDescCol">The database connection used to execute the query.
+If this parameter is not given, the <code>db</code> application component will be used.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">integer</td>
+				  <td class="paramDescCol">number of records</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the number of records.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="exists()-detail">
+		exists()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_db_queryinterface.html#exists()-detail">exists</a>( $db = null )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$db</td>
+				  <td class="paramTypeCol"><a href="yii_db_connection.html">yii\db\Connection</a></td>
+				  <td class="paramDescCol">The database connection used to execute the query.
+If this parameter is not given, the <code>db</code> application component will be used.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether the query result contains any row of data.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns a value indicating whether the query result contains any row of data.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="indexBy()-detail">
+		indexBy()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			static <a href="yii_db_queryinterface.html#indexBy()-detail">indexBy</a>( $column )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$column</td>
+				  <td class="paramTypeCol">string|callable</td>
+				  <td class="paramDescCol"><p>The name of the column by which the query results should be indexed by.
+This can also be a callable (e.g. anonymous function) that returns the index value based on the given
+row data. The signature of the callable should be:</p>
+
+<pre><code>function ($row)
+{
+    // return the index value corresponding to $row
+}
+</code></pre></td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">static</td>
+				  <td class="paramDescCol">the query object itself</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Sets the <a href="yii_db_queryinterface.html#indexBy()-detail">indexBy()</a> property.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="where()-detail">
+		where()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			static <a href="yii_db_queryinterface.html#where()-detail">where</a>( $condition )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$condition</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The conditions that should be put in the WHERE part.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">static</td>
+				  <td class="paramDescCol">the query object itself</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Sets the WHERE part of the query.</strong></p>
+	<p><p>The method requires a $condition parameter.</p>
+
+<p>The $condition parameter should be an array in one of the following two formats:</p>
+
+<ul>
+<li>hash format: <code>['column1' =&gt; value1, 'column2' =&gt; value2, ...]</code></li>
+<li>operator format: <code>[operator, operand1, operand2, ...]</code></li>
+</ul>
+
+<p>A condition in hash format represents the following SQL expression in general:
+<code>column1=value1 AND column2=value2 AND ...</code>. In case when a value is an array,
+an <code>IN</code> expression will be generated. And if a value is null, <code>IS NULL</code> will be used
+in the generated expression. Below are some examples:</p>
+
+<ul>
+<li><code>['type' =&gt; 1, 'status' =&gt; 2]</code> generates <code>(type = 1) AND (status = 2)</code>.</li>
+<li><code>['id' =&gt; [1, 2, 3], 'status' =&gt; 2]</code> generates <code>(id IN (1, 2, 3)) AND (status = 2)</code>.</li>
+<li><code>['status' =&gt; null] generates</code>status IS NULL`.</li>
+</ul>
+
+<p>A condition in operator format generates the SQL expression according to the specified operator, which
+can be one of the followings:</p>
+
+<ul>
+<li><p><code>and</code>: the operands should be concatenated together using <code>AND</code>. For example,
+<code>['and', 'id=1', 'id=2']</code> will generate <code>id=1 AND id=2</code>. If an operand is an array,
+it will be converted into a string using the rules described here. For example,
+<code>['and', 'type=1', ['or', 'id=1', 'id=2']]</code> will generate <code>type=1 AND (id=1 OR id=2)</code>.
+The method will NOT do any quoting or escaping.</p></li>
+<li><p><code>or</code>: similar to the <code>and</code> operator except that the operands are concatenated using <code>OR</code>.</p></li>
+<li><p><code>between</code>: operand 1 should be the column name, and operand 2 and 3 should be the
+starting and ending values of the range that the column is in.
+For example, <code>['between', 'id', 1, 10]</code> will generate <code>id BETWEEN 1 AND 10</code>.</p></li>
+<li><p><code>not between</code>: similar to <code>between</code> except the <code>BETWEEN</code> is replaced with <code>NOT BETWEEN</code>
+in the generated condition.</p></li>
+<li><p><code>in</code>: operand 1 should be a column or DB expression, and operand 2 be an array representing
+the range of the values that the column or DB expression should be in. For example,
+<code>['in', 'id', [1, 2, 3]]</code> will generate <code>id IN (1, 2, 3)</code>.
+The method will properly quote the column name and escape values in the range.</p></li>
+<li><p><code>not in</code>: similar to the <code>in</code> operator except that <code>IN</code> is replaced with <code>NOT IN</code> in the generated condition.</p></li>
+<li><p><code>like</code>: operand 1 should be a column or DB expression, and operand 2 be a string or an array representing
+the values that the column or DB expression should be like.
+For example, <code>['like', 'name', 'tester']</code> will generate <code>name LIKE '%tester%'</code>.
+When the value range is given as an array, multiple <code>LIKE</code> predicates will be generated and concatenated
+using <code>AND</code>. For example, <code>['like', 'name', ['test', 'sample']]</code> will generate
+<code>name LIKE '%test%' AND name LIKE '%sample%'</code>.
+The method will properly quote the column name and escape special characters in the values.
+Sometimes, you may want to add the percentage characters to the matching value by yourself, you may supply
+a third operand <code>false</code> to do so. For example, <code>['like', 'name', '%tester', false]</code> will generate <code>name LIKE '%tester'</code>.</p></li>
+<li><p><code>or like</code>: similar to the <code>like</code> operator except that <code>OR</code> is used to concatenate the <code>LIKE</code>
+predicates when operand 2 is an array.</p></li>
+<li><p><code>not like</code>: similar to the <code>like</code> operator except that <code>LIKE</code> is replaced with <code>NOT LIKE</code>
+in the generated condition.</p></li>
+<li><p><code>or not like</code>: similar to the <code>not like</code> operator except that <code>OR</code> is used to concatenate
+the <code>NOT LIKE</code> predicates.</p></li>
+</ul></p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_db_queryinterface.html#andWhere()-detail">andWhere()</a></li>
+	<li><a href="yii_db_queryinterface.html#orWhere()-detail">orWhere()</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="andWhere()-detail">
+		andWhere()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			static <a href="yii_db_queryinterface.html#andWhere()-detail">andWhere</a>( $condition )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$condition</td>
+				  <td class="paramTypeCol">string|array</td>
+				  <td class="paramDescCol">The new WHERE condition. Please refer to <a href="yii_db_queryinterface.html#where()-detail">where()</a>
+on how to specify this parameter.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">static</td>
+				  <td class="paramDescCol">the query object itself</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Adds an additional WHERE condition to the existing one.</strong></p>
+	<p>The new condition and the existing one will be joined using the 'AND' operator.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_db_queryinterface.html#where()-detail">where()</a></li>
+	<li><a href="yii_db_queryinterface.html#orWhere()-detail">orWhere()</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="orWhere()-detail">
+		orWhere()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			static <a href="yii_db_queryinterface.html#orWhere()-detail">orWhere</a>( $condition )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$condition</td>
+				  <td class="paramTypeCol">string|array</td>
+				  <td class="paramDescCol">The new WHERE condition. Please refer to <a href="yii_db_queryinterface.html#where()-detail">where()</a>
+on how to specify this parameter.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">static</td>
+				  <td class="paramDescCol">the query object itself</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Adds an additional WHERE condition to the existing one.</strong></p>
+	<p>The new condition and the existing one will be joined using the 'OR' operator.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_db_queryinterface.html#where()-detail">where()</a></li>
+	<li><a href="yii_db_queryinterface.html#andWhere()-detail">andWhere()</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="orderBy()-detail">
+		orderBy()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			static <a href="yii_db_queryinterface.html#orderBy()-detail">orderBy</a>( $columns )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$columns</td>
+				  <td class="paramTypeCol">string|array</td>
+				  <td class="paramDescCol">The columns (and the directions) to be ordered by.
+Columns can be specified in either a string (e.g. "id ASC, name DESC") or an array
+(e.g. <code>['id' =&gt; SORT_ASC, 'name' =&gt; SORT_DESC]</code>).
+The method will automatically quote the column names unless a column contains some parenthesis
+(which means the column contains a DB expression).</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">static</td>
+				  <td class="paramDescCol">the query object itself</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Sets the ORDER BY part of the query.</strong></p>
+	<p></p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_db_queryinterface.html#addOrderBy()-detail">addOrderBy()</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="addOrderBy()-detail">
+		addOrderBy()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			static <a href="yii_db_queryinterface.html#addOrderBy()-detail">addOrderBy</a>( $columns )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$columns</td>
+				  <td class="paramTypeCol">string|array</td>
+				  <td class="paramDescCol">The columns (and the directions) to be ordered by.
+Columns can be specified in either a string (e.g. "id ASC, name DESC") or an array
+(e.g. <code>['id' =&gt; SORT_ASC, 'name' =&gt; SORT_DESC]</code>).
+The method will automatically quote the column names unless a column contains some parenthesis
+(which means the column contains a DB expression).</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">static</td>
+				  <td class="paramDescCol">the query object itself</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Adds additional ORDER BY columns to the query.</strong></p>
+	<p></p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_db_queryinterface.html#orderBy()-detail">orderBy()</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="limit()-detail">
+		limit()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			static <a href="yii_db_queryinterface.html#limit()-detail">limit</a>( $limit )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$limit</td>
+				  <td class="paramTypeCol">integer</td>
+				  <td class="paramDescCol">The limit. Use null or negative value to disable limit.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">static</td>
+				  <td class="paramDescCol">the query object itself</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Sets the LIMIT part of the query.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="offset()-detail">
+		offset()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			static <a href="yii_db_queryinterface.html#offset()-detail">offset</a>( $offset )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$offset</td>
+				  <td class="paramTypeCol">integer</td>
+				  <td class="paramDescCol">The offset. Use null or negative value to disable offset.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">static</td>
+				  <td class="paramDescCol">the query object itself</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Sets the OFFSET part of the query.</strong></p>
+	<p></p>
+
+	
+		</div><!-- end of content -->
+
+		<div id="apiFooter">
+			<p>&copy; 2008-2013 by <a href="http://www.yiisoft.com">Yii Software LLC</a></p>
+			<p>All Rights Reserved.</p>
+		</div><!-- end of footer -->
+
+<script type="text/javascript">
+/*<![CDATA[*/
+$("a.toggle").on('click', function() {
+	var $this = $(this);
+	if ($this.hasClass('properties-hidden')) {
+		$this.text($this.text().replace(/Show/,'Hide'));
+		$this.parents(".summary").find(".inherited").show();
+		$this.removeClass('properties-hidden');
+	} else {
+		$this.text($this.text().replace(/Hide/,'Show'));
+		$this.parents(".summary").find(".inherited").hide();
+		$this.addClass('properties-hidden');
+	}
+	return false;
+});
+/*
+$(".sourceCode a.show").toggle(function(){
+	$(this).text($(this).text().replace(/show/,'hide'));
+	$(this).parents(".sourceCode").find("div.code").show();
+},function(){
+	$(this).text($(this).text().replace(/hide/,'show'));
+	$(this).parents(".sourceCode").find("div.code").hide();
+});
+$("a.sourceLink").click(function(){
+	$(this).attr('target','_blank');
+});
+*/
+/*]]>*/
+</script>
+
+	</div><!-- end of page -->
+</body>
+</html>

@@ -1,0 +1,1588 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="language" content="en" />
+<link href="./assets/4138e429/api.css" rel="stylesheet">
+<link href="./assets/4138e429/style.css" rel="stylesheet">
+<script src="./assets/a91b37a6/jquery.js"></script><title>Yii Framework 2.0 API Documentation</title>
+</head>
+
+<body>
+	<div id="apiPage">
+
+		<div id="apiHeader">
+			<a href="http://www.yiiframework.com">Yii Framework</a> v2.0.0-dev Class Reference
+		</div><!-- end of header -->
+
+		<div id="content">
+		<h1>Class yii\db\Connection</h1>
+<div id="nav">
+	<a href="index.html">All Classes</a>
+			| <a href="#properties">Properties</a>
+				| <a href="#methods">Methods</a>
+				| <a href="#events">Events</a>
+		</div>
+
+<table class="summaryTable docClass">
+	<colgroup>
+		<col class="col-name" />
+		<col class="col-value" />
+	</colgroup>
+			<tr><th>Inheritance</th><td><a href="yii_db_connection.html">yii\db\Connection</a> &raquo;
+<a href="yii_base_component.html">yii\base\Component</a> &raquo;
+<a href="yii_base_object.html">yii\base\Object</a></td></tr>
+				<tr><th>Implements</th><td><a href="yii_base_arrayable.html">yii\base\Arrayable</a></td></tr>
+								<tr><th>Available since version</th><td>2.0</td></tr>
+		<tr>
+	  <th>Source Code</th>
+	  <td></td>
+	</tr>
+</table>
+
+<div id="classDescription">
+	<strong>Connection represents a connection to a database via <a href="http://www.php.net/manual/en/ref.pdo.php">PDO</a>.</strong>
+	<p><p>Connection works together with <a href="yii_db_command.html">yii\db\Command</a>, <a href="yii_db_datareader.html">yii\db\DataReader</a> and <a href="yii_db_transaction.html">yii\db\Transaction</a>
+to provide data access to various DBMS in a common set of APIs. They are a thin wrapper
+of the <a href="http://www.php.net/manual/en/ref.pdo.php">[PDO PHP extension]</a>.</p>
+
+<p>To establish a DB connection, set <a href="yii_db_connection.html#$dsn-detail">$dsn</a>, <a href="yii_db_connection.html#$username-detail">$username</a> and <a href="yii_db_connection.html#$password-detail">$password</a>, and then
+call <a href="yii_db_connection.html#open()-detail">open()</a> to be true.</p>
+
+<p>The following example shows how to create a Connection instance and establish
+the DB connection:</p>
+
+<pre><code>$connection = new \yii\db\Connection([
+    'dsn' =&gt; $dsn,
+    'username' =&gt; $username,
+    'password' =&gt; $password,
+]);
+$connection-&gt;open();
+</code></pre>
+
+<p>After the DB connection is established, one can execute SQL statements like the following:</p>
+
+<pre><code>$command = $connection-&gt;createCommand('SELECT * FROM tbl_post');
+$posts = $command-&gt;queryAll();
+$command = $connection-&gt;createCommand('UPDATE tbl_post SET status=1');
+$command-&gt;execute();
+</code></pre>
+
+<p>One can also do prepared SQL execution and bind parameters to the prepared SQL.
+When the parameters are coming from user input, you should use this approach
+to prevent SQL injection attacks. The following is an example:</p>
+
+<pre><code>$command = $connection-&gt;createCommand('SELECT * FROM tbl_post WHERE id=:id');
+$command-&gt;bindValue(':id', $_GET['id']);
+$post = $command-&gt;query();
+</code></pre>
+
+<p>For more information about how to perform various DB queries, please refer to <a href="yii_db_command.html">yii\db\Command</a>.</p>
+
+<p>If the underlying DBMS supports transactions, you can perform transactional SQL queries
+like the following:</p>
+
+<pre><code>$transaction = $connection-&gt;beginTransaction();
+try {
+    $connection-&gt;createCommand($sql1)-&gt;execute();
+    $connection-&gt;createCommand($sql2)-&gt;execute();
+    // ... executing other SQL statements ...
+    $transaction-&gt;commit();
+} catch(Exception $e) {
+    $transaction-&gt;rollback();
+}
+</code></pre>
+
+<p>Connection is often used as an application component and configured in the application
+configuration like the following:</p>
+
+<pre><code>[
+ 'components' =&gt; [
+     'db' =&gt; [
+         'class' =&gt; '\yii\db\Connection',
+         'dsn' =&gt; 'mysql:host=127.0.0.1;dbname=demo',
+         'username' =&gt; 'root',
+         'password' =&gt; '',
+         'charset' =&gt; 'utf8',
+     ],
+ ],
+]
+</code></pre></p>
+</div>
+
+<a name="properties"></a>
+
+<div class="summary docProperty">
+<h2>Public Properties</h2>
+
+<p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-property" />
+	<col class="col-type" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Property</th><th>Type</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr id="$dsn">
+		<td><a href="yii_db_connection.html#$dsn-detail">$dsn</a></td>
+		<td>string</td>
+		<td>The Data Source Name, or DSN, contains the information required to connect to the database</td>
+		<td><a href="yii_db_connection.html">yii\db\Connection</a></td>
+	</tr>
+			<tr id="$username">
+		<td><a href="yii_db_connection.html#$username-detail">$username</a></td>
+		<td>string</td>
+		<td>The username for establishing DB connection</td>
+		<td><a href="yii_db_connection.html">yii\db\Connection</a></td>
+	</tr>
+			<tr id="$password">
+		<td><a href="yii_db_connection.html#$password-detail">$password</a></td>
+		<td>string</td>
+		<td>The password for establishing DB connection</td>
+		<td><a href="yii_db_connection.html">yii\db\Connection</a></td>
+	</tr>
+			<tr id="$attributes">
+		<td><a href="yii_db_connection.html#$attributes-detail">$attributes</a></td>
+		<td>array</td>
+		<td>PDO attributes (name => value) that should be set when calling <a href="yii_db_connection.html#open()-detail">open()</a>
+to establish a DB connection</td>
+		<td><a href="yii_db_connection.html">yii\db\Connection</a></td>
+	</tr>
+			<tr id="$pdo">
+		<td><a href="yii_db_connection.html#$pdo-detail">$pdo</a></td>
+		<td>\PDO</td>
+		<td>The PHP PDO instance associated with this DB connection</td>
+		<td><a href="yii_db_connection.html">yii\db\Connection</a></td>
+	</tr>
+			<tr id="$enableSchemaCache">
+		<td><a href="yii_db_connection.html#$enableSchemaCache-detail">$enableSchemaCache</a></td>
+		<td>boolean</td>
+		<td>Whether to enable schema caching</td>
+		<td><a href="yii_db_connection.html">yii\db\Connection</a></td>
+	</tr>
+			<tr id="$schemaCacheDuration">
+		<td><a href="yii_db_connection.html#$schemaCacheDuration-detail">$schemaCacheDuration</a></td>
+		<td>integer</td>
+		<td>Number of seconds that table metadata can remain valid in cache</td>
+		<td><a href="yii_db_connection.html">yii\db\Connection</a></td>
+	</tr>
+			<tr id="$schemaCacheExclude">
+		<td><a href="yii_db_connection.html#$schemaCacheExclude-detail">$schemaCacheExclude</a></td>
+		<td>array</td>
+		<td>List of tables whose metadata should NOT be cached</td>
+		<td><a href="yii_db_connection.html">yii\db\Connection</a></td>
+	</tr>
+			<tr id="$schemaCache">
+		<td><a href="yii_db_connection.html#$schemaCache-detail">$schemaCache</a></td>
+		<td><a href="yii_caching_cache.html">yii\caching\Cache</a>|string</td>
+		<td>The cache object or the ID of the cache application component that
+is used to cache the table metadata</td>
+		<td><a href="yii_db_connection.html">yii\db\Connection</a></td>
+	</tr>
+			<tr id="$enableQueryCache">
+		<td><a href="yii_db_connection.html#$enableQueryCache-detail">$enableQueryCache</a></td>
+		<td>boolean</td>
+		<td>Whether to enable query caching</td>
+		<td><a href="yii_db_connection.html">yii\db\Connection</a></td>
+	</tr>
+			<tr id="$queryCacheDuration">
+		<td><a href="yii_db_connection.html#$queryCacheDuration-detail">$queryCacheDuration</a></td>
+		<td>integer</td>
+		<td>Number of seconds that query results can remain valid in cache</td>
+		<td><a href="yii_db_connection.html">yii\db\Connection</a></td>
+	</tr>
+			<tr id="$queryCacheDependency">
+		<td><a href="yii_db_connection.html#$queryCacheDependency-detail">$queryCacheDependency</a></td>
+		<td><a href="yii_caching_dependency.html">yii\caching\Dependency</a></td>
+		<td>The dependency that will be used when saving query results into cache</td>
+		<td><a href="yii_db_connection.html">yii\db\Connection</a></td>
+	</tr>
+			<tr id="$queryCache">
+		<td><a href="yii_db_connection.html#$queryCache-detail">$queryCache</a></td>
+		<td><a href="yii_caching_cache.html">yii\caching\Cache</a>|string</td>
+		<td>The cache object or the ID of the cache application component
+that is used for query caching</td>
+		<td><a href="yii_db_connection.html">yii\db\Connection</a></td>
+	</tr>
+			<tr id="$charset">
+		<td><a href="yii_db_connection.html#$charset-detail">$charset</a></td>
+		<td>string</td>
+		<td>The charset used for database connection</td>
+		<td><a href="yii_db_connection.html">yii\db\Connection</a></td>
+	</tr>
+			<tr id="$emulatePrepare">
+		<td><a href="yii_db_connection.html#$emulatePrepare-detail">$emulatePrepare</a></td>
+		<td>boolean</td>
+		<td>Whether to turn on prepare emulation</td>
+		<td><a href="yii_db_connection.html">yii\db\Connection</a></td>
+	</tr>
+			<tr id="$tablePrefix">
+		<td><a href="yii_db_connection.html#$tablePrefix-detail">$tablePrefix</a></td>
+		<td>string</td>
+		<td>The common prefix or suffix for table names</td>
+		<td><a href="yii_db_connection.html">yii\db\Connection</a></td>
+	</tr>
+			<tr id="$schemaMap">
+		<td><a href="yii_db_connection.html#$schemaMap-detail">$schemaMap</a></td>
+		<td>array</td>
+		<td>Mapping between PDO driver names and <a href="yii_db_schema.html">yii\db\Schema</a> classes</td>
+		<td><a href="yii_db_connection.html">yii\db\Connection</a></td>
+	</tr>
+			<tr id="$pdoClass">
+		<td><a href="yii_db_connection.html#$pdoClass-detail">$pdoClass</a></td>
+		<td>string</td>
+		<td>Custom PDO wrapper class</td>
+		<td><a href="yii_db_connection.html">yii\db\Connection</a></td>
+	</tr>
+			<tr id="$behaviors">
+		<td><a href="yii_db_connection.html#$behaviors-detail">$behaviors</a></td>
+		<td><a href="yii_base_behavior.html">yii\base\Behavior</a>[]</td>
+		<td>list of behaviors attached to this component</td>
+		<td><a href="yii_db_connection.html">yii\db\Connection</a></td>
+	</tr>
+			<tr id="$isActive">
+		<td><a href="yii_db_connection.html#$isActive-detail">$isActive</a></td>
+		<td>boolean</td>
+		<td>whether the DB connection is established</td>
+		<td><a href="yii_db_connection.html">yii\db\Connection</a></td>
+	</tr>
+			<tr id="$transaction">
+		<td><a href="yii_db_connection.html#$transaction-detail">$transaction</a></td>
+		<td><a href="yii_db_transaction.html">yii\db\Transaction</a></td>
+		<td>the currently active transaction</td>
+		<td><a href="yii_db_connection.html">yii\db\Connection</a></td>
+	</tr>
+			<tr id="$schema">
+		<td><a href="yii_db_connection.html#$schema-detail">$schema</a></td>
+		<td><a href="yii_db_schema.html">yii\db\Schema</a></td>
+		<td>the schema information for the database opened by this connection</td>
+		<td><a href="yii_db_connection.html">yii\db\Connection</a></td>
+	</tr>
+			<tr id="$queryBuilder">
+		<td><a href="yii_db_connection.html#$queryBuilder-detail">$queryBuilder</a></td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+		<td>the query builder for the current DB connection</td>
+		<td><a href="yii_db_connection.html">yii\db\Connection</a></td>
+	</tr>
+			<tr id="$lastInsertID">
+		<td><a href="yii_db_connection.html#$lastInsertID-detail">$lastInsertID</a></td>
+		<td>string</td>
+		<td>the row ID of the last row inserted, or the last value retrieved from the sequence object</td>
+		<td><a href="yii_db_connection.html">yii\db\Connection</a></td>
+	</tr>
+			<tr id="$driverName">
+		<td><a href="yii_db_connection.html#$driverName-detail">$driverName</a></td>
+		<td>string</td>
+		<td>name of the DB driver</td>
+		<td><a href="yii_db_connection.html">yii\db\Connection</a></td>
+	</tr>
+	</table>
+</div>
+<a name="methods"></a>
+
+<div class="summary docMethod">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr class="inherited" id="className()">
+		<td><a href="yii_base_object.html#className()-detail">className()</a></td>
+		<td></td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__construct()">
+		<td><a href="yii_base_object.html#__construct()-detail">__construct()</a></td>
+		<td>Constructor.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="init()">
+		<td><a href="yii_base_object.html#init()-detail">init()</a></td>
+		<td>Initializes the object.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__get()">
+		<td><a href="yii_base_component.html#__get()-detail">__get()</a></td>
+		<td>Returns the value of a component property.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__set()">
+		<td><a href="yii_base_component.html#__set()-detail">__set()</a></td>
+		<td>Sets the value of a component property.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__isset()">
+		<td><a href="yii_base_component.html#__isset()-detail">__isset()</a></td>
+		<td>Checks if a property value is null.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__unset()">
+		<td><a href="yii_base_component.html#__unset()-detail">__unset()</a></td>
+		<td>Sets a component property to be null.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__call()">
+		<td><a href="yii_base_component.html#__call()-detail">__call()</a></td>
+		<td>Calls the named method which is not a class method.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasProperty()">
+		<td><a href="yii_base_component.html#hasProperty()-detail">hasProperty()</a></td>
+		<td>Returns a value indicating whether a property is defined for this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="canGetProperty()">
+		<td><a href="yii_base_component.html#canGetProperty()-detail">canGetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be read.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="canSetProperty()">
+		<td><a href="yii_base_component.html#canSetProperty()-detail">canSetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be set.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasMethod()">
+		<td><a href="yii_base_component.html#hasMethod()-detail">hasMethod()</a></td>
+		<td>Returns a value indicating whether a method is defined.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="toArray()">
+		<td><a href="yii_base_object.html#toArray()-detail">toArray()</a></td>
+		<td>Converts the object into an array.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__clone()">
+		<td><a href="yii_base_component.html#__clone()-detail">__clone()</a></td>
+		<td>This method is called after the object is created by cloning an existing one.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="behaviors()">
+		<td><a href="yii_base_component.html#behaviors()-detail">behaviors()</a></td>
+		<td>Returns a list of behaviors that this component should behave as.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasEventHandlers()">
+		<td><a href="yii_base_component.html#hasEventHandlers()-detail">hasEventHandlers()</a></td>
+		<td>Returns a value indicating whether there is any handler attached to the named event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="on()">
+		<td><a href="yii_base_component.html#on()-detail">on()</a></td>
+		<td>Attaches an event handler to an event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="off()">
+		<td><a href="yii_base_component.html#off()-detail">off()</a></td>
+		<td>Detaches an existing event handler from this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="trigger()">
+		<td><a href="yii_base_component.html#trigger()-detail">trigger()</a></td>
+		<td>Triggers an event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="getBehavior()">
+		<td><a href="yii_base_component.html#getBehavior()-detail">getBehavior()</a></td>
+		<td>Returns the named behavior object.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="getBehaviors()">
+		<td><a href="yii_base_component.html#getBehaviors()-detail">getBehaviors()</a></td>
+		<td>Returns all behaviors attached to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="attachBehavior()">
+		<td><a href="yii_base_component.html#attachBehavior()-detail">attachBehavior()</a></td>
+		<td>Attaches a behavior to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="attachBehaviors()">
+		<td><a href="yii_base_component.html#attachBehaviors()-detail">attachBehaviors()</a></td>
+		<td>Attaches a list of behaviors to the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="detachBehavior()">
+		<td><a href="yii_base_component.html#detachBehavior()-detail">detachBehavior()</a></td>
+		<td>Detaches a behavior from the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="detachBehaviors()">
+		<td><a href="yii_base_component.html#detachBehaviors()-detail">detachBehaviors()</a></td>
+		<td>Detaches all behaviors from the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="ensureBehaviors()">
+		<td><a href="yii_base_component.html#ensureBehaviors()-detail">ensureBehaviors()</a></td>
+		<td>Makes sure that the behaviors declared in <a href="yii_base_component.html#behaviors()-detail">behaviors()</a> are attached to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr id="getIsActive()">
+		<td><a href="yii_db_connection.html#getIsActive()-detail">getIsActive()</a></td>
+		<td>Returns a value indicating whether the DB connection is established.</td>
+		<td><a href="yii_db_connection.html">yii\db\Connection</a></td>
+	</tr>
+			<tr id="beginCache()">
+		<td><a href="yii_db_connection.html#beginCache()-detail">beginCache()</a></td>
+		<td>Turns on query caching.</td>
+		<td><a href="yii_db_connection.html">yii\db\Connection</a></td>
+	</tr>
+			<tr id="endCache()">
+		<td><a href="yii_db_connection.html#endCache()-detail">endCache()</a></td>
+		<td>Turns off query caching.</td>
+		<td><a href="yii_db_connection.html">yii\db\Connection</a></td>
+	</tr>
+			<tr id="open()">
+		<td><a href="yii_db_connection.html#open()-detail">open()</a></td>
+		<td>Establishes a DB connection.</td>
+		<td><a href="yii_db_connection.html">yii\db\Connection</a></td>
+	</tr>
+			<tr id="close()">
+		<td><a href="yii_db_connection.html#close()-detail">close()</a></td>
+		<td>Closes the currently active DB connection.</td>
+		<td><a href="yii_db_connection.html">yii\db\Connection</a></td>
+	</tr>
+					<tr id="createCommand()">
+		<td><a href="yii_db_connection.html#createCommand()-detail">createCommand()</a></td>
+		<td>Creates a command for execution.</td>
+		<td><a href="yii_db_connection.html">yii\db\Connection</a></td>
+	</tr>
+			<tr id="getTransaction()">
+		<td><a href="yii_db_connection.html#getTransaction()-detail">getTransaction()</a></td>
+		<td>Returns the currently active transaction.</td>
+		<td><a href="yii_db_connection.html">yii\db\Connection</a></td>
+	</tr>
+			<tr id="beginTransaction()">
+		<td><a href="yii_db_connection.html#beginTransaction()-detail">beginTransaction()</a></td>
+		<td>Starts a transaction.</td>
+		<td><a href="yii_db_connection.html">yii\db\Connection</a></td>
+	</tr>
+			<tr id="getSchema()">
+		<td><a href="yii_db_connection.html#getSchema()-detail">getSchema()</a></td>
+		<td>Returns the schema information for the database opened by this connection.</td>
+		<td><a href="yii_db_connection.html">yii\db\Connection</a></td>
+	</tr>
+			<tr id="getQueryBuilder()">
+		<td><a href="yii_db_connection.html#getQueryBuilder()-detail">getQueryBuilder()</a></td>
+		<td>Returns the query builder for the current DB connection.</td>
+		<td><a href="yii_db_connection.html">yii\db\Connection</a></td>
+	</tr>
+			<tr id="getTableSchema()">
+		<td><a href="yii_db_connection.html#getTableSchema()-detail">getTableSchema()</a></td>
+		<td>Obtains the schema information for the named table.</td>
+		<td><a href="yii_db_connection.html">yii\db\Connection</a></td>
+	</tr>
+			<tr id="getLastInsertID()">
+		<td><a href="yii_db_connection.html#getLastInsertID()-detail">getLastInsertID()</a></td>
+		<td>Returns the ID of the last inserted row or sequence value.</td>
+		<td><a href="yii_db_connection.html">yii\db\Connection</a></td>
+	</tr>
+			<tr id="quoteValue()">
+		<td><a href="yii_db_connection.html#quoteValue()-detail">quoteValue()</a></td>
+		<td>Quotes a string value for use in a query.</td>
+		<td><a href="yii_db_connection.html">yii\db\Connection</a></td>
+	</tr>
+			<tr id="quoteTableName()">
+		<td><a href="yii_db_connection.html#quoteTableName()-detail">quoteTableName()</a></td>
+		<td>Quotes a table name for use in a query.</td>
+		<td><a href="yii_db_connection.html">yii\db\Connection</a></td>
+	</tr>
+			<tr id="quoteColumnName()">
+		<td><a href="yii_db_connection.html#quoteColumnName()-detail">quoteColumnName()</a></td>
+		<td>Quotes a column name for use in a query.</td>
+		<td><a href="yii_db_connection.html">yii\db\Connection</a></td>
+	</tr>
+			<tr id="quoteSql()">
+		<td><a href="yii_db_connection.html#quoteSql()-detail">quoteSql()</a></td>
+		<td>Processes a SQL statement by quoting table and column names that are enclosed within double brackets.</td>
+		<td><a href="yii_db_connection.html">yii\db\Connection</a></td>
+	</tr>
+			<tr id="getDriverName()">
+		<td><a href="yii_db_connection.html#getDriverName()-detail">getDriverName()</a></td>
+		<td>Returns the name of the DB driver for the current <a href="yii_db_connection.html#$dsn-detail">$dsn</a>.</td>
+		<td><a href="yii_db_connection.html">yii\db\Connection</a></td>
+	</tr>
+	</table>
+</div>
+<div class="summary docMethod">
+<h2>Protected Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+																																	<tr id="createPdoInstance()">
+		<td><a href="yii_db_connection.html#createPdoInstance()-detail">createPdoInstance()</a></td>
+		<td>Creates the PDO instance.</td>
+		<td><a href="yii_db_connection.html">yii\db\Connection</a></td>
+	</tr>
+			<tr id="initConnection()">
+		<td><a href="yii_db_connection.html#initConnection()-detail">initConnection()</a></td>
+		<td>Initializes the DB connection.</td>
+		<td><a href="yii_db_connection.html">yii\db\Connection</a></td>
+	</tr>
+													</table>
+</div>
+<a name="events"></a>
+<div class="summary docEvent">
+<h2>Events</h2>
+
+<p><a href="#" class="toggle">Hide inherited events</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-event" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Event</th><th>Type</th><th>Description</th><th>Defined By</th>
+</tr>
+<tr id="EVENT_AFTER_OPEN">
+	<td><a href="yii_db_connection.html#EVENT_AFTER_OPEN-detail">EVENT_AFTER_OPEN</a></td>
+	<td>\yii\db\Event</td>
+	<td>
+		An event that is triggered after a DB connection is established			</td>
+	<td><a href="yii_db_connection.html">yii\db\Connection</a></td>
+</tr>
+</table>
+</div>
+<a name="constants"></a>
+
+<h2>Property Details</h2>
+
+
+	<div class="detailHeader" id="$dsn-detail">
+		$dsn		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $dsn = null	</div>
+
+	<p>The Data Source Name, or DSN, contains the information required to connect to the database.
+Please refer to the <a href="http://www.php.net/manual/en/function.PDO-construct.php">PHP manual</a> on
+the format of the DSN string.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_db_connection.html#$charset-detail">$charset</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="$username-detail">
+		$username		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $username = null	</div>
+
+	<p>The username for establishing DB connection. Defaults to <code>null</code> meaning no username to use.</p>
+
+	
+
+	<div class="detailHeader" id="$password-detail">
+		$password		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $password = null	</div>
+
+	<p>The password for establishing DB connection. Defaults to <code>null</code> meaning no password to use.</p>
+
+	
+
+	<div class="detailHeader" id="$attributes-detail">
+		$attributes		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array $attributes = null	</div>
+
+	<p>PDO attributes (name => value) that should be set when calling <a href="yii_db_connection.html#open()-detail">open()</a>
+to establish a DB connection. Please refer to the
+<a href="http://www.php.net/manual/en/function.PDO-setAttribute.php">PHP manual</a> for
+details about available attributes.</p>
+
+	
+
+	<div class="detailHeader" id="$pdo-detail">
+		$pdo		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	\PDO $pdo = null	</div>
+
+	<p>The PHP PDO instance associated with this DB connection.
+This property is mainly managed by <a href="yii_db_connection.html#open()-detail">open()</a> and <a href="yii_db_connection.html#close()-detail">close()</a> methods.
+When a DB connection is active, this property will represent a PDO instance;
+otherwise, it will be null.</p>
+
+	
+
+	<div class="detailHeader" id="$enableSchemaCache-detail">
+		$enableSchemaCache		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	boolean $enableSchemaCache = false	</div>
+
+	<p>Whether to enable schema caching.
+Note that in order to enable truly schema caching, a valid cache component as specified
+by <a href="yii_db_connection.html#$schemaCache-detail">$schemaCache</a> must be enabled and <a href="yii_db_connection.html#$enableSchemaCache-detail">$enableSchemaCache</a> must be set true.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_db_connection.html#$schemaCacheDuration-detail">$schemaCacheDuration</a></li>
+	<li><a href="yii_db_connection.html#$schemaCacheExclude-detail">$schemaCacheExclude</a></li>
+	<li><a href="yii_db_connection.html#$schemaCache-detail">$schemaCache</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="$schemaCacheDuration-detail">
+		$schemaCacheDuration		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	integer $schemaCacheDuration = 3600	</div>
+
+	<p>Number of seconds that table metadata can remain valid in cache.
+Use 0 to indicate that the cached data will never expire.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_db_connection.html#$enableSchemaCache-detail">$enableSchemaCache</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="$schemaCacheExclude-detail">
+		$schemaCacheExclude		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array $schemaCacheExclude = []	</div>
+
+	<p>List of tables whose metadata should NOT be cached. Defaults to empty array.
+The table names may contain schema prefix, if any. Do not quote the table names.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_db_connection.html#$enableSchemaCache-detail">$enableSchemaCache</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="$schemaCache-detail">
+		$schemaCache		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_caching_cache.html">yii\caching\Cache</a>|string $schemaCache = 'cache'	</div>
+
+	<p>The cache object or the ID of the cache application component that
+is used to cache the table metadata.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_db_connection.html#$enableSchemaCache-detail">$enableSchemaCache</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="$enableQueryCache-detail">
+		$enableQueryCache		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	boolean $enableQueryCache = false	</div>
+
+	<p>Whether to enable query caching.
+Note that in order to enable query caching, a valid cache component as specified
+by <a href="yii_db_connection.html#$queryCache-detail">$queryCache</a> must be enabled and <a href="yii_db_connection.html#$enableQueryCache-detail">$enableQueryCache</a> must be set true.
+Methods <a href="yii_db_connection.html#beginCache()-detail">beginCache()</a> and <a href="yii_db_connection.html#endCache()-detail">endCache()</a> can be used as shortcuts to turn on
+and off query caching on the fly.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_db_connection.html#$queryCacheDuration-detail">$queryCacheDuration</a></li>
+	<li><a href="yii_db_connection.html#$queryCache-detail">$queryCache</a></li>
+	<li><a href="yii_db_connection.html#$queryCacheDependency-detail">$queryCacheDependency</a></li>
+	<li><a href="yii_db_connection.html#beginCache()-detail">beginCache()</a></li>
+	<li><a href="yii_db_connection.html#endCache()-detail">endCache()</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="$queryCacheDuration-detail">
+		$queryCacheDuration		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	integer $queryCacheDuration = 3600	</div>
+
+	<p>Number of seconds that query results can remain valid in cache.
+Defaults to 3600, meaning 3600 seconds, or one hour.
+Use 0 to indicate that the cached data will never expire.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_db_connection.html#$enableQueryCache-detail">$enableQueryCache</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="$queryCacheDependency-detail">
+		$queryCacheDependency		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_caching_dependency.html">yii\caching\Dependency</a> $queryCacheDependency = null	</div>
+
+	<p>The dependency that will be used when saving query results into cache.
+Defaults to null, meaning no dependency.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_db_connection.html#$enableQueryCache-detail">$enableQueryCache</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="$queryCache-detail">
+		$queryCache		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_caching_cache.html">yii\caching\Cache</a>|string $queryCache = 'cache'	</div>
+
+	<p>The cache object or the ID of the cache application component
+that is used for query caching.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_db_connection.html#$enableQueryCache-detail">$enableQueryCache</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="$charset-detail">
+		$charset		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $charset = null	</div>
+
+	<p>The charset used for database connection. The property is only used
+for MySQL, PostgreSQL and CUBRID databases. Defaults to null, meaning using default charset
+as specified by the database.
+Note that if you're using GBK or BIG5 then it's highly recommended to
+specify charset via DSN like 'mysql:dbname=mydatabase;host=127.0.0.1;charset=GBK;'.</p>
+
+	
+
+	<div class="detailHeader" id="$emulatePrepare-detail">
+		$emulatePrepare		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	boolean $emulatePrepare = null	</div>
+
+	<p>Whether to turn on prepare emulation. Defaults to false, meaning PDO
+will use the native prepare support if available. For some databases (such as MySQL),
+this may need to be set true so that PDO can emulate the prepare support to bypass
+the buggy native prepare support.
+The default value is null, which means the PDO ATTR_EMULATE_PREPARES value will not be changed.</p>
+
+	
+
+	<div class="detailHeader" id="$tablePrefix-detail">
+		$tablePrefix		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $tablePrefix = 'tbl_'	</div>
+
+	<p>The common prefix or suffix for table names. If a table name is given
+as <code>{{%TableName}}</code>, then the percentage character <code>%</code> will be replaced with this
+property value. For example, <code>{{%post}}</code> becomes <code>{{tbl_post}}</code>.</p>
+
+	
+
+	<div class="detailHeader" id="$schemaMap-detail">
+		$schemaMap		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array $schemaMap = ['pgsql' => 'yii\db\pgsql\Schema', 'mysqli' => 'yii\db\mysql\Schema', 'mysql' => 'yii\db\mysql\Schema', 'sqlite' => 'yii\db\sqlite\Schema', 'sqlite2' => 'yii\db\sqlite\Schema', 'sqlsrv' => 'yii\db\mssql\Schema', 'oci' => 'yii\db\oci\Schema', 'mssql' => 'yii\db\mssql\Schema', 'dblib' => 'yii\db\mssql\Schema', 'cubrid' => 'yii\db\cubrid\Schema']	</div>
+
+	<p>Mapping between PDO driver names and <a href="yii_db_schema.html">yii\db\Schema</a> classes.
+The keys of the array are PDO driver names while the values the corresponding
+schema class name or configuration. Please refer to <a href="yii_baseyii.html#createObject()-detail">Yii::createObject()</a> for
+details on how to specify a configuration.
+This property is mainly used by <a href="yii_db_connection.html#getSchema()-detail">getSchema()</a> when fetching the database schema information.
+You normally do not need to set this property unless you want to use your own
+<a href="yii_db_schema.html">yii\db\Schema</a> class to support DBMS that is not supported by Yii.</p>
+
+	
+
+	<div class="detailHeader" id="$pdoClass-detail">
+		$pdoClass		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $pdoClass = null	</div>
+
+	<p>Custom PDO wrapper class. If not set, it will use "PDO" or "yii\db\mssql\PDO" when MSSQL is used.</p>
+
+	
+
+	<div class="detailHeader" id="$behaviors-detail">
+		$behaviors		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_base_behavior.html">yii\base\Behavior</a>[] <a href="yii_base_component.html#getBehaviors()-detail">getBehaviors</a>(  )	</div>
+
+	<p>list of behaviors attached to this component</p>
+
+	
+
+	<div class="detailHeader" id="$isActive-detail">
+		$isActive		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	boolean <a href="yii_db_connection.html#getIsActive()-detail">getIsActive</a>(  )	</div>
+
+	<p>whether the DB connection is established</p>
+
+	
+
+	<div class="detailHeader" id="$transaction-detail">
+		$transaction		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_db_transaction.html">yii\db\Transaction</a> <a href="yii_db_connection.html#getTransaction()-detail">getTransaction</a>(  )	</div>
+
+	<p>the currently active transaction. Null if no active transaction.</p>
+
+	
+
+	<div class="detailHeader" id="$schema-detail">
+		$schema		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_db_schema.html">yii\db\Schema</a> <a href="yii_db_connection.html#getSchema()-detail">getSchema</a>(  )	</div>
+
+	<p>the schema information for the database opened by this connection.</p>
+
+	
+
+	<div class="detailHeader" id="$queryBuilder-detail">
+		$queryBuilder		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a> <a href="yii_db_connection.html#getQueryBuilder()-detail">getQueryBuilder</a>(  )	</div>
+
+	<p>the query builder for the current DB connection.</p>
+
+	
+
+	<div class="detailHeader" id="$lastInsertID-detail">
+		$lastInsertID		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	string <a href="yii_db_connection.html#getLastInsertID()-detail">getLastInsertID</a>( $sequenceName = '' )	</div>
+
+	<p>the row ID of the last row inserted, or the last value retrieved from the sequence object</p>
+
+	
+
+	<div class="detailHeader" id="$driverName-detail">
+		$driverName		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	string <a href="yii_db_connection.html#getDriverName()-detail">getDriverName</a>(  )	</div>
+
+	<p>name of the DB driver</p>
+
+	
+<h2>Method Details</h2>
+
+
+	<div class="detailHeader" id="getIsActive()-detail">
+		getIsActive()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_db_connection.html#getIsActive()-detail">getIsActive</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether the DB connection is established</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns a value indicating whether the DB connection is established.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="beginCache()-detail">
+		beginCache()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_db_connection.html#beginCache()-detail">beginCache</a>( $duration = null, $dependency = null )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$duration</td>
+				  <td class="paramTypeCol">integer</td>
+				  <td class="paramDescCol">The number of seconds that query results may remain valid in cache.
+If not set, it will use the value of <a href="yii_db_connection.html#$queryCacheDuration-detail">$queryCacheDuration</a>. See <a href="yii_db_connection.html#$queryCacheDuration-detail">$queryCacheDuration</a> for more details.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$dependency</td>
+				  <td class="paramTypeCol"><a href="yii_caching_dependency.html">yii\caching\Dependency</a></td>
+				  <td class="paramDescCol">The dependency for the cached query result.
+See <a href="yii_db_connection.html#$queryCacheDependency-detail">$queryCacheDependency</a> for more details.</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Turns on query caching.</strong></p>
+	<p>This method is provided as a shortcut to setting two properties that are related
+with query caching: <a href="yii_db_connection.html#$queryCacheDuration-detail">$queryCacheDuration</a> and <a href="yii_db_connection.html#$queryCacheDependency-detail">$queryCacheDependency</a>.</p>
+
+	
+
+	<div class="detailHeader" id="endCache()-detail">
+		endCache()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_db_connection.html#endCache()-detail">endCache</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p>Turns off query caching.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="open()-detail">
+		open()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_db_connection.html#open()-detail">open</a>(  )			</div>
+		</td></tr>
+															<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_db_exception.html">yii\db\Exception</a></td>
+				  <td class="paramDescCol">if connection fails</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Establishes a DB connection.</strong></p>
+	<p>It does nothing if a DB connection has already been established.</p>
+
+	
+
+	<div class="detailHeader" id="close()-detail">
+		close()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_db_connection.html#close()-detail">close</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p>Closes the currently active DB connection.</strong></p>
+	<p>It does nothing if the connection is already closed.</p>
+
+	
+
+	<div class="detailHeader" id="createPdoInstance()-detail">
+		createPdoInstance()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			\PDO <a href="yii_db_connection.html#createPdoInstance()-detail">createPdoInstance</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">\PDO</td>
+				  <td class="paramDescCol">the pdo instance</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Creates the PDO instance.</strong></p>
+	<p>This method is called by <a href="yii_db_connection.html#open()-detail">open()</a> to establish a DB connection.
+The default implementation will create a PHP PDO instance.
+You may override this method if the default PDO needs to be adapted for certain DBMS.</p>
+
+	
+
+	<div class="detailHeader" id="initConnection()-detail">
+		initConnection()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_db_connection.html#initConnection()-detail">initConnection</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p>Initializes the DB connection.</strong></p>
+	<p>This method is invoked right after the DB connection is established.
+The default implementation turns on <code>PDO::ATTR_EMULATE_PREPARES</code>
+if <a href="yii_db_connection.html#$emulatePrepare-detail">$emulatePrepare</a> is true, and sets the database <a href="yii_db_connection.html#$charset-detail">$charset</a> if it is not empty.
+It then triggers an <a href="yii_db_connection.html#EVENT_AFTER_OPEN-detail">EVENT_AFTER_OPEN</a> event.</p>
+
+	
+
+	<div class="detailHeader" id="createCommand()-detail">
+		createCommand()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			<a href="yii_db_command.html">yii\db\Command</a> <a href="yii_db_connection.html#createCommand()-detail">createCommand</a>( $sql = null, $params = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$sql</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The SQL statement to be executed</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$params</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The parameters to be bound to the SQL statement</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol"><a href="yii_db_command.html">yii\db\Command</a></td>
+				  <td class="paramDescCol">the DB command</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Creates a command for execution.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getTransaction()-detail">
+		getTransaction()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			<a href="yii_db_transaction.html">yii\db\Transaction</a> <a href="yii_db_connection.html#getTransaction()-detail">getTransaction</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol"><a href="yii_db_transaction.html">yii\db\Transaction</a></td>
+				  <td class="paramDescCol">the currently active transaction. Null if no active transaction.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the currently active transaction.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="beginTransaction()-detail">
+		beginTransaction()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			<a href="yii_db_transaction.html">yii\db\Transaction</a> <a href="yii_db_connection.html#beginTransaction()-detail">beginTransaction</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol"><a href="yii_db_transaction.html">yii\db\Transaction</a></td>
+				  <td class="paramDescCol">the transaction initiated</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Starts a transaction.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getSchema()-detail">
+		getSchema()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			<a href="yii_db_schema.html">yii\db\Schema</a> <a href="yii_db_connection.html#getSchema()-detail">getSchema</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol"><a href="yii_db_schema.html">yii\db\Schema</a></td>
+				  <td class="paramDescCol">the schema information for the database opened by this connection.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_base_notsupportedexception.html">yii\base\NotSupportedException</a></td>
+				  <td class="paramDescCol">if there is no support for the current driver type</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Returns the schema information for the database opened by this connection.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getQueryBuilder()-detail">
+		getQueryBuilder()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			<a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a> <a href="yii_db_connection.html#getQueryBuilder()-detail">getQueryBuilder</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol"><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+				  <td class="paramDescCol">the query builder for the current DB connection.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the query builder for the current DB connection.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getTableSchema()-detail">
+		getTableSchema()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			<a href="yii_db_tableschema.html">yii\db\TableSchema</a> <a href="yii_db_connection.html#getTableSchema()-detail">getTableSchema</a>( $name, $refresh = false )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Table name.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$refresh</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">Whether to reload the table schema even if it is found in the cache.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol"><a href="yii_db_tableschema.html">yii\db\TableSchema</a></td>
+				  <td class="paramDescCol">table schema information. Null if the named table does not exist.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Obtains the schema information for the named table.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getLastInsertID()-detail">
+		getLastInsertID()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_db_connection.html#getLastInsertID()-detail">getLastInsertID</a>( $sequenceName = '' )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$sequenceName</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Name of the sequence object (required by some DBMS)</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the row ID of the last row inserted, or the last value retrieved from the sequence object</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the ID of the last inserted row or sequence value.</strong></p>
+	<p></p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li>http://www.php.net/manual/en/function.PDO-lastInsertId.php</li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="quoteValue()-detail">
+		quoteValue()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_db_connection.html#quoteValue()-detail">quoteValue</a>( $str )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$str</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">String to be quoted</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the properly quoted string</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Quotes a string value for use in a query.</strong></p>
+	<p>Note that if the parameter is not a string, it will be returned without change.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li>http://www.php.net/manual/en/function.PDO-quote.php</li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="quoteTableName()-detail">
+		quoteTableName()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_db_connection.html#quoteTableName()-detail">quoteTableName</a>( $name )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Table name</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the properly quoted table name</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Quotes a table name for use in a query.</strong></p>
+	<p>If the table name contains schema prefix, the prefix will also be properly quoted.
+If the table name is already quoted or contains special characters including '(', '[[' and '{{',
+then this method will do nothing.</p>
+
+	
+
+	<div class="detailHeader" id="quoteColumnName()-detail">
+		quoteColumnName()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_db_connection.html#quoteColumnName()-detail">quoteColumnName</a>( $name )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Column name</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the properly quoted column name</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Quotes a column name for use in a query.</strong></p>
+	<p>If the column name contains prefix, the prefix will also be properly quoted.
+If the column name is already quoted or contains special characters including '(', '[[' and '{{',
+then this method will do nothing.</p>
+
+	
+
+	<div class="detailHeader" id="quoteSql()-detail">
+		quoteSql()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_db_connection.html#quoteSql()-detail">quoteSql</a>( $sql )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$sql</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The SQL to be quoted</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the quoted SQL</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Processes a SQL statement by quoting table and column names that are enclosed within double brackets.</strong></p>
+	<p>Tokens enclosed within double curly brackets are treated as table names, while
+tokens enclosed within double square brackets are column names. They will be quoted accordingly.
+Also, the percentage character "%" at the beginning or ending of a table name will be replaced
+with <a href="yii_db_connection.html#$tablePrefix-detail">$tablePrefix</a>.</p>
+
+	
+
+	<div class="detailHeader" id="getDriverName()-detail">
+		getDriverName()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_db_connection.html#getDriverName()-detail">getDriverName</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">name of the DB driver</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the name of the DB driver for the current <a href="yii_db_connection.html#$dsn-detail">$dsn</a>.</strong></p>
+	<p></p>
+
+	
+	<h2>Event Details</h2>
+	<div class="detailHeader" id="EVENT_AFTER_OPEN-detail">
+		EVENT_AFTER_OPEN		<span class="detailHeaderTag">
+		event
+				</span>
+	</div>
+
+	
+	<p>An event that is triggered after a DB connection is established</p>
+
+	
+		</div><!-- end of content -->
+
+		<div id="apiFooter">
+			<p>&copy; 2008-2013 by <a href="http://www.yiisoft.com">Yii Software LLC</a></p>
+			<p>All Rights Reserved.</p>
+		</div><!-- end of footer -->
+
+<script type="text/javascript">
+/*<![CDATA[*/
+$("a.toggle").on('click', function() {
+	var $this = $(this);
+	if ($this.hasClass('properties-hidden')) {
+		$this.text($this.text().replace(/Show/,'Hide'));
+		$this.parents(".summary").find(".inherited").show();
+		$this.removeClass('properties-hidden');
+	} else {
+		$this.text($this.text().replace(/Hide/,'Show'));
+		$this.parents(".summary").find(".inherited").hide();
+		$this.addClass('properties-hidden');
+	}
+	return false;
+});
+/*
+$(".sourceCode a.show").toggle(function(){
+	$(this).text($(this).text().replace(/show/,'hide'));
+	$(this).parents(".sourceCode").find("div.code").show();
+},function(){
+	$(this).text($(this).text().replace(/hide/,'show'));
+	$(this).parents(".sourceCode").find("div.code").hide();
+});
+$("a.sourceLink").click(function(){
+	$(this).attr('target','_blank');
+});
+*/
+/*]]>*/
+</script>
+
+	</div><!-- end of page -->
+</body>
+</html>

@@ -1,0 +1,840 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="language" content="en" />
+<link href="./assets/4138e429/api.css" rel="stylesheet">
+<link href="./assets/4138e429/style.css" rel="stylesheet">
+<script src="./assets/a91b37a6/jquery.js"></script><title>Yii Framework 2.0 API Documentation</title>
+</head>
+
+<body>
+	<div id="apiPage">
+
+		<div id="apiHeader">
+			<a href="http://www.yiiframework.com">Yii Framework</a> v2.0.0-dev Class Reference
+		</div><!-- end of header -->
+
+		<div id="content">
+		<h1>Class yii\data\Sort</h1>
+<div id="nav">
+	<a href="index.html">All Classes</a>
+			| <a href="#properties">Properties</a>
+				| <a href="#methods">Methods</a>
+			</div>
+
+<table class="summaryTable docClass">
+	<colgroup>
+		<col class="col-name" />
+		<col class="col-value" />
+	</colgroup>
+			<tr><th>Inheritance</th><td><a href="yii_data_sort.html">yii\data\Sort</a> &raquo;
+<a href="yii_base_object.html">yii\base\Object</a></td></tr>
+				<tr><th>Implements</th><td><a href="yii_base_arrayable.html">yii\base\Arrayable</a></td></tr>
+								<tr><th>Available since version</th><td>2.0</td></tr>
+		<tr>
+	  <th>Source Code</th>
+	  <td></td>
+	</tr>
+</table>
+
+<div id="classDescription">
+	<strong>Sort represents information relevant to sorting.</strong>
+	<p>When data needs to be sorted according to one or several attributes,
+we can use Sort to represent the sorting information and generate
+appropriate hyperlinks that can lead to sort actions.</p>
+
+<p>A typical usage example is as follows,</p>
+
+<pre><code>function actionIndex()
+{
+    $sort = new Sort([
+        'attributes' =&gt; [
+            'age',
+            'name' =&gt; [
+                'asc' =&gt; ['first_name' =&gt; SORT_ASC, 'last_name' =&gt; SORT_ASC],
+                'desc' =&gt; ['first_name' =&gt; SORT_DESC, 'last_name' =&gt; SORT_DESC],
+                'default' =&gt; SORT_DESC,
+                'label' =&gt; 'Name',
+            ],
+        ],
+    ]);
+
+    $models = Article::find()
+        -&gt;where(['status' =&gt; 1])
+        -&gt;orderBy($sort-&gt;orders)
+        -&gt;all();
+
+    return $this-&gt;render('index', [
+         'models' =&gt; $models,
+         'sort' =&gt; $sort,
+    ]);
+}
+</code></pre>
+
+<p>View:</p>
+
+<pre><code>// display links leading to sort actions
+echo $sort-&gt;link('name') . ' | ' . $sort-&gt;link('age');
+
+foreach ($models as $model) {
+    // display $model here
+}
+</code></pre>
+
+<p>In the above, we declare two <a href="yii_data_sort.html#$attributes-detail">$attributes</a> that support sorting: name and age.
+We pass the sort information to the Article query so that the query results are
+sorted by the orders specified by the Sort object. In the view, we show two hyperlinks
+that can lead to pages with the data sorted by the corresponding attributes.</p>
+</div>
+
+<a name="properties"></a>
+
+<div class="summary docProperty">
+<h2>Public Properties</h2>
+
+<p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-property" />
+	<col class="col-type" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Property</th><th>Type</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr id="$enableMultiSort">
+		<td><a href="yii_data_sort.html#$enableMultiSort-detail">$enableMultiSort</a></td>
+		<td>boolean</td>
+		<td>Whether the sorting can be applied to multiple attributes simultaneously</td>
+		<td><a href="yii_data_sort.html">yii\data\Sort</a></td>
+	</tr>
+			<tr id="$attributes">
+		<td><a href="yii_data_sort.html#$attributes-detail">$attributes</a></td>
+		<td>array</td>
+		<td>List of attributes that are allowed to be sorted</td>
+		<td><a href="yii_data_sort.html">yii\data\Sort</a></td>
+	</tr>
+			<tr id="$sortVar">
+		<td><a href="yii_data_sort.html#$sortVar-detail">$sortVar</a></td>
+		<td>string</td>
+		<td>The name of the parameter that specifies which attributes to be sorted
+in which direction</td>
+		<td><a href="yii_data_sort.html">yii\data\Sort</a></td>
+	</tr>
+			<tr id="$descTag">
+		<td><a href="yii_data_sort.html#$descTag-detail">$descTag</a></td>
+		<td>string</td>
+		<td>The tag appeared in the <a href="yii_data_sort.html#$sortVar-detail">$sortVar</a> parameter that indicates the attribute should be sorted
+in descending order</td>
+		<td><a href="yii_data_sort.html">yii\data\Sort</a></td>
+	</tr>
+			<tr id="$defaultOrder">
+		<td><a href="yii_data_sort.html#$defaultOrder-detail">$defaultOrder</a></td>
+		<td>array</td>
+		<td>The order that should be used when the current request does not specify any order</td>
+		<td><a href="yii_data_sort.html">yii\data\Sort</a></td>
+	</tr>
+			<tr id="$route">
+		<td><a href="yii_data_sort.html#$route-detail">$route</a></td>
+		<td>string</td>
+		<td>The route of the controller action for displaying the sorted contents</td>
+		<td><a href="yii_data_sort.html">yii\data\Sort</a></td>
+	</tr>
+			<tr id="$separators">
+		<td><a href="yii_data_sort.html#$separators-detail">$separators</a></td>
+		<td>array</td>
+		<td>Separators used in the generated URL</td>
+		<td><a href="yii_data_sort.html">yii\data\Sort</a></td>
+	</tr>
+			<tr id="$params">
+		<td><a href="yii_data_sort.html#$params-detail">$params</a></td>
+		<td>array</td>
+		<td>Parameters (name => value) that should be used to obtain the current sort directions
+and to create new sort URLs</td>
+		<td><a href="yii_data_sort.html">yii\data\Sort</a></td>
+	</tr>
+			<tr id="$urlManager">
+		<td><a href="yii_data_sort.html#$urlManager-detail">$urlManager</a></td>
+		<td><a href="yii_web_urlmanager.html">yii\web\UrlManager</a></td>
+		<td>The URL manager used for creating sort URLs</td>
+		<td><a href="yii_data_sort.html">yii\data\Sort</a></td>
+	</tr>
+			<tr id="$orders">
+		<td><a href="yii_data_sort.html#$orders-detail">$orders</a></td>
+		<td>array</td>
+		<td>the columns (keys) and their corresponding sort directions (values)</td>
+		<td><a href="yii_data_sort.html">yii\data\Sort</a></td>
+	</tr>
+			<tr id="$attributeOrders">
+		<td><a href="yii_data_sort.html#$attributeOrders-detail">$attributeOrders</a></td>
+		<td>array</td>
+		<td>sort directions indexed by attribute names</td>
+		<td><a href="yii_data_sort.html">yii\data\Sort</a></td>
+	</tr>
+	</table>
+</div>
+<a name="methods"></a>
+
+<div class="summary docMethod">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr class="inherited" id="className()">
+		<td><a href="yii_base_object.html#className()-detail">className()</a></td>
+		<td></td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__construct()">
+		<td><a href="yii_base_object.html#__construct()-detail">__construct()</a></td>
+		<td>Constructor.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr id="init()">
+		<td><a href="yii_data_sort.html#init()-detail">init()</a></td>
+		<td>Normalizes the <a href="yii_data_sort.html#$attributes-detail">$attributes</a> property.</td>
+		<td><a href="yii_data_sort.html">yii\data\Sort</a></td>
+	</tr>
+			<tr class="inherited" id="__get()">
+		<td><a href="yii_base_object.html#__get()-detail">__get()</a></td>
+		<td>Returns the value of an object property.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__set()">
+		<td><a href="yii_base_object.html#__set()-detail">__set()</a></td>
+		<td>Sets value of an object property.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__isset()">
+		<td><a href="yii_base_object.html#__isset()-detail">__isset()</a></td>
+		<td>Checks if the named property is set (not null).</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__unset()">
+		<td><a href="yii_base_object.html#__unset()-detail">__unset()</a></td>
+		<td>Sets an object property to null.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__call()">
+		<td><a href="yii_base_object.html#__call()-detail">__call()</a></td>
+		<td>Calls the named method which is not a class method.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="hasProperty()">
+		<td><a href="yii_base_object.html#hasProperty()-detail">hasProperty()</a></td>
+		<td>Returns a value indicating whether a property is defined.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="canGetProperty()">
+		<td><a href="yii_base_object.html#canGetProperty()-detail">canGetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be read.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="canSetProperty()">
+		<td><a href="yii_base_object.html#canSetProperty()-detail">canSetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be set.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="hasMethod()">
+		<td><a href="yii_base_object.html#hasMethod()-detail">hasMethod()</a></td>
+		<td>Returns a value indicating whether a method is defined.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="toArray()">
+		<td><a href="yii_base_object.html#toArray()-detail">toArray()</a></td>
+		<td>Converts the object into an array.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr id="getOrders()">
+		<td><a href="yii_data_sort.html#getOrders()-detail">getOrders()</a></td>
+		<td>Returns the columns and their corresponding sort directions.</td>
+		<td><a href="yii_data_sort.html">yii\data\Sort</a></td>
+	</tr>
+			<tr id="getAttributeOrders()">
+		<td><a href="yii_data_sort.html#getAttributeOrders()-detail">getAttributeOrders()</a></td>
+		<td>Returns the currently requested sort information.</td>
+		<td><a href="yii_data_sort.html">yii\data\Sort</a></td>
+	</tr>
+			<tr id="getAttributeOrder()">
+		<td><a href="yii_data_sort.html#getAttributeOrder()-detail">getAttributeOrder()</a></td>
+		<td>Returns the sort direction of the specified attribute in the current request.</td>
+		<td><a href="yii_data_sort.html">yii\data\Sort</a></td>
+	</tr>
+			<tr id="link()">
+		<td><a href="yii_data_sort.html#link()-detail">link()</a></td>
+		<td>Generates a hyperlink that links to the sort action to sort by the specified attribute.</td>
+		<td><a href="yii_data_sort.html">yii\data\Sort</a></td>
+	</tr>
+			<tr id="createUrl()">
+		<td><a href="yii_data_sort.html#createUrl()-detail">createUrl()</a></td>
+		<td>Creates a URL for sorting the data by the specified attribute.</td>
+		<td><a href="yii_data_sort.html">yii\data\Sort</a></td>
+	</tr>
+			<tr id="createSortVar()">
+		<td><a href="yii_data_sort.html#createSortVar()-detail">createSortVar()</a></td>
+		<td>Creates the sort variable for the specified attribute.</td>
+		<td><a href="yii_data_sort.html">yii\data\Sort</a></td>
+	</tr>
+			<tr id="hasAttribute()">
+		<td><a href="yii_data_sort.html#hasAttribute()-detail">hasAttribute()</a></td>
+		<td>Returns a value indicating whether the sort definition supports sorting by the named attribute.</td>
+		<td><a href="yii_data_sort.html">yii\data\Sort</a></td>
+	</tr>
+	</table>
+</div>
+<a name="events"></a>
+
+<a name="constants"></a>
+
+<h2>Property Details</h2>
+
+
+	<div class="detailHeader" id="$enableMultiSort-detail">
+		$enableMultiSort		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	boolean $enableMultiSort = false	</div>
+
+	<p>Whether the sorting can be applied to multiple attributes simultaneously.
+Defaults to false, which means each time the data can only be sorted by one attribute.</p>
+
+	
+
+	<div class="detailHeader" id="$attributes-detail">
+		$attributes		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array $attributes = []	</div>
+
+	<p>List of attributes that are allowed to be sorted. Its syntax can be
+described using the following example:</p>
+
+<pre><code>[
+    'age',
+    'name' =&gt; [
+        'asc' =&gt; ['first_name' =&gt; SORT_ASC, 'last_name' =&gt; SORT_ASC],
+        'desc' =&gt; ['first_name' =&gt; SORT_DESC, 'last_name' =&gt; SORT_DESC],
+        'default' =&gt; SORT_DESC,
+        'label' =&gt; 'Name',
+    ],
+]
+</code></pre>
+
+<p>In the above, two attributes are declared: "age" and "user". The "age" attribute is
+a simple attribute which is equivalent to the following:</p>
+
+<pre><code>'age' =&gt; [
+    'asc' =&gt; ['age' =&gt; SORT_ASC],
+    'desc' =&gt; ['age' =&gt; SORT_DESC],
+    'default' =&gt; SORT_ASC,
+    'label' =&gt; Inflector::camel2words('age'),
+]
+</code></pre>
+
+<p>The "user" attribute is a composite attribute:
+- The "user" key represents the attribute name which will appear in the URLs leading
+  to sort actions. Attribute names cannot contain characters listed in <a href="yii_data_sort.html#$separators-detail">$separators</a>.
+- The "asc" and "desc" elements specify how to sort by the attribute in ascending
+  and descending orders, respectively. Their values represent the actual columns and
+  the directions by which the data should be sorted by.
+- The "default" element specifies by which direction the attribute should be sorted
+  if it is not currently sorted (the default value is ascending order).
+- The "label" element specifies what label should be used when calling <a href="yii_data_sort.html#link()-detail">link()</a> to create
+  a sort link. If not set, <a href="yii_helpers_baseinflector.html#camel2words()-detail">yii\helpers\Inflector::camel2words()</a> will be called to get a label.
+  Note that it will not be HTML-encoded.
+Note that if the Sort object is already created, you can only use the full format
+to configure every attribute. Each attribute must include these elements: asc and desc.</p>
+
+	
+
+	<div class="detailHeader" id="$sortVar-detail">
+		$sortVar		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $sortVar = 'sort'	</div>
+
+	<p>The name of the parameter that specifies which attributes to be sorted
+in which direction. Defaults to 'sort'.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_data_sort.html#$params-detail">$params</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="$descTag-detail">
+		$descTag		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $descTag = 'desc'	</div>
+
+	<p>The tag appeared in the <a href="yii_data_sort.html#$sortVar-detail">$sortVar</a> parameter that indicates the attribute should be sorted
+in descending order. Defaults to 'desc'.</p>
+
+	
+
+	<div class="detailHeader" id="$defaultOrder-detail">
+		$defaultOrder		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array $defaultOrder = null	</div>
+
+	<p><p>The order that should be used when the current request does not specify any order.
+The array keys are attribute names and the array values are the corresponding sort directions. For example,</p>
+
+<pre><code>[
+    'name' =&gt; SORT_ASC,
+    'created_at' =&gt; SORT_DESC,
+]
+</code></pre></p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_data_sort.html#$attributeOrders-detail">$attributeOrders</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="$route-detail">
+		$route		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $route = null	</div>
+
+	<p>The route of the controller action for displaying the sorted contents.
+If not set, it means using the currently requested route.</p>
+
+	
+
+	<div class="detailHeader" id="$separators-detail">
+		$separators		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array $separators = ['.', '-']	</div>
+
+	<p>Separators used in the generated URL. This must be an array consisting of
+two elements. The first element specifies the character separating different
+attributes, while the second element specifies the character separating attribute name
+and the corresponding sort direction. Defaults to <code>['.', '-']</code>.</p>
+
+	
+
+	<div class="detailHeader" id="$params-detail">
+		$params		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array $params = null	</div>
+
+	<p>Parameters (name => value) that should be used to obtain the current sort directions
+and to create new sort URLs. If not set, $_GET will be used instead.
+In order to add hash to all links use <code>array_merge($_GET, ['#' =&gt; 'my-hash'])</code>.
+The array element indexed by <a href="yii_data_sort.html#$sortVar-detail">$sortVar</a> is considered to be the current sort directions.
+If the element does not exist, the <span style="background: #f00;">\yii\data\defaults</span> will be used.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_data_sort.html#$sortVar-detail">$sortVar</a></li>
+	<li><a href="yii_data_sort.html#$defaultOrder-detail">$defaultOrder</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="$urlManager-detail">
+		$urlManager		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_web_urlmanager.html">yii\web\UrlManager</a> $urlManager = null	</div>
+
+	<p>The URL manager used for creating sort URLs. If not set,
+the "urlManager" application component will be used.</p>
+
+	
+
+	<div class="detailHeader" id="$orders-detail">
+		$orders		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	array <a href="yii_data_sort.html#getOrders()-detail">getOrders</a>( $recalculate = false )	</div>
+
+	<p>the columns (keys) and their corresponding sort directions (values).
+This can be passed to <a href="yii_db_querytrait.html#orderBy()-detail">yii\db\Query::orderBy()</a> to construct a DB query.</p>
+
+	
+
+	<div class="detailHeader" id="$attributeOrders-detail">
+		$attributeOrders		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	array <a href="yii_data_sort.html#getAttributeOrders()-detail">getAttributeOrders</a>( $recalculate = false )	</div>
+
+	<p>sort directions indexed by attribute names.
+Sort direction can be either <code>SORT_ASC</code> for ascending order or
+<code>SORT_DESC</code> for descending order.</p>
+
+	
+<h2>Method Details</h2>
+
+
+	<div class="detailHeader" id="init()-detail">
+		init()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_data_sort.html#init()-detail">init</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p>Normalizes the <a href="yii_data_sort.html#$attributes-detail">$attributes</a> property.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getOrders()-detail">
+		getOrders()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			array <a href="yii_data_sort.html#getOrders()-detail">getOrders</a>( $recalculate = false )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$recalculate</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">Whether to recalculate the sort directions</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">the columns (keys) and their corresponding sort directions (values).
+This can be passed to <a href="yii_db_querytrait.html#orderBy()-detail">yii\db\Query::orderBy()</a> to construct a DB query.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the columns and their corresponding sort directions.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getAttributeOrders()-detail">
+		getAttributeOrders()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			array <a href="yii_data_sort.html#getAttributeOrders()-detail">getAttributeOrders</a>( $recalculate = false )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$recalculate</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">Whether to recalculate the sort directions</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">sort directions indexed by attribute names.
+Sort direction can be either <code>SORT_ASC</code> for ascending order or
+<code>SORT_DESC</code> for descending order.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the currently requested sort information.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getAttributeOrder()-detail">
+		getAttributeOrder()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean|null <a href="yii_data_sort.html#getAttributeOrder()-detail">getAttributeOrder</a>( $attribute )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$attribute</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The attribute name</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean|null</td>
+				  <td class="paramDescCol">Sort direction of the attribute. Can be either <code>SORT_ASC</code>
+for ascending order or <code>SORT_DESC</code> for descending order. Null is returned
+if the attribute is invalid or does not need to be sorted.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the sort direction of the specified attribute in the current request.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="link()-detail">
+		link()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_data_sort.html#link()-detail">link</a>( $attribute, $options = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$attribute</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The attribute name by which the data should be sorted by.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">Additional HTML attributes for the hyperlink tag.
+There is one special attribute <code>label</code> which will be used as the label of the hyperlink.
+If this is not set, the label defined in <a href="yii_data_sort.html#$attributes-detail">$attributes</a> will be used.
+If no label is defined, <span style="background: #f00;">\yii\data\yii\helpers\Inflector::camel2words()</span> will be called to get a label.
+Note that it will not be HTML-encoded.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the generated hyperlink</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_base_invalidconfigexception.html">yii\base\InvalidConfigException</a></td>
+				  <td class="paramDescCol">if the attribute is unknown</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Generates a hyperlink that links to the sort action to sort by the specified attribute.</strong></p>
+	<p>Based on the sort direction, the CSS class of the generated hyperlink will be appended
+with "asc" or "desc".</p>
+
+	
+
+	<div class="detailHeader" id="createUrl()-detail">
+		createUrl()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_data_sort.html#createUrl()-detail">createUrl</a>( $attribute, $absolute = false )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$attribute</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The attribute name</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$absolute</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">Whether to create an absolute URL. Defaults to <code>false</code>.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the URL for sorting. False if the attribute is invalid.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_base_invalidconfigexception.html">yii\base\InvalidConfigException</a></td>
+				  <td class="paramDescCol">if the attribute is unknown</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Creates a URL for sorting the data by the specified attribute.</strong></p>
+	<p>This method will consider the current sorting status given by <a href="yii_data_sort.html#$attributeOrders-detail">$attributeOrders</a>.
+For example, if the current page already sorts the data by the specified attribute in ascending order,
+then the URL created will lead to a page that sorts the data by the specified attribute in descending order.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_data_sort.html#$attributeOrders-detail">$attributeOrders</a></li>
+	<li><a href="yii_data_sort.html#$params-detail">$params</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="createSortVar()-detail">
+		createSortVar()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_data_sort.html#createSortVar()-detail">createSortVar</a>( $attribute )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$attribute</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The attribute name</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the value of the sort variable</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_base_invalidconfigexception.html">yii\base\InvalidConfigException</a></td>
+				  <td class="paramDescCol">if the specified attribute is not defined in <a href="yii_data_sort.html#$attributes-detail">$attributes</a></td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Creates the sort variable for the specified attribute.</strong></p>
+	<p>The newly created sort variable can be used to create a URL that will lead to
+sorting by the specified attribute.</p>
+
+	
+
+	<div class="detailHeader" id="hasAttribute()-detail">
+		hasAttribute()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_data_sort.html#hasAttribute()-detail">hasAttribute</a>( $name )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The attribute name</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether the sort definition supports sorting by the named attribute.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns a value indicating whether the sort definition supports sorting by the named attribute.</strong></p>
+	<p></p>
+
+	
+			</div><!-- end of content -->
+
+		<div id="apiFooter">
+			<p>&copy; 2008-2013 by <a href="http://www.yiisoft.com">Yii Software LLC</a></p>
+			<p>All Rights Reserved.</p>
+		</div><!-- end of footer -->
+
+<script type="text/javascript">
+/*<![CDATA[*/
+$("a.toggle").on('click', function() {
+	var $this = $(this);
+	if ($this.hasClass('properties-hidden')) {
+		$this.text($this.text().replace(/Show/,'Hide'));
+		$this.parents(".summary").find(".inherited").show();
+		$this.removeClass('properties-hidden');
+	} else {
+		$this.text($this.text().replace(/Hide/,'Show'));
+		$this.parents(".summary").find(".inherited").hide();
+		$this.addClass('properties-hidden');
+	}
+	return false;
+});
+/*
+$(".sourceCode a.show").toggle(function(){
+	$(this).text($(this).text().replace(/show/,'hide'));
+	$(this).parents(".sourceCode").find("div.code").show();
+},function(){
+	$(this).text($(this).text().replace(/hide/,'show'));
+	$(this).parents(".sourceCode").find("div.code").hide();
+});
+$("a.sourceLink").click(function(){
+	$(this).attr('target','_blank');
+});
+*/
+/*]]>*/
+</script>
+
+	</div><!-- end of page -->
+</body>
+</html>

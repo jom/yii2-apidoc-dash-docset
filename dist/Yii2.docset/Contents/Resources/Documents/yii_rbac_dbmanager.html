@@ -1,0 +1,1427 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="language" content="en" />
+<link href="./assets/4138e429/api.css" rel="stylesheet">
+<link href="./assets/4138e429/style.css" rel="stylesheet">
+<script src="./assets/a91b37a6/jquery.js"></script><title>Yii Framework 2.0 API Documentation</title>
+</head>
+
+<body>
+	<div id="apiPage">
+
+		<div id="apiHeader">
+			<a href="http://www.yiiframework.com">Yii Framework</a> v2.0.0-dev Class Reference
+		</div><!-- end of header -->
+
+		<div id="content">
+		<h1>Class yii\rbac\DbManager</h1>
+<div id="nav">
+	<a href="index.html">All Classes</a>
+			| <a href="#properties">Properties</a>
+				| <a href="#methods">Methods</a>
+			</div>
+
+<table class="summaryTable docClass">
+	<colgroup>
+		<col class="col-name" />
+		<col class="col-value" />
+	</colgroup>
+			<tr><th>Inheritance</th><td><a href="yii_rbac_dbmanager.html">yii\rbac\DbManager</a> &raquo;
+<a href="yii_rbac_manager.html">yii\rbac\Manager</a> &raquo;
+<a href="yii_base_component.html">yii\base\Component</a> &raquo;
+<a href="yii_base_object.html">yii\base\Object</a></td></tr>
+				<tr><th>Implements</th><td><a href="yii_base_arrayable.html">yii\base\Arrayable</a></td></tr>
+								<tr><th>Available since version</th><td>2.0</td></tr>
+		<tr>
+	  <th>Source Code</th>
+	  <td></td>
+	</tr>
+</table>
+
+<div id="classDescription">
+	<strong>DbManager represents an authorization manager that stores authorization information in database.</strong>
+	<p>The database connection is specified by <a href="yii_rbac_dbmanager.html#$db-detail">$db</a>. And the database schema
+should be as described in "framework/rbac/*.sql". You may change the names of
+the three tables used to store the authorization data by setting <a href="yii_rbac_dbmanager.html#$itemTable-detail">$itemTable</a>,
+<a href="yii_rbac_dbmanager.html#$itemChildTable-detail">$itemChildTable</a> and <a href="yii_rbac_dbmanager.html#$assignmentTable-detail">$assignmentTable</a>.</p>
+</div>
+
+<a name="properties"></a>
+
+<div class="summary docProperty">
+<h2>Public Properties</h2>
+
+<p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-property" />
+	<col class="col-type" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Property</th><th>Type</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr class="inherited" id="$showErrors">
+		<td><a href="yii_rbac_manager.html#$showErrors-detail">$showErrors</a></td>
+		<td>boolean</td>
+		<td>Enable error reporting for bizRules</td>
+		<td><a href="yii_rbac_manager.html">yii\rbac\Manager</a></td>
+	</tr>
+			<tr class="inherited" id="$defaultRoles">
+		<td><a href="yii_rbac_manager.html#$defaultRoles-detail">$defaultRoles</a></td>
+		<td>array</td>
+		<td>List of role names that are assigned to all users implicitly</td>
+		<td><a href="yii_rbac_manager.html">yii\rbac\Manager</a></td>
+	</tr>
+			<tr id="$db">
+		<td><a href="yii_rbac_dbmanager.html#$db-detail">$db</a></td>
+		<td><a href="yii_db_connection.html">yii\db\Connection</a>|string</td>
+		<td>The DB connection object or the application component ID of the DB connection</td>
+		<td><a href="yii_rbac_dbmanager.html">yii\rbac\DbManager</a></td>
+	</tr>
+			<tr id="$itemTable">
+		<td><a href="yii_rbac_dbmanager.html#$itemTable-detail">$itemTable</a></td>
+		<td>string</td>
+		<td>The name of the table storing authorization items</td>
+		<td><a href="yii_rbac_dbmanager.html">yii\rbac\DbManager</a></td>
+	</tr>
+			<tr id="$itemChildTable">
+		<td><a href="yii_rbac_dbmanager.html#$itemChildTable-detail">$itemChildTable</a></td>
+		<td>string</td>
+		<td>The name of the table storing authorization item hierarchy</td>
+		<td><a href="yii_rbac_dbmanager.html">yii\rbac\DbManager</a></td>
+	</tr>
+			<tr id="$assignmentTable">
+		<td><a href="yii_rbac_dbmanager.html#$assignmentTable-detail">$assignmentTable</a></td>
+		<td>string</td>
+		<td>The name of the table storing authorization item assignments</td>
+		<td><a href="yii_rbac_dbmanager.html">yii\rbac\DbManager</a></td>
+	</tr>
+			<tr id="$behaviors">
+		<td><a href="yii_rbac_dbmanager.html#$behaviors-detail">$behaviors</a></td>
+		<td><a href="yii_base_behavior.html">yii\base\Behavior</a>[]</td>
+		<td>list of behaviors attached to this component</td>
+		<td><a href="yii_rbac_dbmanager.html">yii\rbac\DbManager</a></td>
+	</tr>
+			<tr id="$roles">
+		<td><a href="yii_rbac_dbmanager.html#$roles-detail">$roles</a></td>
+		<td><a href="yii_rbac_item.html">yii\rbac\Item</a>[]</td>
+		<td>roles (name => AuthItem)</td>
+		<td><a href="yii_rbac_dbmanager.html">yii\rbac\DbManager</a></td>
+	</tr>
+			<tr id="$tasks">
+		<td><a href="yii_rbac_dbmanager.html#$tasks-detail">$tasks</a></td>
+		<td><a href="yii_rbac_item.html">yii\rbac\Item</a>[]</td>
+		<td>tasks (name => AuthItem)</td>
+		<td><a href="yii_rbac_dbmanager.html">yii\rbac\DbManager</a></td>
+	</tr>
+			<tr id="$operations">
+		<td><a href="yii_rbac_dbmanager.html#$operations-detail">$operations</a></td>
+		<td><a href="yii_rbac_item.html">yii\rbac\Item</a>[]</td>
+		<td>operations (name => AuthItem)</td>
+		<td><a href="yii_rbac_dbmanager.html">yii\rbac\DbManager</a></td>
+	</tr>
+			<tr id="$items">
+		<td><a href="yii_rbac_dbmanager.html#$items-detail">$items</a></td>
+		<td><a href="yii_rbac_item.html">yii\rbac\Item</a>[]</td>
+		<td>the authorization items of the specific type</td>
+		<td><a href="yii_rbac_dbmanager.html">yii\rbac\DbManager</a></td>
+	</tr>
+	</table>
+</div>
+<a name="methods"></a>
+
+<div class="summary docMethod">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr class="inherited" id="className()">
+		<td><a href="yii_base_object.html#className()-detail">className()</a></td>
+		<td></td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__construct()">
+		<td><a href="yii_base_object.html#__construct()-detail">__construct()</a></td>
+		<td>Constructor.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr id="init()">
+		<td><a href="yii_rbac_dbmanager.html#init()-detail">init()</a></td>
+		<td>Initializes the application component.</td>
+		<td><a href="yii_rbac_dbmanager.html">yii\rbac\DbManager</a></td>
+	</tr>
+			<tr class="inherited" id="__get()">
+		<td><a href="yii_base_component.html#__get()-detail">__get()</a></td>
+		<td>Returns the value of a component property.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__set()">
+		<td><a href="yii_base_component.html#__set()-detail">__set()</a></td>
+		<td>Sets the value of a component property.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__isset()">
+		<td><a href="yii_base_component.html#__isset()-detail">__isset()</a></td>
+		<td>Checks if a property value is null.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__unset()">
+		<td><a href="yii_base_component.html#__unset()-detail">__unset()</a></td>
+		<td>Sets a component property to be null.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__call()">
+		<td><a href="yii_base_component.html#__call()-detail">__call()</a></td>
+		<td>Calls the named method which is not a class method.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasProperty()">
+		<td><a href="yii_base_component.html#hasProperty()-detail">hasProperty()</a></td>
+		<td>Returns a value indicating whether a property is defined for this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="canGetProperty()">
+		<td><a href="yii_base_component.html#canGetProperty()-detail">canGetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be read.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="canSetProperty()">
+		<td><a href="yii_base_component.html#canSetProperty()-detail">canSetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be set.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasMethod()">
+		<td><a href="yii_base_component.html#hasMethod()-detail">hasMethod()</a></td>
+		<td>Returns a value indicating whether a method is defined.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="toArray()">
+		<td><a href="yii_base_object.html#toArray()-detail">toArray()</a></td>
+		<td>Converts the object into an array.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__clone()">
+		<td><a href="yii_base_component.html#__clone()-detail">__clone()</a></td>
+		<td>This method is called after the object is created by cloning an existing one.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="behaviors()">
+		<td><a href="yii_base_component.html#behaviors()-detail">behaviors()</a></td>
+		<td>Returns a list of behaviors that this component should behave as.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasEventHandlers()">
+		<td><a href="yii_base_component.html#hasEventHandlers()-detail">hasEventHandlers()</a></td>
+		<td>Returns a value indicating whether there is any handler attached to the named event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="on()">
+		<td><a href="yii_base_component.html#on()-detail">on()</a></td>
+		<td>Attaches an event handler to an event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="off()">
+		<td><a href="yii_base_component.html#off()-detail">off()</a></td>
+		<td>Detaches an existing event handler from this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="trigger()">
+		<td><a href="yii_base_component.html#trigger()-detail">trigger()</a></td>
+		<td>Triggers an event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="getBehavior()">
+		<td><a href="yii_base_component.html#getBehavior()-detail">getBehavior()</a></td>
+		<td>Returns the named behavior object.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="getBehaviors()">
+		<td><a href="yii_base_component.html#getBehaviors()-detail">getBehaviors()</a></td>
+		<td>Returns all behaviors attached to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="attachBehavior()">
+		<td><a href="yii_base_component.html#attachBehavior()-detail">attachBehavior()</a></td>
+		<td>Attaches a behavior to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="attachBehaviors()">
+		<td><a href="yii_base_component.html#attachBehaviors()-detail">attachBehaviors()</a></td>
+		<td>Attaches a list of behaviors to the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="detachBehavior()">
+		<td><a href="yii_base_component.html#detachBehavior()-detail">detachBehavior()</a></td>
+		<td>Detaches a behavior from the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="detachBehaviors()">
+		<td><a href="yii_base_component.html#detachBehaviors()-detail">detachBehaviors()</a></td>
+		<td>Detaches all behaviors from the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="ensureBehaviors()">
+		<td><a href="yii_base_component.html#ensureBehaviors()-detail">ensureBehaviors()</a></td>
+		<td>Makes sure that the behaviors declared in <a href="yii_base_component.html#behaviors()-detail">behaviors()</a> are attached to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="createRole()">
+		<td><a href="yii_rbac_manager.html#createRole()-detail">createRole()</a></td>
+		<td>Creates a role.</td>
+		<td><a href="yii_rbac_manager.html">yii\rbac\Manager</a></td>
+	</tr>
+			<tr class="inherited" id="createTask()">
+		<td><a href="yii_rbac_manager.html#createTask()-detail">createTask()</a></td>
+		<td>Creates a task.</td>
+		<td><a href="yii_rbac_manager.html">yii\rbac\Manager</a></td>
+	</tr>
+			<tr class="inherited" id="createOperation()">
+		<td><a href="yii_rbac_manager.html#createOperation()-detail">createOperation()</a></td>
+		<td>Creates an operation.</td>
+		<td><a href="yii_rbac_manager.html">yii\rbac\Manager</a></td>
+	</tr>
+			<tr class="inherited" id="getRoles()">
+		<td><a href="yii_rbac_manager.html#getRoles()-detail">getRoles()</a></td>
+		<td>Returns roles.</td>
+		<td><a href="yii_rbac_manager.html">yii\rbac\Manager</a></td>
+	</tr>
+			<tr class="inherited" id="getTasks()">
+		<td><a href="yii_rbac_manager.html#getTasks()-detail">getTasks()</a></td>
+		<td>Returns tasks.</td>
+		<td><a href="yii_rbac_manager.html">yii\rbac\Manager</a></td>
+	</tr>
+			<tr class="inherited" id="getOperations()">
+		<td><a href="yii_rbac_manager.html#getOperations()-detail">getOperations()</a></td>
+		<td>Returns operations.</td>
+		<td><a href="yii_rbac_manager.html">yii\rbac\Manager</a></td>
+	</tr>
+			<tr class="inherited" id="executeBizRule()">
+		<td><a href="yii_rbac_manager.html#executeBizRule()-detail">executeBizRule()</a></td>
+		<td>Executes the specified business rule.</td>
+		<td><a href="yii_rbac_manager.html">yii\rbac\Manager</a></td>
+	</tr>
+				<tr id="checkAccess()">
+		<td><a href="yii_rbac_dbmanager.html#checkAccess()-detail">checkAccess()</a></td>
+		<td>Performs access check for the specified user.</td>
+		<td><a href="yii_rbac_dbmanager.html">yii\rbac\DbManager</a></td>
+	</tr>
+			<tr id="createItem()">
+		<td><a href="yii_rbac_dbmanager.html#createItem()-detail">createItem()</a></td>
+		<td>Creates an authorization item.</td>
+		<td><a href="yii_rbac_dbmanager.html">yii\rbac\DbManager</a></td>
+	</tr>
+			<tr id="removeItem()">
+		<td><a href="yii_rbac_dbmanager.html#removeItem()-detail">removeItem()</a></td>
+		<td>Removes the specified authorization item.</td>
+		<td><a href="yii_rbac_dbmanager.html">yii\rbac\DbManager</a></td>
+	</tr>
+			<tr id="getItems()">
+		<td><a href="yii_rbac_dbmanager.html#getItems()-detail">getItems()</a></td>
+		<td>Returns the authorization items of the specific type and user.</td>
+		<td><a href="yii_rbac_dbmanager.html">yii\rbac\DbManager</a></td>
+	</tr>
+			<tr id="getItem()">
+		<td><a href="yii_rbac_dbmanager.html#getItem()-detail">getItem()</a></td>
+		<td>Returns the authorization item with the specified name.</td>
+		<td><a href="yii_rbac_dbmanager.html">yii\rbac\DbManager</a></td>
+	</tr>
+			<tr id="saveItem()">
+		<td><a href="yii_rbac_dbmanager.html#saveItem()-detail">saveItem()</a></td>
+		<td>Saves an authorization item to persistent storage.</td>
+		<td><a href="yii_rbac_dbmanager.html">yii\rbac\DbManager</a></td>
+	</tr>
+			<tr id="addItemChild()">
+		<td><a href="yii_rbac_dbmanager.html#addItemChild()-detail">addItemChild()</a></td>
+		<td>Adds an item as a child of another item.</td>
+		<td><a href="yii_rbac_dbmanager.html">yii\rbac\DbManager</a></td>
+	</tr>
+			<tr id="removeItemChild()">
+		<td><a href="yii_rbac_dbmanager.html#removeItemChild()-detail">removeItemChild()</a></td>
+		<td>Removes a child from its parent.</td>
+		<td><a href="yii_rbac_dbmanager.html">yii\rbac\DbManager</a></td>
+	</tr>
+			<tr id="hasItemChild()">
+		<td><a href="yii_rbac_dbmanager.html#hasItemChild()-detail">hasItemChild()</a></td>
+		<td>Returns a value indicating whether a child exists within a parent.</td>
+		<td><a href="yii_rbac_dbmanager.html">yii\rbac\DbManager</a></td>
+	</tr>
+			<tr id="getItemChildren()">
+		<td><a href="yii_rbac_dbmanager.html#getItemChildren()-detail">getItemChildren()</a></td>
+		<td>Returns the children of the specified item.</td>
+		<td><a href="yii_rbac_dbmanager.html">yii\rbac\DbManager</a></td>
+	</tr>
+			<tr id="assign()">
+		<td><a href="yii_rbac_dbmanager.html#assign()-detail">assign()</a></td>
+		<td>Assigns an authorization item to a user.</td>
+		<td><a href="yii_rbac_dbmanager.html">yii\rbac\DbManager</a></td>
+	</tr>
+			<tr id="revoke()">
+		<td><a href="yii_rbac_dbmanager.html#revoke()-detail">revoke()</a></td>
+		<td>Revokes an authorization assignment from a user.</td>
+		<td><a href="yii_rbac_dbmanager.html">yii\rbac\DbManager</a></td>
+	</tr>
+			<tr id="revokeAll()">
+		<td><a href="yii_rbac_dbmanager.html#revokeAll()-detail">revokeAll()</a></td>
+		<td>Revokes all authorization assignments from a user.</td>
+		<td><a href="yii_rbac_dbmanager.html">yii\rbac\DbManager</a></td>
+	</tr>
+			<tr id="isAssigned()">
+		<td><a href="yii_rbac_dbmanager.html#isAssigned()-detail">isAssigned()</a></td>
+		<td>Returns a value indicating whether the item has been assigned to the user.</td>
+		<td><a href="yii_rbac_dbmanager.html">yii\rbac\DbManager</a></td>
+	</tr>
+			<tr id="getAssignment()">
+		<td><a href="yii_rbac_dbmanager.html#getAssignment()-detail">getAssignment()</a></td>
+		<td>Returns the item assignment information.</td>
+		<td><a href="yii_rbac_dbmanager.html">yii\rbac\DbManager</a></td>
+	</tr>
+			<tr id="getAssignments()">
+		<td><a href="yii_rbac_dbmanager.html#getAssignments()-detail">getAssignments()</a></td>
+		<td>Returns the item assignments for the specified user.</td>
+		<td><a href="yii_rbac_dbmanager.html">yii\rbac\DbManager</a></td>
+	</tr>
+			<tr id="saveAssignment()">
+		<td><a href="yii_rbac_dbmanager.html#saveAssignment()-detail">saveAssignment()</a></td>
+		<td>Saves the changes to an authorization assignment.</td>
+		<td><a href="yii_rbac_dbmanager.html">yii\rbac\DbManager</a></td>
+	</tr>
+			<tr id="clearAll()">
+		<td><a href="yii_rbac_dbmanager.html#clearAll()-detail">clearAll()</a></td>
+		<td>Removes all authorization data.</td>
+		<td><a href="yii_rbac_dbmanager.html">yii\rbac\DbManager</a></td>
+	</tr>
+			<tr id="clearAssignments()">
+		<td><a href="yii_rbac_dbmanager.html#clearAssignments()-detail">clearAssignments()</a></td>
+		<td>Removes all authorization assignments.</td>
+		<td><a href="yii_rbac_dbmanager.html">yii\rbac\DbManager</a></td>
+	</tr>
+			<tr id="save()">
+		<td><a href="yii_rbac_dbmanager.html#save()-detail">save()</a></td>
+		<td>Saves the authorization data to persistent storage.</td>
+		<td><a href="yii_rbac_dbmanager.html">yii\rbac\DbManager</a></td>
+	</tr>
+				</table>
+</div>
+<div class="summary docMethod">
+<h2>Protected Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+																																			<tr class="inherited" id="checkItemChildType()">
+		<td><a href="yii_rbac_manager.html#checkItemChildType()-detail">checkItemChildType()</a></td>
+		<td>Checks the item types to make sure a child can be added to a parent.</td>
+		<td><a href="yii_rbac_manager.html">yii\rbac\Manager</a></td>
+	</tr>
+																							<tr id="checkAccessRecursive()">
+		<td><a href="yii_rbac_dbmanager.html#checkAccessRecursive()-detail">checkAccessRecursive()</a></td>
+		<td>Performs access check for the specified user.</td>
+		<td><a href="yii_rbac_dbmanager.html">yii\rbac\DbManager</a></td>
+	</tr>
+			<tr id="detectLoop()">
+		<td><a href="yii_rbac_dbmanager.html#detectLoop()-detail">detectLoop()</a></td>
+		<td>Checks whether there is a loop in the authorization item hierarchy.</td>
+		<td><a href="yii_rbac_dbmanager.html">yii\rbac\DbManager</a></td>
+	</tr>
+			<tr id="usingSqlite()">
+		<td><a href="yii_rbac_dbmanager.html#usingSqlite()-detail">usingSqlite()</a></td>
+		<td></td>
+		<td><a href="yii_rbac_dbmanager.html">yii\rbac\DbManager</a></td>
+	</tr>
+	</table>
+</div>
+<a name="events"></a>
+
+<a name="constants"></a>
+
+<h2>Property Details</h2>
+
+
+	<div class="detailHeader" id="$db-detail">
+		$db		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_db_connection.html">yii\db\Connection</a>|string $db = 'db'	</div>
+
+	<p>The DB connection object or the application component ID of the DB connection.
+After the DbManager object is created, if you want to change this property, you should only assign it
+with a DB connection object.</p>
+
+	
+
+	<div class="detailHeader" id="$itemTable-detail">
+		$itemTable		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $itemTable = '{{%auth_item}}'	</div>
+
+	<p>The name of the table storing authorization items. Defaults to 'tbl_auth_item'.</p>
+
+	
+
+	<div class="detailHeader" id="$itemChildTable-detail">
+		$itemChildTable		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $itemChildTable = '{{%auth_item_child}}'	</div>
+
+	<p>The name of the table storing authorization item hierarchy. Defaults to 'tbl_auth_item_child'.</p>
+
+	
+
+	<div class="detailHeader" id="$assignmentTable-detail">
+		$assignmentTable		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $assignmentTable = '{{%auth_assignment}}'	</div>
+
+	<p>The name of the table storing authorization item assignments. Defaults to 'tbl_auth_assignment'.</p>
+
+	
+
+	<div class="detailHeader" id="$behaviors-detail">
+		$behaviors		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_base_behavior.html">yii\base\Behavior</a>[] <a href="yii_base_component.html#getBehaviors()-detail">getBehaviors</a>(  )	</div>
+
+	<p>list of behaviors attached to this component</p>
+
+	
+
+	<div class="detailHeader" id="$roles-detail">
+		$roles		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_rbac_item.html">yii\rbac\Item</a>[] <a href="yii_rbac_manager.html#getRoles()-detail">getRoles</a>( $userId = null )	</div>
+
+	<p>roles (name => AuthItem)</p>
+
+	
+
+	<div class="detailHeader" id="$tasks-detail">
+		$tasks		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_rbac_item.html">yii\rbac\Item</a>[] <a href="yii_rbac_manager.html#getTasks()-detail">getTasks</a>( $userId = null )	</div>
+
+	<p>tasks (name => AuthItem)</p>
+
+	
+
+	<div class="detailHeader" id="$operations-detail">
+		$operations		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_rbac_item.html">yii\rbac\Item</a>[] <a href="yii_rbac_manager.html#getOperations()-detail">getOperations</a>( $userId = null )	</div>
+
+	<p>operations (name => AuthItem)</p>
+
+	
+
+	<div class="detailHeader" id="$items-detail">
+		$items		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_rbac_item.html">yii\rbac\Item</a>[] <a href="yii_rbac_dbmanager.html#getItems()-detail">getItems</a>( $userId = null, $type = null )	</div>
+
+	<p>the authorization items of the specific type.</p>
+
+	
+<h2>Method Details</h2>
+
+
+	<div class="detailHeader" id="init()-detail">
+		init()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_rbac_dbmanager.html#init()-detail">init</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p>Initializes the application component.</strong></p>
+	<p>This method overrides the parent implementation by establishing the database connection.</p>
+
+	
+
+	<div class="detailHeader" id="checkAccess()-detail">
+		checkAccess()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_rbac_dbmanager.html#checkAccess()-detail">checkAccess</a>( $userId, $itemName, $params = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$userId</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">The user ID. This should can be either an integer or a string representing
+the unique identifier of a user. See <span style="background: #f00;">\yii\rbac\User::id</span>.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$itemName</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The name of the operation that need access check</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$params</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">Name-value pairs that would be passed to biz rules associated
+with the tasks and roles assigned to the user. A param with name 'userId' is added to this array,
+which holds the value of <code>$userId</code>.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether the operations can be performed by the user.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Performs access check for the specified user.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="createItem()-detail">
+		createItem()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			<a href="yii_rbac_item.html">yii\rbac\Item</a> <a href="yii_rbac_dbmanager.html#createItem()-detail">createItem</a>( $name, $type, $description = '', $bizRule = null, $data = null )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The item name. This must be a unique identifier.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$type</td>
+				  <td class="paramTypeCol">integer</td>
+				  <td class="paramDescCol">The item type (0: operation, 1: task, 2: role).</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$description</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Description of the item</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$bizRule</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Business rule associated with the item. This is a piece of
+PHP code that will be executed when <a href="yii_rbac_dbmanager.html#checkAccess()-detail">checkAccess()</a> is called for the item.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$data</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">Additional data associated with the item.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol"><a href="yii_rbac_item.html">yii\rbac\Item</a></td>
+				  <td class="paramDescCol">the authorization item</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_base_exception.html">yii\base\Exception</a></td>
+				  <td class="paramDescCol">if an item with the same name already exists</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Creates an authorization item.</strong></p>
+	<p>An authorization item represents an action permission (e.g. creating a post).
+It has three types: operation, task and role.
+Authorization items form a hierarchy. Higher level items inheirt permissions representing
+by lower level items.</p>
+
+	
+
+	<div class="detailHeader" id="removeItem()-detail">
+		removeItem()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_rbac_dbmanager.html#removeItem()-detail">removeItem</a>( $name )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The name of the item to be removed</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether the item exists in the storage and has been removed</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Removes the specified authorization item.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getItems()-detail">
+		getItems()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			<a href="yii_rbac_item.html">yii\rbac\Item</a>[] <a href="yii_rbac_dbmanager.html#getItems()-detail">getItems</a>( $userId = null, $type = null )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$userId</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">The user ID. Defaults to null, meaning returning all items even if
+they are not assigned to a user.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$type</td>
+				  <td class="paramTypeCol">integer</td>
+				  <td class="paramDescCol">The item type (0: operation, 1: task, 2: role). Defaults to null,
+meaning returning all items regardless of their type.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol"><a href="yii_rbac_item.html">yii\rbac\Item</a>[]</td>
+				  <td class="paramDescCol">the authorization items of the specific type.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the authorization items of the specific type and user.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getItem()-detail">
+		getItem()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			<a href="yii_rbac_item.html">yii\rbac\Item</a> <a href="yii_rbac_dbmanager.html#getItem()-detail">getItem</a>( $name )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The name of the item</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol"><a href="yii_rbac_item.html">yii\rbac\Item</a></td>
+				  <td class="paramDescCol">the authorization item. Null if the item cannot be found.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the authorization item with the specified name.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="saveItem()-detail">
+		saveItem()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_rbac_dbmanager.html#saveItem()-detail">saveItem</a>( $item, $oldName = null )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$item</td>
+				  <td class="paramTypeCol"><a href="yii_rbac_item.html">yii\rbac\Item</a></td>
+				  <td class="paramDescCol">The item to be saved.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$oldName</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The old item name. If null, it means the item name is not changed.</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Saves an authorization item to persistent storage.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="addItemChild()-detail">
+		addItemChild()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_rbac_dbmanager.html#addItemChild()-detail">addItemChild</a>( $itemName, $childName )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$itemName</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The parent item name</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$childName</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The child item name</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether the item is added successfully</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_base_exception.html">yii\base\Exception</a></td>
+				  <td class="paramDescCol">if either parent or child doesn't exist.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_base_invalidcallexception.html">yii\base\InvalidCallException</a></td>
+				  <td class="paramDescCol">if a loop has been detected.</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Adds an item as a child of another item.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="removeItemChild()-detail">
+		removeItemChild()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_rbac_dbmanager.html#removeItemChild()-detail">removeItemChild</a>( $itemName, $childName )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$itemName</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The parent item name</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$childName</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The child item name</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether the removal is successful</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Removes a child from its parent.</strong></p>
+	<p>Note, the child item is not deleted. Only the parent-child relationship is removed.</p>
+
+	
+
+	<div class="detailHeader" id="hasItemChild()-detail">
+		hasItemChild()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_rbac_dbmanager.html#hasItemChild()-detail">hasItemChild</a>( $itemName, $childName )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$itemName</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The parent item name</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$childName</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The child item name</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether the child exists</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns a value indicating whether a child exists within a parent.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getItemChildren()-detail">
+		getItemChildren()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			<a href="yii_rbac_item.html">yii\rbac\Item</a>[] <a href="yii_rbac_dbmanager.html#getItemChildren()-detail">getItemChildren</a>( $names )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$names</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">The parent item name. This can be either a string or an array.
+The latter represents a list of item names.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol"><a href="yii_rbac_item.html">yii\rbac\Item</a>[]</td>
+				  <td class="paramDescCol">all child items of the parent</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the children of the specified item.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="assign()-detail">
+		assign()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			<a href="yii_rbac_assignment.html">yii\rbac\Assignment</a> <a href="yii_rbac_dbmanager.html#assign()-detail">assign</a>( $userId, $itemName, $bizRule = null, $data = null )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$userId</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">The user ID (see <span style="background: #f00;">\yii\rbac\User::id</span>)</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$itemName</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The item name</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$bizRule</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The business rule to be executed when <a href="yii_rbac_dbmanager.html#checkAccess()-detail">checkAccess()</a> is called
+for this particular authorization item.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$data</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">Additional data associated with this assignment</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol"><a href="yii_rbac_assignment.html">yii\rbac\Assignment</a></td>
+				  <td class="paramDescCol">the authorization assignment information.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_base_invalidparamexception.html">yii\base\InvalidParamException</a></td>
+				  <td class="paramDescCol">if the item does not exist or if the item has already been assigned to the user</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Assigns an authorization item to a user.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="revoke()-detail">
+		revoke()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_rbac_dbmanager.html#revoke()-detail">revoke</a>( $userId, $itemName )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$userId</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">The user ID (see <span style="background: #f00;">\yii\rbac\User::id</span>)</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$itemName</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The item name</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether removal is successful</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Revokes an authorization assignment from a user.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="revokeAll()-detail">
+		revokeAll()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_rbac_dbmanager.html#revokeAll()-detail">revokeAll</a>( $userId )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$userId</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">The user ID (see <span style="background: #f00;">\yii\rbac\User::id</span>)</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether removal is successful</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Revokes all authorization assignments from a user.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="isAssigned()-detail">
+		isAssigned()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_rbac_dbmanager.html#isAssigned()-detail">isAssigned</a>( $userId, $itemName )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$userId</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">The user ID (see <span style="background: #f00;">\yii\rbac\User::id</span>)</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$itemName</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The item name</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether the item has been assigned to the user.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns a value indicating whether the item has been assigned to the user.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getAssignment()-detail">
+		getAssignment()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			<a href="yii_rbac_assignment.html">yii\rbac\Assignment</a> <a href="yii_rbac_dbmanager.html#getAssignment()-detail">getAssignment</a>( $userId, $itemName )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$userId</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">The user ID (see <span style="background: #f00;">\yii\rbac\User::id</span>)</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$itemName</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The item name</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol"><a href="yii_rbac_assignment.html">yii\rbac\Assignment</a></td>
+				  <td class="paramDescCol">the item assignment information. Null is returned if
+the item is not assigned to the user.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the item assignment information.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getAssignments()-detail">
+		getAssignments()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			<a href="yii_rbac_assignment.html">yii\rbac\Assignment</a>[] <a href="yii_rbac_dbmanager.html#getAssignments()-detail">getAssignments</a>( $userId )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$userId</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">The user ID (see <span style="background: #f00;">\yii\rbac\User::id</span>)</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol"><a href="yii_rbac_assignment.html">yii\rbac\Assignment</a>[]</td>
+				  <td class="paramDescCol">the item assignment information for the user. An empty array will be
+returned if there is no item assigned to the user.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the item assignments for the specified user.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="saveAssignment()-detail">
+		saveAssignment()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_rbac_dbmanager.html#saveAssignment()-detail">saveAssignment</a>( $assignment )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$assignment</td>
+				  <td class="paramTypeCol"><a href="yii_rbac_assignment.html">yii\rbac\Assignment</a></td>
+				  <td class="paramDescCol">The assignment that has been changed.</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Saves the changes to an authorization assignment.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="clearAll()-detail">
+		clearAll()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_rbac_dbmanager.html#clearAll()-detail">clearAll</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p>Removes all authorization data.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="clearAssignments()-detail">
+		clearAssignments()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_rbac_dbmanager.html#clearAssignments()-detail">clearAssignments</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p>Removes all authorization assignments.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="save()-detail">
+		save()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_rbac_dbmanager.html#save()-detail">save</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p>Saves the authorization data to persistent storage.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="checkAccessRecursive()-detail">
+		checkAccessRecursive()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_rbac_dbmanager.html#checkAccessRecursive()-detail">checkAccessRecursive</a>( $userId, $itemName, $params, $assignments )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$userId</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">The user ID. This should can be either an integer or a string representing
+the unique identifier of a user. See <span style="background: #f00;">\yii\rbac\User::id</span>.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$itemName</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The name of the operation that need access check</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$params</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">Name-value pairs that would be passed to biz rules associated
+with the tasks and roles assigned to the user. A param with name 'userId' is added to this array,
+which holds the value of <code>$userId</code>.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$assignments</td>
+				  <td class="paramTypeCol"><a href="yii_rbac_assignment.html">yii\rbac\Assignment</a>[]</td>
+				  <td class="paramDescCol">The assignments to the specified user</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether the operations can be performed by the user.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Performs access check for the specified user.</strong></p>
+	<p>This method is internally called by <a href="yii_rbac_dbmanager.html#checkAccess()-detail">checkAccess()</a>.</p>
+
+	
+
+	<div class="detailHeader" id="detectLoop()-detail">
+		detectLoop()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_rbac_dbmanager.html#detectLoop()-detail">detectLoop</a>( $itemName, $childName )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$itemName</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Parent item name</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$childName</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The name of the child item that is to be added to the hierarchy</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether a loop exists</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Checks whether there is a loop in the authorization item hierarchy.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="usingSqlite()-detail">
+		usingSqlite()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_rbac_dbmanager.html#usingSqlite()-detail">usingSqlite</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether the database is a SQLite database</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+			</div><!-- end of content -->
+
+		<div id="apiFooter">
+			<p>&copy; 2008-2013 by <a href="http://www.yiisoft.com">Yii Software LLC</a></p>
+			<p>All Rights Reserved.</p>
+		</div><!-- end of footer -->
+
+<script type="text/javascript">
+/*<![CDATA[*/
+$("a.toggle").on('click', function() {
+	var $this = $(this);
+	if ($this.hasClass('properties-hidden')) {
+		$this.text($this.text().replace(/Show/,'Hide'));
+		$this.parents(".summary").find(".inherited").show();
+		$this.removeClass('properties-hidden');
+	} else {
+		$this.text($this.text().replace(/Hide/,'Show'));
+		$this.parents(".summary").find(".inherited").hide();
+		$this.addClass('properties-hidden');
+	}
+	return false;
+});
+/*
+$(".sourceCode a.show").toggle(function(){
+	$(this).text($(this).text().replace(/show/,'hide'));
+	$(this).parents(".sourceCode").find("div.code").show();
+},function(){
+	$(this).text($(this).text().replace(/hide/,'show'));
+	$(this).parents(".sourceCode").find("div.code").hide();
+});
+$("a.sourceLink").click(function(){
+	$(this).attr('target','_blank');
+});
+*/
+/*]]>*/
+</script>
+
+	</div><!-- end of page -->
+</body>
+</html>

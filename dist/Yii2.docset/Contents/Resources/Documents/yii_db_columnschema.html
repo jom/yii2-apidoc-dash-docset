@@ -1,0 +1,500 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="language" content="en" />
+<link href="./assets/4138e429/api.css" rel="stylesheet">
+<link href="./assets/4138e429/style.css" rel="stylesheet">
+<script src="./assets/a91b37a6/jquery.js"></script><title>Yii Framework 2.0 API Documentation</title>
+</head>
+
+<body>
+	<div id="apiPage">
+
+		<div id="apiHeader">
+			<a href="http://www.yiiframework.com">Yii Framework</a> v2.0.0-dev Class Reference
+		</div><!-- end of header -->
+
+		<div id="content">
+		<h1>Class yii\db\ColumnSchema</h1>
+<div id="nav">
+	<a href="index.html">All Classes</a>
+			| <a href="#properties">Properties</a>
+				| <a href="#methods">Methods</a>
+			</div>
+
+<table class="summaryTable docClass">
+	<colgroup>
+		<col class="col-name" />
+		<col class="col-value" />
+	</colgroup>
+			<tr><th>Inheritance</th><td><a href="yii_db_columnschema.html">yii\db\ColumnSchema</a> &raquo;
+<a href="yii_base_object.html">yii\base\Object</a></td></tr>
+				<tr><th>Implements</th><td><a href="yii_base_arrayable.html">yii\base\Arrayable</a></td></tr>
+								<tr><th>Available since version</th><td>2.0</td></tr>
+		<tr>
+	  <th>Source Code</th>
+	  <td></td>
+	</tr>
+</table>
+
+<div id="classDescription">
+	<strong>ColumnSchema class describes the metadata of a column in a database table.</strong>
+	<p></p>
+</div>
+
+<a name="properties"></a>
+
+<div class="summary docProperty">
+<h2>Public Properties</h2>
+
+<p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-property" />
+	<col class="col-type" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Property</th><th>Type</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr id="$name">
+		<td><a href="yii_db_columnschema.html#$name-detail">$name</a></td>
+		<td>string</td>
+		<td>Name of this column (without quotes)</td>
+		<td><a href="yii_db_columnschema.html">yii\db\ColumnSchema</a></td>
+	</tr>
+			<tr id="$allowNull">
+		<td><a href="yii_db_columnschema.html#$allowNull-detail">$allowNull</a></td>
+		<td>boolean</td>
+		<td>Whether this column can be null</td>
+		<td><a href="yii_db_columnschema.html">yii\db\ColumnSchema</a></td>
+	</tr>
+			<tr id="$type">
+		<td><a href="yii_db_columnschema.html#$type-detail">$type</a></td>
+		<td>string</td>
+		<td>Abstract type of this column</td>
+		<td><a href="yii_db_columnschema.html">yii\db\ColumnSchema</a></td>
+	</tr>
+			<tr id="$phpType">
+		<td><a href="yii_db_columnschema.html#$phpType-detail">$phpType</a></td>
+		<td>string</td>
+		<td>The PHP type of this column</td>
+		<td><a href="yii_db_columnschema.html">yii\db\ColumnSchema</a></td>
+	</tr>
+			<tr id="$dbType">
+		<td><a href="yii_db_columnschema.html#$dbType-detail">$dbType</a></td>
+		<td>string</td>
+		<td>The DB type of this column</td>
+		<td><a href="yii_db_columnschema.html">yii\db\ColumnSchema</a></td>
+	</tr>
+			<tr id="$defaultValue">
+		<td><a href="yii_db_columnschema.html#$defaultValue-detail">$defaultValue</a></td>
+		<td>mixed</td>
+		<td>Default value of this column</td>
+		<td><a href="yii_db_columnschema.html">yii\db\ColumnSchema</a></td>
+	</tr>
+			<tr id="$enumValues">
+		<td><a href="yii_db_columnschema.html#$enumValues-detail">$enumValues</a></td>
+		<td>array</td>
+		<td>Enumerable values</td>
+		<td><a href="yii_db_columnschema.html">yii\db\ColumnSchema</a></td>
+	</tr>
+			<tr id="$size">
+		<td><a href="yii_db_columnschema.html#$size-detail">$size</a></td>
+		<td>integer</td>
+		<td>Display size of the column</td>
+		<td><a href="yii_db_columnschema.html">yii\db\ColumnSchema</a></td>
+	</tr>
+			<tr id="$precision">
+		<td><a href="yii_db_columnschema.html#$precision-detail">$precision</a></td>
+		<td>integer</td>
+		<td>Precision of the column data, if it is numeric</td>
+		<td><a href="yii_db_columnschema.html">yii\db\ColumnSchema</a></td>
+	</tr>
+			<tr id="$scale">
+		<td><a href="yii_db_columnschema.html#$scale-detail">$scale</a></td>
+		<td>integer</td>
+		<td>Scale of the column data, if it is numeric</td>
+		<td><a href="yii_db_columnschema.html">yii\db\ColumnSchema</a></td>
+	</tr>
+			<tr id="$isPrimaryKey">
+		<td><a href="yii_db_columnschema.html#$isPrimaryKey-detail">$isPrimaryKey</a></td>
+		<td>boolean</td>
+		<td>Whether this column is a primary key</td>
+		<td><a href="yii_db_columnschema.html">yii\db\ColumnSchema</a></td>
+	</tr>
+			<tr id="$autoIncrement">
+		<td><a href="yii_db_columnschema.html#$autoIncrement-detail">$autoIncrement</a></td>
+		<td>boolean</td>
+		<td>Whether this column is auto-incremental</td>
+		<td><a href="yii_db_columnschema.html">yii\db\ColumnSchema</a></td>
+	</tr>
+			<tr id="$unsigned">
+		<td><a href="yii_db_columnschema.html#$unsigned-detail">$unsigned</a></td>
+		<td>boolean</td>
+		<td>Whether this column is unsigned</td>
+		<td><a href="yii_db_columnschema.html">yii\db\ColumnSchema</a></td>
+	</tr>
+			<tr id="$comment">
+		<td><a href="yii_db_columnschema.html#$comment-detail">$comment</a></td>
+		<td>string</td>
+		<td>Comment of this column</td>
+		<td><a href="yii_db_columnschema.html">yii\db\ColumnSchema</a></td>
+	</tr>
+	</table>
+</div>
+<a name="methods"></a>
+
+<div class="summary docMethod">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr class="inherited" id="className()">
+		<td><a href="yii_base_object.html#className()-detail">className()</a></td>
+		<td></td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__construct()">
+		<td><a href="yii_base_object.html#__construct()-detail">__construct()</a></td>
+		<td>Constructor.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="init()">
+		<td><a href="yii_base_object.html#init()-detail">init()</a></td>
+		<td>Initializes the object.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__get()">
+		<td><a href="yii_base_object.html#__get()-detail">__get()</a></td>
+		<td>Returns the value of an object property.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__set()">
+		<td><a href="yii_base_object.html#__set()-detail">__set()</a></td>
+		<td>Sets value of an object property.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__isset()">
+		<td><a href="yii_base_object.html#__isset()-detail">__isset()</a></td>
+		<td>Checks if the named property is set (not null).</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__unset()">
+		<td><a href="yii_base_object.html#__unset()-detail">__unset()</a></td>
+		<td>Sets an object property to null.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__call()">
+		<td><a href="yii_base_object.html#__call()-detail">__call()</a></td>
+		<td>Calls the named method which is not a class method.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="hasProperty()">
+		<td><a href="yii_base_object.html#hasProperty()-detail">hasProperty()</a></td>
+		<td>Returns a value indicating whether a property is defined.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="canGetProperty()">
+		<td><a href="yii_base_object.html#canGetProperty()-detail">canGetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be read.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="canSetProperty()">
+		<td><a href="yii_base_object.html#canSetProperty()-detail">canSetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be set.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="hasMethod()">
+		<td><a href="yii_base_object.html#hasMethod()-detail">hasMethod()</a></td>
+		<td>Returns a value indicating whether a method is defined.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="toArray()">
+		<td><a href="yii_base_object.html#toArray()-detail">toArray()</a></td>
+		<td>Converts the object into an array.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr id="typecast()">
+		<td><a href="yii_db_columnschema.html#typecast()-detail">typecast()</a></td>
+		<td>Converts the input value according to <a href="yii_db_columnschema.html#$phpType-detail">$phpType</a>.</td>
+		<td><a href="yii_db_columnschema.html">yii\db\ColumnSchema</a></td>
+	</tr>
+	</table>
+</div>
+<a name="events"></a>
+
+<a name="constants"></a>
+
+<h2>Property Details</h2>
+
+
+	<div class="detailHeader" id="$name-detail">
+		$name		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $name = null	</div>
+
+	<p>Name of this column (without quotes).</p>
+
+	
+
+	<div class="detailHeader" id="$allowNull-detail">
+		$allowNull		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	boolean $allowNull = null	</div>
+
+	<p>Whether this column can be null.</p>
+
+	
+
+	<div class="detailHeader" id="$type-detail">
+		$type		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $type = null	</div>
+
+	<p>Abstract type of this column. Possible abstract types include:
+string, text, boolean, smallint, integer, bigint, float, decimal, datetime,
+timestamp, time, date, binary, and money.</p>
+
+	
+
+	<div class="detailHeader" id="$phpType-detail">
+		$phpType		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $phpType = null	</div>
+
+	<p>The PHP type of this column. Possible PHP types include:
+string, boolean, integer, double.</p>
+
+	
+
+	<div class="detailHeader" id="$dbType-detail">
+		$dbType		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $dbType = null	</div>
+
+	<p>The DB type of this column. Possible DB types vary according to the type of DBMS.</p>
+
+	
+
+	<div class="detailHeader" id="$defaultValue-detail">
+		$defaultValue		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	mixed $defaultValue = null	</div>
+
+	<p>Default value of this column</p>
+
+	
+
+	<div class="detailHeader" id="$enumValues-detail">
+		$enumValues		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array $enumValues = null	</div>
+
+	<p>Enumerable values. This is set only if the column is declared to be an enumerable type.</p>
+
+	
+
+	<div class="detailHeader" id="$size-detail">
+		$size		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	integer $size = null	</div>
+
+	<p>Display size of the column.</p>
+
+	
+
+	<div class="detailHeader" id="$precision-detail">
+		$precision		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	integer $precision = null	</div>
+
+	<p>Precision of the column data, if it is numeric.</p>
+
+	
+
+	<div class="detailHeader" id="$scale-detail">
+		$scale		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	integer $scale = null	</div>
+
+	<p>Scale of the column data, if it is numeric.</p>
+
+	
+
+	<div class="detailHeader" id="$isPrimaryKey-detail">
+		$isPrimaryKey		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	boolean $isPrimaryKey = null	</div>
+
+	<p>Whether this column is a primary key</p>
+
+	
+
+	<div class="detailHeader" id="$autoIncrement-detail">
+		$autoIncrement		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	boolean $autoIncrement = false	</div>
+
+	<p>Whether this column is auto-incremental</p>
+
+	
+
+	<div class="detailHeader" id="$unsigned-detail">
+		$unsigned		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	boolean $unsigned = null	</div>
+
+	<p>Whether this column is unsigned. This is only meaningful
+when <a href="yii_db_columnschema.html#$type-detail">$type</a> is <code>smallint</code>, <code>integer</code> or <code>bigint</code>.</p>
+
+	
+
+	<div class="detailHeader" id="$comment-detail">
+		$comment		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $comment = null	</div>
+
+	<p>Comment of this column. Not all DBMS support this.</p>
+
+	
+<h2>Method Details</h2>
+
+
+	<div class="detailHeader" id="typecast()-detail">
+		typecast()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			mixed <a href="yii_db_columnschema.html#typecast()-detail">typecast</a>( $value )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$value</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">Input value</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">converted value</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Converts the input value according to <a href="yii_db_columnschema.html#$phpType-detail">$phpType</a>.</strong></p>
+	<p>If the value is null or an <a href="yii_db_expression.html">yii\db\Expression</a>, it will not be converted.</p>
+
+	
+			</div><!-- end of content -->
+
+		<div id="apiFooter">
+			<p>&copy; 2008-2013 by <a href="http://www.yiisoft.com">Yii Software LLC</a></p>
+			<p>All Rights Reserved.</p>
+		</div><!-- end of footer -->
+
+<script type="text/javascript">
+/*<![CDATA[*/
+$("a.toggle").on('click', function() {
+	var $this = $(this);
+	if ($this.hasClass('properties-hidden')) {
+		$this.text($this.text().replace(/Show/,'Hide'));
+		$this.parents(".summary").find(".inherited").show();
+		$this.removeClass('properties-hidden');
+	} else {
+		$this.text($this.text().replace(/Hide/,'Show'));
+		$this.parents(".summary").find(".inherited").hide();
+		$this.addClass('properties-hidden');
+	}
+	return false;
+});
+/*
+$(".sourceCode a.show").toggle(function(){
+	$(this).text($(this).text().replace(/show/,'hide'));
+	$(this).parents(".sourceCode").find("div.code").show();
+},function(){
+	$(this).text($(this).text().replace(/hide/,'show'));
+	$(this).parents(".sourceCode").find("div.code").hide();
+});
+$("a.sourceLink").click(function(){
+	$(this).attr('target','_blank');
+});
+*/
+/*]]>*/
+</script>
+
+	</div><!-- end of page -->
+</body>
+</html>

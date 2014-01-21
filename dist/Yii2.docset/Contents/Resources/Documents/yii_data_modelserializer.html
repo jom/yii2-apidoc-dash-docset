@@ -1,0 +1,865 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="language" content="en" />
+<link href="./assets/4138e429/api.css" rel="stylesheet">
+<link href="./assets/4138e429/style.css" rel="stylesheet">
+<script src="./assets/a91b37a6/jquery.js"></script><title>Yii Framework 2.0 API Documentation</title>
+</head>
+
+<body>
+	<div id="apiPage">
+
+		<div id="apiHeader">
+			<a href="http://www.yiiframework.com">Yii Framework</a> v2.0.0-dev Class Reference
+		</div><!-- end of header -->
+
+		<div id="content">
+		<h1>Class yii\data\ModelSerializer</h1>
+<div id="nav">
+	<a href="index.html">All Classes</a>
+			| <a href="#properties">Properties</a>
+				| <a href="#methods">Methods</a>
+			</div>
+
+<table class="summaryTable docClass">
+	<colgroup>
+		<col class="col-name" />
+		<col class="col-value" />
+	</colgroup>
+			<tr><th>Inheritance</th><td><a href="yii_data_modelserializer.html">yii\data\ModelSerializer</a> &raquo;
+<a href="yii_base_component.html">yii\base\Component</a> &raquo;
+<a href="yii_base_object.html">yii\base\Object</a></td></tr>
+				<tr><th>Implements</th><td><a href="yii_base_arrayable.html">yii\base\Arrayable</a></td></tr>
+								<tr><th>Available since version</th><td>2.0</td></tr>
+		<tr>
+	  <th>Source Code</th>
+	  <td></td>
+	</tr>
+</table>
+
+<div id="classDescription">
+	<strong>ModelSerializer converts a model or a list of models into an array representation with selected fields.</strong>
+	<p>Used together with <span style="background: #f00;">\yii\web\ResponseFormatter</span>, ModelSerializer can be used to serve model data
+in JSON or XML format for REST APIs.</p>
+
+<p>ModelSerializer provides two methods <a href="yii_data_modelserializer.html#export()-detail">export()</a> and <a href="yii_data_modelserializer.html#exportAll()-detail">exportAll()</a> to convert model(s) into array(s).
+The former works for a single model, while the latter for an array of models.
+During conversion, it will check which fields are requested and only provide valid fields (as declared
+in <a href="yii_data_modelserializer.html#fields()-detail">fields()</a> and <a href="yii_data_modelserializer.html#expand()-detail">expand()</a>) in the array result.</p>
+</div>
+
+<a name="properties"></a>
+
+<div class="summary docProperty">
+<h2>Public Properties</h2>
+
+<p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-property" />
+	<col class="col-type" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Property</th><th>Type</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr id="$modelClass">
+		<td><a href="yii_data_modelserializer.html#$modelClass-detail">$modelClass</a></td>
+		<td>string</td>
+		<td>The model class that this API is serving</td>
+		<td><a href="yii_data_modelserializer.html">yii\data\ModelSerializer</a></td>
+	</tr>
+			<tr id="$context">
+		<td><a href="yii_data_modelserializer.html#$context-detail">$context</a></td>
+		<td>mixed</td>
+		<td>The context information</td>
+		<td><a href="yii_data_modelserializer.html">yii\data\ModelSerializer</a></td>
+	</tr>
+			<tr id="$fields">
+		<td><a href="yii_data_modelserializer.html#$fields-detail">$fields</a></td>
+		<td>array|string</td>
+		<td>An array or a string of comma separated field names representing
+which fields should be returned</td>
+		<td><a href="yii_data_modelserializer.html">yii\data\ModelSerializer</a></td>
+	</tr>
+			<tr id="$expand">
+		<td><a href="yii_data_modelserializer.html#$expand-detail">$expand</a></td>
+		<td>array|string</td>
+		<td>An array or a string of comma separated field names representing
+which fields should be returned in addition to those declared in <a href="yii_data_modelserializer.html#fields()-detail">fields()</a></td>
+		<td><a href="yii_data_modelserializer.html">yii\data\ModelSerializer</a></td>
+	</tr>
+			<tr id="$validationErrorCode">
+		<td><a href="yii_data_modelserializer.html#$validationErrorCode-detail">$validationErrorCode</a></td>
+		<td>integer</td>
+		<td>The error code to be used in the result of <a href="yii_data_modelserializer.html#exportErrors()-detail">exportErrors()</a></td>
+		<td><a href="yii_data_modelserializer.html">yii\data\ModelSerializer</a></td>
+	</tr>
+			<tr id="$validationErrorMessage">
+		<td><a href="yii_data_modelserializer.html#$validationErrorMessage-detail">$validationErrorMessage</a></td>
+		<td>string</td>
+		<td>The error message to be used in the result of <a href="yii_data_modelserializer.html#exportErrors()-detail">exportErrors()</a></td>
+		<td><a href="yii_data_modelserializer.html">yii\data\ModelSerializer</a></td>
+	</tr>
+			<tr id="$serializers">
+		<td><a href="yii_data_modelserializer.html#$serializers-detail">$serializers</a></td>
+		<td>array</td>
+		<td>A list of serializer classes indexed by their corresponding model classes</td>
+		<td><a href="yii_data_modelserializer.html">yii\data\ModelSerializer</a></td>
+	</tr>
+			<tr id="$serializerPaths">
+		<td><a href="yii_data_modelserializer.html#$serializerPaths-detail">$serializerPaths</a></td>
+		<td>array</td>
+		<td>A list of paths or path aliases specifying how to look for a serializer class
+given a model class</td>
+		<td><a href="yii_data_modelserializer.html">yii\data\ModelSerializer</a></td>
+	</tr>
+			<tr id="$behaviors">
+		<td><a href="yii_data_modelserializer.html#$behaviors-detail">$behaviors</a></td>
+		<td><a href="yii_base_behavior.html">yii\base\Behavior</a>[]</td>
+		<td>list of behaviors attached to this component</td>
+		<td><a href="yii_data_modelserializer.html">yii\data\ModelSerializer</a></td>
+	</tr>
+	</table>
+</div>
+<a name="methods"></a>
+
+<div class="summary docMethod">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr class="inherited" id="className()">
+		<td><a href="yii_base_object.html#className()-detail">className()</a></td>
+		<td></td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__construct()">
+		<td><a href="yii_base_object.html#__construct()-detail">__construct()</a></td>
+		<td>Constructor.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr id="init()">
+		<td><a href="yii_data_modelserializer.html#init()-detail">init()</a></td>
+		<td></td>
+		<td><a href="yii_data_modelserializer.html">yii\data\ModelSerializer</a></td>
+	</tr>
+			<tr class="inherited" id="__get()">
+		<td><a href="yii_base_component.html#__get()-detail">__get()</a></td>
+		<td>Returns the value of a component property.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__set()">
+		<td><a href="yii_base_component.html#__set()-detail">__set()</a></td>
+		<td>Sets the value of a component property.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__isset()">
+		<td><a href="yii_base_component.html#__isset()-detail">__isset()</a></td>
+		<td>Checks if a property value is null.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__unset()">
+		<td><a href="yii_base_component.html#__unset()-detail">__unset()</a></td>
+		<td>Sets a component property to be null.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__call()">
+		<td><a href="yii_base_component.html#__call()-detail">__call()</a></td>
+		<td>Calls the named method which is not a class method.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasProperty()">
+		<td><a href="yii_base_component.html#hasProperty()-detail">hasProperty()</a></td>
+		<td>Returns a value indicating whether a property is defined for this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="canGetProperty()">
+		<td><a href="yii_base_component.html#canGetProperty()-detail">canGetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be read.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="canSetProperty()">
+		<td><a href="yii_base_component.html#canSetProperty()-detail">canSetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be set.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasMethod()">
+		<td><a href="yii_base_component.html#hasMethod()-detail">hasMethod()</a></td>
+		<td>Returns a value indicating whether a method is defined.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="toArray()">
+		<td><a href="yii_base_object.html#toArray()-detail">toArray()</a></td>
+		<td>Converts the object into an array.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__clone()">
+		<td><a href="yii_base_component.html#__clone()-detail">__clone()</a></td>
+		<td>This method is called after the object is created by cloning an existing one.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="behaviors()">
+		<td><a href="yii_base_component.html#behaviors()-detail">behaviors()</a></td>
+		<td>Returns a list of behaviors that this component should behave as.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasEventHandlers()">
+		<td><a href="yii_base_component.html#hasEventHandlers()-detail">hasEventHandlers()</a></td>
+		<td>Returns a value indicating whether there is any handler attached to the named event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="on()">
+		<td><a href="yii_base_component.html#on()-detail">on()</a></td>
+		<td>Attaches an event handler to an event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="off()">
+		<td><a href="yii_base_component.html#off()-detail">off()</a></td>
+		<td>Detaches an existing event handler from this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="trigger()">
+		<td><a href="yii_base_component.html#trigger()-detail">trigger()</a></td>
+		<td>Triggers an event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="getBehavior()">
+		<td><a href="yii_base_component.html#getBehavior()-detail">getBehavior()</a></td>
+		<td>Returns the named behavior object.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="getBehaviors()">
+		<td><a href="yii_base_component.html#getBehaviors()-detail">getBehaviors()</a></td>
+		<td>Returns all behaviors attached to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="attachBehavior()">
+		<td><a href="yii_base_component.html#attachBehavior()-detail">attachBehavior()</a></td>
+		<td>Attaches a behavior to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="attachBehaviors()">
+		<td><a href="yii_base_component.html#attachBehaviors()-detail">attachBehaviors()</a></td>
+		<td>Attaches a list of behaviors to the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="detachBehavior()">
+		<td><a href="yii_base_component.html#detachBehavior()-detail">detachBehavior()</a></td>
+		<td>Detaches a behavior from the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="detachBehaviors()">
+		<td><a href="yii_base_component.html#detachBehaviors()-detail">detachBehaviors()</a></td>
+		<td>Detaches all behaviors from the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="ensureBehaviors()">
+		<td><a href="yii_base_component.html#ensureBehaviors()-detail">ensureBehaviors()</a></td>
+		<td>Makes sure that the behaviors declared in <a href="yii_base_component.html#behaviors()-detail">behaviors()</a> are attached to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr id="export()">
+		<td><a href="yii_data_modelserializer.html#export()-detail">export()</a></td>
+		<td>Exports a model object by converting it into an array based on the specified fields.</td>
+		<td><a href="yii_data_modelserializer.html">yii\data\ModelSerializer</a></td>
+	</tr>
+			<tr id="exportAll()">
+		<td><a href="yii_data_modelserializer.html#exportAll()-detail">exportAll()</a></td>
+		<td>Exports an array of model objects by converting it into an array based on the specified fields.</td>
+		<td><a href="yii_data_modelserializer.html">yii\data\ModelSerializer</a></td>
+	</tr>
+			<tr id="exportErrors()">
+		<td><a href="yii_data_modelserializer.html#exportErrors()-detail">exportErrors()</a></td>
+		<td>Exports the model validation errors.</td>
+		<td><a href="yii_data_modelserializer.html">yii\data\ModelSerializer</a></td>
+	</tr>
+								</table>
+</div>
+<div class="summary docMethod">
+<h2>Protected Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+																															<tr id="fields()">
+		<td><a href="yii_data_modelserializer.html#fields()-detail">fields()</a></td>
+		<td>Returns a list of fields that can be returned to end users.</td>
+		<td><a href="yii_data_modelserializer.html">yii\data\ModelSerializer</a></td>
+	</tr>
+			<tr id="expand()">
+		<td><a href="yii_data_modelserializer.html#expand()-detail">expand()</a></td>
+		<td>Returns a list of additional fields that can be returned to end users.</td>
+		<td><a href="yii_data_modelserializer.html">yii\data\ModelSerializer</a></td>
+	</tr>
+			<tr id="filter()">
+		<td><a href="yii_data_modelserializer.html#filter()-detail">filter()</a></td>
+		<td>Filters the data to be exported to end user.</td>
+		<td><a href="yii_data_modelserializer.html">yii\data\ModelSerializer</a></td>
+	</tr>
+			<tr id="getSerializer()">
+		<td><a href="yii_data_modelserializer.html#getSerializer()-detail">getSerializer()</a></td>
+		<td>Returns the serializer for the specified model class.</td>
+		<td><a href="yii_data_modelserializer.html">yii\data\ModelSerializer</a></td>
+	</tr>
+			<tr id="createSerializer()">
+		<td><a href="yii_data_modelserializer.html#createSerializer()-detail">createSerializer()</a></td>
+		<td>Creates a serializer object for the specified model class.</td>
+		<td><a href="yii_data_modelserializer.html">yii\data\ModelSerializer</a></td>
+	</tr>
+			<tr id="resolveFields()">
+		<td><a href="yii_data_modelserializer.html#resolveFields()-detail">resolveFields()</a></td>
+		<td>Returns the fields of the model that need to be returned to end user</td>
+		<td><a href="yii_data_modelserializer.html">yii\data\ModelSerializer</a></td>
+	</tr>
+			<tr id="exportObject()">
+		<td><a href="yii_data_modelserializer.html#exportObject()-detail">exportObject()</a></td>
+		<td>Exports an object by converting it into an array based on the given field definitions.</td>
+		<td><a href="yii_data_modelserializer.html">yii\data\ModelSerializer</a></td>
+	</tr>
+	</table>
+</div>
+<a name="events"></a>
+
+<a name="constants"></a>
+
+<h2>Property Details</h2>
+
+
+	<div class="detailHeader" id="$modelClass-detail">
+		$modelClass		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $modelClass = null	</div>
+
+	<p>The model class that this API is serving. If not set, it will be initialized
+as the class of the model(s) being exported by <a href="yii_data_modelserializer.html#export()-detail">export()</a> or <a href="yii_data_modelserializer.html#exportAll()-detail">exportAll()</a>.</p>
+
+	
+
+	<div class="detailHeader" id="$context-detail">
+		$context		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	mixed $context = null	</div>
+
+	<p>The context information. If not set, it will be initialized as the "user" application component.
+You can use the context information to conditionally control which fields can be returned for a model.</p>
+
+	
+
+	<div class="detailHeader" id="$fields-detail">
+		$fields		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array|string $fields = null	</div>
+
+	<p>An array or a string of comma separated field names representing
+which fields should be returned. Only fields declared in <a href="yii_data_modelserializer.html#fields()-detail">fields()</a> will be respected.
+If this property is empty, all fields declared in <a href="yii_data_modelserializer.html#fields()-detail">fields()</a> will be returned.</p>
+
+	
+
+	<div class="detailHeader" id="$expand-detail">
+		$expand		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array|string $expand = null	</div>
+
+	<p>An array or a string of comma separated field names representing
+which fields should be returned in addition to those declared in <a href="yii_data_modelserializer.html#fields()-detail">fields()</a>.
+Only fields declared in <a href="yii_data_modelserializer.html#expand()-detail">expand()</a> will be respected.</p>
+
+	
+
+	<div class="detailHeader" id="$validationErrorCode-detail">
+		$validationErrorCode		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	integer $validationErrorCode = 1024	</div>
+
+	<p>The error code to be used in the result of <a href="yii_data_modelserializer.html#exportErrors()-detail">exportErrors()</a>.</p>
+
+	
+
+	<div class="detailHeader" id="$validationErrorMessage-detail">
+		$validationErrorMessage		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $validationErrorMessage = 'Validation Failed'	</div>
+
+	<p>The error message to be used in the result of <a href="yii_data_modelserializer.html#exportErrors()-detail">exportErrors()</a>.</p>
+
+	
+
+	<div class="detailHeader" id="$serializers-detail">
+		$serializers		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array $serializers = []	</div>
+
+	<p>A list of serializer classes indexed by their corresponding model classes.
+This property is used by <a href="yii_data_modelserializer.html#createSerializer()-detail">createSerializer()</a> to serialize embedded objects.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_data_modelserializer.html#createSerializer()-detail">createSerializer()</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="$serializerPaths-detail">
+		$serializerPaths		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array $serializerPaths = ['@app/serializers']	</div>
+
+	<p>A list of paths or path aliases specifying how to look for a serializer class
+given a model class. If the base name of a model class is <code>Xyz</code>, the corresponding
+serializer class being looked for would be <code>XyzSerializer</code> under each of the paths listed here.</p>
+
+	
+
+	<div class="detailHeader" id="$behaviors-detail">
+		$behaviors		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_base_behavior.html">yii\base\Behavior</a>[] <a href="yii_base_component.html#getBehaviors()-detail">getBehaviors</a>(  )	</div>
+
+	<p>list of behaviors attached to this component</p>
+
+	
+<h2>Method Details</h2>
+
+
+	<div class="detailHeader" id="init()-detail">
+		init()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_data_modelserializer.html#init()-detail">init</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="export()-detail">
+		export()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			array <a href="yii_data_modelserializer.html#export()-detail">export</a>( $model )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$model</td>
+				  <td class="paramTypeCol"><a href="yii_base_model.html">yii\base\Model</a></td>
+				  <td class="paramDescCol">The model being exported</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">the exported data</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Exports a model object by converting it into an array based on the specified fields.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="exportAll()-detail">
+		exportAll()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			array <a href="yii_data_modelserializer.html#exportAll()-detail">exportAll</a>( array $models )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$models</td>
+				  <td class="paramTypeCol"><a href="yii_base_model.html">yii\base\Model</a>[]</td>
+				  <td class="paramDescCol">The models being exported</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">the exported data</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Exports an array of model objects by converting it into an array based on the specified fields.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="exportErrors()-detail">
+		exportErrors()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			array <a href="yii_data_modelserializer.html#exportErrors()-detail">exportErrors</a>( $model )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$model</td>
+				  <td class="paramTypeCol"><a href="yii_base_model.html">yii\base\Model</a></td>
+				  <td class="paramDescCol"></td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Exports the model validation errors.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="fields()-detail">
+		fields()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			array <a href="yii_data_modelserializer.html#fields()-detail">fields</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">field name => attribute name or definition</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns a list of fields that can be returned to end users.</strong></p>
+	<p>These are the fields that should be returned by default when a user does not explicitly specify which
+fields to return for a model. If the user explicitly which fields to return, only the fields declared
+in this method can be returned. All other fields will be ignored.</p>
+
+<p>By default, this method returns <a href="yii_base_model.html#attributes()-detail">yii\base\Model::attributes()</a>, which are the attributes defined by a model.</p>
+
+<p>You may override this method to select which fields can be returned or define new fields based
+on model attributes.</p>
+
+<p>The value returned by this method should be an array of field definitions. The array keys
+are the field names, and the array values are the corresponding attribute names or callbacks
+returning field values. If a field name is the same as the corresponding attribute name,
+you can use the field name without a key.</p>
+
+	
+
+	<div class="detailHeader" id="expand()-detail">
+		expand()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			array <a href="yii_data_modelserializer.html#expand()-detail">expand</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">field name => attribute name or definition</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns a list of additional fields that can be returned to end users.</strong></p>
+	<p>The default implementation returns an empty array. You may override this method to return
+a list of additional fields that can be returned to end users. Please refer to <a href="yii_data_modelserializer.html#fields()-detail">fields()</a>
+on the format of the return value.</p>
+
+<p>You usually override this method by returning a list of relation names.</p>
+
+	
+
+	<div class="detailHeader" id="filter()-detail">
+		filter()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			array <a href="yii_data_modelserializer.html#filter()-detail">filter</a>( $data )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$data</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The data being exported</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">the filtered data</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Filters the data to be exported to end user.</strong></p>
+	<p>The default implementation does nothing. You may override this method to remove
+certain fields from the data being exported based on the <a href="yii_data_modelserializer.html#$context-detail">$context</a> information.
+You may also use this method to add some common fields, such as class name, to the data.</p>
+
+	
+
+	<div class="detailHeader" id="getSerializer()-detail">
+		getSerializer()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			static <a href="yii_data_modelserializer.html#getSerializer()-detail">getSerializer</a>( $modelClass )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$modelClass</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Fully qualified model class name</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">static</td>
+				  <td class="paramDescCol">the serializer</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the serializer for the specified model class.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="createSerializer()-detail">
+		createSerializer()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			<a href="yii_data_modelserializer.html">yii\data\ModelSerializer</a> <a href="yii_data_modelserializer.html#createSerializer()-detail">createSerializer</a>( $modelClass )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$modelClass</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The model class</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol"><a href="yii_data_modelserializer.html">yii\data\ModelSerializer</a></td>
+				  <td class="paramDescCol">the new model serializer</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Creates a serializer object for the specified model class.</strong></p>
+	<p><p>This method tries to create an appropriate serializer using the following algorithm:</p>
+
+<ul>
+<li>Check if <a href="yii_data_modelserializer.html#$serializers-detail">$serializers</a> specifies the serializer class for the model class and
+create an instance of it if available;</li>
+<li>Search for a class named <code>XyzSerializer</code> under the paths specified by <a href="yii_data_modelserializer.html#$serializerPaths-detail">$serializerPaths</a>,
+where <code>Xyz</code> stands for the model class.</li>
+<li>If both of the above two strategies fail, simply return an instance of <code>ModelSerializer</code>.</li>
+</ul></p>
+
+	
+
+	<div class="detailHeader" id="resolveFields()-detail">
+		resolveFields()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			array <a href="yii_data_modelserializer.html#resolveFields()-detail">resolveFields</a>( $fields, $expand )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$fields</td>
+				  <td class="paramTypeCol">string|array</td>
+				  <td class="paramDescCol">An array or a string of comma separated field names representing
+which fields should be returned.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$expand</td>
+				  <td class="paramTypeCol">string|array</td>
+				  <td class="paramDescCol">An array or a string of comma separated field names representing
+which additional fields should be returned.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">field name => field definition (attribute name or callback)</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the fields of the model that need to be returned to end user</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="exportObject()-detail">
+		exportObject()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			array <a href="yii_data_modelserializer.html#exportObject()-detail">exportObject</a>( $model, $fields )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$model</td>
+				  <td class="paramTypeCol">object</td>
+				  <td class="paramDescCol">The model being exported</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$fields</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">Field definitions (field name => field definition)</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">the exported model data</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Exports an object by converting it into an array based on the given field definitions.</strong></p>
+	<p></p>
+
+	
+			</div><!-- end of content -->
+
+		<div id="apiFooter">
+			<p>&copy; 2008-2013 by <a href="http://www.yiisoft.com">Yii Software LLC</a></p>
+			<p>All Rights Reserved.</p>
+		</div><!-- end of footer -->
+
+<script type="text/javascript">
+/*<![CDATA[*/
+$("a.toggle").on('click', function() {
+	var $this = $(this);
+	if ($this.hasClass('properties-hidden')) {
+		$this.text($this.text().replace(/Show/,'Hide'));
+		$this.parents(".summary").find(".inherited").show();
+		$this.removeClass('properties-hidden');
+	} else {
+		$this.text($this.text().replace(/Hide/,'Show'));
+		$this.parents(".summary").find(".inherited").hide();
+		$this.addClass('properties-hidden');
+	}
+	return false;
+});
+/*
+$(".sourceCode a.show").toggle(function(){
+	$(this).text($(this).text().replace(/show/,'hide'));
+	$(this).parents(".sourceCode").find("div.code").show();
+},function(){
+	$(this).text($(this).text().replace(/hide/,'show'));
+	$(this).parents(".sourceCode").find("div.code").hide();
+});
+$("a.sourceLink").click(function(){
+	$(this).attr('target','_blank');
+});
+*/
+/*]]>*/
+</script>
+
+	</div><!-- end of page -->
+</body>
+</html>

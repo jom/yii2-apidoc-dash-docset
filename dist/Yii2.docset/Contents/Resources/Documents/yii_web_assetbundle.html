@@ -1,0 +1,526 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="language" content="en" />
+<link href="./assets/4138e429/api.css" rel="stylesheet">
+<link href="./assets/4138e429/style.css" rel="stylesheet">
+<script src="./assets/a91b37a6/jquery.js"></script><title>Yii Framework 2.0 API Documentation</title>
+</head>
+
+<body>
+	<div id="apiPage">
+
+		<div id="apiHeader">
+			<a href="http://www.yiiframework.com">Yii Framework</a> v2.0.0-dev Class Reference
+		</div><!-- end of header -->
+
+		<div id="content">
+		<h1>Class yii\web\AssetBundle</h1>
+<div id="nav">
+	<a href="index.html">All Classes</a>
+			| <a href="#properties">Properties</a>
+				| <a href="#methods">Methods</a>
+			</div>
+
+<table class="summaryTable docClass">
+	<colgroup>
+		<col class="col-name" />
+		<col class="col-value" />
+	</colgroup>
+			<tr><th>Inheritance</th><td><a href="yii_web_assetbundle.html">yii\web\AssetBundle</a> &raquo;
+<a href="yii_base_object.html">yii\base\Object</a></td></tr>
+				<tr><th>Implements</th><td><a href="yii_base_arrayable.html">yii\base\Arrayable</a></td></tr>
+					<tr><th>Subclasses</th><td><a href="yii_bootstrap_bootstrapasset.html">yii\bootstrap\BootstrapAsset</a>, <a href="yii_bootstrap_bootstrappluginasset.html">yii\bootstrap\BootstrapPluginAsset</a>, <a href="yii_bootstrap_bootstrapthemeasset.html">yii\bootstrap\BootstrapThemeAsset</a>, <a href="yii_captcha_captchaasset.html">yii\captcha\CaptchaAsset</a>, <a href="yii_debug_debugasset.html">yii\debug\DebugAsset</a>, <a href="yii_gii_giiasset.html">yii\gii\GiiAsset</a>, <a href="yii_grid_gridviewasset.html">yii\grid\GridViewAsset</a>, <a href="yii_jui_accordionasset.html">yii\jui\AccordionAsset</a>, <a href="yii_jui_autocompleteasset.html">yii\jui\AutoCompleteAsset</a>, <a href="yii_jui_buttonasset.html">yii\jui\ButtonAsset</a>, <a href="yii_jui_coreasset.html">yii\jui\CoreAsset</a>, <a href="yii_jui_datepickerasset.html">yii\jui\DatePickerAsset</a>, <a href="yii_jui_datepickerregionalasset.html">yii\jui\DatePickerRegionalAsset</a>, <a href="yii_jui_dialogasset.html">yii\jui\DialogAsset</a>, <a href="yii_jui_draggableasset.html">yii\jui\DraggableAsset</a>, <a href="yii_jui_droppableasset.html">yii\jui\DroppableAsset</a>, <a href="yii_jui_effectasset.html">yii\jui\EffectAsset</a>, <a href="yii_jui_menuasset.html">yii\jui\MenuAsset</a>, <a href="yii_jui_progressbarasset.html">yii\jui\ProgressBarAsset</a>, <a href="yii_jui_resizableasset.html">yii\jui\ResizableAsset</a>, <a href="yii_jui_selectableasset.html">yii\jui\SelectableAsset</a>, <a href="yii_jui_sliderasset.html">yii\jui\SliderAsset</a>, <a href="yii_jui_sortableasset.html">yii\jui\SortableAsset</a>, <a href="yii_jui_spinnerasset.html">yii\jui\SpinnerAsset</a>, <a href="yii_jui_tabsasset.html">yii\jui\TabsAsset</a>, <a href="yii_jui_themeasset.html">yii\jui\ThemeAsset</a>, <a href="yii_jui_tooltipasset.html">yii\jui\TooltipAsset</a>, <a href="yii_validators_punycodeasset.html">yii\validators\PunycodeAsset</a>, <a href="yii_validators_validationasset.html">yii\validators\ValidationAsset</a>, <a href="yii_web_jqueryasset.html">yii\web\JqueryAsset</a>, <a href="yii_web_yiiasset.html">yii\web\YiiAsset</a>, <a href="yii_widgets_activeformasset.html">yii\widgets\ActiveFormAsset</a>, <a href="yii_widgets_maskedinputasset.html">yii\widgets\MaskedInputAsset</a></td></tr>
+						<tr><th>Available since version</th><td>2.0</td></tr>
+		<tr>
+	  <th>Source Code</th>
+	  <td></td>
+	</tr>
+</table>
+
+<div id="classDescription">
+	<strong>AssetBundle represents a collection of asset files, such as CSS, JS, images.</strong>
+	<p>Each asset bundle has a unique name that globally identifies it among all asset bundles used in an application.
+The name is the <a href="http://php.net/manual/en/language.namespaces.rules.php">fully qualified class name</a>
+of the class representing it.</p>
+
+<p>An asset bundle can depend on other asset bundles. When registering an asset bundle
+with a view, all its dependent asset bundles will be automatically registered.</p>
+</div>
+
+<a name="properties"></a>
+
+<div class="summary docProperty">
+<h2>Public Properties</h2>
+
+<p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-property" />
+	<col class="col-type" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Property</th><th>Type</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr id="$sourcePath">
+		<td><a href="yii_web_assetbundle.html#$sourcePath-detail">$sourcePath</a></td>
+		<td>string</td>
+		<td>The root directory of the source asset files</td>
+		<td><a href="yii_web_assetbundle.html">yii\web\AssetBundle</a></td>
+	</tr>
+			<tr id="$basePath">
+		<td><a href="yii_web_assetbundle.html#$basePath-detail">$basePath</a></td>
+		<td>string</td>
+		<td>The Web-accessible directory that contains the asset files in this bundle</td>
+		<td><a href="yii_web_assetbundle.html">yii\web\AssetBundle</a></td>
+	</tr>
+			<tr id="$baseUrl">
+		<td><a href="yii_web_assetbundle.html#$baseUrl-detail">$baseUrl</a></td>
+		<td>string</td>
+		<td>The base URL that will be prefixed to the asset files for them to
+be accessed via Web server</td>
+		<td><a href="yii_web_assetbundle.html">yii\web\AssetBundle</a></td>
+	</tr>
+			<tr id="$depends">
+		<td><a href="yii_web_assetbundle.html#$depends-detail">$depends</a></td>
+		<td>array</td>
+		<td>List of bundle class names that this bundle depends on</td>
+		<td><a href="yii_web_assetbundle.html">yii\web\AssetBundle</a></td>
+	</tr>
+			<tr id="$js">
+		<td><a href="yii_web_assetbundle.html#$js-detail">$js</a></td>
+		<td>array</td>
+		<td>List of JavaScript files that this bundle contains</td>
+		<td><a href="yii_web_assetbundle.html">yii\web\AssetBundle</a></td>
+	</tr>
+			<tr id="$css">
+		<td><a href="yii_web_assetbundle.html#$css-detail">$css</a></td>
+		<td>array</td>
+		<td>List of CSS files that this bundle contains</td>
+		<td><a href="yii_web_assetbundle.html">yii\web\AssetBundle</a></td>
+	</tr>
+			<tr id="$jsOptions">
+		<td><a href="yii_web_assetbundle.html#$jsOptions-detail">$jsOptions</a></td>
+		<td>array</td>
+		<td>The options that will be passed to <a href="yii_web_view.html#registerJsFile()-detail">yii\web\View::registerJsFile()</a>
+when registering the JS files in this bundle</td>
+		<td><a href="yii_web_assetbundle.html">yii\web\AssetBundle</a></td>
+	</tr>
+			<tr id="$cssOptions">
+		<td><a href="yii_web_assetbundle.html#$cssOptions-detail">$cssOptions</a></td>
+		<td>array</td>
+		<td>The options that will be passed to <a href="yii_web_view.html#registerCssFile()-detail">yii\web\View::registerCssFile()</a>
+when registering the CSS files in this bundle</td>
+		<td><a href="yii_web_assetbundle.html">yii\web\AssetBundle</a></td>
+	</tr>
+			<tr id="$publishOptions">
+		<td><a href="yii_web_assetbundle.html#$publishOptions-detail">$publishOptions</a></td>
+		<td>array</td>
+		<td>The options to be passed to <a href="yii_web_assetmanager.html#publish()-detail">yii\web\AssetManager::publish()</a> when the asset bundle
+is being published</td>
+		<td><a href="yii_web_assetbundle.html">yii\web\AssetBundle</a></td>
+	</tr>
+	</table>
+</div>
+<a name="methods"></a>
+
+<div class="summary docMethod">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr class="inherited" id="className()">
+		<td><a href="yii_base_object.html#className()-detail">className()</a></td>
+		<td></td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__construct()">
+		<td><a href="yii_base_object.html#__construct()-detail">__construct()</a></td>
+		<td>Constructor.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr id="init()">
+		<td><a href="yii_web_assetbundle.html#init()-detail">init()</a></td>
+		<td>Initializes the bundle.</td>
+		<td><a href="yii_web_assetbundle.html">yii\web\AssetBundle</a></td>
+	</tr>
+			<tr class="inherited" id="__get()">
+		<td><a href="yii_base_object.html#__get()-detail">__get()</a></td>
+		<td>Returns the value of an object property.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__set()">
+		<td><a href="yii_base_object.html#__set()-detail">__set()</a></td>
+		<td>Sets value of an object property.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__isset()">
+		<td><a href="yii_base_object.html#__isset()-detail">__isset()</a></td>
+		<td>Checks if the named property is set (not null).</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__unset()">
+		<td><a href="yii_base_object.html#__unset()-detail">__unset()</a></td>
+		<td>Sets an object property to null.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__call()">
+		<td><a href="yii_base_object.html#__call()-detail">__call()</a></td>
+		<td>Calls the named method which is not a class method.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="hasProperty()">
+		<td><a href="yii_base_object.html#hasProperty()-detail">hasProperty()</a></td>
+		<td>Returns a value indicating whether a property is defined.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="canGetProperty()">
+		<td><a href="yii_base_object.html#canGetProperty()-detail">canGetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be read.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="canSetProperty()">
+		<td><a href="yii_base_object.html#canSetProperty()-detail">canSetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be set.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="hasMethod()">
+		<td><a href="yii_base_object.html#hasMethod()-detail">hasMethod()</a></td>
+		<td>Returns a value indicating whether a method is defined.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="toArray()">
+		<td><a href="yii_base_object.html#toArray()-detail">toArray()</a></td>
+		<td>Converts the object into an array.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr id="register()">
+		<td><a href="yii_web_assetbundle.html#register()-detail">register()</a></td>
+		<td></td>
+		<td><a href="yii_web_assetbundle.html">yii\web\AssetBundle</a></td>
+	</tr>
+			<tr id="registerAssetFiles()">
+		<td><a href="yii_web_assetbundle.html#registerAssetFiles()-detail">registerAssetFiles()</a></td>
+		<td>Registers the CSS and JS files with the given view.</td>
+		<td><a href="yii_web_assetbundle.html">yii\web\AssetBundle</a></td>
+	</tr>
+			<tr id="publish()">
+		<td><a href="yii_web_assetbundle.html#publish()-detail">publish()</a></td>
+		<td>Publishes the asset bundle if its source code is not under Web-accessible directory.</td>
+		<td><a href="yii_web_assetbundle.html">yii\web\AssetBundle</a></td>
+	</tr>
+	</table>
+</div>
+<a name="events"></a>
+
+<a name="constants"></a>
+
+<h2>Property Details</h2>
+
+
+	<div class="detailHeader" id="$sourcePath-detail">
+		$sourcePath		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $sourcePath = null	</div>
+
+	<p>The root directory of the source asset files. A source asset file
+is a file that is part of your source code repository of your Web application.
+You must set this property if the directory containing the source asset files
+is not Web accessible (this is usually the case for extensions).
+By setting this property, the asset manager will publish the source asset files
+to a Web-accessible directory <a href="yii_web_assetbundle.html#$basePath-detail">$basePath</a>.
+You can use either a directory or an alias of the directory.</p>
+
+	
+
+	<div class="detailHeader" id="$basePath-detail">
+		$basePath		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $basePath = null	</div>
+
+	<p>The Web-accessible directory that contains the asset files in this bundle.
+If <a href="yii_web_assetbundle.html#$sourcePath-detail">$sourcePath</a> is set, this property will be <em>overwritten</em> by <a href="yii_web_assetmanager.html">yii\web\AssetManager</a>
+when it publishes the asset files from <a href="yii_web_assetbundle.html#$sourcePath-detail">$sourcePath</a>.
+If the bundle contains any assets that are specified in terms of relative file path,
+then this property must be set either manually or automatically (by <a href="yii_web_assetmanager.html">yii\web\AssetManager</a> via
+asset publishing).
+You can use either a directory or an alias of the directory.</p>
+
+	
+
+	<div class="detailHeader" id="$baseUrl-detail">
+		$baseUrl		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $baseUrl = null	</div>
+
+	<p>The base URL that will be prefixed to the asset files for them to
+be accessed via Web server.
+If <a href="yii_web_assetbundle.html#$sourcePath-detail">$sourcePath</a> is set, this property will be <em>overwritten</em> by <a href="yii_web_assetmanager.html">yii\web\AssetManager</a>
+when it publishes the asset files from <a href="yii_web_assetbundle.html#$sourcePath-detail">$sourcePath</a>.
+If the bundle contains any assets that are specified in terms of relative file path,
+then this property must be set either manually or automatically (by asset manager via
+asset publishing).
+You can use either a URL or an alias of the URL.</p>
+
+	
+
+	<div class="detailHeader" id="$depends-detail">
+		$depends		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array $depends = []	</div>
+
+	<p>List of bundle class names that this bundle depends on.
+For example:
+<code>php
+public $depends = [
+   'yii\web\YiiAsset',
+   'yii\bootstrap\BootstrapAsset',
+];</code></p>
+
+	
+
+	<div class="detailHeader" id="$js-detail">
+		$js		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array $js = []	</div>
+
+	<p>List of JavaScript files that this bundle contains. Each JavaScript file can
+be either a file path (without leading slash) relative to <a href="yii_web_assetbundle.html#$basePath-detail">$basePath</a> or a URL representing
+an external JavaScript file.
+Note that only forward slash "/" can be used as directory separator.</p>
+
+	
+
+	<div class="detailHeader" id="$css-detail">
+		$css		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array $css = []	</div>
+
+	<p>List of CSS files that this bundle contains. Each CSS file can
+be either a file path (without leading slash) relative to <a href="yii_web_assetbundle.html#$basePath-detail">$basePath</a> or a URL representing
+an external CSS file.
+Note that only forward slash "/" can be used as directory separator.</p>
+
+	
+
+	<div class="detailHeader" id="$jsOptions-detail">
+		$jsOptions		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array $jsOptions = []	</div>
+
+	<p>The options that will be passed to <a href="yii_web_view.html#registerJsFile()-detail">yii\web\View::registerJsFile()</a>
+when registering the JS files in this bundle.</p>
+
+	
+
+	<div class="detailHeader" id="$cssOptions-detail">
+		$cssOptions		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array $cssOptions = []	</div>
+
+	<p>The options that will be passed to <a href="yii_web_view.html#registerCssFile()-detail">yii\web\View::registerCssFile()</a>
+when registering the CSS files in this bundle.</p>
+
+	
+
+	<div class="detailHeader" id="$publishOptions-detail">
+		$publishOptions		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array $publishOptions = []	</div>
+
+	<p>The options to be passed to <a href="yii_web_assetmanager.html#publish()-detail">yii\web\AssetManager::publish()</a> when the asset bundle
+is being published.</p>
+
+	
+<h2>Method Details</h2>
+
+
+	<div class="detailHeader" id="init()-detail">
+		init()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_web_assetbundle.html#init()-detail">init</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p>Initializes the bundle.</strong></p>
+	<p>If you override this method, make sure you call the parent implementation in the last.</p>
+
+	
+
+	<div class="detailHeader" id="register()-detail">
+		register()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			<a href="yii_web_assetbundle.html">yii\web\AssetBundle</a> <a href="yii_web_assetbundle.html#register()-detail">register</a>( $view )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$view</td>
+				  <td class="paramTypeCol"><a href="yii_web_view.html">yii\web\View</a></td>
+				  <td class="paramDescCol"></td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol"><a href="yii_web_assetbundle.html">yii\web\AssetBundle</a></td>
+				  <td class="paramDescCol">the registered asset bundle instance</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="registerAssetFiles()-detail">
+		registerAssetFiles()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_web_assetbundle.html#registerAssetFiles()-detail">registerAssetFiles</a>( $view )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$view</td>
+				  <td class="paramTypeCol"><a href="yii_web_view.html">yii\web\View</a></td>
+				  <td class="paramDescCol">The view that the asset files are to be registered with.</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Registers the CSS and JS files with the given view.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="publish()-detail">
+		publish()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_web_assetbundle.html#publish()-detail">publish</a>( $am )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$am</td>
+				  <td class="paramTypeCol"><a href="yii_web_assetmanager.html">yii\web\AssetManager</a></td>
+				  <td class="paramDescCol">The asset manager to perform the asset publishing</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Publishes the asset bundle if its source code is not under Web-accessible directory.</strong></p>
+	<p>It will also try to convert non-CSS or JS files (e.g. LESS, Sass) into the corresponding
+CSS or JS files using <a href="yii_web_assetmanager.html#$converter-detail">asset converter</a>.</p>
+
+	
+			</div><!-- end of content -->
+
+		<div id="apiFooter">
+			<p>&copy; 2008-2013 by <a href="http://www.yiisoft.com">Yii Software LLC</a></p>
+			<p>All Rights Reserved.</p>
+		</div><!-- end of footer -->
+
+<script type="text/javascript">
+/*<![CDATA[*/
+$("a.toggle").on('click', function() {
+	var $this = $(this);
+	if ($this.hasClass('properties-hidden')) {
+		$this.text($this.text().replace(/Show/,'Hide'));
+		$this.parents(".summary").find(".inherited").show();
+		$this.removeClass('properties-hidden');
+	} else {
+		$this.text($this.text().replace(/Hide/,'Show'));
+		$this.parents(".summary").find(".inherited").hide();
+		$this.addClass('properties-hidden');
+	}
+	return false;
+});
+/*
+$(".sourceCode a.show").toggle(function(){
+	$(this).text($(this).text().replace(/show/,'hide'));
+	$(this).parents(".sourceCode").find("div.code").show();
+},function(){
+	$(this).text($(this).text().replace(/hide/,'show'));
+	$(this).parents(".sourceCode").find("div.code").hide();
+});
+$("a.sourceLink").click(function(){
+	$(this).attr('target','_blank');
+});
+*/
+/*]]>*/
+</script>
+
+	</div><!-- end of page -->
+</body>
+</html>

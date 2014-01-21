@@ -1,0 +1,1344 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="language" content="en" />
+<link href="./assets/4138e429/api.css" rel="stylesheet">
+<link href="./assets/4138e429/style.css" rel="stylesheet">
+<script src="./assets/a91b37a6/jquery.js"></script><title>Yii Framework 2.0 API Documentation</title>
+</head>
+
+<body>
+	<div id="apiPage">
+
+		<div id="apiHeader">
+			<a href="http://www.yiiframework.com">Yii Framework</a> v2.0.0-dev Class Reference
+		</div><!-- end of header -->
+
+		<div id="content">
+		<h1>Class yii\web\User</h1>
+<div id="nav">
+	<a href="index.html">All Classes</a>
+			| <a href="#properties">Properties</a>
+				| <a href="#methods">Methods</a>
+					| <a href="#constants">Constants</a>
+	</div>
+
+<table class="summaryTable docClass">
+	<colgroup>
+		<col class="col-name" />
+		<col class="col-value" />
+	</colgroup>
+			<tr><th>Inheritance</th><td><a href="yii_web_user.html">yii\web\User</a> &raquo;
+<a href="yii_base_component.html">yii\base\Component</a> &raquo;
+<a href="yii_base_object.html">yii\base\Object</a></td></tr>
+				<tr><th>Implements</th><td><a href="yii_base_arrayable.html">yii\base\Arrayable</a></td></tr>
+								<tr><th>Available since version</th><td>2.0</td></tr>
+		<tr>
+	  <th>Source Code</th>
+	  <td></td>
+	</tr>
+</table>
+
+<div id="classDescription">
+	<strong>User is the class for the "user" application component that manages the user authentication status.</strong>
+	<p><p>In particular, <a href="yii_web_user.html#$isGuest-detail">yii\web\User::$isGuest</a> returns a value indicating whether the current user is a guest or not.
+Through methods <a href="yii_web_user.html#login()-detail">login()</a> and <a href="yii_web_user.html#logout()-detail">logout()</a>, you can change the user authentication status.</p>
+
+<p>User works with a class implementing the <a href="yii_web_identityinterface.html">yii\web\IdentityInterface</a>. This class implements
+the actual user authentication logic and is often backed by a user database table.</p>
+
+<p>User is configured as an application component in <span style="background: #f00;">\yii\web\yii\web\Application</span> by default.
+You can access that instance via <code>Yii::$app-&gt;user</code>.</p>
+
+<p>You can modify its configuration by adding an array to your application config under <code>components</code>
+as it is shown in the following example:</p>
+
+<pre><code>'user' =&gt; [
+    'identityClass' =&gt; 'app\models\User', // User must implement the IdentityInterface
+    'enableAutoLogin' =&gt; true,
+    // 'loginUrl' =&gt; ['user/login'],
+    // ...
+]
+</code></pre></p>
+</div>
+
+<a name="properties"></a>
+
+<div class="summary docProperty">
+<h2>Public Properties</h2>
+
+<p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-property" />
+	<col class="col-type" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Property</th><th>Type</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr id="$identityClass">
+		<td><a href="yii_web_user.html#$identityClass-detail">$identityClass</a></td>
+		<td>string</td>
+		<td>The class name of the <a href="yii_web_user.html#$identity-detail">$identity</a> object</td>
+		<td><a href="yii_web_user.html">yii\web\User</a></td>
+	</tr>
+			<tr id="$enableAutoLogin">
+		<td><a href="yii_web_user.html#$enableAutoLogin-detail">$enableAutoLogin</a></td>
+		<td>boolean</td>
+		<td>Whether to enable cookie-based login</td>
+		<td><a href="yii_web_user.html">yii\web\User</a></td>
+	</tr>
+			<tr id="$loginUrl">
+		<td><a href="yii_web_user.html#$loginUrl-detail">$loginUrl</a></td>
+		<td>string|array</td>
+		<td>The URL for login when <a href="yii_web_user.html#loginRequired()-detail">loginRequired()</a> is called</td>
+		<td><a href="yii_web_user.html">yii\web\User</a></td>
+	</tr>
+			<tr id="$identityCookie">
+		<td><a href="yii_web_user.html#$identityCookie-detail">$identityCookie</a></td>
+		<td>array</td>
+		<td>The configuration of the identity cookie</td>
+		<td><a href="yii_web_user.html">yii\web\User</a></td>
+	</tr>
+			<tr id="$authTimeout">
+		<td><a href="yii_web_user.html#$authTimeout-detail">$authTimeout</a></td>
+		<td>integer</td>
+		<td>The number of seconds in which the user will be logged out automatically if he
+remains inactive</td>
+		<td><a href="yii_web_user.html">yii\web\User</a></td>
+	</tr>
+			<tr id="$autoRenewCookie">
+		<td><a href="yii_web_user.html#$autoRenewCookie-detail">$autoRenewCookie</a></td>
+		<td>boolean</td>
+		<td>Whether to automatically renew the identity cookie each time a page is requested</td>
+		<td><a href="yii_web_user.html">yii\web\User</a></td>
+	</tr>
+			<tr id="$idVar">
+		<td><a href="yii_web_user.html#$idVar-detail">$idVar</a></td>
+		<td>string</td>
+		<td>The session variable name used to store the value of <a href="yii_web_user.html#$id-detail">$id</a></td>
+		<td><a href="yii_web_user.html">yii\web\User</a></td>
+	</tr>
+			<tr id="$authTimeoutVar">
+		<td><a href="yii_web_user.html#$authTimeoutVar-detail">$authTimeoutVar</a></td>
+		<td>string</td>
+		<td>The session variable name used to store the value of expiration timestamp of the authenticated state</td>
+		<td><a href="yii_web_user.html">yii\web\User</a></td>
+	</tr>
+			<tr id="$returnUrlVar">
+		<td><a href="yii_web_user.html#$returnUrlVar-detail">$returnUrlVar</a></td>
+		<td>string</td>
+		<td>The session variable name used to store the value of <a href="yii_web_user.html#$returnUrl-detail">$returnUrl</a></td>
+		<td><a href="yii_web_user.html">yii\web\User</a></td>
+	</tr>
+			<tr id="$behaviors">
+		<td><a href="yii_web_user.html#$behaviors-detail">$behaviors</a></td>
+		<td><a href="yii_base_behavior.html">yii\base\Behavior</a>[]</td>
+		<td>list of behaviors attached to this component</td>
+		<td><a href="yii_web_user.html">yii\web\User</a></td>
+	</tr>
+			<tr id="$identity">
+		<td><a href="yii_web_user.html#$identity-detail">$identity</a></td>
+		<td><a href="yii_web_identityinterface.html">yii\web\IdentityInterface</a></td>
+		<td>the identity object associated with the currently logged user</td>
+		<td><a href="yii_web_user.html">yii\web\User</a></td>
+	</tr>
+			<tr id="$isGuest">
+		<td><a href="yii_web_user.html#$isGuest-detail">$isGuest</a></td>
+		<td>boolean</td>
+		<td>whether the current user is a guest</td>
+		<td><a href="yii_web_user.html">yii\web\User</a></td>
+	</tr>
+			<tr id="$id">
+		<td><a href="yii_web_user.html#$id-detail">$id</a></td>
+		<td>string|integer</td>
+		<td>the unique identifier for the user</td>
+		<td><a href="yii_web_user.html">yii\web\User</a></td>
+	</tr>
+			<tr id="$returnUrl">
+		<td><a href="yii_web_user.html#$returnUrl-detail">$returnUrl</a></td>
+		<td>string</td>
+		<td>the URL that the user should be redirected to after login</td>
+		<td><a href="yii_web_user.html">yii\web\User</a></td>
+	</tr>
+	</table>
+</div>
+<a name="methods"></a>
+
+<div class="summary docMethod">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr class="inherited" id="className()">
+		<td><a href="yii_base_object.html#className()-detail">className()</a></td>
+		<td></td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__construct()">
+		<td><a href="yii_base_object.html#__construct()-detail">__construct()</a></td>
+		<td>Constructor.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr id="init()">
+		<td><a href="yii_web_user.html#init()-detail">init()</a></td>
+		<td>Initializes the application component.</td>
+		<td><a href="yii_web_user.html">yii\web\User</a></td>
+	</tr>
+			<tr class="inherited" id="__get()">
+		<td><a href="yii_base_component.html#__get()-detail">__get()</a></td>
+		<td>Returns the value of a component property.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__set()">
+		<td><a href="yii_base_component.html#__set()-detail">__set()</a></td>
+		<td>Sets the value of a component property.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__isset()">
+		<td><a href="yii_base_component.html#__isset()-detail">__isset()</a></td>
+		<td>Checks if a property value is null.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__unset()">
+		<td><a href="yii_base_component.html#__unset()-detail">__unset()</a></td>
+		<td>Sets a component property to be null.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__call()">
+		<td><a href="yii_base_component.html#__call()-detail">__call()</a></td>
+		<td>Calls the named method which is not a class method.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasProperty()">
+		<td><a href="yii_base_component.html#hasProperty()-detail">hasProperty()</a></td>
+		<td>Returns a value indicating whether a property is defined for this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="canGetProperty()">
+		<td><a href="yii_base_component.html#canGetProperty()-detail">canGetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be read.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="canSetProperty()">
+		<td><a href="yii_base_component.html#canSetProperty()-detail">canSetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be set.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasMethod()">
+		<td><a href="yii_base_component.html#hasMethod()-detail">hasMethod()</a></td>
+		<td>Returns a value indicating whether a method is defined.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="toArray()">
+		<td><a href="yii_base_object.html#toArray()-detail">toArray()</a></td>
+		<td>Converts the object into an array.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__clone()">
+		<td><a href="yii_base_component.html#__clone()-detail">__clone()</a></td>
+		<td>This method is called after the object is created by cloning an existing one.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="behaviors()">
+		<td><a href="yii_base_component.html#behaviors()-detail">behaviors()</a></td>
+		<td>Returns a list of behaviors that this component should behave as.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasEventHandlers()">
+		<td><a href="yii_base_component.html#hasEventHandlers()-detail">hasEventHandlers()</a></td>
+		<td>Returns a value indicating whether there is any handler attached to the named event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="on()">
+		<td><a href="yii_base_component.html#on()-detail">on()</a></td>
+		<td>Attaches an event handler to an event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="off()">
+		<td><a href="yii_base_component.html#off()-detail">off()</a></td>
+		<td>Detaches an existing event handler from this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="trigger()">
+		<td><a href="yii_base_component.html#trigger()-detail">trigger()</a></td>
+		<td>Triggers an event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="getBehavior()">
+		<td><a href="yii_base_component.html#getBehavior()-detail">getBehavior()</a></td>
+		<td>Returns the named behavior object.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="getBehaviors()">
+		<td><a href="yii_base_component.html#getBehaviors()-detail">getBehaviors()</a></td>
+		<td>Returns all behaviors attached to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="attachBehavior()">
+		<td><a href="yii_base_component.html#attachBehavior()-detail">attachBehavior()</a></td>
+		<td>Attaches a behavior to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="attachBehaviors()">
+		<td><a href="yii_base_component.html#attachBehaviors()-detail">attachBehaviors()</a></td>
+		<td>Attaches a list of behaviors to the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="detachBehavior()">
+		<td><a href="yii_base_component.html#detachBehavior()-detail">detachBehavior()</a></td>
+		<td>Detaches a behavior from the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="detachBehaviors()">
+		<td><a href="yii_base_component.html#detachBehaviors()-detail">detachBehaviors()</a></td>
+		<td>Detaches all behaviors from the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="ensureBehaviors()">
+		<td><a href="yii_base_component.html#ensureBehaviors()-detail">ensureBehaviors()</a></td>
+		<td>Makes sure that the behaviors declared in <a href="yii_base_component.html#behaviors()-detail">behaviors()</a> are attached to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr id="getIdentity()">
+		<td><a href="yii_web_user.html#getIdentity()-detail">getIdentity()</a></td>
+		<td>Returns the identity object associated with the currently logged user.</td>
+		<td><a href="yii_web_user.html">yii\web\User</a></td>
+	</tr>
+			<tr id="setIdentity()">
+		<td><a href="yii_web_user.html#setIdentity()-detail">setIdentity()</a></td>
+		<td>Sets the identity object.</td>
+		<td><a href="yii_web_user.html">yii\web\User</a></td>
+	</tr>
+			<tr id="login()">
+		<td><a href="yii_web_user.html#login()-detail">login()</a></td>
+		<td>Logs in a user.</td>
+		<td><a href="yii_web_user.html">yii\web\User</a></td>
+	</tr>
+				<tr id="logout()">
+		<td><a href="yii_web_user.html#logout()-detail">logout()</a></td>
+		<td>Logs out the current user.</td>
+		<td><a href="yii_web_user.html">yii\web\User</a></td>
+	</tr>
+			<tr id="getIsGuest()">
+		<td><a href="yii_web_user.html#getIsGuest()-detail">getIsGuest()</a></td>
+		<td>Returns a value indicating whether the user is a guest (not authenticated).</td>
+		<td><a href="yii_web_user.html">yii\web\User</a></td>
+	</tr>
+			<tr id="getId()">
+		<td><a href="yii_web_user.html#getId()-detail">getId()</a></td>
+		<td>Returns a value that uniquely represents the user.</td>
+		<td><a href="yii_web_user.html">yii\web\User</a></td>
+	</tr>
+			<tr id="getReturnUrl()">
+		<td><a href="yii_web_user.html#getReturnUrl()-detail">getReturnUrl()</a></td>
+		<td>Returns the URL that the user should be redirected to after successful login.</td>
+		<td><a href="yii_web_user.html">yii\web\User</a></td>
+	</tr>
+			<tr id="setReturnUrl()">
+		<td><a href="yii_web_user.html#setReturnUrl()-detail">setReturnUrl()</a></td>
+		<td></td>
+		<td><a href="yii_web_user.html">yii\web\User</a></td>
+	</tr>
+			<tr id="loginRequired()">
+		<td><a href="yii_web_user.html#loginRequired()-detail">loginRequired()</a></td>
+		<td>Redirects the user browser to the login page.</td>
+		<td><a href="yii_web_user.html">yii\web\User</a></td>
+	</tr>
+									<tr id="switchIdentity()">
+		<td><a href="yii_web_user.html#switchIdentity()-detail">switchIdentity()</a></td>
+		<td>Switches to a new identity for the current user.</td>
+		<td><a href="yii_web_user.html">yii\web\User</a></td>
+	</tr>
+				<tr id="checkAccess()">
+		<td><a href="yii_web_user.html#checkAccess()-detail">checkAccess()</a></td>
+		<td>Performs access check for this user.</td>
+		<td><a href="yii_web_user.html">yii\web\User</a></td>
+	</tr>
+	</table>
+</div>
+<div class="summary docMethod">
+<h2>Protected Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+																															<tr id="loginByCookie()">
+		<td><a href="yii_web_user.html#loginByCookie()-detail">loginByCookie()</a></td>
+		<td>Logs in a user by cookie.</td>
+		<td><a href="yii_web_user.html">yii\web\User</a></td>
+	</tr>
+									<tr id="beforeLogin()">
+		<td><a href="yii_web_user.html#beforeLogin()-detail">beforeLogin()</a></td>
+		<td>This method is called before logging in a user.</td>
+		<td><a href="yii_web_user.html">yii\web\User</a></td>
+	</tr>
+			<tr id="afterLogin()">
+		<td><a href="yii_web_user.html#afterLogin()-detail">afterLogin()</a></td>
+		<td>This method is called after the user is successfully logged in.</td>
+		<td><a href="yii_web_user.html">yii\web\User</a></td>
+	</tr>
+			<tr id="beforeLogout()">
+		<td><a href="yii_web_user.html#beforeLogout()-detail">beforeLogout()</a></td>
+		<td>This method is invoked when calling <a href="yii_web_user.html#logout()-detail">logout()</a> to log out a user.</td>
+		<td><a href="yii_web_user.html">yii\web\User</a></td>
+	</tr>
+			<tr id="afterLogout()">
+		<td><a href="yii_web_user.html#afterLogout()-detail">afterLogout()</a></td>
+		<td>This method is invoked right after a user is logged out via <a href="yii_web_user.html#logout()-detail">logout()</a>.</td>
+		<td><a href="yii_web_user.html">yii\web\User</a></td>
+	</tr>
+			<tr id="renewIdentityCookie()">
+		<td><a href="yii_web_user.html#renewIdentityCookie()-detail">renewIdentityCookie()</a></td>
+		<td>Renews the identity cookie.</td>
+		<td><a href="yii_web_user.html">yii\web\User</a></td>
+	</tr>
+			<tr id="sendIdentityCookie()">
+		<td><a href="yii_web_user.html#sendIdentityCookie()-detail">sendIdentityCookie()</a></td>
+		<td>Sends an identity cookie.</td>
+		<td><a href="yii_web_user.html">yii\web\User</a></td>
+	</tr>
+				<tr id="renewAuthStatus()">
+		<td><a href="yii_web_user.html#renewAuthStatus()-detail">renewAuthStatus()</a></td>
+		<td>Updates the authentication status according to <a href="yii_web_user.html#$authTimeout-detail">$authTimeout</a>.</td>
+		<td><a href="yii_web_user.html">yii\web\User</a></td>
+	</tr>
+		</table>
+</div>
+<a name="events"></a>
+
+<a name="constants"></a>
+<div class="summary docConst">
+<h2>Constants</h2>
+
+<p><a href="#" class="toggle">Hide inherited constants</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-const" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Constant</th><th>Value</th><th>Description</th><th>Defined By</th>
+</tr>
+	<tr id="EVENT_BEFORE_LOGIN">
+	  <td>EVENT_BEFORE_LOGIN<a name="EVENT_BEFORE_LOGIN-detail"></a></td>
+	  <td>'beforeLogin'</td>
+	  <td></td>
+	  <td><a href="yii_web_user.html">yii\web\User</a></td>
+	</tr>
+	<tr id="EVENT_AFTER_LOGIN">
+	  <td>EVENT_AFTER_LOGIN<a name="EVENT_AFTER_LOGIN-detail"></a></td>
+	  <td>'afterLogin'</td>
+	  <td></td>
+	  <td><a href="yii_web_user.html">yii\web\User</a></td>
+	</tr>
+	<tr id="EVENT_BEFORE_LOGOUT">
+	  <td>EVENT_BEFORE_LOGOUT<a name="EVENT_BEFORE_LOGOUT-detail"></a></td>
+	  <td>'beforeLogout'</td>
+	  <td></td>
+	  <td><a href="yii_web_user.html">yii\web\User</a></td>
+	</tr>
+	<tr id="EVENT_AFTER_LOGOUT">
+	  <td>EVENT_AFTER_LOGOUT<a name="EVENT_AFTER_LOGOUT-detail"></a></td>
+	  <td>'afterLogout'</td>
+	  <td></td>
+	  <td><a href="yii_web_user.html">yii\web\User</a></td>
+	</tr>
+</table>
+</div>
+<h2>Property Details</h2>
+
+
+	<div class="detailHeader" id="$identityClass-detail">
+		$identityClass		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $identityClass = null	</div>
+
+	<p>The class name of the <a href="yii_web_user.html#$identity-detail">$identity</a> object.</p>
+
+	
+
+	<div class="detailHeader" id="$enableAutoLogin-detail">
+		$enableAutoLogin		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	boolean $enableAutoLogin = false	</div>
+
+	<p>Whether to enable cookie-based login. Defaults to false.</p>
+
+	
+
+	<div class="detailHeader" id="$loginUrl-detail">
+		$loginUrl		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string|array $loginUrl = ['site/login']	</div>
+
+	<p>The URL for login when <a href="yii_web_user.html#loginRequired()-detail">loginRequired()</a> is called.
+If an array is given, <a href="yii_web_urlmanager.html#createUrl()-detail">yii\web\UrlManager::createUrl()</a> will be called to create the corresponding URL.
+The first element of the array should be the route to the login action, and the rest of
+the name-value pairs are GET parameters used to construct the login URL. For example,</p>
+
+<pre><code>['site/login', 'ref' =&gt; 1]
+</code></pre>
+
+<p>If this property is null, a 403 HTTP exception will be raised when <a href="yii_web_user.html#loginRequired()-detail">loginRequired()</a> is called.</p>
+
+	
+
+	<div class="detailHeader" id="$identityCookie-detail">
+		$identityCookie		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array $identityCookie = ['name' => '_identity', 'httpOnly' => true]	</div>
+
+	<p>The configuration of the identity cookie. This property is used only when <a href="yii_web_user.html#$enableAutoLogin-detail">$enableAutoLogin</a> is true.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_web_cookie.html">yii\web\Cookie</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="$authTimeout-detail">
+		$authTimeout		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	integer $authTimeout = null	</div>
+
+	<p>The number of seconds in which the user will be logged out automatically if he
+remains inactive. If this property is not set, the user will be logged out after
+the current session expires (c.f. <a href="yii_web_session.html#$timeout-detail">yii\web\Session::$timeout</a>).</p>
+
+	
+
+	<div class="detailHeader" id="$autoRenewCookie-detail">
+		$autoRenewCookie		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	boolean $autoRenewCookie = true	</div>
+
+	<p>Whether to automatically renew the identity cookie each time a page is requested.
+This property is effective only when <a href="yii_web_user.html#$enableAutoLogin-detail">$enableAutoLogin</a> is true.
+When this is false, the identity cookie will expire after the specified duration since the user
+is initially logged in. When this is true, the identity cookie will expire after the specified duration
+since the user visits the site the last time.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_web_user.html#$enableAutoLogin-detail">$enableAutoLogin</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="$idVar-detail">
+		$idVar		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $idVar = '__id'	</div>
+
+	<p>The session variable name used to store the value of <a href="yii_web_user.html#$id-detail">$id</a>.</p>
+
+	
+
+	<div class="detailHeader" id="$authTimeoutVar-detail">
+		$authTimeoutVar		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $authTimeoutVar = '__expire'	</div>
+
+	<p>The session variable name used to store the value of expiration timestamp of the authenticated state.
+This is used when <a href="yii_web_user.html#$authTimeout-detail">$authTimeout</a> is set.</p>
+
+	
+
+	<div class="detailHeader" id="$returnUrlVar-detail">
+		$returnUrlVar		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $returnUrlVar = '__returnUrl'	</div>
+
+	<p>The session variable name used to store the value of <a href="yii_web_user.html#$returnUrl-detail">$returnUrl</a>.</p>
+
+	
+
+	<div class="detailHeader" id="$behaviors-detail">
+		$behaviors		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_base_behavior.html">yii\base\Behavior</a>[] <a href="yii_base_component.html#getBehaviors()-detail">getBehaviors</a>(  )	</div>
+
+	<p>list of behaviors attached to this component</p>
+
+	
+
+	<div class="detailHeader" id="$identity-detail">
+		$identity		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_web_identityinterface.html">yii\web\IdentityInterface</a> <a href="yii_web_user.html#getIdentity()-detail">getIdentity</a>(  )<br />void <a href="yii_web_user.html#setIdentity()-detail">setIdentity</a>( $identity )	</div>
+
+	<p>the identity object associated with the currently logged user.
+Null is returned if the user is not logged in (not authenticated).</p>
+
+	
+
+	<div class="detailHeader" id="$isGuest-detail">
+		$isGuest		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	boolean <a href="yii_web_user.html#getIsGuest()-detail">getIsGuest</a>(  )	</div>
+
+	<p>whether the current user is a guest.</p>
+
+	
+
+	<div class="detailHeader" id="$id-detail">
+		$id		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	string|integer <a href="yii_web_user.html#getId()-detail">getId</a>(  )	</div>
+
+	<p>the unique identifier for the user. If null, it means the user is a guest.</p>
+
+	
+
+	<div class="detailHeader" id="$returnUrl-detail">
+		$returnUrl		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string <a href="yii_web_user.html#getReturnUrl()-detail">getReturnUrl</a>( $defaultUrl = null )<br />void <a href="yii_web_user.html#setReturnUrl()-detail">setReturnUrl</a>( $url )	</div>
+
+	<p>the URL that the user should be redirected to after login.</p>
+
+	
+<h2>Method Details</h2>
+
+
+	<div class="detailHeader" id="init()-detail">
+		init()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_web_user.html#init()-detail">init</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p>Initializes the application component.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getIdentity()-detail">
+		getIdentity()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			<a href="yii_web_identityinterface.html">yii\web\IdentityInterface</a> <a href="yii_web_user.html#getIdentity()-detail">getIdentity</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol"><a href="yii_web_identityinterface.html">yii\web\IdentityInterface</a></td>
+				  <td class="paramDescCol">the identity object associated with the currently logged user.
+Null is returned if the user is not logged in (not authenticated).</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the identity object associated with the currently logged user.</strong></p>
+	<p></p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_web_user.html#login()-detail">login()</a></li>
+	<li><a href="yii_web_user.html#logout()-detail">logout()</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="setIdentity()-detail">
+		setIdentity()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_web_user.html#setIdentity()-detail">setIdentity</a>( $identity )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$identity</td>
+				  <td class="paramTypeCol"><a href="yii_web_identityinterface.html">yii\web\IdentityInterface</a></td>
+				  <td class="paramDescCol">The identity object associated with the currently logged user.</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Sets the identity object.</strong></p>
+	<p>This method should be mainly be used by the User component or its child class
+to maintain the identity object.</p>
+
+<p>You should normally update the user identity via methods <a href="yii_web_user.html#login()-detail">login()</a>, <a href="yii_web_user.html#logout()-detail">logout()</a>
+or <a href="yii_web_user.html#switchIdentity()-detail">switchIdentity()</a>.</p>
+
+	
+
+	<div class="detailHeader" id="login()-detail">
+		login()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_web_user.html#login()-detail">login</a>( $identity, $duration = 0 )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$identity</td>
+				  <td class="paramTypeCol"><a href="yii_web_identityinterface.html">yii\web\IdentityInterface</a></td>
+				  <td class="paramDescCol">The user identity (which should already be authenticated)</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$duration</td>
+				  <td class="paramTypeCol">integer</td>
+				  <td class="paramDescCol">Number of seconds that the user can remain in logged-in status.
+Defaults to 0, meaning login till the user closes the browser or the session is manually destroyed.
+If greater than 0 and <a href="yii_web_user.html#$enableAutoLogin-detail">$enableAutoLogin</a> is true, cookie-based login will be supported.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether the user is logged in</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Logs in a user.</strong></p>
+	<p>This method stores the necessary session information to keep track
+of the user identity information. If <code>$duration</code> is greater than 0
+and <a href="yii_web_user.html#$enableAutoLogin-detail">$enableAutoLogin</a> is true, it will also send out an identity
+cookie to support cookie-based login.</p>
+
+	
+
+	<div class="detailHeader" id="loginByCookie()-detail">
+		loginByCookie()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_web_user.html#loginByCookie()-detail">loginByCookie</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p>Logs in a user by cookie.</strong></p>
+	<p>This method attempts to log in a user using the ID and authKey information
+provided by the given cookie.</p>
+
+	
+
+	<div class="detailHeader" id="logout()-detail">
+		logout()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_web_user.html#logout()-detail">logout</a>( $destroySession = true )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$destroySession</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">Whether to destroy the whole session. Defaults to true.</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Logs out the current user.</strong></p>
+	<p>This will remove authentication-related session data.
+If <code>$destroySession</code> is true, all session data will be removed.</p>
+
+	
+
+	<div class="detailHeader" id="getIsGuest()-detail">
+		getIsGuest()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_web_user.html#getIsGuest()-detail">getIsGuest</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether the current user is a guest.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns a value indicating whether the user is a guest (not authenticated).</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getId()-detail">
+		getId()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string|integer <a href="yii_web_user.html#getId()-detail">getId</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string|integer</td>
+				  <td class="paramDescCol">the unique identifier for the user. If null, it means the user is a guest.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns a value that uniquely represents the user.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getReturnUrl()-detail">
+		getReturnUrl()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_web_user.html#getReturnUrl()-detail">getReturnUrl</a>( $defaultUrl = null )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$defaultUrl</td>
+				  <td class="paramTypeCol">string|array</td>
+				  <td class="paramDescCol">The default return URL in case it was not set previously.
+If this is null and the return URL was not set previously, <a href="yii_web_application.html#$homeUrl-detail">yii\web\Application::$homeUrl</a> will be redirected to.
+Please refer to <a href="yii_web_user.html#setReturnUrl()-detail">setReturnUrl()</a> on accepted format of the URL.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the URL that the user should be redirected to after login.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the URL that the user should be redirected to after successful login.</strong></p>
+	<p>This property is usually used by the login action. If the login is successful,
+the action should read this property and use it to redirect the user browser.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_web_user.html#loginRequired()-detail">loginRequired()</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="setReturnUrl()-detail">
+		setReturnUrl()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_web_user.html#setReturnUrl()-detail">setReturnUrl</a>( $url )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$url</td>
+				  <td class="paramTypeCol">string|array</td>
+				  <td class="paramDescCol"><p>The URL that the user should be redirected to after login.
+If an array is given, <a href="yii_web_urlmanager.html#createUrl()-detail">yii\web\UrlManager::createUrl()</a> will be called to create the corresponding URL.
+The first element of the array should be the route, and the rest of
+the name-value pairs are GET parameters used to construct the URL. For example,</p>
+
+<pre><code>['admin/index', 'ref' =&gt; 1]
+</code></pre></td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="loginRequired()-detail">
+		loginRequired()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			<a href="yii_web_response.html">yii\web\Response</a> <a href="yii_web_user.html#loginRequired()-detail">loginRequired</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol"><a href="yii_web_response.html">yii\web\Response</a></td>
+				  <td class="paramDescCol">the redirection response if <a href="yii_web_user.html#$loginUrl-detail">$loginUrl</a> is set</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_web_accessdeniedhttpexception.html">yii\web\AccessDeniedHttpException</a></td>
+				  <td class="paramDescCol">the "Access Denied" HTTP exception if <a href="yii_web_user.html#$loginUrl-detail">$loginUrl</a> is not set</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Redirects the user browser to the login page.</strong></p>
+	<p>Before the redirection, the current URL (if it's not an AJAX url) will be
+kept as <a href="yii_web_user.html#$returnUrl-detail">$returnUrl</a> so that the user browser may be redirected back
+to the current page after successful login. Make sure you set <a href="yii_web_user.html#$loginUrl-detail">$loginUrl</a>
+so that the user browser can be redirected to the specified login URL after
+calling this method.</p>
+
+<p>Note that when <a href="yii_web_user.html#$loginUrl-detail">$loginUrl</a> is set, calling this method will NOT terminate the application execution.</p>
+
+	
+
+	<div class="detailHeader" id="beforeLogin()-detail">
+		beforeLogin()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_web_user.html#beforeLogin()-detail">beforeLogin</a>( $identity, $cookieBased )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$identity</td>
+				  <td class="paramTypeCol"><a href="yii_web_identityinterface.html">yii\web\IdentityInterface</a></td>
+				  <td class="paramDescCol">The user identity information</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$cookieBased</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">Whether the login is cookie-based</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether the user should continue to be logged in</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>This method is called before logging in a user.</strong></p>
+	<p>The default implementation will trigger the <a href="yii_web_user.html#EVENT_BEFORE_LOGIN-detail">EVENT_BEFORE_LOGIN</a> event.
+If you override this method, make sure you call the parent implementation
+so that the event is triggered.</p>
+
+	
+
+	<div class="detailHeader" id="afterLogin()-detail">
+		afterLogin()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_web_user.html#afterLogin()-detail">afterLogin</a>( $identity, $cookieBased )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$identity</td>
+				  <td class="paramTypeCol"><a href="yii_web_identityinterface.html">yii\web\IdentityInterface</a></td>
+				  <td class="paramDescCol">The user identity information</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$cookieBased</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">Whether the login is cookie-based</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>This method is called after the user is successfully logged in.</strong></p>
+	<p>The default implementation will trigger the <a href="yii_web_user.html#EVENT_AFTER_LOGIN-detail">EVENT_AFTER_LOGIN</a> event.
+If you override this method, make sure you call the parent implementation
+so that the event is triggered.</p>
+
+	
+
+	<div class="detailHeader" id="beforeLogout()-detail">
+		beforeLogout()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_web_user.html#beforeLogout()-detail">beforeLogout</a>( $identity )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$identity</td>
+				  <td class="paramTypeCol"><a href="yii_web_identityinterface.html">yii\web\IdentityInterface</a></td>
+				  <td class="paramDescCol">The user identity information</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether the user should continue to be logged out</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>This method is invoked when calling <a href="yii_web_user.html#logout()-detail">logout()</a> to log out a user.</strong></p>
+	<p>The default implementation will trigger the <a href="yii_web_user.html#EVENT_BEFORE_LOGOUT-detail">EVENT_BEFORE_LOGOUT</a> event.
+If you override this method, make sure you call the parent implementation
+so that the event is triggered.</p>
+
+	
+
+	<div class="detailHeader" id="afterLogout()-detail">
+		afterLogout()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_web_user.html#afterLogout()-detail">afterLogout</a>( $identity )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$identity</td>
+				  <td class="paramTypeCol"><a href="yii_web_identityinterface.html">yii\web\IdentityInterface</a></td>
+				  <td class="paramDescCol">The user identity information</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>This method is invoked right after a user is logged out via <a href="yii_web_user.html#logout()-detail">logout()</a>.</strong></p>
+	<p>The default implementation will trigger the <a href="yii_web_user.html#EVENT_AFTER_LOGOUT-detail">EVENT_AFTER_LOGOUT</a> event.
+If you override this method, make sure you call the parent implementation
+so that the event is triggered.</p>
+
+	
+
+	<div class="detailHeader" id="renewIdentityCookie()-detail">
+		renewIdentityCookie()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_web_user.html#renewIdentityCookie()-detail">renewIdentityCookie</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p>Renews the identity cookie.</strong></p>
+	<p>This method will set the expiration time of the identity cookie to be the current time
+plus the originally specified cookie duration.</p>
+
+	
+
+	<div class="detailHeader" id="sendIdentityCookie()-detail">
+		sendIdentityCookie()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_web_user.html#sendIdentityCookie()-detail">sendIdentityCookie</a>( $identity, $duration )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$identity</td>
+				  <td class="paramTypeCol"><a href="yii_web_identityinterface.html">yii\web\IdentityInterface</a></td>
+				  <td class="paramDescCol"></td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$duration</td>
+				  <td class="paramTypeCol">integer</td>
+				  <td class="paramDescCol">Number of seconds that the user can remain in logged-in status.</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Sends an identity cookie.</strong></p>
+	<p>This method is used when <a href="yii_web_user.html#$enableAutoLogin-detail">$enableAutoLogin</a> is true.
+It saves <a href="yii_web_user.html#$id-detail">$id</a>, <a href="yii_web_identityinterface.html#getAuthKey()-detail">auth key</a>, and the duration of cookie-based login
+information in the cookie.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_web_user.html#loginByCookie()-detail">loginByCookie()</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="switchIdentity()-detail">
+		switchIdentity()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_web_user.html#switchIdentity()-detail">switchIdentity</a>( $identity, $duration = 0 )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$identity</td>
+				  <td class="paramTypeCol"><a href="yii_web_identityinterface.html">yii\web\IdentityInterface</a></td>
+				  <td class="paramDescCol">The identity information to be associated with the current user.
+If null, it means switching to be a guest.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$duration</td>
+				  <td class="paramTypeCol">integer</td>
+				  <td class="paramDescCol">Number of seconds that the user can remain in logged-in status.
+This parameter is used only when <code>$identity</code> is not null.</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Switches to a new identity for the current user.</strong></p>
+	<p>This method will save necessary session information to keep track of the user authentication status.
+If <code>$duration</code> is provided, it will also send out appropriate identity cookie
+to support cookie-based login.</p>
+
+<p>This method is mainly called by <a href="yii_web_user.html#login()-detail">login()</a>, <a href="yii_web_user.html#logout()-detail">logout()</a> and <a href="yii_web_user.html#loginByCookie()-detail">loginByCookie()</a>
+when the current user needs to be associated with the corresponding identity information.</p>
+
+	
+
+	<div class="detailHeader" id="renewAuthStatus()-detail">
+		renewAuthStatus()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_web_user.html#renewAuthStatus()-detail">renewAuthStatus</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p>Updates the authentication status according to <a href="yii_web_user.html#$authTimeout-detail">$authTimeout</a>.</strong></p>
+	<p>This method is called during <a href="yii_web_user.html#init()-detail">init()</a>.
+It will update the user's authentication status if it has not outdated yet.
+Otherwise, it will logout the user.</p>
+
+	
+
+	<div class="detailHeader" id="checkAccess()-detail">
+		checkAccess()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_web_user.html#checkAccess()-detail">checkAccess</a>( $operation, $params = [], $allowCaching = true )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$operation</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The name of the operation that need access check.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$params</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">Name-value pairs that would be passed to business rules associated
+with the tasks and roles assigned to the user. A param with name 'userId' is added to
+this array, which holds the value of <a href="yii_web_user.html#$id-detail">$id</a> when <span style="background: #f00;">\yii\web\DbAuthManager</span> or
+<span style="background: #f00;">\yii\web\PhpAuthManager</span> is used.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$allowCaching</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">Whether to allow caching the result of access check.
+When this parameter is true (default), if the access check of an operation was performed
+before, its result will be directly returned when calling this method to check the same
+operation. If this parameter is false, this method will always call
+<span style="background: #f00;">\yii\web\AuthManager::checkAccess()</span> to obtain the up-to-date access result. Note that this
+caching is effective only within the same request and only works when <code>$params = []</code>.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether the operations can be performed by this user.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Performs access check for this user.</strong></p>
+	<p></p>
+
+	
+			</div><!-- end of content -->
+
+		<div id="apiFooter">
+			<p>&copy; 2008-2013 by <a href="http://www.yiisoft.com">Yii Software LLC</a></p>
+			<p>All Rights Reserved.</p>
+		</div><!-- end of footer -->
+
+<script type="text/javascript">
+/*<![CDATA[*/
+$("a.toggle").on('click', function() {
+	var $this = $(this);
+	if ($this.hasClass('properties-hidden')) {
+		$this.text($this.text().replace(/Show/,'Hide'));
+		$this.parents(".summary").find(".inherited").show();
+		$this.removeClass('properties-hidden');
+	} else {
+		$this.text($this.text().replace(/Hide/,'Show'));
+		$this.parents(".summary").find(".inherited").hide();
+		$this.addClass('properties-hidden');
+	}
+	return false;
+});
+/*
+$(".sourceCode a.show").toggle(function(){
+	$(this).text($(this).text().replace(/show/,'hide'));
+	$(this).parents(".sourceCode").find("div.code").show();
+},function(){
+	$(this).text($(this).text().replace(/hide/,'show'));
+	$(this).parents(".sourceCode").find("div.code").hide();
+});
+$("a.sourceLink").click(function(){
+	$(this).attr('target','_blank');
+});
+*/
+/*]]>*/
+</script>
+
+	</div><!-- end of page -->
+</body>
+</html>

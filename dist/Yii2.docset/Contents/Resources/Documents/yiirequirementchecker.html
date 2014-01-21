@@ -1,0 +1,729 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="language" content="en" />
+<link href="./assets/4138e429/api.css" rel="stylesheet">
+<link href="./assets/4138e429/style.css" rel="stylesheet">
+<script src="./assets/a91b37a6/jquery.js"></script><title>Yii Framework 2.0 API Documentation</title>
+</head>
+
+<body>
+	<div id="apiPage">
+
+		<div id="apiHeader">
+			<a href="http://www.yiiframework.com">Yii Framework</a> v2.0.0-dev Class Reference
+		</div><!-- end of header -->
+
+		<div id="content">
+		<h1>Class YiiRequirementChecker</h1>
+<div id="nav">
+	<a href="index.html">All Classes</a>
+				| <a href="#methods">Methods</a>
+			</div>
+
+<table class="summaryTable docClass">
+	<colgroup>
+		<col class="col-name" />
+		<col class="col-value" />
+	</colgroup>
+			<tr><th>Inheritance</th><td><a href="yiirequirementchecker.html">YiiRequirementChecker</a></td></tr>
+									<tr><th>Available since version</th><td>2.0</td></tr>
+		<tr>
+	  <th>Source Code</th>
+	  <td></td>
+	</tr>
+</table>
+
+<div id="classDescription">
+	<strong>YiiRequirementChecker allows checking, if current system meets the requirements for running the Yii application.</strong>
+	<p>This class allows rendering of the check report for the web and console application interface.</p>
+
+<p>Example:</p>
+
+<pre><code class="php">require_once('path/to/YiiRequirementChecker.php');
+$requirementsChecker = new YiiRequirementChecker();
+$requirements = array(
+    array(
+        'name' =&gt; 'PHP Some Extension',
+        'mandatory' =&gt; true,
+        'condition' =&gt; extension_loaded('some_extension'),
+        'by' =&gt; 'Some application feature',
+        'memo' =&gt; 'PHP extension "some_extension" required',
+    ),
+);
+$requirementsChecker-&gt;checkYii()-&gt;check($requirements)-&gt;render();
+</code></pre>
+
+<p>If you wish to render the report with your own representation, use <a href="yiirequirementchecker.html#getResult()-detail">getResult()</a> instead of <a href="yiirequirementchecker.html#render()-detail">render()</a></p>
+
+<p>Requirement condition could be in format "eval:PHP expression".
+In this case specified PHP expression will be evaluated in the context of this class instance.
+For example:</p>
+
+<pre><code>$requirements = array(
+    array(
+        'name' =&gt; 'Upload max file size',
+        'condition' =&gt; 'eval:$this-&gt;checkUploadMaxFileSize("5M")',
+    ),
+);
+</code></pre>
+
+<p>Note: this class definition does not match ordinary Yii style, because it should match PHP 4.3
+and should not use features from newer PHP versions!</p>
+</div>
+
+<a name="properties"></a>
+
+<a name="methods"></a>
+
+<div class="summary docMethod">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr id="check()">
+		<td><a href="yiirequirementchecker.html#check()-detail">check()</a></td>
+		<td>Check the given requirements, collecting results into internal field.</td>
+		<td><a href="yiirequirementchecker.html">YiiRequirementChecker</a></td>
+	</tr>
+			<tr id="checkYii()">
+		<td><a href="yiirequirementchecker.html#checkYii()-detail">checkYii()</a></td>
+		<td>Performs the check for the Yii core requirements.</td>
+		<td><a href="yiirequirementchecker.html">YiiRequirementChecker</a></td>
+	</tr>
+			<tr id="getResult()">
+		<td><a href="yiirequirementchecker.html#getResult()-detail">getResult()</a></td>
+		<td>Return the check results.</td>
+		<td><a href="yiirequirementchecker.html">YiiRequirementChecker</a></td>
+	</tr>
+			<tr id="render()">
+		<td><a href="yiirequirementchecker.html#render()-detail">render()</a></td>
+		<td>Renders the requirements check result.</td>
+		<td><a href="yiirequirementchecker.html">YiiRequirementChecker</a></td>
+	</tr>
+			<tr id="checkPhpExtensionVersion()">
+		<td><a href="yiirequirementchecker.html#checkPhpExtensionVersion()-detail">checkPhpExtensionVersion()</a></td>
+		<td>Checks if the given PHP extension is available and its version matches the given one.</td>
+		<td><a href="yiirequirementchecker.html">YiiRequirementChecker</a></td>
+	</tr>
+			<tr id="checkPhpIniOn()">
+		<td><a href="yiirequirementchecker.html#checkPhpIniOn()-detail">checkPhpIniOn()</a></td>
+		<td>Checks if PHP configuration option (from php.ini) is on.</td>
+		<td><a href="yiirequirementchecker.html">YiiRequirementChecker</a></td>
+	</tr>
+			<tr id="checkPhpIniOff()">
+		<td><a href="yiirequirementchecker.html#checkPhpIniOff()-detail">checkPhpIniOff()</a></td>
+		<td>Checks if PHP configuration option (from php.ini) is off.</td>
+		<td><a href="yiirequirementchecker.html">YiiRequirementChecker</a></td>
+	</tr>
+			<tr id="compareByteSize()">
+		<td><a href="yiirequirementchecker.html#compareByteSize()-detail">compareByteSize()</a></td>
+		<td>Compare byte sizes of values given in the verbose representation,
+like '5M', '15K' etc.</td>
+		<td><a href="yiirequirementchecker.html">YiiRequirementChecker</a></td>
+	</tr>
+			<tr id="getByteSize()">
+		<td><a href="yiirequirementchecker.html#getByteSize()-detail">getByteSize()</a></td>
+		<td>Gets the size in bytes from verbose size representation.</td>
+		<td><a href="yiirequirementchecker.html">YiiRequirementChecker</a></td>
+	</tr>
+			<tr id="checkUploadMaxFileSize()">
+		<td><a href="yiirequirementchecker.html#checkUploadMaxFileSize()-detail">checkUploadMaxFileSize()</a></td>
+		<td>Checks if upload max file size matches the given range.</td>
+		<td><a href="yiirequirementchecker.html">YiiRequirementChecker</a></td>
+	</tr>
+			<tr id="renderViewFile()">
+		<td><a href="yiirequirementchecker.html#renderViewFile()-detail">renderViewFile()</a></td>
+		<td>Renders a view file.</td>
+		<td><a href="yiirequirementchecker.html">YiiRequirementChecker</a></td>
+	</tr>
+			<tr id="normalizeRequirement()">
+		<td><a href="yiirequirementchecker.html#normalizeRequirement()-detail">normalizeRequirement()</a></td>
+		<td>Normalizes requirement ensuring it has correct format.</td>
+		<td><a href="yiirequirementchecker.html">YiiRequirementChecker</a></td>
+	</tr>
+			<tr id="usageError()">
+		<td><a href="yiirequirementchecker.html#usageError()-detail">usageError()</a></td>
+		<td>Displays a usage error.</td>
+		<td><a href="yiirequirementchecker.html">YiiRequirementChecker</a></td>
+	</tr>
+			<tr id="evaluateExpression()">
+		<td><a href="yiirequirementchecker.html#evaluateExpression()-detail">evaluateExpression()</a></td>
+		<td>Evaluates a PHP expression under the context of this class.</td>
+		<td><a href="yiirequirementchecker.html">YiiRequirementChecker</a></td>
+	</tr>
+			<tr id="getServerInfo()">
+		<td><a href="yiirequirementchecker.html#getServerInfo()-detail">getServerInfo()</a></td>
+		<td>Returns the server information.</td>
+		<td><a href="yiirequirementchecker.html">YiiRequirementChecker</a></td>
+	</tr>
+			<tr id="getNowDate()">
+		<td><a href="yiirequirementchecker.html#getNowDate()-detail">getNowDate()</a></td>
+		<td>Returns the now date if possible in string representation.</td>
+		<td><a href="yiirequirementchecker.html">YiiRequirementChecker</a></td>
+	</tr>
+	</table>
+</div>
+<a name="events"></a>
+
+<a name="constants"></a>
+
+<h2>Method Details</h2>
+
+
+	<div class="detailHeader" id="check()-detail">
+		check()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			static <a href="yiirequirementchecker.html#check()-detail">check</a>( $requirements )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$requirements</td>
+				  <td class="paramTypeCol">array|string</td>
+				  <td class="paramDescCol">Requirements to be checked.
+If an array, it is treated as the set of requirements;
+If a string, it is treated as the path of the file, which contains the requirements;</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">static</td>
+				  <td class="paramDescCol">self instance.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Check the given requirements, collecting results into internal field.</strong></p>
+	<p>This method can be invoked several times checking different requirement sets.
+Use <a href="yiirequirementchecker.html#getResult()-detail">getResult()</a> or <a href="yiirequirementchecker.html#render()-detail">render()</a> to get the results.</p>
+
+	
+
+	<div class="detailHeader" id="checkYii()-detail">
+		checkYii()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			<a href="yiirequirementchecker.html">YiiRequirementChecker</a> <a href="yiirequirementchecker.html#checkYii()-detail">checkYii</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol"><a href="yiirequirementchecker.html">YiiRequirementChecker</a></td>
+				  <td class="paramDescCol">self instance.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Performs the check for the Yii core requirements.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getResult()-detail">
+		getResult()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			array|null <a href="yiirequirementchecker.html#getResult()-detail">getResult</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">array|null</td>
+				  <td class="paramDescCol">check results in format:
+<code>
+array(
+    'summary' => array(
+        'total' => total number of checks,
+        'errors' => number of errors,
+        'warnings' => number of warnings,
+    ),
+    'requirements' => array(
+        array(
+            ...
+            'error' => is there an error,
+            'warning' => is there a warning,
+        ),
+        ...
+    ),
+)
+</code></td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Return the check results.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="render()-detail">
+		render()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yiirequirementchecker.html#render()-detail">render</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p>Renders the requirements check result.</strong></p>
+	<p>The output will vary depending is a script running from web or from console.</p>
+
+	
+
+	<div class="detailHeader" id="checkPhpExtensionVersion()-detail">
+		checkPhpExtensionVersion()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yiirequirementchecker.html#checkPhpExtensionVersion()-detail">checkPhpExtensionVersion</a>( $extensionName, $version, $compare = '>=' )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$extensionName</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">PHP extension name.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$version</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Required PHP extension version.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$compare</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Comparison operator, by default '>='</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">if PHP extension version matches.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Checks if the given PHP extension is available and its version matches the given one.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="checkPhpIniOn()-detail">
+		checkPhpIniOn()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yiirequirementchecker.html#checkPhpIniOn()-detail">checkPhpIniOn</a>( $name )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Configuration option name.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">option is on.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Checks if PHP configuration option (from php.ini) is on.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="checkPhpIniOff()-detail">
+		checkPhpIniOff()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yiirequirementchecker.html#checkPhpIniOff()-detail">checkPhpIniOff</a>( $name )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Configuration option name.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">option is off.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Checks if PHP configuration option (from php.ini) is off.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="compareByteSize()-detail">
+		compareByteSize()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yiirequirementchecker.html#compareByteSize()-detail">compareByteSize</a>( $a, $b, $compare = '>=' )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$a</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">First value.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$b</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Second value.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$compare</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Comparison operator, by default '>='.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">comparison result.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Compare byte sizes of values given in the verbose representation,
+like '5M', '15K' etc.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getByteSize()-detail">
+		getByteSize()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			integer <a href="yiirequirementchecker.html#getByteSize()-detail">getByteSize</a>( $verboseSize )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$verboseSize</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Verbose size representation.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">integer</td>
+				  <td class="paramDescCol">actual size in bytes.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Gets the size in bytes from verbose size representation.</strong></p>
+	<p>For example: '5K' => 5*1024</p>
+
+	
+
+	<div class="detailHeader" id="checkUploadMaxFileSize()-detail">
+		checkUploadMaxFileSize()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yiirequirementchecker.html#checkUploadMaxFileSize()-detail">checkUploadMaxFileSize</a>( $min = null, $max = null )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$min</td>
+				  <td class="paramTypeCol">string|null</td>
+				  <td class="paramDescCol">Verbose file size minimum required value, pass null to skip minimum check.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$max</td>
+				  <td class="paramTypeCol">string|null</td>
+				  <td class="paramDescCol">Verbose file size maximum required value, pass null to skip maximum check.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">success.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Checks if upload max file size matches the given range.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="renderViewFile()-detail">
+		renderViewFile()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yiirequirementchecker.html#renderViewFile()-detail">renderViewFile</a>( $_viewFile_, $_data_ = null, $_return_ = false )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$_viewFile_</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">View file</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$_data_</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">Data to be extracted and made available to the view file</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$_return_</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">Whether the rendering result should be returned as a string</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the rendering result. Null if the rendering result is not required.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Renders a view file.</strong></p>
+	<p>This method includes the view file as a PHP script
+and captures the display result if required.</p>
+
+	
+
+	<div class="detailHeader" id="normalizeRequirement()-detail">
+		normalizeRequirement()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			array <a href="yiirequirementchecker.html#normalizeRequirement()-detail">normalizeRequirement</a>( $requirement, $requirementKey = 0 )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$requirement</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">Raw requirement.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$requirementKey</td>
+				  <td class="paramTypeCol">int</td>
+				  <td class="paramDescCol">Requirement key in the list.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">normalized requirement.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Normalizes requirement ensuring it has correct format.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="usageError()-detail">
+		usageError()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yiirequirementchecker.html#usageError()-detail">usageError</a>( $message )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$message</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The error message</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Displays a usage error.</strong></p>
+	<p>This method will then terminate the execution of the current application.</p>
+
+	
+
+	<div class="detailHeader" id="evaluateExpression()-detail">
+		evaluateExpression()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			mixed <a href="yiirequirementchecker.html#evaluateExpression()-detail">evaluateExpression</a>( $expression )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$expression</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">A PHP expression to be evaluated.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">the expression result.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Evaluates a PHP expression under the context of this class.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getServerInfo()-detail">
+		getServerInfo()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yiirequirementchecker.html#getServerInfo()-detail">getServerInfo</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">server information.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the server information.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getNowDate()-detail">
+		getNowDate()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yiirequirementchecker.html#getNowDate()-detail">getNowDate</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">now date.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the now date if possible in string representation.</strong></p>
+	<p></p>
+
+	
+			</div><!-- end of content -->
+
+		<div id="apiFooter">
+			<p>&copy; 2008-2013 by <a href="http://www.yiisoft.com">Yii Software LLC</a></p>
+			<p>All Rights Reserved.</p>
+		</div><!-- end of footer -->
+
+<script type="text/javascript">
+/*<![CDATA[*/
+$("a.toggle").on('click', function() {
+	var $this = $(this);
+	if ($this.hasClass('properties-hidden')) {
+		$this.text($this.text().replace(/Show/,'Hide'));
+		$this.parents(".summary").find(".inherited").show();
+		$this.removeClass('properties-hidden');
+	} else {
+		$this.text($this.text().replace(/Hide/,'Show'));
+		$this.parents(".summary").find(".inherited").hide();
+		$this.addClass('properties-hidden');
+	}
+	return false;
+});
+/*
+$(".sourceCode a.show").toggle(function(){
+	$(this).text($(this).text().replace(/show/,'hide'));
+	$(this).parents(".sourceCode").find("div.code").show();
+},function(){
+	$(this).text($(this).text().replace(/hide/,'show'));
+	$(this).parents(".sourceCode").find("div.code").hide();
+});
+$("a.sourceLink").click(function(){
+	$(this).attr('target','_blank');
+});
+*/
+/*]]>*/
+</script>
+
+	</div><!-- end of page -->
+</body>
+</html>

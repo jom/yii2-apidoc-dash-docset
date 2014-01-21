@@ -1,0 +1,1155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="language" content="en" />
+<link href="./assets/4138e429/api.css" rel="stylesheet">
+<link href="./assets/4138e429/style.css" rel="stylesheet">
+<script src="./assets/a91b37a6/jquery.js"></script><title>Yii Framework 2.0 API Documentation</title>
+</head>
+
+<body>
+	<div id="apiPage">
+
+		<div id="apiHeader">
+			<a href="http://www.yiiframework.com">Yii Framework</a> v2.0.0-dev Class Reference
+		</div><!-- end of header -->
+
+		<div id="content">
+		<h1>Class yii\widgets\ActiveForm</h1>
+<div id="nav">
+	<a href="index.html">All Classes</a>
+			| <a href="#properties">Properties</a>
+				| <a href="#methods">Methods</a>
+			</div>
+
+<table class="summaryTable docClass">
+	<colgroup>
+		<col class="col-name" />
+		<col class="col-value" />
+	</colgroup>
+			<tr><th>Inheritance</th><td><a href="yii_widgets_activeform.html">yii\widgets\ActiveForm</a> &raquo;
+<a href="yii_base_widget.html">yii\base\Widget</a> &raquo;
+<a href="yii_base_component.html">yii\base\Component</a> &raquo;
+<a href="yii_base_object.html">yii\base\Object</a></td></tr>
+				<tr><th>Implements</th><td><a href="yii_base_arrayable.html">yii\base\Arrayable</a>, <a href="yii_base_viewcontextinterface.html">yii\base\ViewContextInterface</a></td></tr>
+								<tr><th>Available since version</th><td>2.0</td></tr>
+		<tr>
+	  <th>Source Code</th>
+	  <td></td>
+	</tr>
+</table>
+
+<div id="classDescription">
+	<strong>ActiveForm .</strong>
+	<p>..</p>
+</div>
+
+<a name="properties"></a>
+
+<div class="summary docProperty">
+<h2>Public Properties</h2>
+
+<p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-property" />
+	<col class="col-type" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Property</th><th>Type</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr class="inherited" id="$counter">
+		<td><a href="yii_base_widget.html#$counter-detail">$counter</a></td>
+		<td>integer</td>
+		<td>A counter used to generate <a href="yii_widgets_activeform.html#$id-detail">$id</a> for widgets</td>
+		<td><a href="yii_base_widget.html">yii\base\Widget</a></td>
+	</tr>
+			<tr class="inherited" id="$autoIdPrefix">
+		<td><a href="yii_base_widget.html#$autoIdPrefix-detail">$autoIdPrefix</a></td>
+		<td>string</td>
+		<td>The prefix to the automatically generated widget IDs</td>
+		<td><a href="yii_base_widget.html">yii\base\Widget</a></td>
+	</tr>
+			<tr class="inherited" id="$stack">
+		<td><a href="yii_base_widget.html#$stack-detail">$stack</a></td>
+		<td><a href="yii_base_widget.html">yii\base\Widget</a>[]</td>
+		<td>The widgets that are currently being rendered (not ended)</td>
+		<td><a href="yii_base_widget.html">yii\base\Widget</a></td>
+	</tr>
+			<tr id="$action">
+		<td><a href="yii_widgets_activeform.html#$action-detail">$action</a></td>
+		<td></td>
+		<td></td>
+		<td><a href="yii_widgets_activeform.html">yii\widgets\ActiveForm</a></td>
+	</tr>
+			<tr id="$method">
+		<td><a href="yii_widgets_activeform.html#$method-detail">$method</a></td>
+		<td>string</td>
+		<td>The form submission method</td>
+		<td><a href="yii_widgets_activeform.html">yii\widgets\ActiveForm</a></td>
+	</tr>
+			<tr id="$options">
+		<td><a href="yii_widgets_activeform.html#$options-detail">$options</a></td>
+		<td>array</td>
+		<td>The HTML attributes (name-value pairs) for the form tag</td>
+		<td><a href="yii_widgets_activeform.html">yii\widgets\ActiveForm</a></td>
+	</tr>
+			<tr id="$fieldConfig">
+		<td><a href="yii_widgets_activeform.html#$fieldConfig-detail">$fieldConfig</a></td>
+		<td>array</td>
+		<td>The default configuration used by <a href="yii_widgets_activeform.html#field()-detail">field()</a> when creating a new field object</td>
+		<td><a href="yii_widgets_activeform.html">yii\widgets\ActiveForm</a></td>
+	</tr>
+			<tr id="$errorSummaryCssClass">
+		<td><a href="yii_widgets_activeform.html#$errorSummaryCssClass-detail">$errorSummaryCssClass</a></td>
+		<td>string</td>
+		<td>The default CSS class for the error summary container</td>
+		<td><a href="yii_widgets_activeform.html">yii\widgets\ActiveForm</a></td>
+	</tr>
+			<tr id="$requiredCssClass">
+		<td><a href="yii_widgets_activeform.html#$requiredCssClass-detail">$requiredCssClass</a></td>
+		<td>string</td>
+		<td>The CSS class that is added to a field container when the associated attribute is required</td>
+		<td><a href="yii_widgets_activeform.html">yii\widgets\ActiveForm</a></td>
+	</tr>
+			<tr id="$errorCssClass">
+		<td><a href="yii_widgets_activeform.html#$errorCssClass-detail">$errorCssClass</a></td>
+		<td>string</td>
+		<td>The CSS class that is added to a field container when the associated attribute has validation error</td>
+		<td><a href="yii_widgets_activeform.html">yii\widgets\ActiveForm</a></td>
+	</tr>
+			<tr id="$successCssClass">
+		<td><a href="yii_widgets_activeform.html#$successCssClass-detail">$successCssClass</a></td>
+		<td>string</td>
+		<td>The CSS class that is added to a field container when the associated attribute is successfully validated</td>
+		<td><a href="yii_widgets_activeform.html">yii\widgets\ActiveForm</a></td>
+	</tr>
+			<tr id="$validatingCssClass">
+		<td><a href="yii_widgets_activeform.html#$validatingCssClass-detail">$validatingCssClass</a></td>
+		<td>string</td>
+		<td>The CSS class that is added to a field container when the associated attribute is being validated</td>
+		<td><a href="yii_widgets_activeform.html">yii\widgets\ActiveForm</a></td>
+	</tr>
+			<tr id="$enableClientValidation">
+		<td><a href="yii_widgets_activeform.html#$enableClientValidation-detail">$enableClientValidation</a></td>
+		<td>boolean</td>
+		<td>Whether to enable client-side data validation</td>
+		<td><a href="yii_widgets_activeform.html">yii\widgets\ActiveForm</a></td>
+	</tr>
+			<tr id="$enableAjaxValidation">
+		<td><a href="yii_widgets_activeform.html#$enableAjaxValidation-detail">$enableAjaxValidation</a></td>
+		<td>boolean</td>
+		<td>Whether to enable AJAX-based data validation</td>
+		<td><a href="yii_widgets_activeform.html">yii\widgets\ActiveForm</a></td>
+	</tr>
+			<tr id="$validationUrl">
+		<td><a href="yii_widgets_activeform.html#$validationUrl-detail">$validationUrl</a></td>
+		<td>array|string</td>
+		<td>The URL for performing AJAX-based validation</td>
+		<td><a href="yii_widgets_activeform.html">yii\widgets\ActiveForm</a></td>
+	</tr>
+			<tr id="$validateOnSubmit">
+		<td><a href="yii_widgets_activeform.html#$validateOnSubmit-detail">$validateOnSubmit</a></td>
+		<td>boolean</td>
+		<td>Whether to perform validation when the form is submitted</td>
+		<td><a href="yii_widgets_activeform.html">yii\widgets\ActiveForm</a></td>
+	</tr>
+			<tr id="$validateOnChange">
+		<td><a href="yii_widgets_activeform.html#$validateOnChange-detail">$validateOnChange</a></td>
+		<td>boolean</td>
+		<td>Whether to perform validation when an input field loses focus and its value is found changed</td>
+		<td><a href="yii_widgets_activeform.html">yii\widgets\ActiveForm</a></td>
+	</tr>
+			<tr id="$validateOnType">
+		<td><a href="yii_widgets_activeform.html#$validateOnType-detail">$validateOnType</a></td>
+		<td>boolean</td>
+		<td>Whether to perform validation while the user is typing in an input field</td>
+		<td><a href="yii_widgets_activeform.html">yii\widgets\ActiveForm</a></td>
+	</tr>
+			<tr id="$validationDelay">
+		<td><a href="yii_widgets_activeform.html#$validationDelay-detail">$validationDelay</a></td>
+		<td>integer</td>
+		<td>Number of milliseconds that the validation should be delayed when an input field
+is changed or the user types in the field</td>
+		<td><a href="yii_widgets_activeform.html">yii\widgets\ActiveForm</a></td>
+	</tr>
+			<tr id="$ajaxVar">
+		<td><a href="yii_widgets_activeform.html#$ajaxVar-detail">$ajaxVar</a></td>
+		<td>string</td>
+		<td>The name of the GET parameter indicating the validation request is an AJAX request</td>
+		<td><a href="yii_widgets_activeform.html">yii\widgets\ActiveForm</a></td>
+	</tr>
+			<tr id="$beforeSubmit">
+		<td><a href="yii_widgets_activeform.html#$beforeSubmit-detail">$beforeSubmit</a></td>
+		<td>string|<a href="yii_web_jsexpression.html">yii\web\JsExpression</a></td>
+		<td>A JS callback that will be called when the form is being submitted</td>
+		<td><a href="yii_widgets_activeform.html">yii\widgets\ActiveForm</a></td>
+	</tr>
+			<tr id="$beforeValidate">
+		<td><a href="yii_widgets_activeform.html#$beforeValidate-detail">$beforeValidate</a></td>
+		<td>string|<a href="yii_web_jsexpression.html">yii\web\JsExpression</a></td>
+		<td>A JS callback that is called before validating an attribute</td>
+		<td><a href="yii_widgets_activeform.html">yii\widgets\ActiveForm</a></td>
+	</tr>
+			<tr id="$afterValidate">
+		<td><a href="yii_widgets_activeform.html#$afterValidate-detail">$afterValidate</a></td>
+		<td>string|<a href="yii_web_jsexpression.html">yii\web\JsExpression</a></td>
+		<td>A JS callback that is called after validating an attribute</td>
+		<td><a href="yii_widgets_activeform.html">yii\widgets\ActiveForm</a></td>
+	</tr>
+			<tr id="$attributes">
+		<td><a href="yii_widgets_activeform.html#$attributes-detail">$attributes</a></td>
+		<td>array</td>
+		<td>The client validation options for individual attributes</td>
+		<td><a href="yii_widgets_activeform.html">yii\widgets\ActiveForm</a></td>
+	</tr>
+			<tr id="$behaviors">
+		<td><a href="yii_widgets_activeform.html#$behaviors-detail">$behaviors</a></td>
+		<td><a href="yii_base_behavior.html">yii\base\Behavior</a>[]</td>
+		<td>list of behaviors attached to this component</td>
+		<td><a href="yii_widgets_activeform.html">yii\widgets\ActiveForm</a></td>
+	</tr>
+			<tr id="$id">
+		<td><a href="yii_widgets_activeform.html#$id-detail">$id</a></td>
+		<td>string</td>
+		<td>ID of the widget</td>
+		<td><a href="yii_widgets_activeform.html">yii\widgets\ActiveForm</a></td>
+	</tr>
+			<tr id="$view">
+		<td><a href="yii_widgets_activeform.html#$view-detail">$view</a></td>
+		<td><a href="yii_web_view.html">yii\web\View</a></td>
+		<td>the view object that can be used to render views or view files</td>
+		<td><a href="yii_widgets_activeform.html">yii\widgets\ActiveForm</a></td>
+	</tr>
+			<tr id="$viewPath">
+		<td><a href="yii_widgets_activeform.html#$viewPath-detail">$viewPath</a></td>
+		<td>string</td>
+		<td>the directory containing the view files for this widget</td>
+		<td><a href="yii_widgets_activeform.html">yii\widgets\ActiveForm</a></td>
+	</tr>
+	</table>
+</div>
+<a name="methods"></a>
+
+<div class="summary docMethod">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr class="inherited" id="className()">
+		<td><a href="yii_base_object.html#className()-detail">className()</a></td>
+		<td></td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__construct()">
+		<td><a href="yii_base_object.html#__construct()-detail">__construct()</a></td>
+		<td>Constructor.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr id="init()">
+		<td><a href="yii_widgets_activeform.html#init()-detail">init()</a></td>
+		<td>Initializes the widget.</td>
+		<td><a href="yii_widgets_activeform.html">yii\widgets\ActiveForm</a></td>
+	</tr>
+			<tr class="inherited" id="__get()">
+		<td><a href="yii_base_component.html#__get()-detail">__get()</a></td>
+		<td>Returns the value of a component property.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__set()">
+		<td><a href="yii_base_component.html#__set()-detail">__set()</a></td>
+		<td>Sets the value of a component property.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__isset()">
+		<td><a href="yii_base_component.html#__isset()-detail">__isset()</a></td>
+		<td>Checks if a property value is null.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__unset()">
+		<td><a href="yii_base_component.html#__unset()-detail">__unset()</a></td>
+		<td>Sets a component property to be null.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__call()">
+		<td><a href="yii_base_component.html#__call()-detail">__call()</a></td>
+		<td>Calls the named method which is not a class method.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasProperty()">
+		<td><a href="yii_base_component.html#hasProperty()-detail">hasProperty()</a></td>
+		<td>Returns a value indicating whether a property is defined for this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="canGetProperty()">
+		<td><a href="yii_base_component.html#canGetProperty()-detail">canGetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be read.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="canSetProperty()">
+		<td><a href="yii_base_component.html#canSetProperty()-detail">canSetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be set.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasMethod()">
+		<td><a href="yii_base_component.html#hasMethod()-detail">hasMethod()</a></td>
+		<td>Returns a value indicating whether a method is defined.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="toArray()">
+		<td><a href="yii_base_object.html#toArray()-detail">toArray()</a></td>
+		<td>Converts the object into an array.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__clone()">
+		<td><a href="yii_base_component.html#__clone()-detail">__clone()</a></td>
+		<td>This method is called after the object is created by cloning an existing one.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="behaviors()">
+		<td><a href="yii_base_component.html#behaviors()-detail">behaviors()</a></td>
+		<td>Returns a list of behaviors that this component should behave as.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasEventHandlers()">
+		<td><a href="yii_base_component.html#hasEventHandlers()-detail">hasEventHandlers()</a></td>
+		<td>Returns a value indicating whether there is any handler attached to the named event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="on()">
+		<td><a href="yii_base_component.html#on()-detail">on()</a></td>
+		<td>Attaches an event handler to an event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="off()">
+		<td><a href="yii_base_component.html#off()-detail">off()</a></td>
+		<td>Detaches an existing event handler from this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="trigger()">
+		<td><a href="yii_base_component.html#trigger()-detail">trigger()</a></td>
+		<td>Triggers an event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="getBehavior()">
+		<td><a href="yii_base_component.html#getBehavior()-detail">getBehavior()</a></td>
+		<td>Returns the named behavior object.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="getBehaviors()">
+		<td><a href="yii_base_component.html#getBehaviors()-detail">getBehaviors()</a></td>
+		<td>Returns all behaviors attached to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="attachBehavior()">
+		<td><a href="yii_base_component.html#attachBehavior()-detail">attachBehavior()</a></td>
+		<td>Attaches a behavior to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="attachBehaviors()">
+		<td><a href="yii_base_component.html#attachBehaviors()-detail">attachBehaviors()</a></td>
+		<td>Attaches a list of behaviors to the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="detachBehavior()">
+		<td><a href="yii_base_component.html#detachBehavior()-detail">detachBehavior()</a></td>
+		<td>Detaches a behavior from the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="detachBehaviors()">
+		<td><a href="yii_base_component.html#detachBehaviors()-detail">detachBehaviors()</a></td>
+		<td>Detaches all behaviors from the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="ensureBehaviors()">
+		<td><a href="yii_base_component.html#ensureBehaviors()-detail">ensureBehaviors()</a></td>
+		<td>Makes sure that the behaviors declared in <a href="yii_base_component.html#behaviors()-detail">behaviors()</a> are attached to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="begin()">
+		<td><a href="yii_base_widget.html#begin()-detail">begin()</a></td>
+		<td>Begins a widget.</td>
+		<td><a href="yii_base_widget.html">yii\base\Widget</a></td>
+	</tr>
+			<tr class="inherited" id="end()">
+		<td><a href="yii_base_widget.html#end()-detail">end()</a></td>
+		<td>Ends a widget.</td>
+		<td><a href="yii_base_widget.html">yii\base\Widget</a></td>
+	</tr>
+			<tr class="inherited" id="widget()">
+		<td><a href="yii_base_widget.html#widget()-detail">widget()</a></td>
+		<td>Creates a widget instance and runs it.</td>
+		<td><a href="yii_base_widget.html">yii\base\Widget</a></td>
+	</tr>
+			<tr class="inherited" id="getId()">
+		<td><a href="yii_base_widget.html#getId()-detail">getId()</a></td>
+		<td>Returns the ID of the widget.</td>
+		<td><a href="yii_base_widget.html">yii\base\Widget</a></td>
+	</tr>
+			<tr class="inherited" id="setId()">
+		<td><a href="yii_base_widget.html#setId()-detail">setId()</a></td>
+		<td>Sets the ID of the widget.</td>
+		<td><a href="yii_base_widget.html">yii\base\Widget</a></td>
+	</tr>
+			<tr class="inherited" id="getView()">
+		<td><a href="yii_base_widget.html#getView()-detail">getView()</a></td>
+		<td>Returns the view object that can be used to render views or view files.</td>
+		<td><a href="yii_base_widget.html">yii\base\Widget</a></td>
+	</tr>
+			<tr class="inherited" id="setView()">
+		<td><a href="yii_base_widget.html#setView()-detail">setView()</a></td>
+		<td>Sets the view object to be used by this widget.</td>
+		<td><a href="yii_base_widget.html">yii\base\Widget</a></td>
+	</tr>
+			<tr id="run()">
+		<td><a href="yii_widgets_activeform.html#run()-detail">run()</a></td>
+		<td>Runs the widget.</td>
+		<td><a href="yii_widgets_activeform.html">yii\widgets\ActiveForm</a></td>
+	</tr>
+			<tr class="inherited" id="render()">
+		<td><a href="yii_base_widget.html#render()-detail">render()</a></td>
+		<td>Renders a view.</td>
+		<td><a href="yii_base_widget.html">yii\base\Widget</a></td>
+	</tr>
+			<tr class="inherited" id="renderFile()">
+		<td><a href="yii_base_widget.html#renderFile()-detail">renderFile()</a></td>
+		<td>Renders a view file.</td>
+		<td><a href="yii_base_widget.html">yii\base\Widget</a></td>
+	</tr>
+			<tr class="inherited" id="getViewPath()">
+		<td><a href="yii_base_widget.html#getViewPath()-detail">getViewPath()</a></td>
+		<td>Returns the directory containing the view files for this widget.</td>
+		<td><a href="yii_base_widget.html">yii\base\Widget</a></td>
+	</tr>
+			<tr class="inherited" id="findViewFile()">
+		<td><a href="yii_base_widget.html#findViewFile()-detail">findViewFile()</a></td>
+		<td>Finds the view file based on the given view name.</td>
+		<td><a href="yii_base_widget.html">yii\base\Widget</a></td>
+	</tr>
+				<tr id="errorSummary()">
+		<td><a href="yii_widgets_activeform.html#errorSummary()-detail">errorSummary()</a></td>
+		<td>Generates a summary of the validation errors.</td>
+		<td><a href="yii_widgets_activeform.html">yii\widgets\ActiveForm</a></td>
+	</tr>
+			<tr id="field()">
+		<td><a href="yii_widgets_activeform.html#field()-detail">field()</a></td>
+		<td>Generates a form field.</td>
+		<td><a href="yii_widgets_activeform.html">yii\widgets\ActiveForm</a></td>
+	</tr>
+			<tr id="validate()">
+		<td><a href="yii_widgets_activeform.html#validate()-detail">validate()</a></td>
+		<td>Validates one or several models and returns an error message array indexed by the attribute IDs.</td>
+		<td><a href="yii_widgets_activeform.html">yii\widgets\ActiveForm</a></td>
+	</tr>
+			<tr id="validateMultiple()">
+		<td><a href="yii_widgets_activeform.html#validateMultiple()-detail">validateMultiple()</a></td>
+		<td>Validates an array of model instances and returns an error message array indexed by the attribute IDs.</td>
+		<td><a href="yii_widgets_activeform.html">yii\widgets\ActiveForm</a></td>
+	</tr>
+	</table>
+</div>
+<div class="summary docMethod">
+<h2>Protected Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+																																								<tr id="getClientOptions()">
+		<td><a href="yii_widgets_activeform.html#getClientOptions()-detail">getClientOptions()</a></td>
+		<td>Returns the options for the form JS widget.</td>
+		<td><a href="yii_widgets_activeform.html">yii\widgets\ActiveForm</a></td>
+	</tr>
+					</table>
+</div>
+<a name="events"></a>
+
+<a name="constants"></a>
+
+<h2>Property Details</h2>
+
+
+	<div class="detailHeader" id="$action-detail">
+		$action		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	 $action = ''	</div>
+
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="$method-detail">
+		$method		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $method = 'post'	</div>
+
+	<p>The form submission method. This should be either 'post' or 'get'.
+Defaults to 'post'.</p>
+
+	
+
+	<div class="detailHeader" id="$options-detail">
+		$options		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array $options = []	</div>
+
+	<p>The HTML attributes (name-value pairs) for the form tag.
+The values will be HTML-encoded using <a href="yii_helpers_basehtml.html#encode()-detail">yii\helpers\Html::encode()</a>.
+If a value is null, the corresponding attribute will not be rendered.</p>
+
+	
+
+	<div class="detailHeader" id="$fieldConfig-detail">
+		$fieldConfig		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array $fieldConfig = null	</div>
+
+	<p>The default configuration used by <a href="yii_widgets_activeform.html#field()-detail">field()</a> when creating a new field object.</p>
+
+	
+
+	<div class="detailHeader" id="$errorSummaryCssClass-detail">
+		$errorSummaryCssClass		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $errorSummaryCssClass = 'error-summary'	</div>
+
+	<p>The default CSS class for the error summary container.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_widgets_activeform.html#errorSummary()-detail">errorSummary()</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="$requiredCssClass-detail">
+		$requiredCssClass		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $requiredCssClass = 'required'	</div>
+
+	<p>The CSS class that is added to a field container when the associated attribute is required.</p>
+
+	
+
+	<div class="detailHeader" id="$errorCssClass-detail">
+		$errorCssClass		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $errorCssClass = 'has-error'	</div>
+
+	<p>The CSS class that is added to a field container when the associated attribute has validation error.</p>
+
+	
+
+	<div class="detailHeader" id="$successCssClass-detail">
+		$successCssClass		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $successCssClass = 'has-success'	</div>
+
+	<p>The CSS class that is added to a field container when the associated attribute is successfully validated.</p>
+
+	
+
+	<div class="detailHeader" id="$validatingCssClass-detail">
+		$validatingCssClass		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $validatingCssClass = 'validating'	</div>
+
+	<p>The CSS class that is added to a field container when the associated attribute is being validated.</p>
+
+	
+
+	<div class="detailHeader" id="$enableClientValidation-detail">
+		$enableClientValidation		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	boolean $enableClientValidation = true	</div>
+
+	<p>Whether to enable client-side data validation.
+If <a href="yii_widgets_activefield.html#$enableClientValidation-detail">yii\widgets\ActiveField::$enableClientValidation</a> is set, its value will take precedence for that input field.</p>
+
+	
+
+	<div class="detailHeader" id="$enableAjaxValidation-detail">
+		$enableAjaxValidation		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	boolean $enableAjaxValidation = false	</div>
+
+	<p>Whether to enable AJAX-based data validation.
+If <a href="yii_widgets_activefield.html#$enableAjaxValidation-detail">yii\widgets\ActiveField::$enableAjaxValidation</a> is set, its value will take precedence for that input field.</p>
+
+	
+
+	<div class="detailHeader" id="$validationUrl-detail">
+		$validationUrl		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array|string $validationUrl = null	</div>
+
+	<p>The URL for performing AJAX-based validation. This property will be processed by
+<a href="yii_helpers_basehtml.html#url()-detail">yii\helpers\Html::url()</a>. Please refer to <a href="yii_helpers_basehtml.html#url()-detail">yii\helpers\Html::url()</a> for more details on how to configure this property.
+If this property is not set, it will take the value of the form's action attribute.</p>
+
+	
+
+	<div class="detailHeader" id="$validateOnSubmit-detail">
+		$validateOnSubmit		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	boolean $validateOnSubmit = true	</div>
+
+	<p>Whether to perform validation when the form is submitted.</p>
+
+	
+
+	<div class="detailHeader" id="$validateOnChange-detail">
+		$validateOnChange		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	boolean $validateOnChange = true	</div>
+
+	<p>Whether to perform validation when an input field loses focus and its value is found changed.
+If <a href="yii_widgets_activefield.html#$validateOnChange-detail">yii\widgets\ActiveField::$validateOnChange</a> is set, its value will take precedence for that input field.</p>
+
+	
+
+	<div class="detailHeader" id="$validateOnType-detail">
+		$validateOnType		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	boolean $validateOnType = false	</div>
+
+	<p>Whether to perform validation while the user is typing in an input field.
+If <a href="yii_widgets_activefield.html#$validateOnType-detail">yii\widgets\ActiveField::$validateOnType</a> is set, its value will take precedence for that input field.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_widgets_activeform.html#$validationDelay-detail">$validationDelay</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="$validationDelay-detail">
+		$validationDelay		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	integer $validationDelay = 200	</div>
+
+	<p>Number of milliseconds that the validation should be delayed when an input field
+is changed or the user types in the field.
+If <a href="yii_widgets_activefield.html#$validationDelay-detail">yii\widgets\ActiveField::$validationDelay</a> is set, its value will take precedence for that input field.</p>
+
+	
+
+	<div class="detailHeader" id="$ajaxVar-detail">
+		$ajaxVar		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $ajaxVar = 'ajax'	</div>
+
+	<p>The name of the GET parameter indicating the validation request is an AJAX request.</p>
+
+	
+
+	<div class="detailHeader" id="$beforeSubmit-detail">
+		$beforeSubmit		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string|<a href="yii_web_jsexpression.html">yii\web\JsExpression</a> $beforeSubmit = null	</div>
+
+	<p><p>A JS callback that will be called when the form is being submitted.
+The signature of the callback should be:</p>
+
+<pre><code>function ($form) {
+    ...return false to cancel submission...
+}
+</code></pre></p>
+
+	
+
+	<div class="detailHeader" id="$beforeValidate-detail">
+		$beforeValidate		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string|<a href="yii_web_jsexpression.html">yii\web\JsExpression</a> $beforeValidate = null	</div>
+
+	<p><p>A JS callback that is called before validating an attribute.
+The signature of the callback should be:</p>
+
+<pre><code>function ($form, attribute, messages) {
+    ...return false to cancel the validation...
+}
+</code></pre></p>
+
+	
+
+	<div class="detailHeader" id="$afterValidate-detail">
+		$afterValidate		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string|<a href="yii_web_jsexpression.html">yii\web\JsExpression</a> $afterValidate = null	</div>
+
+	<p><p>A JS callback that is called after validating an attribute.
+The signature of the callback should be:</p>
+
+<pre><code>function ($form, attribute, messages) {
+}
+</code></pre></p>
+
+	
+
+	<div class="detailHeader" id="$attributes-detail">
+		$attributes		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array $attributes = []	</div>
+
+	<p>The client validation options for individual attributes. Each element of the array
+represents the validation options for a particular attribute.</p>
+
+	
+
+	<div class="detailHeader" id="$behaviors-detail">
+		$behaviors		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_base_behavior.html">yii\base\Behavior</a>[] <a href="yii_base_component.html#getBehaviors()-detail">getBehaviors</a>(  )	</div>
+
+	<p>list of behaviors attached to this component</p>
+
+	
+
+	<div class="detailHeader" id="$id-detail">
+		$id		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string <a href="yii_base_widget.html#getId()-detail">getId</a>( $autoGenerate = true )<br />void <a href="yii_base_widget.html#setId()-detail">setId</a>( $value )	</div>
+
+	<p>ID of the widget.</p>
+
+	
+
+	<div class="detailHeader" id="$view-detail">
+		$view		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_web_view.html">yii\web\View</a> <a href="yii_base_widget.html#getView()-detail">getView</a>(  )<br />void <a href="yii_base_widget.html#setView()-detail">setView</a>( $view )	</div>
+
+	<p>the view object that can be used to render views or view files.</p>
+
+	
+
+	<div class="detailHeader" id="$viewPath-detail">
+		$viewPath		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	string <a href="yii_base_widget.html#getViewPath()-detail">getViewPath</a>(  )	</div>
+
+	<p>the directory containing the view files for this widget.</p>
+
+	
+<h2>Method Details</h2>
+
+
+	<div class="detailHeader" id="init()-detail">
+		init()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_widgets_activeform.html#init()-detail">init</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p>Initializes the widget.</strong></p>
+	<p>This renders the form open tag.</p>
+
+	
+
+	<div class="detailHeader" id="run()-detail">
+		run()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_widgets_activeform.html#run()-detail">run</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p>Runs the widget.</strong></p>
+	<p>This registers the necessary javascript code and renders the form close tag.</p>
+
+	
+
+	<div class="detailHeader" id="getClientOptions()-detail">
+		getClientOptions()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			array <a href="yii_widgets_activeform.html#getClientOptions()-detail">getClientOptions</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">the options</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the options for the form JS widget.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="errorSummary()-detail">
+		errorSummary()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_widgets_activeform.html#errorSummary()-detail">errorSummary</a>( $models, $options = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$models</td>
+				  <td class="paramTypeCol"><a href="yii_base_model.html">yii\base\Model</a>|<a href="yii_base_model.html">yii\base\Model</a>[]</td>
+				  <td class="paramDescCol">The model(s) associated with this form</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The tag options in terms of name-value pairs. The following options are specially handled:
+- header: string, the header HTML for the error summary. If not set, a default prompt string will be used.
+- footer: string, the footer HTML for the error summary.
+The rest of the options will be rendered as the attributes of the container tag. The values will
+be HTML-encoded using <span style="background: #f00;">\yii\widgets\encode()</span>. If a value is null, the corresponding attribute will not be rendered.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the generated error summary</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Generates a summary of the validation errors.</strong></p>
+	<p>If there is no validation error, an empty error summary markup will still be generated, but it will be hidden.</p>
+
+	
+
+	<div class="detailHeader" id="field()-detail">
+		field()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			<a href="yii_widgets_activefield.html">yii\widgets\ActiveField</a> <a href="yii_widgets_activeform.html#field()-detail">field</a>( $model, $attribute, $options = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$model</td>
+				  <td class="paramTypeCol"><a href="yii_base_model.html">yii\base\Model</a></td>
+				  <td class="paramDescCol">The data model</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$attribute</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The attribute name or expression. See <a href="yii_helpers_basehtml.html#getAttributeName()-detail">yii\helpers\Html::getAttributeName()</a> for the format
+about attribute expression.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The additional configurations for the field object</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol"><a href="yii_widgets_activefield.html">yii\widgets\ActiveField</a></td>
+				  <td class="paramDescCol">the created ActiveField object</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Generates a form field.</strong></p>
+	<p>A form field is associated with a model and an attribute. It contains a label, an input and an error message
+and use them to interact with end users to collect their inputs for the attribute.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_widgets_activeform.html#$fieldConfig-detail">$fieldConfig</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="validate()-detail">
+		validate()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			array <a href="yii_widgets_activeform.html#validate()-detail">validate</a>( $model, $attributes = null )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$model</td>
+				  <td class="paramTypeCol"><a href="yii_base_model.html">yii\base\Model</a></td>
+				  <td class="paramDescCol">The model to be validated</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$attributes</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">List of attributes that should be validated.
+If this parameter is empty, it means any attribute listed in the applicable
+validation rules should be validated.
+When this method is used to validate multiple models, this parameter will be interpreted
+as a model.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">the error message array indexed by the attribute IDs.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Validates one or several models and returns an error message array indexed by the attribute IDs.</strong></p>
+	<p><p>This is a helper method that simplifies the way of writing AJAX validation code.</p>
+
+<p>For example, you may use the following code in a controller action to respond
+to an AJAX validation request:</p>
+
+<pre><code>$model = new Post;
+$model-&gt;load($_POST);
+if (Yii::$app-&gt;request-&gt;isAjax) {
+    Yii::$app-&gt;response-&gt;format = Response::FORMAT_JSON;
+    return ActiveForm::validate($model);
+}
+// ... respond to non-AJAX request ...
+</code></pre>
+
+<p>To validate multiple models, simply pass each model as a parameter to this method, like
+the following:</p>
+
+<pre><code>ActiveForm::validate($model1, $model2, ...);
+</code></pre></p>
+
+	
+
+	<div class="detailHeader" id="validateMultiple()-detail">
+		validateMultiple()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			array <a href="yii_widgets_activeform.html#validateMultiple()-detail">validateMultiple</a>( $models, $attributes = null )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$models</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">An array of models to be validated.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$attributes</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">List of attributes that should be validated.
+If this parameter is empty, it means any attribute listed in the applicable
+validation rules should be validated.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">the error message array indexed by the attribute IDs.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Validates an array of model instances and returns an error message array indexed by the attribute IDs.</strong></p>
+	<p><p>This is a helper method that simplifies the way of writing AJAX validation code for tabular input.</p>
+
+<p>For example, you may use the following code in a controller action to respond
+to an AJAX validation request:</p>
+
+<pre><code>// ... load $models ...
+if (Yii::$app-&gt;request-&gt;isAjax) {
+    Yii::$app-&gt;response-&gt;format = Response::FORMAT_JSON;
+    return ActiveForm::validateMultiple($models);
+}
+// ... respond to non-AJAX request ...
+</code></pre></p>
+
+	
+			</div><!-- end of content -->
+
+		<div id="apiFooter">
+			<p>&copy; 2008-2013 by <a href="http://www.yiisoft.com">Yii Software LLC</a></p>
+			<p>All Rights Reserved.</p>
+		</div><!-- end of footer -->
+
+<script type="text/javascript">
+/*<![CDATA[*/
+$("a.toggle").on('click', function() {
+	var $this = $(this);
+	if ($this.hasClass('properties-hidden')) {
+		$this.text($this.text().replace(/Show/,'Hide'));
+		$this.parents(".summary").find(".inherited").show();
+		$this.removeClass('properties-hidden');
+	} else {
+		$this.text($this.text().replace(/Hide/,'Show'));
+		$this.parents(".summary").find(".inherited").hide();
+		$this.addClass('properties-hidden');
+	}
+	return false;
+});
+/*
+$(".sourceCode a.show").toggle(function(){
+	$(this).text($(this).text().replace(/show/,'hide'));
+	$(this).parents(".sourceCode").find("div.code").show();
+},function(){
+	$(this).text($(this).text().replace(/hide/,'show'));
+	$(this).parents(".sourceCode").find("div.code").hide();
+});
+$("a.sourceLink").click(function(){
+	$(this).attr('target','_blank');
+});
+*/
+/*]]>*/
+</script>
+
+	</div><!-- end of page -->
+</body>
+</html>

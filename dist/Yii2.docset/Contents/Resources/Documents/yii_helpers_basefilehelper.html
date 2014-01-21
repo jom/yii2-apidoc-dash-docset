@@ -1,0 +1,540 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="language" content="en" />
+<link href="./assets/4138e429/api.css" rel="stylesheet">
+<link href="./assets/4138e429/style.css" rel="stylesheet">
+<script src="./assets/a91b37a6/jquery.js"></script><title>Yii Framework 2.0 API Documentation</title>
+</head>
+
+<body>
+	<div id="apiPage">
+
+		<div id="apiHeader">
+			<a href="http://www.yiiframework.com">Yii Framework</a> v2.0.0-dev Class Reference
+		</div><!-- end of header -->
+
+		<div id="content">
+		<h1>Class yii\helpers\BaseFileHelper</h1>
+<div id="nav">
+	<a href="index.html">All Classes</a>
+				| <a href="#methods">Methods</a>
+			</div>
+
+<table class="summaryTable docClass">
+	<colgroup>
+		<col class="col-name" />
+		<col class="col-value" />
+	</colgroup>
+			<tr><th>Inheritance</th><td><a href="yii_helpers_basefilehelper.html">yii\helpers\BaseFileHelper</a></td></tr>
+						<tr><th>Subclasses</th><td><a href="yii_helpers_filehelper.html">yii\helpers\FileHelper</a></td></tr>
+						<tr><th>Available since version</th><td>2.0</td></tr>
+		<tr>
+	  <th>Source Code</th>
+	  <td></td>
+	</tr>
+</table>
+
+<div id="classDescription">
+	<strong>BaseFileHelper provides concrete implementation for <a href="yii_helpers_filehelper.html">yii\helpers\FileHelper</a>.</strong>
+	<p>Do not use BaseFileHelper. Use <a href="yii_helpers_filehelper.html">yii\helpers\FileHelper</a> instead.</p>
+</div>
+
+<a name="properties"></a>
+
+<a name="methods"></a>
+
+<div class="summary docMethod">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr id="normalizePath()">
+		<td><a href="yii_helpers_basefilehelper.html#normalizePath()-detail">normalizePath()</a></td>
+		<td>Normalizes a file/directory path.</td>
+		<td><a href="yii_helpers_basefilehelper.html">yii\helpers\BaseFileHelper</a></td>
+	</tr>
+			<tr id="localize()">
+		<td><a href="yii_helpers_basefilehelper.html#localize()-detail">localize()</a></td>
+		<td>Returns the localized version of a specified file.</td>
+		<td><a href="yii_helpers_basefilehelper.html">yii\helpers\BaseFileHelper</a></td>
+	</tr>
+			<tr id="getMimeType()">
+		<td><a href="yii_helpers_basefilehelper.html#getMimeType()-detail">getMimeType()</a></td>
+		<td>Determines the MIME type of the specified file.</td>
+		<td><a href="yii_helpers_basefilehelper.html">yii\helpers\BaseFileHelper</a></td>
+	</tr>
+			<tr id="getMimeTypeByExtension()">
+		<td><a href="yii_helpers_basefilehelper.html#getMimeTypeByExtension()-detail">getMimeTypeByExtension()</a></td>
+		<td>Determines the MIME type based on the extension name of the specified file.</td>
+		<td><a href="yii_helpers_basefilehelper.html">yii\helpers\BaseFileHelper</a></td>
+	</tr>
+			<tr id="copyDirectory()">
+		<td><a href="yii_helpers_basefilehelper.html#copyDirectory()-detail">copyDirectory()</a></td>
+		<td>Copies a whole directory as another one.</td>
+		<td><a href="yii_helpers_basefilehelper.html">yii\helpers\BaseFileHelper</a></td>
+	</tr>
+			<tr id="removeDirectory()">
+		<td><a href="yii_helpers_basefilehelper.html#removeDirectory()-detail">removeDirectory()</a></td>
+		<td>Removes a directory (and all its content) recursively.</td>
+		<td><a href="yii_helpers_basefilehelper.html">yii\helpers\BaseFileHelper</a></td>
+	</tr>
+			<tr id="findFiles()">
+		<td><a href="yii_helpers_basefilehelper.html#findFiles()-detail">findFiles()</a></td>
+		<td>Returns the files found under the specified directory and subdirectories.</td>
+		<td><a href="yii_helpers_basefilehelper.html">yii\helpers\BaseFileHelper</a></td>
+	</tr>
+			<tr id="filterPath()">
+		<td><a href="yii_helpers_basefilehelper.html#filterPath()-detail">filterPath()</a></td>
+		<td>Checks if the given file path satisfies the filtering options.</td>
+		<td><a href="yii_helpers_basefilehelper.html">yii\helpers\BaseFileHelper</a></td>
+	</tr>
+			<tr id="createDirectory()">
+		<td><a href="yii_helpers_basefilehelper.html#createDirectory()-detail">createDirectory()</a></td>
+		<td>Creates a new directory.</td>
+		<td><a href="yii_helpers_basefilehelper.html">yii\helpers\BaseFileHelper</a></td>
+	</tr>
+	</table>
+</div>
+<a name="events"></a>
+
+<a name="constants"></a>
+
+<h2>Method Details</h2>
+
+
+	<div class="detailHeader" id="normalizePath()-detail">
+		normalizePath()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basefilehelper.html#normalizePath()-detail">normalizePath</a>( $path, $ds = DIRECTORY_SEPARATOR )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$path</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The file/directory path to be normalized</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$ds</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The directory separator to be used in the normalized result. Defaults to <code>DIRECTORY_SEPARATOR</code>.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the normalized file/directory path</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Normalizes a file/directory path.</strong></p>
+	<p>After normalization, the directory separators in the path will be <code>DIRECTORY_SEPARATOR</code>,
+and any trailing directory separators will be removed. For example, '/home\demo/' on Linux
+will be normalized as '/home/demo'.</p>
+
+	
+
+	<div class="detailHeader" id="localize()-detail">
+		localize()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basefilehelper.html#localize()-detail">localize</a>( $file, $language = null, $sourceLanguage = null )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$file</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The original file</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$language</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The target language that the file should be localized to.
+If not set, the value of <a href="yii_base_application.html#$language-detail">yii\base\Application::$language</a> will be used.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$sourceLanguage</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The language that the original file is in.
+If not set, the value of <a href="yii_base_application.html#$sourceLanguage-detail">yii\base\Application::$sourceLanguage</a> will be used.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the matching localized file, or the original file if the localized version is not found.
+If the target and the source language codes are the same, the original file will be returned.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the localized version of a specified file.</strong></p>
+	<p>The searching is based on the specified language code. In particular,
+a file with the same name will be looked for under the subdirectory
+whose name is the same as the language code. For example, given the file "path/to/view.php"
+and language code "zh_CN", the localized file will be looked for as
+"path/to/zh_CN/view.php". If the file is not found, the original file
+will be returned.</p>
+
+<p>If the target and the source language codes are the same,
+the original file will be returned.</p>
+
+	
+
+	<div class="detailHeader" id="getMimeType()-detail">
+		getMimeType()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basefilehelper.html#getMimeType()-detail">getMimeType</a>( $file, $magicFile = null, $checkExtension = true )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$file</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The file name.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$magicFile</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Name of the optional magic database file, usually something like <code>/path/to/magic.mime</code>.
+This will be passed as the second parameter to <a href="http://php.net/manual/en/function.finfo-open.php">finfo_open</a>.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$checkExtension</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">Whether to use the file extension to determine the MIME type in case
+<code>finfo_open()</code> cannot determine it.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the MIME type (e.g. <code>text/plain</code>). Null is returned if the MIME type cannot be determined.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Determines the MIME type of the specified file.</strong></p>
+	<p>This method will first try to determine the MIME type based on
+<a href="http://php.net/manual/en/function.finfo-open.php">finfo_open</a>. If this doesn't work, it will
+fall back to <a href="yii_helpers_basefilehelper.html#getMimeTypeByExtension()-detail">getMimeTypeByExtension()</a>.</p>
+
+	
+
+	<div class="detailHeader" id="getMimeTypeByExtension()-detail">
+		getMimeTypeByExtension()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basefilehelper.html#getMimeTypeByExtension()-detail">getMimeTypeByExtension</a>( $file, $magicFile = null )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$file</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The file name.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$magicFile</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The path of the file that contains all available MIME type information.
+If this is not set, the default file aliased by <code>@yii/util/mimeTypes.php</code> will be used.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the MIME type. Null is returned if the MIME type cannot be determined.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Determines the MIME type based on the extension name of the specified file.</strong></p>
+	<p>This method will use a local map between extension names and MIME types.</p>
+
+	
+
+	<div class="detailHeader" id="copyDirectory()-detail">
+		copyDirectory()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_helpers_basefilehelper.html#copyDirectory()-detail">copyDirectory</a>( $src, $dst, $options = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$src</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The source directory</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$dst</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The destination directory</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">Options for directory copy. Valid options are:
+- dirMode: integer, the permission to be set for newly copied directories. Defaults to 0775.
+- fileMode:  integer, the permission to be set for newly copied files. Defaults to the current environment setting.
+- filter: callback, a PHP callback that is called for each directory or file.
+  The signature of the callback should be: <code>function ($path)</code>, where <code>$path</code> refers the full path to be filtered.
+  The callback can return one of the following values:
+  * true: the directory or file will be copied (the "only" and "except" options will be ignored)
+  * false: the directory or file will NOT be copied (the "only" and "except" options will be ignored)
+  * null: the "only" and "except" options will determine whether the directory or file should be copied
+- only: array, list of patterns that the file paths should match if they want to be copied.
+  A path matches a pattern if it contains the pattern string at its end.
+  For example, '.php' matches all file paths ending with '.php'.
+  Note, the '/' characters in a pattern matches both '/' and '\' in the paths.
+  If a file path matches a pattern in both "only" and "except", it will NOT be copied.
+- except: array, list of patterns that the files or directories should match if they want to be excluded from being copied.
+  A path matches a pattern if it contains the pattern string at its end.
+  Patterns ending with '/' apply to directory paths only, and patterns not ending with '/'
+  apply to file paths only. For example, '/a/b' matches all file paths ending with '/a/b';
+  and '.svn/' matches directory paths ending with '.svn'. Note, the '/' characters in a pattern matches
+  both '/' and '\' in the paths.
+- recursive: boolean, whether the files under the subdirectories should also be copied. Defaults to true.
+- beforeCopy: callback, a PHP callback that is called before copying each sub-directory or file.
+  If the callback returns false, the copy operation for the sub-directory or file will be cancelled.
+  The signature of the callback should be: <code>function ($from, $to)</code>, where <code>$from</code> is the sub-directory or
+  file to be copied from, while <code>$to</code> is the copy target.
+- afterCopy: callback, a PHP callback that is called after each sub-directory or file is successfully copied.
+  The signature of the callback should be: <code>function ($from, $to)</code>, where <code>$from</code> is the sub-directory or
+  file copied from, while <code>$to</code> is the copy target.</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Copies a whole directory as another one.</strong></p>
+	<p>The files and sub-directories will also be copied over.</p>
+
+	
+
+	<div class="detailHeader" id="removeDirectory()-detail">
+		removeDirectory()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_helpers_basefilehelper.html#removeDirectory()-detail">removeDirectory</a>( $dir )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$dir</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The directory to be deleted recursively.</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Removes a directory (and all its content) recursively.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="findFiles()-detail">
+		findFiles()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			array <a href="yii_helpers_basefilehelper.html#findFiles()-detail">findFiles</a>( $dir, $options = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$dir</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The directory under which the files will be looked for.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">Options for file searching. Valid options are:
+- filter: callback, a PHP callback that is called for each directory or file.
+  The signature of the callback should be: <code>function ($path)</code>, where <code>$path</code> refers the full path to be filtered.
+  The callback can return one of the following values:
+  * true: the directory or file will be returned (the "only" and "except" options will be ignored)
+  * false: the directory or file will NOT be returned (the "only" and "except" options will be ignored)
+  * null: the "only" and "except" options will determine whether the directory or file should be returned
+- only: array, list of patterns that the file paths should match if they want to be returned.
+  A path matches a pattern if it contains the pattern string at its end.
+  For example, '.php' matches all file paths ending with '.php'.
+  Note, the '/' characters in a pattern matches both '/' and '\' in the paths.
+  If a file path matches a pattern in both "only" and "except", it will NOT be returned.
+- except: array, list of patterns that the file paths or directory paths should match if they want to be excluded from the result.
+  A path matches a pattern if it contains the pattern string at its end.
+  Patterns ending with '/' apply to directory paths only, and patterns not ending with '/'
+  apply to file paths only. For example, '/a/b' matches all file paths ending with '/a/b';
+  and '.svn/' matches directory paths ending with '.svn'. Note, the '/' characters in a pattern matches
+  both '/' and '\' in the paths.
+- recursive: boolean, whether the files under the subdirectories should also be looked for. Defaults to true.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">files found under the directory. The file list is sorted.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the files found under the specified directory and subdirectories.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="filterPath()-detail">
+		filterPath()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_helpers_basefilehelper.html#filterPath()-detail">filterPath</a>( $path, $options )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$path</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The path of the file or directory to be checked</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The filtering options. See <a href="yii_helpers_basefilehelper.html#findFiles()-detail">findFiles()</a> for explanations of
+the supported options.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether the file or directory satisfies the filtering options.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Checks if the given file path satisfies the filtering options.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="createDirectory()-detail">
+		createDirectory()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_helpers_basefilehelper.html#createDirectory()-detail">createDirectory</a>( $path, $mode = 509, $recursive = true )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$path</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Path of the directory to be created.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$mode</td>
+				  <td class="paramTypeCol">integer</td>
+				  <td class="paramDescCol">The permission to be set for the created directory.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$recursive</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">Whether to create parent directories if they do not exist.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether the directory is created successfully</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Creates a new directory.</strong></p>
+	<p>This method is similar to the PHP <code>mkdir()</code> function except that
+it uses <code>chmod()</code> to set the permission of the created directory
+in order to avoid the impact of the <code>umask</code> setting.</p>
+
+	
+			</div><!-- end of content -->
+
+		<div id="apiFooter">
+			<p>&copy; 2008-2013 by <a href="http://www.yiisoft.com">Yii Software LLC</a></p>
+			<p>All Rights Reserved.</p>
+		</div><!-- end of footer -->
+
+<script type="text/javascript">
+/*<![CDATA[*/
+$("a.toggle").on('click', function() {
+	var $this = $(this);
+	if ($this.hasClass('properties-hidden')) {
+		$this.text($this.text().replace(/Show/,'Hide'));
+		$this.parents(".summary").find(".inherited").show();
+		$this.removeClass('properties-hidden');
+	} else {
+		$this.text($this.text().replace(/Hide/,'Show'));
+		$this.parents(".summary").find(".inherited").hide();
+		$this.addClass('properties-hidden');
+	}
+	return false;
+});
+/*
+$(".sourceCode a.show").toggle(function(){
+	$(this).text($(this).text().replace(/show/,'hide'));
+	$(this).parents(".sourceCode").find("div.code").show();
+},function(){
+	$(this).text($(this).text().replace(/hide/,'show'));
+	$(this).parents(".sourceCode").find("div.code").hide();
+});
+$("a.sourceLink").click(function(){
+	$(this).attr('target','_blank');
+});
+*/
+/*]]>*/
+</script>
+
+	</div><!-- end of page -->
+</body>
+</html>

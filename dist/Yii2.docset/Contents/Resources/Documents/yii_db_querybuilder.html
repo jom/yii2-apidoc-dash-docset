@@ -1,0 +1,2205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="language" content="en" />
+<link href="./assets/4138e429/api.css" rel="stylesheet">
+<link href="./assets/4138e429/style.css" rel="stylesheet">
+<script src="./assets/a91b37a6/jquery.js"></script><title>Yii Framework 2.0 API Documentation</title>
+</head>
+
+<body>
+	<div id="apiPage">
+
+		<div id="apiHeader">
+			<a href="http://www.yiiframework.com">Yii Framework</a> v2.0.0-dev Class Reference
+		</div><!-- end of header -->
+
+		<div id="content">
+		<h1>Class yii\db\QueryBuilder</h1>
+<div id="nav">
+	<a href="index.html">All Classes</a>
+			| <a href="#properties">Properties</a>
+				| <a href="#methods">Methods</a>
+					| <a href="#constants">Constants</a>
+	</div>
+
+<table class="summaryTable docClass">
+	<colgroup>
+		<col class="col-name" />
+		<col class="col-value" />
+	</colgroup>
+			<tr><th>Inheritance</th><td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a> &raquo;
+<a href="yii_base_object.html">yii\base\Object</a></td></tr>
+				<tr><th>Implements</th><td><a href="yii_base_arrayable.html">yii\base\Arrayable</a></td></tr>
+					<tr><th>Subclasses</th><td><a href="yii_db_cubrid_querybuilder.html">yii\db\cubrid\QueryBuilder</a>, <a href="yii_db_mssql_querybuilder.html">yii\db\mssql\QueryBuilder</a>, <a href="yii_db_mysql_querybuilder.html">yii\db\mysql\QueryBuilder</a>, <a href="yii_db_oci_querybuilder.html">yii\db\oci\QueryBuilder</a>, <a href="yii_db_pgsql_querybuilder.html">yii\db\pgsql\QueryBuilder</a>, <a href="yii_db_sqlite_querybuilder.html">yii\db\sqlite\QueryBuilder</a></td></tr>
+						<tr><th>Available since version</th><td>2.0</td></tr>
+		<tr>
+	  <th>Source Code</th>
+	  <td></td>
+	</tr>
+</table>
+
+<div id="classDescription">
+	<strong>QueryBuilder builds a SELECT SQL statement based on the specification given as a <a href="yii_db_query.html">yii\db\Query</a> object.</strong>
+	<p>QueryBuilder can also be used to build SQL statements such as INSERT, UPDATE, DELETE, CREATE TABLE,
+from a <a href="yii_db_query.html">yii\db\Query</a> object.</p>
+</div>
+
+<a name="properties"></a>
+
+<div class="summary docProperty">
+<h2>Public Properties</h2>
+
+<p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-property" />
+	<col class="col-type" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Property</th><th>Type</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr id="$db">
+		<td><a href="yii_db_querybuilder.html#$db-detail">$db</a></td>
+		<td><a href="yii_db_connection.html">yii\db\Connection</a></td>
+		<td>The database connection</td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr id="$separator">
+		<td><a href="yii_db_querybuilder.html#$separator-detail">$separator</a></td>
+		<td>string</td>
+		<td>The separator between different fragments of a SQL statement</td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr id="$typeMap">
+		<td><a href="yii_db_querybuilder.html#$typeMap-detail">$typeMap</a></td>
+		<td>array</td>
+		<td>The abstract column types mapped to physical column types</td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+	</table>
+</div>
+<a name="methods"></a>
+
+<div class="summary docMethod">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr class="inherited" id="className()">
+		<td><a href="yii_base_object.html#className()-detail">className()</a></td>
+		<td></td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr id="__construct()">
+		<td><a href="yii_db_querybuilder.html#__construct()-detail">__construct()</a></td>
+		<td>Constructor.</td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr class="inherited" id="init()">
+		<td><a href="yii_base_object.html#init()-detail">init()</a></td>
+		<td>Initializes the object.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__get()">
+		<td><a href="yii_base_object.html#__get()-detail">__get()</a></td>
+		<td>Returns the value of an object property.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__set()">
+		<td><a href="yii_base_object.html#__set()-detail">__set()</a></td>
+		<td>Sets value of an object property.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__isset()">
+		<td><a href="yii_base_object.html#__isset()-detail">__isset()</a></td>
+		<td>Checks if the named property is set (not null).</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__unset()">
+		<td><a href="yii_base_object.html#__unset()-detail">__unset()</a></td>
+		<td>Sets an object property to null.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__call()">
+		<td><a href="yii_base_object.html#__call()-detail">__call()</a></td>
+		<td>Calls the named method which is not a class method.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="hasProperty()">
+		<td><a href="yii_base_object.html#hasProperty()-detail">hasProperty()</a></td>
+		<td>Returns a value indicating whether a property is defined.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="canGetProperty()">
+		<td><a href="yii_base_object.html#canGetProperty()-detail">canGetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be read.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="canSetProperty()">
+		<td><a href="yii_base_object.html#canSetProperty()-detail">canSetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be set.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="hasMethod()">
+		<td><a href="yii_base_object.html#hasMethod()-detail">hasMethod()</a></td>
+		<td>Returns a value indicating whether a method is defined.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="toArray()">
+		<td><a href="yii_base_object.html#toArray()-detail">toArray()</a></td>
+		<td>Converts the object into an array.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr id="build()">
+		<td><a href="yii_db_querybuilder.html#build()-detail">build()</a></td>
+		<td>Generates a SELECT SQL statement from a <a href="yii_db_query.html">yii\db\Query</a> object.</td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr id="insert()">
+		<td><a href="yii_db_querybuilder.html#insert()-detail">insert()</a></td>
+		<td>Creates an INSERT SQL statement.</td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr id="batchInsert()">
+		<td><a href="yii_db_querybuilder.html#batchInsert()-detail">batchInsert()</a></td>
+		<td>Generates a batch INSERT SQL statement.</td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr id="update()">
+		<td><a href="yii_db_querybuilder.html#update()-detail">update()</a></td>
+		<td>Creates an UPDATE SQL statement.</td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr id="delete()">
+		<td><a href="yii_db_querybuilder.html#delete()-detail">delete()</a></td>
+		<td>Creates a DELETE SQL statement.</td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr id="createTable()">
+		<td><a href="yii_db_querybuilder.html#createTable()-detail">createTable()</a></td>
+		<td>Builds a SQL statement for creating a new DB table.</td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr id="renameTable()">
+		<td><a href="yii_db_querybuilder.html#renameTable()-detail">renameTable()</a></td>
+		<td>Builds a SQL statement for renaming a DB table.</td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr id="dropTable()">
+		<td><a href="yii_db_querybuilder.html#dropTable()-detail">dropTable()</a></td>
+		<td>Builds a SQL statement for dropping a DB table.</td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr id="addPrimaryKey()">
+		<td><a href="yii_db_querybuilder.html#addPrimaryKey()-detail">addPrimaryKey()</a></td>
+		<td>Builds a SQL statement for adding a primary key constraint to an existing table.</td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr id="dropPrimaryKey()">
+		<td><a href="yii_db_querybuilder.html#dropPrimaryKey()-detail">dropPrimaryKey()</a></td>
+		<td>Builds a SQL statement for removing a primary key constraint to an existing table.</td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr id="truncateTable()">
+		<td><a href="yii_db_querybuilder.html#truncateTable()-detail">truncateTable()</a></td>
+		<td>Builds a SQL statement for truncating a DB table.</td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr id="addColumn()">
+		<td><a href="yii_db_querybuilder.html#addColumn()-detail">addColumn()</a></td>
+		<td>Builds a SQL statement for adding a new DB column.</td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr id="dropColumn()">
+		<td><a href="yii_db_querybuilder.html#dropColumn()-detail">dropColumn()</a></td>
+		<td>Builds a SQL statement for dropping a DB column.</td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr id="renameColumn()">
+		<td><a href="yii_db_querybuilder.html#renameColumn()-detail">renameColumn()</a></td>
+		<td>Builds a SQL statement for renaming a column.</td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr id="alterColumn()">
+		<td><a href="yii_db_querybuilder.html#alterColumn()-detail">alterColumn()</a></td>
+		<td>Builds a SQL statement for changing the definition of a column.</td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr id="addForeignKey()">
+		<td><a href="yii_db_querybuilder.html#addForeignKey()-detail">addForeignKey()</a></td>
+		<td>Builds a SQL statement for adding a foreign key constraint to an existing table.</td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr id="dropForeignKey()">
+		<td><a href="yii_db_querybuilder.html#dropForeignKey()-detail">dropForeignKey()</a></td>
+		<td>Builds a SQL statement for dropping a foreign key constraint.</td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr id="createIndex()">
+		<td><a href="yii_db_querybuilder.html#createIndex()-detail">createIndex()</a></td>
+		<td>Builds a SQL statement for creating a new index.</td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr id="dropIndex()">
+		<td><a href="yii_db_querybuilder.html#dropIndex()-detail">dropIndex()</a></td>
+		<td>Builds a SQL statement for dropping an index.</td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr id="resetSequence()">
+		<td><a href="yii_db_querybuilder.html#resetSequence()-detail">resetSequence()</a></td>
+		<td>Creates a SQL statement for resetting the sequence value of a table's primary key.</td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr id="checkIntegrity()">
+		<td><a href="yii_db_querybuilder.html#checkIntegrity()-detail">checkIntegrity()</a></td>
+		<td>Builds a SQL statement for enabling or disabling integrity check.</td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr id="getColumnType()">
+		<td><a href="yii_db_querybuilder.html#getColumnType()-detail">getColumnType()</a></td>
+		<td>Converts an abstract column type into a physical column type.</td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr id="buildSelect()">
+		<td><a href="yii_db_querybuilder.html#buildSelect()-detail">buildSelect()</a></td>
+		<td></td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr id="buildFrom()">
+		<td><a href="yii_db_querybuilder.html#buildFrom()-detail">buildFrom()</a></td>
+		<td></td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr id="buildJoin()">
+		<td><a href="yii_db_querybuilder.html#buildJoin()-detail">buildJoin()</a></td>
+		<td></td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr id="buildWhere()">
+		<td><a href="yii_db_querybuilder.html#buildWhere()-detail">buildWhere()</a></td>
+		<td></td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr id="buildGroupBy()">
+		<td><a href="yii_db_querybuilder.html#buildGroupBy()-detail">buildGroupBy()</a></td>
+		<td></td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr id="buildHaving()">
+		<td><a href="yii_db_querybuilder.html#buildHaving()-detail">buildHaving()</a></td>
+		<td></td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr id="buildOrderBy()">
+		<td><a href="yii_db_querybuilder.html#buildOrderBy()-detail">buildOrderBy()</a></td>
+		<td></td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr id="buildLimit()">
+		<td><a href="yii_db_querybuilder.html#buildLimit()-detail">buildLimit()</a></td>
+		<td></td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr id="buildUnion()">
+		<td><a href="yii_db_querybuilder.html#buildUnion()-detail">buildUnion()</a></td>
+		<td></td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr id="buildColumns()">
+		<td><a href="yii_db_querybuilder.html#buildColumns()-detail">buildColumns()</a></td>
+		<td>Processes columns and properly quote them if necessary.</td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr id="buildCondition()">
+		<td><a href="yii_db_querybuilder.html#buildCondition()-detail">buildCondition()</a></td>
+		<td>Parses the condition specification and generates the corresponding SQL expression.</td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr id="buildHashCondition()">
+		<td><a href="yii_db_querybuilder.html#buildHashCondition()-detail">buildHashCondition()</a></td>
+		<td>Creates a condition based on column-value pairs.</td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr id="buildAndCondition()">
+		<td><a href="yii_db_querybuilder.html#buildAndCondition()-detail">buildAndCondition()</a></td>
+		<td>Connects two or more SQL expressions with the <code>AND</code> or <code>OR</code> operator.</td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr id="buildNotCondition()">
+		<td><a href="yii_db_querybuilder.html#buildNotCondition()-detail">buildNotCondition()</a></td>
+		<td>Inverts an SQL expressions with <code>NOT</code> operator.</td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr id="buildBetweenCondition()">
+		<td><a href="yii_db_querybuilder.html#buildBetweenCondition()-detail">buildBetweenCondition()</a></td>
+		<td>Creates an SQL expressions with the <code>BETWEEN</code> operator.</td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr id="buildInCondition()">
+		<td><a href="yii_db_querybuilder.html#buildInCondition()-detail">buildInCondition()</a></td>
+		<td>Creates an SQL expressions with the <code>IN</code> operator.</td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+				<tr id="buildLikeCondition()">
+		<td><a href="yii_db_querybuilder.html#buildLikeCondition()-detail">buildLikeCondition()</a></td>
+		<td>Creates an SQL expressions with the <code>LIKE</code> operator.</td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr id="buildExistsCondition()">
+		<td><a href="yii_db_querybuilder.html#buildExistsCondition()-detail">buildExistsCondition()</a></td>
+		<td>Creates an SQL expressions with the <code>EXISTS</code> operator.</td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+	</table>
+</div>
+<div class="summary docMethod">
+<h2>Protected Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+																																																					<tr id="buildCompositeInCondition()">
+		<td><a href="yii_db_querybuilder.html#buildCompositeInCondition()-detail">buildCompositeInCondition()</a></td>
+		<td></td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			</table>
+</div>
+<a name="events"></a>
+
+<a name="constants"></a>
+<div class="summary docConst">
+<h2>Constants</h2>
+
+<p><a href="#" class="toggle">Hide inherited constants</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-const" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Constant</th><th>Value</th><th>Description</th><th>Defined By</th>
+</tr>
+	<tr id="PARAM_PREFIX">
+	  <td>PARAM_PREFIX<a name="PARAM_PREFIX-detail"></a></td>
+	  <td>':qp'</td>
+	  <td>The prefix for automatically generated query binding parameters.</td>
+	  <td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+</table>
+</div>
+<h2>Property Details</h2>
+
+
+	<div class="detailHeader" id="$db-detail">
+		$db		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_db_connection.html">yii\db\Connection</a> $db = null	</div>
+
+	<p>The database connection.</p>
+
+	
+
+	<div class="detailHeader" id="$separator-detail">
+		$separator		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $separator = " "	</div>
+
+	<p>The separator between different fragments of a SQL statement.
+Defaults to an empty space. This is mainly used by <a href="yii_db_querybuilder.html#build()-detail">build()</a> when generating a SQL statement.</p>
+
+	
+
+	<div class="detailHeader" id="$typeMap-detail">
+		$typeMap		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array $typeMap = []	</div>
+
+	<p>The abstract column types mapped to physical column types.
+This is mainly used to support creating/modifying tables using DB-independent data type specifications.
+Child classes should override this property to declare supported type mappings.</p>
+
+	
+<h2>Method Details</h2>
+
+
+	<div class="detailHeader" id="__construct()-detail">
+		__construct()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_db_querybuilder.html#__construct()-detail">__construct</a>( $connection, $config = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$connection</td>
+				  <td class="paramTypeCol"><a href="yii_db_connection.html">yii\db\Connection</a></td>
+				  <td class="paramDescCol">The database connection.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$config</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">Name-value pairs that will be used to initialize the object properties</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Constructor.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="build()-detail">
+		build()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			array <a href="yii_db_querybuilder.html#build()-detail">build</a>( $query )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$query</td>
+				  <td class="paramTypeCol"><a href="yii_db_query.html">yii\db\Query</a></td>
+				  <td class="paramDescCol">The <a href="yii_db_query.html">yii\db\Query</a> object from which the SQL statement will be generated</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">the generated SQL statement (the first array element) and the corresponding
+parameters to be bound to the SQL statement (the second array element).</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Generates a SELECT SQL statement from a <a href="yii_db_query.html">yii\db\Query</a> object.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="insert()-detail">
+		insert()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_db_querybuilder.html#insert()-detail">insert</a>( $table, $columns, <b>&</b>$params )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$table</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The table that new rows will be inserted into.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$columns</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The column data (name => value) to be inserted into the table.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$params</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The binding parameters that will be generated by this method.
+They should be bound to the DB command later.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the INSERT SQL</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Creates an INSERT SQL statement.</strong></p>
+	<p>For example,</p>
+
+<pre><code>$sql = $queryBuilder-&gt;insert('tbl_user', [
+ 'name' =&gt; 'Sam',
+ 'age' =&gt; 30,
+], $params);
+</code></pre>
+
+<p>The method will properly escape the table and column names.</p>
+
+	
+
+	<div class="detailHeader" id="batchInsert()-detail">
+		batchInsert()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_db_querybuilder.html#batchInsert()-detail">batchInsert</a>( $table, $columns, $rows )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$table</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The table that new rows will be inserted into.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$columns</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The column names</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$rows</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The rows to be batch inserted into the table</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the batch INSERT SQL statement</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Generates a batch INSERT SQL statement.</strong></p>
+	<p>For example,</p>
+
+<pre><code>$connection-&gt;createCommand()-&gt;batchInsert('tbl_user', ['name', 'age'], [
+    ['Tom', 30],
+    ['Jane', 20],
+    ['Linda', 25],
+])-&gt;execute();
+</code></pre>
+
+<p>Note that the values in each row must match the corresponding column names.</p>
+
+	
+
+	<div class="detailHeader" id="update()-detail">
+		update()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_db_querybuilder.html#update()-detail">update</a>( $table, $columns, $condition, <b>&</b>$params )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$table</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The table to be updated.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$columns</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The column data (name => value) to be updated.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$condition</td>
+				  <td class="paramTypeCol">array|string</td>
+				  <td class="paramDescCol">The condition that will be put in the WHERE part. Please
+refer to <a href="yii_db_query.html#where()-detail">yii\db\Query::where()</a> on how to specify condition.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$params</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The binding parameters that will be modified by this method
+so that they can be bound to the DB command later.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the UPDATE SQL</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Creates an UPDATE SQL statement.</strong></p>
+	<p>For example,</p>
+
+<pre><code>$params = [];
+$sql = $queryBuilder-&gt;update('tbl_user', ['status' =&gt; 1], 'age &gt; 30', $params);
+</code></pre>
+
+<p>The method will properly escape the table and column names.</p>
+
+	
+
+	<div class="detailHeader" id="delete()-detail">
+		delete()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_db_querybuilder.html#delete()-detail">delete</a>( $table, $condition, <b>&</b>$params )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$table</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The table where the data will be deleted from.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$condition</td>
+				  <td class="paramTypeCol">array|string</td>
+				  <td class="paramDescCol">The condition that will be put in the WHERE part. Please
+refer to <a href="yii_db_query.html#where()-detail">yii\db\Query::where()</a> on how to specify condition.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$params</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The binding parameters that will be modified by this method
+so that they can be bound to the DB command later.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the DELETE SQL</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Creates a DELETE SQL statement.</strong></p>
+	<p>For example,</p>
+
+<pre><code>$sql = $queryBuilder-&gt;delete('tbl_user', 'status = 0');
+</code></pre>
+
+<p>The method will properly escape the table and column names.</p>
+
+	
+
+	<div class="detailHeader" id="createTable()-detail">
+		createTable()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_db_querybuilder.html#createTable()-detail">createTable</a>( $table, $columns, $options = null )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$table</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The name of the table to be created. The name will be properly quoted by the method.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$columns</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The columns (name => definition) in the new table.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Additional SQL fragment that will be appended to the generated SQL.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the SQL statement for creating a new DB table.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Builds a SQL statement for creating a new DB table.</strong></p>
+	<p><p>The columns in the new  table should be specified as name-definition pairs (e.g. 'name' => 'string'),
+where name stands for a column name which will be properly quoted by the method, and definition
+stands for the column type which can contain an abstract DB type.
+The <a href="yii_db_querybuilder.html#getColumnType()-detail">getColumnType()</a> method will be invoked to convert any abstract type into a physical one.</p>
+
+<p>If a column is specified with definition only (e.g. 'PRIMARY KEY (name, type)'), it will be directly
+inserted into the generated SQL.</p>
+
+<p>For example,</p>
+
+<pre><code>$sql = $queryBuilder-&gt;createTable('tbl_user', [
+ 'id' =&gt; 'pk',
+ 'name' =&gt; 'string',
+ 'age' =&gt; 'integer',
+]);
+</code></pre></p>
+
+	
+
+	<div class="detailHeader" id="renameTable()-detail">
+		renameTable()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_db_querybuilder.html#renameTable()-detail">renameTable</a>( $oldName, $newName )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$oldName</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The table to be renamed. The name will be properly quoted by the method.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$newName</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The new table name. The name will be properly quoted by the method.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the SQL statement for renaming a DB table.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Builds a SQL statement for renaming a DB table.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="dropTable()-detail">
+		dropTable()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_db_querybuilder.html#dropTable()-detail">dropTable</a>( $table )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$table</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The table to be dropped. The name will be properly quoted by the method.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the SQL statement for dropping a DB table.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Builds a SQL statement for dropping a DB table.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="addPrimaryKey()-detail">
+		addPrimaryKey()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_db_querybuilder.html#addPrimaryKey()-detail">addPrimaryKey</a>( $name, $table, $columns )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The name of the primary key constraint.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$table</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The table that the primary key constraint will be added to.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$columns</td>
+				  <td class="paramTypeCol">string|array</td>
+				  <td class="paramDescCol">Comma separated string or array of columns that the primary key will consist of.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the SQL statement for adding a primary key constraint to an existing table.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Builds a SQL statement for adding a primary key constraint to an existing table.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="dropPrimaryKey()-detail">
+		dropPrimaryKey()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_db_querybuilder.html#dropPrimaryKey()-detail">dropPrimaryKey</a>( $name, $table )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The name of the primary key constraint to be removed.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$table</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The table that the primary key constraint will be removed from.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the SQL statement for removing a primary key constraint from an existing table.  *</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Builds a SQL statement for removing a primary key constraint to an existing table.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="truncateTable()-detail">
+		truncateTable()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_db_querybuilder.html#truncateTable()-detail">truncateTable</a>( $table )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$table</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The table to be truncated. The name will be properly quoted by the method.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the SQL statement for truncating a DB table.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Builds a SQL statement for truncating a DB table.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="addColumn()-detail">
+		addColumn()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_db_querybuilder.html#addColumn()-detail">addColumn</a>( $table, $column, $type )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$table</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The table that the new column will be added to. The table name will be properly quoted by the method.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$column</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The name of the new column. The name will be properly quoted by the method.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$type</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The column type. The <a href="yii_db_querybuilder.html#getColumnType()-detail">getColumnType()</a> method will be invoked to convert abstract column type (if any)
+into the physical one. Anything that is not recognized as abstract type will be kept in the generated SQL.
+For example, 'string' will be turned into 'varchar(255)', while 'string not null' will become 'varchar(255) not null'.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the SQL statement for adding a new column.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Builds a SQL statement for adding a new DB column.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="dropColumn()-detail">
+		dropColumn()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_db_querybuilder.html#dropColumn()-detail">dropColumn</a>( $table, $column )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$table</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The table whose column is to be dropped. The name will be properly quoted by the method.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$column</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The name of the column to be dropped. The name will be properly quoted by the method.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the SQL statement for dropping a DB column.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Builds a SQL statement for dropping a DB column.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="renameColumn()-detail">
+		renameColumn()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_db_querybuilder.html#renameColumn()-detail">renameColumn</a>( $table, $oldName, $newName )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$table</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The table whose column is to be renamed. The name will be properly quoted by the method.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$oldName</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The old name of the column. The name will be properly quoted by the method.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$newName</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The new name of the column. The name will be properly quoted by the method.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the SQL statement for renaming a DB column.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Builds a SQL statement for renaming a column.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="alterColumn()-detail">
+		alterColumn()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_db_querybuilder.html#alterColumn()-detail">alterColumn</a>( $table, $column, $type )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$table</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The table whose column is to be changed. The table name will be properly quoted by the method.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$column</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The name of the column to be changed. The name will be properly quoted by the method.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$type</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The new column type. The <a href="yii_db_querybuilder.html#getColumnType()-detail">getColumnType()</a> method will be invoked to convert abstract
+column type (if any) into the physical one. Anything that is not recognized as abstract type will be kept
+in the generated SQL. For example, 'string' will be turned into 'varchar(255)', while 'string not null'
+will become 'varchar(255) not null'.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the SQL statement for changing the definition of a column.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Builds a SQL statement for changing the definition of a column.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="addForeignKey()-detail">
+		addForeignKey()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_db_querybuilder.html#addForeignKey()-detail">addForeignKey</a>( $name, $table, $columns, $refTable, $refColumns, $delete = null, $update = null )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The name of the foreign key constraint.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$table</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The table that the foreign key constraint will be added to.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$columns</td>
+				  <td class="paramTypeCol">string|array</td>
+				  <td class="paramDescCol">The name of the column to that the constraint will be added on.
+If there are multiple columns, separate them with commas or use an array to represent them.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$refTable</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The table that the foreign key references to.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$refColumns</td>
+				  <td class="paramTypeCol">string|array</td>
+				  <td class="paramDescCol">The name of the column that the foreign key references to.
+If there are multiple columns, separate them with commas or use an array to represent them.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$delete</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The ON DELETE option. Most DBMS support these options: RESTRICT, CASCADE, NO ACTION, SET DEFAULT, SET NULL</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$update</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The ON UPDATE option. Most DBMS support these options: RESTRICT, CASCADE, NO ACTION, SET DEFAULT, SET NULL</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the SQL statement for adding a foreign key constraint to an existing table.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Builds a SQL statement for adding a foreign key constraint to an existing table.</strong></p>
+	<p>The method will properly quote the table and column names.</p>
+
+	
+
+	<div class="detailHeader" id="dropForeignKey()-detail">
+		dropForeignKey()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_db_querybuilder.html#dropForeignKey()-detail">dropForeignKey</a>( $name, $table )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The name of the foreign key constraint to be dropped. The name will be properly quoted by the method.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$table</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The table whose foreign is to be dropped. The name will be properly quoted by the method.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the SQL statement for dropping a foreign key constraint.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Builds a SQL statement for dropping a foreign key constraint.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="createIndex()-detail">
+		createIndex()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_db_querybuilder.html#createIndex()-detail">createIndex</a>( $name, $table, $columns, $unique = false )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The name of the index. The name will be properly quoted by the method.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$table</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The table that the new index will be created for. The table name will be properly quoted by the method.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$columns</td>
+				  <td class="paramTypeCol">string|array</td>
+				  <td class="paramDescCol">The column(s) that should be included in the index. If there are multiple columns,
+separate them with commas or use an array to represent them. Each column name will be properly quoted
+by the method, unless a parenthesis is found in the name.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$unique</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">Whether to add UNIQUE constraint on the created index.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the SQL statement for creating a new index.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Builds a SQL statement for creating a new index.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="dropIndex()-detail">
+		dropIndex()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_db_querybuilder.html#dropIndex()-detail">dropIndex</a>( $name, $table )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The name of the index to be dropped. The name will be properly quoted by the method.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$table</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The table whose index is to be dropped. The name will be properly quoted by the method.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the SQL statement for dropping an index.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Builds a SQL statement for dropping an index.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="resetSequence()-detail">
+		resetSequence()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_db_querybuilder.html#resetSequence()-detail">resetSequence</a>( $table, $value = null )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$table</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The name of the table whose primary key sequence will be reset</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$value</td>
+				  <td class="paramTypeCol">array|string</td>
+				  <td class="paramDescCol">The value for the primary key of the next new row inserted. If this is not set,
+the next new row's primary key will have a value 1.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the SQL statement for resetting sequence</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_base_notsupportedexception.html">yii\base\NotSupportedException</a></td>
+				  <td class="paramDescCol">if this is not supported by the underlying DBMS</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Creates a SQL statement for resetting the sequence value of a table's primary key.</strong></p>
+	<p>The sequence will be reset such that the primary key of the next new row inserted
+will have the specified value or 1.</p>
+
+	
+
+	<div class="detailHeader" id="checkIntegrity()-detail">
+		checkIntegrity()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_db_querybuilder.html#checkIntegrity()-detail">checkIntegrity</a>( $check = true, $schema = '', $table = '' )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$check</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">Whether to turn on or off the integrity check.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$schema</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The schema of the tables. Defaults to empty string, meaning the current or default schema.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$table</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The table name. Defaults to empty string, meaning that no table will be changed.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the SQL statement for checking integrity</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_base_notsupportedexception.html">yii\base\NotSupportedException</a></td>
+				  <td class="paramDescCol">if this is not supported by the underlying DBMS</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Builds a SQL statement for enabling or disabling integrity check.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getColumnType()-detail">
+		getColumnType()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_db_querybuilder.html#getColumnType()-detail">getColumnType</a>( $type )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$type</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Abstract column type</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">physical column type.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Converts an abstract column type into a physical column type.</strong></p>
+	<p>The conversion is done using the type map specified in <a href="yii_db_querybuilder.html#$typeMap-detail">$typeMap</a>.
+The following abstract column types are supported (using MySQL as an example to explain the corresponding
+physical types):</p>
+
+<ul>
+<li><code>pk</code>: an auto-incremental primary key type, will be converted into "int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY"</li>
+<li><code>bigpk</code>: an auto-incremental primary key type, will be converted into "bigint(20) NOT NULL AUTO_INCREMENT PRIMARY KEY"</li>
+<li><code>string</code>: string type, will be converted into "varchar(255)"</li>
+<li><code>text</code>: a long string type, will be converted into "text"</li>
+<li><code>smallint</code>: a small integer type, will be converted into "smallint(6)"</li>
+<li><code>integer</code>: integer type, will be converted into "int(11)"</li>
+<li><code>bigint</code>: a big integer type, will be converted into "bigint(20)"</li>
+<li><code>boolean</code>: boolean type, will be converted into "tinyint(1)"</li>
+<li>`float``: float number type, will be converted into "float"</li>
+<li><code>decimal</code>: decimal number type, will be converted into "decimal"</li>
+<li><code>datetime</code>: datetime type, will be converted into "datetime"</li>
+<li><code>timestamp</code>: timestamp type, will be converted into "timestamp"</li>
+<li><code>time</code>: time type, will be converted into "time"</li>
+<li><code>date</code>: date type, will be converted into "date"</li>
+<li><code>money</code>: money type, will be converted into "decimal(19,4)"</li>
+<li><code>binary</code>: binary data type, will be converted into "blob"</li>
+</ul>
+
+<p>If the abstract type contains two or more parts separated by spaces (e.g. "string NOT NULL"), then only
+the first part will be converted, and the rest of the parts will be appended to the converted result.
+For example, 'string NOT NULL' is converted to 'varchar(255) NOT NULL'.</p>
+
+<p>For some of the abstract types you can also specify a length or precision constraint
+by prepending it in round brackets directly to the type.
+For example <code>string(32)</code> will be converted into "varchar(32)" on a MySQL database.
+If the underlying DBMS does not support these kind of constraints for a type it will
+be ignored.</p>
+
+<p>If a type cannot be found in <a href="yii_db_querybuilder.html#$typeMap-detail">$typeMap</a>, it will be returned without any change.</p>
+
+	
+
+	<div class="detailHeader" id="buildSelect()-detail">
+		buildSelect()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_db_querybuilder.html#buildSelect()-detail">buildSelect</a>( $columns, $distinct = false, $selectOption = null )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$columns</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol"></td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$distinct</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol"></td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$selectOption</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol"></td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the SELECT clause built from <span style="background: #f00;">\yii\db\query</span>.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="buildFrom()-detail">
+		buildFrom()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_db_querybuilder.html#buildFrom()-detail">buildFrom</a>( $tables )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$tables</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol"></td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the FROM clause built from <span style="background: #f00;">\yii\db\query</span>.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="buildJoin()-detail">
+		buildJoin()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_db_querybuilder.html#buildJoin()-detail">buildJoin</a>( $joins, <b>&</b>$params )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$joins</td>
+				  <td class="paramTypeCol">string|array</td>
+				  <td class="paramDescCol"></td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$params</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The binding parameters to be populated</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the JOIN clause built from <span style="background: #f00;">\yii\db\query</span>.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_db_exception.html">yii\db\Exception</a></td>
+				  <td class="paramDescCol">if the $joins parameter is not in proper format</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="buildWhere()-detail">
+		buildWhere()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_db_querybuilder.html#buildWhere()-detail">buildWhere</a>( $condition, <b>&</b>$params )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$condition</td>
+				  <td class="paramTypeCol">string|array</td>
+				  <td class="paramDescCol"></td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$params</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The binding parameters to be populated</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the WHERE clause built from <span style="background: #f00;">\yii\db\query</span>.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="buildGroupBy()-detail">
+		buildGroupBy()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_db_querybuilder.html#buildGroupBy()-detail">buildGroupBy</a>( $columns )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$columns</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol"></td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the GROUP BY clause</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="buildHaving()-detail">
+		buildHaving()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_db_querybuilder.html#buildHaving()-detail">buildHaving</a>( $condition, <b>&</b>$params )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$condition</td>
+				  <td class="paramTypeCol">string|array</td>
+				  <td class="paramDescCol"></td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$params</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The binding parameters to be populated</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the HAVING clause built from <span style="background: #f00;">\yii\db\query</span>.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="buildOrderBy()-detail">
+		buildOrderBy()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_db_querybuilder.html#buildOrderBy()-detail">buildOrderBy</a>( $columns )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$columns</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol"></td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the ORDER BY clause built from <span style="background: #f00;">\yii\db\query</span>.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="buildLimit()-detail">
+		buildLimit()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_db_querybuilder.html#buildLimit()-detail">buildLimit</a>( $limit, $offset )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$limit</td>
+				  <td class="paramTypeCol">integer</td>
+				  <td class="paramDescCol"></td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$offset</td>
+				  <td class="paramTypeCol">integer</td>
+				  <td class="paramDescCol"></td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the LIMIT and OFFSET clauses built from <span style="background: #f00;">\yii\db\query</span>.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="buildUnion()-detail">
+		buildUnion()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_db_querybuilder.html#buildUnion()-detail">buildUnion</a>( $unions, <b>&</b>$params )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$unions</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol"></td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$params</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The binding parameters to be populated</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the UNION clause built from <span style="background: #f00;">\yii\db\query</span>.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="buildColumns()-detail">
+		buildColumns()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_db_querybuilder.html#buildColumns()-detail">buildColumns</a>( $columns )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$columns</td>
+				  <td class="paramTypeCol">string|array</td>
+				  <td class="paramDescCol">The columns to be processed</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the processing result</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Processes columns and properly quote them if necessary.</strong></p>
+	<p>It will join all columns into a string with comma as separators.</p>
+
+	
+
+	<div class="detailHeader" id="buildCondition()-detail">
+		buildCondition()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_db_querybuilder.html#buildCondition()-detail">buildCondition</a>( $condition, <b>&</b>$params )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$condition</td>
+				  <td class="paramTypeCol">string|array</td>
+				  <td class="paramDescCol">The condition specification. Please refer to <a href="yii_db_query.html#where()-detail">yii\db\Query::where()</a>
+on how to specify a condition.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$params</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The binding parameters to be populated</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the generated SQL expression</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_base_invalidparamexception.html">yii\base\InvalidParamException</a></td>
+				  <td class="paramDescCol">if the condition is in bad format</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Parses the condition specification and generates the corresponding SQL expression.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="buildHashCondition()-detail">
+		buildHashCondition()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_db_querybuilder.html#buildHashCondition()-detail">buildHashCondition</a>( $condition, <b>&</b>$params )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$condition</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The condition specification.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$params</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The binding parameters to be populated</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the generated SQL expression</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Creates a condition based on column-value pairs.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="buildAndCondition()-detail">
+		buildAndCondition()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_db_querybuilder.html#buildAndCondition()-detail">buildAndCondition</a>( $operator, $operands, <b>&</b>$params )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$operator</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The operator to use for connecting the given operands</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$operands</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The SQL expressions to connect.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$params</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The binding parameters to be populated</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the generated SQL expression</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Connects two or more SQL expressions with the <code>AND</code> or <code>OR</code> operator.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="buildNotCondition()-detail">
+		buildNotCondition()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_db_querybuilder.html#buildNotCondition()-detail">buildNotCondition</a>( $operator, $operands, <b>&</b>$params )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$operator</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The operator to use for connecting the given operands</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$operands</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The SQL expressions to connect.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$params</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The binding parameters to be populated</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the generated SQL expression</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_base_invalidparamexception.html">yii\base\InvalidParamException</a></td>
+				  <td class="paramDescCol">if wrong number of operands have been given.</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Inverts an SQL expressions with <code>NOT</code> operator.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="buildBetweenCondition()-detail">
+		buildBetweenCondition()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_db_querybuilder.html#buildBetweenCondition()-detail">buildBetweenCondition</a>( $operator, $operands, <b>&</b>$params )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$operator</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The operator to use (e.g. <code>BETWEEN</code> or <code>NOT BETWEEN</code>)</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$operands</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The first operand is the column name. The second and third operands
+describe the interval that column value should be in.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$params</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The binding parameters to be populated</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the generated SQL expression</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_base_invalidparamexception.html">yii\base\InvalidParamException</a></td>
+				  <td class="paramDescCol">if wrong number of operands have been given.</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Creates an SQL expressions with the <code>BETWEEN</code> operator.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="buildInCondition()-detail">
+		buildInCondition()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_db_querybuilder.html#buildInCondition()-detail">buildInCondition</a>( $operator, $operands, <b>&</b>$params )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$operator</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The operator to use (e.g. <code>IN</code> or <code>NOT IN</code>)</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$operands</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The first operand is the column name. If it is an array
+a composite IN condition will be generated.
+The second operand is an array of values that column value should be among.
+If it is an empty array the generated expression will be a <code>false</code> value if
+operator is <code>IN</code> and empty if operator is <code>NOT IN</code>.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$params</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The binding parameters to be populated</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the generated SQL expression</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_db_exception.html">yii\db\Exception</a></td>
+				  <td class="paramDescCol">if wrong number of operands have been given.</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Creates an SQL expressions with the <code>IN</code> operator.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="buildCompositeInCondition()-detail">
+		buildCompositeInCondition()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_db_querybuilder.html#buildCompositeInCondition()-detail">buildCompositeInCondition</a>( $operator, $columns, $values, <b>&</b>$params )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$operator</td>
+				  <td class="paramTypeCol"></td>
+				  <td class="paramDescCol"></td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$columns</td>
+				  <td class="paramTypeCol"></td>
+				  <td class="paramDescCol"></td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$values</td>
+				  <td class="paramTypeCol"></td>
+				  <td class="paramDescCol"></td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$params</td>
+				  <td class="paramTypeCol"></td>
+				  <td class="paramDescCol"></td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="buildLikeCondition()-detail">
+		buildLikeCondition()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_db_querybuilder.html#buildLikeCondition()-detail">buildLikeCondition</a>( $operator, $operands, <b>&</b>$params )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$operator</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The operator to use (e.g. <code>LIKE</code>, <code>NOT LIKE</code>, <code>OR LIKE</code> or <code>OR NOT LIKE</code>)</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$operands</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">An array of two or three operands
+- The first operand is the column name.
+- The second operand is a single value or an array of values that column value
+  should be compared with. If it is an empty array the generated expression will
+  be a <code>false</code> value if operator is <code>LIKE</code> or <code>OR LIKE</code>, and empty if operator
+  is <code>NOT LIKE</code> or <code>OR NOT LIKE</code>.
+- An optional third operand can also be provided to specify how to escape special characters
+  in the value(s). The operand should be an array of mappings from the special characters to their
+  escaped counterparts. If this operand is not provided, a default escape mapping will be used.
+  You may use <code>false</code> or an empty array to indicate the values are already escaped and no escape
+  should be applied. Note that when using an escape mapping (or the third operand is not provided),
+  the values will be automatically enclosed within a pair of percentage characters.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$params</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The binding parameters to be populated</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the generated SQL expression</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_base_invalidparamexception.html">yii\base\InvalidParamException</a></td>
+				  <td class="paramDescCol">if wrong number of operands have been given.</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Creates an SQL expressions with the <code>LIKE</code> operator.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="buildExistsCondition()-detail">
+		buildExistsCondition()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_db_querybuilder.html#buildExistsCondition()-detail">buildExistsCondition</a>( $operator, $operands, <b>&</b>$params )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$operator</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The operator to use (e.g. <code>EXISTS</code> or <code>NOT EXISTS</code>)</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$operands</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">Contains only one element which is a <a href="yii_db_query.html">yii\db\Query</a> object representing the sub-query.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$params</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The binding parameters to be populated</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the generated SQL expression</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Creates an SQL expressions with the <code>EXISTS</code> operator.</strong></p>
+	<p></p>
+
+	
+			</div><!-- end of content -->
+
+		<div id="apiFooter">
+			<p>&copy; 2008-2013 by <a href="http://www.yiisoft.com">Yii Software LLC</a></p>
+			<p>All Rights Reserved.</p>
+		</div><!-- end of footer -->
+
+<script type="text/javascript">
+/*<![CDATA[*/
+$("a.toggle").on('click', function() {
+	var $this = $(this);
+	if ($this.hasClass('properties-hidden')) {
+		$this.text($this.text().replace(/Show/,'Hide'));
+		$this.parents(".summary").find(".inherited").show();
+		$this.removeClass('properties-hidden');
+	} else {
+		$this.text($this.text().replace(/Hide/,'Show'));
+		$this.parents(".summary").find(".inherited").hide();
+		$this.addClass('properties-hidden');
+	}
+	return false;
+});
+/*
+$(".sourceCode a.show").toggle(function(){
+	$(this).text($(this).text().replace(/show/,'hide'));
+	$(this).parents(".sourceCode").find("div.code").show();
+},function(){
+	$(this).text($(this).text().replace(/hide/,'show'));
+	$(this).parents(".sourceCode").find("div.code").hide();
+});
+$("a.sourceLink").click(function(){
+	$(this).attr('target','_blank');
+});
+*/
+/*]]>*/
+</script>
+
+	</div><!-- end of page -->
+</body>
+</html>

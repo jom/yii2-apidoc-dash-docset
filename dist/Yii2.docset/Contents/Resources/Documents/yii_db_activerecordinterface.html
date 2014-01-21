@@ -1,0 +1,956 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="language" content="en" />
+<link href="./assets/4138e429/api.css" rel="stylesheet">
+<link href="./assets/4138e429/style.css" rel="stylesheet">
+<script src="./assets/a91b37a6/jquery.js"></script><title>Yii Framework 2.0 API Documentation</title>
+</head>
+
+<body>
+	<div id="apiPage">
+
+		<div id="apiHeader">
+			<a href="http://www.yiiframework.com">Yii Framework</a> v2.0.0-dev Class Reference
+		</div><!-- end of header -->
+
+		<div id="content">
+		<h1>Interface yii\db\ActiveRecordInterface</h1>
+<div id="nav">
+	<a href="index.html">All Classes</a>
+				| <a href="#methods">Methods</a>
+			</div>
+
+<table class="summaryTable docClass">
+	<colgroup>
+		<col class="col-name" />
+		<col class="col-value" />
+	</colgroup>
+							<tr><th>Implemented by</th><td><a href="yii_db_activerecord.html">yii\db\ActiveRecord</a>, <a href="yii_db_baseactiverecord.html">yii\db\BaseActiveRecord</a>, <a href="yii_redis_activerecord.html">yii\redis\ActiveRecord</a></td></tr>
+					<tr><th>Available since version</th><td>2.0</td></tr>
+		<tr>
+	  <th>Source Code</th>
+	  <td></td>
+	</tr>
+</table>
+
+<div id="classDescription">
+	<strong>ActiveRecordInterface</strong>
+	<p></p>
+</div>
+
+<a name="properties"></a>
+
+<a name="methods"></a>
+
+<div class="summary docMethod">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr id="primaryKey()">
+		<td><a href="yii_db_activerecordinterface.html#primaryKey()-detail">primaryKey()</a></td>
+		<td>Returns the primary key <strong>name(s)</strong> for this AR class.</td>
+		<td><a href="yii_db_activerecordinterface.html">yii\db\ActiveRecordInterface</a></td>
+	</tr>
+			<tr id="attributes()">
+		<td><a href="yii_db_activerecordinterface.html#attributes()-detail">attributes()</a></td>
+		<td>Returns the list of all attribute names of the record.</td>
+		<td><a href="yii_db_activerecordinterface.html">yii\db\ActiveRecordInterface</a></td>
+	</tr>
+			<tr id="getAttribute()">
+		<td><a href="yii_db_activerecordinterface.html#getAttribute()-detail">getAttribute()</a></td>
+		<td>Returns the named attribute value.</td>
+		<td><a href="yii_db_activerecordinterface.html">yii\db\ActiveRecordInterface</a></td>
+	</tr>
+			<tr id="setAttribute()">
+		<td><a href="yii_db_activerecordinterface.html#setAttribute()-detail">setAttribute()</a></td>
+		<td>Sets the named attribute value.</td>
+		<td><a href="yii_db_activerecordinterface.html">yii\db\ActiveRecordInterface</a></td>
+	</tr>
+			<tr id="hasAttribute()">
+		<td><a href="yii_db_activerecordinterface.html#hasAttribute()-detail">hasAttribute()</a></td>
+		<td>Returns a value indicating whether the record has an attribute with the specified name.</td>
+		<td><a href="yii_db_activerecordinterface.html">yii\db\ActiveRecordInterface</a></td>
+	</tr>
+			<tr id="getPrimaryKey()">
+		<td><a href="yii_db_activerecordinterface.html#getPrimaryKey()-detail">getPrimaryKey()</a></td>
+		<td>Returns the primary key value(s).</td>
+		<td><a href="yii_db_activerecordinterface.html">yii\db\ActiveRecordInterface</a></td>
+	</tr>
+			<tr id="getOldPrimaryKey()">
+		<td><a href="yii_db_activerecordinterface.html#getOldPrimaryKey()-detail">getOldPrimaryKey()</a></td>
+		<td>Returns the old primary key value(s).</td>
+		<td><a href="yii_db_activerecordinterface.html">yii\db\ActiveRecordInterface</a></td>
+	</tr>
+			<tr id="find()">
+		<td><a href="yii_db_activerecordinterface.html#find()-detail">find()</a></td>
+		<td>Creates an <a href="yii_db_activequeryinterface.html">yii\db\ActiveQueryInterface</a> instance for query purpose.</td>
+		<td><a href="yii_db_activerecordinterface.html">yii\db\ActiveRecordInterface</a></td>
+	</tr>
+			<tr id="createQuery()">
+		<td><a href="yii_db_activerecordinterface.html#createQuery()-detail">createQuery()</a></td>
+		<td>Creates an <a href="yii_db_activequeryinterface.html">yii\db\ActiveQueryInterface</a> instance.</td>
+		<td><a href="yii_db_activerecordinterface.html">yii\db\ActiveRecordInterface</a></td>
+	</tr>
+			<tr id="updateAll()">
+		<td><a href="yii_db_activerecordinterface.html#updateAll()-detail">updateAll()</a></td>
+		<td>Updates records using the provided attribute values and conditions.</td>
+		<td><a href="yii_db_activerecordinterface.html">yii\db\ActiveRecordInterface</a></td>
+	</tr>
+			<tr id="deleteAll()">
+		<td><a href="yii_db_activerecordinterface.html#deleteAll()-detail">deleteAll()</a></td>
+		<td>Deletes records using the provided conditions.</td>
+		<td><a href="yii_db_activerecordinterface.html">yii\db\ActiveRecordInterface</a></td>
+	</tr>
+			<tr id="save()">
+		<td><a href="yii_db_activerecordinterface.html#save()-detail">save()</a></td>
+		<td>Saves the current record.</td>
+		<td><a href="yii_db_activerecordinterface.html">yii\db\ActiveRecordInterface</a></td>
+	</tr>
+			<tr id="insert()">
+		<td><a href="yii_db_activerecordinterface.html#insert()-detail">insert()</a></td>
+		<td>Inserts the record into the database using the attribute values of this record.</td>
+		<td><a href="yii_db_activerecordinterface.html">yii\db\ActiveRecordInterface</a></td>
+	</tr>
+			<tr id="update()">
+		<td><a href="yii_db_activerecordinterface.html#update()-detail">update()</a></td>
+		<td>Saves the changes to this active record into the database.</td>
+		<td><a href="yii_db_activerecordinterface.html">yii\db\ActiveRecordInterface</a></td>
+	</tr>
+			<tr id="delete()">
+		<td><a href="yii_db_activerecordinterface.html#delete()-detail">delete()</a></td>
+		<td>Deletes the record from the database.</td>
+		<td><a href="yii_db_activerecordinterface.html">yii\db\ActiveRecordInterface</a></td>
+	</tr>
+			<tr id="getIsNewRecord()">
+		<td><a href="yii_db_activerecordinterface.html#getIsNewRecord()-detail">getIsNewRecord()</a></td>
+		<td>Returns a value indicating whether the current record is new (not saved in the database).</td>
+		<td><a href="yii_db_activerecordinterface.html">yii\db\ActiveRecordInterface</a></td>
+	</tr>
+			<tr id="equals()">
+		<td><a href="yii_db_activerecordinterface.html#equals()-detail">equals()</a></td>
+		<td>Returns a value indicating whether the given active record is the same as the current one.</td>
+		<td><a href="yii_db_activerecordinterface.html">yii\db\ActiveRecordInterface</a></td>
+	</tr>
+			<tr id="createActiveRelation()">
+		<td><a href="yii_db_activerecordinterface.html#createActiveRelation()-detail">createActiveRelation()</a></td>
+		<td>Creates an <a href="yii_db_activerelationinterface.html">yii\db\ActiveRelationInterface</a> instance.</td>
+		<td><a href="yii_db_activerecordinterface.html">yii\db\ActiveRecordInterface</a></td>
+	</tr>
+			<tr id="getRelation()">
+		<td><a href="yii_db_activerecordinterface.html#getRelation()-detail">getRelation()</a></td>
+		<td>Returns the relation object with the specified name.</td>
+		<td><a href="yii_db_activerecordinterface.html">yii\db\ActiveRecordInterface</a></td>
+	</tr>
+			<tr id="link()">
+		<td><a href="yii_db_activerecordinterface.html#link()-detail">link()</a></td>
+		<td>Establishes the relationship between two records.</td>
+		<td><a href="yii_db_activerecordinterface.html">yii\db\ActiveRecordInterface</a></td>
+	</tr>
+			<tr id="unlink()">
+		<td><a href="yii_db_activerecordinterface.html#unlink()-detail">unlink()</a></td>
+		<td>Destroys the relationship between two records.</td>
+		<td><a href="yii_db_activerecordinterface.html">yii\db\ActiveRecordInterface</a></td>
+	</tr>
+	</table>
+</div>
+<a name="events"></a>
+
+<a name="constants"></a>
+
+<h2>Method Details</h2>
+
+
+	<div class="detailHeader" id="primaryKey()-detail">
+		primaryKey()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_db_activerecordinterface.html#primaryKey()-detail">primaryKey</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the primary key name(s) for this AR class.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the primary key <strong>name(s)</strong> for this AR class.</strong></p>
+	<p>Note that an array should be returned even when the record only has a single primary key.</p>
+
+<p>For the primary key <strong>value</strong> see <a href="yii_db_activerecordinterface.html#getPrimaryKey()-detail">getPrimaryKey()</a> instead.</p>
+
+	
+
+	<div class="detailHeader" id="attributes()-detail">
+		attributes()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			array <a href="yii_db_activerecordinterface.html#attributes()-detail">attributes</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">list of attribute names.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the list of all attribute names of the record.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getAttribute()-detail">
+		getAttribute()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			mixed <a href="yii_db_activerecordinterface.html#getAttribute()-detail">getAttribute</a>( $name )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The attribute name</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">the attribute value. Null if the attribute is not set or does not exist.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the named attribute value.</strong></p>
+	<p>If this record is the result of a query and the attribute is not loaded,
+null will be returned.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_db_activerecordinterface.html#hasAttribute()-detail">hasAttribute()</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="setAttribute()-detail">
+		setAttribute()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_db_activerecordinterface.html#setAttribute()-detail">setAttribute</a>( $name, $value )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The attribute name.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$value</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">The attribute value.</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Sets the named attribute value.</strong></p>
+	<p></p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_db_activerecordinterface.html#hasAttribute()-detail">hasAttribute()</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="hasAttribute()-detail">
+		hasAttribute()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_db_activerecordinterface.html#hasAttribute()-detail">hasAttribute</a>( $name )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The name of the attribute</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether the record has an attribute with the specified name.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns a value indicating whether the record has an attribute with the specified name.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getPrimaryKey()-detail">
+		getPrimaryKey()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			mixed <a href="yii_db_activerecordinterface.html#getPrimaryKey()-detail">getPrimaryKey</a>( $asArray = false )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$asArray</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">Whether to return the primary key value as an array. If true,
+the return value will be an array with attribute names as keys and attribute values as values.
+Note that for composite primary keys, an array will always be returned regardless of this parameter value.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">the primary key value. An array (attribute name => attribute value) is returned if the primary key
+is composite or <code>$asArray</code> is true. A string is returned otherwise (null will be returned if
+the key value is null).</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the primary key value(s).</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getOldPrimaryKey()-detail">
+		getOldPrimaryKey()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			mixed <a href="yii_db_activerecordinterface.html#getOldPrimaryKey()-detail">getOldPrimaryKey</a>( $asArray = false )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$asArray</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">Whether to return the primary key value as an array. If true,
+the return value will be an array with column name as key and column value as value.
+If this is false (default), a scalar value will be returned for non-composite primary key.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">the old primary key value. An array (column name => column value) is returned if the primary key
+is composite or <code>$asArray</code> is true. A string is returned otherwise (null will be returned if
+the key value is null).</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the old primary key value(s).</strong></p>
+	<p>This refers to the primary key value that is populated into the record
+after executing a find method (e.g. find(), findAll()).
+The value remains unchanged even if the primary key attribute is manually assigned with a different value.</p>
+
+	
+
+	<div class="detailHeader" id="find()-detail">
+		find()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			<a href="yii_db_activequeryinterface.html">yii\db\ActiveQueryInterface</a>|static|null <a href="yii_db_activerecordinterface.html#find()-detail">find</a>( $q = null )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$q</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">The query parameter. This can be one of the followings:
+ - a scalar value (integer or string): query by a single primary key value and return the
+   corresponding record.
+ - an array of name-value pairs: query by a set of attribute values and return a single record matching all of them.
+ - null (not specified): return a new <a href="yii_db_activequery.html">yii\db\ActiveQuery</a> object for further query purpose.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol"><a href="yii_db_activequeryinterface.html">yii\db\ActiveQueryInterface</a>|static|null</td>
+				  <td class="paramDescCol">When <code>$q</code> is null, a new <a href="yii_db_activequery.html">yii\db\ActiveQuery</a> instance
+is returned; when <code>$q</code> is a scalar or an array, an ActiveRecord object matching it will be
+returned (null will be returned if there is no matching).</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Creates an <a href="yii_db_activequeryinterface.html">yii\db\ActiveQueryInterface</a> instance for query purpose.</strong></p>
+	<p>This method is usually ment to be used like this:</p>
+
+<p><code>php
+Customer::find(1); // find one customer by primary key
+Customer::find()-&gt;all(); // find all customers</code></p>
+
+	
+
+	<div class="detailHeader" id="createQuery()-detail">
+		createQuery()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			<a href="yii_db_activequeryinterface.html">yii\db\ActiveQueryInterface</a> <a href="yii_db_activerecordinterface.html#createQuery()-detail">createQuery</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol"><a href="yii_db_activequeryinterface.html">yii\db\ActiveQueryInterface</a></td>
+				  <td class="paramDescCol">the newly created <a href="yii_db_activequeryinterface.html">yii\db\ActiveQueryInterface</a> instance.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Creates an <a href="yii_db_activequeryinterface.html">yii\db\ActiveQueryInterface</a> instance.</strong></p>
+	<p>This method is called by <a href="yii_db_activerecordinterface.html#find()-detail">find()</a> to start a SELECT query.
+You may override this method to return a customized query (e.g. <code>CustomerQuery</code> specified
+written for querying <code>Customer</code> purpose.)</p>
+
+<p>You may also define default conditions that should apply to all queries unless overridden:</p>
+
+<p><code>php
+public static function createQuery()
+{
+    return parent::createQuery()-&gt;where(['deleted' =&gt; false]);
+}</code></p>
+
+<p>Note that all queries should use <a href="yii_db_query.html#andWhere()-detail">yii\db\Query::andWhere()</a> and <a href="yii_db_query.html#orWhere()-detail">yii\db\Query::orWhere()</a> to keep the
+default condition. Using <a href="yii_db_query.html#where()-detail">yii\db\Query::where()</a> will override the default condition.</p>
+
+	
+
+	<div class="detailHeader" id="updateAll()-detail">
+		updateAll()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			integer <a href="yii_db_activerecordinterface.html#updateAll()-detail">updateAll</a>( $attributes, $condition = null )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$attributes</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">Attribute values (name-value pairs) to be saved for the record.
+Unlike <a href="yii_db_activerecordinterface.html#update()-detail">update()</a> these are not going to be validated.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$condition</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The condition that matches the records that should get updated.
+Please refer to <a href="yii_db_queryinterface.html#where()-detail">yii\db\QueryInterface::where()</a> on how to specify this parameter.
+An empty condition will match all records.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">integer</td>
+				  <td class="paramDescCol">the number of rows updated</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Updates records using the provided attribute values and conditions.</strong></p>
+	<p><p>For example, to change the status to be 1 for all customers whose status is 2:</p>
+
+<pre><code>Customer::updateAll(['status' =&gt; 1], ['status' =&gt; '2']);
+</code></pre></p>
+
+	
+
+	<div class="detailHeader" id="deleteAll()-detail">
+		deleteAll()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			integer <a href="yii_db_activerecordinterface.html#deleteAll()-detail">deleteAll</a>( $condition = null )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$condition</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The condition that matches the records that should get deleted.
+Please refer to <a href="yii_db_queryinterface.html#where()-detail">yii\db\QueryInterface::where()</a> on how to specify this parameter.
+An empty condition will match all records.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">integer</td>
+				  <td class="paramDescCol">the number of rows deleted</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Deletes records using the provided conditions.</strong></p>
+	<p><p>WARNING: If you do not specify any condition, this method will delete ALL rows in the table.</p>
+
+<p>For example, to delete all customers whose status is 3:</p>
+
+<pre><code>Customer::deleteAll([status = 3]);
+</code></pre></p>
+
+	
+
+	<div class="detailHeader" id="save()-detail">
+		save()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_db_activerecordinterface.html#save()-detail">save</a>( $runValidation = true, $attributes = null )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$runValidation</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">Whether to perform validation before saving the record.
+If the validation fails, the record will not be saved to database. <code>false</code> will be returned
+in this case.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$attributes</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">List of attributes that need to be saved. Defaults to null,
+meaning all attributes that are loaded from DB will be saved.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether the saving succeeds</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Saves the current record.</strong></p>
+	<p><p>This method will call <a href="yii_db_activerecordinterface.html#insert()-detail">insert()</a> when <span style="background: #f00;">\yii\db\isNewRecord</span> is true, or <a href="yii_db_activerecordinterface.html#update()-detail">update()</a>
+when <span style="background: #f00;">\yii\db\isNewRecord</span> is false.</p>
+
+<p>For example, to save a customer record:</p>
+
+<pre><code>$customer = new Customer; // or $customer = Customer::find($id);
+$customer-&gt;name = $name;
+$customer-&gt;email = $email;
+$customer-&gt;save();
+</code></pre></p>
+
+	
+
+	<div class="detailHeader" id="insert()-detail">
+		insert()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_db_activerecordinterface.html#insert()-detail">insert</a>( $runValidation = true, $attributes = null )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$runValidation</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">Whether to perform validation before saving the record.
+If the validation fails, the record will not be inserted into the database.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$attributes</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">List of attributes that need to be saved. Defaults to null,
+meaning all attributes that are loaded from DB will be saved.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether the attributes are valid and the record is inserted successfully.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Inserts the record into the database using the attribute values of this record.</strong></p>
+	<p>Usage example:</p>
+
+<p><code>php
+$customer = new Customer;
+$customer-&gt;name = $name;
+$customer-&gt;email = $email;
+$customer-&gt;insert();</code></p>
+
+	
+
+	<div class="detailHeader" id="update()-detail">
+		update()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			integer|boolean <a href="yii_db_activerecordinterface.html#update()-detail">update</a>( $runValidation = true, $attributes = null )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$runValidation</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">Whether to perform validation before saving the record.
+If the validation fails, the record will not be inserted into the database.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$attributes</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">List of attributes that need to be saved. Defaults to null,
+meaning all attributes that are loaded from DB will be saved.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">integer|boolean</td>
+				  <td class="paramDescCol">the number of rows affected, or false if validation fails
+or updating process is stopped for other reasons.
+Note that it is possible that the number of rows affected is 0, even though the
+update execution is successful.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Saves the changes to this active record into the database.</strong></p>
+	<p>Usage example:</p>
+
+<p><code>php
+$customer = Customer::find($id);
+$customer-&gt;name = $name;
+$customer-&gt;email = $email;
+$customer-&gt;update();</code></p>
+
+	
+
+	<div class="detailHeader" id="delete()-detail">
+		delete()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			integer|boolean <a href="yii_db_activerecordinterface.html#delete()-detail">delete</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">integer|boolean</td>
+				  <td class="paramDescCol">the number of rows deleted, or false if the deletion is unsuccessful for some reason.
+Note that it is possible that the number of rows deleted is 0, even though the deletion execution is successful.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Deletes the record from the database.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getIsNewRecord()-detail">
+		getIsNewRecord()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_db_activerecordinterface.html#getIsNewRecord()-detail">getIsNewRecord</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether the record is new and should be inserted when calling <a href="yii_db_activerecordinterface.html#save()-detail">save()</a>.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns a value indicating whether the current record is new (not saved in the database).</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="equals()-detail">
+		equals()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_db_activerecordinterface.html#equals()-detail">equals</a>( $record )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$record</td>
+				  <td class="paramTypeCol">static</td>
+				  <td class="paramDescCol">Record to compare to</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether the two active records refer to the same row in the same database table.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns a value indicating whether the given active record is the same as the current one.</strong></p>
+	<p>Two <span style="background: #f00;">\yii\db\isNewRecord</span> records are considered to be not equal.</p>
+
+	
+
+	<div class="detailHeader" id="createActiveRelation()-detail">
+		createActiveRelation()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			<a href="yii_db_activerelation.html">yii\db\ActiveRelation</a> <a href="yii_db_activerecordinterface.html#createActiveRelation()-detail">createActiveRelation</a>( $config = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$config</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The configuration passed to the ActiveRelation class.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol"><a href="yii_db_activerelation.html">yii\db\ActiveRelation</a></td>
+				  <td class="paramDescCol">the newly created <a href="yii_db_activerelation.html">yii\db\ActiveRelation</a> instance.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Creates an <a href="yii_db_activerelationinterface.html">yii\db\ActiveRelationInterface</a> instance.</strong></p>
+	<p>This method is called by <a href="yii_db_baseactiverecord.html#hasOne()-detail">yii\db\BaseActiveRecord::hasOne()</a> and <a href="yii_db_baseactiverecord.html#hasMany()-detail">yii\db\BaseActiveRecord::hasMany()</a> to
+create a relation instance.
+You may override this method to return a customized relation.</p>
+
+	
+
+	<div class="detailHeader" id="getRelation()-detail">
+		getRelation()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			<a href="yii_db_activerelation.html">yii\db\ActiveRelation</a> <a href="yii_db_activerecordinterface.html#getRelation()-detail">getRelation</a>( $name )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The relation name</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol"><a href="yii_db_activerelation.html">yii\db\ActiveRelation</a></td>
+				  <td class="paramDescCol">the relation object</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the relation object with the specified name.</strong></p>
+	<p>A relation is defined by a getter method which returns an <a href="yii_db_activerelationinterface.html">yii\db\ActiveRelationInterface</a> object.
+It can be declared in either the ActiveRecord class itself or one of its behaviors.</p>
+
+	
+
+	<div class="detailHeader" id="link()-detail">
+		link()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_db_activerecordinterface.html#link()-detail">link</a>( $name, $model, $extraColumns = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The case sensitive name of the relationship.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$model</td>
+				  <td class="paramTypeCol">static</td>
+				  <td class="paramDescCol">The record to be linked with the current one.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$extraColumns</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">Additional column values to be saved into the pivot table.
+This parameter is only meaningful for a relationship involving a pivot table
+(i.e., a relation set with <code><a href="yii_db_activerelationinterface.html#via()-detail">yii\db\ActiveRelationInterface::via()</a></code>.)</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Establishes the relationship between two records.</strong></p>
+	<p>The relationship is established by setting the foreign key value(s) in one record
+to be the corresponding primary key value(s) in the other record.
+The record with the foreign key will be saved into database without performing validation.</p>
+
+<p>If the relationship involves a pivot table, a new row will be inserted into the
+pivot table which contains the primary key values from both records.</p>
+
+<p>This method requires that the primary key value is not null.</p>
+
+	
+
+	<div class="detailHeader" id="unlink()-detail">
+		unlink()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_db_activerecordinterface.html#unlink()-detail">unlink</a>( $name, $model, $delete = false )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The case sensitive name of the relationship.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$model</td>
+				  <td class="paramTypeCol">static</td>
+				  <td class="paramDescCol">The model to be unlinked from the current one.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$delete</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">Whether to delete the model that contains the foreign key.
+If false, the model's foreign key will be set null and saved.
+If true, the model containing the foreign key will be deleted.</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Destroys the relationship between two records.</strong></p>
+	<p>The record with the foreign key of the relationship will be deleted if <code>$delete</code> is true.
+Otherwise, the foreign key will be set null and the record will be saved without validation.</p>
+
+	
+		</div><!-- end of content -->
+
+		<div id="apiFooter">
+			<p>&copy; 2008-2013 by <a href="http://www.yiisoft.com">Yii Software LLC</a></p>
+			<p>All Rights Reserved.</p>
+		</div><!-- end of footer -->
+
+<script type="text/javascript">
+/*<![CDATA[*/
+$("a.toggle").on('click', function() {
+	var $this = $(this);
+	if ($this.hasClass('properties-hidden')) {
+		$this.text($this.text().replace(/Show/,'Hide'));
+		$this.parents(".summary").find(".inherited").show();
+		$this.removeClass('properties-hidden');
+	} else {
+		$this.text($this.text().replace(/Hide/,'Show'));
+		$this.parents(".summary").find(".inherited").hide();
+		$this.addClass('properties-hidden');
+	}
+	return false;
+});
+/*
+$(".sourceCode a.show").toggle(function(){
+	$(this).text($(this).text().replace(/show/,'hide'));
+	$(this).parents(".sourceCode").find("div.code").show();
+},function(){
+	$(this).text($(this).text().replace(/hide/,'show'));
+	$(this).parents(".sourceCode").find("div.code").hide();
+});
+$("a.sourceLink").click(function(){
+	$(this).attr('target','_blank');
+});
+*/
+/*]]>*/
+</script>
+
+	</div><!-- end of page -->
+</body>
+</html>

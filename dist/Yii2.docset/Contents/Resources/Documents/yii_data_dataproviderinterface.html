@@ -1,0 +1,324 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="language" content="en" />
+<link href="./assets/4138e429/api.css" rel="stylesheet">
+<link href="./assets/4138e429/style.css" rel="stylesheet">
+<script src="./assets/a91b37a6/jquery.js"></script><title>Yii Framework 2.0 API Documentation</title>
+</head>
+
+<body>
+	<div id="apiPage">
+
+		<div id="apiHeader">
+			<a href="http://www.yiiframework.com">Yii Framework</a> v2.0.0-dev Class Reference
+		</div><!-- end of header -->
+
+		<div id="content">
+		<h1>Interface yii\data\DataProviderInterface</h1>
+<div id="nav">
+	<a href="index.html">All Classes</a>
+				| <a href="#methods">Methods</a>
+			</div>
+
+<table class="summaryTable docClass">
+	<colgroup>
+		<col class="col-name" />
+		<col class="col-value" />
+	</colgroup>
+							<tr><th>Implemented by</th><td><a href="yii_data_activedataprovider.html">yii\data\ActiveDataProvider</a>, <a href="yii_data_arraydataprovider.html">yii\data\ArrayDataProvider</a>, <a href="yii_data_basedataprovider.html">yii\data\BaseDataProvider</a>, <a href="yii_data_sqldataprovider.html">yii\data\SqlDataProvider</a></td></tr>
+					<tr><th>Available since version</th><td>2.0</td></tr>
+		<tr>
+	  <th>Source Code</th>
+	  <td></td>
+	</tr>
+</table>
+
+<div id="classDescription">
+	<strong>DataProviderInterface is the interface that must be implemented by data provider classes.</strong>
+	<p>Data providers are components that sort and paginate data, and provide them to widgets
+such as <span style="background: #f00;">\yii\data\GridView</span>, <span style="background: #f00;">\yii\data\ListView</span>.</p>
+</div>
+
+<a name="properties"></a>
+
+<a name="methods"></a>
+
+<div class="summary docMethod">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr id="prepare()">
+		<td><a href="yii_data_dataproviderinterface.html#prepare()-detail">prepare()</a></td>
+		<td>Prepares the data models and keys.</td>
+		<td><a href="yii_data_dataproviderinterface.html">yii\data\DataProviderInterface</a></td>
+	</tr>
+			<tr id="getCount()">
+		<td><a href="yii_data_dataproviderinterface.html#getCount()-detail">getCount()</a></td>
+		<td>Returns the number of data models in the current page.</td>
+		<td><a href="yii_data_dataproviderinterface.html">yii\data\DataProviderInterface</a></td>
+	</tr>
+			<tr id="getTotalCount()">
+		<td><a href="yii_data_dataproviderinterface.html#getTotalCount()-detail">getTotalCount()</a></td>
+		<td>Returns the total number of data models.</td>
+		<td><a href="yii_data_dataproviderinterface.html">yii\data\DataProviderInterface</a></td>
+	</tr>
+			<tr id="getModels()">
+		<td><a href="yii_data_dataproviderinterface.html#getModels()-detail">getModels()</a></td>
+		<td>Returns the data models in the current page.</td>
+		<td><a href="yii_data_dataproviderinterface.html">yii\data\DataProviderInterface</a></td>
+	</tr>
+			<tr id="getKeys()">
+		<td><a href="yii_data_dataproviderinterface.html#getKeys()-detail">getKeys()</a></td>
+		<td>Returns the key values associated with the data models.</td>
+		<td><a href="yii_data_dataproviderinterface.html">yii\data\DataProviderInterface</a></td>
+	</tr>
+			<tr id="getSort()">
+		<td><a href="yii_data_dataproviderinterface.html#getSort()-detail">getSort()</a></td>
+		<td></td>
+		<td><a href="yii_data_dataproviderinterface.html">yii\data\DataProviderInterface</a></td>
+	</tr>
+			<tr id="getPagination()">
+		<td><a href="yii_data_dataproviderinterface.html#getPagination()-detail">getPagination()</a></td>
+		<td></td>
+		<td><a href="yii_data_dataproviderinterface.html">yii\data\DataProviderInterface</a></td>
+	</tr>
+	</table>
+</div>
+<a name="events"></a>
+
+<a name="constants"></a>
+
+<h2>Method Details</h2>
+
+
+	<div class="detailHeader" id="prepare()-detail">
+		prepare()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_data_dataproviderinterface.html#prepare()-detail">prepare</a>( $forcePrepare = false )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$forcePrepare</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">Whether to force data preparation even if it has been done before.</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Prepares the data models and keys.</strong></p>
+	<p>This method will prepare the data models and keys that can be retrieved via
+<a href="yii_data_dataproviderinterface.html#getModels()-detail">getModels()</a> and <a href="yii_data_dataproviderinterface.html#getKeys()-detail">getKeys()</a>.</p>
+
+<p>This method will be implicitly called by <a href="yii_data_dataproviderinterface.html#getModels()-detail">getModels()</a> and <a href="yii_data_dataproviderinterface.html#getKeys()-detail">getKeys()</a> if it has not been called before.</p>
+
+	
+
+	<div class="detailHeader" id="getCount()-detail">
+		getCount()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			integer <a href="yii_data_dataproviderinterface.html#getCount()-detail">getCount</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">integer</td>
+				  <td class="paramDescCol">the number of data models in the current page.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the number of data models in the current page.</strong></p>
+	<p>This is equivalent to <code>count($provider-&gt;getModels())</code>.
+When <span style="background: #f00;">\yii\data\pagination</span> is false, this is the same as <span style="background: #f00;">\yii\data\totalCount</span>.</p>
+
+	
+
+	<div class="detailHeader" id="getTotalCount()-detail">
+		getTotalCount()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			integer <a href="yii_data_dataproviderinterface.html#getTotalCount()-detail">getTotalCount</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">integer</td>
+				  <td class="paramDescCol">total number of possible data models.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the total number of data models.</strong></p>
+	<p>When <span style="background: #f00;">\yii\data\pagination</span> is false, this is the same as <span style="background: #f00;">\yii\data\count</span>.</p>
+
+	
+
+	<div class="detailHeader" id="getModels()-detail">
+		getModels()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			array <a href="yii_data_dataproviderinterface.html#getModels()-detail">getModels</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">the list of data models in the current page.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the data models in the current page.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getKeys()-detail">
+		getKeys()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			array <a href="yii_data_dataproviderinterface.html#getKeys()-detail">getKeys</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">the list of key values corresponding to <span style="background: #f00;">\yii\data\models</span>. Each data model in <span style="background: #f00;">\yii\data\models</span>
+is uniquely identified by the corresponding key value in this array.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the key values associated with the data models.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getSort()-detail">
+		getSort()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			<a href="yii_data_sort.html">yii\data\Sort</a> <a href="yii_data_dataproviderinterface.html#getSort()-detail">getSort</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol"><a href="yii_data_sort.html">yii\data\Sort</a></td>
+				  <td class="paramDescCol">the sorting object. If this is false, it means the sorting is disabled.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getPagination()-detail">
+		getPagination()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			<a href="yii_data_pagination.html">yii\data\Pagination</a> <a href="yii_data_dataproviderinterface.html#getPagination()-detail">getPagination</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol"><a href="yii_data_pagination.html">yii\data\Pagination</a></td>
+				  <td class="paramDescCol">the pagination object. If this is false, it means the pagination is disabled.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+		</div><!-- end of content -->
+
+		<div id="apiFooter">
+			<p>&copy; 2008-2013 by <a href="http://www.yiisoft.com">Yii Software LLC</a></p>
+			<p>All Rights Reserved.</p>
+		</div><!-- end of footer -->
+
+<script type="text/javascript">
+/*<![CDATA[*/
+$("a.toggle").on('click', function() {
+	var $this = $(this);
+	if ($this.hasClass('properties-hidden')) {
+		$this.text($this.text().replace(/Show/,'Hide'));
+		$this.parents(".summary").find(".inherited").show();
+		$this.removeClass('properties-hidden');
+	} else {
+		$this.text($this.text().replace(/Hide/,'Show'));
+		$this.parents(".summary").find(".inherited").hide();
+		$this.addClass('properties-hidden');
+	}
+	return false;
+});
+/*
+$(".sourceCode a.show").toggle(function(){
+	$(this).text($(this).text().replace(/show/,'hide'));
+	$(this).parents(".sourceCode").find("div.code").show();
+},function(){
+	$(this).text($(this).text().replace(/hide/,'show'));
+	$(this).parents(".sourceCode").find("div.code").hide();
+});
+$("a.sourceLink").click(function(){
+	$(this).attr('target','_blank');
+});
+*/
+/*]]>*/
+</script>
+
+	</div><!-- end of page -->
+</body>
+</html>

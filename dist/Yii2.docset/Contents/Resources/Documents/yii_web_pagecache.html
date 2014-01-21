@@ -1,0 +1,535 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="language" content="en" />
+<link href="./assets/4138e429/api.css" rel="stylesheet">
+<link href="./assets/4138e429/style.css" rel="stylesheet">
+<script src="./assets/a91b37a6/jquery.js"></script><title>Yii Framework 2.0 API Documentation</title>
+</head>
+
+<body>
+	<div id="apiPage">
+
+		<div id="apiHeader">
+			<a href="http://www.yiiframework.com">Yii Framework</a> v2.0.0-dev Class Reference
+		</div><!-- end of header -->
+
+		<div id="content">
+		<h1>Class yii\web\PageCache</h1>
+<div id="nav">
+	<a href="index.html">All Classes</a>
+			| <a href="#properties">Properties</a>
+				| <a href="#methods">Methods</a>
+			</div>
+
+<table class="summaryTable docClass">
+	<colgroup>
+		<col class="col-name" />
+		<col class="col-value" />
+	</colgroup>
+			<tr><th>Inheritance</th><td><a href="yii_web_pagecache.html">yii\web\PageCache</a> &raquo;
+<a href="yii_base_actionfilter.html">yii\base\ActionFilter</a> &raquo;
+<a href="yii_base_behavior.html">yii\base\Behavior</a> &raquo;
+<a href="yii_base_object.html">yii\base\Object</a></td></tr>
+				<tr><th>Implements</th><td><a href="yii_base_arrayable.html">yii\base\Arrayable</a></td></tr>
+								<tr><th>Available since version</th><td>2.0</td></tr>
+		<tr>
+	  <th>Source Code</th>
+	  <td></td>
+	</tr>
+</table>
+
+<div id="classDescription">
+	<strong>The PageCache provides functionality for whole page caching</strong>
+	<p><p>It is an action filter that can be added to a controller and handles the <code>beforeAction</code> event.</p>
+
+<p>To use PageCache, declare it in the <code>behaviors()</code> method of your controller class.
+In the following example the filter will be applied to the <code>list</code>-action and
+cache the whole page for maximum 60 seconds or until the count of entries in the post table changes.
+It also stores different versions of the page depended on the route (<a href="yii_web_pagecache.html#$varyByRoute-detail">$varyByRoute</a> is true by default),
+the application language and user id.</p>
+
+<pre><code>public function behaviors()
+{
+    return [
+        'pageCache' =&gt; [
+            'class' =&gt; \yii\web\PageCache::className(),
+            'only' =&gt; ['list'],
+            'duration' =&gt; 60,
+            'dependecy' =&gt; [
+                'class' =&gt; 'yii\caching\DbDependency',
+                'sql' =&gt; 'SELECT COUNT(*) FROM post',
+            ],
+            'variations' =&gt; [
+                Yii::$app-&gt;language,
+                Yii::$app-&gt;user-&gt;id
+            ]
+        ],
+    ];
+}
+</code></pre></p>
+</div>
+
+<a name="properties"></a>
+
+<div class="summary docProperty">
+<h2>Public Properties</h2>
+
+<p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-property" />
+	<col class="col-type" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Property</th><th>Type</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr class="inherited" id="$owner">
+		<td><a href="yii_base_behavior.html#$owner-detail">$owner</a></td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+		<td>The owner of this behavior</td>
+		<td><a href="yii_base_behavior.html">yii\base\Behavior</a></td>
+	</tr>
+			<tr class="inherited" id="$only">
+		<td><a href="yii_base_actionfilter.html#$only-detail">$only</a></td>
+		<td>array</td>
+		<td>List of action IDs that this filter should apply to</td>
+		<td><a href="yii_base_actionfilter.html">yii\base\ActionFilter</a></td>
+	</tr>
+			<tr class="inherited" id="$except">
+		<td><a href="yii_base_actionfilter.html#$except-detail">$except</a></td>
+		<td>array</td>
+		<td>List of action IDs that this filter should not apply to</td>
+		<td><a href="yii_base_actionfilter.html">yii\base\ActionFilter</a></td>
+	</tr>
+			<tr id="$varyByRoute">
+		<td><a href="yii_web_pagecache.html#$varyByRoute-detail">$varyByRoute</a></td>
+		<td>boolean</td>
+		<td>Whether the content being cached should be differentiated according to the route</td>
+		<td><a href="yii_web_pagecache.html">yii\web\PageCache</a></td>
+	</tr>
+			<tr id="$cache">
+		<td><a href="yii_web_pagecache.html#$cache-detail">$cache</a></td>
+		<td>string</td>
+		<td>The application component ID of the <a href="yii_caching_cache.html">yii\caching\Cache</a> object</td>
+		<td><a href="yii_web_pagecache.html">yii\web\PageCache</a></td>
+	</tr>
+			<tr id="$duration">
+		<td><a href="yii_web_pagecache.html#$duration-detail">$duration</a></td>
+		<td>integer</td>
+		<td>Number of seconds that the data can remain valid in cache</td>
+		<td><a href="yii_web_pagecache.html">yii\web\PageCache</a></td>
+	</tr>
+			<tr id="$dependency">
+		<td><a href="yii_web_pagecache.html#$dependency-detail">$dependency</a></td>
+		<td>array|<a href="yii_caching_dependency.html">yii\caching\Dependency</a></td>
+		<td>The dependency that the cached content depends on</td>
+		<td><a href="yii_web_pagecache.html">yii\web\PageCache</a></td>
+	</tr>
+			<tr id="$variations">
+		<td><a href="yii_web_pagecache.html#$variations-detail">$variations</a></td>
+		<td>array</td>
+		<td>List of factors that would cause the variation of the content being cached</td>
+		<td><a href="yii_web_pagecache.html">yii\web\PageCache</a></td>
+	</tr>
+			<tr id="$enabled">
+		<td><a href="yii_web_pagecache.html#$enabled-detail">$enabled</a></td>
+		<td>boolean</td>
+		<td>Whether to enable the fragment cache</td>
+		<td><a href="yii_web_pagecache.html">yii\web\PageCache</a></td>
+	</tr>
+			<tr id="$view">
+		<td><a href="yii_web_pagecache.html#$view-detail">$view</a></td>
+		<td><a href="yii_base_view.html">yii\base\View</a></td>
+		<td>The view component to use for caching</td>
+		<td><a href="yii_web_pagecache.html">yii\web\PageCache</a></td>
+	</tr>
+	</table>
+</div>
+<a name="methods"></a>
+
+<div class="summary docMethod">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr class="inherited" id="className()">
+		<td><a href="yii_base_object.html#className()-detail">className()</a></td>
+		<td></td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__construct()">
+		<td><a href="yii_base_object.html#__construct()-detail">__construct()</a></td>
+		<td>Constructor.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr id="init()">
+		<td><a href="yii_web_pagecache.html#init()-detail">init()</a></td>
+		<td></td>
+		<td><a href="yii_web_pagecache.html">yii\web\PageCache</a></td>
+	</tr>
+			<tr class="inherited" id="__get()">
+		<td><a href="yii_base_object.html#__get()-detail">__get()</a></td>
+		<td>Returns the value of an object property.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__set()">
+		<td><a href="yii_base_object.html#__set()-detail">__set()</a></td>
+		<td>Sets value of an object property.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__isset()">
+		<td><a href="yii_base_object.html#__isset()-detail">__isset()</a></td>
+		<td>Checks if the named property is set (not null).</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__unset()">
+		<td><a href="yii_base_object.html#__unset()-detail">__unset()</a></td>
+		<td>Sets an object property to null.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__call()">
+		<td><a href="yii_base_object.html#__call()-detail">__call()</a></td>
+		<td>Calls the named method which is not a class method.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="hasProperty()">
+		<td><a href="yii_base_object.html#hasProperty()-detail">hasProperty()</a></td>
+		<td>Returns a value indicating whether a property is defined.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="canGetProperty()">
+		<td><a href="yii_base_object.html#canGetProperty()-detail">canGetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be read.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="canSetProperty()">
+		<td><a href="yii_base_object.html#canSetProperty()-detail">canSetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be set.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="hasMethod()">
+		<td><a href="yii_base_object.html#hasMethod()-detail">hasMethod()</a></td>
+		<td>Returns a value indicating whether a method is defined.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="toArray()">
+		<td><a href="yii_base_object.html#toArray()-detail">toArray()</a></td>
+		<td>Converts the object into an array.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="events()">
+		<td><a href="yii_base_actionfilter.html#events()-detail">events()</a></td>
+		<td>Declares event handlers for the <a href="yii_base_behavior.html#$owner-detail">$owner</a>'s events.</td>
+		<td><a href="yii_base_actionfilter.html">yii\base\ActionFilter</a></td>
+	</tr>
+			<tr class="inherited" id="attach()">
+		<td><a href="yii_base_behavior.html#attach()-detail">attach()</a></td>
+		<td>Attaches the behavior object to the component.</td>
+		<td><a href="yii_base_behavior.html">yii\base\Behavior</a></td>
+	</tr>
+			<tr class="inherited" id="detach()">
+		<td><a href="yii_base_behavior.html#detach()-detail">detach()</a></td>
+		<td>Detaches the behavior object from the component.</td>
+		<td><a href="yii_base_behavior.html">yii\base\Behavior</a></td>
+	</tr>
+			<tr class="inherited" id="beforeFilter()">
+		<td><a href="yii_base_actionfilter.html#beforeFilter()-detail">beforeFilter()</a></td>
+		<td></td>
+		<td><a href="yii_base_actionfilter.html">yii\base\ActionFilter</a></td>
+	</tr>
+			<tr class="inherited" id="afterFilter()">
+		<td><a href="yii_base_actionfilter.html#afterFilter()-detail">afterFilter()</a></td>
+		<td></td>
+		<td><a href="yii_base_actionfilter.html">yii\base\ActionFilter</a></td>
+	</tr>
+			<tr id="beforeAction()">
+		<td><a href="yii_web_pagecache.html#beforeAction()-detail">beforeAction()</a></td>
+		<td>This method is invoked right before an action is to be executed (after all possible filters.)
+You may override this method to do last-minute preparation for the action.</td>
+		<td><a href="yii_web_pagecache.html">yii\web\PageCache</a></td>
+	</tr>
+			<tr id="afterAction()">
+		<td><a href="yii_web_pagecache.html#afterAction()-detail">afterAction()</a></td>
+		<td>This method is invoked right after an action is executed.</td>
+		<td><a href="yii_web_pagecache.html">yii\web\PageCache</a></td>
+	</tr>
+		</table>
+</div>
+<div class="summary docMethod">
+<h2>Protected Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+																						<tr class="inherited" id="isActive()">
+		<td><a href="yii_base_actionfilter.html#isActive()-detail">isActive()</a></td>
+		<td>Returns a value indicating whether the filer is active for the given action.</td>
+		<td><a href="yii_base_actionfilter.html">yii\base\ActionFilter</a></td>
+	</tr>
+	</table>
+</div>
+<a name="events"></a>
+
+<a name="constants"></a>
+
+<h2>Property Details</h2>
+
+
+	<div class="detailHeader" id="$varyByRoute-detail">
+		$varyByRoute		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	boolean $varyByRoute = true	</div>
+
+	<p>Whether the content being cached should be differentiated according to the route.
+A route consists of the requested controller ID and action ID. Defaults to true.</p>
+
+	
+
+	<div class="detailHeader" id="$cache-detail">
+		$cache		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $cache = 'cache'	</div>
+
+	<p>The application component ID of the <a href="yii_caching_cache.html">yii\caching\Cache</a> object.</p>
+
+	
+
+	<div class="detailHeader" id="$duration-detail">
+		$duration		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	integer $duration = 60	</div>
+
+	<p>Number of seconds that the data can remain valid in cache.
+Use 0 to indicate that the cached data will never expire.</p>
+
+	
+
+	<div class="detailHeader" id="$dependency-detail">
+		$dependency		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array|<a href="yii_caching_dependency.html">yii\caching\Dependency</a> $dependency = null	</div>
+
+	<p>The dependency that the cached content depends on.
+This can be either a <a href="yii_caching_dependency.html">yii\caching\Dependency</a> object or a configuration array for creating the dependency object.
+For example,</p>
+
+<pre><code>[
+    'class' =&gt; 'yii\caching\DbDependency',
+    'sql' =&gt; 'SELECT MAX(lastModified) FROM Post',
+]
+</code></pre>
+
+<p>would make the output cache depends on the last modified time of all posts.
+If any post has its modification time changed, the cached content would be invalidated.</p>
+
+	
+
+	<div class="detailHeader" id="$variations-detail">
+		$variations		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array $variations = null	</div>
+
+	<p><p>List of factors that would cause the variation of the content being cached.
+Each factor is a string representing a variation (e.g. the language, a GET parameter).
+The following variation setting will cause the content to be cached in different versions
+according to the current application language:</p>
+
+<pre><code>[
+    Yii::$app-&gt;language,
+]
+</code></pre></p>
+
+	
+
+	<div class="detailHeader" id="$enabled-detail">
+		$enabled		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	boolean $enabled = true	</div>
+
+	<p>Whether to enable the fragment cache. You may use this property to turn on and off
+the fragment cache according to specific setting (e.g. enable fragment cache only for GET requests).</p>
+
+	
+
+	<div class="detailHeader" id="$view-detail">
+		$view		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_base_view.html">yii\base\View</a> $view = null	</div>
+
+	<p>The view component to use for caching. If not set, the default application view component
+<a href="yii_web_application.html#$view-detail">yii\web\Application::$view</a> will be used.</p>
+
+	
+<h2>Method Details</h2>
+
+
+	<div class="detailHeader" id="init()-detail">
+		init()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_web_pagecache.html#init()-detail">init</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="beforeAction()-detail">
+		beforeAction()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_web_pagecache.html#beforeAction()-detail">beforeAction</a>( $action )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$action</td>
+				  <td class="paramTypeCol"><a href="yii_base_action.html">yii\base\Action</a></td>
+				  <td class="paramDescCol">The action to be executed.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether the action should continue to be executed.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>This method is invoked right before an action is to be executed (after all possible filters.)
+You may override this method to do last-minute preparation for the action.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="afterAction()-detail">
+		afterAction()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_web_pagecache.html#afterAction()-detail">afterAction</a>( $action, <b>&</b>$result )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$action</td>
+				  <td class="paramTypeCol"><a href="yii_base_action.html">yii\base\Action</a></td>
+				  <td class="paramDescCol">The action just executed.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$result</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">The action execution result</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>This method is invoked right after an action is executed.</strong></p>
+	<p>You may override this method to do some postprocessing for the action.</p>
+
+	
+			</div><!-- end of content -->
+
+		<div id="apiFooter">
+			<p>&copy; 2008-2013 by <a href="http://www.yiisoft.com">Yii Software LLC</a></p>
+			<p>All Rights Reserved.</p>
+		</div><!-- end of footer -->
+
+<script type="text/javascript">
+/*<![CDATA[*/
+$("a.toggle").on('click', function() {
+	var $this = $(this);
+	if ($this.hasClass('properties-hidden')) {
+		$this.text($this.text().replace(/Show/,'Hide'));
+		$this.parents(".summary").find(".inherited").show();
+		$this.removeClass('properties-hidden');
+	} else {
+		$this.text($this.text().replace(/Hide/,'Show'));
+		$this.parents(".summary").find(".inherited").hide();
+		$this.addClass('properties-hidden');
+	}
+	return false;
+});
+/*
+$(".sourceCode a.show").toggle(function(){
+	$(this).text($(this).text().replace(/show/,'hide'));
+	$(this).parents(".sourceCode").find("div.code").show();
+},function(){
+	$(this).text($(this).text().replace(/hide/,'show'));
+	$(this).parents(".sourceCode").find("div.code").hide();
+});
+$("a.sourceLink").click(function(){
+	$(this).attr('target','_blank');
+});
+*/
+/*]]>*/
+</script>
+
+	</div><!-- end of page -->
+</body>
+</html>

@@ -1,0 +1,856 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="language" content="en" />
+<link href="./assets/4138e429/api.css" rel="stylesheet">
+<link href="./assets/4138e429/style.css" rel="stylesheet">
+<script src="./assets/a91b37a6/jquery.js"></script><title>Yii Framework 2.0 API Documentation</title>
+</head>
+
+<body>
+	<div id="apiPage">
+
+		<div id="apiHeader">
+			<a href="http://www.yiiframework.com">Yii Framework</a> v2.0.0-dev Class Reference
+		</div><!-- end of header -->
+
+		<div id="content">
+		<h1>Class yii\db\ActiveQuery</h1>
+<div id="nav">
+	<a href="index.html">All Classes</a>
+			| <a href="#properties">Properties</a>
+				| <a href="#methods">Methods</a>
+			</div>
+
+<table class="summaryTable docClass">
+	<colgroup>
+		<col class="col-name" />
+		<col class="col-value" />
+	</colgroup>
+			<tr><th>Inheritance</th><td><a href="yii_db_activequery.html">yii\db\ActiveQuery</a> &raquo;
+<a href="yii_db_query.html">yii\db\Query</a> &raquo;
+<a href="yii_base_component.html">yii\base\Component</a> &raquo;
+<a href="yii_base_object.html">yii\base\Object</a></td></tr>
+				<tr><th>Implements</th><td><a href="yii_base_arrayable.html">yii\base\Arrayable</a>, <a href="yii_db_activequeryinterface.html">yii\db\ActiveQueryInterface</a>, <a href="yii_db_queryinterface.html">yii\db\QueryInterface</a></td></tr>
+				<tr><th>Uses Traits</th><td><a href="yii_db_activequerytrait.html">yii\db\ActiveQueryTrait</a>, <a href="yii_db_querytrait.html">yii\db\QueryTrait</a></td></tr>
+				<tr><th>Subclasses</th><td><a href="yii_db_activerelation.html">yii\db\ActiveRelation</a></td></tr>
+						<tr><th>Available since version</th><td>2.0</td></tr>
+		<tr>
+	  <th>Source Code</th>
+	  <td></td>
+	</tr>
+</table>
+
+<div id="classDescription">
+	<strong>ActiveQuery represents a DB query associated with an Active Record class.</strong>
+	<p><p>ActiveQuery instances are usually created by <a href="yii_db_baseactiverecord.html#find()-detail">yii\db\ActiveRecord::find()</a> and <a href="yii_db_activerecord.html#findBySql()-detail">yii\db\ActiveRecord::findBySql()</a>.</p>
+
+<p>ActiveQuery mainly provides the following methods to retrieve the query results:</p>
+
+<ul>
+<li><a href="yii_db_activequery.html#one()-detail">one()</a>: returns a single record populated with the first row of data.</li>
+<li><a href="yii_db_activequery.html#all()-detail">all()</a>: returns all records based on the query results.</li>
+<li><a href="yii_db_query.html#count()-detail">count()</a>: returns the number of records.</li>
+<li><a href="yii_db_query.html#sum()-detail">sum()</a>: returns the sum over the specified column.</li>
+<li><a href="yii_db_query.html#average()-detail">average()</a>: returns the average over the specified column.</li>
+<li><a href="yii_db_query.html#min()-detail">min()</a>: returns the min over the specified column.</li>
+<li><a href="yii_db_query.html#max()-detail">max()</a>: returns the max over the specified column.</li>
+<li><a href="yii_db_query.html#scalar()-detail">scalar()</a>: returns the value of the first column in the first row of the query result.</li>
+<li><a href="yii_db_query.html#column()-detail">column()</a>: returns the value of the first column in the query result.</li>
+<li><a href="yii_db_query.html#exists()-detail">exists()</a>: returns a value indicating whether the query result has data or not.</li>
+</ul>
+
+<p>Because ActiveQuery extends from <a href="yii_db_query.html">yii\db\Query</a>, one can use query methods, such as <a href="yii_db_querytrait.html#where()-detail">where()</a>,
+<a href="yii_db_querytrait.html#orderBy()-detail">orderBy()</a> to customize the query options.</p>
+
+<p>ActiveQuery also provides the following additional query options:</p>
+
+<ul>
+<li><a href="yii_db_activequerytrait.html#with()-detail">with()</a>: list of relations that this query should be performed with.</li>
+<li><a href="yii_db_querytrait.html#indexBy()-detail">indexBy()</a>: the name of the column by which the query result should be indexed.</li>
+<li><a href="yii_db_activequerytrait.html#asArray()-detail">asArray()</a>: whether to return each record as an array.</li>
+</ul>
+
+<p>These options can be configured using methods of the same name. For example:</p>
+
+<pre><code>$customers = Customer::find()-&gt;with('orders')-&gt;asArray()-&gt;all();
+</code></pre></p>
+</div>
+
+<a name="properties"></a>
+
+<div class="summary docProperty">
+<h2>Public Properties</h2>
+
+<p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-property" />
+	<col class="col-type" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Property</th><th>Type</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr class="inherited" id="$where">
+		<td><a href="yii_db_querytrait.html#$where-detail">$where</a></td>
+		<td>string|array</td>
+		<td>Query condition</td>
+		<td><a href="yii_db_querytrait.html">yii\db\QueryTrait</a></td>
+	</tr>
+			<tr class="inherited" id="$limit">
+		<td><a href="yii_db_querytrait.html#$limit-detail">$limit</a></td>
+		<td>integer</td>
+		<td>Maximum number of records to be returned</td>
+		<td><a href="yii_db_querytrait.html">yii\db\QueryTrait</a></td>
+	</tr>
+			<tr class="inherited" id="$offset">
+		<td><a href="yii_db_querytrait.html#$offset-detail">$offset</a></td>
+		<td>integer</td>
+		<td>Zero-based offset from where the records are to be returned</td>
+		<td><a href="yii_db_querytrait.html">yii\db\QueryTrait</a></td>
+	</tr>
+			<tr class="inherited" id="$orderBy">
+		<td><a href="yii_db_querytrait.html#$orderBy-detail">$orderBy</a></td>
+		<td>array</td>
+		<td>How to sort the query results</td>
+		<td><a href="yii_db_querytrait.html">yii\db\QueryTrait</a></td>
+	</tr>
+			<tr class="inherited" id="$indexBy">
+		<td><a href="yii_db_querytrait.html#$indexBy-detail">$indexBy</a></td>
+		<td>string|callable</td>
+		<td>The name of the column by which the query results should be indexed by</td>
+		<td><a href="yii_db_querytrait.html">yii\db\QueryTrait</a></td>
+	</tr>
+			<tr class="inherited" id="$select">
+		<td><a href="yii_db_query.html#$select-detail">$select</a></td>
+		<td>array</td>
+		<td>The columns being selected</td>
+		<td><a href="yii_db_query.html">yii\db\Query</a></td>
+	</tr>
+			<tr class="inherited" id="$selectOption">
+		<td><a href="yii_db_query.html#$selectOption-detail">$selectOption</a></td>
+		<td>string</td>
+		<td>Additional option that should be appended to the 'SELECT' keyword</td>
+		<td><a href="yii_db_query.html">yii\db\Query</a></td>
+	</tr>
+			<tr class="inherited" id="$distinct">
+		<td><a href="yii_db_query.html#$distinct-detail">$distinct</a></td>
+		<td>boolean</td>
+		<td>Whether to select distinct rows of data only</td>
+		<td><a href="yii_db_query.html">yii\db\Query</a></td>
+	</tr>
+			<tr class="inherited" id="$from">
+		<td><a href="yii_db_query.html#$from-detail">$from</a></td>
+		<td>array</td>
+		<td>The table(s) to be selected from</td>
+		<td><a href="yii_db_query.html">yii\db\Query</a></td>
+	</tr>
+			<tr class="inherited" id="$groupBy">
+		<td><a href="yii_db_query.html#$groupBy-detail">$groupBy</a></td>
+		<td>array</td>
+		<td>How to group the query results</td>
+		<td><a href="yii_db_query.html">yii\db\Query</a></td>
+	</tr>
+			<tr class="inherited" id="$join">
+		<td><a href="yii_db_query.html#$join-detail">$join</a></td>
+		<td>array</td>
+		<td>How to join with other tables</td>
+		<td><a href="yii_db_query.html">yii\db\Query</a></td>
+	</tr>
+			<tr class="inherited" id="$having">
+		<td><a href="yii_db_query.html#$having-detail">$having</a></td>
+		<td>string|array</td>
+		<td>The condition to be applied in the GROUP BY clause</td>
+		<td><a href="yii_db_query.html">yii\db\Query</a></td>
+	</tr>
+			<tr class="inherited" id="$union">
+		<td><a href="yii_db_query.html#$union-detail">$union</a></td>
+		<td>array</td>
+		<td>This is used to construct the UNION clause(s) in a SQL statement</td>
+		<td><a href="yii_db_query.html">yii\db\Query</a></td>
+	</tr>
+			<tr class="inherited" id="$params">
+		<td><a href="yii_db_query.html#$params-detail">$params</a></td>
+		<td>array</td>
+		<td>List of query parameter values indexed by parameter placeholders</td>
+		<td><a href="yii_db_query.html">yii\db\Query</a></td>
+	</tr>
+			<tr class="inherited" id="$modelClass">
+		<td><a href="yii_db_activequerytrait.html#$modelClass-detail">$modelClass</a></td>
+		<td>string</td>
+		<td>The name of the ActiveRecord class</td>
+		<td><a href="yii_db_activequerytrait.html">yii\db\ActiveQueryTrait</a></td>
+	</tr>
+			<tr class="inherited" id="$with">
+		<td><a href="yii_db_activequerytrait.html#$with-detail">$with</a></td>
+		<td>array</td>
+		<td>A list of relations that this query should be performed with</td>
+		<td><a href="yii_db_activequerytrait.html">yii\db\ActiveQueryTrait</a></td>
+	</tr>
+			<tr class="inherited" id="$asArray">
+		<td><a href="yii_db_activequerytrait.html#$asArray-detail">$asArray</a></td>
+		<td>boolean</td>
+		<td>Whether to return each record as an array</td>
+		<td><a href="yii_db_activequerytrait.html">yii\db\ActiveQueryTrait</a></td>
+	</tr>
+			<tr id="$sql">
+		<td><a href="yii_db_activequery.html#$sql-detail">$sql</a></td>
+		<td>string</td>
+		<td>The SQL statement to be executed for retrieving AR records</td>
+		<td><a href="yii_db_activequery.html">yii\db\ActiveQuery</a></td>
+	</tr>
+			<tr id="$behaviors">
+		<td><a href="yii_db_activequery.html#$behaviors-detail">$behaviors</a></td>
+		<td><a href="yii_base_behavior.html">yii\base\Behavior</a>[]</td>
+		<td>list of behaviors attached to this component</td>
+		<td><a href="yii_db_activequery.html">yii\db\ActiveQuery</a></td>
+	</tr>
+	</table>
+</div>
+<a name="methods"></a>
+
+<div class="summary docMethod">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr class="inherited" id="className()">
+		<td><a href="yii_base_object.html#className()-detail">className()</a></td>
+		<td></td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__construct()">
+		<td><a href="yii_base_object.html#__construct()-detail">__construct()</a></td>
+		<td>Constructor.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="init()">
+		<td><a href="yii_base_object.html#init()-detail">init()</a></td>
+		<td>Initializes the object.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__get()">
+		<td><a href="yii_base_component.html#__get()-detail">__get()</a></td>
+		<td>Returns the value of a component property.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__set()">
+		<td><a href="yii_base_component.html#__set()-detail">__set()</a></td>
+		<td>Sets the value of a component property.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__isset()">
+		<td><a href="yii_base_component.html#__isset()-detail">__isset()</a></td>
+		<td>Checks if a property value is null.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__unset()">
+		<td><a href="yii_base_component.html#__unset()-detail">__unset()</a></td>
+		<td>Sets a component property to be null.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__call()">
+		<td><a href="yii_db_activequerytrait.html#__call()-detail">__call()</a></td>
+		<td>PHP magic method.</td>
+		<td><a href="yii_db_activequerytrait.html">yii\db\ActiveQueryTrait</a></td>
+	</tr>
+			<tr class="inherited" id="hasProperty()">
+		<td><a href="yii_base_component.html#hasProperty()-detail">hasProperty()</a></td>
+		<td>Returns a value indicating whether a property is defined for this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="canGetProperty()">
+		<td><a href="yii_base_component.html#canGetProperty()-detail">canGetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be read.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="canSetProperty()">
+		<td><a href="yii_base_component.html#canSetProperty()-detail">canSetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be set.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasMethod()">
+		<td><a href="yii_base_component.html#hasMethod()-detail">hasMethod()</a></td>
+		<td>Returns a value indicating whether a method is defined.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="toArray()">
+		<td><a href="yii_base_object.html#toArray()-detail">toArray()</a></td>
+		<td>Converts the object into an array.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__clone()">
+		<td><a href="yii_base_component.html#__clone()-detail">__clone()</a></td>
+		<td>This method is called after the object is created by cloning an existing one.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="behaviors()">
+		<td><a href="yii_base_component.html#behaviors()-detail">behaviors()</a></td>
+		<td>Returns a list of behaviors that this component should behave as.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasEventHandlers()">
+		<td><a href="yii_base_component.html#hasEventHandlers()-detail">hasEventHandlers()</a></td>
+		<td>Returns a value indicating whether there is any handler attached to the named event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="on()">
+		<td><a href="yii_base_component.html#on()-detail">on()</a></td>
+		<td>Attaches an event handler to an event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="off()">
+		<td><a href="yii_base_component.html#off()-detail">off()</a></td>
+		<td>Detaches an existing event handler from this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="trigger()">
+		<td><a href="yii_base_component.html#trigger()-detail">trigger()</a></td>
+		<td>Triggers an event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="getBehavior()">
+		<td><a href="yii_base_component.html#getBehavior()-detail">getBehavior()</a></td>
+		<td>Returns the named behavior object.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="getBehaviors()">
+		<td><a href="yii_base_component.html#getBehaviors()-detail">getBehaviors()</a></td>
+		<td>Returns all behaviors attached to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="attachBehavior()">
+		<td><a href="yii_base_component.html#attachBehavior()-detail">attachBehavior()</a></td>
+		<td>Attaches a behavior to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="attachBehaviors()">
+		<td><a href="yii_base_component.html#attachBehaviors()-detail">attachBehaviors()</a></td>
+		<td>Attaches a list of behaviors to the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="detachBehavior()">
+		<td><a href="yii_base_component.html#detachBehavior()-detail">detachBehavior()</a></td>
+		<td>Detaches a behavior from the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="detachBehaviors()">
+		<td><a href="yii_base_component.html#detachBehaviors()-detail">detachBehaviors()</a></td>
+		<td>Detaches all behaviors from the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="ensureBehaviors()">
+		<td><a href="yii_base_component.html#ensureBehaviors()-detail">ensureBehaviors()</a></td>
+		<td>Makes sure that the behaviors declared in <a href="yii_base_component.html#behaviors()-detail">behaviors()</a> are attached to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="indexBy()">
+		<td><a href="yii_db_querytrait.html#indexBy()-detail">indexBy()</a></td>
+		<td>Sets the <a href="yii_db_querytrait.html#indexBy()-detail">indexBy()</a> property.</td>
+		<td><a href="yii_db_querytrait.html">yii\db\QueryTrait</a></td>
+	</tr>
+			<tr class="inherited" id="where()">
+		<td><a href="yii_db_querytrait.html#where()-detail">where()</a></td>
+		<td>Sets the WHERE part of the query.</td>
+		<td><a href="yii_db_querytrait.html">yii\db\QueryTrait</a></td>
+	</tr>
+			<tr class="inherited" id="andWhere()">
+		<td><a href="yii_db_querytrait.html#andWhere()-detail">andWhere()</a></td>
+		<td>Adds an additional WHERE condition to the existing one.</td>
+		<td><a href="yii_db_querytrait.html">yii\db\QueryTrait</a></td>
+	</tr>
+			<tr class="inherited" id="orWhere()">
+		<td><a href="yii_db_querytrait.html#orWhere()-detail">orWhere()</a></td>
+		<td>Adds an additional WHERE condition to the existing one.</td>
+		<td><a href="yii_db_querytrait.html">yii\db\QueryTrait</a></td>
+	</tr>
+			<tr class="inherited" id="orderBy()">
+		<td><a href="yii_db_querytrait.html#orderBy()-detail">orderBy()</a></td>
+		<td>Sets the ORDER BY part of the query.</td>
+		<td><a href="yii_db_querytrait.html">yii\db\QueryTrait</a></td>
+	</tr>
+			<tr class="inherited" id="addOrderBy()">
+		<td><a href="yii_db_querytrait.html#addOrderBy()-detail">addOrderBy()</a></td>
+		<td>Adds additional ORDER BY columns to the query.</td>
+		<td><a href="yii_db_querytrait.html">yii\db\QueryTrait</a></td>
+	</tr>
+				<tr class="inherited" id="limit()">
+		<td><a href="yii_db_querytrait.html#limit()-detail">limit()</a></td>
+		<td>Sets the LIMIT part of the query.</td>
+		<td><a href="yii_db_querytrait.html">yii\db\QueryTrait</a></td>
+	</tr>
+			<tr class="inherited" id="offset()">
+		<td><a href="yii_db_querytrait.html#offset()-detail">offset()</a></td>
+		<td>Sets the OFFSET part of the query.</td>
+		<td><a href="yii_db_querytrait.html">yii\db\QueryTrait</a></td>
+	</tr>
+			<tr id="createCommand()">
+		<td><a href="yii_db_activequery.html#createCommand()-detail">createCommand()</a></td>
+		<td>Creates a DB command that can be used to execute this query.</td>
+		<td><a href="yii_db_activequery.html">yii\db\ActiveQuery</a></td>
+	</tr>
+			<tr id="all()">
+		<td><a href="yii_db_activequery.html#all()-detail">all()</a></td>
+		<td>Executes query and returns all results as an array.</td>
+		<td><a href="yii_db_activequery.html">yii\db\ActiveQuery</a></td>
+	</tr>
+			<tr id="one()">
+		<td><a href="yii_db_activequery.html#one()-detail">one()</a></td>
+		<td>Executes query and returns a single row of result.</td>
+		<td><a href="yii_db_activequery.html">yii\db\ActiveQuery</a></td>
+	</tr>
+			<tr class="inherited" id="scalar()">
+		<td><a href="yii_db_query.html#scalar()-detail">scalar()</a></td>
+		<td>Returns the query result as a scalar value.</td>
+		<td><a href="yii_db_query.html">yii\db\Query</a></td>
+	</tr>
+			<tr class="inherited" id="column()">
+		<td><a href="yii_db_query.html#column()-detail">column()</a></td>
+		<td>Executes the query and returns the first column of the result.</td>
+		<td><a href="yii_db_query.html">yii\db\Query</a></td>
+	</tr>
+			<tr class="inherited" id="count()">
+		<td><a href="yii_db_query.html#count()-detail">count()</a></td>
+		<td>Returns the number of records.</td>
+		<td><a href="yii_db_query.html">yii\db\Query</a></td>
+	</tr>
+			<tr class="inherited" id="sum()">
+		<td><a href="yii_db_query.html#sum()-detail">sum()</a></td>
+		<td>Returns the sum of the specified column values.</td>
+		<td><a href="yii_db_query.html">yii\db\Query</a></td>
+	</tr>
+			<tr class="inherited" id="average()">
+		<td><a href="yii_db_query.html#average()-detail">average()</a></td>
+		<td>Returns the average of the specified column values.</td>
+		<td><a href="yii_db_query.html">yii\db\Query</a></td>
+	</tr>
+			<tr class="inherited" id="min()">
+		<td><a href="yii_db_query.html#min()-detail">min()</a></td>
+		<td>Returns the minimum of the specified column values.</td>
+		<td><a href="yii_db_query.html">yii\db\Query</a></td>
+	</tr>
+			<tr class="inherited" id="max()">
+		<td><a href="yii_db_query.html#max()-detail">max()</a></td>
+		<td>Returns the maximum of the specified column values.</td>
+		<td><a href="yii_db_query.html">yii\db\Query</a></td>
+	</tr>
+			<tr class="inherited" id="exists()">
+		<td><a href="yii_db_query.html#exists()-detail">exists()</a></td>
+		<td>Returns a value indicating whether the query result contains any row of data.</td>
+		<td><a href="yii_db_query.html">yii\db\Query</a></td>
+	</tr>
+			<tr class="inherited" id="select()">
+		<td><a href="yii_db_query.html#select()-detail">select()</a></td>
+		<td>Sets the SELECT part of the query.</td>
+		<td><a href="yii_db_query.html">yii\db\Query</a></td>
+	</tr>
+			<tr class="inherited" id="distinct()">
+		<td><a href="yii_db_query.html#distinct()-detail">distinct()</a></td>
+		<td>Sets the value indicating whether to SELECT DISTINCT or not.</td>
+		<td><a href="yii_db_query.html">yii\db\Query</a></td>
+	</tr>
+			<tr class="inherited" id="from()">
+		<td><a href="yii_db_query.html#from()-detail">from()</a></td>
+		<td>Sets the FROM part of the query.</td>
+		<td><a href="yii_db_query.html">yii\db\Query</a></td>
+	</tr>
+			<tr class="inherited" id="join()">
+		<td><a href="yii_db_query.html#join()-detail">join()</a></td>
+		<td>Appends a JOIN part to the query.</td>
+		<td><a href="yii_db_query.html">yii\db\Query</a></td>
+	</tr>
+			<tr class="inherited" id="innerJoin()">
+		<td><a href="yii_db_query.html#innerJoin()-detail">innerJoin()</a></td>
+		<td>Appends an INNER JOIN part to the query.</td>
+		<td><a href="yii_db_query.html">yii\db\Query</a></td>
+	</tr>
+			<tr class="inherited" id="leftJoin()">
+		<td><a href="yii_db_query.html#leftJoin()-detail">leftJoin()</a></td>
+		<td>Appends a LEFT OUTER JOIN part to the query.</td>
+		<td><a href="yii_db_query.html">yii\db\Query</a></td>
+	</tr>
+			<tr class="inherited" id="rightJoin()">
+		<td><a href="yii_db_query.html#rightJoin()-detail">rightJoin()</a></td>
+		<td>Appends a RIGHT OUTER JOIN part to the query.</td>
+		<td><a href="yii_db_query.html">yii\db\Query</a></td>
+	</tr>
+			<tr class="inherited" id="groupBy()">
+		<td><a href="yii_db_query.html#groupBy()-detail">groupBy()</a></td>
+		<td>Sets the GROUP BY part of the query.</td>
+		<td><a href="yii_db_query.html">yii\db\Query</a></td>
+	</tr>
+			<tr class="inherited" id="addGroupBy()">
+		<td><a href="yii_db_query.html#addGroupBy()-detail">addGroupBy()</a></td>
+		<td>Adds additional group-by columns to the existing ones.</td>
+		<td><a href="yii_db_query.html">yii\db\Query</a></td>
+	</tr>
+			<tr class="inherited" id="having()">
+		<td><a href="yii_db_query.html#having()-detail">having()</a></td>
+		<td>Sets the HAVING part of the query.</td>
+		<td><a href="yii_db_query.html">yii\db\Query</a></td>
+	</tr>
+			<tr class="inherited" id="andHaving()">
+		<td><a href="yii_db_query.html#andHaving()-detail">andHaving()</a></td>
+		<td>Adds an additional HAVING condition to the existing one.</td>
+		<td><a href="yii_db_query.html">yii\db\Query</a></td>
+	</tr>
+			<tr class="inherited" id="orHaving()">
+		<td><a href="yii_db_query.html#orHaving()-detail">orHaving()</a></td>
+		<td>Adds an additional HAVING condition to the existing one.</td>
+		<td><a href="yii_db_query.html">yii\db\Query</a></td>
+	</tr>
+			<tr class="inherited" id="union()">
+		<td><a href="yii_db_query.html#union()-detail">union()</a></td>
+		<td>Appends a SQL statement using UNION operator.</td>
+		<td><a href="yii_db_query.html">yii\db\Query</a></td>
+	</tr>
+			<tr class="inherited" id="params()">
+		<td><a href="yii_db_query.html#params()-detail">params()</a></td>
+		<td>Sets the parameters to be bound to the query.</td>
+		<td><a href="yii_db_query.html">yii\db\Query</a></td>
+	</tr>
+			<tr class="inherited" id="addParams()">
+		<td><a href="yii_db_query.html#addParams()-detail">addParams()</a></td>
+		<td>Adds additional parameters to be bound to the query.</td>
+		<td><a href="yii_db_query.html">yii\db\Query</a></td>
+	</tr>
+			<tr class="inherited" id="asArray()">
+		<td><a href="yii_db_activequerytrait.html#asArray()-detail">asArray()</a></td>
+		<td>Sets the <a href="yii_db_activequerytrait.html#asArray()-detail">asArray()</a> property.</td>
+		<td><a href="yii_db_activequerytrait.html">yii\db\ActiveQueryTrait</a></td>
+	</tr>
+			<tr class="inherited" id="with()">
+		<td><a href="yii_db_activequerytrait.html#with()-detail">with()</a></td>
+		<td>Specifies the relations with which this query should be performed.</td>
+		<td><a href="yii_db_activequerytrait.html">yii\db\ActiveQueryTrait</a></td>
+	</tr>
+			<tr class="inherited" id="findWith()">
+		<td><a href="yii_db_activequerytrait.html#findWith()-detail">findWith()</a></td>
+		<td>Finds records corresponding to one or multiple relations and populates them into the primary models.</td>
+		<td><a href="yii_db_activequerytrait.html">yii\db\ActiveQueryTrait</a></td>
+	</tr>
+			<tr id="joinWith()">
+		<td><a href="yii_db_activequery.html#joinWith()-detail">joinWith()</a></td>
+		<td>Joins with the specified relations.</td>
+		<td><a href="yii_db_activequery.html">yii\db\ActiveQuery</a></td>
+	</tr>
+			<tr id="innerJoinWith()">
+		<td><a href="yii_db_activequery.html#innerJoinWith()-detail">innerJoinWith()</a></td>
+		<td>Inner joins with the specified relations.</td>
+		<td><a href="yii_db_activequery.html">yii\db\ActiveQuery</a></td>
+	</tr>
+	</table>
+</div>
+<div class="summary docMethod">
+<h2>Protected Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+																																		<tr class="inherited" id="normalizeOrderBy()">
+		<td><a href="yii_db_querytrait.html#normalizeOrderBy()-detail">normalizeOrderBy()</a></td>
+		<td></td>
+		<td><a href="yii_db_querytrait.html">yii\db\QueryTrait</a></td>
+	</tr>
+																																		</table>
+</div>
+<a name="events"></a>
+
+<a name="constants"></a>
+
+<h2>Property Details</h2>
+
+
+	<div class="detailHeader" id="$sql-detail">
+		$sql		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $sql = null	</div>
+
+	<p>The SQL statement to be executed for retrieving AR records.
+This is set by <a href="yii_db_activerecord.html#findBySql()-detail">yii\db\ActiveRecord::findBySql()</a>.</p>
+
+	
+
+	<div class="detailHeader" id="$behaviors-detail">
+		$behaviors		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_base_behavior.html">yii\base\Behavior</a>[] <a href="yii_base_component.html#getBehaviors()-detail">getBehaviors</a>(  )	</div>
+
+	<p>list of behaviors attached to this component</p>
+
+	
+<h2>Method Details</h2>
+
+
+	<div class="detailHeader" id="createCommand()-detail">
+		createCommand()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			<a href="yii_db_command.html">yii\db\Command</a> <a href="yii_db_activequery.html#createCommand()-detail">createCommand</a>( $db = null )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$db</td>
+				  <td class="paramTypeCol"><a href="yii_db_connection.html">yii\db\Connection</a></td>
+				  <td class="paramDescCol">The DB connection used to create the DB command.
+If null, the DB connection returned by <a href="yii_db_activequerytrait.html#$modelClass-detail">$modelClass</a> will be used.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol"><a href="yii_db_command.html">yii\db\Command</a></td>
+				  <td class="paramDescCol">the created DB command instance.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Creates a DB command that can be used to execute this query.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="all()-detail">
+		all()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			array <a href="yii_db_activequery.html#all()-detail">all</a>( $db = null )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$db</td>
+				  <td class="paramTypeCol"><a href="yii_db_connection.html">yii\db\Connection</a></td>
+				  <td class="paramDescCol">The DB connection used to create the DB command.
+If null, the DB connection returned by <a href="yii_db_activequerytrait.html#$modelClass-detail">$modelClass</a> will be used.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">the query results. If the query results in nothing, an empty array will be returned.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Executes query and returns all results as an array.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="one()-detail">
+		one()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			<a href="yii_db_activerecord.html">yii\db\ActiveRecord</a>|array|null <a href="yii_db_activequery.html#one()-detail">one</a>( $db = null )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$db</td>
+				  <td class="paramTypeCol"><a href="yii_db_connection.html">yii\db\Connection</a></td>
+				  <td class="paramDescCol">The DB connection used to create the DB command.
+If null, the DB connection returned by <a href="yii_db_activequerytrait.html#$modelClass-detail">$modelClass</a> will be used.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol"><a href="yii_db_activerecord.html">yii\db\ActiveRecord</a>|array|null</td>
+				  <td class="paramDescCol">a single row of query result. Depending on the setting of <a href="yii_db_activequerytrait.html#asArray()-detail">asArray()</a>,
+the query result may be either an array or an ActiveRecord object. Null will be returned
+if the query results in nothing.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Executes query and returns a single row of result.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="joinWith()-detail">
+		joinWith()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			static <a href="yii_db_activequery.html#joinWith()-detail">joinWith</a>( $with, $eagerLoading = true, $joinType = 'LEFT JOIN' )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$with</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The relations to be joined. Each array element represents a single relation.
+The array keys are relation names, and the array values are the corresponding anonymous functions that
+can be used to modify the relation queries on-the-fly. If a relation query does not need modification,
+you may use the relation name as the array value. Sub-relations can also be specified (see <a href="yii_db_activequerytrait.html#with()-detail">with()</a>).
+For example,
+<code>php
+// find all orders that contain books, and eager loading "books"
+Order::find()-&gt;joinWith('books', true, 'INNER JOIN')-&gt;all();
+// find all orders, eager loading "books", and sort the orders and books by the book names.
+Order::find()-&gt;joinWith([
+    'books' =&gt; function ($query) {
+        $query-&gt;orderBy('tbl_item.name');
+    }
+])-&gt;all();</code></td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$eagerLoading</td>
+				  <td class="paramTypeCol">boolean|array</td>
+				  <td class="paramDescCol">Whether to eager load the relations specified in <code>$with</code>.
+When this is a boolean, it applies to all relations specified in <code>$with</code>. Use an array
+to explicitly list which relations in <code>$with</code> need to be eagerly loaded.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$joinType</td>
+				  <td class="paramTypeCol">string|array</td>
+				  <td class="paramDescCol">The join type of the relations specified in <code>$with</code>.
+When this is a string, it applies to all relations specified in <code>$with</code>. Use an array
+in the format of <code>relationName =&gt; joinType</code> to specify different join types for different relations.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">static</td>
+				  <td class="paramDescCol">the query object itself</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Joins with the specified relations.</strong></p>
+	<p>This method allows you to reuse existing relation definitions to perform JOIN queries.
+Based on the definition of the specified relation(s), the method will append one or multiple
+JOIN statements to the current query.</p>
+
+<p>If the <code>$eagerLoading</code> parameter is true, the method will also eager loading the specified relations,
+which is equivalent to calling <a href="yii_db_activequerytrait.html#with()-detail">with()</a> using the specified relations.</p>
+
+<p>Note that because a JOIN query will be performed, you are responsible to disambiguate column names.</p>
+
+<p>This method differs from <a href="yii_db_activequerytrait.html#with()-detail">with()</a> in that it will build up and execute a JOIN SQL statement
+for the primary table. And when <code>$eagerLoading</code> is true, it will call <a href="yii_db_activequerytrait.html#with()-detail">with()</a> in addition with the specified relations.</p>
+
+	
+
+	<div class="detailHeader" id="innerJoinWith()-detail">
+		innerJoinWith()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			static <a href="yii_db_activequery.html#innerJoinWith()-detail">innerJoinWith</a>( $with, $eagerLoading = true )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$with</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The relations to be joined with</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$eagerLoading</td>
+				  <td class="paramTypeCol">boolean|array</td>
+				  <td class="paramDescCol">Whether to eager loading the relations</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">static</td>
+				  <td class="paramDescCol">the query object itself</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Inner joins with the specified relations.</strong></p>
+	<p>This is a shortcut method to <a href="yii_db_activequery.html#joinWith()-detail">joinWith()</a> with the join type set as "INNER JOIN".
+Please refer to <a href="yii_db_activequery.html#joinWith()-detail">joinWith()</a> for detailed usage of this method.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_db_activequery.html#joinWith()-detail">joinWith()</a></li>
+</ul>
+</div>
+
+			</div><!-- end of content -->
+
+		<div id="apiFooter">
+			<p>&copy; 2008-2013 by <a href="http://www.yiisoft.com">Yii Software LLC</a></p>
+			<p>All Rights Reserved.</p>
+		</div><!-- end of footer -->
+
+<script type="text/javascript">
+/*<![CDATA[*/
+$("a.toggle").on('click', function() {
+	var $this = $(this);
+	if ($this.hasClass('properties-hidden')) {
+		$this.text($this.text().replace(/Show/,'Hide'));
+		$this.parents(".summary").find(".inherited").show();
+		$this.removeClass('properties-hidden');
+	} else {
+		$this.text($this.text().replace(/Hide/,'Show'));
+		$this.parents(".summary").find(".inherited").hide();
+		$this.addClass('properties-hidden');
+	}
+	return false;
+});
+/*
+$(".sourceCode a.show").toggle(function(){
+	$(this).text($(this).text().replace(/show/,'hide'));
+	$(this).parents(".sourceCode").find("div.code").show();
+},function(){
+	$(this).text($(this).text().replace(/hide/,'show'));
+	$(this).parents(".sourceCode").find("div.code").hide();
+});
+$("a.sourceLink").click(function(){
+	$(this).attr('target','_blank');
+});
+*/
+/*]]>*/
+</script>
+
+	</div><!-- end of page -->
+</body>
+</html>

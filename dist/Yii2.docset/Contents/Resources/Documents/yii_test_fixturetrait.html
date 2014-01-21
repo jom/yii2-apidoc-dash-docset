@@ -1,0 +1,423 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="language" content="en" />
+<link href="./assets/4138e429/api.css" rel="stylesheet">
+<link href="./assets/4138e429/style.css" rel="stylesheet">
+<script src="./assets/a91b37a6/jquery.js"></script><title>Yii Framework 2.0 API Documentation</title>
+</head>
+
+<body>
+	<div id="apiPage">
+
+		<div id="apiHeader">
+			<a href="http://www.yiiframework.com">Yii Framework</a> v2.0.0-dev Class Reference
+		</div><!-- end of header -->
+
+		<div id="content">
+		<h1>Trait yii\test\FixtureTrait</h1>
+<div id="nav">
+	<a href="index.html">All Classes</a>
+				| <a href="#methods">Methods</a>
+			</div>
+
+<table class="summaryTable docClass">
+	<colgroup>
+		<col class="col-name" />
+		<col class="col-value" />
+	</colgroup>
+									<tr><th>Available since version</th><td>2.0</td></tr>
+		<tr>
+	  <th>Source Code</th>
+	  <td></td>
+	</tr>
+</table>
+
+<div id="classDescription">
+	<strong>FixtureTrait provides functionalities for loading, unloading and accessing fixtures for a test case.</strong>
+	<p>By using FixtureTrait, a test class will be able to specify which fixtures to load by overriding
+the <a href="yii_test_fixturetrait.html#fixtures()-detail">fixtures()</a> method. It can then load and unload the fixtures using <a href="yii_test_fixturetrait.html#loadFixtures()-detail">loadFixtures()</a> and <a href="yii_test_fixturetrait.html#unloadFixtures()-detail">unloadFixtures()</a>.
+Once a fixture is loaded, it can be accessed like an object property, thanks to the PHP <code>__get()</code> magic method.
+Also, if the fixture is an instance of <a href="yii_test_activefixture.html">yii\test\ActiveFixture</a>, you will be able to access AR models
+through the syntax <code>$this-&gt;fixtureName('model name')</code>.</p>
+</div>
+
+<a name="properties"></a>
+
+<a name="methods"></a>
+
+<div class="summary docMethod">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr id="__get()">
+		<td><a href="yii_test_fixturetrait.html#__get()-detail">__get()</a></td>
+		<td>Returns the value of an object property.</td>
+		<td><a href="yii_test_fixturetrait.html">yii\test\FixtureTrait</a></td>
+	</tr>
+			<tr id="__call()">
+		<td><a href="yii_test_fixturetrait.html#__call()-detail">__call()</a></td>
+		<td>Calls the named method which is not a class method.</td>
+		<td><a href="yii_test_fixturetrait.html">yii\test\FixtureTrait</a></td>
+	</tr>
+							</table>
+</div>
+<div class="summary docMethod">
+<h2>Protected Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+				<tr id="fixtures()">
+		<td><a href="yii_test_fixturetrait.html#fixtures()-detail">fixtures()</a></td>
+		<td>Declares the fixtures that are needed by the current test case.</td>
+		<td><a href="yii_test_fixturetrait.html">yii\test\FixtureTrait</a></td>
+	</tr>
+			<tr id="globalFixtures()">
+		<td><a href="yii_test_fixturetrait.html#globalFixtures()-detail">globalFixtures()</a></td>
+		<td>Declares the fixtures shared required by different test cases.</td>
+		<td><a href="yii_test_fixturetrait.html">yii\test\FixtureTrait</a></td>
+	</tr>
+			<tr id="loadFixtures()">
+		<td><a href="yii_test_fixturetrait.html#loadFixtures()-detail">loadFixtures()</a></td>
+		<td>Loads the fixtures.</td>
+		<td><a href="yii_test_fixturetrait.html">yii\test\FixtureTrait</a></td>
+	</tr>
+			<tr id="unloadFixtures()">
+		<td><a href="yii_test_fixturetrait.html#unloadFixtures()-detail">unloadFixtures()</a></td>
+		<td>Unloads all existing fixtures.</td>
+		<td><a href="yii_test_fixturetrait.html">yii\test\FixtureTrait</a></td>
+	</tr>
+			<tr id="getFixtures()">
+		<td><a href="yii_test_fixturetrait.html#getFixtures()-detail">getFixtures()</a></td>
+		<td></td>
+		<td><a href="yii_test_fixturetrait.html">yii\test\FixtureTrait</a></td>
+	</tr>
+			<tr id="getFixture()">
+		<td><a href="yii_test_fixturetrait.html#getFixture()-detail">getFixture()</a></td>
+		<td>Returns the named fixture.</td>
+		<td><a href="yii_test_fixturetrait.html">yii\test\FixtureTrait</a></td>
+	</tr>
+	</table>
+</div>
+<a name="events"></a>
+
+<a name="constants"></a>
+
+<h2>Method Details</h2>
+
+
+	<div class="detailHeader" id="__get()-detail">
+		__get()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			mixed <a href="yii_test_fixturetrait.html#__get()-detail">__get</a>( $name )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The property name</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">the property value</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_base_unknownpropertyexception.html">yii\base\UnknownPropertyException</a></td>
+				  <td class="paramDescCol">if the property is not defined</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Returns the value of an object property.</strong></p>
+	<p>Do not call this method directly as it is a PHP magic method that
+will be implicitly called when executing <code>$value = $object-&gt;property;</code>.</p>
+
+	
+
+	<div class="detailHeader" id="__call()-detail">
+		__call()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			mixed <a href="yii_test_fixturetrait.html#__call()-detail">__call</a>( $name, $params )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The method name</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$params</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">Method parameters</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">the method return value</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_base_unknownmethodexception.html">yii\base\UnknownMethodException</a></td>
+				  <td class="paramDescCol">when calling unknown method</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Calls the named method which is not a class method.</strong></p>
+	<p>Do not call this method directly as it is a PHP magic method that
+will be implicitly called when an unknown method is being invoked.</p>
+
+	
+
+	<div class="detailHeader" id="fixtures()-detail">
+		fixtures()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			array <a href="yii_test_fixturetrait.html#fixtures()-detail">fixtures</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">the fixtures needed by the current test case</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Declares the fixtures that are needed by the current test case.</strong></p>
+	<p>The return value of this method must be an array of fixture configurations. For example,</p>
+
+<p><code>php
+[
+    // anonymous fixture
+    PostFixture::className(),
+    // "users" fixture
+    'users' =&gt; UserFixture::className(),
+    // "cache" fixture with configuration
+    'cache' =&gt; [
+         'class' =&gt; CacheFixture::className(),
+         'host' =&gt; 'xxx',
+    ],
+]</code></p>
+
+<p>Note that the actual fixtures used for a test case will include both <a href="yii_test_fixturetrait.html#globalFixtures()-detail">globalFixtures()</a>
+and <a href="yii_test_fixturetrait.html#fixtures()-detail">fixtures()</a>.</p>
+
+	
+
+	<div class="detailHeader" id="globalFixtures()-detail">
+		globalFixtures()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			array <a href="yii_test_fixturetrait.html#globalFixtures()-detail">globalFixtures</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">the fixtures shared and required by different test cases.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Declares the fixtures shared required by different test cases.</strong></p>
+	<p>The return value should be similar to that of <a href="yii_test_fixturetrait.html#fixtures()-detail">fixtures()</a>.
+You should usually override this method in a base class.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_test_fixturetrait.html#fixtures()-detail">fixtures()</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="loadFixtures()-detail">
+		loadFixtures()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_test_fixturetrait.html#loadFixtures()-detail">loadFixtures</a>( $fixtures = null )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$fixtures</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The fixtures to loaded. If not set, <a href="yii_test_fixturetrait.html#fixtures()-detail">fixtures()</a> will be loaded instead.</td>
+				</tr>
+													<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_base_invalidconfigexception.html">yii\base\InvalidConfigException</a></td>
+				  <td class="paramDescCol">if fixtures are not properly configured or if a circular dependency among
+the fixtures is detected.</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Loads the fixtures.</strong></p>
+	<p>This method will load the fixtures specified by <code>$fixtures</code> or <a href="yii_test_fixturetrait.html#globalFixtures()-detail">globalFixtures()</a> and <a href="yii_test_fixturetrait.html#fixtures()-detail">fixtures()</a>.</p>
+
+	
+
+	<div class="detailHeader" id="unloadFixtures()-detail">
+		unloadFixtures()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_test_fixturetrait.html#unloadFixtures()-detail">unloadFixtures</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p>Unloads all existing fixtures.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getFixtures()-detail">
+		getFixtures()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			array <a href="yii_test_fixturetrait.html#getFixtures()-detail">getFixtures</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">the loaded fixtures for the current test case</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getFixture()-detail">
+		getFixture()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			<a href="yii_test_fixture.html">yii\test\Fixture</a> <a href="yii_test_fixturetrait.html#getFixture()-detail">getFixture</a>( $name )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The fixture alias or class name</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol"><a href="yii_test_fixture.html">yii\test\Fixture</a></td>
+				  <td class="paramDescCol">the fixture object, or null if the named fixture does not exist.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the named fixture.</strong></p>
+	<p></p>
+
+	
+		</div><!-- end of content -->
+
+		<div id="apiFooter">
+			<p>&copy; 2008-2013 by <a href="http://www.yiisoft.com">Yii Software LLC</a></p>
+			<p>All Rights Reserved.</p>
+		</div><!-- end of footer -->
+
+<script type="text/javascript">
+/*<![CDATA[*/
+$("a.toggle").on('click', function() {
+	var $this = $(this);
+	if ($this.hasClass('properties-hidden')) {
+		$this.text($this.text().replace(/Show/,'Hide'));
+		$this.parents(".summary").find(".inherited").show();
+		$this.removeClass('properties-hidden');
+	} else {
+		$this.text($this.text().replace(/Hide/,'Show'));
+		$this.parents(".summary").find(".inherited").hide();
+		$this.addClass('properties-hidden');
+	}
+	return false;
+});
+/*
+$(".sourceCode a.show").toggle(function(){
+	$(this).text($(this).text().replace(/show/,'hide'));
+	$(this).parents(".sourceCode").find("div.code").show();
+},function(){
+	$(this).text($(this).text().replace(/hide/,'show'));
+	$(this).parents(".sourceCode").find("div.code").hide();
+});
+$("a.sourceLink").click(function(){
+	$(this).attr('target','_blank');
+});
+*/
+/*]]>*/
+</script>
+
+	</div><!-- end of page -->
+</body>
+</html>

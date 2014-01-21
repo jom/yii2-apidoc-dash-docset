@@ -1,0 +1,226 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="language" content="en" />
+<link href="./assets/4138e429/api.css" rel="stylesheet">
+<link href="./assets/4138e429/style.css" rel="stylesheet">
+<script src="./assets/a91b37a6/jquery.js"></script><title>Yii Framework 2.0 API Documentation</title>
+</head>
+
+<body>
+	<div id="apiPage">
+
+		<div id="apiHeader">
+			<a href="http://www.yiiframework.com">Yii Framework</a> v2.0.0-dev Class Reference
+		</div><!-- end of header -->
+
+		<div id="content">
+		<h1>Class yii\helpers\Inflector</h1>
+<div id="nav">
+	<a href="index.html">All Classes</a>
+			| <a href="#properties">Properties</a>
+				| <a href="#methods">Methods</a>
+			</div>
+
+<table class="summaryTable docClass">
+	<colgroup>
+		<col class="col-name" />
+		<col class="col-value" />
+	</colgroup>
+			<tr><th>Inheritance</th><td><a href="yii_helpers_inflector.html">yii\helpers\Inflector</a> &raquo;
+<a href="yii_helpers_baseinflector.html">yii\helpers\BaseInflector</a></td></tr>
+									<tr><th>Available since version</th><td>2.0</td></tr>
+		<tr>
+	  <th>Source Code</th>
+	  <td></td>
+	</tr>
+</table>
+
+<div id="classDescription">
+	<strong>Inflector pluralizes and singularizes English nouns. It also contains some other useful methods.</strong>
+	<p></p>
+</div>
+
+<a name="properties"></a>
+
+<div class="summary docProperty">
+<h2>Public Properties</h2>
+
+<p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-property" />
+	<col class="col-type" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Property</th><th>Type</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr class="inherited" id="$plurals">
+		<td><a href="yii_helpers_baseinflector.html#$plurals-detail">$plurals</a></td>
+		<td>array</td>
+		<td>The rules for converting a word into its plural form</td>
+		<td><a href="yii_helpers_baseinflector.html">yii\helpers\BaseInflector</a></td>
+	</tr>
+			<tr class="inherited" id="$singulars">
+		<td><a href="yii_helpers_baseinflector.html#$singulars-detail">$singulars</a></td>
+		<td>array</td>
+		<td>The rules for converting a word into its singular form</td>
+		<td><a href="yii_helpers_baseinflector.html">yii\helpers\BaseInflector</a></td>
+	</tr>
+			<tr class="inherited" id="$specials">
+		<td><a href="yii_helpers_baseinflector.html#$specials-detail">$specials</a></td>
+		<td>array</td>
+		<td>The special rules for converting a word between its plural form and singular form</td>
+		<td><a href="yii_helpers_baseinflector.html">yii\helpers\BaseInflector</a></td>
+	</tr>
+			<tr class="inherited" id="$transliteration">
+		<td><a href="yii_helpers_baseinflector.html#$transliteration-detail">$transliteration</a></td>
+		<td>array</td>
+		<td>Map of special chars and its translation</td>
+		<td><a href="yii_helpers_baseinflector.html">yii\helpers\BaseInflector</a></td>
+	</tr>
+	</table>
+</div>
+<a name="methods"></a>
+
+<div class="summary docMethod">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr class="inherited" id="pluralize()">
+		<td><a href="yii_helpers_baseinflector.html#pluralize()-detail">pluralize()</a></td>
+		<td>Converts a word to its plural form.</td>
+		<td><a href="yii_helpers_baseinflector.html">yii\helpers\BaseInflector</a></td>
+	</tr>
+			<tr class="inherited" id="singularize()">
+		<td><a href="yii_helpers_baseinflector.html#singularize()-detail">singularize()</a></td>
+		<td>Returns the singular of the $word</td>
+		<td><a href="yii_helpers_baseinflector.html">yii\helpers\BaseInflector</a></td>
+	</tr>
+			<tr class="inherited" id="titleize()">
+		<td><a href="yii_helpers_baseinflector.html#titleize()-detail">titleize()</a></td>
+		<td>Converts an underscored or CamelCase word into a English
+sentence.</td>
+		<td><a href="yii_helpers_baseinflector.html">yii\helpers\BaseInflector</a></td>
+	</tr>
+			<tr class="inherited" id="camelize()">
+		<td><a href="yii_helpers_baseinflector.html#camelize()-detail">camelize()</a></td>
+		<td>Returns given word as CamelCased
+Converts a word like "send_email" to "SendEmail". It
+will remove non alphanumeric character from the word, so
+"who's online" will be converted to "WhoSOnline"</td>
+		<td><a href="yii_helpers_baseinflector.html">yii\helpers\BaseInflector</a></td>
+	</tr>
+			<tr class="inherited" id="camel2words()">
+		<td><a href="yii_helpers_baseinflector.html#camel2words()-detail">camel2words()</a></td>
+		<td>Converts a CamelCase name into space-separated words.</td>
+		<td><a href="yii_helpers_baseinflector.html">yii\helpers\BaseInflector</a></td>
+	</tr>
+			<tr class="inherited" id="camel2id()">
+		<td><a href="yii_helpers_baseinflector.html#camel2id()-detail">camel2id()</a></td>
+		<td>Converts a CamelCase name into an ID in lowercase.</td>
+		<td><a href="yii_helpers_baseinflector.html">yii\helpers\BaseInflector</a></td>
+	</tr>
+			<tr class="inherited" id="id2camel()">
+		<td><a href="yii_helpers_baseinflector.html#id2camel()-detail">id2camel()</a></td>
+		<td>Converts an ID into a CamelCase name.</td>
+		<td><a href="yii_helpers_baseinflector.html">yii\helpers\BaseInflector</a></td>
+	</tr>
+			<tr class="inherited" id="underscore()">
+		<td><a href="yii_helpers_baseinflector.html#underscore()-detail">underscore()</a></td>
+		<td>Converts any "CamelCased" into an "underscored_word".</td>
+		<td><a href="yii_helpers_baseinflector.html">yii\helpers\BaseInflector</a></td>
+	</tr>
+			<tr class="inherited" id="humanize()">
+		<td><a href="yii_helpers_baseinflector.html#humanize()-detail">humanize()</a></td>
+		<td>Returns a human-readable string from $word</td>
+		<td><a href="yii_helpers_baseinflector.html">yii\helpers\BaseInflector</a></td>
+	</tr>
+			<tr class="inherited" id="variablize()">
+		<td><a href="yii_helpers_baseinflector.html#variablize()-detail">variablize()</a></td>
+		<td>Same as camelize but first char is in lowercase.</td>
+		<td><a href="yii_helpers_baseinflector.html">yii\helpers\BaseInflector</a></td>
+	</tr>
+			<tr class="inherited" id="tableize()">
+		<td><a href="yii_helpers_baseinflector.html#tableize()-detail">tableize()</a></td>
+		<td>Converts a class name to its table name (pluralized)
+naming conventions. For example, converts "Person" to "people"</td>
+		<td><a href="yii_helpers_baseinflector.html">yii\helpers\BaseInflector</a></td>
+	</tr>
+			<tr class="inherited" id="slug()">
+		<td><a href="yii_helpers_baseinflector.html#slug()-detail">slug()</a></td>
+		<td>Returns a string with all spaces converted to given replacement and
+non word characters removed.  Maps special characters to ASCII using
+[[$transliteration]] array.</td>
+		<td><a href="yii_helpers_baseinflector.html">yii\helpers\BaseInflector</a></td>
+	</tr>
+			<tr class="inherited" id="classify()">
+		<td><a href="yii_helpers_baseinflector.html#classify()-detail">classify()</a></td>
+		<td>Converts a table name to its class name. For example, converts "people" to "Person"</td>
+		<td><a href="yii_helpers_baseinflector.html">yii\helpers\BaseInflector</a></td>
+	</tr>
+			<tr class="inherited" id="ordinalize()">
+		<td><a href="yii_helpers_baseinflector.html#ordinalize()-detail">ordinalize()</a></td>
+		<td>Converts number to its ordinal English form. For example, converts 13 to 13th, 2 to 2nd .</td>
+		<td><a href="yii_helpers_baseinflector.html">yii\helpers\BaseInflector</a></td>
+	</tr>
+	</table>
+</div>
+<a name="events"></a>
+
+<a name="constants"></a>
+
+			</div><!-- end of content -->
+
+		<div id="apiFooter">
+			<p>&copy; 2008-2013 by <a href="http://www.yiisoft.com">Yii Software LLC</a></p>
+			<p>All Rights Reserved.</p>
+		</div><!-- end of footer -->
+
+<script type="text/javascript">
+/*<![CDATA[*/
+$("a.toggle").on('click', function() {
+	var $this = $(this);
+	if ($this.hasClass('properties-hidden')) {
+		$this.text($this.text().replace(/Show/,'Hide'));
+		$this.parents(".summary").find(".inherited").show();
+		$this.removeClass('properties-hidden');
+	} else {
+		$this.text($this.text().replace(/Hide/,'Show'));
+		$this.parents(".summary").find(".inherited").hide();
+		$this.addClass('properties-hidden');
+	}
+	return false;
+});
+/*
+$(".sourceCode a.show").toggle(function(){
+	$(this).text($(this).text().replace(/show/,'hide'));
+	$(this).parents(".sourceCode").find("div.code").show();
+},function(){
+	$(this).text($(this).text().replace(/hide/,'show'));
+	$(this).parents(".sourceCode").find("div.code").hide();
+});
+$("a.sourceLink").click(function(){
+	$(this).attr('target','_blank');
+});
+*/
+/*]]>*/
+</script>
+
+	</div><!-- end of page -->
+</body>
+</html>

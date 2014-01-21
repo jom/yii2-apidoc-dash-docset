@@ -1,0 +1,1931 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="language" content="en" />
+<link href="./assets/4138e429/api.css" rel="stylesheet">
+<link href="./assets/4138e429/style.css" rel="stylesheet">
+<script src="./assets/a91b37a6/jquery.js"></script><title>Yii Framework 2.0 API Documentation</title>
+</head>
+
+<body>
+	<div id="apiPage">
+
+		<div id="apiHeader">
+			<a href="http://www.yiiframework.com">Yii Framework</a> v2.0.0-dev Class Reference
+		</div><!-- end of header -->
+
+		<div id="content">
+		<h1>Class yii\web\Response</h1>
+<div id="nav">
+	<a href="index.html">All Classes</a>
+			| <a href="#properties">Properties</a>
+				| <a href="#methods">Methods</a>
+				| <a href="#events">Events</a>
+				| <a href="#constants">Constants</a>
+	</div>
+
+<table class="summaryTable docClass">
+	<colgroup>
+		<col class="col-name" />
+		<col class="col-value" />
+	</colgroup>
+			<tr><th>Inheritance</th><td><a href="yii_web_response.html">yii\web\Response</a> &raquo;
+<a href="yii_base_response.html">yii\base\Response</a> &raquo;
+<a href="yii_base_component.html">yii\base\Component</a> &raquo;
+<a href="yii_base_object.html">yii\base\Object</a></td></tr>
+				<tr><th>Implements</th><td><a href="yii_base_arrayable.html">yii\base\Arrayable</a></td></tr>
+								<tr><th>Available since version</th><td>2.0</td></tr>
+		<tr>
+	  <th>Source Code</th>
+	  <td></td>
+	</tr>
+</table>
+
+<div id="classDescription">
+	<strong>The web Response class represents an HTTP response</strong>
+	<p><p>It holds the <a href="yii_web_response.html#$headers-detail">$headers</a>, <a href="yii_web_response.html#$cookies-detail">$cookies</a> and <a href="yii_web_response.html#$content-detail">$content</a> that is to be sent to the client.
+It also controls the HTTP <a href="yii_web_response.html#$statusCode-detail">status code</a>.</p>
+
+<p>Response is configured as an application component in <span style="background: #f00;">\yii\web\yii\web\Application</span> by default.
+You can access that instance via <code>Yii::$app-&gt;response</code>.</p>
+
+<p>You can modify its configuration by adding an array to your application config under <code>components</code>
+as it is shown in the following example:</p>
+
+<pre><code>'response' =&gt; [
+    'format' =&gt; yii\web\Response::FORMAT_JSON,
+    'charset' =&gt; 'UTF-8',
+    // ...
+]
+</code></pre></p>
+</div>
+
+<a name="properties"></a>
+
+<div class="summary docProperty">
+<h2>Public Properties</h2>
+
+<p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-property" />
+	<col class="col-type" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Property</th><th>Type</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr class="inherited" id="$exitStatus">
+		<td><a href="yii_base_response.html#$exitStatus-detail">$exitStatus</a></td>
+		<td>integer</td>
+		<td>The exit status</td>
+		<td><a href="yii_base_response.html">yii\base\Response</a></td>
+	</tr>
+			<tr id="$format">
+		<td><a href="yii_web_response.html#$format-detail">$format</a></td>
+		<td>string</td>
+		<td>The response format</td>
+		<td><a href="yii_web_response.html">yii\web\Response</a></td>
+	</tr>
+			<tr id="$formatters">
+		<td><a href="yii_web_response.html#$formatters-detail">$formatters</a></td>
+		<td>array</td>
+		<td>The formatters for converting data into the response content of the specified <a href="yii_web_response.html#$format-detail">$format</a></td>
+		<td><a href="yii_web_response.html">yii\web\Response</a></td>
+	</tr>
+			<tr id="$data">
+		<td><a href="yii_web_response.html#$data-detail">$data</a></td>
+		<td>mixed</td>
+		<td>The original response data</td>
+		<td><a href="yii_web_response.html">yii\web\Response</a></td>
+	</tr>
+			<tr id="$content">
+		<td><a href="yii_web_response.html#$content-detail">$content</a></td>
+		<td>string</td>
+		<td>The response content</td>
+		<td><a href="yii_web_response.html">yii\web\Response</a></td>
+	</tr>
+			<tr id="$stream">
+		<td><a href="yii_web_response.html#$stream-detail">$stream</a></td>
+		<td>resource|array</td>
+		<td>The stream to be sent</td>
+		<td><a href="yii_web_response.html">yii\web\Response</a></td>
+	</tr>
+			<tr id="$charset">
+		<td><a href="yii_web_response.html#$charset-detail">$charset</a></td>
+		<td>string</td>
+		<td>The charset of the text response</td>
+		<td><a href="yii_web_response.html">yii\web\Response</a></td>
+	</tr>
+			<tr id="$statusText">
+		<td><a href="yii_web_response.html#$statusText-detail">$statusText</a></td>
+		<td>string</td>
+		<td>The HTTP status description that comes together with the status code</td>
+		<td><a href="yii_web_response.html">yii\web\Response</a></td>
+	</tr>
+			<tr id="$version">
+		<td><a href="yii_web_response.html#$version-detail">$version</a></td>
+		<td>string</td>
+		<td>The version of the HTTP protocol to use</td>
+		<td><a href="yii_web_response.html">yii\web\Response</a></td>
+	</tr>
+			<tr id="$isSent">
+		<td><a href="yii_web_response.html#$isSent-detail">$isSent</a></td>
+		<td>boolean</td>
+		<td>Whether the response has been sent</td>
+		<td><a href="yii_web_response.html">yii\web\Response</a></td>
+	</tr>
+			<tr id="$httpStatuses">
+		<td><a href="yii_web_response.html#$httpStatuses-detail">$httpStatuses</a></td>
+		<td>array</td>
+		<td>List of HTTP status codes and the corresponding texts</td>
+		<td><a href="yii_web_response.html">yii\web\Response</a></td>
+	</tr>
+			<tr id="$behaviors">
+		<td><a href="yii_web_response.html#$behaviors-detail">$behaviors</a></td>
+		<td><a href="yii_base_behavior.html">yii\base\Behavior</a>[]</td>
+		<td>list of behaviors attached to this component</td>
+		<td><a href="yii_web_response.html">yii\web\Response</a></td>
+	</tr>
+			<tr id="$statusCode">
+		<td><a href="yii_web_response.html#$statusCode-detail">$statusCode</a></td>
+		<td>integer</td>
+		<td>the HTTP status code to send with the response</td>
+		<td><a href="yii_web_response.html">yii\web\Response</a></td>
+	</tr>
+			<tr id="$headers">
+		<td><a href="yii_web_response.html#$headers-detail">$headers</a></td>
+		<td><a href="yii_web_headercollection.html">yii\web\HeaderCollection</a></td>
+		<td>the header collection</td>
+		<td><a href="yii_web_response.html">yii\web\Response</a></td>
+	</tr>
+			<tr id="$cookies">
+		<td><a href="yii_web_response.html#$cookies-detail">$cookies</a></td>
+		<td><a href="yii_web_cookiecollection.html">yii\web\CookieCollection</a></td>
+		<td>the cookie collection</td>
+		<td><a href="yii_web_response.html">yii\web\Response</a></td>
+	</tr>
+			<tr id="$isInvalid">
+		<td><a href="yii_web_response.html#$isInvalid-detail">$isInvalid</a></td>
+		<td>boolean</td>
+		<td>whether this response has a valid <a href="yii_web_response.html#$statusCode-detail">$statusCode</a></td>
+		<td><a href="yii_web_response.html">yii\web\Response</a></td>
+	</tr>
+			<tr id="$isInformational">
+		<td><a href="yii_web_response.html#$isInformational-detail">$isInformational</a></td>
+		<td>boolean</td>
+		<td>whether this response is informational</td>
+		<td><a href="yii_web_response.html">yii\web\Response</a></td>
+	</tr>
+			<tr id="$isSuccessful">
+		<td><a href="yii_web_response.html#$isSuccessful-detail">$isSuccessful</a></td>
+		<td>boolean</td>
+		<td>whether this response is successful</td>
+		<td><a href="yii_web_response.html">yii\web\Response</a></td>
+	</tr>
+			<tr id="$isRedirection">
+		<td><a href="yii_web_response.html#$isRedirection-detail">$isRedirection</a></td>
+		<td>boolean</td>
+		<td>whether this response is a redirection</td>
+		<td><a href="yii_web_response.html">yii\web\Response</a></td>
+	</tr>
+			<tr id="$isClientError">
+		<td><a href="yii_web_response.html#$isClientError-detail">$isClientError</a></td>
+		<td>boolean</td>
+		<td>whether this response indicates a client error</td>
+		<td><a href="yii_web_response.html">yii\web\Response</a></td>
+	</tr>
+			<tr id="$isServerError">
+		<td><a href="yii_web_response.html#$isServerError-detail">$isServerError</a></td>
+		<td>boolean</td>
+		<td>whether this response indicates a server error</td>
+		<td><a href="yii_web_response.html">yii\web\Response</a></td>
+	</tr>
+			<tr id="$isOk">
+		<td><a href="yii_web_response.html#$isOk-detail">$isOk</a></td>
+		<td>boolean</td>
+		<td>whether this response is OK</td>
+		<td><a href="yii_web_response.html">yii\web\Response</a></td>
+	</tr>
+			<tr id="$isForbidden">
+		<td><a href="yii_web_response.html#$isForbidden-detail">$isForbidden</a></td>
+		<td>boolean</td>
+		<td>whether this response indicates the current request is forbidden</td>
+		<td><a href="yii_web_response.html">yii\web\Response</a></td>
+	</tr>
+			<tr id="$isNotFound">
+		<td><a href="yii_web_response.html#$isNotFound-detail">$isNotFound</a></td>
+		<td>boolean</td>
+		<td>whether this response indicates the currently requested resource is not found</td>
+		<td><a href="yii_web_response.html">yii\web\Response</a></td>
+	</tr>
+			<tr id="$isEmpty">
+		<td><a href="yii_web_response.html#$isEmpty-detail">$isEmpty</a></td>
+		<td>boolean</td>
+		<td>whether this response is empty</td>
+		<td><a href="yii_web_response.html">yii\web\Response</a></td>
+	</tr>
+	</table>
+</div>
+<a name="methods"></a>
+
+<div class="summary docMethod">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr class="inherited" id="className()">
+		<td><a href="yii_base_object.html#className()-detail">className()</a></td>
+		<td></td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__construct()">
+		<td><a href="yii_base_object.html#__construct()-detail">__construct()</a></td>
+		<td>Constructor.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr id="init()">
+		<td><a href="yii_web_response.html#init()-detail">init()</a></td>
+		<td>Initializes this component.</td>
+		<td><a href="yii_web_response.html">yii\web\Response</a></td>
+	</tr>
+			<tr class="inherited" id="__get()">
+		<td><a href="yii_base_component.html#__get()-detail">__get()</a></td>
+		<td>Returns the value of a component property.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__set()">
+		<td><a href="yii_base_component.html#__set()-detail">__set()</a></td>
+		<td>Sets the value of a component property.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__isset()">
+		<td><a href="yii_base_component.html#__isset()-detail">__isset()</a></td>
+		<td>Checks if a property value is null.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__unset()">
+		<td><a href="yii_base_component.html#__unset()-detail">__unset()</a></td>
+		<td>Sets a component property to be null.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__call()">
+		<td><a href="yii_base_component.html#__call()-detail">__call()</a></td>
+		<td>Calls the named method which is not a class method.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasProperty()">
+		<td><a href="yii_base_component.html#hasProperty()-detail">hasProperty()</a></td>
+		<td>Returns a value indicating whether a property is defined for this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="canGetProperty()">
+		<td><a href="yii_base_component.html#canGetProperty()-detail">canGetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be read.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="canSetProperty()">
+		<td><a href="yii_base_component.html#canSetProperty()-detail">canSetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be set.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasMethod()">
+		<td><a href="yii_base_component.html#hasMethod()-detail">hasMethod()</a></td>
+		<td>Returns a value indicating whether a method is defined.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="toArray()">
+		<td><a href="yii_base_object.html#toArray()-detail">toArray()</a></td>
+		<td>Converts the object into an array.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__clone()">
+		<td><a href="yii_base_component.html#__clone()-detail">__clone()</a></td>
+		<td>This method is called after the object is created by cloning an existing one.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="behaviors()">
+		<td><a href="yii_base_component.html#behaviors()-detail">behaviors()</a></td>
+		<td>Returns a list of behaviors that this component should behave as.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasEventHandlers()">
+		<td><a href="yii_base_component.html#hasEventHandlers()-detail">hasEventHandlers()</a></td>
+		<td>Returns a value indicating whether there is any handler attached to the named event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="on()">
+		<td><a href="yii_base_component.html#on()-detail">on()</a></td>
+		<td>Attaches an event handler to an event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="off()">
+		<td><a href="yii_base_component.html#off()-detail">off()</a></td>
+		<td>Detaches an existing event handler from this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="trigger()">
+		<td><a href="yii_base_component.html#trigger()-detail">trigger()</a></td>
+		<td>Triggers an event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="getBehavior()">
+		<td><a href="yii_base_component.html#getBehavior()-detail">getBehavior()</a></td>
+		<td>Returns the named behavior object.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="getBehaviors()">
+		<td><a href="yii_base_component.html#getBehaviors()-detail">getBehaviors()</a></td>
+		<td>Returns all behaviors attached to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="attachBehavior()">
+		<td><a href="yii_base_component.html#attachBehavior()-detail">attachBehavior()</a></td>
+		<td>Attaches a behavior to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="attachBehaviors()">
+		<td><a href="yii_base_component.html#attachBehaviors()-detail">attachBehaviors()</a></td>
+		<td>Attaches a list of behaviors to the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="detachBehavior()">
+		<td><a href="yii_base_component.html#detachBehavior()-detail">detachBehavior()</a></td>
+		<td>Detaches a behavior from the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="detachBehaviors()">
+		<td><a href="yii_base_component.html#detachBehaviors()-detail">detachBehaviors()</a></td>
+		<td>Detaches all behaviors from the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="ensureBehaviors()">
+		<td><a href="yii_base_component.html#ensureBehaviors()-detail">ensureBehaviors()</a></td>
+		<td>Makes sure that the behaviors declared in <a href="yii_base_component.html#behaviors()-detail">behaviors()</a> are attached to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr id="send()">
+		<td><a href="yii_web_response.html#send()-detail">send()</a></td>
+		<td>Sends the response to the client.</td>
+		<td><a href="yii_web_response.html">yii\web\Response</a></td>
+	</tr>
+			<tr id="getStatusCode()">
+		<td><a href="yii_web_response.html#getStatusCode()-detail">getStatusCode()</a></td>
+		<td></td>
+		<td><a href="yii_web_response.html">yii\web\Response</a></td>
+	</tr>
+			<tr id="setStatusCode()">
+		<td><a href="yii_web_response.html#setStatusCode()-detail">setStatusCode()</a></td>
+		<td>Sets the response status code.</td>
+		<td><a href="yii_web_response.html">yii\web\Response</a></td>
+	</tr>
+			<tr id="getHeaders()">
+		<td><a href="yii_web_response.html#getHeaders()-detail">getHeaders()</a></td>
+		<td>Returns the header collection.</td>
+		<td><a href="yii_web_response.html">yii\web\Response</a></td>
+	</tr>
+			<tr id="clear()">
+		<td><a href="yii_web_response.html#clear()-detail">clear()</a></td>
+		<td>Clears the headers, cookies, content, status code of the response.</td>
+		<td><a href="yii_web_response.html">yii\web\Response</a></td>
+	</tr>
+						<tr id="sendFile()">
+		<td><a href="yii_web_response.html#sendFile()-detail">sendFile()</a></td>
+		<td>Sends a file to the browser.</td>
+		<td><a href="yii_web_response.html">yii\web\Response</a></td>
+	</tr>
+			<tr id="sendContentAsFile()">
+		<td><a href="yii_web_response.html#sendContentAsFile()-detail">sendContentAsFile()</a></td>
+		<td>Sends the specified content as a file to the browser.</td>
+		<td><a href="yii_web_response.html">yii\web\Response</a></td>
+	</tr>
+			<tr id="sendStreamAsFile()">
+		<td><a href="yii_web_response.html#sendStreamAsFile()-detail">sendStreamAsFile()</a></td>
+		<td>Sends the specified stream as a file to the browser.</td>
+		<td><a href="yii_web_response.html">yii\web\Response</a></td>
+	</tr>
+				<tr id="xSendFile()">
+		<td><a href="yii_web_response.html#xSendFile()-detail">xSendFile()</a></td>
+		<td>Sends existing file to a browser as a download using x-sendfile.</td>
+		<td><a href="yii_web_response.html">yii\web\Response</a></td>
+	</tr>
+			<tr id="redirect()">
+		<td><a href="yii_web_response.html#redirect()-detail">redirect()</a></td>
+		<td>Redirects the browser to the specified URL.</td>
+		<td><a href="yii_web_response.html">yii\web\Response</a></td>
+	</tr>
+			<tr id="refresh()">
+		<td><a href="yii_web_response.html#refresh()-detail">refresh()</a></td>
+		<td>Refreshes the current page.</td>
+		<td><a href="yii_web_response.html">yii\web\Response</a></td>
+	</tr>
+			<tr id="getCookies()">
+		<td><a href="yii_web_response.html#getCookies()-detail">getCookies()</a></td>
+		<td>Returns the cookie collection.</td>
+		<td><a href="yii_web_response.html">yii\web\Response</a></td>
+	</tr>
+			<tr id="getIsInvalid()">
+		<td><a href="yii_web_response.html#getIsInvalid()-detail">getIsInvalid()</a></td>
+		<td></td>
+		<td><a href="yii_web_response.html">yii\web\Response</a></td>
+	</tr>
+			<tr id="getIsInformational()">
+		<td><a href="yii_web_response.html#getIsInformational()-detail">getIsInformational()</a></td>
+		<td></td>
+		<td><a href="yii_web_response.html">yii\web\Response</a></td>
+	</tr>
+			<tr id="getIsSuccessful()">
+		<td><a href="yii_web_response.html#getIsSuccessful()-detail">getIsSuccessful()</a></td>
+		<td></td>
+		<td><a href="yii_web_response.html">yii\web\Response</a></td>
+	</tr>
+			<tr id="getIsRedirection()">
+		<td><a href="yii_web_response.html#getIsRedirection()-detail">getIsRedirection()</a></td>
+		<td></td>
+		<td><a href="yii_web_response.html">yii\web\Response</a></td>
+	</tr>
+			<tr id="getIsClientError()">
+		<td><a href="yii_web_response.html#getIsClientError()-detail">getIsClientError()</a></td>
+		<td></td>
+		<td><a href="yii_web_response.html">yii\web\Response</a></td>
+	</tr>
+			<tr id="getIsServerError()">
+		<td><a href="yii_web_response.html#getIsServerError()-detail">getIsServerError()</a></td>
+		<td></td>
+		<td><a href="yii_web_response.html">yii\web\Response</a></td>
+	</tr>
+			<tr id="getIsOk()">
+		<td><a href="yii_web_response.html#getIsOk()-detail">getIsOk()</a></td>
+		<td></td>
+		<td><a href="yii_web_response.html">yii\web\Response</a></td>
+	</tr>
+			<tr id="getIsForbidden()">
+		<td><a href="yii_web_response.html#getIsForbidden()-detail">getIsForbidden()</a></td>
+		<td></td>
+		<td><a href="yii_web_response.html">yii\web\Response</a></td>
+	</tr>
+			<tr id="getIsNotFound()">
+		<td><a href="yii_web_response.html#getIsNotFound()-detail">getIsNotFound()</a></td>
+		<td></td>
+		<td><a href="yii_web_response.html">yii\web\Response</a></td>
+	</tr>
+			<tr id="getIsEmpty()">
+		<td><a href="yii_web_response.html#getIsEmpty()-detail">getIsEmpty()</a></td>
+		<td></td>
+		<td><a href="yii_web_response.html">yii\web\Response</a></td>
+	</tr>
+		</table>
+</div>
+<div class="summary docMethod">
+<h2>Protected Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+																																	<tr id="sendHeaders()">
+		<td><a href="yii_web_response.html#sendHeaders()-detail">sendHeaders()</a></td>
+		<td>Sends the response headers to the client</td>
+		<td><a href="yii_web_response.html">yii\web\Response</a></td>
+	</tr>
+			<tr id="sendCookies()">
+		<td><a href="yii_web_response.html#sendCookies()-detail">sendCookies()</a></td>
+		<td>Sends the cookies to the client.</td>
+		<td><a href="yii_web_response.html">yii\web\Response</a></td>
+	</tr>
+			<tr id="sendContent()">
+		<td><a href="yii_web_response.html#sendContent()-detail">sendContent()</a></td>
+		<td>Sends the response content to the client</td>
+		<td><a href="yii_web_response.html">yii\web\Response</a></td>
+	</tr>
+						<tr id="getHttpRange()">
+		<td><a href="yii_web_response.html#getHttpRange()-detail">getHttpRange()</a></td>
+		<td>Determines the HTTP range given in the request.</td>
+		<td><a href="yii_web_response.html">yii\web\Response</a></td>
+	</tr>
+																	<tr id="prepare()">
+		<td><a href="yii_web_response.html#prepare()-detail">prepare()</a></td>
+		<td>Prepares for sending the response.</td>
+		<td><a href="yii_web_response.html">yii\web\Response</a></td>
+	</tr>
+	</table>
+</div>
+<a name="events"></a>
+<div class="summary docEvent">
+<h2>Events</h2>
+
+<p><a href="#" class="toggle">Hide inherited events</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-event" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Event</th><th>Type</th><th>Description</th><th>Defined By</th>
+</tr>
+<tr id="EVENT_BEFORE_SEND">
+	<td><a href="yii_web_response.html#EVENT_BEFORE_SEND-detail">EVENT_BEFORE_SEND</a></td>
+	<td>\yii\web\ResponseEvent</td>
+	<td>
+		An event that is triggered at the beginning of <a href="yii_web_response.html#send()-detail">send()</a>			</td>
+	<td><a href="yii_web_response.html">yii\web\Response</a></td>
+</tr>
+<tr id="EVENT_AFTER_SEND">
+	<td><a href="yii_web_response.html#EVENT_AFTER_SEND-detail">EVENT_AFTER_SEND</a></td>
+	<td>\yii\web\ResponseEvent</td>
+	<td>
+		An event that is triggered at the end of <a href="yii_web_response.html#send()-detail">send()</a>			</td>
+	<td><a href="yii_web_response.html">yii\web\Response</a></td>
+</tr>
+<tr id="EVENT_AFTER_PREPARE">
+	<td><a href="yii_web_response.html#EVENT_AFTER_PREPARE-detail">EVENT_AFTER_PREPARE</a></td>
+	<td>\yii\web\ResponseEvent</td>
+	<td>
+		An event that is triggered right after <a href="yii_web_response.html#prepare()-detail">prepare()</a> is called in <a href="yii_web_response.html#send()-detail">send()</a>			</td>
+	<td><a href="yii_web_response.html">yii\web\Response</a></td>
+</tr>
+</table>
+</div>
+<a name="constants"></a>
+<div class="summary docConst">
+<h2>Constants</h2>
+
+<p><a href="#" class="toggle">Hide inherited constants</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-const" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Constant</th><th>Value</th><th>Description</th><th>Defined By</th>
+</tr>
+	<tr id="FORMAT_RAW">
+	  <td>FORMAT_RAW<a name="FORMAT_RAW-detail"></a></td>
+	  <td>'raw'</td>
+	  <td></td>
+	  <td><a href="yii_web_response.html">yii\web\Response</a></td>
+	</tr>
+	<tr id="FORMAT_HTML">
+	  <td>FORMAT_HTML<a name="FORMAT_HTML-detail"></a></td>
+	  <td>'html'</td>
+	  <td></td>
+	  <td><a href="yii_web_response.html">yii\web\Response</a></td>
+	</tr>
+	<tr id="FORMAT_JSON">
+	  <td>FORMAT_JSON<a name="FORMAT_JSON-detail"></a></td>
+	  <td>'json'</td>
+	  <td></td>
+	  <td><a href="yii_web_response.html">yii\web\Response</a></td>
+	</tr>
+	<tr id="FORMAT_JSONP">
+	  <td>FORMAT_JSONP<a name="FORMAT_JSONP-detail"></a></td>
+	  <td>'jsonp'</td>
+	  <td></td>
+	  <td><a href="yii_web_response.html">yii\web\Response</a></td>
+	</tr>
+	<tr id="FORMAT_XML">
+	  <td>FORMAT_XML<a name="FORMAT_XML-detail"></a></td>
+	  <td>'xml'</td>
+	  <td></td>
+	  <td><a href="yii_web_response.html">yii\web\Response</a></td>
+	</tr>
+</table>
+</div>
+<h2>Property Details</h2>
+
+
+	<div class="detailHeader" id="$format-detail">
+		$format		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $format = self::FORMAT_HTML	</div>
+
+	<p>The response format. This determines how to convert <a href="yii_web_response.html#$data-detail">$data</a> into <a href="yii_web_response.html#$content-detail">$content</a>
+when the latter is not set. By default, the following formats are supported:
+- <a href="yii_web_response.html#FORMAT_RAW-detail">FORMAT_RAW</a>: the data will be treated as the response content without any conversion.
+  No extra HTTP header will be added.
+- <a href="yii_web_response.html#FORMAT_HTML-detail">FORMAT_HTML</a>: the data will be treated as the response content without any conversion.
+  The "Content-Type" header will set as "text/html" if it is not set previously.
+- <a href="yii_web_response.html#FORMAT_JSON-detail">FORMAT_JSON</a>: the data will be converted into JSON format, and the "Content-Type"
+  header will be set as "application/json".
+- <a href="yii_web_response.html#FORMAT_JSONP-detail">FORMAT_JSONP</a>: the data will be converted into JSONP format, and the "Content-Type"
+  header will be set as "text/javascript". Note that in this case <code>$data</code> must be an array
+  with "data" and "callback" elements. The former refers to the actual data to be sent,
+  while the latter refers to the name of the JavaScript callback.
+- <a href="yii_web_response.html#FORMAT_XML-detail">FORMAT_XML</a>: the data will be converted into XML format. Please refer to <a href="yii_web_xmlresponseformatter.html">yii\web\XmlResponseFormatter</a>
+  for more details.
+You may customize the formatting process or support additional formats by configuring <a href="yii_web_response.html#$formatters-detail">$formatters</a>.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_web_response.html#$formatters-detail">$formatters</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="$formatters-detail">
+		$formatters		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array $formatters = null	</div>
+
+	<p>The formatters for converting data into the response content of the specified <a href="yii_web_response.html#$format-detail">$format</a>.
+The array keys are the format names, and the array values are the corresponding configurations
+for creating the formatter objects.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_web_response.html#$format-detail">$format</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="$data-detail">
+		$data		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	mixed $data = null	</div>
+
+	<p>The original response data. When this is not null, it will be converted into <a href="yii_web_response.html#$content-detail">$content</a>
+according to <a href="yii_web_response.html#$format-detail">$format</a> when the response is being sent out.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_web_response.html#$content-detail">$content</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="$content-detail">
+		$content		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $content = null	</div>
+
+	<p>The response content. When <a href="yii_web_response.html#$data-detail">$data</a> is not null, it will be converted into <a href="yii_web_response.html#$content-detail">$content</a>
+according to <a href="yii_web_response.html#$format-detail">$format</a> when the response is being sent out.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_web_response.html#$data-detail">$data</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="$stream-detail">
+		$stream		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	resource|array $stream = null	</div>
+
+	<p>The stream to be sent. This can be a stream handle or an array of stream handle,
+the begin position and the end position. Note that when this property is set, the <a href="yii_web_response.html#$data-detail">$data</a> and <a href="yii_web_response.html#$content-detail">$content</a>
+properties will be ignored by <a href="yii_web_response.html#send()-detail">send()</a>.</p>
+
+	
+
+	<div class="detailHeader" id="$charset-detail">
+		$charset		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $charset = null	</div>
+
+	<p>The charset of the text response. If not set, it will use
+the value of <a href="yii_base_application.html#$charset-detail">yii\web\Application::$charset</a>.</p>
+
+	
+
+	<div class="detailHeader" id="$statusText-detail">
+		$statusText		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $statusText = 'OK'	</div>
+
+	<p>The HTTP status description that comes together with the status code.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_web_response.html#$httpStatuses-detail">$httpStatuses</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="$version-detail">
+		$version		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $version = null	</div>
+
+	<p>The version of the HTTP protocol to use. If not set, it will be determined via <code>$_SERVER['SERVER_PROTOCOL']</code>,
+or '1.1' if that is not available.</p>
+
+	
+
+	<div class="detailHeader" id="$isSent-detail">
+		$isSent		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	boolean $isSent = false	</div>
+
+	<p>Whether the response has been sent. If this is true, calling <a href="yii_web_response.html#send()-detail">send()</a> will do nothing.</p>
+
+	
+
+	<div class="detailHeader" id="$httpStatuses-detail">
+		$httpStatuses		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array $httpStatuses = [100 => 'Continue', 101 => 'Switching Protocols', 102 => 'Processing', 118 => 'Connection timed out', 200 => 'OK', 201 => 'Created', 202 => 'Accepted', 203 => 'Non-Authoritative', 204 => 'No Content', 205 => 'Reset Content', 206 => 'Partial Content', 207 => 'Multi-Status', 208 => 'Already Reported', 210 => 'Content Different', 226 => 'IM Used', 300 => 'Multiple Choices', 301 => 'Moved Permanently', 302 => 'Found', 303 => 'See Other', 304 => 'Not Modified', 305 => 'Use Proxy', 306 => 'Reserved', 307 => 'Temporary Redirect', 308 => 'Permanent Redirect', 310 => 'Too many Redirect', 400 => 'Bad Request', 401 => 'Unauthorized', 402 => 'Payment Required', 403 => 'Forbidden', 404 => 'Not Found', 405 => 'Method Not Allowed', 406 => 'Not Acceptable', 407 => 'Proxy Authentication Required', 408 => 'Request Time-out', 409 => 'Conflict', 410 => 'Gone', 411 => 'Length Required', 412 => 'Precondition Failed', 413 => 'Request Entity Too Large', 414 => 'Request-URI Too Long', 415 => 'Unsupported Media Type', 416 => 'Requested range unsatisfiable', 417 => 'Expectation failed', 418 => 'I\'m a teapot', 422 => 'Unprocessable entity', 423 => 'Locked', 424 => 'Method failure', 425 => 'Unordered Collection', 426 => 'Upgrade Required', 428 => 'Precondition Required', 429 => 'Too Many Requests', 431 => 'Request Header Fields Too Large', 449 => 'Retry With', 450 => 'Blocked by Windows Parental Controls', 500 => 'Internal Server Error', 501 => 'Not Implemented', 502 => 'Bad Gateway ou Proxy Error', 503 => 'Service Unavailable', 504 => 'Gateway Time-out', 505 => 'HTTP Version not supported', 507 => 'Insufficient storage', 508 => 'Loop Detected', 509 => 'Bandwidth Limit Exceeded', 510 => 'Not Extended', 511 => 'Network Authentication Required']	</div>
+
+	<p>List of HTTP status codes and the corresponding texts</p>
+
+	
+
+	<div class="detailHeader" id="$behaviors-detail">
+		$behaviors		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_base_behavior.html">yii\base\Behavior</a>[] <a href="yii_base_component.html#getBehaviors()-detail">getBehaviors</a>(  )	</div>
+
+	<p>list of behaviors attached to this component</p>
+
+	
+
+	<div class="detailHeader" id="$statusCode-detail">
+		$statusCode		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	integer <a href="yii_web_response.html#getStatusCode()-detail">getStatusCode</a>(  )<br />void <a href="yii_web_response.html#setStatusCode()-detail">setStatusCode</a>( $value, $text = null )	</div>
+
+	<p>the HTTP status code to send with the response.</p>
+
+	
+
+	<div class="detailHeader" id="$headers-detail">
+		$headers		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_web_headercollection.html">yii\web\HeaderCollection</a> <a href="yii_web_response.html#getHeaders()-detail">getHeaders</a>(  )	</div>
+
+	<p>the header collection</p>
+
+	
+
+	<div class="detailHeader" id="$cookies-detail">
+		$cookies		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_web_cookiecollection.html">yii\web\CookieCollection</a> <a href="yii_web_response.html#getCookies()-detail">getCookies</a>(  )	</div>
+
+	<p>the cookie collection.</p>
+
+	
+
+	<div class="detailHeader" id="$isInvalid-detail">
+		$isInvalid		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	boolean <a href="yii_web_response.html#getIsInvalid()-detail">getIsInvalid</a>(  )	</div>
+
+	<p>whether this response has a valid <a href="yii_web_response.html#$statusCode-detail">$statusCode</a>.</p>
+
+	
+
+	<div class="detailHeader" id="$isInformational-detail">
+		$isInformational		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	boolean <a href="yii_web_response.html#getIsInformational()-detail">getIsInformational</a>(  )	</div>
+
+	<p>whether this response is informational</p>
+
+	
+
+	<div class="detailHeader" id="$isSuccessful-detail">
+		$isSuccessful		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	boolean <a href="yii_web_response.html#getIsSuccessful()-detail">getIsSuccessful</a>(  )	</div>
+
+	<p>whether this response is successful</p>
+
+	
+
+	<div class="detailHeader" id="$isRedirection-detail">
+		$isRedirection		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	boolean <a href="yii_web_response.html#getIsRedirection()-detail">getIsRedirection</a>(  )	</div>
+
+	<p>whether this response is a redirection</p>
+
+	
+
+	<div class="detailHeader" id="$isClientError-detail">
+		$isClientError		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	boolean <a href="yii_web_response.html#getIsClientError()-detail">getIsClientError</a>(  )	</div>
+
+	<p>whether this response indicates a client error</p>
+
+	
+
+	<div class="detailHeader" id="$isServerError-detail">
+		$isServerError		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	boolean <a href="yii_web_response.html#getIsServerError()-detail">getIsServerError</a>(  )	</div>
+
+	<p>whether this response indicates a server error</p>
+
+	
+
+	<div class="detailHeader" id="$isOk-detail">
+		$isOk		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	boolean <a href="yii_web_response.html#getIsOk()-detail">getIsOk</a>(  )	</div>
+
+	<p>whether this response is OK</p>
+
+	
+
+	<div class="detailHeader" id="$isForbidden-detail">
+		$isForbidden		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	boolean <a href="yii_web_response.html#getIsForbidden()-detail">getIsForbidden</a>(  )	</div>
+
+	<p>whether this response indicates the current request is forbidden</p>
+
+	
+
+	<div class="detailHeader" id="$isNotFound-detail">
+		$isNotFound		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	boolean <a href="yii_web_response.html#getIsNotFound()-detail">getIsNotFound</a>(  )	</div>
+
+	<p>whether this response indicates the currently requested resource is not found</p>
+
+	
+
+	<div class="detailHeader" id="$isEmpty-detail">
+		$isEmpty		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	boolean <a href="yii_web_response.html#getIsEmpty()-detail">getIsEmpty</a>(  )	</div>
+
+	<p>whether this response is empty</p>
+
+	
+<h2>Method Details</h2>
+
+
+	<div class="detailHeader" id="init()-detail">
+		init()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_web_response.html#init()-detail">init</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p>Initializes this component.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="send()-detail">
+		send()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_web_response.html#send()-detail">send</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p>Sends the response to the client.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getStatusCode()-detail">
+		getStatusCode()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			integer <a href="yii_web_response.html#getStatusCode()-detail">getStatusCode</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">integer</td>
+				  <td class="paramDescCol">the HTTP status code to send with the response.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="setStatusCode()-detail">
+		setStatusCode()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_web_response.html#setStatusCode()-detail">setStatusCode</a>( $value, $text = null )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$value</td>
+				  <td class="paramTypeCol">integer</td>
+				  <td class="paramDescCol">The status code</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$text</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The status text. If not set, it will be set automatically based on the status code.</td>
+				</tr>
+													<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_base_invalidparamexception.html">yii\base\InvalidParamException</a></td>
+				  <td class="paramDescCol">if the status code is invalid.</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Sets the response status code.</strong></p>
+	<p>This method will set the corresponding status text if <code>$text</code> is null.</p>
+
+	
+
+	<div class="detailHeader" id="getHeaders()-detail">
+		getHeaders()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			<a href="yii_web_headercollection.html">yii\web\HeaderCollection</a> <a href="yii_web_response.html#getHeaders()-detail">getHeaders</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol"><a href="yii_web_headercollection.html">yii\web\HeaderCollection</a></td>
+				  <td class="paramDescCol">the header collection</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the header collection.</strong></p>
+	<p>The header collection contains the currently registered HTTP headers.</p>
+
+	
+
+	<div class="detailHeader" id="clear()-detail">
+		clear()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_web_response.html#clear()-detail">clear</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p>Clears the headers, cookies, content, status code of the response.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="sendHeaders()-detail">
+		sendHeaders()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_web_response.html#sendHeaders()-detail">sendHeaders</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p>Sends the response headers to the client</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="sendCookies()-detail">
+		sendCookies()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_web_response.html#sendCookies()-detail">sendCookies</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p>Sends the cookies to the client.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="sendContent()-detail">
+		sendContent()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_web_response.html#sendContent()-detail">sendContent</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p>Sends the response content to the client</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="sendFile()-detail">
+		sendFile()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			static <a href="yii_web_response.html#sendFile()-detail">sendFile</a>( $filePath, $attachmentName = null, $mimeType = null )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$filePath</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The path of the file to be sent.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$attachmentName</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The file name shown to the user. If null, it will be determined from <code>$filePath</code>.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$mimeType</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The MIME type of the content. If null, it will be guessed based on <code>$filePath</code></td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">static</td>
+				  <td class="paramDescCol">the response object itself</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Sends a file to the browser.</strong></p>
+	<p>Note that this method only prepares the response for file sending. The file is not sent
+until <a href="yii_web_response.html#send()-detail">send()</a> is called explicitly or implicitly. The latter is done after you return from a controller action.</p>
+
+	
+
+	<div class="detailHeader" id="sendContentAsFile()-detail">
+		sendContentAsFile()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			static <a href="yii_web_response.html#sendContentAsFile()-detail">sendContentAsFile</a>( $content, $attachmentName, $mimeType = 'application/octet-stream' )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$content</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The content to be sent. The existing <a href="yii_web_response.html#$content-detail">$content</a> will be discarded.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$attachmentName</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The file name shown to the user.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$mimeType</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The MIME type of the content.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">static</td>
+				  <td class="paramDescCol">the response object itself</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_web_httpexception.html">yii\web\HttpException</a></td>
+				  <td class="paramDescCol">if the requested range is not satisfiable</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Sends the specified content as a file to the browser.</strong></p>
+	<p>Note that this method only prepares the response for file sending. The file is not sent
+until <a href="yii_web_response.html#send()-detail">send()</a> is called explicitly or implicitly. The latter is done after you return from a controller action.</p>
+
+	
+
+	<div class="detailHeader" id="sendStreamAsFile()-detail">
+		sendStreamAsFile()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			static <a href="yii_web_response.html#sendStreamAsFile()-detail">sendStreamAsFile</a>( $handle, $attachmentName, $mimeType = 'application/octet-stream' )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$handle</td>
+				  <td class="paramTypeCol">resource</td>
+				  <td class="paramDescCol">The handle of the stream to be sent.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$attachmentName</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The file name shown to the user.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$mimeType</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The MIME type of the stream content.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">static</td>
+				  <td class="paramDescCol">the response object itself</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_web_httpexception.html">yii\web\HttpException</a></td>
+				  <td class="paramDescCol">if the requested range cannot be satisfied.</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Sends the specified stream as a file to the browser.</strong></p>
+	<p>Note that this method only prepares the response for file sending. The file is not sent
+until <a href="yii_web_response.html#send()-detail">send()</a> is called explicitly or implicitly. The latter is done after you return from a controller action.</p>
+
+	
+
+	<div class="detailHeader" id="getHttpRange()-detail">
+		getHttpRange()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			array|boolean <a href="yii_web_response.html#getHttpRange()-detail">getHttpRange</a>( $fileSize )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$fileSize</td>
+				  <td class="paramTypeCol">integer</td>
+				  <td class="paramDescCol">The size of the file that will be used to validate the requested HTTP range.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">array|boolean</td>
+				  <td class="paramDescCol">the range (begin, end), or false if the range request is invalid.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Determines the HTTP range given in the request.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="xSendFile()-detail">
+		xSendFile()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			static <a href="yii_web_response.html#xSendFile()-detail">xSendFile</a>( $filePath, $attachmentName = null, $mimeType = null, $xHeader = 'X-Sendfile' )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$filePath</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">File name with full path</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$attachmentName</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">File name shown to the user. If null, it will be determined from <code>$filePath</code>.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$mimeType</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The MIME type of the file. If null, it will be determined based on <code>$filePath</code>.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$xHeader</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The name of the x-sendfile header.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">static</td>
+				  <td class="paramDescCol">the response object itself</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Sends existing file to a browser as a download using x-sendfile.</strong></p>
+	<p><p>X-Sendfile is a feature allowing a web application to redirect the request for a file to the webserver
+that in turn processes the request, this way eliminating the need to perform tasks like reading the file
+and sending it to the user. When dealing with a lot of files (or very big files) this can lead to a great
+increase in performance as the web application is allowed to terminate earlier while the webserver is
+handling the request.</p>
+
+<p>The request is sent to the server through a special non-standard HTTP-header.
+When the web server encounters the presence of such header it will discard all output and send the file
+specified by that header using web server internals including all optimizations like caching-headers.</p>
+
+<p>As this header directive is non-standard different directives exists for different web servers applications:</p>
+
+<ul>
+<li>Apache: <a href="http://tn123.org/mod_xsendfile">X-Sendfile</a></li>
+<li>Lighttpd v1.4: <a href="http://redmine.lighttpd.net/projects/lighttpd/wiki/X-LIGHTTPD-send-file">X-LIGHTTPD-send-file</a></li>
+<li>Lighttpd v1.5: <a href="http://redmine.lighttpd.net/projects/lighttpd/wiki/X-LIGHTTPD-send-file">X-Sendfile</a></li>
+<li>Nginx: <a href="http://wiki.nginx.org/XSendfile">X-Accel-Redirect</a></li>
+<li>Cherokee: <a href="http://www.cherokee-project.com/doc/other_goodies.html#x-sendfile">X-Sendfile and X-Accel-Redirect</a></li>
+</ul>
+
+<p>So for this method to work the X-SENDFILE option/module should be enabled by the web server and
+a proper xHeader should be sent.</p>
+
+<p><strong>Note</strong></p>
+
+<p>This option allows to download files that are not under web folders, and even files that are otherwise protected
+(deny from all) like <code>.htaccess</code>.</p>
+
+<p><strong>Side effects</strong></p>
+
+<p>If this option is disabled by the web server, when this method is called a download configuration dialog
+will open but the downloaded file will have 0 bytes.</p>
+
+<p><strong>Known issues</strong></p>
+
+<p>There is a Bug with Internet Explorer 6, 7 and 8 when X-SENDFILE is used over an SSL connection, it will show
+an error message like this: "Internet Explorer was not able to open this Internet site. The requested site
+is either unavailable or cannot be found.". You can work around this problem by removing the <code>Pragma</code>-header.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code>Yii::$app-&gt;response-&gt;xSendFile('/home/user/Pictures/picture1.jpg');
+</code></pre></p>
+
+	
+
+	<div class="detailHeader" id="redirect()-detail">
+		redirect()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			static <a href="yii_web_response.html#redirect()-detail">redirect</a>( $url, $statusCode = 302 )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$url</td>
+				  <td class="paramTypeCol">string|array</td>
+				  <td class="paramDescCol">The URL to be redirected to. This can be in one of the following formats:
+- a string representing a URL (e.g. "http://example.com")
+- a string representing a URL alias (e.g. "@example.com")
+- an array in the format of <code>[$route, ...name-value pairs...]</code> (e.g. <code>['site/index', 'ref' =&gt; 1]</code>).
+  Note that the route is with respect to the whole application, instead of relative to a controller or module.
+  <a href="yii_helpers_basehtml.html#url()-detail">yii\helpers\Html::url()</a> will be used to convert the array into a URL.
+Any relative URL will be converted into an absolute one by prepending it with the host info
+of the current request.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$statusCode</td>
+				  <td class="paramTypeCol">integer</td>
+				  <td class="paramDescCol">The HTTP status code. Defaults to 302.
+See <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html</a>
+for details about HTTP status code</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">static</td>
+				  <td class="paramDescCol">the response object itself</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Redirects the browser to the specified URL.</strong></p>
+	<p><p>This method adds a "Location" header to the current response. Note that it does not send out
+the header until <a href="yii_web_response.html#send()-detail">send()</a> is called. In a controller action you may use this method as follows:</p>
+
+<pre><code>return Yii::$app-&gt;getResponse()-&gt;redirect($url);
+</code></pre>
+
+<p>In other places, if you want to send out the "Location" header immediately, you should use
+the following code:</p>
+
+<pre><code>Yii::$app-&gt;getResponse()-&gt;redirect($url)-&gt;send();
+return;
+</code></pre>
+
+<p>In AJAX mode, this normally will not work as expected unless there are some
+client-side JavaScript code handling the redirection. To help achieve this goal,
+this method will send out a "X-Redirect" header instead of "Location".</p>
+
+<p>If you use the "yii" JavaScript module, it will handle the AJAX redirection as
+described above. Otherwise, you should write the following JavaScript code to
+handle the redirection:</p>
+
+<pre><code>$document.ajaxComplete(function (event, xhr, settings) {
+    var url = xhr.getResponseHeader('X-Redirect');
+    if (url) {
+        window.location = url;
+    }
+});
+</code></pre></p>
+
+	
+
+	<div class="detailHeader" id="refresh()-detail">
+		refresh()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			<a href="yii_web_response.html">yii\web\Response</a> <a href="yii_web_response.html#refresh()-detail">refresh</a>( $anchor = '' )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$anchor</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The anchor that should be appended to the redirection URL.
+Defaults to empty. Make sure the anchor starts with '#' if you want to specify it.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol"><a href="yii_web_response.html">yii\web\Response</a></td>
+				  <td class="paramDescCol">the response object itself</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Refreshes the current page.</strong></p>
+	<p><p>The effect of this method call is the same as the user pressing the refresh button of his browser
+(without re-posting data).</p>
+
+<p>In a controller action you may use this method like this:</p>
+
+<pre><code>return Yii::$app-&gt;getResponse()-&gt;refresh();
+</code></pre></p>
+
+	
+
+	<div class="detailHeader" id="getCookies()-detail">
+		getCookies()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			<a href="yii_web_cookiecollection.html">yii\web\CookieCollection</a> <a href="yii_web_response.html#getCookies()-detail">getCookies</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol"><a href="yii_web_cookiecollection.html">yii\web\CookieCollection</a></td>
+				  <td class="paramDescCol">the cookie collection.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the cookie collection.</strong></p>
+	<p><p>Through the returned cookie collection, you add or remove cookies as follows,</p>
+
+<pre><code>// add a cookie
+$response-&gt;cookies-&gt;add(new Cookie([
+    'name' =&gt; $name,
+    'value' =&gt; $value,
+]);
+
+// remove a cookie
+$response-&gt;cookies-&gt;remove('name');
+// alternatively
+unset($response-&gt;cookies['name']);
+</code></pre></p>
+
+	
+
+	<div class="detailHeader" id="getIsInvalid()-detail">
+		getIsInvalid()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_web_response.html#getIsInvalid()-detail">getIsInvalid</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether this response has a valid <a href="yii_web_response.html#$statusCode-detail">$statusCode</a>.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getIsInformational()-detail">
+		getIsInformational()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_web_response.html#getIsInformational()-detail">getIsInformational</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether this response is informational</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getIsSuccessful()-detail">
+		getIsSuccessful()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_web_response.html#getIsSuccessful()-detail">getIsSuccessful</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether this response is successful</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getIsRedirection()-detail">
+		getIsRedirection()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_web_response.html#getIsRedirection()-detail">getIsRedirection</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether this response is a redirection</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getIsClientError()-detail">
+		getIsClientError()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_web_response.html#getIsClientError()-detail">getIsClientError</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether this response indicates a client error</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getIsServerError()-detail">
+		getIsServerError()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_web_response.html#getIsServerError()-detail">getIsServerError</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether this response indicates a server error</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getIsOk()-detail">
+		getIsOk()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_web_response.html#getIsOk()-detail">getIsOk</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether this response is OK</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getIsForbidden()-detail">
+		getIsForbidden()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_web_response.html#getIsForbidden()-detail">getIsForbidden</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether this response indicates the current request is forbidden</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getIsNotFound()-detail">
+		getIsNotFound()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_web_response.html#getIsNotFound()-detail">getIsNotFound</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether this response indicates the currently requested resource is not found</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getIsEmpty()-detail">
+		getIsEmpty()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_web_response.html#getIsEmpty()-detail">getIsEmpty</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether this response is empty</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="prepare()-detail">
+		prepare()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_web_response.html#prepare()-detail">prepare</a>(  )			</div>
+		</td></tr>
+															<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_base_invalidconfigexception.html">yii\base\InvalidConfigException</a></td>
+				  <td class="paramDescCol">if the formatter for the specified format is invalid or <a href="yii_web_response.html#$format-detail">$format</a> is not supported</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Prepares for sending the response.</strong></p>
+	<p>The default implementation will convert <a href="yii_web_response.html#$data-detail">$data</a> into <a href="yii_web_response.html#$content-detail">$content</a> and set headers accordingly.</p>
+
+	
+	<h2>Event Details</h2>
+	<div class="detailHeader" id="EVENT_BEFORE_SEND-detail">
+		EVENT_BEFORE_SEND		<span class="detailHeaderTag">
+		event
+				</span>
+	</div>
+
+	
+	<p>An event that is triggered at the beginning of <a href="yii_web_response.html#send()-detail">send()</a>.</p>
+
+	
+	<div class="detailHeader" id="EVENT_AFTER_SEND-detail">
+		EVENT_AFTER_SEND		<span class="detailHeaderTag">
+		event
+				</span>
+	</div>
+
+	
+	<p>An event that is triggered at the end of <a href="yii_web_response.html#send()-detail">send()</a>.</p>
+
+	
+	<div class="detailHeader" id="EVENT_AFTER_PREPARE-detail">
+		EVENT_AFTER_PREPARE		<span class="detailHeaderTag">
+		event
+				</span>
+	</div>
+
+	
+	<p>An event that is triggered right after <a href="yii_web_response.html#prepare()-detail">prepare()</a> is called in <a href="yii_web_response.html#send()-detail">send()</a>.
+You may respond to this event to filter the response content before it is sent to the client.</p>
+
+	
+		</div><!-- end of content -->
+
+		<div id="apiFooter">
+			<p>&copy; 2008-2013 by <a href="http://www.yiisoft.com">Yii Software LLC</a></p>
+			<p>All Rights Reserved.</p>
+		</div><!-- end of footer -->
+
+<script type="text/javascript">
+/*<![CDATA[*/
+$("a.toggle").on('click', function() {
+	var $this = $(this);
+	if ($this.hasClass('properties-hidden')) {
+		$this.text($this.text().replace(/Show/,'Hide'));
+		$this.parents(".summary").find(".inherited").show();
+		$this.removeClass('properties-hidden');
+	} else {
+		$this.text($this.text().replace(/Hide/,'Show'));
+		$this.parents(".summary").find(".inherited").hide();
+		$this.addClass('properties-hidden');
+	}
+	return false;
+});
+/*
+$(".sourceCode a.show").toggle(function(){
+	$(this).text($(this).text().replace(/show/,'hide'));
+	$(this).parents(".sourceCode").find("div.code").show();
+},function(){
+	$(this).text($(this).text().replace(/hide/,'show'));
+	$(this).parents(".sourceCode").find("div.code").hide();
+});
+$("a.sourceLink").click(function(){
+	$(this).attr('target','_blank');
+});
+*/
+/*]]>*/
+</script>
+
+	</div><!-- end of page -->
+</body>
+</html>

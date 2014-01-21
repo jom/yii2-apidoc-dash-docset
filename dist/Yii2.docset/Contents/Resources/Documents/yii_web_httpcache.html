@@ -1,0 +1,523 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="language" content="en" />
+<link href="./assets/4138e429/api.css" rel="stylesheet">
+<link href="./assets/4138e429/style.css" rel="stylesheet">
+<script src="./assets/a91b37a6/jquery.js"></script><title>Yii Framework 2.0 API Documentation</title>
+</head>
+
+<body>
+	<div id="apiPage">
+
+		<div id="apiHeader">
+			<a href="http://www.yiiframework.com">Yii Framework</a> v2.0.0-dev Class Reference
+		</div><!-- end of header -->
+
+		<div id="content">
+		<h1>Class yii\web\HttpCache</h1>
+<div id="nav">
+	<a href="index.html">All Classes</a>
+			| <a href="#properties">Properties</a>
+				| <a href="#methods">Methods</a>
+			</div>
+
+<table class="summaryTable docClass">
+	<colgroup>
+		<col class="col-name" />
+		<col class="col-value" />
+	</colgroup>
+			<tr><th>Inheritance</th><td><a href="yii_web_httpcache.html">yii\web\HttpCache</a> &raquo;
+<a href="yii_base_actionfilter.html">yii\base\ActionFilter</a> &raquo;
+<a href="yii_base_behavior.html">yii\base\Behavior</a> &raquo;
+<a href="yii_base_object.html">yii\base\Object</a></td></tr>
+				<tr><th>Implements</th><td><a href="yii_base_arrayable.html">yii\base\Arrayable</a></td></tr>
+								<tr><th>Available since version</th><td>2.0</td></tr>
+		<tr>
+	  <th>Source Code</th>
+	  <td></td>
+	</tr>
+</table>
+
+<div id="classDescription">
+	<strong>The HttpCache provides functionality for caching via HTTP Last-Modified and Etag headers.</strong>
+	<p><p>It is an action filter that can be added to a controller and handles the <code>beforeAction</code> event.</p>
+
+<p>To use AccessControl, declare it in the <code>behaviors()</code> method of your controller class.
+In the following example the filter will be applied to the <code>list</code>-action and
+the Last-Modified header will contain the date of the last update to the user table in the database.</p>
+
+<pre><code>public function behaviors()
+{
+    return [
+        'httpCache' =&gt; [
+            'class' =&gt; \yii\web\HttpCache::className(),
+            'only' =&gt; ['list'],
+            'lastModified' =&gt; function ($action, $params) {
+                $q = new Query();
+                return strtotime($q-&gt;from('users')-&gt;max('updated_timestamp'));
+            },
+//            'etagSeed' =&gt; function ($action, $params) {
+//                return // generate etag seed here
+//            }
+        ],
+    ];
+}
+</code></pre></p>
+</div>
+
+<a name="properties"></a>
+
+<div class="summary docProperty">
+<h2>Public Properties</h2>
+
+<p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-property" />
+	<col class="col-type" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Property</th><th>Type</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr class="inherited" id="$owner">
+		<td><a href="yii_base_behavior.html#$owner-detail">$owner</a></td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+		<td>The owner of this behavior</td>
+		<td><a href="yii_base_behavior.html">yii\base\Behavior</a></td>
+	</tr>
+			<tr class="inherited" id="$only">
+		<td><a href="yii_base_actionfilter.html#$only-detail">$only</a></td>
+		<td>array</td>
+		<td>List of action IDs that this filter should apply to</td>
+		<td><a href="yii_base_actionfilter.html">yii\base\ActionFilter</a></td>
+	</tr>
+			<tr class="inherited" id="$except">
+		<td><a href="yii_base_actionfilter.html#$except-detail">$except</a></td>
+		<td>array</td>
+		<td>List of action IDs that this filter should not apply to</td>
+		<td><a href="yii_base_actionfilter.html">yii\base\ActionFilter</a></td>
+	</tr>
+			<tr id="$lastModified">
+		<td><a href="yii_web_httpcache.html#$lastModified-detail">$lastModified</a></td>
+		<td>callback</td>
+		<td>A PHP callback that returns the UNIX timestamp of the last modification time</td>
+		<td><a href="yii_web_httpcache.html">yii\web\HttpCache</a></td>
+	</tr>
+			<tr id="$etagSeed">
+		<td><a href="yii_web_httpcache.html#$etagSeed-detail">$etagSeed</a></td>
+		<td>callback</td>
+		<td>A PHP callback that generates the Etag seed string</td>
+		<td><a href="yii_web_httpcache.html">yii\web\HttpCache</a></td>
+	</tr>
+			<tr id="$params">
+		<td><a href="yii_web_httpcache.html#$params-detail">$params</a></td>
+		<td>mixed</td>
+		<td>Additional parameters that should be passed to the <a href="yii_web_httpcache.html#$lastModified-detail">$lastModified</a> and <a href="yii_web_httpcache.html#$etagSeed-detail">$etagSeed</a> callbacks</td>
+		<td><a href="yii_web_httpcache.html">yii\web\HttpCache</a></td>
+	</tr>
+			<tr id="$cacheControlHeader">
+		<td><a href="yii_web_httpcache.html#$cacheControlHeader-detail">$cacheControlHeader</a></td>
+		<td>string</td>
+		<td>HTTP cache control header</td>
+		<td><a href="yii_web_httpcache.html">yii\web\HttpCache</a></td>
+	</tr>
+	</table>
+</div>
+<a name="methods"></a>
+
+<div class="summary docMethod">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr class="inherited" id="className()">
+		<td><a href="yii_base_object.html#className()-detail">className()</a></td>
+		<td></td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__construct()">
+		<td><a href="yii_base_object.html#__construct()-detail">__construct()</a></td>
+		<td>Constructor.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="init()">
+		<td><a href="yii_base_object.html#init()-detail">init()</a></td>
+		<td>Initializes the object.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__get()">
+		<td><a href="yii_base_object.html#__get()-detail">__get()</a></td>
+		<td>Returns the value of an object property.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__set()">
+		<td><a href="yii_base_object.html#__set()-detail">__set()</a></td>
+		<td>Sets value of an object property.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__isset()">
+		<td><a href="yii_base_object.html#__isset()-detail">__isset()</a></td>
+		<td>Checks if the named property is set (not null).</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__unset()">
+		<td><a href="yii_base_object.html#__unset()-detail">__unset()</a></td>
+		<td>Sets an object property to null.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__call()">
+		<td><a href="yii_base_object.html#__call()-detail">__call()</a></td>
+		<td>Calls the named method which is not a class method.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="hasProperty()">
+		<td><a href="yii_base_object.html#hasProperty()-detail">hasProperty()</a></td>
+		<td>Returns a value indicating whether a property is defined.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="canGetProperty()">
+		<td><a href="yii_base_object.html#canGetProperty()-detail">canGetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be read.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="canSetProperty()">
+		<td><a href="yii_base_object.html#canSetProperty()-detail">canSetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be set.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="hasMethod()">
+		<td><a href="yii_base_object.html#hasMethod()-detail">hasMethod()</a></td>
+		<td>Returns a value indicating whether a method is defined.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="toArray()">
+		<td><a href="yii_base_object.html#toArray()-detail">toArray()</a></td>
+		<td>Converts the object into an array.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="events()">
+		<td><a href="yii_base_actionfilter.html#events()-detail">events()</a></td>
+		<td>Declares event handlers for the <a href="yii_base_behavior.html#$owner-detail">$owner</a>'s events.</td>
+		<td><a href="yii_base_actionfilter.html">yii\base\ActionFilter</a></td>
+	</tr>
+			<tr class="inherited" id="attach()">
+		<td><a href="yii_base_behavior.html#attach()-detail">attach()</a></td>
+		<td>Attaches the behavior object to the component.</td>
+		<td><a href="yii_base_behavior.html">yii\base\Behavior</a></td>
+	</tr>
+			<tr class="inherited" id="detach()">
+		<td><a href="yii_base_behavior.html#detach()-detail">detach()</a></td>
+		<td>Detaches the behavior object from the component.</td>
+		<td><a href="yii_base_behavior.html">yii\base\Behavior</a></td>
+	</tr>
+			<tr class="inherited" id="beforeFilter()">
+		<td><a href="yii_base_actionfilter.html#beforeFilter()-detail">beforeFilter()</a></td>
+		<td></td>
+		<td><a href="yii_base_actionfilter.html">yii\base\ActionFilter</a></td>
+	</tr>
+			<tr class="inherited" id="afterFilter()">
+		<td><a href="yii_base_actionfilter.html#afterFilter()-detail">afterFilter()</a></td>
+		<td></td>
+		<td><a href="yii_base_actionfilter.html">yii\base\ActionFilter</a></td>
+	</tr>
+			<tr id="beforeAction()">
+		<td><a href="yii_web_httpcache.html#beforeAction()-detail">beforeAction()</a></td>
+		<td>This method is invoked right before an action is to be executed (after all possible filters.)
+You may override this method to do last-minute preparation for the action.</td>
+		<td><a href="yii_web_httpcache.html">yii\web\HttpCache</a></td>
+	</tr>
+			<tr class="inherited" id="afterAction()">
+		<td><a href="yii_base_actionfilter.html#afterAction()-detail">afterAction()</a></td>
+		<td>This method is invoked right after an action is executed.</td>
+		<td><a href="yii_base_actionfilter.html">yii\base\ActionFilter</a></td>
+	</tr>
+					</table>
+</div>
+<div class="summary docMethod">
+<h2>Protected Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+																						<tr class="inherited" id="isActive()">
+		<td><a href="yii_base_actionfilter.html#isActive()-detail">isActive()</a></td>
+		<td>Returns a value indicating whether the filer is active for the given action.</td>
+		<td><a href="yii_base_actionfilter.html">yii\base\ActionFilter</a></td>
+	</tr>
+			<tr id="validateCache()">
+		<td><a href="yii_web_httpcache.html#validateCache()-detail">validateCache()</a></td>
+		<td>Validates if the HTTP cache contains valid content.</td>
+		<td><a href="yii_web_httpcache.html">yii\web\HttpCache</a></td>
+	</tr>
+			<tr id="sendCacheControlHeader()">
+		<td><a href="yii_web_httpcache.html#sendCacheControlHeader()-detail">sendCacheControlHeader()</a></td>
+		<td>Sends the cache control header to the client</td>
+		<td><a href="yii_web_httpcache.html">yii\web\HttpCache</a></td>
+	</tr>
+			<tr id="generateEtag()">
+		<td><a href="yii_web_httpcache.html#generateEtag()-detail">generateEtag()</a></td>
+		<td>Generates an Etag from the given seed string.</td>
+		<td><a href="yii_web_httpcache.html">yii\web\HttpCache</a></td>
+	</tr>
+	</table>
+</div>
+<a name="events"></a>
+
+<a name="constants"></a>
+
+<h2>Property Details</h2>
+
+
+	<div class="detailHeader" id="$lastModified-detail">
+		$lastModified		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	callback $lastModified = null	</div>
+
+	<p>A PHP callback that returns the UNIX timestamp of the last modification time.
+The callback's signature should be:</p>
+
+<pre><code>function ($action, $params)
+</code></pre>
+
+<p>where <code>$action</code> is the <a href="yii_base_action.html">yii\base\Action</a> object that this filter is currently handling;
+<code>$params</code> takes the value of <a href="yii_web_httpcache.html#$params-detail">$params</a>. The callback should return a UNIX timestamp.</p>
+
+	
+
+	<div class="detailHeader" id="$etagSeed-detail">
+		$etagSeed		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	callback $etagSeed = null	</div>
+
+	<p>A PHP callback that generates the Etag seed string.
+The callback's signature should be:</p>
+
+<pre><code>function ($action, $params)
+</code></pre>
+
+<p>where <code>$action</code> is the <a href="yii_base_action.html">yii\base\Action</a> object that this filter is currently handling;
+<code>$params</code> takes the value of <a href="yii_web_httpcache.html#$params-detail">$params</a>. The callback should return a string serving
+as the seed for generating an Etag.</p>
+
+	
+
+	<div class="detailHeader" id="$params-detail">
+		$params		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	mixed $params = null	</div>
+
+	<p>Additional parameters that should be passed to the <a href="yii_web_httpcache.html#$lastModified-detail">$lastModified</a> and <a href="yii_web_httpcache.html#$etagSeed-detail">$etagSeed</a> callbacks.</p>
+
+	
+
+	<div class="detailHeader" id="$cacheControlHeader-detail">
+		$cacheControlHeader		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $cacheControlHeader = 'max-age=3600, public'	</div>
+
+	<p>HTTP cache control header. If null, the header will not be sent.</p>
+
+	
+<h2>Method Details</h2>
+
+
+	<div class="detailHeader" id="beforeAction()-detail">
+		beforeAction()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_web_httpcache.html#beforeAction()-detail">beforeAction</a>( $action )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$action</td>
+				  <td class="paramTypeCol"><a href="yii_base_action.html">yii\base\Action</a></td>
+				  <td class="paramDescCol">The action to be executed.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether the action should continue to be executed.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>This method is invoked right before an action is to be executed (after all possible filters.)
+You may override this method to do last-minute preparation for the action.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="validateCache()-detail">
+		validateCache()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_web_httpcache.html#validateCache()-detail">validateCache</a>( $lastModified, $etag )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$lastModified</td>
+				  <td class="paramTypeCol">integer</td>
+				  <td class="paramDescCol">The calculated Last-Modified value in terms of a UNIX timestamp.
+If null, the Last-Modified header will not be validated.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$etag</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The calculated ETag value. If null, the ETag header will not be validated.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether the HTTP cache is still valid.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Validates if the HTTP cache contains valid content.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="sendCacheControlHeader()-detail">
+		sendCacheControlHeader()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_web_httpcache.html#sendCacheControlHeader()-detail">sendCacheControlHeader</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p>Sends the cache control header to the client</strong></p>
+	<p></p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><span style="background: #f00;">\yii\web\cacheControl</span></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="generateEtag()-detail">
+		generateEtag()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_web_httpcache.html#generateEtag()-detail">generateEtag</a>( $seed )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$seed</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Seed for the ETag</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the generated Etag</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Generates an Etag from the given seed string.</strong></p>
+	<p></p>
+
+	
+			</div><!-- end of content -->
+
+		<div id="apiFooter">
+			<p>&copy; 2008-2013 by <a href="http://www.yiisoft.com">Yii Software LLC</a></p>
+			<p>All Rights Reserved.</p>
+		</div><!-- end of footer -->
+
+<script type="text/javascript">
+/*<![CDATA[*/
+$("a.toggle").on('click', function() {
+	var $this = $(this);
+	if ($this.hasClass('properties-hidden')) {
+		$this.text($this.text().replace(/Show/,'Hide'));
+		$this.parents(".summary").find(".inherited").show();
+		$this.removeClass('properties-hidden');
+	} else {
+		$this.text($this.text().replace(/Hide/,'Show'));
+		$this.parents(".summary").find(".inherited").hide();
+		$this.addClass('properties-hidden');
+	}
+	return false;
+});
+/*
+$(".sourceCode a.show").toggle(function(){
+	$(this).text($(this).text().replace(/show/,'hide'));
+	$(this).parents(".sourceCode").find("div.code").show();
+},function(){
+	$(this).text($(this).text().replace(/hide/,'show'));
+	$(this).parents(".sourceCode").find("div.code").hide();
+});
+$("a.sourceLink").click(function(){
+	$(this).attr('target','_blank');
+});
+*/
+/*]]>*/
+</script>
+
+	</div><!-- end of page -->
+</body>
+</html>

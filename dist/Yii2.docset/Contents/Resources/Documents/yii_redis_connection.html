@@ -1,0 +1,796 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="language" content="en" />
+<link href="./assets/4138e429/api.css" rel="stylesheet">
+<link href="./assets/4138e429/style.css" rel="stylesheet">
+<script src="./assets/a91b37a6/jquery.js"></script><title>Yii Framework 2.0 API Documentation</title>
+</head>
+
+<body>
+	<div id="apiPage">
+
+		<div id="apiHeader">
+			<a href="http://www.yiiframework.com">Yii Framework</a> v2.0.0-dev Class Reference
+		</div><!-- end of header -->
+
+		<div id="content">
+		<h1>Class yii\redis\Connection</h1>
+<div id="nav">
+	<a href="index.html">All Classes</a>
+			| <a href="#properties">Properties</a>
+				| <a href="#methods">Methods</a>
+				| <a href="#events">Events</a>
+		</div>
+
+<table class="summaryTable docClass">
+	<colgroup>
+		<col class="col-name" />
+		<col class="col-value" />
+	</colgroup>
+			<tr><th>Inheritance</th><td><a href="yii_redis_connection.html">yii\redis\Connection</a> &raquo;
+<a href="yii_base_component.html">yii\base\Component</a> &raquo;
+<a href="yii_base_object.html">yii\base\Object</a></td></tr>
+				<tr><th>Implements</th><td><a href="yii_base_arrayable.html">yii\base\Arrayable</a></td></tr>
+								<tr><th>Available since version</th><td>2.0</td></tr>
+		<tr>
+	  <th>Source Code</th>
+	  <td></td>
+	</tr>
+</table>
+
+<div id="classDescription">
+	<strong>The redis connection class is used to establish a connection to a <a href="http://redis.io/">redis</a> server.</strong>
+	<p>By default it assumes there is a redis server running on localhost at port 6379 and uses the database number 0.</p>
+
+<p>It also supports <a href="http://redis.io/commands/auth">the AUTH command</a> of redis.
+When the server needs authentication, you can set the <a href="yii_redis_connection.html#$password-detail">$password</a> property to
+authenticate with the server after connect.</p>
+
+<p>The ecexution of <a href="http://redis.io/commands">redis commands</a> is possible with via <a href="yii_redis_connection.html#executeCommand()-detail">executeCommand()</a>.</p>
+</div>
+
+<a name="properties"></a>
+
+<div class="summary docProperty">
+<h2>Public Properties</h2>
+
+<p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-property" />
+	<col class="col-type" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Property</th><th>Type</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr id="$hostname">
+		<td><a href="yii_redis_connection.html#$hostname-detail">$hostname</a></td>
+		<td>string</td>
+		<td>The hostname or ip address to use for connecting to the redis server</td>
+		<td><a href="yii_redis_connection.html">yii\redis\Connection</a></td>
+	</tr>
+			<tr id="$port">
+		<td><a href="yii_redis_connection.html#$port-detail">$port</a></td>
+		<td>int</td>
+		<td>The port to use for connecting to the redis server</td>
+		<td><a href="yii_redis_connection.html">yii\redis\Connection</a></td>
+	</tr>
+			<tr id="$password">
+		<td><a href="yii_redis_connection.html#$password-detail">$password</a></td>
+		<td>string</td>
+		<td>The password for establishing DB connection</td>
+		<td><a href="yii_redis_connection.html">yii\redis\Connection</a></td>
+	</tr>
+			<tr id="$database">
+		<td><a href="yii_redis_connection.html#$database-detail">$database</a></td>
+		<td>int</td>
+		<td>The redis database to use</td>
+		<td><a href="yii_redis_connection.html">yii\redis\Connection</a></td>
+	</tr>
+			<tr id="$connectionTimeout">
+		<td><a href="yii_redis_connection.html#$connectionTimeout-detail">$connectionTimeout</a></td>
+		<td>float</td>
+		<td>Timeout to use for connection to redis</td>
+		<td><a href="yii_redis_connection.html">yii\redis\Connection</a></td>
+	</tr>
+			<tr id="$dataTimeout">
+		<td><a href="yii_redis_connection.html#$dataTimeout-detail">$dataTimeout</a></td>
+		<td>float</td>
+		<td>Timeout to use for redis socket when reading and writing data</td>
+		<td><a href="yii_redis_connection.html">yii\redis\Connection</a></td>
+	</tr>
+			<tr id="$redisCommands">
+		<td><a href="yii_redis_connection.html#$redisCommands-detail">$redisCommands</a></td>
+		<td>array</td>
+		<td>List of available redis commands http://redis</td>
+		<td><a href="yii_redis_connection.html">yii\redis\Connection</a></td>
+	</tr>
+			<tr id="$behaviors">
+		<td><a href="yii_redis_connection.html#$behaviors-detail">$behaviors</a></td>
+		<td><a href="yii_base_behavior.html">yii\base\Behavior</a>[]</td>
+		<td>list of behaviors attached to this component</td>
+		<td><a href="yii_redis_connection.html">yii\redis\Connection</a></td>
+	</tr>
+			<tr id="$isActive">
+		<td><a href="yii_redis_connection.html#$isActive-detail">$isActive</a></td>
+		<td>boolean</td>
+		<td>whether the DB connection is established</td>
+		<td><a href="yii_redis_connection.html">yii\redis\Connection</a></td>
+	</tr>
+			<tr id="$driverName">
+		<td><a href="yii_redis_connection.html#$driverName-detail">$driverName</a></td>
+		<td>string</td>
+		<td>name of the DB driver</td>
+		<td><a href="yii_redis_connection.html">yii\redis\Connection</a></td>
+	</tr>
+			<tr id="$luaScriptBuilder">
+		<td><a href="yii_redis_connection.html#$luaScriptBuilder-detail">$luaScriptBuilder</a></td>
+		<td><a href="yii_redis_luascriptbuilder.html">yii\redis\LuaScriptBuilder</a></td>
+		<td></td>
+		<td><a href="yii_redis_connection.html">yii\redis\Connection</a></td>
+	</tr>
+	</table>
+</div>
+<a name="methods"></a>
+
+<div class="summary docMethod">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr class="inherited" id="className()">
+		<td><a href="yii_base_object.html#className()-detail">className()</a></td>
+		<td></td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__construct()">
+		<td><a href="yii_base_object.html#__construct()-detail">__construct()</a></td>
+		<td>Constructor.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="init()">
+		<td><a href="yii_base_object.html#init()-detail">init()</a></td>
+		<td>Initializes the object.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__get()">
+		<td><a href="yii_base_component.html#__get()-detail">__get()</a></td>
+		<td>Returns the value of a component property.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__set()">
+		<td><a href="yii_base_component.html#__set()-detail">__set()</a></td>
+		<td>Sets the value of a component property.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__isset()">
+		<td><a href="yii_base_component.html#__isset()-detail">__isset()</a></td>
+		<td>Checks if a property value is null.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__unset()">
+		<td><a href="yii_base_component.html#__unset()-detail">__unset()</a></td>
+		<td>Sets a component property to be null.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr id="__call()">
+		<td><a href="yii_redis_connection.html#__call()-detail">__call()</a></td>
+		<td></td>
+		<td><a href="yii_redis_connection.html">yii\redis\Connection</a></td>
+	</tr>
+			<tr class="inherited" id="hasProperty()">
+		<td><a href="yii_base_component.html#hasProperty()-detail">hasProperty()</a></td>
+		<td>Returns a value indicating whether a property is defined for this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="canGetProperty()">
+		<td><a href="yii_base_component.html#canGetProperty()-detail">canGetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be read.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="canSetProperty()">
+		<td><a href="yii_base_component.html#canSetProperty()-detail">canSetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be set.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasMethod()">
+		<td><a href="yii_base_component.html#hasMethod()-detail">hasMethod()</a></td>
+		<td>Returns a value indicating whether a method is defined.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="toArray()">
+		<td><a href="yii_base_object.html#toArray()-detail">toArray()</a></td>
+		<td>Converts the object into an array.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__clone()">
+		<td><a href="yii_base_component.html#__clone()-detail">__clone()</a></td>
+		<td>This method is called after the object is created by cloning an existing one.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="behaviors()">
+		<td><a href="yii_base_component.html#behaviors()-detail">behaviors()</a></td>
+		<td>Returns a list of behaviors that this component should behave as.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasEventHandlers()">
+		<td><a href="yii_base_component.html#hasEventHandlers()-detail">hasEventHandlers()</a></td>
+		<td>Returns a value indicating whether there is any handler attached to the named event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="on()">
+		<td><a href="yii_base_component.html#on()-detail">on()</a></td>
+		<td>Attaches an event handler to an event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="off()">
+		<td><a href="yii_base_component.html#off()-detail">off()</a></td>
+		<td>Detaches an existing event handler from this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="trigger()">
+		<td><a href="yii_base_component.html#trigger()-detail">trigger()</a></td>
+		<td>Triggers an event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="getBehavior()">
+		<td><a href="yii_base_component.html#getBehavior()-detail">getBehavior()</a></td>
+		<td>Returns the named behavior object.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="getBehaviors()">
+		<td><a href="yii_base_component.html#getBehaviors()-detail">getBehaviors()</a></td>
+		<td>Returns all behaviors attached to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="attachBehavior()">
+		<td><a href="yii_base_component.html#attachBehavior()-detail">attachBehavior()</a></td>
+		<td>Attaches a behavior to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="attachBehaviors()">
+		<td><a href="yii_base_component.html#attachBehaviors()-detail">attachBehaviors()</a></td>
+		<td>Attaches a list of behaviors to the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="detachBehavior()">
+		<td><a href="yii_base_component.html#detachBehavior()-detail">detachBehavior()</a></td>
+		<td>Detaches a behavior from the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="detachBehaviors()">
+		<td><a href="yii_base_component.html#detachBehaviors()-detail">detachBehaviors()</a></td>
+		<td>Detaches all behaviors from the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="ensureBehaviors()">
+		<td><a href="yii_base_component.html#ensureBehaviors()-detail">ensureBehaviors()</a></td>
+		<td>Makes sure that the behaviors declared in <a href="yii_base_component.html#behaviors()-detail">behaviors()</a> are attached to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr id="__sleep()">
+		<td><a href="yii_redis_connection.html#__sleep()-detail">__sleep()</a></td>
+		<td>Closes the connection when this component is being serialized.</td>
+		<td><a href="yii_redis_connection.html">yii\redis\Connection</a></td>
+	</tr>
+			<tr id="getIsActive()">
+		<td><a href="yii_redis_connection.html#getIsActive()-detail">getIsActive()</a></td>
+		<td>Returns a value indicating whether the DB connection is established.</td>
+		<td><a href="yii_redis_connection.html">yii\redis\Connection</a></td>
+	</tr>
+			<tr id="open()">
+		<td><a href="yii_redis_connection.html#open()-detail">open()</a></td>
+		<td>Establishes a DB connection.</td>
+		<td><a href="yii_redis_connection.html">yii\redis\Connection</a></td>
+	</tr>
+			<tr id="close()">
+		<td><a href="yii_redis_connection.html#close()-detail">close()</a></td>
+		<td>Closes the currently active DB connection.</td>
+		<td><a href="yii_redis_connection.html">yii\redis\Connection</a></td>
+	</tr>
+				<tr id="getDriverName()">
+		<td><a href="yii_redis_connection.html#getDriverName()-detail">getDriverName()</a></td>
+		<td>Returns the name of the DB driver for the current <span style="background: #f00;">\yii\redis\dsn</span>.</td>
+		<td><a href="yii_redis_connection.html">yii\redis\Connection</a></td>
+	</tr>
+			<tr id="getLuaScriptBuilder()">
+		<td><a href="yii_redis_connection.html#getLuaScriptBuilder()-detail">getLuaScriptBuilder()</a></td>
+		<td></td>
+		<td><a href="yii_redis_connection.html">yii\redis\Connection</a></td>
+	</tr>
+			<tr id="executeCommand()">
+		<td><a href="yii_redis_connection.html#executeCommand()-detail">executeCommand()</a></td>
+		<td>Executes a redis command.</td>
+		<td><a href="yii_redis_connection.html">yii\redis\Connection</a></td>
+	</tr>
+	</table>
+</div>
+<div class="summary docMethod">
+<h2>Protected Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+																																<tr id="initConnection()">
+		<td><a href="yii_redis_connection.html#initConnection()-detail">initConnection()</a></td>
+		<td>Initializes the DB connection.</td>
+		<td><a href="yii_redis_connection.html">yii\redis\Connection</a></td>
+	</tr>
+				</table>
+</div>
+<a name="events"></a>
+<div class="summary docEvent">
+<h2>Events</h2>
+
+<p><a href="#" class="toggle">Hide inherited events</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-event" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Event</th><th>Type</th><th>Description</th><th>Defined By</th>
+</tr>
+<tr id="EVENT_AFTER_OPEN">
+	<td><a href="yii_redis_connection.html#EVENT_AFTER_OPEN-detail">EVENT_AFTER_OPEN</a></td>
+	<td>\yii\redis\Event</td>
+	<td>
+		An event that is triggered after a DB connection is established			</td>
+	<td><a href="yii_redis_connection.html">yii\redis\Connection</a></td>
+</tr>
+</table>
+</div>
+<a name="constants"></a>
+
+<h2>Property Details</h2>
+
+
+	<div class="detailHeader" id="$hostname-detail">
+		$hostname		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $hostname = 'localhost'	</div>
+
+	<p>The hostname or ip address to use for connecting to the redis server. Defaults to 'localhost'.</p>
+
+	
+
+	<div class="detailHeader" id="$port-detail">
+		$port		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	int $port = 6379	</div>
+
+	<p>The port to use for connecting to the redis server. Default port is 6379.</p>
+
+	
+
+	<div class="detailHeader" id="$password-detail">
+		$password		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $password = null	</div>
+
+	<p>The password for establishing DB connection. Defaults to null meaning no AUTH command is send.
+See http://redis.io/commands/auth</p>
+
+	
+
+	<div class="detailHeader" id="$database-detail">
+		$database		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	int $database = 0	</div>
+
+	<p>The redis database to use. This is an integer value starting from 0. Defaults to 0.</p>
+
+	
+
+	<div class="detailHeader" id="$connectionTimeout-detail">
+		$connectionTimeout		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	float $connectionTimeout = null	</div>
+
+	<p>Timeout to use for connection to redis. If not set the timeout set in php.ini will be used: ini_get("default_socket_timeout")</p>
+
+	
+
+	<div class="detailHeader" id="$dataTimeout-detail">
+		$dataTimeout		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	float $dataTimeout = null	</div>
+
+	<p>Timeout to use for redis socket when reading and writing data. If not set the php default value will be used.</p>
+
+	
+
+	<div class="detailHeader" id="$redisCommands-detail">
+		$redisCommands		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array $redisCommands = ['BRPOP', 'BRPOPLPUSH', 'CLIENT KILL', 'CLIENT LIST', 'CLIENT GETNAME', 'CLIENT SETNAME', 'CONFIG GET', 'CONFIG SET', 'CONFIG RESETSTAT', 'DBSIZE', 'DEBUG OBJECT', 'DEBUG SEGFAULT', 'DECR', 'DECRBY', 'DEL', 'DISCARD', 'DUMP', 'ECHO', 'EVAL', 'EVALSHA', 'EXEC', 'EXISTS', 'EXPIRE', 'EXPIREAT', 'FLUSHALL', 'FLUSHDB', 'GET', 'GETBIT', 'GETRANGE', 'GETSET', 'HDEL', 'HEXISTS', 'HGET', 'HGETALL', 'HINCRBY', 'HINCRBYFLOAT', 'HKEYS', 'HLEN', 'HMGET', 'HMSET', 'HSET', 'HSETNX', 'HVALS', 'INCR', 'INCRBY', 'INCRBYFLOAT', 'INFO', 'KEYS', 'LASTSAVE', 'LINDEX', 'LINSERT', 'LLEN', 'LPOP', 'LPUSH', 'LPUSHX', 'LRANGE', 'LREM', 'LSET', 'LTRIM', 'MGET', 'MIGRATE', 'MONITOR', 'MOVE', 'MSET', 'MSETNX', 'MULTI', 'OBJECT', 'PERSIST', 'PEXPIRE', 'PEXPIREAT', 'PING', 'PSETEX', 'PSUBSCRIBE', 'PTTL', 'PUBLISH', 'PUNSUBSCRIBE', 'QUIT', 'RANDOMKEY', 'RENAME', 'RENAMENX', 'RESTORE', 'RPOP', 'RPOPLPUSH', 'RPUSH', 'RPUSHX', 'SADD', 'SAVE', 'SCARD', 'SCRIPT EXISTS', 'SCRIPT FLUSH', 'SCRIPT KILL', 'SCRIPT LOAD', 'SDIFF', 'SDIFFSTORE', 'SELECT', 'SET', 'SETBIT', 'SETEX', 'SETNX', 'SETRANGE', 'SHUTDOWN', 'SINTER', 'SINTERSTORE', 'SISMEMBER', 'SLAVEOF', 'SLOWLOG', 'SMEMBERS', 'SMOVE', 'SORT', 'SPOP', 'SRANDMEMBER', 'SREM', 'STRLEN', 'SUBSCRIBE', 'SUNION', 'SUNIONSTORE', 'SYNC', 'TIME', 'TTL', 'TYPE', 'UNSUBSCRIBE', 'UNWATCH', 'WATCH', 'ZADD', 'ZCARD', 'ZCOUNT', 'ZINCRBY', 'ZINTERSTORE', 'ZRANGE', 'ZRANGEBYSCORE', 'ZRANK', 'ZREM', 'ZREMRANGEBYRANK', 'ZREMRANGEBYSCORE', 'ZREVRANGE', 'ZREVRANGEBYSCORE', 'ZREVRANK', 'ZSCORE', 'ZUNIONSTORE']	</div>
+
+	<p>List of available redis commands http://redis.io/commands</p>
+
+	
+
+	<div class="detailHeader" id="$behaviors-detail">
+		$behaviors		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_base_behavior.html">yii\base\Behavior</a>[] <a href="yii_base_component.html#getBehaviors()-detail">getBehaviors</a>(  )	</div>
+
+	<p>list of behaviors attached to this component</p>
+
+	
+
+	<div class="detailHeader" id="$isActive-detail">
+		$isActive		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	boolean <a href="yii_redis_connection.html#getIsActive()-detail">getIsActive</a>(  )	</div>
+
+	<p>whether the DB connection is established</p>
+
+	
+
+	<div class="detailHeader" id="$driverName-detail">
+		$driverName		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	string <a href="yii_redis_connection.html#getDriverName()-detail">getDriverName</a>(  )	</div>
+
+	<p>name of the DB driver</p>
+
+	
+
+	<div class="detailHeader" id="$luaScriptBuilder-detail">
+		$luaScriptBuilder		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_redis_luascriptbuilder.html">yii\redis\LuaScriptBuilder</a> <a href="yii_redis_connection.html#getLuaScriptBuilder()-detail">getLuaScriptBuilder</a>(  )	</div>
+
+	<p></p>
+
+	
+<h2>Method Details</h2>
+
+
+	<div class="detailHeader" id="__call()-detail">
+		__call()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			mixed <a href="yii_redis_connection.html#__call()-detail">__call</a>( $name, $params )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol"></td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$params</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol"></td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="__sleep()-detail">
+		__sleep()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			array <a href="yii_redis_connection.html#__sleep()-detail">__sleep</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p>Closes the connection when this component is being serialized.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getIsActive()-detail">
+		getIsActive()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_redis_connection.html#getIsActive()-detail">getIsActive</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether the DB connection is established</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns a value indicating whether the DB connection is established.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="open()-detail">
+		open()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_redis_connection.html#open()-detail">open</a>(  )			</div>
+		</td></tr>
+															<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_db_exception.html">yii\db\Exception</a></td>
+				  <td class="paramDescCol">if connection fails</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Establishes a DB connection.</strong></p>
+	<p>It does nothing if a DB connection has already been established.</p>
+
+	
+
+	<div class="detailHeader" id="close()-detail">
+		close()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_redis_connection.html#close()-detail">close</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p>Closes the currently active DB connection.</strong></p>
+	<p>It does nothing if the connection is already closed.</p>
+
+	
+
+	<div class="detailHeader" id="initConnection()-detail">
+		initConnection()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_redis_connection.html#initConnection()-detail">initConnection</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p>Initializes the DB connection.</strong></p>
+	<p>This method is invoked right after the DB connection is established.
+The default implementation triggers an <a href="yii_redis_connection.html#EVENT_AFTER_OPEN-detail">EVENT_AFTER_OPEN</a> event.</p>
+
+	
+
+	<div class="detailHeader" id="getDriverName()-detail">
+		getDriverName()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_redis_connection.html#getDriverName()-detail">getDriverName</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">name of the DB driver</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the name of the DB driver for the current <span style="background: #f00;">\yii\redis\dsn</span>.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getLuaScriptBuilder()-detail">
+		getLuaScriptBuilder()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			<a href="yii_redis_luascriptbuilder.html">yii\redis\LuaScriptBuilder</a> <a href="yii_redis_connection.html#getLuaScriptBuilder()-detail">getLuaScriptBuilder</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="executeCommand()-detail">
+		executeCommand()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			array|bool|null|string <a href="yii_redis_connection.html#executeCommand()-detail">executeCommand</a>( $name, $params = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The name of the command</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$params</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">List of parameters for the command</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">array|bool|null|string</td>
+				  <td class="paramDescCol">Dependend on the executed command this method
+will return different data types:
+- <code>true</code> for commands that return "status reply".
+- <code>string</code> for commands that return "integer reply"
+  as the value is in the range of a signed 64 bit integer.
+- <code>string</code> or <code>null</code> for commands that return "bulk reply".
+- <code>array</code> for commands that return "Multi-bulk replies".
+See <a href="http://redis.io/topics/protocol">redis protocol description</a>
+for details on the mentioned reply types.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Executes a redis command.</strong></p>
+	<p>For a list of available commands and their parameters see http://redis.io/commands.</p>
+
+	
+	<h2>Event Details</h2>
+	<div class="detailHeader" id="EVENT_AFTER_OPEN-detail">
+		EVENT_AFTER_OPEN		<span class="detailHeaderTag">
+		event
+				</span>
+	</div>
+
+	
+	<p>An event that is triggered after a DB connection is established</p>
+
+	
+		</div><!-- end of content -->
+
+		<div id="apiFooter">
+			<p>&copy; 2008-2013 by <a href="http://www.yiisoft.com">Yii Software LLC</a></p>
+			<p>All Rights Reserved.</p>
+		</div><!-- end of footer -->
+
+<script type="text/javascript">
+/*<![CDATA[*/
+$("a.toggle").on('click', function() {
+	var $this = $(this);
+	if ($this.hasClass('properties-hidden')) {
+		$this.text($this.text().replace(/Show/,'Hide'));
+		$this.parents(".summary").find(".inherited").show();
+		$this.removeClass('properties-hidden');
+	} else {
+		$this.text($this.text().replace(/Hide/,'Show'));
+		$this.parents(".summary").find(".inherited").hide();
+		$this.addClass('properties-hidden');
+	}
+	return false;
+});
+/*
+$(".sourceCode a.show").toggle(function(){
+	$(this).text($(this).text().replace(/show/,'hide'));
+	$(this).parents(".sourceCode").find("div.code").show();
+},function(){
+	$(this).text($(this).text().replace(/hide/,'show'));
+	$(this).parents(".sourceCode").find("div.code").hide();
+});
+$("a.sourceLink").click(function(){
+	$(this).attr('target','_blank');
+});
+*/
+/*]]>*/
+</script>
+
+	</div><!-- end of page -->
+</body>
+</html>

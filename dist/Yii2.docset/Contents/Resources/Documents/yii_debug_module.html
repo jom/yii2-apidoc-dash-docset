@@ -1,0 +1,868 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="language" content="en" />
+<link href="./assets/4138e429/api.css" rel="stylesheet">
+<link href="./assets/4138e429/style.css" rel="stylesheet">
+<script src="./assets/a91b37a6/jquery.js"></script><title>Yii Framework 2.0 API Documentation</title>
+</head>
+
+<body>
+	<div id="apiPage">
+
+		<div id="apiHeader">
+			<a href="http://www.yiiframework.com">Yii Framework</a> v2.0.0-dev Class Reference
+		</div><!-- end of header -->
+
+		<div id="content">
+		<h1>Class yii\debug\Module</h1>
+<div id="nav">
+	<a href="index.html">All Classes</a>
+			| <a href="#properties">Properties</a>
+				| <a href="#methods">Methods</a>
+			</div>
+
+<table class="summaryTable docClass">
+	<colgroup>
+		<col class="col-name" />
+		<col class="col-value" />
+	</colgroup>
+			<tr><th>Inheritance</th><td><a href="yii_debug_module.html">yii\debug\Module</a> &raquo;
+<a href="yii_base_module.html">yii\base\Module</a> &raquo;
+<a href="yii_base_component.html">yii\base\Component</a> &raquo;
+<a href="yii_base_object.html">yii\base\Object</a></td></tr>
+				<tr><th>Implements</th><td><a href="yii_base_arrayable.html">yii\base\Arrayable</a></td></tr>
+								<tr><th>Available since version</th><td>2.0</td></tr>
+		<tr>
+	  <th>Source Code</th>
+	  <td></td>
+	</tr>
+</table>
+
+<div id="classDescription">
+	<strong>The Yii Debug Module provides the debug toolbar and debugger</strong>
+	<p></p>
+</div>
+
+<a name="properties"></a>
+
+<div class="summary docProperty">
+<h2>Public Properties</h2>
+
+<p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-property" />
+	<col class="col-type" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Property</th><th>Type</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr class="inherited" id="$params">
+		<td><a href="yii_base_module.html#$params-detail">$params</a></td>
+		<td>array</td>
+		<td>Custom module parameters (name => value)</td>
+		<td><a href="yii_base_module.html">yii\base\Module</a></td>
+	</tr>
+			<tr class="inherited" id="$preload">
+		<td><a href="yii_base_module.html#$preload-detail">$preload</a></td>
+		<td>array</td>
+		<td>The IDs of the components or modules that should be preloaded right after initialization</td>
+		<td><a href="yii_base_module.html">yii\base\Module</a></td>
+	</tr>
+			<tr class="inherited" id="$id">
+		<td><a href="yii_base_module.html#$id-detail">$id</a></td>
+		<td>string</td>
+		<td>An ID that uniquely identifies this module among other modules which have the same <a href="yii_base_module.html#$module-detail">parent</a></td>
+		<td><a href="yii_base_module.html">yii\base\Module</a></td>
+	</tr>
+			<tr class="inherited" id="$module">
+		<td><a href="yii_base_module.html#$module-detail">$module</a></td>
+		<td><a href="yii_base_module.html">yii\base\Module</a></td>
+		<td>The parent module of this module</td>
+		<td><a href="yii_base_module.html">yii\base\Module</a></td>
+	</tr>
+			<tr class="inherited" id="$layout">
+		<td><a href="yii_base_module.html#$layout-detail">$layout</a></td>
+		<td>string|boolean</td>
+		<td>The layout that should be applied for views within this module</td>
+		<td><a href="yii_base_module.html">yii\base\Module</a></td>
+	</tr>
+			<tr class="inherited" id="$controllerMap">
+		<td><a href="yii_base_module.html#$controllerMap-detail">$controllerMap</a></td>
+		<td>array</td>
+		<td>Mapping from controller ID to controller configurations</td>
+		<td><a href="yii_base_module.html">yii\base\Module</a></td>
+	</tr>
+			<tr id="$controllerNamespace">
+		<td><a href="yii_debug_module.html#$controllerNamespace-detail">$controllerNamespace</a></td>
+		<td>string</td>
+		<td>The namespace that controller classes are in</td>
+		<td><a href="yii_debug_module.html">yii\debug\Module</a></td>
+	</tr>
+			<tr class="inherited" id="$defaultRoute">
+		<td><a href="yii_base_module.html#$defaultRoute-detail">$defaultRoute</a></td>
+		<td></td>
+		<td></td>
+		<td><a href="yii_base_module.html">yii\base\Module</a></td>
+	</tr>
+			<tr id="$allowedIPs">
+		<td><a href="yii_debug_module.html#$allowedIPs-detail">$allowedIPs</a></td>
+		<td>array</td>
+		<td>The list of IPs that are allowed to access this module</td>
+		<td><a href="yii_debug_module.html">yii\debug\Module</a></td>
+	</tr>
+			<tr id="$logTarget">
+		<td><a href="yii_debug_module.html#$logTarget-detail">$logTarget</a></td>
+		<td><a href="yii_debug_logtarget.html">yii\debug\LogTarget</a></td>
+		<td></td>
+		<td><a href="yii_debug_module.html">yii\debug\Module</a></td>
+	</tr>
+			<tr id="$panels">
+		<td><a href="yii_debug_module.html#$panels-detail">$panels</a></td>
+		<td>array|<a href="yii_debug_panel.html">yii\debug\Panel</a>[]</td>
+		<td></td>
+		<td><a href="yii_debug_module.html">yii\debug\Module</a></td>
+	</tr>
+			<tr id="$dataPath">
+		<td><a href="yii_debug_module.html#$dataPath-detail">$dataPath</a></td>
+		<td>string</td>
+		<td>The directory storing the debugger data files</td>
+		<td><a href="yii_debug_module.html">yii\debug\Module</a></td>
+	</tr>
+			<tr id="$historySize">
+		<td><a href="yii_debug_module.html#$historySize-detail">$historySize</a></td>
+		<td>integer</td>
+		<td>The maximum number of debug data files to keep</td>
+		<td><a href="yii_debug_module.html">yii\debug\Module</a></td>
+	</tr>
+			<tr id="$behaviors">
+		<td><a href="yii_debug_module.html#$behaviors-detail">$behaviors</a></td>
+		<td><a href="yii_base_behavior.html">yii\base\Behavior</a>[]</td>
+		<td>list of behaviors attached to this component</td>
+		<td><a href="yii_debug_module.html">yii\debug\Module</a></td>
+	</tr>
+			<tr id="$uniqueId">
+		<td><a href="yii_debug_module.html#$uniqueId-detail">$uniqueId</a></td>
+		<td>string</td>
+		<td>the unique ID of the module</td>
+		<td><a href="yii_debug_module.html">yii\debug\Module</a></td>
+	</tr>
+			<tr id="$basePath">
+		<td><a href="yii_debug_module.html#$basePath-detail">$basePath</a></td>
+		<td>string</td>
+		<td>the root directory of the module</td>
+		<td><a href="yii_debug_module.html">yii\debug\Module</a></td>
+	</tr>
+			<tr id="$controllerPath">
+		<td><a href="yii_debug_module.html#$controllerPath-detail">$controllerPath</a></td>
+		<td>string</td>
+		<td>the directory that contains the controller classes</td>
+		<td><a href="yii_debug_module.html">yii\debug\Module</a></td>
+	</tr>
+			<tr id="$viewPath">
+		<td><a href="yii_debug_module.html#$viewPath-detail">$viewPath</a></td>
+		<td>string</td>
+		<td>the root directory of view files</td>
+		<td><a href="yii_debug_module.html">yii\debug\Module</a></td>
+	</tr>
+			<tr id="$layoutPath">
+		<td><a href="yii_debug_module.html#$layoutPath-detail">$layoutPath</a></td>
+		<td>string</td>
+		<td>the root directory of layout files</td>
+		<td><a href="yii_debug_module.html">yii\debug\Module</a></td>
+	</tr>
+			<tr id="$aliases">
+		<td><a href="yii_debug_module.html#$aliases-detail">$aliases</a></td>
+		<td>array</td>
+		<td>List of path aliases to be defined</td>
+		<td><a href="yii_debug_module.html">yii\debug\Module</a></td>
+	</tr>
+			<tr id="$modules">
+		<td><a href="yii_debug_module.html#$modules-detail">$modules</a></td>
+		<td>array</td>
+		<td>the modules (indexed by their IDs)</td>
+		<td><a href="yii_debug_module.html">yii\debug\Module</a></td>
+	</tr>
+			<tr id="$components">
+		<td><a href="yii_debug_module.html#$components-detail">$components</a></td>
+		<td>array</td>
+		<td>the components (indexed by their IDs)</td>
+		<td><a href="yii_debug_module.html">yii\debug\Module</a></td>
+	</tr>
+	</table>
+</div>
+<a name="methods"></a>
+
+<div class="summary docMethod">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr class="inherited" id="className()">
+		<td><a href="yii_base_object.html#className()-detail">className()</a></td>
+		<td></td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__construct()">
+		<td><a href="yii_base_module.html#__construct()-detail">__construct()</a></td>
+		<td>Constructor.</td>
+		<td><a href="yii_base_module.html">yii\base\Module</a></td>
+	</tr>
+			<tr id="init()">
+		<td><a href="yii_debug_module.html#init()-detail">init()</a></td>
+		<td></td>
+		<td><a href="yii_debug_module.html">yii\debug\Module</a></td>
+	</tr>
+			<tr class="inherited" id="__get()">
+		<td><a href="yii_base_module.html#__get()-detail">__get()</a></td>
+		<td>Getter magic method.</td>
+		<td><a href="yii_base_module.html">yii\base\Module</a></td>
+	</tr>
+			<tr class="inherited" id="__set()">
+		<td><a href="yii_base_component.html#__set()-detail">__set()</a></td>
+		<td>Sets the value of a component property.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__isset()">
+		<td><a href="yii_base_module.html#__isset()-detail">__isset()</a></td>
+		<td>Checks if a property value is null.</td>
+		<td><a href="yii_base_module.html">yii\base\Module</a></td>
+	</tr>
+			<tr class="inherited" id="__unset()">
+		<td><a href="yii_base_component.html#__unset()-detail">__unset()</a></td>
+		<td>Sets a component property to be null.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__call()">
+		<td><a href="yii_base_component.html#__call()-detail">__call()</a></td>
+		<td>Calls the named method which is not a class method.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasProperty()">
+		<td><a href="yii_base_component.html#hasProperty()-detail">hasProperty()</a></td>
+		<td>Returns a value indicating whether a property is defined for this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="canGetProperty()">
+		<td><a href="yii_base_component.html#canGetProperty()-detail">canGetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be read.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="canSetProperty()">
+		<td><a href="yii_base_component.html#canSetProperty()-detail">canSetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be set.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasMethod()">
+		<td><a href="yii_base_component.html#hasMethod()-detail">hasMethod()</a></td>
+		<td>Returns a value indicating whether a method is defined.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="toArray()">
+		<td><a href="yii_base_object.html#toArray()-detail">toArray()</a></td>
+		<td>Converts the object into an array.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__clone()">
+		<td><a href="yii_base_component.html#__clone()-detail">__clone()</a></td>
+		<td>This method is called after the object is created by cloning an existing one.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="behaviors()">
+		<td><a href="yii_base_component.html#behaviors()-detail">behaviors()</a></td>
+		<td>Returns a list of behaviors that this component should behave as.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasEventHandlers()">
+		<td><a href="yii_base_component.html#hasEventHandlers()-detail">hasEventHandlers()</a></td>
+		<td>Returns a value indicating whether there is any handler attached to the named event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="on()">
+		<td><a href="yii_base_component.html#on()-detail">on()</a></td>
+		<td>Attaches an event handler to an event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="off()">
+		<td><a href="yii_base_component.html#off()-detail">off()</a></td>
+		<td>Detaches an existing event handler from this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="trigger()">
+		<td><a href="yii_base_component.html#trigger()-detail">trigger()</a></td>
+		<td>Triggers an event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="getBehavior()">
+		<td><a href="yii_base_component.html#getBehavior()-detail">getBehavior()</a></td>
+		<td>Returns the named behavior object.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="getBehaviors()">
+		<td><a href="yii_base_component.html#getBehaviors()-detail">getBehaviors()</a></td>
+		<td>Returns all behaviors attached to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="attachBehavior()">
+		<td><a href="yii_base_component.html#attachBehavior()-detail">attachBehavior()</a></td>
+		<td>Attaches a behavior to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="attachBehaviors()">
+		<td><a href="yii_base_component.html#attachBehaviors()-detail">attachBehaviors()</a></td>
+		<td>Attaches a list of behaviors to the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="detachBehavior()">
+		<td><a href="yii_base_component.html#detachBehavior()-detail">detachBehavior()</a></td>
+		<td>Detaches a behavior from the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="detachBehaviors()">
+		<td><a href="yii_base_component.html#detachBehaviors()-detail">detachBehaviors()</a></td>
+		<td>Detaches all behaviors from the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="ensureBehaviors()">
+		<td><a href="yii_base_component.html#ensureBehaviors()-detail">ensureBehaviors()</a></td>
+		<td>Makes sure that the behaviors declared in <a href="yii_base_component.html#behaviors()-detail">behaviors()</a> are attached to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="getUniqueId()">
+		<td><a href="yii_base_module.html#getUniqueId()-detail">getUniqueId()</a></td>
+		<td>Returns an ID that uniquely identifies this module among all modules within the current application.</td>
+		<td><a href="yii_base_module.html">yii\base\Module</a></td>
+	</tr>
+			<tr class="inherited" id="getBasePath()">
+		<td><a href="yii_base_module.html#getBasePath()-detail">getBasePath()</a></td>
+		<td>Returns the root directory of the module.</td>
+		<td><a href="yii_base_module.html">yii\base\Module</a></td>
+	</tr>
+			<tr class="inherited" id="setBasePath()">
+		<td><a href="yii_base_module.html#setBasePath()-detail">setBasePath()</a></td>
+		<td>Sets the root directory of the module.</td>
+		<td><a href="yii_base_module.html">yii\base\Module</a></td>
+	</tr>
+			<tr class="inherited" id="getControllerPath()">
+		<td><a href="yii_base_module.html#getControllerPath()-detail">getControllerPath()</a></td>
+		<td>Returns the directory that contains the controller classes.</td>
+		<td><a href="yii_base_module.html">yii\base\Module</a></td>
+	</tr>
+			<tr class="inherited" id="setControllerPath()">
+		<td><a href="yii_base_module.html#setControllerPath()-detail">setControllerPath()</a></td>
+		<td>Sets the directory that contains the controller classes.</td>
+		<td><a href="yii_base_module.html">yii\base\Module</a></td>
+	</tr>
+			<tr class="inherited" id="getViewPath()">
+		<td><a href="yii_base_module.html#getViewPath()-detail">getViewPath()</a></td>
+		<td>Returns the directory that contains the view files for this module.</td>
+		<td><a href="yii_base_module.html">yii\base\Module</a></td>
+	</tr>
+			<tr class="inherited" id="setViewPath()">
+		<td><a href="yii_base_module.html#setViewPath()-detail">setViewPath()</a></td>
+		<td>Sets the directory that contains the view files.</td>
+		<td><a href="yii_base_module.html">yii\base\Module</a></td>
+	</tr>
+			<tr class="inherited" id="getLayoutPath()">
+		<td><a href="yii_base_module.html#getLayoutPath()-detail">getLayoutPath()</a></td>
+		<td>Returns the directory that contains layout view files for this module.</td>
+		<td><a href="yii_base_module.html">yii\base\Module</a></td>
+	</tr>
+			<tr class="inherited" id="setLayoutPath()">
+		<td><a href="yii_base_module.html#setLayoutPath()-detail">setLayoutPath()</a></td>
+		<td>Sets the directory that contains the layout files.</td>
+		<td><a href="yii_base_module.html">yii\base\Module</a></td>
+	</tr>
+			<tr class="inherited" id="setAliases()">
+		<td><a href="yii_base_module.html#setAliases()-detail">setAliases()</a></td>
+		<td>Defines path aliases.</td>
+		<td><a href="yii_base_module.html">yii\base\Module</a></td>
+	</tr>
+			<tr class="inherited" id="hasModule()">
+		<td><a href="yii_base_module.html#hasModule()-detail">hasModule()</a></td>
+		<td>Checks whether the child module of the specified ID exists.</td>
+		<td><a href="yii_base_module.html">yii\base\Module</a></td>
+	</tr>
+			<tr class="inherited" id="getModule()">
+		<td><a href="yii_base_module.html#getModule()-detail">getModule()</a></td>
+		<td>Retrieves the child module of the specified ID.</td>
+		<td><a href="yii_base_module.html">yii\base\Module</a></td>
+	</tr>
+			<tr class="inherited" id="setModule()">
+		<td><a href="yii_base_module.html#setModule()-detail">setModule()</a></td>
+		<td>Adds a sub-module to this module.</td>
+		<td><a href="yii_base_module.html">yii\base\Module</a></td>
+	</tr>
+			<tr class="inherited" id="getModules()">
+		<td><a href="yii_base_module.html#getModules()-detail">getModules()</a></td>
+		<td>Returns the sub-modules in this module.</td>
+		<td><a href="yii_base_module.html">yii\base\Module</a></td>
+	</tr>
+			<tr class="inherited" id="setModules()">
+		<td><a href="yii_base_module.html#setModules()-detail">setModules()</a></td>
+		<td>Registers sub-modules in the current module.</td>
+		<td><a href="yii_base_module.html">yii\base\Module</a></td>
+	</tr>
+			<tr class="inherited" id="hasComponent()">
+		<td><a href="yii_base_module.html#hasComponent()-detail">hasComponent()</a></td>
+		<td>Checks whether the named component exists.</td>
+		<td><a href="yii_base_module.html">yii\base\Module</a></td>
+	</tr>
+			<tr class="inherited" id="getComponent()">
+		<td><a href="yii_base_module.html#getComponent()-detail">getComponent()</a></td>
+		<td>Retrieves the named component.</td>
+		<td><a href="yii_base_module.html">yii\base\Module</a></td>
+	</tr>
+			<tr class="inherited" id="setComponent()">
+		<td><a href="yii_base_module.html#setComponent()-detail">setComponent()</a></td>
+		<td>Registers a component with this module.</td>
+		<td><a href="yii_base_module.html">yii\base\Module</a></td>
+	</tr>
+			<tr class="inherited" id="getComponents()">
+		<td><a href="yii_base_module.html#getComponents()-detail">getComponents()</a></td>
+		<td>Returns the registered components.</td>
+		<td><a href="yii_base_module.html">yii\base\Module</a></td>
+	</tr>
+			<tr class="inherited" id="setComponents()">
+		<td><a href="yii_base_module.html#setComponents()-detail">setComponents()</a></td>
+		<td>Registers a set of components in this module.</td>
+		<td><a href="yii_base_module.html">yii\base\Module</a></td>
+	</tr>
+			<tr class="inherited" id="preloadComponents()">
+		<td><a href="yii_base_module.html#preloadComponents()-detail">preloadComponents()</a></td>
+		<td>Loads components that are declared in <a href="yii_base_module.html#$preload-detail">$preload</a>.</td>
+		<td><a href="yii_base_module.html">yii\base\Module</a></td>
+	</tr>
+			<tr class="inherited" id="runAction()">
+		<td><a href="yii_base_module.html#runAction()-detail">runAction()</a></td>
+		<td>Runs a controller action specified by a route.</td>
+		<td><a href="yii_base_module.html">yii\base\Module</a></td>
+	</tr>
+			<tr class="inherited" id="createController()">
+		<td><a href="yii_base_module.html#createController()-detail">createController()</a></td>
+		<td>Creates a controller instance based on the controller ID.</td>
+		<td><a href="yii_base_module.html">yii\base\Module</a></td>
+	</tr>
+			<tr id="beforeAction()">
+		<td><a href="yii_debug_module.html#beforeAction()-detail">beforeAction()</a></td>
+		<td></td>
+		<td><a href="yii_debug_module.html">yii\debug\Module</a></td>
+	</tr>
+			<tr class="inherited" id="afterAction()">
+		<td><a href="yii_base_module.html#afterAction()-detail">afterAction()</a></td>
+		<td>This method is invoked right after an action of this module has been executed.</td>
+		<td><a href="yii_base_module.html">yii\base\Module</a></td>
+	</tr>
+			<tr id="renderToolbar()">
+		<td><a href="yii_debug_module.html#renderToolbar()-detail">renderToolbar()</a></td>
+		<td></td>
+		<td><a href="yii_debug_module.html">yii\debug\Module</a></td>
+	</tr>
+			</table>
+</div>
+<div class="summary docMethod">
+<h2>Protected Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+																																																						<tr id="checkAccess()">
+		<td><a href="yii_debug_module.html#checkAccess()-detail">checkAccess()</a></td>
+		<td></td>
+		<td><a href="yii_debug_module.html">yii\debug\Module</a></td>
+	</tr>
+			<tr id="corePanels()">
+		<td><a href="yii_debug_module.html#corePanels()-detail">corePanels()</a></td>
+		<td></td>
+		<td><a href="yii_debug_module.html">yii\debug\Module</a></td>
+	</tr>
+	</table>
+</div>
+<a name="events"></a>
+
+<a name="constants"></a>
+
+<h2>Property Details</h2>
+
+
+	<div class="detailHeader" id="$controllerNamespace-detail">
+		$controllerNamespace		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $controllerNamespace = 'yii\debug\controllers'	</div>
+
+	<p>The namespace that controller classes are in.</p>
+
+	
+
+	<div class="detailHeader" id="$allowedIPs-detail">
+		$allowedIPs		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array $allowedIPs = ['127.0.0.1', '::1']	</div>
+
+	<p>The list of IPs that are allowed to access this module.
+Each array element represents a single IP filter which can be either an IP address
+or an address with wildcard (e.g. 192.168.0.*) to represent a network segment.
+The default value is <code>['127.0.0.1', '::1']</code>, which means the module can only be accessed
+by localhost.</p>
+
+	
+
+	<div class="detailHeader" id="$logTarget-detail">
+		$logTarget		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_debug_logtarget.html">yii\debug\LogTarget</a> $logTarget = null	</div>
+
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="$panels-detail">
+		$panels		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array|<a href="yii_debug_panel.html">yii\debug\Panel</a>[] $panels = []	</div>
+
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="$dataPath-detail">
+		$dataPath		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $dataPath = '@runtime/debug'	</div>
+
+	<p>The directory storing the debugger data files. This can be specified using a path alias.</p>
+
+	
+
+	<div class="detailHeader" id="$historySize-detail">
+		$historySize		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	integer $historySize = 50	</div>
+
+	<p>The maximum number of debug data files to keep. If there are more files generated,
+the oldest ones will be removed.</p>
+
+	
+
+	<div class="detailHeader" id="$behaviors-detail">
+		$behaviors		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_base_behavior.html">yii\base\Behavior</a>[] <a href="yii_base_component.html#getBehaviors()-detail">getBehaviors</a>(  )	</div>
+
+	<p>list of behaviors attached to this component</p>
+
+	
+
+	<div class="detailHeader" id="$uniqueId-detail">
+		$uniqueId		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	string <a href="yii_base_module.html#getUniqueId()-detail">getUniqueId</a>(  )	</div>
+
+	<p>the unique ID of the module.</p>
+
+	
+
+	<div class="detailHeader" id="$basePath-detail">
+		$basePath		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string <a href="yii_base_module.html#getBasePath()-detail">getBasePath</a>(  )<br />void <a href="yii_base_module.html#setBasePath()-detail">setBasePath</a>( $path )	</div>
+
+	<p>the root directory of the module.</p>
+
+	
+
+	<div class="detailHeader" id="$controllerPath-detail">
+		$controllerPath		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string <a href="yii_base_module.html#getControllerPath()-detail">getControllerPath</a>(  )<br />void <a href="yii_base_module.html#setControllerPath()-detail">setControllerPath</a>( $path )	</div>
+
+	<p>the directory that contains the controller classes.</p>
+
+	
+
+	<div class="detailHeader" id="$viewPath-detail">
+		$viewPath		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string <a href="yii_base_module.html#getViewPath()-detail">getViewPath</a>(  )<br />void <a href="yii_base_module.html#setViewPath()-detail">setViewPath</a>( $path )	</div>
+
+	<p>the root directory of view files. Defaults to "<a href="yii_debug_module.html#$basePath-detail">$basePath</a>/view".</p>
+
+	
+
+	<div class="detailHeader" id="$layoutPath-detail">
+		$layoutPath		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string <a href="yii_base_module.html#getLayoutPath()-detail">getLayoutPath</a>(  )<br />void <a href="yii_base_module.html#setLayoutPath()-detail">setLayoutPath</a>( $path )	</div>
+
+	<p>the root directory of layout files. Defaults to "<a href="yii_debug_module.html#$viewPath-detail">$viewPath</a>/layouts".</p>
+
+	
+
+	<div class="detailHeader" id="$aliases-detail">
+		$aliases		<span class="detailHeaderTag">
+			property
+						 <em>write-only</em> 					</span>
+	</div>
+
+	<div class="signature">
+	void <a href="yii_base_module.html#setAliases()-detail">setAliases</a>( $aliases )	</div>
+
+	<p><p>List of path aliases to be defined. The array keys are alias names
+(must start with '@') and the array values are the corresponding paths or aliases.
+For example,</p>
+
+<pre><code>[
+'@models' =&gt; '@app/models', // an existing alias
+'@backend' =&gt; __DIR__ . '/../backend',  // a directory
+]
+</code></pre></p>
+
+	
+
+	<div class="detailHeader" id="$modules-detail">
+		$modules		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array <a href="yii_base_module.html#getModules()-detail">getModules</a>( $loadedOnly = false )<br />void <a href="yii_base_module.html#setModules()-detail">setModules</a>( $modules )	</div>
+
+	<p>the modules (indexed by their IDs)</p>
+
+	
+
+	<div class="detailHeader" id="$components-detail">
+		$components		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array <a href="yii_base_module.html#getComponents()-detail">getComponents</a>( $loadedOnly = false )<br />void <a href="yii_base_module.html#setComponents()-detail">setComponents</a>( $components )	</div>
+
+	<p>the components (indexed by their IDs)</p>
+
+	
+<h2>Method Details</h2>
+
+
+	<div class="detailHeader" id="init()-detail">
+		init()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_debug_module.html#init()-detail">init</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="beforeAction()-detail">
+		beforeAction()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_debug_module.html#beforeAction()-detail">beforeAction</a>( $action )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$action</td>
+				  <td class="paramTypeCol"></td>
+				  <td class="paramDescCol"></td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="renderToolbar()-detail">
+		renderToolbar()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_debug_module.html#renderToolbar()-detail">renderToolbar</a>( $event )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$event</td>
+				  <td class="paramTypeCol"></td>
+				  <td class="paramDescCol"></td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="checkAccess()-detail">
+		checkAccess()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_debug_module.html#checkAccess()-detail">checkAccess</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="corePanels()-detail">
+		corePanels()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_debug_module.html#corePanels()-detail">corePanels</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+			</div><!-- end of content -->
+
+		<div id="apiFooter">
+			<p>&copy; 2008-2013 by <a href="http://www.yiisoft.com">Yii Software LLC</a></p>
+			<p>All Rights Reserved.</p>
+		</div><!-- end of footer -->
+
+<script type="text/javascript">
+/*<![CDATA[*/
+$("a.toggle").on('click', function() {
+	var $this = $(this);
+	if ($this.hasClass('properties-hidden')) {
+		$this.text($this.text().replace(/Show/,'Hide'));
+		$this.parents(".summary").find(".inherited").show();
+		$this.removeClass('properties-hidden');
+	} else {
+		$this.text($this.text().replace(/Hide/,'Show'));
+		$this.parents(".summary").find(".inherited").hide();
+		$this.addClass('properties-hidden');
+	}
+	return false;
+});
+/*
+$(".sourceCode a.show").toggle(function(){
+	$(this).text($(this).text().replace(/show/,'hide'));
+	$(this).parents(".sourceCode").find("div.code").show();
+},function(){
+	$(this).text($(this).text().replace(/hide/,'show'));
+	$(this).parents(".sourceCode").find("div.code").hide();
+});
+$("a.sourceLink").click(function(){
+	$(this).attr('target','_blank');
+});
+*/
+/*]]>*/
+</script>
+
+	</div><!-- end of page -->
+</body>
+</html>

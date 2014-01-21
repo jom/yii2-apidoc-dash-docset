@@ -1,0 +1,351 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="language" content="en" />
+<link href="./assets/4138e429/api.css" rel="stylesheet">
+<link href="./assets/4138e429/style.css" rel="stylesheet">
+<script src="./assets/a91b37a6/jquery.js"></script><title>Yii Framework 2.0 API Documentation</title>
+</head>
+
+<body>
+	<div id="apiPage">
+
+		<div id="apiHeader">
+			<a href="http://www.yiiframework.com">Yii Framework</a> v2.0.0-dev Class Reference
+		</div><!-- end of header -->
+
+		<div id="content">
+		<h1>Class yii\caching\MemCacheServer</h1>
+<div id="nav">
+	<a href="index.html">All Classes</a>
+			| <a href="#properties">Properties</a>
+				| <a href="#methods">Methods</a>
+			</div>
+
+<table class="summaryTable docClass">
+	<colgroup>
+		<col class="col-name" />
+		<col class="col-value" />
+	</colgroup>
+			<tr><th>Inheritance</th><td><a href="yii_caching_memcacheserver.html">yii\caching\MemCacheServer</a> &raquo;
+<a href="yii_base_object.html">yii\base\Object</a></td></tr>
+				<tr><th>Implements</th><td><a href="yii_base_arrayable.html">yii\base\Arrayable</a></td></tr>
+								<tr><th>Available since version</th><td>2.0</td></tr>
+		<tr>
+	  <th>Source Code</th>
+	  <td></td>
+	</tr>
+</table>
+
+<div id="classDescription">
+	<strong>MemCacheServer represents the configuration data for a single memcache or memcached server.</strong>
+	<p>See <a href="http://www.php.net/manual/en/function.Memcache-addServer.php">PHP manual</a> for detailed explanation
+of each configuration property.</p>
+</div>
+
+<a name="properties"></a>
+
+<div class="summary docProperty">
+<h2>Public Properties</h2>
+
+<p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-property" />
+	<col class="col-type" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Property</th><th>Type</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr id="$host">
+		<td><a href="yii_caching_memcacheserver.html#$host-detail">$host</a></td>
+		<td>string</td>
+		<td>Memcache server hostname or IP address</td>
+		<td><a href="yii_caching_memcacheserver.html">yii\caching\MemCacheServer</a></td>
+	</tr>
+			<tr id="$port">
+		<td><a href="yii_caching_memcacheserver.html#$port-detail">$port</a></td>
+		<td>integer</td>
+		<td>Memcache server port</td>
+		<td><a href="yii_caching_memcacheserver.html">yii\caching\MemCacheServer</a></td>
+	</tr>
+			<tr id="$weight">
+		<td><a href="yii_caching_memcacheserver.html#$weight-detail">$weight</a></td>
+		<td>integer</td>
+		<td>Probability of using this server among all servers</td>
+		<td><a href="yii_caching_memcacheserver.html">yii\caching\MemCacheServer</a></td>
+	</tr>
+			<tr id="$persistent">
+		<td><a href="yii_caching_memcacheserver.html#$persistent-detail">$persistent</a></td>
+		<td>boolean</td>
+		<td>Whether to use a persistent connection</td>
+		<td><a href="yii_caching_memcacheserver.html">yii\caching\MemCacheServer</a></td>
+	</tr>
+			<tr id="$timeout">
+		<td><a href="yii_caching_memcacheserver.html#$timeout-detail">$timeout</a></td>
+		<td>integer</td>
+		<td>Timeout in milliseconds which will be used for connecting to the server</td>
+		<td><a href="yii_caching_memcacheserver.html">yii\caching\MemCacheServer</a></td>
+	</tr>
+			<tr id="$retryInterval">
+		<td><a href="yii_caching_memcacheserver.html#$retryInterval-detail">$retryInterval</a></td>
+		<td>integer</td>
+		<td>How often a failed server will be retried (in seconds)</td>
+		<td><a href="yii_caching_memcacheserver.html">yii\caching\MemCacheServer</a></td>
+	</tr>
+			<tr id="$status">
+		<td><a href="yii_caching_memcacheserver.html#$status-detail">$status</a></td>
+		<td>boolean</td>
+		<td>If the server should be flagged as online upon a failure</td>
+		<td><a href="yii_caching_memcacheserver.html">yii\caching\MemCacheServer</a></td>
+	</tr>
+			<tr id="$failureCallback">
+		<td><a href="yii_caching_memcacheserver.html#$failureCallback-detail">$failureCallback</a></td>
+		<td>\Closure</td>
+		<td>This callback function will run upon encountering an error</td>
+		<td><a href="yii_caching_memcacheserver.html">yii\caching\MemCacheServer</a></td>
+	</tr>
+	</table>
+</div>
+<a name="methods"></a>
+
+<div class="summary docMethod">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr class="inherited" id="className()">
+		<td><a href="yii_base_object.html#className()-detail">className()</a></td>
+		<td></td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__construct()">
+		<td><a href="yii_base_object.html#__construct()-detail">__construct()</a></td>
+		<td>Constructor.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="init()">
+		<td><a href="yii_base_object.html#init()-detail">init()</a></td>
+		<td>Initializes the object.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__get()">
+		<td><a href="yii_base_object.html#__get()-detail">__get()</a></td>
+		<td>Returns the value of an object property.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__set()">
+		<td><a href="yii_base_object.html#__set()-detail">__set()</a></td>
+		<td>Sets value of an object property.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__isset()">
+		<td><a href="yii_base_object.html#__isset()-detail">__isset()</a></td>
+		<td>Checks if the named property is set (not null).</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__unset()">
+		<td><a href="yii_base_object.html#__unset()-detail">__unset()</a></td>
+		<td>Sets an object property to null.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__call()">
+		<td><a href="yii_base_object.html#__call()-detail">__call()</a></td>
+		<td>Calls the named method which is not a class method.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="hasProperty()">
+		<td><a href="yii_base_object.html#hasProperty()-detail">hasProperty()</a></td>
+		<td>Returns a value indicating whether a property is defined.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="canGetProperty()">
+		<td><a href="yii_base_object.html#canGetProperty()-detail">canGetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be read.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="canSetProperty()">
+		<td><a href="yii_base_object.html#canSetProperty()-detail">canSetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be set.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="hasMethod()">
+		<td><a href="yii_base_object.html#hasMethod()-detail">hasMethod()</a></td>
+		<td>Returns a value indicating whether a method is defined.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="toArray()">
+		<td><a href="yii_base_object.html#toArray()-detail">toArray()</a></td>
+		<td>Converts the object into an array.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+	</table>
+</div>
+<a name="events"></a>
+
+<a name="constants"></a>
+
+<h2>Property Details</h2>
+
+
+	<div class="detailHeader" id="$host-detail">
+		$host		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $host = null	</div>
+
+	<p>Memcache server hostname or IP address</p>
+
+	
+
+	<div class="detailHeader" id="$port-detail">
+		$port		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	integer $port = 11211	</div>
+
+	<p>Memcache server port</p>
+
+	
+
+	<div class="detailHeader" id="$weight-detail">
+		$weight		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	integer $weight = 1	</div>
+
+	<p>Probability of using this server among all servers.</p>
+
+	
+
+	<div class="detailHeader" id="$persistent-detail">
+		$persistent		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	boolean $persistent = true	</div>
+
+	<p>Whether to use a persistent connection. This is used by memcache only.</p>
+
+	
+
+	<div class="detailHeader" id="$timeout-detail">
+		$timeout		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	integer $timeout = 1000	</div>
+
+	<p>Timeout in milliseconds which will be used for connecting to the server.
+This is used by memcache only. For old versions of memcache that only support specifying
+timeout in seconds this will be rounded up to full seconds.</p>
+
+	
+
+	<div class="detailHeader" id="$retryInterval-detail">
+		$retryInterval		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	integer $retryInterval = 15	</div>
+
+	<p>How often a failed server will be retried (in seconds). This is used by memcache only.</p>
+
+	
+
+	<div class="detailHeader" id="$status-detail">
+		$status		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	boolean $status = true	</div>
+
+	<p>If the server should be flagged as online upon a failure. This is used by memcache only.</p>
+
+	
+
+	<div class="detailHeader" id="$failureCallback-detail">
+		$failureCallback		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	\Closure $failureCallback = null	</div>
+
+	<p>This callback function will run upon encountering an error.
+The callback is run before fail over is attempted. The function takes two parameters,
+the <a href="yii_caching_memcacheserver.html#$host-detail">$host</a> and the <a href="yii_caching_memcacheserver.html#$port-detail">$port</a> of the failed server.
+This is used by memcache only.</p>
+
+	
+			</div><!-- end of content -->
+
+		<div id="apiFooter">
+			<p>&copy; 2008-2013 by <a href="http://www.yiisoft.com">Yii Software LLC</a></p>
+			<p>All Rights Reserved.</p>
+		</div><!-- end of footer -->
+
+<script type="text/javascript">
+/*<![CDATA[*/
+$("a.toggle").on('click', function() {
+	var $this = $(this);
+	if ($this.hasClass('properties-hidden')) {
+		$this.text($this.text().replace(/Show/,'Hide'));
+		$this.parents(".summary").find(".inherited").show();
+		$this.removeClass('properties-hidden');
+	} else {
+		$this.text($this.text().replace(/Hide/,'Show'));
+		$this.parents(".summary").find(".inherited").hide();
+		$this.addClass('properties-hidden');
+	}
+	return false;
+});
+/*
+$(".sourceCode a.show").toggle(function(){
+	$(this).text($(this).text().replace(/show/,'hide'));
+	$(this).parents(".sourceCode").find("div.code").show();
+},function(){
+	$(this).text($(this).text().replace(/hide/,'show'));
+	$(this).parents(".sourceCode").find("div.code").hide();
+});
+$("a.sourceLink").click(function(){
+	$(this).attr('target','_blank');
+});
+*/
+/*]]>*/
+</script>
+
+	</div><!-- end of page -->
+</body>
+</html>

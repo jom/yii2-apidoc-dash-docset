@@ -1,0 +1,966 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="language" content="en" />
+<link href="./assets/4138e429/api.css" rel="stylesheet">
+<link href="./assets/4138e429/style.css" rel="stylesheet">
+<script src="./assets/a91b37a6/jquery.js"></script><title>Yii Framework 2.0 API Documentation</title>
+</head>
+
+<body>
+	<div id="apiPage">
+
+		<div id="apiHeader">
+			<a href="http://www.yiiframework.com">Yii Framework</a> v2.0.0-dev Class Reference
+		</div><!-- end of header -->
+
+		<div id="content">
+		<h1>Class yii\i18n\Formatter</h1>
+<div id="nav">
+	<a href="index.html">All Classes</a>
+			| <a href="#properties">Properties</a>
+				| <a href="#methods">Methods</a>
+			</div>
+
+<table class="summaryTable docClass">
+	<colgroup>
+		<col class="col-name" />
+		<col class="col-value" />
+	</colgroup>
+			<tr><th>Inheritance</th><td><a href="yii_i18n_formatter.html">yii\i18n\Formatter</a> &raquo;
+<a href="yii_base_formatter.html">yii\base\Formatter</a> &raquo;
+<a href="yii_base_component.html">yii\base\Component</a> &raquo;
+<a href="yii_base_object.html">yii\base\Object</a></td></tr>
+				<tr><th>Implements</th><td><a href="yii_base_arrayable.html">yii\base\Arrayable</a></td></tr>
+								<tr><th>Available since version</th><td>2.0</td></tr>
+		<tr>
+	  <th>Source Code</th>
+	  <td></td>
+	</tr>
+</table>
+
+<div id="classDescription">
+	<strong>Formatter is the localized version of <a href="yii_base_formatter.html">yii\base\Formatter</a>.</strong>
+	<p>Formatter requires the PHP "intl" extension to be installed. Formatter supports localized
+formatting of date, time and numbers, based on the current <a href="yii_i18n_formatter.html#$locale-detail">$locale</a>.</p>
+
+<p>This Formatter can replace the <code>formatter</code> application component that is configured by default.
+To do so, add the following to your application config under <code>components</code>:</p>
+
+<p><code>php
+'formatter' =&gt; [
+    'class' =&gt; 'yii\i18n\Formatter',
+]</code></p>
+</div>
+
+<a name="properties"></a>
+
+<div class="summary docProperty">
+<h2>Public Properties</h2>
+
+<p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-property" />
+	<col class="col-type" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Property</th><th>Type</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr id="$dateFormat">
+		<td><a href="yii_i18n_formatter.html#$dateFormat-detail">$dateFormat</a></td>
+		<td>string</td>
+		<td>The default format string to be used to format a date</td>
+		<td><a href="yii_i18n_formatter.html">yii\i18n\Formatter</a></td>
+	</tr>
+			<tr id="$timeFormat">
+		<td><a href="yii_i18n_formatter.html#$timeFormat-detail">$timeFormat</a></td>
+		<td>string</td>
+		<td>The default format string to be used to format a time</td>
+		<td><a href="yii_i18n_formatter.html">yii\i18n\Formatter</a></td>
+	</tr>
+			<tr id="$datetimeFormat">
+		<td><a href="yii_i18n_formatter.html#$datetimeFormat-detail">$datetimeFormat</a></td>
+		<td>string</td>
+		<td>The default format string to be used to format a date and time</td>
+		<td><a href="yii_i18n_formatter.html">yii\i18n\Formatter</a></td>
+	</tr>
+			<tr class="inherited" id="$nullDisplay">
+		<td><a href="yii_base_formatter.html#$nullDisplay-detail">$nullDisplay</a></td>
+		<td>string</td>
+		<td>The text to be displayed when formatting a null</td>
+		<td><a href="yii_base_formatter.html">yii\base\Formatter</a></td>
+	</tr>
+			<tr class="inherited" id="$booleanFormat">
+		<td><a href="yii_base_formatter.html#$booleanFormat-detail">$booleanFormat</a></td>
+		<td>array</td>
+		<td>The text to be displayed when formatting a boolean value</td>
+		<td><a href="yii_base_formatter.html">yii\base\Formatter</a></td>
+	</tr>
+			<tr id="$decimalSeparator">
+		<td><a href="yii_i18n_formatter.html#$decimalSeparator-detail">$decimalSeparator</a></td>
+		<td>string</td>
+		<td>The character displayed as the decimal point when formatting a number</td>
+		<td><a href="yii_i18n_formatter.html">yii\i18n\Formatter</a></td>
+	</tr>
+			<tr id="$thousandSeparator">
+		<td><a href="yii_i18n_formatter.html#$thousandSeparator-detail">$thousandSeparator</a></td>
+		<td>string</td>
+		<td>The character displayed as the thousands separator character when formatting a number</td>
+		<td><a href="yii_i18n_formatter.html">yii\i18n\Formatter</a></td>
+	</tr>
+			<tr id="$locale">
+		<td><a href="yii_i18n_formatter.html#$locale-detail">$locale</a></td>
+		<td>string</td>
+		<td>The locale ID that is used to localize the date and number formatting</td>
+		<td><a href="yii_i18n_formatter.html">yii\i18n\Formatter</a></td>
+	</tr>
+			<tr id="$timeZone">
+		<td><a href="yii_i18n_formatter.html#$timeZone-detail">$timeZone</a></td>
+		<td>string|\IntlTimeZone|\DateTimeZone</td>
+		<td>The timezone to use for formatting time and date values</td>
+		<td><a href="yii_i18n_formatter.html">yii\i18n\Formatter</a></td>
+	</tr>
+			<tr id="$numberFormatOptions">
+		<td><a href="yii_i18n_formatter.html#$numberFormatOptions-detail">$numberFormatOptions</a></td>
+		<td>array</td>
+		<td>The options to be set for the NumberFormatter objects</td>
+		<td><a href="yii_i18n_formatter.html">yii\i18n\Formatter</a></td>
+	</tr>
+			<tr id="$behaviors">
+		<td><a href="yii_i18n_formatter.html#$behaviors-detail">$behaviors</a></td>
+		<td><a href="yii_base_behavior.html">yii\base\Behavior</a>[]</td>
+		<td>list of behaviors attached to this component</td>
+		<td><a href="yii_i18n_formatter.html">yii\i18n\Formatter</a></td>
+	</tr>
+	</table>
+</div>
+<a name="methods"></a>
+
+<div class="summary docMethod">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr class="inherited" id="className()">
+		<td><a href="yii_base_object.html#className()-detail">className()</a></td>
+		<td></td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__construct()">
+		<td><a href="yii_base_object.html#__construct()-detail">__construct()</a></td>
+		<td>Constructor.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr id="init()">
+		<td><a href="yii_i18n_formatter.html#init()-detail">init()</a></td>
+		<td>Initializes the component.</td>
+		<td><a href="yii_i18n_formatter.html">yii\i18n\Formatter</a></td>
+	</tr>
+			<tr class="inherited" id="__get()">
+		<td><a href="yii_base_component.html#__get()-detail">__get()</a></td>
+		<td>Returns the value of a component property.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__set()">
+		<td><a href="yii_base_component.html#__set()-detail">__set()</a></td>
+		<td>Sets the value of a component property.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__isset()">
+		<td><a href="yii_base_component.html#__isset()-detail">__isset()</a></td>
+		<td>Checks if a property value is null.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__unset()">
+		<td><a href="yii_base_component.html#__unset()-detail">__unset()</a></td>
+		<td>Sets a component property to be null.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__call()">
+		<td><a href="yii_base_component.html#__call()-detail">__call()</a></td>
+		<td>Calls the named method which is not a class method.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasProperty()">
+		<td><a href="yii_base_component.html#hasProperty()-detail">hasProperty()</a></td>
+		<td>Returns a value indicating whether a property is defined for this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="canGetProperty()">
+		<td><a href="yii_base_component.html#canGetProperty()-detail">canGetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be read.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="canSetProperty()">
+		<td><a href="yii_base_component.html#canSetProperty()-detail">canSetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be set.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasMethod()">
+		<td><a href="yii_base_component.html#hasMethod()-detail">hasMethod()</a></td>
+		<td>Returns a value indicating whether a method is defined.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="toArray()">
+		<td><a href="yii_base_object.html#toArray()-detail">toArray()</a></td>
+		<td>Converts the object into an array.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__clone()">
+		<td><a href="yii_base_component.html#__clone()-detail">__clone()</a></td>
+		<td>This method is called after the object is created by cloning an existing one.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="behaviors()">
+		<td><a href="yii_base_component.html#behaviors()-detail">behaviors()</a></td>
+		<td>Returns a list of behaviors that this component should behave as.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasEventHandlers()">
+		<td><a href="yii_base_component.html#hasEventHandlers()-detail">hasEventHandlers()</a></td>
+		<td>Returns a value indicating whether there is any handler attached to the named event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="on()">
+		<td><a href="yii_base_component.html#on()-detail">on()</a></td>
+		<td>Attaches an event handler to an event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="off()">
+		<td><a href="yii_base_component.html#off()-detail">off()</a></td>
+		<td>Detaches an existing event handler from this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="trigger()">
+		<td><a href="yii_base_component.html#trigger()-detail">trigger()</a></td>
+		<td>Triggers an event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="getBehavior()">
+		<td><a href="yii_base_component.html#getBehavior()-detail">getBehavior()</a></td>
+		<td>Returns the named behavior object.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="getBehaviors()">
+		<td><a href="yii_base_component.html#getBehaviors()-detail">getBehaviors()</a></td>
+		<td>Returns all behaviors attached to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="attachBehavior()">
+		<td><a href="yii_base_component.html#attachBehavior()-detail">attachBehavior()</a></td>
+		<td>Attaches a behavior to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="attachBehaviors()">
+		<td><a href="yii_base_component.html#attachBehaviors()-detail">attachBehaviors()</a></td>
+		<td>Attaches a list of behaviors to the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="detachBehavior()">
+		<td><a href="yii_base_component.html#detachBehavior()-detail">detachBehavior()</a></td>
+		<td>Detaches a behavior from the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="detachBehaviors()">
+		<td><a href="yii_base_component.html#detachBehaviors()-detail">detachBehaviors()</a></td>
+		<td>Detaches all behaviors from the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="ensureBehaviors()">
+		<td><a href="yii_base_component.html#ensureBehaviors()-detail">ensureBehaviors()</a></td>
+		<td>Makes sure that the behaviors declared in <a href="yii_base_component.html#behaviors()-detail">behaviors()</a> are attached to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="format()">
+		<td><a href="yii_base_formatter.html#format()-detail">format()</a></td>
+		<td>Formats the value based on the given format type.</td>
+		<td><a href="yii_base_formatter.html">yii\base\Formatter</a></td>
+	</tr>
+			<tr class="inherited" id="asRaw()">
+		<td><a href="yii_base_formatter.html#asRaw()-detail">asRaw()</a></td>
+		<td>Formats the value as is without any formatting.</td>
+		<td><a href="yii_base_formatter.html">yii\base\Formatter</a></td>
+	</tr>
+			<tr class="inherited" id="asText()">
+		<td><a href="yii_base_formatter.html#asText()-detail">asText()</a></td>
+		<td>Formats the value as an HTML-encoded plain text.</td>
+		<td><a href="yii_base_formatter.html">yii\base\Formatter</a></td>
+	</tr>
+			<tr class="inherited" id="asNtext()">
+		<td><a href="yii_base_formatter.html#asNtext()-detail">asNtext()</a></td>
+		<td>Formats the value as an HTML-encoded plain text with newlines converted into breaks.</td>
+		<td><a href="yii_base_formatter.html">yii\base\Formatter</a></td>
+	</tr>
+			<tr class="inherited" id="asParagraphs()">
+		<td><a href="yii_base_formatter.html#asParagraphs()-detail">asParagraphs()</a></td>
+		<td>Formats the value as HTML-encoded text paragraphs.</td>
+		<td><a href="yii_base_formatter.html">yii\base\Formatter</a></td>
+	</tr>
+			<tr class="inherited" id="asHtml()">
+		<td><a href="yii_base_formatter.html#asHtml()-detail">asHtml()</a></td>
+		<td>Formats the value as HTML text.</td>
+		<td><a href="yii_base_formatter.html">yii\base\Formatter</a></td>
+	</tr>
+			<tr class="inherited" id="asEmail()">
+		<td><a href="yii_base_formatter.html#asEmail()-detail">asEmail()</a></td>
+		<td>Formats the value as a mailto link.</td>
+		<td><a href="yii_base_formatter.html">yii\base\Formatter</a></td>
+	</tr>
+			<tr class="inherited" id="asImage()">
+		<td><a href="yii_base_formatter.html#asImage()-detail">asImage()</a></td>
+		<td>Formats the value as an image tag.</td>
+		<td><a href="yii_base_formatter.html">yii\base\Formatter</a></td>
+	</tr>
+			<tr class="inherited" id="asUrl()">
+		<td><a href="yii_base_formatter.html#asUrl()-detail">asUrl()</a></td>
+		<td>Formats the value as a hyperlink.</td>
+		<td><a href="yii_base_formatter.html">yii\base\Formatter</a></td>
+	</tr>
+			<tr class="inherited" id="asBoolean()">
+		<td><a href="yii_base_formatter.html#asBoolean()-detail">asBoolean()</a></td>
+		<td>Formats the value as a boolean.</td>
+		<td><a href="yii_base_formatter.html">yii\base\Formatter</a></td>
+	</tr>
+			<tr id="asDate()">
+		<td><a href="yii_i18n_formatter.html#asDate()-detail">asDate()</a></td>
+		<td>Formats the value as a date.</td>
+		<td><a href="yii_i18n_formatter.html">yii\i18n\Formatter</a></td>
+	</tr>
+			<tr id="asTime()">
+		<td><a href="yii_i18n_formatter.html#asTime()-detail">asTime()</a></td>
+		<td>Formats the value as a time.</td>
+		<td><a href="yii_i18n_formatter.html">yii\i18n\Formatter</a></td>
+	</tr>
+			<tr id="asDatetime()">
+		<td><a href="yii_i18n_formatter.html#asDatetime()-detail">asDatetime()</a></td>
+		<td>Formats the value as a datetime.</td>
+		<td><a href="yii_i18n_formatter.html">yii\i18n\Formatter</a></td>
+	</tr>
+				<tr class="inherited" id="asInteger()">
+		<td><a href="yii_base_formatter.html#asInteger()-detail">asInteger()</a></td>
+		<td>Formats the value as an integer.</td>
+		<td><a href="yii_base_formatter.html">yii\base\Formatter</a></td>
+	</tr>
+			<tr class="inherited" id="asDouble()">
+		<td><a href="yii_base_formatter.html#asDouble()-detail">asDouble()</a></td>
+		<td>Formats the value as a double number.</td>
+		<td><a href="yii_base_formatter.html">yii\base\Formatter</a></td>
+	</tr>
+			<tr class="inherited" id="asNumber()">
+		<td><a href="yii_base_formatter.html#asNumber()-detail">asNumber()</a></td>
+		<td>Formats the value as a number with decimal and thousand separators.</td>
+		<td><a href="yii_base_formatter.html">yii\base\Formatter</a></td>
+	</tr>
+			<tr id="asDecimal()">
+		<td><a href="yii_i18n_formatter.html#asDecimal()-detail">asDecimal()</a></td>
+		<td>Formats the value as a decimal number.</td>
+		<td><a href="yii_i18n_formatter.html">yii\i18n\Formatter</a></td>
+	</tr>
+			<tr id="asCurrency()">
+		<td><a href="yii_i18n_formatter.html#asCurrency()-detail">asCurrency()</a></td>
+		<td>Formats the value as a currency number.</td>
+		<td><a href="yii_i18n_formatter.html">yii\i18n\Formatter</a></td>
+	</tr>
+			<tr id="asPercent()">
+		<td><a href="yii_i18n_formatter.html#asPercent()-detail">asPercent()</a></td>
+		<td>Formats the value as a percent number.</td>
+		<td><a href="yii_i18n_formatter.html">yii\i18n\Formatter</a></td>
+	</tr>
+			<tr id="asScientific()">
+		<td><a href="yii_i18n_formatter.html#asScientific()-detail">asScientific()</a></td>
+		<td>Formats the value as a scientific number.</td>
+		<td><a href="yii_i18n_formatter.html">yii\i18n\Formatter</a></td>
+	</tr>
+		</table>
+</div>
+<div class="summary docMethod">
+<h2>Protected Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+																																									<tr class="inherited" id="normalizeDatetimeValue()">
+		<td><a href="yii_base_formatter.html#normalizeDatetimeValue()-detail">normalizeDatetimeValue()</a></td>
+		<td>Normalizes the given datetime value as one that can be taken by various date/time formatting methods.</td>
+		<td><a href="yii_base_formatter.html">yii\base\Formatter</a></td>
+	</tr>
+										<tr id="createNumberFormatter()">
+		<td><a href="yii_i18n_formatter.html#createNumberFormatter()-detail">createNumberFormatter()</a></td>
+		<td>Creates a number formatter based on the given type and format.</td>
+		<td><a href="yii_i18n_formatter.html">yii\i18n\Formatter</a></td>
+	</tr>
+	</table>
+</div>
+<a name="events"></a>
+
+<a name="constants"></a>
+
+<h2>Property Details</h2>
+
+
+	<div class="detailHeader" id="$dateFormat-detail">
+		$dateFormat		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $dateFormat = 'short'	</div>
+
+	<p>The default format string to be used to format a date.
+This can be "short", "medium", "long", or "full", which represents a preset format of different lengths.
+It can also be a custom format as specified in the <a href="http://userguide.icu-project.org/formatparse/datetime">ICU manual</a>.</p>
+
+	
+
+	<div class="detailHeader" id="$timeFormat-detail">
+		$timeFormat		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $timeFormat = 'short'	</div>
+
+	<p>The default format string to be used to format a time.
+This can be "short", "medium", "long", or "full", which represents a preset format of different lengths.
+It can also be a custom format as specified in the <a href="http://userguide.icu-project.org/formatparse/datetime">ICU manual</a>.</p>
+
+	
+
+	<div class="detailHeader" id="$datetimeFormat-detail">
+		$datetimeFormat		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $datetimeFormat = 'short'	</div>
+
+	<p>The default format string to be used to format a date and time.
+This can be "short", "medium", "long", or "full", which represents a preset format of different lengths.
+It can also be a custom format as specified in the <a href="http://userguide.icu-project.org/formatparse/datetime">ICU manual</a>.</p>
+
+	
+
+	<div class="detailHeader" id="$decimalSeparator-detail">
+		$decimalSeparator		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $decimalSeparator = null	</div>
+
+	<p>The character displayed as the decimal point when formatting a number.
+If not set, the decimal separator corresponding to <a href="yii_i18n_formatter.html#$locale-detail">$locale</a> will be used.</p>
+
+	
+
+	<div class="detailHeader" id="$thousandSeparator-detail">
+		$thousandSeparator		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $thousandSeparator = null	</div>
+
+	<p>The character displayed as the thousands separator character when formatting a number.
+If not set, the thousand separator corresponding to <a href="yii_i18n_formatter.html#$locale-detail">$locale</a> will be used.</p>
+
+	
+
+	<div class="detailHeader" id="$locale-detail">
+		$locale		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $locale = null	</div>
+
+	<p>The locale ID that is used to localize the date and number formatting.
+If not set, <a href="yii_base_application.html#$language-detail">yii\base\Application::$language</a> will be used.</p>
+
+	
+
+	<div class="detailHeader" id="$timeZone-detail">
+		$timeZone		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string|\IntlTimeZone|\DateTimeZone $timeZone = null	</div>
+
+	<p>The timezone to use for formatting time and date values.
+This can be any value that may be passed to <a href="http://www.php.net/manual/en/function.date-default-timezone-set.php">date_default_timezone_set()</a>
+e.g. <code>UTC</code>, <code>Europe/Berlin</code> or <code>America/Chicago</code>.
+Refer to the <a href="http://www.php.net/manual/en/timezones.php">php manual</a> for available timezones.
+This can also be an IntlTimeZone or a DateTimeZone object.
+If not set, <span style="background: #ff0;">yii\base\Application</span><span style="background: #f00;">::timezone</span> will be used.</p>
+
+	
+
+	<div class="detailHeader" id="$numberFormatOptions-detail">
+		$numberFormatOptions		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array $numberFormatOptions = []	</div>
+
+	<p>The options to be set for the NumberFormatter objects. Please refer to
+<a href="http://php.net/manual/en/class.numberformatter.php#intl.numberformatter-constants.unumberformatattribute">PHP manual</a>
+for the possible options. This property is used by <a href="yii_i18n_formatter.html#createNumberFormatter()-detail">createNumberFormatter()</a> when
+creating a new number formatter to format decimals, currencies, etc.</p>
+
+	
+
+	<div class="detailHeader" id="$behaviors-detail">
+		$behaviors		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_base_behavior.html">yii\base\Behavior</a>[] <a href="yii_base_component.html#getBehaviors()-detail">getBehaviors</a>(  )	</div>
+
+	<p>list of behaviors attached to this component</p>
+
+	
+<h2>Method Details</h2>
+
+
+	<div class="detailHeader" id="init()-detail">
+		init()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_i18n_formatter.html#init()-detail">init</a>(  )			</div>
+		</td></tr>
+															<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_base_invalidconfigexception.html">yii\base\InvalidConfigException</a></td>
+				  <td class="paramDescCol">if the "intl" PHP extension is not installed.</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Initializes the component.</strong></p>
+	<p>This method will check if the "intl" PHP extension is installed and set the
+default value of <a href="yii_i18n_formatter.html#$locale-detail">$locale</a>.</p>
+
+	
+
+	<div class="detailHeader" id="asDate()-detail">
+		asDate()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_i18n_formatter.html#asDate()-detail">asDate</a>( $value, $format = null )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$value</td>
+				  <td class="paramTypeCol">integer|string|\DateTime</td>
+				  <td class="paramDescCol">The value to be formatted. The following
+types of value are supported:
+- an integer representing a UNIX timestamp
+- a string that can be parsed into a UNIX timestamp via <code>strtotime()</code>
+- a PHP DateTime object</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$format</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The format used to convert the value into a date string.
+If null, <a href="yii_i18n_formatter.html#$dateFormat-detail">$dateFormat</a> will be used.
+This can be "short", "medium", "long", or "full", which represents a preset format of different lengths.
+It can also be a custom format as specified in the <a href="http://userguide.icu-project.org/formatparse/datetime">ICU manual</a>.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the formatted result</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_base_invalidconfigexception.html">yii\base\InvalidConfigException</a></td>
+				  <td class="paramDescCol">when formatting fails due to invalid parameters.</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Formats the value as a date.</strong></p>
+	<p></p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_i18n_formatter.html#$dateFormat-detail">$dateFormat</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="asTime()-detail">
+		asTime()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_i18n_formatter.html#asTime()-detail">asTime</a>( $value, $format = null )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$value</td>
+				  <td class="paramTypeCol">integer|string|\DateTime</td>
+				  <td class="paramDescCol">The value to be formatted. The following
+types of value are supported:
+- an integer representing a UNIX timestamp
+- a string that can be parsed into a UNIX timestamp via <code>strtotime()</code>
+- a PHP DateTime object</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$format</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The format used to convert the value into a date string.
+If null, <a href="yii_i18n_formatter.html#$dateFormat-detail">$dateFormat</a> will be used.
+This can be "short", "medium", "long", or "full", which represents a preset format of different lengths.
+It can also be a custom format as specified in the <a href="http://userguide.icu-project.org/formatparse/datetime">ICU manual</a>.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the formatted result</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_base_invalidconfigexception.html">yii\base\InvalidConfigException</a></td>
+				  <td class="paramDescCol">when formatting fails due to invalid parameters.</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Formats the value as a time.</strong></p>
+	<p></p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_i18n_formatter.html#$timeFormat-detail">$timeFormat</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="asDatetime()-detail">
+		asDatetime()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_i18n_formatter.html#asDatetime()-detail">asDatetime</a>( $value, $format = null )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$value</td>
+				  <td class="paramTypeCol">integer|string|\DateTime</td>
+				  <td class="paramDescCol">The value to be formatted. The following
+types of value are supported:
+- an integer representing a UNIX timestamp
+- a string that can be parsed into a UNIX timestamp via <code>strtotime()</code>
+- a PHP DateTime object</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$format</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The format used to convert the value into a date string.
+If null, <a href="yii_i18n_formatter.html#$dateFormat-detail">$dateFormat</a> will be used.
+This can be "short", "medium", "long", or "full", which represents a preset format of different lengths.
+It can also be a custom format as specified in the <a href="http://userguide.icu-project.org/formatparse/datetime">ICU manual</a>.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the formatted result</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_base_invalidconfigexception.html">yii\base\InvalidConfigException</a></td>
+				  <td class="paramDescCol">when formatting fails due to invalid parameters.</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Formats the value as a datetime.</strong></p>
+	<p></p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_i18n_formatter.html#$datetimeFormat-detail">$datetimeFormat</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="asDecimal()-detail">
+		asDecimal()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_i18n_formatter.html#asDecimal()-detail">asDecimal</a>( $value, $format = null )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$value</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">The value to be formatted</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$format</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The format to be used. Please refer to <a href="http://www.icu-project.org/apiref/icu4c/classDecimalFormat.html#_details">ICU manual</a>
+for details on how to specify a format.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the formatted result.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Formats the value as a decimal number.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="asCurrency()-detail">
+		asCurrency()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_i18n_formatter.html#asCurrency()-detail">asCurrency</a>( $value, $currency = 'USD', $format = null )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$value</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">The value to be formatted</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$currency</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The 3-letter ISO 4217 currency code indicating the currency to use.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$format</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The format to be used. Please refer to <a href="http://www.icu-project.org/apiref/icu4c/classDecimalFormat.html#_details">ICU manual</a>
+for details on how to specify a format.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the formatted result.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Formats the value as a currency number.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="asPercent()-detail">
+		asPercent()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_i18n_formatter.html#asPercent()-detail">asPercent</a>( $value, $format = null )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$value</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">The value to be formatted</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$format</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The format to be used. Please refer to <a href="http://www.icu-project.org/apiref/icu4c/classDecimalFormat.html#_details">ICU manual</a>
+for details on how to specify a format.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the formatted result.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Formats the value as a percent number.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="asScientific()-detail">
+		asScientific()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_i18n_formatter.html#asScientific()-detail">asScientific</a>( $value, $format = null )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$value</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">The value to be formatted</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$format</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The format to be used. Please refer to <a href="http://www.icu-project.org/apiref/icu4c/classDecimalFormat.html#_details">ICU manual</a>
+for details on how to specify a format.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the formatted result.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Formats the value as a scientific number.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="createNumberFormatter()-detail">
+		createNumberFormatter()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			\NumberFormatter <a href="yii_i18n_formatter.html#createNumberFormatter()-detail">createNumberFormatter</a>( $type, $format )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$type</td>
+				  <td class="paramTypeCol">integer</td>
+				  <td class="paramDescCol">The type of the number formatter</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$format</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The format to be used.  Please refer to <a href="http://www.icu-project.org/apiref/icu4c/classDecimalFormat.html#_details">ICU manual</a></td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">\NumberFormatter</td>
+				  <td class="paramDescCol">the created formatter instance</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Creates a number formatter based on the given type and format.</strong></p>
+	<p></p>
+
+	
+			</div><!-- end of content -->
+
+		<div id="apiFooter">
+			<p>&copy; 2008-2013 by <a href="http://www.yiisoft.com">Yii Software LLC</a></p>
+			<p>All Rights Reserved.</p>
+		</div><!-- end of footer -->
+
+<script type="text/javascript">
+/*<![CDATA[*/
+$("a.toggle").on('click', function() {
+	var $this = $(this);
+	if ($this.hasClass('properties-hidden')) {
+		$this.text($this.text().replace(/Show/,'Hide'));
+		$this.parents(".summary").find(".inherited").show();
+		$this.removeClass('properties-hidden');
+	} else {
+		$this.text($this.text().replace(/Hide/,'Show'));
+		$this.parents(".summary").find(".inherited").hide();
+		$this.addClass('properties-hidden');
+	}
+	return false;
+});
+/*
+$(".sourceCode a.show").toggle(function(){
+	$(this).text($(this).text().replace(/show/,'hide'));
+	$(this).parents(".sourceCode").find("div.code").show();
+},function(){
+	$(this).text($(this).text().replace(/hide/,'show'));
+	$(this).parents(".sourceCode").find("div.code").hide();
+});
+$("a.sourceLink").click(function(){
+	$(this).attr('target','_blank');
+});
+*/
+/*]]>*/
+</script>
+
+	</div><!-- end of page -->
+</body>
+</html>

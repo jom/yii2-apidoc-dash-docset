@@ -1,0 +1,1265 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="language" content="en" />
+<link href="./assets/4138e429/api.css" rel="stylesheet">
+<link href="./assets/4138e429/style.css" rel="stylesheet">
+<script src="./assets/a91b37a6/jquery.js"></script><title>Yii Framework 2.0 API Documentation</title>
+</head>
+
+<body>
+	<div id="apiPage">
+
+		<div id="apiHeader">
+			<a href="http://www.yiiframework.com">Yii Framework</a> v2.0.0-dev Class Reference
+		</div><!-- end of header -->
+
+		<div id="content">
+		<h1>Abstract Class yii\caching\Cache</h1>
+<div id="nav">
+	<a href="index.html">All Classes</a>
+			| <a href="#properties">Properties</a>
+				| <a href="#methods">Methods</a>
+			</div>
+
+<table class="summaryTable docClass">
+	<colgroup>
+		<col class="col-name" />
+		<col class="col-value" />
+	</colgroup>
+			<tr><th>Inheritance</th><td><a href="yii_caching_cache.html">yii\caching\Cache</a> &raquo;
+<a href="yii_base_component.html">yii\base\Component</a> &raquo;
+<a href="yii_base_object.html">yii\base\Object</a></td></tr>
+				<tr><th>Implements</th><td>ArrayAccess, <a href="yii_base_arrayable.html">yii\base\Arrayable</a></td></tr>
+					<tr><th>Subclasses</th><td><a href="yii_caching_apccache.html">yii\caching\ApcCache</a>, <a href="yii_caching_dbcache.html">yii\caching\DbCache</a>, <a href="yii_caching_dummycache.html">yii\caching\DummyCache</a>, <a href="yii_caching_filecache.html">yii\caching\FileCache</a>, <a href="yii_caching_memcache.html">yii\caching\MemCache</a>, <a href="yii_caching_wincache.html">yii\caching\WinCache</a>, <a href="yii_caching_xcache.html">yii\caching\XCache</a>, <a href="yii_caching_zenddatacache.html">yii\caching\ZendDataCache</a>, <a href="yii_redis_cache.html">yii\redis\Cache</a></td></tr>
+						<tr><th>Available since version</th><td>2.0</td></tr>
+		<tr>
+	  <th>Source Code</th>
+	  <td></td>
+	</tr>
+</table>
+
+<div id="classDescription">
+	<strong>Cache is the base class for cache classes supporting different cache storage implementation.</strong>
+	<p><p>A data item can be stored in cache by calling <a href="yii_caching_cache.html#set()-detail">set()</a> and be retrieved back
+later (in the same or different request) by <a href="yii_caching_cache.html#get()-detail">get()</a>. In both operations,
+a key identifying the data item is required. An expiration time and/or a <a href="yii_caching_dependency.html">yii\caching\Dependency</a>
+can also be specified when calling <a href="yii_caching_cache.html#set()-detail">set()</a>. If the data item expires or the dependency
+changes at the time of calling <a href="yii_caching_cache.html#get()-detail">get()</a>, the cache will return no data.</p>
+
+<p>A typical usage pattern of cache is like the following:</p>
+
+<pre><code>$key = 'demo';
+$data = $cache-&gt;get($key);
+if ($data === false) {
+    // ...generate $data here...
+    $cache-&gt;set($key, $data, $expire, $dependency);
+}
+</code></pre>
+
+<p>Because Cache implements the ArrayAccess interface, it can be used like an array. For example,</p>
+
+<pre><code>$cache['foo'] = 'some data';
+echo $cache['foo'];
+</code></pre>
+
+<p>Derived classes should implement the following methods:</p>
+
+<ul>
+<li><a href="yii_caching_cache.html#getValue()-detail">getValue()</a>: retrieve the value with a key (if any) from cache</li>
+<li><a href="yii_caching_cache.html#setValue()-detail">setValue()</a>: store the value with a key into cache</li>
+<li><a href="yii_caching_cache.html#addValue()-detail">addValue()</a>: store the value only if the cache does not have this key before</li>
+<li><a href="yii_caching_cache.html#deleteValue()-detail">deleteValue()</a>: delete the value with the specified key from cache</li>
+<li><a href="yii_caching_cache.html#flushValues()-detail">flushValues()</a>: delete all values from cache</li>
+</ul></p>
+</div>
+
+<a name="properties"></a>
+
+<div class="summary docProperty">
+<h2>Public Properties</h2>
+
+<p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-property" />
+	<col class="col-type" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Property</th><th>Type</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr id="$keyPrefix">
+		<td><a href="yii_caching_cache.html#$keyPrefix-detail">$keyPrefix</a></td>
+		<td>string</td>
+		<td>A string prefixed to every cache key so that it is unique</td>
+		<td><a href="yii_caching_cache.html">yii\caching\Cache</a></td>
+	</tr>
+			<tr id="$serializer">
+		<td><a href="yii_caching_cache.html#$serializer-detail">$serializer</a></td>
+		<td>array|boolean</td>
+		<td>The functions used to serialize and unserialize cached data</td>
+		<td><a href="yii_caching_cache.html">yii\caching\Cache</a></td>
+	</tr>
+			<tr id="$behaviors">
+		<td><a href="yii_caching_cache.html#$behaviors-detail">$behaviors</a></td>
+		<td><a href="yii_base_behavior.html">yii\base\Behavior</a>[]</td>
+		<td>list of behaviors attached to this component</td>
+		<td><a href="yii_caching_cache.html">yii\caching\Cache</a></td>
+	</tr>
+	</table>
+</div>
+<a name="methods"></a>
+
+<div class="summary docMethod">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr class="inherited" id="className()">
+		<td><a href="yii_base_object.html#className()-detail">className()</a></td>
+		<td></td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__construct()">
+		<td><a href="yii_base_object.html#__construct()-detail">__construct()</a></td>
+		<td>Constructor.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr id="init()">
+		<td><a href="yii_caching_cache.html#init()-detail">init()</a></td>
+		<td>Initializes the application component.</td>
+		<td><a href="yii_caching_cache.html">yii\caching\Cache</a></td>
+	</tr>
+			<tr class="inherited" id="__get()">
+		<td><a href="yii_base_component.html#__get()-detail">__get()</a></td>
+		<td>Returns the value of a component property.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__set()">
+		<td><a href="yii_base_component.html#__set()-detail">__set()</a></td>
+		<td>Sets the value of a component property.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__isset()">
+		<td><a href="yii_base_component.html#__isset()-detail">__isset()</a></td>
+		<td>Checks if a property value is null.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__unset()">
+		<td><a href="yii_base_component.html#__unset()-detail">__unset()</a></td>
+		<td>Sets a component property to be null.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__call()">
+		<td><a href="yii_base_component.html#__call()-detail">__call()</a></td>
+		<td>Calls the named method which is not a class method.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasProperty()">
+		<td><a href="yii_base_component.html#hasProperty()-detail">hasProperty()</a></td>
+		<td>Returns a value indicating whether a property is defined for this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="canGetProperty()">
+		<td><a href="yii_base_component.html#canGetProperty()-detail">canGetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be read.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="canSetProperty()">
+		<td><a href="yii_base_component.html#canSetProperty()-detail">canSetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be set.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasMethod()">
+		<td><a href="yii_base_component.html#hasMethod()-detail">hasMethod()</a></td>
+		<td>Returns a value indicating whether a method is defined.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="toArray()">
+		<td><a href="yii_base_object.html#toArray()-detail">toArray()</a></td>
+		<td>Converts the object into an array.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__clone()">
+		<td><a href="yii_base_component.html#__clone()-detail">__clone()</a></td>
+		<td>This method is called after the object is created by cloning an existing one.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="behaviors()">
+		<td><a href="yii_base_component.html#behaviors()-detail">behaviors()</a></td>
+		<td>Returns a list of behaviors that this component should behave as.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasEventHandlers()">
+		<td><a href="yii_base_component.html#hasEventHandlers()-detail">hasEventHandlers()</a></td>
+		<td>Returns a value indicating whether there is any handler attached to the named event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="on()">
+		<td><a href="yii_base_component.html#on()-detail">on()</a></td>
+		<td>Attaches an event handler to an event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="off()">
+		<td><a href="yii_base_component.html#off()-detail">off()</a></td>
+		<td>Detaches an existing event handler from this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="trigger()">
+		<td><a href="yii_base_component.html#trigger()-detail">trigger()</a></td>
+		<td>Triggers an event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="getBehavior()">
+		<td><a href="yii_base_component.html#getBehavior()-detail">getBehavior()</a></td>
+		<td>Returns the named behavior object.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="getBehaviors()">
+		<td><a href="yii_base_component.html#getBehaviors()-detail">getBehaviors()</a></td>
+		<td>Returns all behaviors attached to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="attachBehavior()">
+		<td><a href="yii_base_component.html#attachBehavior()-detail">attachBehavior()</a></td>
+		<td>Attaches a behavior to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="attachBehaviors()">
+		<td><a href="yii_base_component.html#attachBehaviors()-detail">attachBehaviors()</a></td>
+		<td>Attaches a list of behaviors to the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="detachBehavior()">
+		<td><a href="yii_base_component.html#detachBehavior()-detail">detachBehavior()</a></td>
+		<td>Detaches a behavior from the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="detachBehaviors()">
+		<td><a href="yii_base_component.html#detachBehaviors()-detail">detachBehaviors()</a></td>
+		<td>Detaches all behaviors from the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="ensureBehaviors()">
+		<td><a href="yii_base_component.html#ensureBehaviors()-detail">ensureBehaviors()</a></td>
+		<td>Makes sure that the behaviors declared in <a href="yii_base_component.html#behaviors()-detail">behaviors()</a> are attached to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+				<tr id="get()">
+		<td><a href="yii_caching_cache.html#get()-detail">get()</a></td>
+		<td>Retrieves a value from cache with a specified key.</td>
+		<td><a href="yii_caching_cache.html">yii\caching\Cache</a></td>
+	</tr>
+			<tr id="exists()">
+		<td><a href="yii_caching_cache.html#exists()-detail">exists()</a></td>
+		<td>Checks whether a specified key exists in the cache.</td>
+		<td><a href="yii_caching_cache.html">yii\caching\Cache</a></td>
+	</tr>
+			<tr id="mget()">
+		<td><a href="yii_caching_cache.html#mget()-detail">mget()</a></td>
+		<td>Retrieves multiple values from cache with the specified keys.</td>
+		<td><a href="yii_caching_cache.html">yii\caching\Cache</a></td>
+	</tr>
+			<tr id="set()">
+		<td><a href="yii_caching_cache.html#set()-detail">set()</a></td>
+		<td>Stores a value identified by a key into cache.</td>
+		<td><a href="yii_caching_cache.html">yii\caching\Cache</a></td>
+	</tr>
+			<tr id="mset()">
+		<td><a href="yii_caching_cache.html#mset()-detail">mset()</a></td>
+		<td>Stores multiple items in cache. Each item contains a value identified by a key.</td>
+		<td><a href="yii_caching_cache.html">yii\caching\Cache</a></td>
+	</tr>
+			<tr id="madd()">
+		<td><a href="yii_caching_cache.html#madd()-detail">madd()</a></td>
+		<td>Stores multiple items in cache. Each item contains a value identified by a key.</td>
+		<td><a href="yii_caching_cache.html">yii\caching\Cache</a></td>
+	</tr>
+			<tr id="add()">
+		<td><a href="yii_caching_cache.html#add()-detail">add()</a></td>
+		<td>Stores a value identified by a key into cache if the cache does not contain this key.</td>
+		<td><a href="yii_caching_cache.html">yii\caching\Cache</a></td>
+	</tr>
+			<tr id="delete()">
+		<td><a href="yii_caching_cache.html#delete()-detail">delete()</a></td>
+		<td>Deletes a value with the specified key from cache</td>
+		<td><a href="yii_caching_cache.html">yii\caching\Cache</a></td>
+	</tr>
+			<tr id="flush()">
+		<td><a href="yii_caching_cache.html#flush()-detail">flush()</a></td>
+		<td>Deletes all values from cache.</td>
+		<td><a href="yii_caching_cache.html">yii\caching\Cache</a></td>
+	</tr>
+											<tr id="offsetExists()">
+		<td><a href="yii_caching_cache.html#offsetExists()-detail">offsetExists()</a></td>
+		<td>Returns whether there is a cache entry with a specified key.</td>
+		<td><a href="yii_caching_cache.html">yii\caching\Cache</a></td>
+	</tr>
+			<tr id="offsetGet()">
+		<td><a href="yii_caching_cache.html#offsetGet()-detail">offsetGet()</a></td>
+		<td>Retrieves the value from cache with a specified key.</td>
+		<td><a href="yii_caching_cache.html">yii\caching\Cache</a></td>
+	</tr>
+			<tr id="offsetSet()">
+		<td><a href="yii_caching_cache.html#offsetSet()-detail">offsetSet()</a></td>
+		<td>Stores the value identified by a key into cache.</td>
+		<td><a href="yii_caching_cache.html">yii\caching\Cache</a></td>
+	</tr>
+			<tr id="offsetUnset()">
+		<td><a href="yii_caching_cache.html#offsetUnset()-detail">offsetUnset()</a></td>
+		<td>Deletes the value with the specified key from cache
+This method is required by the interface ArrayAccess.</td>
+		<td><a href="yii_caching_cache.html">yii\caching\Cache</a></td>
+	</tr>
+	</table>
+</div>
+<div class="summary docMethod">
+<h2>Protected Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+																												<tr id="buildKey()">
+		<td><a href="yii_caching_cache.html#buildKey()-detail">buildKey()</a></td>
+		<td>Builds a normalized cache key from a given key.</td>
+		<td><a href="yii_caching_cache.html">yii\caching\Cache</a></td>
+	</tr>
+												<tr id="getValue()">
+		<td><a href="yii_caching_cache.html#getValue()-detail">getValue()</a></td>
+		<td>Retrieves a value from cache with a specified key.</td>
+		<td><a href="yii_caching_cache.html">yii\caching\Cache</a></td>
+	</tr>
+			<tr id="setValue()">
+		<td><a href="yii_caching_cache.html#setValue()-detail">setValue()</a></td>
+		<td>Stores a value identified by a key in cache.</td>
+		<td><a href="yii_caching_cache.html">yii\caching\Cache</a></td>
+	</tr>
+			<tr id="addValue()">
+		<td><a href="yii_caching_cache.html#addValue()-detail">addValue()</a></td>
+		<td>Stores a value identified by a key into cache if the cache does not contain this key.</td>
+		<td><a href="yii_caching_cache.html">yii\caching\Cache</a></td>
+	</tr>
+			<tr id="deleteValue()">
+		<td><a href="yii_caching_cache.html#deleteValue()-detail">deleteValue()</a></td>
+		<td>Deletes a value with the specified key from cache
+This method should be implemented by child classes to delete the data from actual cache storage.</td>
+		<td><a href="yii_caching_cache.html">yii\caching\Cache</a></td>
+	</tr>
+			<tr id="flushValues()">
+		<td><a href="yii_caching_cache.html#flushValues()-detail">flushValues()</a></td>
+		<td>Deletes all values from cache.</td>
+		<td><a href="yii_caching_cache.html">yii\caching\Cache</a></td>
+	</tr>
+			<tr id="getValues()">
+		<td><a href="yii_caching_cache.html#getValues()-detail">getValues()</a></td>
+		<td>Retrieves multiple values from cache with the specified keys.</td>
+		<td><a href="yii_caching_cache.html">yii\caching\Cache</a></td>
+	</tr>
+			<tr id="setValues()">
+		<td><a href="yii_caching_cache.html#setValues()-detail">setValues()</a></td>
+		<td>Stores multiple key-value pairs in cache.</td>
+		<td><a href="yii_caching_cache.html">yii\caching\Cache</a></td>
+	</tr>
+			<tr id="addValues()">
+		<td><a href="yii_caching_cache.html#addValues()-detail">addValues()</a></td>
+		<td>Adds multiple key-value pairs to cache.</td>
+		<td><a href="yii_caching_cache.html">yii\caching\Cache</a></td>
+	</tr>
+					</table>
+</div>
+<a name="events"></a>
+
+<a name="constants"></a>
+
+<h2>Property Details</h2>
+
+
+	<div class="detailHeader" id="$keyPrefix-detail">
+		$keyPrefix		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $keyPrefix = null	</div>
+
+	<p>A string prefixed to every cache key so that it is unique. If not set,
+it will use a prefix generated from <span style="background: #f00;">\yii\caching\Application::id</span>. You may set this property to be an empty string
+if you don't want to use key prefix. It is recommended that you explicitly set this property to some
+static value if the cached data needs to be shared among multiple applications.
+To ensure interoperability, only alphanumeric characters should be used.</p>
+
+	
+
+	<div class="detailHeader" id="$serializer-detail">
+		$serializer		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array|boolean $serializer = null	</div>
+
+	<p>The functions used to serialize and unserialize cached data. Defaults to null, meaning
+using the default PHP <code>serialize()</code> and <code>unserialize()</code> functions. If you want to use some more efficient
+serializer (e.g. <a href="http://pecl.php.net/package/igbinary">igbinary</a>), you may configure this property with
+a two-element array. The first element specifies the serialization function, and the second the deserialization
+function. If this property is set false, data will be directly sent to and retrieved from the underlying
+cache component without any serialization or deserialization. You should not turn off serialization if
+you are using <a href="yii_caching_dependency.html">yii\caching\Dependency</a>, because it relies on data serialization.</p>
+
+	
+
+	<div class="detailHeader" id="$behaviors-detail">
+		$behaviors		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_base_behavior.html">yii\base\Behavior</a>[] <a href="yii_base_component.html#getBehaviors()-detail">getBehaviors</a>(  )	</div>
+
+	<p>list of behaviors attached to this component</p>
+
+	
+<h2>Method Details</h2>
+
+
+	<div class="detailHeader" id="init()-detail">
+		init()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_caching_cache.html#init()-detail">init</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p>Initializes the application component.</strong></p>
+	<p>This method overrides the parent implementation by setting default cache key prefix.</p>
+
+	
+
+	<div class="detailHeader" id="buildKey()-detail">
+		buildKey()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_caching_cache.html#buildKey()-detail">buildKey</a>( $key )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$key</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">The key to be normalized</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the generated cache key</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Builds a normalized cache key from a given key.</strong></p>
+	<p>If the given key is a string containing alphanumeric characters only and no more than 32 characters,
+then the key will be returned back prefixed with <a href="yii_caching_cache.html#$keyPrefix-detail">$keyPrefix</a>. Otherwise, a normalized key
+is generated by serializing the given key, applying MD5 hashing, and prefixing with <a href="yii_caching_cache.html#$keyPrefix-detail">$keyPrefix</a>.</p>
+
+	
+
+	<div class="detailHeader" id="get()-detail">
+		get()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			mixed <a href="yii_caching_cache.html#get()-detail">get</a>( $key )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$key</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">A key identifying the cached value. This can be a simple string or
+a complex data structure consisting of factors representing the key.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">the value stored in cache, false if the value is not in the cache, expired,
+or the dependency associated with the cached data has changed.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Retrieves a value from cache with a specified key.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="exists()-detail">
+		exists()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_caching_cache.html#exists()-detail">exists</a>( $key )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$key</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">A key identifying the cached value. This can be a simple string or
+a complex data structure consisting of factors representing the key.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">true if a value exists in cache, false if the value is not in the cache or expired.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Checks whether a specified key exists in the cache.</strong></p>
+	<p>This can be faster than getting the value from the cache if the data is big.
+In case a cache does not support this feature natively, this method will try to simulate it
+but has no performance improvement over getting it.
+Note that this method does not check whether the dependency associated
+with the cached data, if there is any, has changed. So a call to <a href="yii_caching_cache.html#get()-detail">get()</a>
+may return false while exists returns true.</p>
+
+	
+
+	<div class="detailHeader" id="mget()-detail">
+		mget()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			array <a href="yii_caching_cache.html#mget()-detail">mget</a>( $keys )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$keys</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">List of keys identifying the cached values</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">list of cached values corresponding to the specified keys. The array
+is returned in terms of (key, value) pairs.
+If a value is not cached or expired, the corresponding array value will be false.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Retrieves multiple values from cache with the specified keys.</strong></p>
+	<p>Some caches (such as memcache, apc) allow retrieving multiple cached values at the same time,
+which may improve the performance. In case a cache does not support this feature natively,
+this method will try to simulate it.</p>
+
+	
+
+	<div class="detailHeader" id="set()-detail">
+		set()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_caching_cache.html#set()-detail">set</a>( $key, $value, $expire = 0, $dependency = null )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$key</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">A key identifying the value to be cached. This can be a simple string or
+a complex data structure consisting of factors representing the key.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$value</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">The value to be cached</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$expire</td>
+				  <td class="paramTypeCol">integer</td>
+				  <td class="paramDescCol">The number of seconds in which the cached value will expire. 0 means never expire.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$dependency</td>
+				  <td class="paramTypeCol"><a href="yii_caching_dependency.html">yii\caching\Dependency</a></td>
+				  <td class="paramDescCol">Dependency of the cached item. If the dependency changes,
+the corresponding value in the cache will be invalidated when it is fetched via <a href="yii_caching_cache.html#get()-detail">get()</a>.
+This parameter is ignored if <a href="yii_caching_cache.html#$serializer-detail">$serializer</a> is false.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether the value is successfully stored into cache</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Stores a value identified by a key into cache.</strong></p>
+	<p>If the cache already contains such a key, the existing value and
+expiration time will be replaced with the new ones, respectively.</p>
+
+	
+
+	<div class="detailHeader" id="mset()-detail">
+		mset()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_caching_cache.html#mset()-detail">mset</a>( $items, $expire = 0, $dependency = null )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$items</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The items to be cached, as key-value pairs.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$expire</td>
+				  <td class="paramTypeCol">integer</td>
+				  <td class="paramDescCol">Default number of seconds in which the cached values will expire. 0 means never expire.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$dependency</td>
+				  <td class="paramTypeCol"><a href="yii_caching_dependency.html">yii\caching\Dependency</a></td>
+				  <td class="paramDescCol">Dependency of the cached items. If the dependency changes,
+the corresponding values in the cache will be invalidated when it is fetched via <a href="yii_caching_cache.html#get()-detail">get()</a>.
+This parameter is ignored if <a href="yii_caching_cache.html#$serializer-detail">$serializer</a> is false.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether the items are successfully stored into cache</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Stores multiple items in cache. Each item contains a value identified by a key.</strong></p>
+	<p>If the cache already contains such a key, the existing value and
+expiration time will be replaced with the new ones, respectively.</p>
+
+	
+
+	<div class="detailHeader" id="madd()-detail">
+		madd()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_caching_cache.html#madd()-detail">madd</a>( $items, $expire = 0, $dependency = null )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$items</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The items to be cached, as key-value pairs.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$expire</td>
+				  <td class="paramTypeCol">integer</td>
+				  <td class="paramDescCol">Default number of seconds in which the cached values will expire. 0 means never expire.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$dependency</td>
+				  <td class="paramTypeCol"><a href="yii_caching_dependency.html">yii\caching\Dependency</a></td>
+				  <td class="paramDescCol">Dependency of the cached items. If the dependency changes,
+the corresponding values in the cache will be invalidated when it is fetched via <a href="yii_caching_cache.html#get()-detail">get()</a>.
+This parameter is ignored if <a href="yii_caching_cache.html#$serializer-detail">$serializer</a> is false.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether the items are successfully stored into cache</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Stores multiple items in cache. Each item contains a value identified by a key.</strong></p>
+	<p>If the cache already contains such a key, the existing value and expiration time will be preserved.</p>
+
+	
+
+	<div class="detailHeader" id="add()-detail">
+		add()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_caching_cache.html#add()-detail">add</a>( $key, $value, $expire = 0, $dependency = null )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$key</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">A key identifying the value to be cached. This can be a simple string or
+a complex data structure consisting of factors representing the key.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$value</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">The value to be cached</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$expire</td>
+				  <td class="paramTypeCol">integer</td>
+				  <td class="paramDescCol">The number of seconds in which the cached value will expire. 0 means never expire.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$dependency</td>
+				  <td class="paramTypeCol"><a href="yii_caching_dependency.html">yii\caching\Dependency</a></td>
+				  <td class="paramDescCol">Dependency of the cached item. If the dependency changes,
+the corresponding value in the cache will be invalidated when it is fetched via <a href="yii_caching_cache.html#get()-detail">get()</a>.
+This parameter is ignored if <a href="yii_caching_cache.html#$serializer-detail">$serializer</a> is false.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether the value is successfully stored into cache</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Stores a value identified by a key into cache if the cache does not contain this key.</strong></p>
+	<p>Nothing will be done if the cache already contains the key.</p>
+
+	
+
+	<div class="detailHeader" id="delete()-detail">
+		delete()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_caching_cache.html#delete()-detail">delete</a>( $key )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$key</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">A key identifying the value to be deleted from cache. This can be a simple string or
+a complex data structure consisting of factors representing the key.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">if no error happens during deletion</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Deletes a value with the specified key from cache</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="flush()-detail">
+		flush()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_caching_cache.html#flush()-detail">flush</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether the flush operation was successful.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Deletes all values from cache.</strong></p>
+	<p>Be careful of performing this operation if the cache is shared among multiple applications.</p>
+
+	
+
+	<div class="detailHeader" id="getValue()-detail">
+		getValue()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string|boolean <a href="yii_caching_cache.html#getValue()-detail">getValue</a>( $key )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$key</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">A unique key identifying the cached value</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string|boolean</td>
+				  <td class="paramDescCol">the value stored in cache, false if the value is not in the cache or expired.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Retrieves a value from cache with a specified key.</strong></p>
+	<p>This method should be implemented by child classes to retrieve the data
+from specific cache storage.</p>
+
+	
+
+	<div class="detailHeader" id="setValue()-detail">
+		setValue()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_caching_cache.html#setValue()-detail">setValue</a>( $key, $value, $expire )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$key</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The key identifying the value to be cached</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$value</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The value to be cached</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$expire</td>
+				  <td class="paramTypeCol">integer</td>
+				  <td class="paramDescCol">The number of seconds in which the cached value will expire. 0 means never expire.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">true if the value is successfully stored into cache, false otherwise</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Stores a value identified by a key in cache.</strong></p>
+	<p>This method should be implemented by child classes to store the data
+in specific cache storage.</p>
+
+	
+
+	<div class="detailHeader" id="addValue()-detail">
+		addValue()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_caching_cache.html#addValue()-detail">addValue</a>( $key, $value, $expire )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$key</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The key identifying the value to be cached</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$value</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The value to be cached</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$expire</td>
+				  <td class="paramTypeCol">integer</td>
+				  <td class="paramDescCol">The number of seconds in which the cached value will expire. 0 means never expire.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">true if the value is successfully stored into cache, false otherwise</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Stores a value identified by a key into cache if the cache does not contain this key.</strong></p>
+	<p>This method should be implemented by child classes to store the data
+in specific cache storage.</p>
+
+	
+
+	<div class="detailHeader" id="deleteValue()-detail">
+		deleteValue()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_caching_cache.html#deleteValue()-detail">deleteValue</a>( $key )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$key</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The key of the value to be deleted</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">if no error happens during deletion</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Deletes a value with the specified key from cache
+This method should be implemented by child classes to delete the data from actual cache storage.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="flushValues()-detail">
+		flushValues()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_caching_cache.html#flushValues()-detail">flushValues</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether the flush operation was successful.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Deletes all values from cache.</strong></p>
+	<p>Child classes may implement this method to realize the flush operation.</p>
+
+	
+
+	<div class="detailHeader" id="getValues()-detail">
+		getValues()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			array <a href="yii_caching_cache.html#getValues()-detail">getValues</a>( $keys )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$keys</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">A list of keys identifying the cached values</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">a list of cached values indexed by the keys</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Retrieves multiple values from cache with the specified keys.</strong></p>
+	<p>The default implementation calls <a href="yii_caching_cache.html#getValue()-detail">getValue()</a> multiple times to retrieve
+the cached values one by one. If the underlying cache storage supports multiget,
+this method should be overridden to exploit that feature.</p>
+
+	
+
+	<div class="detailHeader" id="setValues()-detail">
+		setValues()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			array <a href="yii_caching_cache.html#setValues()-detail">setValues</a>( $data, $expire )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$data</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">Array where key corresponds to cache key while value is the value stored</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$expire</td>
+				  <td class="paramTypeCol">integer</td>
+				  <td class="paramDescCol">The number of seconds in which the cached values will expire. 0 means never expire.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">array of failed keys</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Stores multiple key-value pairs in cache.</strong></p>
+	<p>The default implementation calls <a href="yii_caching_cache.html#setValue()-detail">setValue()</a> multiple times store values one by one. If the underlying cache
+storage supports multiset, this method should be overridden to exploit that feature.</p>
+
+	
+
+	<div class="detailHeader" id="addValues()-detail">
+		addValues()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			array <a href="yii_caching_cache.html#addValues()-detail">addValues</a>( $data, $expire )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$data</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">Array where key corresponds to cache key while value is the value stored</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$expire</td>
+				  <td class="paramTypeCol">integer</td>
+				  <td class="paramDescCol">The number of seconds in which the cached values will expire. 0 means never expire.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">array of failed keys</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Adds multiple key-value pairs to cache.</strong></p>
+	<p>The default implementation calls <a href="yii_caching_cache.html#addValue()-detail">addValue()</a> multiple times add values one by one. If the underlying cache
+storage supports multiadd, this method should be overridden to exploit that feature.</p>
+
+	
+
+	<div class="detailHeader" id="offsetExists()-detail">
+		offsetExists()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_caching_cache.html#offsetExists()-detail">offsetExists</a>( $key )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$key</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">A key identifying the cached value</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Returns whether there is a cache entry with a specified key.</strong></p>
+	<p>This method is required by the interface ArrayAccess.</p>
+
+	
+
+	<div class="detailHeader" id="offsetGet()-detail">
+		offsetGet()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			mixed <a href="yii_caching_cache.html#offsetGet()-detail">offsetGet</a>( $key )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$key</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">A key identifying the cached value</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">the value stored in cache, false if the value is not in the cache or expired.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Retrieves the value from cache with a specified key.</strong></p>
+	<p>This method is required by the interface ArrayAccess.</p>
+
+	
+
+	<div class="detailHeader" id="offsetSet()-detail">
+		offsetSet()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_caching_cache.html#offsetSet()-detail">offsetSet</a>( $key, $value )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$key</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The key identifying the value to be cached</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$value</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">The value to be cached</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Stores the value identified by a key into cache.</strong></p>
+	<p>If the cache already contains such a key, the existing value will be
+replaced with the new ones. To add expiration and dependencies, use the <a href="yii_caching_cache.html#set()-detail">set()</a> method.
+This method is required by the interface ArrayAccess.</p>
+
+	
+
+	<div class="detailHeader" id="offsetUnset()-detail">
+		offsetUnset()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_caching_cache.html#offsetUnset()-detail">offsetUnset</a>( $key )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$key</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The key of the value to be deleted</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Deletes the value with the specified key from cache
+This method is required by the interface ArrayAccess.</strong></p>
+	<p></p>
+
+	
+			</div><!-- end of content -->
+
+		<div id="apiFooter">
+			<p>&copy; 2008-2013 by <a href="http://www.yiisoft.com">Yii Software LLC</a></p>
+			<p>All Rights Reserved.</p>
+		</div><!-- end of footer -->
+
+<script type="text/javascript">
+/*<![CDATA[*/
+$("a.toggle").on('click', function() {
+	var $this = $(this);
+	if ($this.hasClass('properties-hidden')) {
+		$this.text($this.text().replace(/Show/,'Hide'));
+		$this.parents(".summary").find(".inherited").show();
+		$this.removeClass('properties-hidden');
+	} else {
+		$this.text($this.text().replace(/Hide/,'Show'));
+		$this.parents(".summary").find(".inherited").hide();
+		$this.addClass('properties-hidden');
+	}
+	return false;
+});
+/*
+$(".sourceCode a.show").toggle(function(){
+	$(this).text($(this).text().replace(/show/,'hide'));
+	$(this).parents(".sourceCode").find("div.code").show();
+},function(){
+	$(this).text($(this).text().replace(/hide/,'show'));
+	$(this).parents(".sourceCode").find("div.code").hide();
+});
+$("a.sourceLink").click(function(){
+	$(this).attr('target','_blank');
+});
+*/
+/*]]>*/
+</script>
+
+	</div><!-- end of page -->
+</body>
+</html>

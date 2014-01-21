@@ -1,0 +1,340 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="language" content="en" />
+<link href="./assets/4138e429/api.css" rel="stylesheet">
+<link href="./assets/4138e429/style.css" rel="stylesheet">
+<script src="./assets/a91b37a6/jquery.js"></script><title>Yii Framework 2.0 API Documentation</title>
+</head>
+
+<body>
+	<div id="apiPage">
+
+		<div id="apiHeader">
+			<a href="http://www.yiiframework.com">Yii Framework</a> v2.0.0-dev Class Reference
+		</div><!-- end of header -->
+
+		<div id="content">
+		<h1>Class yii\helpers\BaseStringHelper</h1>
+<div id="nav">
+	<a href="index.html">All Classes</a>
+				| <a href="#methods">Methods</a>
+			</div>
+
+<table class="summaryTable docClass">
+	<colgroup>
+		<col class="col-name" />
+		<col class="col-value" />
+	</colgroup>
+			<tr><th>Inheritance</th><td><a href="yii_helpers_basestringhelper.html">yii\helpers\BaseStringHelper</a></td></tr>
+						<tr><th>Subclasses</th><td><a href="yii_helpers_stringhelper.html">yii\helpers\StringHelper</a></td></tr>
+						<tr><th>Available since version</th><td>2.0</td></tr>
+		<tr>
+	  <th>Source Code</th>
+	  <td></td>
+	</tr>
+</table>
+
+<div id="classDescription">
+	<strong>BaseStringHelper provides concrete implementation for <a href="yii_helpers_stringhelper.html">yii\helpers\StringHelper</a>.</strong>
+	<p>Do not use BaseStringHelper. Use <a href="yii_helpers_stringhelper.html">yii\helpers\StringHelper</a> instead.</p>
+</div>
+
+<a name="properties"></a>
+
+<a name="methods"></a>
+
+<div class="summary docMethod">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr id="byteLength()">
+		<td><a href="yii_helpers_basestringhelper.html#byteLength()-detail">byteLength()</a></td>
+		<td>Returns the number of bytes in the given string.</td>
+		<td><a href="yii_helpers_basestringhelper.html">yii\helpers\BaseStringHelper</a></td>
+	</tr>
+			<tr id="byteSubstr()">
+		<td><a href="yii_helpers_basestringhelper.html#byteSubstr()-detail">byteSubstr()</a></td>
+		<td>Returns the portion of string specified by the start and length parameters.</td>
+		<td><a href="yii_helpers_basestringhelper.html">yii\helpers\BaseStringHelper</a></td>
+	</tr>
+			<tr id="basename()">
+		<td><a href="yii_helpers_basestringhelper.html#basename()-detail">basename()</a></td>
+		<td>Returns the trailing name component of a path.</td>
+		<td><a href="yii_helpers_basestringhelper.html">yii\helpers\BaseStringHelper</a></td>
+	</tr>
+			<tr id="dirname()">
+		<td><a href="yii_helpers_basestringhelper.html#dirname()-detail">dirname()</a></td>
+		<td>Returns parent directory's path.</td>
+		<td><a href="yii_helpers_basestringhelper.html">yii\helpers\BaseStringHelper</a></td>
+	</tr>
+			<tr id="diff()">
+		<td><a href="yii_helpers_basestringhelper.html#diff()-detail">diff()</a></td>
+		<td>Compares two strings or string arrays, and return their differences.</td>
+		<td><a href="yii_helpers_basestringhelper.html">yii\helpers\BaseStringHelper</a></td>
+	</tr>
+	</table>
+</div>
+<a name="events"></a>
+
+<a name="constants"></a>
+
+<h2>Method Details</h2>
+
+
+	<div class="detailHeader" id="byteLength()-detail">
+		byteLength()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			integer <a href="yii_helpers_basestringhelper.html#byteLength()-detail">byteLength</a>( $string )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$string</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The string being measured for length</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">integer</td>
+				  <td class="paramDescCol">the number of bytes in the given string.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the number of bytes in the given string.</strong></p>
+	<p>This method ensures the string is treated as a byte array by using <code>mb_strlen()</code>.</p>
+
+	
+
+	<div class="detailHeader" id="byteSubstr()-detail">
+		byteSubstr()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basestringhelper.html#byteSubstr()-detail">byteSubstr</a>( $string, $start, $length )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$string</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The input string. Must be one character or longer.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$start</td>
+				  <td class="paramTypeCol">integer</td>
+				  <td class="paramDescCol">The starting position</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$length</td>
+				  <td class="paramTypeCol">integer</td>
+				  <td class="paramDescCol">The desired portion length</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the extracted part of string, or FALSE on failure or an empty string.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the portion of string specified by the start and length parameters.</strong></p>
+	<p>This method ensures the string is treated as a byte array by using <code>mb_substr()</code>.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li>http://www.php.net/manual/en/function.substr.php</li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="basename()-detail">
+		basename()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basestringhelper.html#basename()-detail">basename</a>( $path, $suffix = '' )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$path</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">A path string.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$suffix</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">If the name component ends in suffix this will also be cut off.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the trailing name component of the given path.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the trailing name component of a path.</strong></p>
+	<p>This method is similar to the php function <code>basename()</code> except that it will
+treat both \ and / as directory separators, independent of the operating system.
+This method was mainly created to work on php namespaces. When working with real
+file paths, php's <code>basename()</code> should work fine for you.
+Note: this method is not aware of the actual filesystem, or path components such as "..".</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li>http://www.php.net/manual/en/function.basename.php</li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="dirname()-detail">
+		dirname()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basestringhelper.html#dirname()-detail">dirname</a>( $path )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$path</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">A path string.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the parent directory's path.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns parent directory's path.</strong></p>
+	<p>This method is similar to <code>dirname()</code> except that it will treat
+both \ and / as directory separators, independent of the operating system.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li>http://www.php.net/manual/en/function.basename.php</li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="diff()-detail">
+		diff()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string|array <a href="yii_helpers_basestringhelper.html#diff()-detail">diff</a>( $lines1, $lines2, $format = 'inline' )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$lines1</td>
+				  <td class="paramTypeCol">string|array</td>
+				  <td class="paramDescCol">The first string or string array to be compared. If it is a string,
+it will be converted into a string array by breaking at newlines.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$lines2</td>
+				  <td class="paramTypeCol">string|array</td>
+				  <td class="paramDescCol">The second string or string array to be compared. If it is a string,
+it will be converted into a string array by breaking at newlines.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$format</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The output format. It must be 'inline', 'unified', 'context', 'side-by-side', or 'array'.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string|array</td>
+				  <td class="paramDescCol">the comparison result. An array is returned if <code>$format</code> is 'array'. For all other
+formats, a string is returned.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_base_invalidparamexception.html">yii\base\InvalidParamException</a></td>
+				  <td class="paramDescCol">if the format is invalid.</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Compares two strings or string arrays, and return their differences.</strong></p>
+	<p>This is a wrapper of the <a href="https://packagist.org/packages/phpspec/php-diff">phpspec/php-diff</a> package.</p>
+
+	
+			</div><!-- end of content -->
+
+		<div id="apiFooter">
+			<p>&copy; 2008-2013 by <a href="http://www.yiisoft.com">Yii Software LLC</a></p>
+			<p>All Rights Reserved.</p>
+		</div><!-- end of footer -->
+
+<script type="text/javascript">
+/*<![CDATA[*/
+$("a.toggle").on('click', function() {
+	var $this = $(this);
+	if ($this.hasClass('properties-hidden')) {
+		$this.text($this.text().replace(/Show/,'Hide'));
+		$this.parents(".summary").find(".inherited").show();
+		$this.removeClass('properties-hidden');
+	} else {
+		$this.text($this.text().replace(/Hide/,'Show'));
+		$this.parents(".summary").find(".inherited").hide();
+		$this.addClass('properties-hidden');
+	}
+	return false;
+});
+/*
+$(".sourceCode a.show").toggle(function(){
+	$(this).text($(this).text().replace(/show/,'hide'));
+	$(this).parents(".sourceCode").find("div.code").show();
+},function(){
+	$(this).text($(this).text().replace(/hide/,'show'));
+	$(this).parents(".sourceCode").find("div.code").hide();
+});
+$("a.sourceLink").click(function(){
+	$(this).attr('target','_blank');
+});
+*/
+/*]]>*/
+</script>
+
+	</div><!-- end of page -->
+</body>
+</html>

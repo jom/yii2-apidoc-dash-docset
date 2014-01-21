@@ -1,0 +1,300 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="language" content="en" />
+<link href="./assets/4138e429/api.css" rel="stylesheet">
+<link href="./assets/4138e429/style.css" rel="stylesheet">
+<script src="./assets/a91b37a6/jquery.js"></script><title>Yii Framework 2.0 API Documentation</title>
+</head>
+
+<body>
+	<div id="apiPage">
+
+		<div id="apiHeader">
+			<a href="http://www.yiiframework.com">Yii Framework</a> v2.0.0-dev Class Reference
+		</div><!-- end of header -->
+
+		<div id="content">
+		<h1>Trait yii\base\ArrayAccessTrait</h1>
+<div id="nav">
+	<a href="index.html">All Classes</a>
+				| <a href="#methods">Methods</a>
+			</div>
+
+<table class="summaryTable docClass">
+	<colgroup>
+		<col class="col-name" />
+		<col class="col-value" />
+	</colgroup>
+								<tr><th>Implemented by</th><td><a href="yii_test_activefixture.html">yii\test\ActiveFixture</a>, <a href="yii_test_baseactivefixture.html">yii\test\BaseActiveFixture</a></td></tr>
+				<tr><th>Available since version</th><td>2.0</td></tr>
+		<tr>
+	  <th>Source Code</th>
+	  <td></td>
+	</tr>
+</table>
+
+<div id="classDescription">
+	<strong>ArrayAccessTrait provides the implementation for <code>IteratorAggregate</code>, <code>ArrayAccess</code> and <code>Countable</code>.</strong>
+	<p>Note that ArrayAccessTrait requires the class using it contain a property named <code>data</code> which should be an array.
+The data will be exposed by ArrayAccessTrait to support accessing the class object like an array.</p>
+</div>
+
+<a name="properties"></a>
+
+<a name="methods"></a>
+
+<div class="summary docMethod">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr id="getIterator()">
+		<td><a href="yii_base_arrayaccesstrait.html#getIterator()-detail">getIterator()</a></td>
+		<td>Returns an iterator for traversing the data.</td>
+		<td><a href="yii_base_arrayaccesstrait.html">yii\base\ArrayAccessTrait</a></td>
+	</tr>
+			<tr id="count()">
+		<td><a href="yii_base_arrayaccesstrait.html#count()-detail">count()</a></td>
+		<td>Returns the number of data items.</td>
+		<td><a href="yii_base_arrayaccesstrait.html">yii\base\ArrayAccessTrait</a></td>
+	</tr>
+			<tr id="offsetExists()">
+		<td><a href="yii_base_arrayaccesstrait.html#offsetExists()-detail">offsetExists()</a></td>
+		<td>This method is required by the interface ArrayAccess.</td>
+		<td><a href="yii_base_arrayaccesstrait.html">yii\base\ArrayAccessTrait</a></td>
+	</tr>
+			<tr id="offsetGet()">
+		<td><a href="yii_base_arrayaccesstrait.html#offsetGet()-detail">offsetGet()</a></td>
+		<td>This method is required by the interface ArrayAccess.</td>
+		<td><a href="yii_base_arrayaccesstrait.html">yii\base\ArrayAccessTrait</a></td>
+	</tr>
+			<tr id="offsetSet()">
+		<td><a href="yii_base_arrayaccesstrait.html#offsetSet()-detail">offsetSet()</a></td>
+		<td>This method is required by the interface ArrayAccess.</td>
+		<td><a href="yii_base_arrayaccesstrait.html">yii\base\ArrayAccessTrait</a></td>
+	</tr>
+			<tr id="offsetUnset()">
+		<td><a href="yii_base_arrayaccesstrait.html#offsetUnset()-detail">offsetUnset()</a></td>
+		<td>This method is required by the interface ArrayAccess.</td>
+		<td><a href="yii_base_arrayaccesstrait.html">yii\base\ArrayAccessTrait</a></td>
+	</tr>
+	</table>
+</div>
+<a name="events"></a>
+
+<a name="constants"></a>
+
+<h2>Method Details</h2>
+
+
+	<div class="detailHeader" id="getIterator()-detail">
+		getIterator()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			\ArrayIterator <a href="yii_base_arrayaccesstrait.html#getIterator()-detail">getIterator</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">\ArrayIterator</td>
+				  <td class="paramDescCol">an iterator for traversing the cookies in the collection.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns an iterator for traversing the data.</strong></p>
+	<p>This method is required by the SPL interface <code>IteratorAggregate</code>.
+It will be implicitly called when you use <code>foreach</code> to traverse the collection.</p>
+
+	
+
+	<div class="detailHeader" id="count()-detail">
+		count()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			integer <a href="yii_base_arrayaccesstrait.html#count()-detail">count</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">integer</td>
+				  <td class="paramDescCol">number of data elements.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the number of data items.</strong></p>
+	<p>This method is required by Countable interface.</p>
+
+	
+
+	<div class="detailHeader" id="offsetExists()-detail">
+		offsetExists()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_base_arrayaccesstrait.html#offsetExists()-detail">offsetExists</a>( $offset )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$offset</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">The offset to check on</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>This method is required by the interface ArrayAccess.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="offsetGet()-detail">
+		offsetGet()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			mixed <a href="yii_base_arrayaccesstrait.html#offsetGet()-detail">offsetGet</a>( $offset )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$offset</td>
+				  <td class="paramTypeCol">integer</td>
+				  <td class="paramDescCol">The offset to retrieve element.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">the element at the offset, null if no element is found at the offset</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>This method is required by the interface ArrayAccess.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="offsetSet()-detail">
+		offsetSet()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_base_arrayaccesstrait.html#offsetSet()-detail">offsetSet</a>( $offset, $item )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$offset</td>
+				  <td class="paramTypeCol">integer</td>
+				  <td class="paramDescCol">The offset to set element</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$item</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">The element value</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>This method is required by the interface ArrayAccess.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="offsetUnset()-detail">
+		offsetUnset()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_base_arrayaccesstrait.html#offsetUnset()-detail">offsetUnset</a>( $offset )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$offset</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">The offset to unset element</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>This method is required by the interface ArrayAccess.</strong></p>
+	<p></p>
+
+	
+		</div><!-- end of content -->
+
+		<div id="apiFooter">
+			<p>&copy; 2008-2013 by <a href="http://www.yiisoft.com">Yii Software LLC</a></p>
+			<p>All Rights Reserved.</p>
+		</div><!-- end of footer -->
+
+<script type="text/javascript">
+/*<![CDATA[*/
+$("a.toggle").on('click', function() {
+	var $this = $(this);
+	if ($this.hasClass('properties-hidden')) {
+		$this.text($this.text().replace(/Show/,'Hide'));
+		$this.parents(".summary").find(".inherited").show();
+		$this.removeClass('properties-hidden');
+	} else {
+		$this.text($this.text().replace(/Hide/,'Show'));
+		$this.parents(".summary").find(".inherited").hide();
+		$this.addClass('properties-hidden');
+	}
+	return false;
+});
+/*
+$(".sourceCode a.show").toggle(function(){
+	$(this).text($(this).text().replace(/show/,'hide'));
+	$(this).parents(".sourceCode").find("div.code").show();
+},function(){
+	$(this).text($(this).text().replace(/hide/,'show'));
+	$(this).parents(".sourceCode").find("div.code").hide();
+});
+$("a.sourceLink").click(function(){
+	$(this).attr('target','_blank');
+});
+*/
+/*]]>*/
+</script>
+
+	</div><!-- end of page -->
+</body>
+</html>

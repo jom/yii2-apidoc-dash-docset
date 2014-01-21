@@ -1,0 +1,541 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="language" content="en" />
+<link href="./assets/4138e429/api.css" rel="stylesheet">
+<link href="./assets/4138e429/style.css" rel="stylesheet">
+<script src="./assets/a91b37a6/jquery.js"></script><title>Yii Framework 2.0 API Documentation</title>
+</head>
+
+<body>
+	<div id="apiPage">
+
+		<div id="apiHeader">
+			<a href="http://www.yiiframework.com">Yii Framework</a> v2.0.0-dev Class Reference
+		</div><!-- end of header -->
+
+		<div id="content">
+		<h1>Class yii\grid\ActionColumn</h1>
+<div id="nav">
+	<a href="index.html">All Classes</a>
+			| <a href="#properties">Properties</a>
+				| <a href="#methods">Methods</a>
+			</div>
+
+<table class="summaryTable docClass">
+	<colgroup>
+		<col class="col-name" />
+		<col class="col-value" />
+	</colgroup>
+			<tr><th>Inheritance</th><td><a href="yii_grid_actioncolumn.html">yii\grid\ActionColumn</a> &raquo;
+<a href="yii_grid_column.html">yii\grid\Column</a> &raquo;
+<a href="yii_base_object.html">yii\base\Object</a></td></tr>
+				<tr><th>Implements</th><td><a href="yii_base_arrayable.html">yii\base\Arrayable</a></td></tr>
+								<tr><th>Available since version</th><td>2.0</td></tr>
+		<tr>
+	  <th>Source Code</th>
+	  <td></td>
+	</tr>
+</table>
+
+<div id="classDescription">
+	<strong>ActionColumn is a column for the <a href="yii_grid_gridview.html">yii\grid\GridView</a> widget that displays buttons for viewing and manipulating the items.</strong>
+	<p></p>
+</div>
+
+<a name="properties"></a>
+
+<div class="summary docProperty">
+<h2>Public Properties</h2>
+
+<p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-property" />
+	<col class="col-type" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Property</th><th>Type</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr class="inherited" id="$grid">
+		<td><a href="yii_grid_column.html#$grid-detail">$grid</a></td>
+		<td><a href="yii_grid_gridview.html">yii\grid\GridView</a></td>
+		<td>The grid view object that owns this column</td>
+		<td><a href="yii_grid_column.html">yii\grid\Column</a></td>
+	</tr>
+			<tr class="inherited" id="$header">
+		<td><a href="yii_grid_column.html#$header-detail">$header</a></td>
+		<td>string</td>
+		<td>The header cell content</td>
+		<td><a href="yii_grid_column.html">yii\grid\Column</a></td>
+	</tr>
+			<tr class="inherited" id="$footer">
+		<td><a href="yii_grid_column.html#$footer-detail">$footer</a></td>
+		<td>string</td>
+		<td>The footer cell content</td>
+		<td><a href="yii_grid_column.html">yii\grid\Column</a></td>
+	</tr>
+			<tr class="inherited" id="$content">
+		<td><a href="yii_grid_column.html#$content-detail">$content</a></td>
+		<td>callable</td>
+		<td></td>
+		<td><a href="yii_grid_column.html">yii\grid\Column</a></td>
+	</tr>
+			<tr class="inherited" id="$visible">
+		<td><a href="yii_grid_column.html#$visible-detail">$visible</a></td>
+		<td>boolean</td>
+		<td>Whether this column is visible</td>
+		<td><a href="yii_grid_column.html">yii\grid\Column</a></td>
+	</tr>
+			<tr class="inherited" id="$options">
+		<td><a href="yii_grid_column.html#$options-detail">$options</a></td>
+		<td></td>
+		<td></td>
+		<td><a href="yii_grid_column.html">yii\grid\Column</a></td>
+	</tr>
+			<tr class="inherited" id="$headerOptions">
+		<td><a href="yii_grid_column.html#$headerOptions-detail">$headerOptions</a></td>
+		<td></td>
+		<td></td>
+		<td><a href="yii_grid_column.html">yii\grid\Column</a></td>
+	</tr>
+			<tr class="inherited" id="$contentOptions">
+		<td><a href="yii_grid_column.html#$contentOptions-detail">$contentOptions</a></td>
+		<td>array|\Closure</td>
+		<td></td>
+		<td><a href="yii_grid_column.html">yii\grid\Column</a></td>
+	</tr>
+			<tr class="inherited" id="$footerOptions">
+		<td><a href="yii_grid_column.html#$footerOptions-detail">$footerOptions</a></td>
+		<td></td>
+		<td></td>
+		<td><a href="yii_grid_column.html">yii\grid\Column</a></td>
+	</tr>
+			<tr class="inherited" id="$filterOptions">
+		<td><a href="yii_grid_column.html#$filterOptions-detail">$filterOptions</a></td>
+		<td>array</td>
+		<td>The HTML attributes for the filter cell tag</td>
+		<td><a href="yii_grid_column.html">yii\grid\Column</a></td>
+	</tr>
+			<tr id="$controller">
+		<td><a href="yii_grid_actioncolumn.html#$controller-detail">$controller</a></td>
+		<td>string</td>
+		<td>The ID of the controller that should handle the actions specified here</td>
+		<td><a href="yii_grid_actioncolumn.html">yii\grid\ActionColumn</a></td>
+	</tr>
+			<tr id="$template">
+		<td><a href="yii_grid_actioncolumn.html#$template-detail">$template</a></td>
+		<td>string</td>
+		<td>The template used for composing each cell in the action column</td>
+		<td><a href="yii_grid_actioncolumn.html">yii\grid\ActionColumn</a></td>
+	</tr>
+			<tr id="$buttons">
+		<td><a href="yii_grid_actioncolumn.html#$buttons-detail">$buttons</a></td>
+		<td>array</td>
+		<td>Button rendering callbacks</td>
+		<td><a href="yii_grid_actioncolumn.html">yii\grid\ActionColumn</a></td>
+	</tr>
+			<tr id="$urlCreator">
+		<td><a href="yii_grid_actioncolumn.html#$urlCreator-detail">$urlCreator</a></td>
+		<td>callback</td>
+		<td>A callback that creates a button URL using the specified model information</td>
+		<td><a href="yii_grid_actioncolumn.html">yii\grid\ActionColumn</a></td>
+	</tr>
+	</table>
+</div>
+<a name="methods"></a>
+
+<div class="summary docMethod">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr class="inherited" id="className()">
+		<td><a href="yii_base_object.html#className()-detail">className()</a></td>
+		<td></td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__construct()">
+		<td><a href="yii_base_object.html#__construct()-detail">__construct()</a></td>
+		<td>Constructor.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr id="init()">
+		<td><a href="yii_grid_actioncolumn.html#init()-detail">init()</a></td>
+		<td></td>
+		<td><a href="yii_grid_actioncolumn.html">yii\grid\ActionColumn</a></td>
+	</tr>
+			<tr class="inherited" id="__get()">
+		<td><a href="yii_base_object.html#__get()-detail">__get()</a></td>
+		<td>Returns the value of an object property.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__set()">
+		<td><a href="yii_base_object.html#__set()-detail">__set()</a></td>
+		<td>Sets value of an object property.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__isset()">
+		<td><a href="yii_base_object.html#__isset()-detail">__isset()</a></td>
+		<td>Checks if the named property is set (not null).</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__unset()">
+		<td><a href="yii_base_object.html#__unset()-detail">__unset()</a></td>
+		<td>Sets an object property to null.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__call()">
+		<td><a href="yii_base_object.html#__call()-detail">__call()</a></td>
+		<td>Calls the named method which is not a class method.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="hasProperty()">
+		<td><a href="yii_base_object.html#hasProperty()-detail">hasProperty()</a></td>
+		<td>Returns a value indicating whether a property is defined.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="canGetProperty()">
+		<td><a href="yii_base_object.html#canGetProperty()-detail">canGetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be read.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="canSetProperty()">
+		<td><a href="yii_base_object.html#canSetProperty()-detail">canSetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be set.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="hasMethod()">
+		<td><a href="yii_base_object.html#hasMethod()-detail">hasMethod()</a></td>
+		<td>Returns a value indicating whether a method is defined.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="toArray()">
+		<td><a href="yii_base_object.html#toArray()-detail">toArray()</a></td>
+		<td>Converts the object into an array.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="renderHeaderCell()">
+		<td><a href="yii_grid_column.html#renderHeaderCell()-detail">renderHeaderCell()</a></td>
+		<td>Renders the header cell.</td>
+		<td><a href="yii_grid_column.html">yii\grid\Column</a></td>
+	</tr>
+			<tr class="inherited" id="renderFooterCell()">
+		<td><a href="yii_grid_column.html#renderFooterCell()-detail">renderFooterCell()</a></td>
+		<td>Renders the footer cell.</td>
+		<td><a href="yii_grid_column.html">yii\grid\Column</a></td>
+	</tr>
+			<tr class="inherited" id="renderDataCell()">
+		<td><a href="yii_grid_column.html#renderDataCell()-detail">renderDataCell()</a></td>
+		<td>Renders a data cell.</td>
+		<td><a href="yii_grid_column.html">yii\grid\Column</a></td>
+	</tr>
+			<tr class="inherited" id="renderFilterCell()">
+		<td><a href="yii_grid_column.html#renderFilterCell()-detail">renderFilterCell()</a></td>
+		<td>Renders the filter cell.</td>
+		<td><a href="yii_grid_column.html">yii\grid\Column</a></td>
+	</tr>
+								<tr id="createUrl()">
+		<td><a href="yii_grid_actioncolumn.html#createUrl()-detail">createUrl()</a></td>
+		<td>Creates a URL for the given action and model.</td>
+		<td><a href="yii_grid_actioncolumn.html">yii\grid\ActionColumn</a></td>
+	</tr>
+	</table>
+</div>
+<div class="summary docMethod">
+<h2>Protected Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+																			<tr class="inherited" id="renderHeaderCellContent()">
+		<td><a href="yii_grid_column.html#renderHeaderCellContent()-detail">renderHeaderCellContent()</a></td>
+		<td>Renders the header cell content.</td>
+		<td><a href="yii_grid_column.html">yii\grid\Column</a></td>
+	</tr>
+			<tr class="inherited" id="renderFooterCellContent()">
+		<td><a href="yii_grid_column.html#renderFooterCellContent()-detail">renderFooterCellContent()</a></td>
+		<td>Renders the footer cell content.</td>
+		<td><a href="yii_grid_column.html">yii\grid\Column</a></td>
+	</tr>
+			<tr id="renderDataCellContent()">
+		<td><a href="yii_grid_actioncolumn.html#renderDataCellContent()-detail">renderDataCellContent()</a></td>
+		<td></td>
+		<td><a href="yii_grid_actioncolumn.html">yii\grid\ActionColumn</a></td>
+	</tr>
+			<tr class="inherited" id="renderFilterCellContent()">
+		<td><a href="yii_grid_column.html#renderFilterCellContent()-detail">renderFilterCellContent()</a></td>
+		<td>Renders the filter cell content.</td>
+		<td><a href="yii_grid_column.html">yii\grid\Column</a></td>
+	</tr>
+			<tr id="initDefaultButtons()">
+		<td><a href="yii_grid_actioncolumn.html#initDefaultButtons()-detail">initDefaultButtons()</a></td>
+		<td>Initializes the default button rendering callbacks</td>
+		<td><a href="yii_grid_actioncolumn.html">yii\grid\ActionColumn</a></td>
+	</tr>
+		</table>
+</div>
+<a name="events"></a>
+
+<a name="constants"></a>
+
+<h2>Property Details</h2>
+
+
+	<div class="detailHeader" id="$controller-detail">
+		$controller		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $controller = null	</div>
+
+	<p>The ID of the controller that should handle the actions specified here.
+If not set, it will use the currently active controller. This property is mainly used by
+<a href="yii_grid_actioncolumn.html#$urlCreator-detail">$urlCreator</a> to create URLs for different actions. The value of this property will be prefixed
+to each action name to form the route of the action.</p>
+
+	
+
+	<div class="detailHeader" id="$template-detail">
+		$template		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $template = '{view} {update} {delete}'	</div>
+
+	<p>The template used for composing each cell in the action column.
+Tokens enclosed within curly brackets are treated as controller action IDs (also called <em>button names</em>
+in the context of action column). They will be replaced by the corresponding button rendering callbacks
+specified in <a href="yii_grid_actioncolumn.html#$buttons-detail">$buttons</a>. For example, the token <code>{view}</code> will be replaced by the result of
+the callback <code>buttons['view']</code>. If a callback cannot be found, the token will be replaced with an empty string.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_grid_actioncolumn.html#$buttons-detail">$buttons</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="$buttons-detail">
+		$buttons		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array $buttons = []	</div>
+
+	<p>Button rendering callbacks. The array keys are the button names (without curly brackets),
+and the values are the corresponding button rendering callbacks. The callbacks should use the following
+signature:
+<code>php
+function ($url, $model) {
+    // return the button HTML code
+}</code>
+where <code>$url</code> is the URL that the column creates for the button, and <code>$model</code> is the model object
+being rendered for the current row.</p>
+
+	
+
+	<div class="detailHeader" id="$urlCreator-detail">
+		$urlCreator		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	callback $urlCreator = null	</div>
+
+	<p>A callback that creates a button URL using the specified model information.
+The signature of the callback should be the same as that of <a href="yii_grid_actioncolumn.html#createUrl()-detail">createUrl()</a>.
+If this property is not set, button URLs will be created using <a href="yii_grid_actioncolumn.html#createUrl()-detail">createUrl()</a>.</p>
+
+	
+<h2>Method Details</h2>
+
+
+	<div class="detailHeader" id="init()-detail">
+		init()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_grid_actioncolumn.html#init()-detail">init</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="renderDataCellContent()-detail">
+		renderDataCellContent()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_grid_actioncolumn.html#renderDataCellContent()-detail">renderDataCellContent</a>( $model, $key, $index )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$model</td>
+				  <td class="paramTypeCol"></td>
+				  <td class="paramDescCol"></td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$key</td>
+				  <td class="paramTypeCol"></td>
+				  <td class="paramDescCol"></td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$index</td>
+				  <td class="paramTypeCol"></td>
+				  <td class="paramDescCol"></td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="initDefaultButtons()-detail">
+		initDefaultButtons()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_grid_actioncolumn.html#initDefaultButtons()-detail">initDefaultButtons</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p>Initializes the default button rendering callbacks</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="createUrl()-detail">
+		createUrl()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_grid_actioncolumn.html#createUrl()-detail">createUrl</a>( $action, $model, $key, $index )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$action</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The button name (or action ID)</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$model</td>
+				  <td class="paramTypeCol"><a href="yii_db_activerecord.html">yii\db\ActiveRecord</a></td>
+				  <td class="paramDescCol">The data model</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$key</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">The key associated with the data model</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$index</td>
+				  <td class="paramTypeCol">integer</td>
+				  <td class="paramDescCol">The current row index</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the created URL</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Creates a URL for the given action and model.</strong></p>
+	<p>This method is called for each button and each row.</p>
+
+	
+			</div><!-- end of content -->
+
+		<div id="apiFooter">
+			<p>&copy; 2008-2013 by <a href="http://www.yiisoft.com">Yii Software LLC</a></p>
+			<p>All Rights Reserved.</p>
+		</div><!-- end of footer -->
+
+<script type="text/javascript">
+/*<![CDATA[*/
+$("a.toggle").on('click', function() {
+	var $this = $(this);
+	if ($this.hasClass('properties-hidden')) {
+		$this.text($this.text().replace(/Show/,'Hide'));
+		$this.parents(".summary").find(".inherited").show();
+		$this.removeClass('properties-hidden');
+	} else {
+		$this.text($this.text().replace(/Hide/,'Show'));
+		$this.parents(".summary").find(".inherited").hide();
+		$this.addClass('properties-hidden');
+	}
+	return false;
+});
+/*
+$(".sourceCode a.show").toggle(function(){
+	$(this).text($(this).text().replace(/show/,'hide'));
+	$(this).parents(".sourceCode").find("div.code").show();
+},function(){
+	$(this).text($(this).text().replace(/hide/,'show'));
+	$(this).parents(".sourceCode").find("div.code").hide();
+});
+$("a.sourceLink").click(function(){
+	$(this).attr('target','_blank');
+});
+*/
+/*]]>*/
+</script>
+
+	</div><!-- end of page -->
+</body>
+</html>

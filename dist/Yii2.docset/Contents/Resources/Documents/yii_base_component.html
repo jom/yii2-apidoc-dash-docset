@@ -1,0 +1,1135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="language" content="en" />
+<link href="./assets/4138e429/api.css" rel="stylesheet">
+<link href="./assets/4138e429/style.css" rel="stylesheet">
+<script src="./assets/a91b37a6/jquery.js"></script><title>Yii Framework 2.0 API Documentation</title>
+</head>
+
+<body>
+	<div id="apiPage">
+
+		<div id="apiHeader">
+			<a href="http://www.yiiframework.com">Yii Framework</a> v2.0.0-dev Class Reference
+		</div><!-- end of header -->
+
+		<div id="content">
+		<h1>Class yii\base\Component</h1>
+<div id="nav">
+	<a href="index.html">All Classes</a>
+			| <a href="#properties">Properties</a>
+				| <a href="#methods">Methods</a>
+			</div>
+
+<table class="summaryTable docClass">
+	<colgroup>
+		<col class="col-name" />
+		<col class="col-value" />
+	</colgroup>
+			<tr><th>Inheritance</th><td><a href="yii_base_component.html">yii\base\Component</a> &raquo;
+<a href="yii_base_object.html">yii\base\Object</a></td></tr>
+				<tr><th>Implements</th><td><a href="yii_base_arrayable.html">yii\base\Arrayable</a></td></tr>
+					<tr><th>Subclasses</th><td><a href="yii_base_action.html">yii\base\Action</a>, <a href="yii_base_application.html">yii\base\Application</a>, <a href="yii_base_controller.html">yii\base\Controller</a>, <a href="yii_base_errorhandler.html">yii\base\ErrorHandler</a>, <a href="yii_base_formatter.html">yii\base\Formatter</a>, <a href="yii_base_inlineaction.html">yii\base\InlineAction</a>, <a href="yii_base_model.html">yii\base\Model</a>, <a href="yii_base_module.html">yii\base\Module</a>, <a href="yii_base_request.html">yii\base\Request</a>, <a href="yii_base_response.html">yii\base\Response</a>, <a href="yii_base_theme.html">yii\base\Theme</a>, <a href="yii_base_view.html">yii\base\View</a>, <a href="yii_base_viewrenderer.html">yii\base\ViewRenderer</a>, <a href="yii_base_widget.html">yii\base\Widget</a>, <a href="yii_bootstrap_alert.html">yii\bootstrap\Alert</a>, <a href="yii_bootstrap_button.html">yii\bootstrap\Button</a>, <a href="yii_bootstrap_buttondropdown.html">yii\bootstrap\ButtonDropdown</a>, <a href="yii_bootstrap_buttongroup.html">yii\bootstrap\ButtonGroup</a>, <a href="yii_bootstrap_carousel.html">yii\bootstrap\Carousel</a>, <a href="yii_bootstrap_collapse.html">yii\bootstrap\Collapse</a>, <a href="yii_bootstrap_dropdown.html">yii\bootstrap\Dropdown</a>, <a href="yii_bootstrap_modal.html">yii\bootstrap\Modal</a>, <a href="yii_bootstrap_nav.html">yii\bootstrap\Nav</a>, <a href="yii_bootstrap_navbar.html">yii\bootstrap\NavBar</a>, <a href="yii_bootstrap_progress.html">yii\bootstrap\Progress</a>, <a href="yii_bootstrap_tabs.html">yii\bootstrap\Tabs</a>, <a href="yii_bootstrap_widget.html">yii\bootstrap\Widget</a>, <a href="yii_caching_apccache.html">yii\caching\ApcCache</a>, <a href="yii_caching_cache.html">yii\caching\Cache</a>, <a href="yii_caching_dbcache.html">yii\caching\DbCache</a>, <a href="yii_caching_dummycache.html">yii\caching\DummyCache</a>, <a href="yii_caching_filecache.html">yii\caching\FileCache</a>, <a href="yii_caching_memcache.html">yii\caching\MemCache</a>, <a href="yii_caching_wincache.html">yii\caching\WinCache</a>, <a href="yii_caching_xcache.html">yii\caching\XCache</a>, <a href="yii_caching_zenddatacache.html">yii\caching\ZendDataCache</a>, <a href="yii_captcha_captcha.html">yii\captcha\Captcha</a>, <a href="yii_captcha_captchaaction.html">yii\captcha\CaptchaAction</a>, <a href="yii_captcha_captchavalidator.html">yii\captcha\CaptchaValidator</a>, <a href="yii_console_application.html">yii\console\Application</a>, <a href="yii_console_controller.html">yii\console\Controller</a>, <a href="yii_console_request.html">yii\console\Request</a>, <a href="yii_console_response.html">yii\console\Response</a>, <a href="yii_console_controllers_assetcontroller.html">yii\console\controllers\AssetController</a>, <a href="yii_console_controllers_cachecontroller.html">yii\console\controllers\CacheController</a>, <a href="yii_console_controllers_fixturecontroller.html">yii\console\controllers\FixtureController</a>, <a href="yii_console_controllers_helpcontroller.html">yii\console\controllers\HelpController</a>, <a href="yii_console_controllers_messagecontroller.html">yii\console\controllers\MessageController</a>, <a href="yii_console_controllers_migratecontroller.html">yii\console\controllers\MigrateController</a>, <a href="yii_data_activedataprovider.html">yii\data\ActiveDataProvider</a>, <a href="yii_data_arraydataprovider.html">yii\data\ArrayDataProvider</a>, <a href="yii_data_basedataprovider.html">yii\data\BaseDataProvider</a>, <a href="yii_data_modelserializer.html">yii\data\ModelSerializer</a>, <a href="yii_data_sqldataprovider.html">yii\data\SqlDataProvider</a>, <a href="yii_db_activequery.html">yii\db\ActiveQuery</a>, <a href="yii_db_activerecord.html">yii\db\ActiveRecord</a>, <a href="yii_db_activerelation.html">yii\db\ActiveRelation</a>, <a href="yii_db_baseactiverecord.html">yii\db\BaseActiveRecord</a>, <a href="yii_db_command.html">yii\db\Command</a>, <a href="yii_db_connection.html">yii\db\Connection</a>, <a href="yii_db_migration.html">yii\db\Migration</a>, <a href="yii_db_query.html">yii\db\Query</a>, <a href="yii_debug_logtarget.html">yii\debug\LogTarget</a>, <a href="yii_debug_module.html">yii\debug\Module</a>, <a href="yii_debug_panel.html">yii\debug\Panel</a>, <a href="yii_debug_components_search_filter.html">yii\debug\components\search\Filter</a>, <a href="yii_debug_components_search_matches_base.html">yii\debug\components\search\matches\Base</a>, <a href="yii_debug_components_search_matches_exact.html">yii\debug\components\search\matches\Exact</a>, <a href="yii_debug_components_search_matches_greater.html">yii\debug\components\search\matches\Greater</a>, <a href="yii_debug_components_search_matches_lower.html">yii\debug\components\search\matches\Lower</a>, <a href="yii_debug_controllers_defaultcontroller.html">yii\debug\controllers\DefaultController</a>, <a href="yii_debug_models_search_base.html">yii\debug\models\search\Base</a>, <a href="yii_debug_models_search_db.html">yii\debug\models\search\Db</a>, <a href="yii_debug_models_search_debug.html">yii\debug\models\search\Debug</a>, <a href="yii_debug_models_search_log.html">yii\debug\models\search\Log</a>, <a href="yii_debug_models_search_profile.html">yii\debug\models\search\Profile</a>, <a href="yii_debug_panels_configpanel.html">yii\debug\panels\ConfigPanel</a>, <a href="yii_debug_panels_dbpanel.html">yii\debug\panels\DbPanel</a>, <a href="yii_debug_panels_logpanel.html">yii\debug\panels\LogPanel</a>, <a href="yii_debug_panels_profilingpanel.html">yii\debug\panels\ProfilingPanel</a>, <a href="yii_debug_panels_requestpanel.html">yii\debug\panels\RequestPanel</a>, <a href="yii_gii_generator.html">yii\gii\Generator</a>, <a href="yii_gii_module.html">yii\gii\Module</a>, <a href="yii_gii_components_activefield.html">yii\gii\components\ActiveField</a>, <a href="yii_gii_controllers_defaultcontroller.html">yii\gii\controllers\DefaultController</a>, <a href="yii_gii_generators_controller_generator.html">yii\gii\generators\controller\Generator</a>, <a href="yii_gii_generators_crud_generator.html">yii\gii\generators\crud\Generator</a>, <a href="yii_gii_generators_form_generator.html">yii\gii\generators\form\Generator</a>, <a href="yii_gii_generators_model_generator.html">yii\gii\generators\model\Generator</a>, <a href="yii_gii_generators_module_generator.html">yii\gii\generators\module\Generator</a>, <a href="yii_grid_gridview.html">yii\grid\GridView</a>, <a href="yii_i18n_dbmessagesource.html">yii\i18n\DbMessageSource</a>, <a href="yii_i18n_formatter.html">yii\i18n\Formatter</a>, <a href="yii_i18n_gettextfile.html">yii\i18n\GettextFile</a>, <a href="yii_i18n_gettextmessagesource.html">yii\i18n\GettextMessageSource</a>, <a href="yii_i18n_gettextmofile.html">yii\i18n\GettextMoFile</a>, <a href="yii_i18n_gettextpofile.html">yii\i18n\GettextPoFile</a>, <a href="yii_i18n_i18n.html">yii\i18n\I18N</a>, <a href="yii_i18n_messageformatter.html">yii\i18n\MessageFormatter</a>, <a href="yii_i18n_messagesource.html">yii\i18n\MessageSource</a>, <a href="yii_i18n_phpmessagesource.html">yii\i18n\PhpMessageSource</a>, <a href="yii_jui_accordion.html">yii\jui\Accordion</a>, <a href="yii_jui_autocomplete.html">yii\jui\AutoComplete</a>, <a href="yii_jui_datepicker.html">yii\jui\DatePicker</a>, <a href="yii_jui_dialog.html">yii\jui\Dialog</a>, <a href="yii_jui_draggable.html">yii\jui\Draggable</a>, <a href="yii_jui_droppable.html">yii\jui\Droppable</a>, <a href="yii_jui_inputwidget.html">yii\jui\InputWidget</a>, <a href="yii_jui_menu.html">yii\jui\Menu</a>, <a href="yii_jui_progressbar.html">yii\jui\ProgressBar</a>, <a href="yii_jui_resizable.html">yii\jui\Resizable</a>, <a href="yii_jui_selectable.html">yii\jui\Selectable</a>, <a href="yii_jui_slider.html">yii\jui\Slider</a>, <a href="yii_jui_sliderinput.html">yii\jui\SliderInput</a>, <a href="yii_jui_sortable.html">yii\jui\Sortable</a>, <a href="yii_jui_spinner.html">yii\jui\Spinner</a>, <a href="yii_jui_tabs.html">yii\jui\Tabs</a>, <a href="yii_jui_widget.html">yii\jui\Widget</a>, <a href="yii_log_dbtarget.html">yii\log\DbTarget</a>, <a href="yii_log_emailtarget.html">yii\log\EmailTarget</a>, <a href="yii_log_filetarget.html">yii\log\FileTarget</a>, <a href="yii_log_logger.html">yii\log\Logger</a>, <a href="yii_log_target.html">yii\log\Target</a>, <a href="yii_mail_basemailer.html">yii\mail\BaseMailer</a>, <a href="yii_mutex_dbmutex.html">yii\mutex\DbMutex</a>, <a href="yii_mutex_filemutex.html">yii\mutex\FileMutex</a>, <a href="yii_mutex_mutex.html">yii\mutex\Mutex</a>, <a href="yii_mutex_mysqlmutex.html">yii\mutex\MysqlMutex</a>, <a href="yii_rbac_dbmanager.html">yii\rbac\DbManager</a>, <a href="yii_rbac_manager.html">yii\rbac\Manager</a>, <a href="yii_rbac_phpmanager.html">yii\rbac\PhpManager</a>, <a href="yii_redis_activequery.html">yii\redis\ActiveQuery</a>, <a href="yii_redis_activerecord.html">yii\redis\ActiveRecord</a>, <a href="yii_redis_activerelation.html">yii\redis\ActiveRelation</a>, <a href="yii_redis_cache.html">yii\redis\Cache</a>, <a href="yii_redis_connection.html">yii\redis\Connection</a>, <a href="yii_redis_session.html">yii\redis\Session</a>, <a href="yii_test_activefixture.html">yii\test\ActiveFixture</a>, <a href="yii_test_baseactivefixture.html">yii\test\BaseActiveFixture</a>, <a href="yii_test_dbfixture.html">yii\test\DbFixture</a>, <a href="yii_test_fixture.html">yii\test\Fixture</a>, <a href="yii_test_initdbfixture.html">yii\test\InitDbFixture</a>, <a href="yii_validators_booleanvalidator.html">yii\validators\BooleanValidator</a>, <a href="yii_validators_comparevalidator.html">yii\validators\CompareValidator</a>, <a href="yii_validators_datevalidator.html">yii\validators\DateValidator</a>, <a href="yii_validators_defaultvaluevalidator.html">yii\validators\DefaultValueValidator</a>, <a href="yii_validators_emailvalidator.html">yii\validators\EmailValidator</a>, <a href="yii_validators_existvalidator.html">yii\validators\ExistValidator</a>, <a href="yii_validators_filevalidator.html">yii\validators\FileValidator</a>, <a href="yii_validators_filtervalidator.html">yii\validators\FilterValidator</a>, <a href="yii_validators_imagevalidator.html">yii\validators\ImageValidator</a>, <a href="yii_validators_inlinevalidator.html">yii\validators\InlineValidator</a>, <a href="yii_validators_numbervalidator.html">yii\validators\NumberValidator</a>, <a href="yii_validators_rangevalidator.html">yii\validators\RangeValidator</a>, <a href="yii_validators_regularexpressionvalidator.html">yii\validators\RegularExpressionValidator</a>, <a href="yii_validators_requiredvalidator.html">yii\validators\RequiredValidator</a>, <a href="yii_validators_safevalidator.html">yii\validators\SafeValidator</a>, <a href="yii_validators_stringvalidator.html">yii\validators\StringValidator</a>, <a href="yii_validators_uniquevalidator.html">yii\validators\UniqueValidator</a>, <a href="yii_validators_urlvalidator.html">yii\validators\UrlValidator</a>, <a href="yii_validators_validator.html">yii\validators\Validator</a>, <a href="yii_web_accessrule.html">yii\web\AccessRule</a>, <a href="yii_web_application.html">yii\web\Application</a>, <a href="yii_web_assetconverter.html">yii\web\AssetConverter</a>, <a href="yii_web_assetmanager.html">yii\web\AssetManager</a>, <a href="yii_web_cachesession.html">yii\web\CacheSession</a>, <a href="yii_web_controller.html">yii\web\Controller</a>, <a href="yii_web_dbsession.html">yii\web\DbSession</a>, <a href="yii_web_erroraction.html">yii\web\ErrorAction</a>, <a href="yii_web_request.html">yii\web\Request</a>, <a href="yii_web_response.html">yii\web\Response</a>, <a href="yii_web_session.html">yii\web\Session</a>, <a href="yii_web_urlmanager.html">yii\web\UrlManager</a>, <a href="yii_web_user.html">yii\web\User</a>, <a href="yii_web_view.html">yii\web\View</a>, <a href="yii_web_xmlresponseformatter.html">yii\web\XmlResponseFormatter</a>, <a href="yii_widgets_activefield.html">yii\widgets\ActiveField</a>, <a href="yii_widgets_activeform.html">yii\widgets\ActiveForm</a>, <a href="yii_widgets_baselistview.html">yii\widgets\BaseListView</a>, <a href="yii_widgets_block.html">yii\widgets\Block</a>, <a href="yii_widgets_breadcrumbs.html">yii\widgets\Breadcrumbs</a>, <a href="yii_widgets_contentdecorator.html">yii\widgets\ContentDecorator</a>, <a href="yii_widgets_detailview.html">yii\widgets\DetailView</a>, <a href="yii_widgets_fragmentcache.html">yii\widgets\FragmentCache</a>, <a href="yii_widgets_inputwidget.html">yii\widgets\InputWidget</a>, <a href="yii_widgets_linkpager.html">yii\widgets\LinkPager</a>, <a href="yii_widgets_linksorter.html">yii\widgets\LinkSorter</a>, <a href="yii_widgets_listview.html">yii\widgets\ListView</a>, <a href="yii_widgets_maskedinput.html">yii\widgets\MaskedInput</a>, <a href="yii_widgets_menu.html">yii\widgets\Menu</a>, <a href="yii_widgets_spaceless.html">yii\widgets\Spaceless</a></td></tr>
+						<tr><th>Available since version</th><td>2.0</td></tr>
+		<tr>
+	  <th>Source Code</th>
+	  <td></td>
+	</tr>
+</table>
+
+<div id="classDescription">
+	<strong>Component is the base class that implements the <em>property</em>, <em>event</em> and <em>behavior</em> features.</strong>
+	<p></p>
+</div>
+
+<a name="properties"></a>
+
+<div class="summary docProperty">
+<h2>Public Properties</h2>
+
+<p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-property" />
+	<col class="col-type" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Property</th><th>Type</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr id="$behaviors">
+		<td><a href="yii_base_component.html#$behaviors-detail">$behaviors</a></td>
+		<td><a href="yii_base_behavior.html">yii\base\Behavior</a>[]</td>
+		<td>list of behaviors attached to this component</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+	</table>
+</div>
+<a name="methods"></a>
+
+<div class="summary docMethod">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr class="inherited" id="className()">
+		<td><a href="yii_base_object.html#className()-detail">className()</a></td>
+		<td></td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__construct()">
+		<td><a href="yii_base_object.html#__construct()-detail">__construct()</a></td>
+		<td>Constructor.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="init()">
+		<td><a href="yii_base_object.html#init()-detail">init()</a></td>
+		<td>Initializes the object.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr id="__get()">
+		<td><a href="yii_base_component.html#__get()-detail">__get()</a></td>
+		<td>Returns the value of a component property.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr id="__set()">
+		<td><a href="yii_base_component.html#__set()-detail">__set()</a></td>
+		<td>Sets the value of a component property.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr id="__isset()">
+		<td><a href="yii_base_component.html#__isset()-detail">__isset()</a></td>
+		<td>Checks if a property value is null.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr id="__unset()">
+		<td><a href="yii_base_component.html#__unset()-detail">__unset()</a></td>
+		<td>Sets a component property to be null.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr id="__call()">
+		<td><a href="yii_base_component.html#__call()-detail">__call()</a></td>
+		<td>Calls the named method which is not a class method.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr id="hasProperty()">
+		<td><a href="yii_base_component.html#hasProperty()-detail">hasProperty()</a></td>
+		<td>Returns a value indicating whether a property is defined for this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr id="canGetProperty()">
+		<td><a href="yii_base_component.html#canGetProperty()-detail">canGetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be read.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr id="canSetProperty()">
+		<td><a href="yii_base_component.html#canSetProperty()-detail">canSetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be set.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr id="hasMethod()">
+		<td><a href="yii_base_component.html#hasMethod()-detail">hasMethod()</a></td>
+		<td>Returns a value indicating whether a method is defined.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="toArray()">
+		<td><a href="yii_base_object.html#toArray()-detail">toArray()</a></td>
+		<td>Converts the object into an array.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr id="__clone()">
+		<td><a href="yii_base_component.html#__clone()-detail">__clone()</a></td>
+		<td>This method is called after the object is created by cloning an existing one.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr id="behaviors()">
+		<td><a href="yii_base_component.html#behaviors()-detail">behaviors()</a></td>
+		<td>Returns a list of behaviors that this component should behave as.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr id="hasEventHandlers()">
+		<td><a href="yii_base_component.html#hasEventHandlers()-detail">hasEventHandlers()</a></td>
+		<td>Returns a value indicating whether there is any handler attached to the named event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr id="on()">
+		<td><a href="yii_base_component.html#on()-detail">on()</a></td>
+		<td>Attaches an event handler to an event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr id="off()">
+		<td><a href="yii_base_component.html#off()-detail">off()</a></td>
+		<td>Detaches an existing event handler from this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr id="trigger()">
+		<td><a href="yii_base_component.html#trigger()-detail">trigger()</a></td>
+		<td>Triggers an event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr id="getBehavior()">
+		<td><a href="yii_base_component.html#getBehavior()-detail">getBehavior()</a></td>
+		<td>Returns the named behavior object.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr id="getBehaviors()">
+		<td><a href="yii_base_component.html#getBehaviors()-detail">getBehaviors()</a></td>
+		<td>Returns all behaviors attached to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr id="attachBehavior()">
+		<td><a href="yii_base_component.html#attachBehavior()-detail">attachBehavior()</a></td>
+		<td>Attaches a behavior to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr id="attachBehaviors()">
+		<td><a href="yii_base_component.html#attachBehaviors()-detail">attachBehaviors()</a></td>
+		<td>Attaches a list of behaviors to the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr id="detachBehavior()">
+		<td><a href="yii_base_component.html#detachBehavior()-detail">detachBehavior()</a></td>
+		<td>Detaches a behavior from the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr id="detachBehaviors()">
+		<td><a href="yii_base_component.html#detachBehaviors()-detail">detachBehaviors()</a></td>
+		<td>Detaches all behaviors from the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr id="ensureBehaviors()">
+		<td><a href="yii_base_component.html#ensureBehaviors()-detail">ensureBehaviors()</a></td>
+		<td>Makes sure that the behaviors declared in <a href="yii_base_component.html#behaviors()-detail">behaviors()</a> are attached to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+	</table>
+</div>
+<a name="events"></a>
+
+<a name="constants"></a>
+
+<h2>Property Details</h2>
+
+
+	<div class="detailHeader" id="$behaviors-detail">
+		$behaviors		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_base_behavior.html">yii\base\Behavior</a>[] <a href="yii_base_component.html#getBehaviors()-detail">getBehaviors</a>(  )	</div>
+
+	<p>list of behaviors attached to this component</p>
+
+	
+<h2>Method Details</h2>
+
+
+	<div class="detailHeader" id="__get()-detail">
+		__get()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			mixed <a href="yii_base_component.html#__get()-detail">__get</a>( $name )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The property name</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">the property value or the value of a behavior's property</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_base_unknownpropertyexception.html">yii\base\UnknownPropertyException</a></td>
+				  <td class="paramDescCol">if the property is not defined</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_base_invalidcallexception.html">yii\base\InvalidCallException</a></td>
+				  <td class="paramDescCol">if the property is write-only.</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Returns the value of a component property.</strong></p>
+	<p>This method will check in the following order and act accordingly:</p>
+
+<ul>
+<li>a property defined by a getter: return the getter result</li>
+<li>a property of a behavior: return the behavior property value</li>
+</ul>
+
+<p>Do not call this method directly as it is a PHP magic method that
+will be implicitly called when executing <code>$value = $component-&gt;property;</code>.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_base_component.html#__set()-detail">__set()</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="__set()-detail">
+		__set()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_base_component.html#__set()-detail">__set</a>( $name, $value )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The property name or the event name</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$value</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">The property value</td>
+				</tr>
+													<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_base_unknownpropertyexception.html">yii\base\UnknownPropertyException</a></td>
+				  <td class="paramDescCol">if the property is not defined</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_base_invalidcallexception.html">yii\base\InvalidCallException</a></td>
+				  <td class="paramDescCol">if the property is read-only.</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Sets the value of a component property.</strong></p>
+	<p>This method will check in the following order and act accordingly:</p>
+
+<ul>
+<li>a property defined by a setter: set the property value</li>
+<li>an event in the format of "on xyz": attach the handler to the event "xyz"</li>
+<li>a behavior in the format of "as xyz": attach the behavior named as "xyz"</li>
+<li>a property of a behavior: set the behavior property value</li>
+</ul>
+
+<p>Do not call this method directly as it is a PHP magic method that
+will be implicitly called when executing <code>$component-&gt;property = $value;</code>.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_base_component.html#__get()-detail">__get()</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="__isset()-detail">
+		__isset()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_base_component.html#__isset()-detail">__isset</a>( $name )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The property name or the event name</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether the named property is null</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Checks if a property value is null.</strong></p>
+	<p>This method will check in the following order and act accordingly:</p>
+
+<ul>
+<li>a property defined by a setter: return whether the property value is null</li>
+<li>a property of a behavior: return whether the property value is null</li>
+</ul>
+
+<p>Do not call this method directly as it is a PHP magic method that
+will be implicitly called when executing <code>isset($component-&gt;property)</code>.</p>
+
+	
+
+	<div class="detailHeader" id="__unset()-detail">
+		__unset()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_base_component.html#__unset()-detail">__unset</a>( $name )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The property name</td>
+				</tr>
+													<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_base_invalidcallexception.html">yii\base\InvalidCallException</a></td>
+				  <td class="paramDescCol">if the property is read only.</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Sets a component property to be null.</strong></p>
+	<p>This method will check in the following order and act accordingly:</p>
+
+<ul>
+<li>a property defined by a setter: set the property value to be null</li>
+<li>a property of a behavior: set the property value to be null</li>
+</ul>
+
+<p>Do not call this method directly as it is a PHP magic method that
+will be implicitly called when executing <code>unset($component-&gt;property)</code>.</p>
+
+	
+
+	<div class="detailHeader" id="__call()-detail">
+		__call()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			mixed <a href="yii_base_component.html#__call()-detail">__call</a>( $name, $params )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The method name</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$params</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">Method parameters</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">the method return value</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_base_unknownmethodexception.html">yii\base\UnknownMethodException</a></td>
+				  <td class="paramDescCol">when calling unknown method</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Calls the named method which is not a class method.</strong></p>
+	<p>This method will check if any attached behavior has
+the named method and will execute it if available.</p>
+
+<p>Do not call this method directly as it is a PHP magic method that
+will be implicitly called when an unknown method is being invoked.</p>
+
+	
+
+	<div class="detailHeader" id="hasProperty()-detail">
+		hasProperty()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_base_component.html#hasProperty()-detail">hasProperty</a>( $name, $checkVars = true, $checkBehaviors = true )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The property name</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$checkVars</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">Whether to treat member variables as properties</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$checkBehaviors</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">Whether to treat behaviors' properties as properties of this component</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether the property is defined</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns a value indicating whether a property is defined for this component.</strong></p>
+	<p><p>A property is defined if:</p>
+
+<ul>
+<li>the class has a getter or setter method associated with the specified name
+(in this case, property name is case-insensitive);</li>
+<li>the class has a member variable with the specified name (when <code>$checkVars</code> is true);</li>
+<li>an attached behavior has a property of the given name (when <code>$checkBehaviors</code> is true).</li>
+</ul></p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_base_component.html#canGetProperty()-detail">canGetProperty()</a></li>
+	<li><a href="yii_base_component.html#canSetProperty()-detail">canSetProperty()</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="canGetProperty()-detail">
+		canGetProperty()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_base_component.html#canGetProperty()-detail">canGetProperty</a>( $name, $checkVars = true, $checkBehaviors = true )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The property name</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$checkVars</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">Whether to treat member variables as properties</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$checkBehaviors</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">Whether to treat behaviors' properties as properties of this component</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether the property can be read</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns a value indicating whether a property can be read.</strong></p>
+	<p><p>A property can be read if:</p>
+
+<ul>
+<li>the class has a getter method associated with the specified name
+(in this case, property name is case-insensitive);</li>
+<li>the class has a member variable with the specified name (when <code>$checkVars</code> is true);</li>
+<li>an attached behavior has a readable property of the given name (when <code>$checkBehaviors</code> is true).</li>
+</ul></p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_base_component.html#canSetProperty()-detail">canSetProperty()</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="canSetProperty()-detail">
+		canSetProperty()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_base_component.html#canSetProperty()-detail">canSetProperty</a>( $name, $checkVars = true, $checkBehaviors = true )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The property name</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$checkVars</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">Whether to treat member variables as properties</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$checkBehaviors</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">Whether to treat behaviors' properties as properties of this component</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether the property can be written</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns a value indicating whether a property can be set.</strong></p>
+	<p><p>A property can be written if:</p>
+
+<ul>
+<li>the class has a setter method associated with the specified name
+(in this case, property name is case-insensitive);</li>
+<li>the class has a member variable with the specified name (when <code>$checkVars</code> is true);</li>
+<li>an attached behavior has a writable property of the given name (when <code>$checkBehaviors</code> is true).</li>
+</ul></p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_base_component.html#canGetProperty()-detail">canGetProperty()</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="hasMethod()-detail">
+		hasMethod()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_base_component.html#hasMethod()-detail">hasMethod</a>( $name, $checkBehaviors = true )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The property name</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$checkBehaviors</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">Whether to treat behaviors' methods as methods of this component</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether the property is defined</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns a value indicating whether a method is defined.</strong></p>
+	<p><p>A method is defined if:</p>
+
+<ul>
+<li>the class has a method with the specified name</li>
+<li>an attached behavior has a method with the given name (when <code>$checkBehaviors</code> is true).</li>
+</ul></p>
+
+	
+
+	<div class="detailHeader" id="__clone()-detail">
+		__clone()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_base_component.html#__clone()-detail">__clone</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p>This method is called after the object is created by cloning an existing one.</strong></p>
+	<p>It removes all behaviors because they are attached to the old object.</p>
+
+	
+
+	<div class="detailHeader" id="behaviors()-detail">
+		behaviors()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			array <a href="yii_base_component.html#behaviors()-detail">behaviors</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">the behavior configurations.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns a list of behaviors that this component should behave as.</strong></p>
+	<p>Child classes may override this method to specify the behaviors they want to behave as.</p>
+
+<p>The return value of this method should be an array of behavior objects or configurations
+indexed by behavior names. A behavior configuration can be either a string specifying
+the behavior class or an array of the following structure:</p>
+
+<pre><code>'behaviorName' =&gt; [
+    'class' =&gt; 'BehaviorClass',
+    'property1' =&gt; 'value1',
+    'property2' =&gt; 'value2',
+]
+</code></pre>
+
+<p>Note that a behavior class must extend from <a href="yii_base_behavior.html">yii\base\Behavior</a>. Behavior names can be strings
+or integers. If the former, they uniquely identify the behaviors. If the latter, the corresponding
+behaviors are anonymous and their properties and methods will NOT be made available via the component
+(however, the behaviors can still respond to the component's events).</p>
+
+<p>Behaviors declared in this method will be attached to the component automatically (on demand).</p>
+
+	
+
+	<div class="detailHeader" id="hasEventHandlers()-detail">
+		hasEventHandlers()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_base_component.html#hasEventHandlers()-detail">hasEventHandlers</a>( $name )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The event name</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether there is any handler attached to the event.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns a value indicating whether there is any handler attached to the named event.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="on()-detail">
+		on()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_base_component.html#on()-detail">on</a>( $name, $handler, $data = null )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The event name</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$handler</td>
+				  <td class="paramTypeCol">callback</td>
+				  <td class="paramDescCol">The event handler</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$data</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">The data to be passed to the event handler when the event is triggered.
+When the event handler is invoked, this data can be accessed via <a href="yii_base_event.html#$data-detail">yii\base\Event::$data</a>.</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Attaches an event handler to an event.</strong></p>
+	<p>The event handler must be a valid PHP callback. The followings are
+some examples:</p>
+
+<pre><code>function ($event) { ... }         // anonymous function
+[$object, 'handleClick']          // $object-&gt;handleClick()
+['Page', 'handleClick']           // Page::handleClick()
+'handleClick'                     // global function handleClick()
+</code></pre>
+
+<p>The event handler must be defined with the following signature,</p>
+
+<pre><code>function ($event)
+</code></pre>
+
+<p>where <code>$event</code> is an <a href="yii_base_event.html">yii\base\Event</a> object which includes parameters associated with the event.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_base_component.html#off()-detail">off()</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="off()-detail">
+		off()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_base_component.html#off()-detail">off</a>( $name, $handler = null )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Event name</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$handler</td>
+				  <td class="paramTypeCol">callback</td>
+				  <td class="paramDescCol">The event handler to be removed.
+If it is null, all handlers attached to the named event will be removed.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">if a handler is found and detached</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Detaches an existing event handler from this component.</strong></p>
+	<p>This method is the opposite of <a href="yii_base_component.html#on()-detail">on()</a>.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_base_component.html#on()-detail">on()</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="trigger()-detail">
+		trigger()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_base_component.html#trigger()-detail">trigger</a>( $name, \yii\base\Event $event = null )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The event name</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$event</td>
+				  <td class="paramTypeCol"><a href="yii_base_event.html">yii\base\Event</a></td>
+				  <td class="paramDescCol">The event parameter. If not set, a default <a href="yii_base_event.html">yii\base\Event</a> object will be created.</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Triggers an event.</strong></p>
+	<p>This method represents the happening of an event. It invokes
+all attached handlers for the event including class-level handlers.</p>
+
+	
+
+	<div class="detailHeader" id="getBehavior()-detail">
+		getBehavior()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			<a href="yii_base_behavior.html">yii\base\Behavior</a> <a href="yii_base_component.html#getBehavior()-detail">getBehavior</a>( $name )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The behavior name</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol"><a href="yii_base_behavior.html">yii\base\Behavior</a></td>
+				  <td class="paramDescCol">the behavior object, or null if the behavior does not exist</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the named behavior object.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getBehaviors()-detail">
+		getBehaviors()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			<a href="yii_base_behavior.html">yii\base\Behavior</a>[] <a href="yii_base_component.html#getBehaviors()-detail">getBehaviors</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol"><a href="yii_base_behavior.html">yii\base\Behavior</a>[]</td>
+				  <td class="paramDescCol">list of behaviors attached to this component</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns all behaviors attached to this component.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="attachBehavior()-detail">
+		attachBehavior()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			<a href="yii_base_behavior.html">yii\base\Behavior</a> <a href="yii_base_component.html#attachBehavior()-detail">attachBehavior</a>( $name, $behavior )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The name of the behavior.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$behavior</td>
+				  <td class="paramTypeCol">string|array|<a href="yii_base_behavior.html">yii\base\Behavior</a></td>
+				  <td class="paramDescCol">The behavior configuration. This can be one of the following:
+ - a <a href="yii_base_behavior.html">yii\base\Behavior</a> object
+ - a string specifying the behavior class
+ - an object configuration array that will be passed to <a href="yii_baseyii.html#createObject()-detail">Yii::createObject()</a> to create the behavior object.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol"><a href="yii_base_behavior.html">yii\base\Behavior</a></td>
+				  <td class="paramDescCol">the behavior object</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Attaches a behavior to this component.</strong></p>
+	<p>This method will create the behavior object based on the given
+configuration. After that, the behavior object will be attached to
+this component by calling the <a href="yii_base_behavior.html#attach()-detail">yii\base\Behavior::attach()</a> method.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_base_component.html#detachBehavior()-detail">detachBehavior()</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="attachBehaviors()-detail">
+		attachBehaviors()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_base_component.html#attachBehaviors()-detail">attachBehaviors</a>( $behaviors )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$behaviors</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">List of behaviors to be attached to the component</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Attaches a list of behaviors to the component.</strong></p>
+	<p>Each behavior is indexed by its name and should be a <a href="yii_base_behavior.html">yii\base\Behavior</a> object,
+a string specifying the behavior class, or an configuration array for creating the behavior.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_base_component.html#attachBehavior()-detail">attachBehavior()</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="detachBehavior()-detail">
+		detachBehavior()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			<a href="yii_base_behavior.html">yii\base\Behavior</a> <a href="yii_base_component.html#detachBehavior()-detail">detachBehavior</a>( $name )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The behavior's name.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol"><a href="yii_base_behavior.html">yii\base\Behavior</a></td>
+				  <td class="paramDescCol">the detached behavior. Null if the behavior does not exist.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Detaches a behavior from the component.</strong></p>
+	<p>The behavior's <a href="yii_base_behavior.html#detach()-detail">yii\base\Behavior::detach()</a> method will be invoked.</p>
+
+	
+
+	<div class="detailHeader" id="detachBehaviors()-detail">
+		detachBehaviors()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_base_component.html#detachBehaviors()-detail">detachBehaviors</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p>Detaches all behaviors from the component.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="ensureBehaviors()-detail">
+		ensureBehaviors()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_base_component.html#ensureBehaviors()-detail">ensureBehaviors</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p>Makes sure that the behaviors declared in <a href="yii_base_component.html#behaviors()-detail">behaviors()</a> are attached to this component.</strong></p>
+	<p></p>
+
+	
+			</div><!-- end of content -->
+
+		<div id="apiFooter">
+			<p>&copy; 2008-2013 by <a href="http://www.yiisoft.com">Yii Software LLC</a></p>
+			<p>All Rights Reserved.</p>
+		</div><!-- end of footer -->
+
+<script type="text/javascript">
+/*<![CDATA[*/
+$("a.toggle").on('click', function() {
+	var $this = $(this);
+	if ($this.hasClass('properties-hidden')) {
+		$this.text($this.text().replace(/Show/,'Hide'));
+		$this.parents(".summary").find(".inherited").show();
+		$this.removeClass('properties-hidden');
+	} else {
+		$this.text($this.text().replace(/Hide/,'Show'));
+		$this.parents(".summary").find(".inherited").hide();
+		$this.addClass('properties-hidden');
+	}
+	return false;
+});
+/*
+$(".sourceCode a.show").toggle(function(){
+	$(this).text($(this).text().replace(/show/,'hide'));
+	$(this).parents(".sourceCode").find("div.code").show();
+},function(){
+	$(this).text($(this).text().replace(/hide/,'show'));
+	$(this).parents(".sourceCode").find("div.code").hide();
+});
+$("a.sourceLink").click(function(){
+	$(this).attr('target','_blank');
+});
+*/
+/*]]>*/
+</script>
+
+	</div><!-- end of page -->
+</body>
+</html>

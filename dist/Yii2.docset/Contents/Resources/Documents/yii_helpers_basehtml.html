@@ -1,0 +1,3128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="language" content="en" />
+<link href="./assets/4138e429/api.css" rel="stylesheet">
+<link href="./assets/4138e429/style.css" rel="stylesheet">
+<script src="./assets/a91b37a6/jquery.js"></script><title>Yii Framework 2.0 API Documentation</title>
+</head>
+
+<body>
+	<div id="apiPage">
+
+		<div id="apiHeader">
+			<a href="http://www.yiiframework.com">Yii Framework</a> v2.0.0-dev Class Reference
+		</div><!-- end of header -->
+
+		<div id="content">
+		<h1>Class yii\helpers\BaseHtml</h1>
+<div id="nav">
+	<a href="index.html">All Classes</a>
+			| <a href="#properties">Properties</a>
+				| <a href="#methods">Methods</a>
+			</div>
+
+<table class="summaryTable docClass">
+	<colgroup>
+		<col class="col-name" />
+		<col class="col-value" />
+	</colgroup>
+			<tr><th>Inheritance</th><td><a href="yii_helpers_basehtml.html">yii\helpers\BaseHtml</a></td></tr>
+						<tr><th>Subclasses</th><td><a href="yii_helpers_html.html">yii\helpers\Html</a></td></tr>
+						<tr><th>Available since version</th><td>2.0</td></tr>
+		<tr>
+	  <th>Source Code</th>
+	  <td></td>
+	</tr>
+</table>
+
+<div id="classDescription">
+	<strong>BaseHtml provides concrete implementation for <a href="yii_helpers_html.html">yii\helpers\Html</a>.</strong>
+	<p>Do not use BaseHtml. Use <a href="yii_helpers_html.html">yii\helpers\Html</a> instead.</p>
+</div>
+
+<a name="properties"></a>
+
+<div class="summary docProperty">
+<h2>Public Properties</h2>
+
+<p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-property" />
+	<col class="col-type" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Property</th><th>Type</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr id="$voidElements">
+		<td><a href="yii_helpers_basehtml.html#$voidElements-detail">$voidElements</a></td>
+		<td>array</td>
+		<td>List of void elements (element name => 1)</td>
+		<td><a href="yii_helpers_basehtml.html">yii\helpers\BaseHtml</a></td>
+	</tr>
+			<tr id="$attributeOrder">
+		<td><a href="yii_helpers_basehtml.html#$attributeOrder-detail">$attributeOrder</a></td>
+		<td>array</td>
+		<td>The preferred order of attributes in a tag</td>
+		<td><a href="yii_helpers_basehtml.html">yii\helpers\BaseHtml</a></td>
+	</tr>
+	</table>
+</div>
+<a name="methods"></a>
+
+<div class="summary docMethod">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr id="encode()">
+		<td><a href="yii_helpers_basehtml.html#encode()-detail">encode()</a></td>
+		<td>Encodes special characters into HTML entities.</td>
+		<td><a href="yii_helpers_basehtml.html">yii\helpers\BaseHtml</a></td>
+	</tr>
+			<tr id="decode()">
+		<td><a href="yii_helpers_basehtml.html#decode()-detail">decode()</a></td>
+		<td>Decodes special HTML entities back to the corresponding characters.</td>
+		<td><a href="yii_helpers_basehtml.html">yii\helpers\BaseHtml</a></td>
+	</tr>
+			<tr id="tag()">
+		<td><a href="yii_helpers_basehtml.html#tag()-detail">tag()</a></td>
+		<td>Generates a complete HTML tag.</td>
+		<td><a href="yii_helpers_basehtml.html">yii\helpers\BaseHtml</a></td>
+	</tr>
+			<tr id="beginTag()">
+		<td><a href="yii_helpers_basehtml.html#beginTag()-detail">beginTag()</a></td>
+		<td>Generates a start tag.</td>
+		<td><a href="yii_helpers_basehtml.html">yii\helpers\BaseHtml</a></td>
+	</tr>
+			<tr id="endTag()">
+		<td><a href="yii_helpers_basehtml.html#endTag()-detail">endTag()</a></td>
+		<td>Generates an end tag.</td>
+		<td><a href="yii_helpers_basehtml.html">yii\helpers\BaseHtml</a></td>
+	</tr>
+			<tr id="style()">
+		<td><a href="yii_helpers_basehtml.html#style()-detail">style()</a></td>
+		<td>Generates a style tag.</td>
+		<td><a href="yii_helpers_basehtml.html">yii\helpers\BaseHtml</a></td>
+	</tr>
+			<tr id="script()">
+		<td><a href="yii_helpers_basehtml.html#script()-detail">script()</a></td>
+		<td>Generates a script tag.</td>
+		<td><a href="yii_helpers_basehtml.html">yii\helpers\BaseHtml</a></td>
+	</tr>
+			<tr id="cssFile()">
+		<td><a href="yii_helpers_basehtml.html#cssFile()-detail">cssFile()</a></td>
+		<td>Generates a link tag that refers to an external CSS file.</td>
+		<td><a href="yii_helpers_basehtml.html">yii\helpers\BaseHtml</a></td>
+	</tr>
+			<tr id="jsFile()">
+		<td><a href="yii_helpers_basehtml.html#jsFile()-detail">jsFile()</a></td>
+		<td>Generates a script tag that refers to an external JavaScript file.</td>
+		<td><a href="yii_helpers_basehtml.html">yii\helpers\BaseHtml</a></td>
+	</tr>
+			<tr id="beginForm()">
+		<td><a href="yii_helpers_basehtml.html#beginForm()-detail">beginForm()</a></td>
+		<td>Generates a form start tag.</td>
+		<td><a href="yii_helpers_basehtml.html">yii\helpers\BaseHtml</a></td>
+	</tr>
+			<tr id="endForm()">
+		<td><a href="yii_helpers_basehtml.html#endForm()-detail">endForm()</a></td>
+		<td>Generates a form end tag.</td>
+		<td><a href="yii_helpers_basehtml.html">yii\helpers\BaseHtml</a></td>
+	</tr>
+			<tr id="a()">
+		<td><a href="yii_helpers_basehtml.html#a()-detail">a()</a></td>
+		<td>Generates a hyperlink tag.</td>
+		<td><a href="yii_helpers_basehtml.html">yii\helpers\BaseHtml</a></td>
+	</tr>
+			<tr id="mailto()">
+		<td><a href="yii_helpers_basehtml.html#mailto()-detail">mailto()</a></td>
+		<td>Generates a mailto hyperlink.</td>
+		<td><a href="yii_helpers_basehtml.html">yii\helpers\BaseHtml</a></td>
+	</tr>
+			<tr id="img()">
+		<td><a href="yii_helpers_basehtml.html#img()-detail">img()</a></td>
+		<td>Generates an image tag.</td>
+		<td><a href="yii_helpers_basehtml.html">yii\helpers\BaseHtml</a></td>
+	</tr>
+			<tr id="label()">
+		<td><a href="yii_helpers_basehtml.html#label()-detail">label()</a></td>
+		<td>Generates a label tag.</td>
+		<td><a href="yii_helpers_basehtml.html">yii\helpers\BaseHtml</a></td>
+	</tr>
+			<tr id="button()">
+		<td><a href="yii_helpers_basehtml.html#button()-detail">button()</a></td>
+		<td>Generates a button tag.</td>
+		<td><a href="yii_helpers_basehtml.html">yii\helpers\BaseHtml</a></td>
+	</tr>
+			<tr id="submitButton()">
+		<td><a href="yii_helpers_basehtml.html#submitButton()-detail">submitButton()</a></td>
+		<td>Generates a submit button tag.</td>
+		<td><a href="yii_helpers_basehtml.html">yii\helpers\BaseHtml</a></td>
+	</tr>
+			<tr id="resetButton()">
+		<td><a href="yii_helpers_basehtml.html#resetButton()-detail">resetButton()</a></td>
+		<td>Generates a reset button tag.</td>
+		<td><a href="yii_helpers_basehtml.html">yii\helpers\BaseHtml</a></td>
+	</tr>
+			<tr id="input()">
+		<td><a href="yii_helpers_basehtml.html#input()-detail">input()</a></td>
+		<td>Generates an input type of the given type.</td>
+		<td><a href="yii_helpers_basehtml.html">yii\helpers\BaseHtml</a></td>
+	</tr>
+			<tr id="buttonInput()">
+		<td><a href="yii_helpers_basehtml.html#buttonInput()-detail">buttonInput()</a></td>
+		<td>Generates an input button.</td>
+		<td><a href="yii_helpers_basehtml.html">yii\helpers\BaseHtml</a></td>
+	</tr>
+			<tr id="submitInput()">
+		<td><a href="yii_helpers_basehtml.html#submitInput()-detail">submitInput()</a></td>
+		<td>Generates a submit input button.</td>
+		<td><a href="yii_helpers_basehtml.html">yii\helpers\BaseHtml</a></td>
+	</tr>
+			<tr id="resetInput()">
+		<td><a href="yii_helpers_basehtml.html#resetInput()-detail">resetInput()</a></td>
+		<td>Generates a reset input button.</td>
+		<td><a href="yii_helpers_basehtml.html">yii\helpers\BaseHtml</a></td>
+	</tr>
+			<tr id="textInput()">
+		<td><a href="yii_helpers_basehtml.html#textInput()-detail">textInput()</a></td>
+		<td>Generates a text input field.</td>
+		<td><a href="yii_helpers_basehtml.html">yii\helpers\BaseHtml</a></td>
+	</tr>
+			<tr id="hiddenInput()">
+		<td><a href="yii_helpers_basehtml.html#hiddenInput()-detail">hiddenInput()</a></td>
+		<td>Generates a hidden input field.</td>
+		<td><a href="yii_helpers_basehtml.html">yii\helpers\BaseHtml</a></td>
+	</tr>
+			<tr id="passwordInput()">
+		<td><a href="yii_helpers_basehtml.html#passwordInput()-detail">passwordInput()</a></td>
+		<td>Generates a password input field.</td>
+		<td><a href="yii_helpers_basehtml.html">yii\helpers\BaseHtml</a></td>
+	</tr>
+			<tr id="fileInput()">
+		<td><a href="yii_helpers_basehtml.html#fileInput()-detail">fileInput()</a></td>
+		<td>Generates a file input field.</td>
+		<td><a href="yii_helpers_basehtml.html">yii\helpers\BaseHtml</a></td>
+	</tr>
+			<tr id="textarea()">
+		<td><a href="yii_helpers_basehtml.html#textarea()-detail">textarea()</a></td>
+		<td>Generates a text area input.</td>
+		<td><a href="yii_helpers_basehtml.html">yii\helpers\BaseHtml</a></td>
+	</tr>
+			<tr id="radio()">
+		<td><a href="yii_helpers_basehtml.html#radio()-detail">radio()</a></td>
+		<td>Generates a radio button input.</td>
+		<td><a href="yii_helpers_basehtml.html">yii\helpers\BaseHtml</a></td>
+	</tr>
+			<tr id="checkbox()">
+		<td><a href="yii_helpers_basehtml.html#checkbox()-detail">checkbox()</a></td>
+		<td>Generates a checkbox input.</td>
+		<td><a href="yii_helpers_basehtml.html">yii\helpers\BaseHtml</a></td>
+	</tr>
+			<tr id="dropDownList()">
+		<td><a href="yii_helpers_basehtml.html#dropDownList()-detail">dropDownList()</a></td>
+		<td>Generates a drop-down list.</td>
+		<td><a href="yii_helpers_basehtml.html">yii\helpers\BaseHtml</a></td>
+	</tr>
+			<tr id="listBox()">
+		<td><a href="yii_helpers_basehtml.html#listBox()-detail">listBox()</a></td>
+		<td>Generates a list box.</td>
+		<td><a href="yii_helpers_basehtml.html">yii\helpers\BaseHtml</a></td>
+	</tr>
+			<tr id="checkboxList()">
+		<td><a href="yii_helpers_basehtml.html#checkboxList()-detail">checkboxList()</a></td>
+		<td>Generates a list of checkboxes.</td>
+		<td><a href="yii_helpers_basehtml.html">yii\helpers\BaseHtml</a></td>
+	</tr>
+			<tr id="radioList()">
+		<td><a href="yii_helpers_basehtml.html#radioList()-detail">radioList()</a></td>
+		<td>Generates a list of radio buttons.</td>
+		<td><a href="yii_helpers_basehtml.html">yii\helpers\BaseHtml</a></td>
+	</tr>
+			<tr id="ul()">
+		<td><a href="yii_helpers_basehtml.html#ul()-detail">ul()</a></td>
+		<td>Generates an unordered list.</td>
+		<td><a href="yii_helpers_basehtml.html">yii\helpers\BaseHtml</a></td>
+	</tr>
+			<tr id="ol()">
+		<td><a href="yii_helpers_basehtml.html#ol()-detail">ol()</a></td>
+		<td>Generates an ordered list.</td>
+		<td><a href="yii_helpers_basehtml.html">yii\helpers\BaseHtml</a></td>
+	</tr>
+			<tr id="activeLabel()">
+		<td><a href="yii_helpers_basehtml.html#activeLabel()-detail">activeLabel()</a></td>
+		<td>Generates a label tag for the given model attribute.</td>
+		<td><a href="yii_helpers_basehtml.html">yii\helpers\BaseHtml</a></td>
+	</tr>
+			<tr id="error()">
+		<td><a href="yii_helpers_basehtml.html#error()-detail">error()</a></td>
+		<td>Generates a tag that contains the first validation error of the specified model attribute.</td>
+		<td><a href="yii_helpers_basehtml.html">yii\helpers\BaseHtml</a></td>
+	</tr>
+			<tr id="activeInput()">
+		<td><a href="yii_helpers_basehtml.html#activeInput()-detail">activeInput()</a></td>
+		<td>Generates an input tag for the given model attribute.</td>
+		<td><a href="yii_helpers_basehtml.html">yii\helpers\BaseHtml</a></td>
+	</tr>
+			<tr id="activeTextInput()">
+		<td><a href="yii_helpers_basehtml.html#activeTextInput()-detail">activeTextInput()</a></td>
+		<td>Generates a text input tag for the given model attribute.</td>
+		<td><a href="yii_helpers_basehtml.html">yii\helpers\BaseHtml</a></td>
+	</tr>
+			<tr id="activeHiddenInput()">
+		<td><a href="yii_helpers_basehtml.html#activeHiddenInput()-detail">activeHiddenInput()</a></td>
+		<td>Generates a hidden input tag for the given model attribute.</td>
+		<td><a href="yii_helpers_basehtml.html">yii\helpers\BaseHtml</a></td>
+	</tr>
+			<tr id="activePasswordInput()">
+		<td><a href="yii_helpers_basehtml.html#activePasswordInput()-detail">activePasswordInput()</a></td>
+		<td>Generates a password input tag for the given model attribute.</td>
+		<td><a href="yii_helpers_basehtml.html">yii\helpers\BaseHtml</a></td>
+	</tr>
+			<tr id="activeFileInput()">
+		<td><a href="yii_helpers_basehtml.html#activeFileInput()-detail">activeFileInput()</a></td>
+		<td>Generates a file input tag for the given model attribute.</td>
+		<td><a href="yii_helpers_basehtml.html">yii\helpers\BaseHtml</a></td>
+	</tr>
+			<tr id="activeTextarea()">
+		<td><a href="yii_helpers_basehtml.html#activeTextarea()-detail">activeTextarea()</a></td>
+		<td>Generates a textarea tag for the given model attribute.</td>
+		<td><a href="yii_helpers_basehtml.html">yii\helpers\BaseHtml</a></td>
+	</tr>
+			<tr id="activeRadio()">
+		<td><a href="yii_helpers_basehtml.html#activeRadio()-detail">activeRadio()</a></td>
+		<td>Generates a radio button tag for the given model attribute.</td>
+		<td><a href="yii_helpers_basehtml.html">yii\helpers\BaseHtml</a></td>
+	</tr>
+			<tr id="activeCheckbox()">
+		<td><a href="yii_helpers_basehtml.html#activeCheckbox()-detail">activeCheckbox()</a></td>
+		<td>Generates a checkbox tag for the given model attribute.</td>
+		<td><a href="yii_helpers_basehtml.html">yii\helpers\BaseHtml</a></td>
+	</tr>
+			<tr id="activeDropDownList()">
+		<td><a href="yii_helpers_basehtml.html#activeDropDownList()-detail">activeDropDownList()</a></td>
+		<td>Generates a drop-down list for the given model attribute.</td>
+		<td><a href="yii_helpers_basehtml.html">yii\helpers\BaseHtml</a></td>
+	</tr>
+			<tr id="activeListBox()">
+		<td><a href="yii_helpers_basehtml.html#activeListBox()-detail">activeListBox()</a></td>
+		<td>Generates a list box.</td>
+		<td><a href="yii_helpers_basehtml.html">yii\helpers\BaseHtml</a></td>
+	</tr>
+			<tr id="activeCheckboxList()">
+		<td><a href="yii_helpers_basehtml.html#activeCheckboxList()-detail">activeCheckboxList()</a></td>
+		<td>Generates a list of checkboxes.</td>
+		<td><a href="yii_helpers_basehtml.html">yii\helpers\BaseHtml</a></td>
+	</tr>
+			<tr id="activeRadioList()">
+		<td><a href="yii_helpers_basehtml.html#activeRadioList()-detail">activeRadioList()</a></td>
+		<td>Generates a list of radio buttons.</td>
+		<td><a href="yii_helpers_basehtml.html">yii\helpers\BaseHtml</a></td>
+	</tr>
+			<tr id="renderSelectOptions()">
+		<td><a href="yii_helpers_basehtml.html#renderSelectOptions()-detail">renderSelectOptions()</a></td>
+		<td>Renders the option tags that can be used by <a href="yii_helpers_basehtml.html#dropDownList()-detail">dropDownList()</a> and <a href="yii_helpers_basehtml.html#listBox()-detail">listBox()</a>.</td>
+		<td><a href="yii_helpers_basehtml.html">yii\helpers\BaseHtml</a></td>
+	</tr>
+			<tr id="renderTagAttributes()">
+		<td><a href="yii_helpers_basehtml.html#renderTagAttributes()-detail">renderTagAttributes()</a></td>
+		<td>Renders the HTML tag attributes.</td>
+		<td><a href="yii_helpers_basehtml.html">yii\helpers\BaseHtml</a></td>
+	</tr>
+			<tr id="url()">
+		<td><a href="yii_helpers_basehtml.html#url()-detail">url()</a></td>
+		<td>Normalizes the input parameter to be a valid URL.</td>
+		<td><a href="yii_helpers_basehtml.html">yii\helpers\BaseHtml</a></td>
+	</tr>
+			<tr id="addCssClass()">
+		<td><a href="yii_helpers_basehtml.html#addCssClass()-detail">addCssClass()</a></td>
+		<td>Adds a CSS class to the specified options.</td>
+		<td><a href="yii_helpers_basehtml.html">yii\helpers\BaseHtml</a></td>
+	</tr>
+			<tr id="removeCssClass()">
+		<td><a href="yii_helpers_basehtml.html#removeCssClass()-detail">removeCssClass()</a></td>
+		<td>Removes a CSS class from the specified options.</td>
+		<td><a href="yii_helpers_basehtml.html">yii\helpers\BaseHtml</a></td>
+	</tr>
+			<tr id="getAttributeName()">
+		<td><a href="yii_helpers_basehtml.html#getAttributeName()-detail">getAttributeName()</a></td>
+		<td>Returns the real attribute name from the given attribute expression.</td>
+		<td><a href="yii_helpers_basehtml.html">yii\helpers\BaseHtml</a></td>
+	</tr>
+			<tr id="getAttributeValue()">
+		<td><a href="yii_helpers_basehtml.html#getAttributeValue()-detail">getAttributeValue()</a></td>
+		<td>Returns the value of the specified attribute name or expression.</td>
+		<td><a href="yii_helpers_basehtml.html">yii\helpers\BaseHtml</a></td>
+	</tr>
+			<tr id="getInputName()">
+		<td><a href="yii_helpers_basehtml.html#getInputName()-detail">getInputName()</a></td>
+		<td>Generates an appropriate input name for the specified attribute name or expression.</td>
+		<td><a href="yii_helpers_basehtml.html">yii\helpers\BaseHtml</a></td>
+	</tr>
+			<tr id="getInputId()">
+		<td><a href="yii_helpers_basehtml.html#getInputId()-detail">getInputId()</a></td>
+		<td>Generates an appropriate input ID for the specified attribute name or expression.</td>
+		<td><a href="yii_helpers_basehtml.html">yii\helpers\BaseHtml</a></td>
+	</tr>
+	</table>
+</div>
+<a name="events"></a>
+
+<a name="constants"></a>
+
+<h2>Property Details</h2>
+
+
+	<div class="detailHeader" id="$voidElements-detail">
+		$voidElements		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array $voidElements = ['area' => 1, 'base' => 1, 'br' => 1, 'col' => 1, 'command' => 1, 'embed' => 1, 'hr' => 1, 'img' => 1, 'input' => 1, 'keygen' => 1, 'link' => 1, 'meta' => 1, 'param' => 1, 'source' => 1, 'track' => 1, 'wbr' => 1]	</div>
+
+	<p>List of void elements (element name => 1)</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li>http://www.w3.org/TR/html-markup/syntax.html#void-element</li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="$attributeOrder-detail">
+		$attributeOrder		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array $attributeOrder = ['type', 'id', 'class', 'name', 'value', 'href', 'src', 'action', 'method', 'selected', 'checked', 'readonly', 'disabled', 'multiple', 'size', 'maxlength', 'width', 'height', 'rows', 'cols', 'alt', 'title', 'rel', 'media']	</div>
+
+	<p>The preferred order of attributes in a tag. This mainly affects the order of the attributes
+that are rendered by <a href="yii_helpers_basehtml.html#renderTagAttributes()-detail">renderTagAttributes()</a>.</p>
+
+	
+<h2>Method Details</h2>
+
+
+	<div class="detailHeader" id="encode()-detail">
+		encode()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basehtml.html#encode()-detail">encode</a>( $content, $doubleEncode = true )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$content</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The content to be encoded</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$doubleEncode</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">Whether to encode HTML entities in <code>$content</code>. If false,
+HTML entities in <code>$content</code> will not be further encoded.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the encoded content</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Encodes special characters into HTML entities.</strong></p>
+	<p>The <span style="background: #f00;">\yii\helpers\yii\base\Application::charset</span> will be used for encoding.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_helpers_basehtml.html#decode()-detail">decode()</a></li>
+	<li>http://www.php.net/manual/en/function.htmlspecialchars.php</li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="decode()-detail">
+		decode()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basehtml.html#decode()-detail">decode</a>( $content )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$content</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The content to be decoded</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the decoded content</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Decodes special HTML entities back to the corresponding characters.</strong></p>
+	<p>This is the opposite of <a href="yii_helpers_basehtml.html#encode()-detail">encode()</a>.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_helpers_basehtml.html#encode()-detail">encode()</a></li>
+	<li>http://www.php.net/manual/en/function.htmlspecialchars-decode.php</li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="tag()-detail">
+		tag()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basehtml.html#tag()-detail">tag</a>( $name, $content = '', $options = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The tag name</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$content</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The content to be enclosed between the start and end tags. It will not be HTML-encoded.
+If this is coming from end users, you should consider <a href="yii_helpers_basehtml.html#encode()-detail">encode()</a> it to prevent XSS attacks.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The tag options in terms of name-value pairs. These will be rendered as
+the attributes of the resulting tag. The values will be HTML-encoded using <a href="yii_helpers_basehtml.html#encode()-detail">encode()</a>.
+If a value is null, the corresponding attribute will not be rendered.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the generated HTML tag</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Generates a complete HTML tag.</strong></p>
+	<p></p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_helpers_basehtml.html#beginTag()-detail">beginTag()</a></li>
+	<li><a href="yii_helpers_basehtml.html#endTag()-detail">endTag()</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="beginTag()-detail">
+		beginTag()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basehtml.html#beginTag()-detail">beginTag</a>( $name, $options = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The tag name</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The tag options in terms of name-value pairs. These will be rendered as
+the attributes of the resulting tag. The values will be HTML-encoded using <a href="yii_helpers_basehtml.html#encode()-detail">encode()</a>.
+If a value is null, the corresponding attribute will not be rendered.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the generated start tag</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Generates a start tag.</strong></p>
+	<p></p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_helpers_basehtml.html#endTag()-detail">endTag()</a></li>
+	<li><a href="yii_helpers_basehtml.html#tag()-detail">tag()</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="endTag()-detail">
+		endTag()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basehtml.html#endTag()-detail">endTag</a>( $name )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The tag name</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the generated end tag</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Generates an end tag.</strong></p>
+	<p></p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_helpers_basehtml.html#beginTag()-detail">beginTag()</a></li>
+	<li><a href="yii_helpers_basehtml.html#tag()-detail">tag()</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="style()-detail">
+		style()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basehtml.html#style()-detail">style</a>( $content, $options = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$content</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The style content</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The tag options in terms of name-value pairs. These will be rendered as
+the attributes of the resulting tag. The values will be HTML-encoded using <a href="yii_helpers_basehtml.html#encode()-detail">encode()</a>.
+If a value is null, the corresponding attribute will not be rendered.
+If the options does not contain "type", a "type" attribute with value "text/css" will be used.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the generated style tag</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Generates a style tag.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="script()-detail">
+		script()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basehtml.html#script()-detail">script</a>( $content, $options = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$content</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The script content</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The tag options in terms of name-value pairs. These will be rendered as
+the attributes of the resulting tag. The values will be HTML-encoded using <a href="yii_helpers_basehtml.html#encode()-detail">encode()</a>.
+If a value is null, the corresponding attribute will not be rendered.
+If the options does not contain "type", a "type" attribute with value "text/javascript" will be rendered.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the generated script tag</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Generates a script tag.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="cssFile()-detail">
+		cssFile()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basehtml.html#cssFile()-detail">cssFile</a>( $url, $options = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$url</td>
+				  <td class="paramTypeCol">array|string</td>
+				  <td class="paramDescCol">The URL of the external CSS file. This parameter will be processed by <a href="yii_helpers_basehtml.html#url()-detail">url()</a>.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The tag options in terms of name-value pairs. These will be rendered as
+the attributes of the resulting tag. The values will be HTML-encoded using <a href="yii_helpers_basehtml.html#encode()-detail">encode()</a>.
+If a value is null, the corresponding attribute will not be rendered.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the generated link tag</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Generates a link tag that refers to an external CSS file.</strong></p>
+	<p></p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_helpers_basehtml.html#url()-detail">url()</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="jsFile()-detail">
+		jsFile()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basehtml.html#jsFile()-detail">jsFile</a>( $url, $options = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$url</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The URL of the external JavaScript file. This parameter will be processed by <a href="yii_helpers_basehtml.html#url()-detail">url()</a>.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The tag options in terms of name-value pairs. These will be rendered as
+the attributes of the resulting tag. The values will be HTML-encoded using <a href="yii_helpers_basehtml.html#encode()-detail">encode()</a>.
+If a value is null, the corresponding attribute will not be rendered.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the generated script tag</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Generates a script tag that refers to an external JavaScript file.</strong></p>
+	<p></p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_helpers_basehtml.html#url()-detail">url()</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="beginForm()-detail">
+		beginForm()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basehtml.html#beginForm()-detail">beginForm</a>( $action = '', $method = 'post', $options = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$action</td>
+				  <td class="paramTypeCol">array|string</td>
+				  <td class="paramDescCol">The form action URL. This parameter will be processed by <a href="yii_helpers_basehtml.html#url()-detail">url()</a>.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$method</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The form submission method, such as "post", "get", "put", "delete" (case-insensitive).
+Since most browsers only support "post" and "get", if other methods are given, they will
+be simulated using "post", and a hidden input will be added which contains the actual method type.
+See <a href="yii_web_request.html#$restVar-detail">yii\web\Request::$restVar</a> for more details.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The tag options in terms of name-value pairs. These will be rendered as
+the attributes of the resulting tag. The values will be HTML-encoded using <a href="yii_helpers_basehtml.html#encode()-detail">encode()</a>.
+If a value is null, the corresponding attribute will not be rendered.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the generated form start tag.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Generates a form start tag.</strong></p>
+	<p></p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_helpers_basehtml.html#endForm()-detail">endForm()</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="endForm()-detail">
+		endForm()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basehtml.html#endForm()-detail">endForm</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the generated tag</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Generates a form end tag.</strong></p>
+	<p></p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_helpers_basehtml.html#beginForm()-detail">beginForm()</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="a()-detail">
+		a()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basehtml.html#a()-detail">a</a>( $text, $url = null, $options = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$text</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Link body. It will NOT be HTML-encoded. Therefore you can pass in HTML code
+such as an image tag. If this is coming from end users, you should consider <a href="yii_helpers_basehtml.html#encode()-detail">encode()</a>
+it to prevent XSS attacks.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$url</td>
+				  <td class="paramTypeCol">array|string|null</td>
+				  <td class="paramDescCol">The URL for the hyperlink tag. This parameter will be processed by <a href="yii_helpers_basehtml.html#url()-detail">url()</a>
+and will be used for the "href" attribute of the tag. If this parameter is null, the "href" attribute
+will not be generated.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The tag options in terms of name-value pairs. These will be rendered as
+the attributes of the resulting tag. The values will be HTML-encoded using <a href="yii_helpers_basehtml.html#encode()-detail">encode()</a>.
+If a value is null, the corresponding attribute will not be rendered.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the generated hyperlink</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Generates a hyperlink tag.</strong></p>
+	<p></p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_helpers_basehtml.html#url()-detail">url()</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="mailto()-detail">
+		mailto()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basehtml.html#mailto()-detail">mailto</a>( $text, $email = null, $options = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$text</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Link body. It will NOT be HTML-encoded. Therefore you can pass in HTML code
+such as an image tag. If this is coming from end users, you should consider <a href="yii_helpers_basehtml.html#encode()-detail">encode()</a>
+it to prevent XSS attacks.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$email</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Email address. If this is null, the first parameter (link body) will be treated
+as the email address and used.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The tag options in terms of name-value pairs. These will be rendered as
+the attributes of the resulting tag. The values will be HTML-encoded using <a href="yii_helpers_basehtml.html#encode()-detail">encode()</a>.
+If a value is null, the corresponding attribute will not be rendered.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the generated mailto link</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Generates a mailto hyperlink.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="img()-detail">
+		img()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basehtml.html#img()-detail">img</a>( $src, $options = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$src</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The image URL. This parameter will be processed by <a href="yii_helpers_basehtml.html#url()-detail">url()</a>.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The tag options in terms of name-value pairs. These will be rendered as
+the attributes of the resulting tag. The values will be HTML-encoded using <a href="yii_helpers_basehtml.html#encode()-detail">encode()</a>.
+If a value is null, the corresponding attribute will not be rendered.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the generated image tag</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Generates an image tag.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="label()-detail">
+		label()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basehtml.html#label()-detail">label</a>( $content, $for = null, $options = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$content</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Label text. It will NOT be HTML-encoded. Therefore you can pass in HTML code
+such as an image tag. If this is is coming from end users, you should <a href="yii_helpers_basehtml.html#encode()-detail">encode()</a>
+it to prevent XSS attacks.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$for</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The ID of the HTML element that this label is associated with.
+If this is null, the "for" attribute will not be generated.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The tag options in terms of name-value pairs. These will be rendered as
+the attributes of the resulting tag. The values will be HTML-encoded using <a href="yii_helpers_basehtml.html#encode()-detail">encode()</a>.
+If a value is null, the corresponding attribute will not be rendered.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the generated label tag</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Generates a label tag.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="button()-detail">
+		button()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basehtml.html#button()-detail">button</a>( $content = 'Button', $options = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$content</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The content enclosed within the button tag. It will NOT be HTML-encoded.
+Therefore you can pass in HTML code such as an image tag. If this is is coming from end users,
+you should consider <a href="yii_helpers_basehtml.html#encode()-detail">encode()</a> it to prevent XSS attacks.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The tag options in terms of name-value pairs. These will be rendered as
+the attributes of the resulting tag. The values will be HTML-encoded using <a href="yii_helpers_basehtml.html#encode()-detail">encode()</a>.
+If a value is null, the corresponding attribute will not be rendered.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the generated button tag</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Generates a button tag.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="submitButton()-detail">
+		submitButton()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basehtml.html#submitButton()-detail">submitButton</a>( $content = 'Submit', $options = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$content</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The content enclosed within the button tag. It will NOT be HTML-encoded.
+Therefore you can pass in HTML code such as an image tag. If this is is coming from end users,
+you should consider <a href="yii_helpers_basehtml.html#encode()-detail">encode()</a> it to prevent XSS attacks.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The tag options in terms of name-value pairs. These will be rendered as
+the attributes of the resulting tag. The values will be HTML-encoded using <a href="yii_helpers_basehtml.html#encode()-detail">encode()</a>.
+If a value is null, the corresponding attribute will not be rendered.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the generated submit button tag</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Generates a submit button tag.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="resetButton()-detail">
+		resetButton()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basehtml.html#resetButton()-detail">resetButton</a>( $content = 'Reset', $options = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$content</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The content enclosed within the button tag. It will NOT be HTML-encoded.
+Therefore you can pass in HTML code such as an image tag. If this is is coming from end users,
+you should consider <a href="yii_helpers_basehtml.html#encode()-detail">encode()</a> it to prevent XSS attacks.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The tag options in terms of name-value pairs. These will be rendered as
+the attributes of the resulting tag. The values will be HTML-encoded using <a href="yii_helpers_basehtml.html#encode()-detail">encode()</a>.
+If a value is null, the corresponding attribute will not be rendered.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the generated reset button tag</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Generates a reset button tag.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="input()-detail">
+		input()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basehtml.html#input()-detail">input</a>( $type, $name = null, $value = null, $options = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$type</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The type attribute.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The name attribute. If it is null, the name attribute will not be generated.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$value</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The value attribute. If it is null, the value attribute will not be generated.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The tag options in terms of name-value pairs. These will be rendered as
+the attributes of the resulting tag. The values will be HTML-encoded using <a href="yii_helpers_basehtml.html#encode()-detail">encode()</a>.
+If a value is null, the corresponding attribute will not be rendered.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the generated input tag</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Generates an input type of the given type.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="buttonInput()-detail">
+		buttonInput()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basehtml.html#buttonInput()-detail">buttonInput</a>( $label = 'Button', $options = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$label</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The value attribute. If it is null, the value attribute will not be generated.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The tag options in terms of name-value pairs. These will be rendered as
+the attributes of the resulting tag. The values will be HTML-encoded using <a href="yii_helpers_basehtml.html#encode()-detail">encode()</a>.
+If a value is null, the corresponding attribute will not be rendered.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the generated button tag</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Generates an input button.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="submitInput()-detail">
+		submitInput()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basehtml.html#submitInput()-detail">submitInput</a>( $label = 'Submit', $options = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$label</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The value attribute. If it is null, the value attribute will not be generated.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The tag options in terms of name-value pairs. These will be rendered as
+the attributes of the resulting tag. The values will be HTML-encoded using <a href="yii_helpers_basehtml.html#encode()-detail">encode()</a>.
+If a value is null, the corresponding attribute will not be rendered.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the generated button tag</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Generates a submit input button.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="resetInput()-detail">
+		resetInput()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basehtml.html#resetInput()-detail">resetInput</a>( $label = 'Reset', $options = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$label</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The value attribute. If it is null, the value attribute will not be generated.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The attributes of the button tag. The values will be HTML-encoded using <a href="yii_helpers_basehtml.html#encode()-detail">encode()</a>.
+Attributes whose value is null will be ignored and not put in the tag returned.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the generated button tag</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Generates a reset input button.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="textInput()-detail">
+		textInput()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basehtml.html#textInput()-detail">textInput</a>( $name, $value = null, $options = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The name attribute.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$value</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The value attribute. If it is null, the value attribute will not be generated.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The tag options in terms of name-value pairs. These will be rendered as
+the attributes of the resulting tag. The values will be HTML-encoded using <a href="yii_helpers_basehtml.html#encode()-detail">encode()</a>.
+If a value is null, the corresponding attribute will not be rendered.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the generated button tag</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Generates a text input field.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="hiddenInput()-detail">
+		hiddenInput()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basehtml.html#hiddenInput()-detail">hiddenInput</a>( $name, $value = null, $options = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The name attribute.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$value</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The value attribute. If it is null, the value attribute will not be generated.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The tag options in terms of name-value pairs. These will be rendered as
+the attributes of the resulting tag. The values will be HTML-encoded using <a href="yii_helpers_basehtml.html#encode()-detail">encode()</a>.
+If a value is null, the corresponding attribute will not be rendered.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the generated button tag</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Generates a hidden input field.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="passwordInput()-detail">
+		passwordInput()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basehtml.html#passwordInput()-detail">passwordInput</a>( $name, $value = null, $options = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The name attribute.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$value</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The value attribute. If it is null, the value attribute will not be generated.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The tag options in terms of name-value pairs. These will be rendered as
+the attributes of the resulting tag. The values will be HTML-encoded using <a href="yii_helpers_basehtml.html#encode()-detail">encode()</a>.
+If a value is null, the corresponding attribute will not be rendered.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the generated button tag</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Generates a password input field.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="fileInput()-detail">
+		fileInput()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basehtml.html#fileInput()-detail">fileInput</a>( $name, $value = null, $options = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The name attribute.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$value</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The value attribute. If it is null, the value attribute will not be generated.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The tag options in terms of name-value pairs. These will be rendered as
+the attributes of the resulting tag. The values will be HTML-encoded using <a href="yii_helpers_basehtml.html#encode()-detail">encode()</a>.
+If a value is null, the corresponding attribute will not be rendered.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the generated button tag</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Generates a file input field.</strong></p>
+	<p>To use a file input field, you should set the enclosing form's "enctype" attribute to
+be "multipart/form-data". After the form is submitted, the uploaded file information
+can be obtained via $_FILES[$name] (see PHP documentation).</p>
+
+	
+
+	<div class="detailHeader" id="textarea()-detail">
+		textarea()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basehtml.html#textarea()-detail">textarea</a>( $name, $value = '', $options = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The input name</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$value</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The input value. Note that it will be encoded using <a href="yii_helpers_basehtml.html#encode()-detail">encode()</a>.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The tag options in terms of name-value pairs. These will be rendered as
+the attributes of the resulting tag. The values will be HTML-encoded using <a href="yii_helpers_basehtml.html#encode()-detail">encode()</a>.
+If a value is null, the corresponding attribute will not be rendered.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the generated text area tag</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Generates a text area input.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="radio()-detail">
+		radio()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basehtml.html#radio()-detail">radio</a>( $name, $checked = false, $options = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The name attribute.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$checked</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">Whether the radio button should be checked.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The tag options in terms of name-value pairs. The following options are specially handled:
+- uncheck: string, the value associated with the uncheck state of the radio button. When this attribute
+  is present, a hidden input will be generated so that if the radio button is not checked and is submitted,
+  the value of this attribute will still be submitted to the server via the hidden input.
+- label: string, a label displayed next to the radio button.  It will NOT be HTML-encoded. Therefore you can pass
+  in HTML code such as an image tag. If this is is coming from end users, you should <a href="yii_helpers_basehtml.html#encode()-detail">encode()</a> it to prevent XSS attacks.
+  When this option is specified, the radio button will be enclosed by a label tag.
+- labelOptions: array, the HTML attributes for the label tag. This is only used when the "label" option is specified.
+- container: array|boolean, the HTML attributes for the container tag. This is only used when the "label" option is specified.
+  If it is false, no container will be rendered. If it is an array or not, a "div" container will be rendered
+  around the the radio button.
+The rest of the options will be rendered as the attributes of the resulting radio button tag. The values will
+be HTML-encoded using <a href="yii_helpers_basehtml.html#encode()-detail">encode()</a>. If a value is null, the corresponding attribute will not be rendered.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the generated radio button tag</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Generates a radio button input.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="checkbox()-detail">
+		checkbox()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basehtml.html#checkbox()-detail">checkbox</a>( $name, $checked = false, $options = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The name attribute.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$checked</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">Whether the checkbox should be checked.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The tag options in terms of name-value pairs. The following options are specially handled:
+- uncheck: string, the value associated with the uncheck state of the checkbox. When this attribute
+  is present, a hidden input will be generated so that if the checkbox is not checked and is submitted,
+  the value of this attribute will still be submitted to the server via the hidden input.
+- label: string, a label displayed next to the checkbox.  It will NOT be HTML-encoded. Therefore you can pass
+  in HTML code such as an image tag. If this is is coming from end users, you should <a href="yii_helpers_basehtml.html#encode()-detail">encode()</a> it to prevent XSS attacks.
+  When this option is specified, the checkbox will be enclosed by a label tag.
+- labelOptions: array, the HTML attributes for the label tag. This is only used when the "label" option is specified.
+- container: array|boolean, the HTML attributes for the container tag. This is only used when the "label" option is specified.
+  If it is false, no container will be rendered. If it is an array or not, a "div" container will be rendered
+  around the the radio button.
+The rest of the options will be rendered as the attributes of the resulting checkbox tag. The values will
+be HTML-encoded using <a href="yii_helpers_basehtml.html#encode()-detail">encode()</a>. If a value is null, the corresponding attribute will not be rendered.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the generated checkbox tag</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Generates a checkbox input.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="dropDownList()-detail">
+		dropDownList()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basehtml.html#dropDownList()-detail">dropDownList</a>( $name, $selection = null, $items = [], $options = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The input name</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$selection</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The selected value</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$items</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The option data items. The array keys are option values, and the array values
+are the corresponding option labels. The array can also be nested (i.e. some array values are arrays too).
+For each sub-array, an option group will be generated whose label is the key associated with the sub-array.
+If you have a list of data models, you may convert them into the format described above using
+<a href="yii_helpers_basearrayhelper.html#map()-detail">yii\helpers\ArrayHelper::map()</a>.
+Note, the values and labels will be automatically HTML-encoded by this method, and the blank spaces in
+the labels will also be HTML-encoded.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol"><p>The tag options in terms of name-value pairs. The following options are specially handled:
+- prompt: string, a prompt text to be displayed as the first option;
+- options: array, the attributes for the select option tags. The array keys must be valid option values,
+  and the array values are the extra attributes for the corresponding option tags. For example,</p>
+
+<pre><code>[
+    'value1' =&gt; ['disabled' =&gt; true],
+    'value2' =&gt; ['label' =&gt; 'value 2'],
+];
+</code></pre>
+
+<ul>
+<li>groups: array, the attributes for the optgroup tags. The structure of this is similar to that of 'options',
+except that the array keys represent the optgroup labels specified in $items.
+The rest of the options will be rendered as the attributes of the resulting tag. The values will
+be HTML-encoded using <a href="yii_helpers_basehtml.html#encode()-detail">encode()</a>. If a value is null, the corresponding attribute will not be rendered.</li>
+</ul></td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the generated drop-down list tag</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Generates a drop-down list.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="listBox()-detail">
+		listBox()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basehtml.html#listBox()-detail">listBox</a>( $name, $selection = null, $items = [], $options = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The input name</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$selection</td>
+				  <td class="paramTypeCol">string|array</td>
+				  <td class="paramDescCol">The selected value(s)</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$items</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The option data items. The array keys are option values, and the array values
+are the corresponding option labels. The array can also be nested (i.e. some array values are arrays too).
+For each sub-array, an option group will be generated whose label is the key associated with the sub-array.
+If you have a list of data models, you may convert them into the format described above using
+<a href="yii_helpers_basearrayhelper.html#map()-detail">yii\helpers\ArrayHelper::map()</a>.
+Note, the values and labels will be automatically HTML-encoded by this method, and the blank spaces in
+the labels will also be HTML-encoded.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol"><p>The tag options in terms of name-value pairs. The following options are specially handled:
+- prompt: string, a prompt text to be displayed as the first option;
+- options: array, the attributes for the select option tags. The array keys must be valid option values,
+  and the array values are the extra attributes for the corresponding option tags. For example,</p>
+
+<pre><code>[
+    'value1' =&gt; ['disabled' =&gt; true],
+    'value2' =&gt; ['label' =&gt; 'value 2'],
+];
+</code></pre>
+
+<ul>
+<li>groups: array, the attributes for the optgroup tags. The structure of this is similar to that of 'options',
+except that the array keys represent the optgroup labels specified in $items.</li>
+<li>unselect: string, the value that will be submitted when no option is selected.
+When this attribute is set, a hidden field will be generated so that if no option is selected in multiple
+mode, we can still obtain the posted unselect value.
+The rest of the options will be rendered as the attributes of the resulting tag. The values will
+be HTML-encoded using <a href="yii_helpers_basehtml.html#encode()-detail">encode()</a>. If a value is null, the corresponding attribute will not be rendered.</li>
+</ul></td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the generated list box tag</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Generates a list box.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="checkboxList()-detail">
+		checkboxList()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basehtml.html#checkboxList()-detail">checkboxList</a>( $name, $selection = null, $items = [], $options = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The name attribute of each checkbox.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$selection</td>
+				  <td class="paramTypeCol">string|array</td>
+				  <td class="paramDescCol">The selected value(s).</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$items</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The data item used to generate the checkboxes.
+The array values are the labels, while the array keys are the corresponding checkbox values.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">Options (name => config) for the checkbox list container tag.
+The following options are specially handled:
+- tag: string, the tag name of the container element.
+- unselect: string, the value that should be submitted when none of the checkboxes is selected.
+  By setting this option, a hidden input will be generated.
+- encode: boolean, whether to HTML-encode the checkbox labels. Defaults to true.
+  This option is ignored if <code>item</code> option is set.
+- separator: string, the HTML code that separates items.
+- itemOptions: array, the options for generating the radio button tag using <a href="yii_helpers_basehtml.html#checkbox()-detail">checkbox()</a>.
+- item: callable, a callback that can be used to customize the generation of the HTML code
+  corresponding to a single item in $items. The signature of this callback must be:</p>
+
+<pre><code>function ($index, $label, $name, $checked, $value)
+</code></pre>
+
+<p>where $index is the zero-based index of the checkbox in the whole list; $label
+is the label for the checkbox; and $name, $value and $checked represent the name,
+value and the checked status of the checkbox input, respectively.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the generated checkbox list</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Generates a list of checkboxes.</strong></p>
+	<p>A checkbox list allows multiple selection, like <a href="yii_helpers_basehtml.html#listBox()-detail">listBox()</a>.
+As a result, the corresponding submitted value is an array.</p>
+
+	
+
+	<div class="detailHeader" id="radioList()-detail">
+		radioList()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basehtml.html#radioList()-detail">radioList</a>( $name, $selection = null, $items = [], $options = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The name attribute of each radio button.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$selection</td>
+				  <td class="paramTypeCol">string|array</td>
+				  <td class="paramDescCol">The selected value(s).</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$items</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The data item used to generate the radio buttons.
+The array values are the labels, while the array keys are the corresponding radio button values.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">Options (name => config) for the radio button list. The following options are supported:
+- unselect: string, the value that should be submitted when none of the radio buttons is selected.
+  By setting this option, a hidden input will be generated.
+- encode: boolean, whether to HTML-encode the checkbox labels. Defaults to true.
+  This option is ignored if <code>item</code> option is set.
+- separator: string, the HTML code that separates items.
+- itemOptions: array, the options for generating the radio button tag using <a href="yii_helpers_basehtml.html#radio()-detail">radio()</a>.
+- item: callable, a callback that can be used to customize the generation of the HTML code
+  corresponding to a single item in $items. The signature of this callback must be:</p>
+
+<pre><code>function ($index, $label, $name, $checked, $value)
+</code></pre>
+
+<p>where $index is the zero-based index of the radio button in the whole list; $label
+is the label for the radio button; and $name, $value and $checked represent the name,
+value and the checked status of the radio button input, respectively.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the generated radio button list</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Generates a list of radio buttons.</strong></p>
+	<p>A radio button list is like a checkbox list, except that it only allows single selection.</p>
+
+	
+
+	<div class="detailHeader" id="ul()-detail">
+		ul()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basehtml.html#ul()-detail">ul</a>( $items, $options = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$items</td>
+				  <td class="paramTypeCol">array|\Traversable</td>
+				  <td class="paramDescCol">The items for generating the list. Each item generates a single list item.
+Note that items will be automatically HTML encoded if <code>$options['encode']</code> is not set or true.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">Options (name => config) for the radio button list. The following options are supported:
+- encode: boolean, whether to HTML-encode the items. Defaults to true.
+  This option is ignored if the <code>item</code> option is specified.
+- itemOptions: array, the HTML attributes for the <code>li</code> tags. This option is ignored if the <code>item</code> option is specified.
+- item: callable, a callback that is used to generate each individual list item.
+  The signature of this callback must be:</p>
+
+<pre><code>function ($item, $index)
+</code></pre>
+
+<p>where $index is the array key corresponding to <code>$item</code> in <code>$items</code>. The callback should return
+the whole list item tag.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the generated unordered list. An empty string is returned if <code>$items</code> is empty.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Generates an unordered list.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="ol()-detail">
+		ol()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basehtml.html#ol()-detail">ol</a>( $items, $options = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$items</td>
+				  <td class="paramTypeCol">array|\Traversable</td>
+				  <td class="paramDescCol">The items for generating the list. Each item generates a single list item.
+Note that items will be automatically HTML encoded if <code>$options['encode']</code> is not set or true.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">Options (name => config) for the radio button list. The following options are supported:
+- encode: boolean, whether to HTML-encode the items. Defaults to true.
+  This option is ignored if the <code>item</code> option is specified.
+- itemOptions: array, the HTML attributes for the <code>li</code> tags. This option is ignored if the <code>item</code> option is specified.
+- item: callable, a callback that is used to generate each individual list item.
+  The signature of this callback must be:</p>
+
+<pre><code>function ($item, $index)
+</code></pre>
+
+<p>where $index is the array key corresponding to <code>$item</code> in <code>$items</code>. The callback should return
+the whole list item tag.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the generated ordered list. An empty string is returned if <code>$items</code> is empty.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Generates an ordered list.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="activeLabel()-detail">
+		activeLabel()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basehtml.html#activeLabel()-detail">activeLabel</a>( $model, $attribute, $options = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$model</td>
+				  <td class="paramTypeCol"><a href="yii_base_model.html">yii\base\Model</a></td>
+				  <td class="paramDescCol">The model object</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$attribute</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The attribute name or expression. See <a href="yii_helpers_basehtml.html#getAttributeName()-detail">getAttributeName()</a> for the format
+about attribute expression.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The tag options in terms of name-value pairs. These will be rendered as
+the attributes of the resulting tag. The values will be HTML-encoded using <a href="yii_helpers_basehtml.html#encode()-detail">encode()</a>.
+If a value is null, the corresponding attribute will not be rendered.
+The following options are specially handled:
+- label: this specifies the label to be displayed. Note that this will NOT be <span style="background: #f00;">\yii\helpers\encoded()</span>.
+  If this is not set, <a href="yii_base_model.html#getAttributeLabel()-detail">yii\base\Model::getAttributeLabel()</a> will be called to get the label for display
+  (after encoding).</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the generated label tag</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Generates a label tag for the given model attribute.</strong></p>
+	<p>The label text is the label associated with the attribute, obtained via <a href="yii_base_model.html#getAttributeLabel()-detail">yii\base\Model::getAttributeLabel()</a>.</p>
+
+	
+
+	<div class="detailHeader" id="error()-detail">
+		error()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basehtml.html#error()-detail">error</a>( $model, $attribute, $options = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$model</td>
+				  <td class="paramTypeCol"><a href="yii_base_model.html">yii\base\Model</a></td>
+				  <td class="paramDescCol">The model object</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$attribute</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The attribute name or expression. See <a href="yii_helpers_basehtml.html#getAttributeName()-detail">getAttributeName()</a> for the format
+about attribute expression.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The tag options in terms of name-value pairs. The values will be HTML-encoded
+using <a href="yii_helpers_basehtml.html#encode()-detail">encode()</a>. If a value is null, the corresponding attribute will not be rendered.
+The following options are specially handled:
+- tag: this specifies the tag name. If not set, "div" will be used.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the generated label tag</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Generates a tag that contains the first validation error of the specified model attribute.</strong></p>
+	<p>Note that even if there is no validation error, this method will still return an empty error tag.</p>
+
+	
+
+	<div class="detailHeader" id="activeInput()-detail">
+		activeInput()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basehtml.html#activeInput()-detail">activeInput</a>( $type, $model, $attribute, $options = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$type</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The input type (e.g. 'text', 'password')</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$model</td>
+				  <td class="paramTypeCol"><a href="yii_base_model.html">yii\base\Model</a></td>
+				  <td class="paramDescCol">The model object</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$attribute</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The attribute name or expression. See <a href="yii_helpers_basehtml.html#getAttributeName()-detail">getAttributeName()</a> for the format
+about attribute expression.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The tag options in terms of name-value pairs. These will be rendered as
+the attributes of the resulting tag. The values will be HTML-encoded using <a href="yii_helpers_basehtml.html#encode()-detail">encode()</a>.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the generated input tag</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Generates an input tag for the given model attribute.</strong></p>
+	<p>This method will generate the "name" and "value" tag attributes automatically for the model attribute
+unless they are explicitly specified in <code>$options</code>.</p>
+
+	
+
+	<div class="detailHeader" id="activeTextInput()-detail">
+		activeTextInput()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basehtml.html#activeTextInput()-detail">activeTextInput</a>( $model, $attribute, $options = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$model</td>
+				  <td class="paramTypeCol"><a href="yii_base_model.html">yii\base\Model</a></td>
+				  <td class="paramDescCol">The model object</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$attribute</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The attribute name or expression. See <a href="yii_helpers_basehtml.html#getAttributeName()-detail">getAttributeName()</a> for the format
+about attribute expression.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The tag options in terms of name-value pairs. These will be rendered as
+the attributes of the resulting tag. The values will be HTML-encoded using <a href="yii_helpers_basehtml.html#encode()-detail">encode()</a>.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the generated input tag</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Generates a text input tag for the given model attribute.</strong></p>
+	<p>This method will generate the "name" and "value" tag attributes automatically for the model attribute
+unless they are explicitly specified in <code>$options</code>.</p>
+
+	
+
+	<div class="detailHeader" id="activeHiddenInput()-detail">
+		activeHiddenInput()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basehtml.html#activeHiddenInput()-detail">activeHiddenInput</a>( $model, $attribute, $options = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$model</td>
+				  <td class="paramTypeCol"><a href="yii_base_model.html">yii\base\Model</a></td>
+				  <td class="paramDescCol">The model object</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$attribute</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The attribute name or expression. See <a href="yii_helpers_basehtml.html#getAttributeName()-detail">getAttributeName()</a> for the format
+about attribute expression.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The tag options in terms of name-value pairs. These will be rendered as
+the attributes of the resulting tag. The values will be HTML-encoded using <a href="yii_helpers_basehtml.html#encode()-detail">encode()</a>.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the generated input tag</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Generates a hidden input tag for the given model attribute.</strong></p>
+	<p>This method will generate the "name" and "value" tag attributes automatically for the model attribute
+unless they are explicitly specified in <code>$options</code>.</p>
+
+	
+
+	<div class="detailHeader" id="activePasswordInput()-detail">
+		activePasswordInput()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basehtml.html#activePasswordInput()-detail">activePasswordInput</a>( $model, $attribute, $options = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$model</td>
+				  <td class="paramTypeCol"><a href="yii_base_model.html">yii\base\Model</a></td>
+				  <td class="paramDescCol">The model object</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$attribute</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The attribute name or expression. See <a href="yii_helpers_basehtml.html#getAttributeName()-detail">getAttributeName()</a> for the format
+about attribute expression.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The tag options in terms of name-value pairs. These will be rendered as
+the attributes of the resulting tag. The values will be HTML-encoded using <a href="yii_helpers_basehtml.html#encode()-detail">encode()</a>.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the generated input tag</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Generates a password input tag for the given model attribute.</strong></p>
+	<p>This method will generate the "name" and "value" tag attributes automatically for the model attribute
+unless they are explicitly specified in <code>$options</code>.</p>
+
+	
+
+	<div class="detailHeader" id="activeFileInput()-detail">
+		activeFileInput()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basehtml.html#activeFileInput()-detail">activeFileInput</a>( $model, $attribute, $options = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$model</td>
+				  <td class="paramTypeCol"><a href="yii_base_model.html">yii\base\Model</a></td>
+				  <td class="paramDescCol">The model object</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$attribute</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The attribute name or expression. See <a href="yii_helpers_basehtml.html#getAttributeName()-detail">getAttributeName()</a> for the format
+about attribute expression.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The tag options in terms of name-value pairs. These will be rendered as
+the attributes of the resulting tag. The values will be HTML-encoded using <a href="yii_helpers_basehtml.html#encode()-detail">encode()</a>.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the generated input tag</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Generates a file input tag for the given model attribute.</strong></p>
+	<p>This method will generate the "name" and "value" tag attributes automatically for the model attribute
+unless they are explicitly specified in <code>$options</code>.</p>
+
+	
+
+	<div class="detailHeader" id="activeTextarea()-detail">
+		activeTextarea()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basehtml.html#activeTextarea()-detail">activeTextarea</a>( $model, $attribute, $options = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$model</td>
+				  <td class="paramTypeCol"><a href="yii_base_model.html">yii\base\Model</a></td>
+				  <td class="paramDescCol">The model object</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$attribute</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The attribute name or expression. See <a href="yii_helpers_basehtml.html#getAttributeName()-detail">getAttributeName()</a> for the format
+about attribute expression.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The tag options in terms of name-value pairs. These will be rendered as
+the attributes of the resulting tag. The values will be HTML-encoded using <a href="yii_helpers_basehtml.html#encode()-detail">encode()</a>.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the generated textarea tag</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Generates a textarea tag for the given model attribute.</strong></p>
+	<p>The model attribute value will be used as the content in the textarea.</p>
+
+	
+
+	<div class="detailHeader" id="activeRadio()-detail">
+		activeRadio()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basehtml.html#activeRadio()-detail">activeRadio</a>( $model, $attribute, $options = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$model</td>
+				  <td class="paramTypeCol"><a href="yii_base_model.html">yii\base\Model</a></td>
+				  <td class="paramDescCol">The model object</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$attribute</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The attribute name or expression. See <a href="yii_helpers_basehtml.html#getAttributeName()-detail">getAttributeName()</a> for the format
+about attribute expression.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The tag options in terms of name-value pairs. The following options are specially handled:
+- uncheck: string, the value associated with the uncheck state of the radio button. If not set,
+  it will take the default value '0'. This method will render a hidden input so that if the radio button
+  is not checked and is submitted, the value of this attribute will still be submitted to the server
+  via the hidden input.
+- label: string, a label displayed next to the radio button.  It will NOT be HTML-encoded. Therefore you can pass
+  in HTML code such as an image tag. If this is is coming from end users, you should <a href="yii_helpers_basehtml.html#encode()-detail">encode()</a> it to prevent XSS attacks.
+  When this option is specified, the radio button will be enclosed by a label tag.
+- labelOptions: array, the HTML attributes for the label tag. This is only used when the "label" option is specified.
+The rest of the options will be rendered as the attributes of the resulting tag. The values will
+be HTML-encoded using <a href="yii_helpers_basehtml.html#encode()-detail">encode()</a>. If a value is null, the corresponding attribute will not be rendered.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the generated radio button tag</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Generates a radio button tag for the given model attribute.</strong></p>
+	<p>This method will generate the "checked" tag attribute according to the model attribute value.</p>
+
+	
+
+	<div class="detailHeader" id="activeCheckbox()-detail">
+		activeCheckbox()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basehtml.html#activeCheckbox()-detail">activeCheckbox</a>( $model, $attribute, $options = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$model</td>
+				  <td class="paramTypeCol"><a href="yii_base_model.html">yii\base\Model</a></td>
+				  <td class="paramDescCol">The model object</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$attribute</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The attribute name or expression. See <a href="yii_helpers_basehtml.html#getAttributeName()-detail">getAttributeName()</a> for the format
+about attribute expression.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The tag options in terms of name-value pairs. The following options are specially handled:
+- uncheck: string, the value associated with the uncheck state of the radio button. If not set,
+  it will take the default value '0'. This method will render a hidden input so that if the radio button
+  is not checked and is submitted, the value of this attribute will still be submitted to the server
+  via the hidden input.
+- label: string, a label displayed next to the checkbox.  It will NOT be HTML-encoded. Therefore you can pass
+  in HTML code such as an image tag. If this is is coming from end users, you should <a href="yii_helpers_basehtml.html#encode()-detail">encode()</a> it to prevent XSS attacks.
+  When this option is specified, the checkbox will be enclosed by a label tag.
+- labelOptions: array, the HTML attributes for the label tag. This is only used when the "label" option is specified.
+The rest of the options will be rendered as the attributes of the resulting tag. The values will
+be HTML-encoded using <a href="yii_helpers_basehtml.html#encode()-detail">encode()</a>. If a value is null, the corresponding attribute will not be rendered.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the generated checkbox tag</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Generates a checkbox tag for the given model attribute.</strong></p>
+	<p>This method will generate the "checked" tag attribute according to the model attribute value.</p>
+
+	
+
+	<div class="detailHeader" id="activeDropDownList()-detail">
+		activeDropDownList()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basehtml.html#activeDropDownList()-detail">activeDropDownList</a>( $model, $attribute, $items, $options = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$model</td>
+				  <td class="paramTypeCol"><a href="yii_base_model.html">yii\base\Model</a></td>
+				  <td class="paramDescCol">The model object</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$attribute</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The attribute name or expression. See <a href="yii_helpers_basehtml.html#getAttributeName()-detail">getAttributeName()</a> for the format
+about attribute expression.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$items</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The option data items. The array keys are option values, and the array values
+are the corresponding option labels. The array can also be nested (i.e. some array values are arrays too).
+For each sub-array, an option group will be generated whose label is the key associated with the sub-array.
+If you have a list of data models, you may convert them into the format described above using
+<a href="yii_helpers_basearrayhelper.html#map()-detail">yii\helpers\ArrayHelper::map()</a>.
+Note, the values and labels will be automatically HTML-encoded by this method, and the blank spaces in
+the labels will also be HTML-encoded.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol"><p>The tag options in terms of name-value pairs. The following options are specially handled:
+- prompt: string, a prompt text to be displayed as the first option;
+- options: array, the attributes for the select option tags. The array keys must be valid option values,
+  and the array values are the extra attributes for the corresponding option tags. For example,</p>
+
+<pre><code>[
+    'value1' =&gt; ['disabled' =&gt; true],
+    'value2' =&gt; ['label' =&gt; 'value 2'],
+];
+</code></pre>
+
+<ul>
+<li>groups: array, the attributes for the optgroup tags. The structure of this is similar to that of 'options',
+except that the array keys represent the optgroup labels specified in $items.
+The rest of the options will be rendered as the attributes of the resulting tag. The values will
+be HTML-encoded using <a href="yii_helpers_basehtml.html#encode()-detail">encode()</a>. If a value is null, the corresponding attribute will not be rendered.</li>
+</ul></td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the generated drop-down list tag</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Generates a drop-down list for the given model attribute.</strong></p>
+	<p>The selection of the drop-down list is taken from the value of the model attribute.</p>
+
+	
+
+	<div class="detailHeader" id="activeListBox()-detail">
+		activeListBox()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basehtml.html#activeListBox()-detail">activeListBox</a>( $model, $attribute, $items, $options = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$model</td>
+				  <td class="paramTypeCol"><a href="yii_base_model.html">yii\base\Model</a></td>
+				  <td class="paramDescCol">The model object</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$attribute</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The attribute name or expression. See <a href="yii_helpers_basehtml.html#getAttributeName()-detail">getAttributeName()</a> for the format
+about attribute expression.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$items</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The option data items. The array keys are option values, and the array values
+are the corresponding option labels. The array can also be nested (i.e. some array values are arrays too).
+For each sub-array, an option group will be generated whose label is the key associated with the sub-array.
+If you have a list of data models, you may convert them into the format described above using
+<a href="yii_helpers_basearrayhelper.html#map()-detail">yii\helpers\ArrayHelper::map()</a>.
+Note, the values and labels will be automatically HTML-encoded by this method, and the blank spaces in
+the labels will also be HTML-encoded.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol"><p>The tag options in terms of name-value pairs. The following options are specially handled:
+- prompt: string, a prompt text to be displayed as the first option;
+- options: array, the attributes for the select option tags. The array keys must be valid option values,
+  and the array values are the extra attributes for the corresponding option tags. For example,</p>
+
+<pre><code>[
+    'value1' =&gt; ['disabled' =&gt; true],
+    'value2' =&gt; ['label' =&gt; 'value 2'],
+];
+</code></pre>
+
+<ul>
+<li>groups: array, the attributes for the optgroup tags. The structure of this is similar to that of 'options',
+except that the array keys represent the optgroup labels specified in $items.</li>
+<li>unselect: string, the value that will be submitted when no option is selected.
+When this attribute is set, a hidden field will be generated so that if no option is selected in multiple
+mode, we can still obtain the posted unselect value.
+The rest of the options will be rendered as the attributes of the resulting tag. The values will
+be HTML-encoded using <a href="yii_helpers_basehtml.html#encode()-detail">encode()</a>. If a value is null, the corresponding attribute will not be rendered.</li>
+</ul></td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the generated list box tag</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Generates a list box.</strong></p>
+	<p>The selection of the list box is taken from the value of the model attribute.</p>
+
+	
+
+	<div class="detailHeader" id="activeCheckboxList()-detail">
+		activeCheckboxList()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basehtml.html#activeCheckboxList()-detail">activeCheckboxList</a>( $model, $attribute, $items, $options = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$model</td>
+				  <td class="paramTypeCol"><a href="yii_base_model.html">yii\base\Model</a></td>
+				  <td class="paramDescCol">The model object</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$attribute</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The attribute name or expression. See <a href="yii_helpers_basehtml.html#getAttributeName()-detail">getAttributeName()</a> for the format
+about attribute expression.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$items</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The data item used to generate the checkboxes.
+The array values are the labels, while the array keys are the corresponding checkbox values.
+Note that the labels will NOT be HTML-encoded, while the values will.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">Options (name => config) for the checkbox list. The following options are specially handled:
+- unselect: string, the value that should be submitted when none of the checkboxes is selected.
+  You may set this option to be null to prevent default value submission.
+  If this option is not set, an empty string will be submitted.
+- separator: string, the HTML code that separates items.
+- item: callable, a callback that can be used to customize the generation of the HTML code
+  corresponding to a single item in $items. The signature of this callback must be:</p>
+
+<pre><code>function ($index, $label, $name, $checked, $value)
+</code></pre>
+
+<p>where $index is the zero-based index of the checkbox in the whole list; $label
+is the label for the checkbox; and $name, $value and $checked represent the name,
+value and the checked status of the checkbox input.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the generated checkbox list</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Generates a list of checkboxes.</strong></p>
+	<p>A checkbox list allows multiple selection, like <a href="yii_helpers_basehtml.html#listBox()-detail">listBox()</a>.
+As a result, the corresponding submitted value is an array.
+The selection of the checkbox list is taken from the value of the model attribute.</p>
+
+	
+
+	<div class="detailHeader" id="activeRadioList()-detail">
+		activeRadioList()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basehtml.html#activeRadioList()-detail">activeRadioList</a>( $model, $attribute, $items, $options = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$model</td>
+				  <td class="paramTypeCol"><a href="yii_base_model.html">yii\base\Model</a></td>
+				  <td class="paramDescCol">The model object</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$attribute</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The attribute name or expression. See <a href="yii_helpers_basehtml.html#getAttributeName()-detail">getAttributeName()</a> for the format
+about attribute expression.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$items</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The data item used to generate the radio buttons.
+The array keys are the labels, while the array values are the corresponding radio button values.
+Note that the labels will NOT be HTML-encoded, while the values will.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">Options (name => config) for the radio button list. The following options are specially handled:
+- unselect: string, the value that should be submitted when none of the radio buttons is selected.
+  You may set this option to be null to prevent default value submission.
+  If this option is not set, an empty string will be submitted.
+- separator: string, the HTML code that separates items.
+- item: callable, a callback that can be used to customize the generation of the HTML code
+  corresponding to a single item in $items. The signature of this callback must be:</p>
+
+<pre><code>function ($index, $label, $name, $checked, $value)
+</code></pre>
+
+<p>where $index is the zero-based index of the radio button in the whole list; $label
+is the label for the radio button; and $name, $value and $checked represent the name,
+value and the checked status of the radio button input.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the generated radio button list</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Generates a list of radio buttons.</strong></p>
+	<p>A radio button list is like a checkbox list, except that it only allows single selection.
+The selection of the radio buttons is taken from the value of the model attribute.</p>
+
+	
+
+	<div class="detailHeader" id="renderSelectOptions()-detail">
+		renderSelectOptions()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basehtml.html#renderSelectOptions()-detail">renderSelectOptions</a>( $selection, $items, <b>&</b>$tagOptions = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$selection</td>
+				  <td class="paramTypeCol">string|array</td>
+				  <td class="paramDescCol">The selected value(s). This can be either a string for single selection
+or an array for multiple selections.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$items</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The option data items. The array keys are option values, and the array values
+are the corresponding option labels. The array can also be nested (i.e. some array values are arrays too).
+For each sub-array, an option group will be generated whose label is the key associated with the sub-array.
+If you have a list of data models, you may convert them into the format described above using
+<a href="yii_helpers_basearrayhelper.html#map()-detail">yii\helpers\ArrayHelper::map()</a>.
+Note, the values and labels will be automatically HTML-encoded by this method, and the blank spaces in
+the labels will also be HTML-encoded.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$tagOptions</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The $options parameter that is passed to the <a href="yii_helpers_basehtml.html#dropDownList()-detail">dropDownList()</a> or <a href="yii_helpers_basehtml.html#listBox()-detail">listBox()</a> call.
+This method will take out these elements, if any: "prompt", "options" and "groups". See more details
+in <a href="yii_helpers_basehtml.html#dropDownList()-detail">dropDownList()</a> for the explanation of these elements.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the generated list options</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Renders the option tags that can be used by <a href="yii_helpers_basehtml.html#dropDownList()-detail">dropDownList()</a> and <a href="yii_helpers_basehtml.html#listBox()-detail">listBox()</a>.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="renderTagAttributes()-detail">
+		renderTagAttributes()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basehtml.html#renderTagAttributes()-detail">renderTagAttributes</a>( $attributes )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$attributes</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">Attributes to be rendered. The attribute values will be HTML-encoded using <a href="yii_helpers_basehtml.html#encode()-detail">encode()</a>.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the rendering result. If the attributes are not empty, they will be rendered
+into a string with a leading white space (so that it can be directly appended to the tag name
+in a tag. If there is no attribute, an empty string will be returned.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Renders the HTML tag attributes.</strong></p>
+	<p>Attributes whose values are of boolean type will be treated as
+<a href="http://www.w3.org/TR/html5/infrastructure.html#boolean-attributes">boolean attributes</a>.
+And attributes whose values are null will not be rendered.</p>
+
+	
+
+	<div class="detailHeader" id="url()-detail">
+		url()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basehtml.html#url()-detail">url</a>( $url )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$url</td>
+				  <td class="paramTypeCol">array|string</td>
+				  <td class="paramDescCol">The parameter to be used to generate a valid URL</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the normalized URL</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_base_invalidparamexception.html">yii\base\InvalidParamException</a></td>
+				  <td class="paramDescCol">if the parameter is invalid.</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Normalizes the input parameter to be a valid URL.</strong></p>
+	<p><p>If the input parameter</p>
+
+<ul>
+<li>is an empty string: the currently requested URL will be returned;</li>
+<li>is a non-empty string: it will first be processed by <a href="yii_baseyii.html#getAlias()-detail">Yii::getAlias()</a>. If the result
+is an absolute URL, it will be returned without any change further; Otherwise, the result
+will be prefixed with <a href="yii_web_request.html#$baseUrl-detail">yii\web\Request::$baseUrl</a> and returned.</li>
+<li>is an array: the first array element is considered a route, while the rest of the name-value
+pairs are treated as the parameters to be used for URL creation using <a href="yii_web_controller.html#createUrl()-detail">yii\web\Controller::createUrl()</a>.
+For example: <code>['post/index', 'page' =&gt; 2]</code>, <code>['index']</code>.
+In case there is no controller, <a href="yii_web_urlmanager.html#createUrl()-detail">yii\web\UrlManager::createUrl()</a> will be used.</li>
+</ul></p>
+
+	
+
+	<div class="detailHeader" id="addCssClass()-detail">
+		addCssClass()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_helpers_basehtml.html#addCssClass()-detail">addCssClass</a>( <b>&</b>$options, $class )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The options to be modified.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$class</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The CSS class to be added</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Adds a CSS class to the specified options.</strong></p>
+	<p>If the CSS class is already in the options, it will not be added again.</p>
+
+	
+
+	<div class="detailHeader" id="removeCssClass()-detail">
+		removeCssClass()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_helpers_basehtml.html#removeCssClass()-detail">removeCssClass</a>( <b>&</b>$options, $class )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The options to be modified.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$class</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The CSS class to be removed</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Removes a CSS class from the specified options.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getAttributeName()-detail">
+		getAttributeName()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basehtml.html#getAttributeName()-detail">getAttributeName</a>( $attribute )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$attribute</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The attribute name or expression</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the attribute name without prefix and suffix.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_base_invalidparamexception.html">yii\base\InvalidParamException</a></td>
+				  <td class="paramDescCol">if the attribute name contains non-word characters.</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Returns the real attribute name from the given attribute expression.</strong></p>
+	<p>An attribute expression is an attribute name prefixed and/or suffixed with array indexes.
+It is mainly used in tabular data input and/or input of array type. Below are some examples:</p>
+
+<ul>
+<li><code>[0]content</code> is used in tabular data input to represent the "content" attribute
+for the first model in tabular input;</li>
+<li><code>dates[0]</code> represents the first array element of the "dates" attribute;</li>
+<li><code>[0]dates[0]</code> represents the first array element of the "dates" attribute
+for the first model in tabular input.</li>
+</ul>
+
+<p>If <code>$attribute</code> has neither prefix nor suffix, it will be returned back without change.</p>
+
+	
+
+	<div class="detailHeader" id="getAttributeValue()-detail">
+		getAttributeValue()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string|array <a href="yii_helpers_basehtml.html#getAttributeValue()-detail">getAttributeValue</a>( $model, $attribute )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$model</td>
+				  <td class="paramTypeCol"><a href="yii_base_model.html">yii\base\Model</a></td>
+				  <td class="paramDescCol">The model object</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$attribute</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The attribute name or expression</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string|array</td>
+				  <td class="paramDescCol">the corresponding attribute value</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_base_invalidparamexception.html">yii\base\InvalidParamException</a></td>
+				  <td class="paramDescCol">if the attribute name contains non-word characters.</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Returns the value of the specified attribute name or expression.</strong></p>
+	<p>For an attribute expression like <code>[0]dates[0]</code>, this method will return the value of <code>$model-&gt;dates[0]</code>.
+See <a href="yii_helpers_basehtml.html#getAttributeName()-detail">getAttributeName()</a> for more details about attribute expression.</p>
+
+<p>If an attribute value is an instance of <a href="yii_db_activerecordinterface.html">yii\db\ActiveRecordInterface</a> or an array of such instances,
+the primary value(s) of the AR instance(s) will be returned instead.</p>
+
+	
+
+	<div class="detailHeader" id="getInputName()-detail">
+		getInputName()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basehtml.html#getInputName()-detail">getInputName</a>( $model, $attribute )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$model</td>
+				  <td class="paramTypeCol"><a href="yii_base_model.html">yii\base\Model</a></td>
+				  <td class="paramDescCol">The model object</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$attribute</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The attribute name or expression</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the generated input name</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_base_invalidparamexception.html">yii\base\InvalidParamException</a></td>
+				  <td class="paramDescCol">if the attribute name contains non-word characters.</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Generates an appropriate input name for the specified attribute name or expression.</strong></p>
+	<p>This method generates a name that can be used as the input name to collect user input
+for the specified attribute. The name is generated according to the <a href="yii_base_model.html#formName()-detail">form name</a>
+of the model and the given attribute name. For example, if the form name of the <code>Post</code> model
+is <code>Post</code>, then the input name generated for the <code>content</code> attribute would be <code>Post[content]</code>.</p>
+
+<p>See <a href="yii_helpers_basehtml.html#getAttributeName()-detail">getAttributeName()</a> for explanation of attribute expression.</p>
+
+	
+
+	<div class="detailHeader" id="getInputId()-detail">
+		getInputId()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basehtml.html#getInputId()-detail">getInputId</a>( $model, $attribute )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$model</td>
+				  <td class="paramTypeCol"><a href="yii_base_model.html">yii\base\Model</a></td>
+				  <td class="paramDescCol">The model object</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$attribute</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The attribute name or expression. See <a href="yii_helpers_basehtml.html#getAttributeName()-detail">getAttributeName()</a> for explanation of attribute expression.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the generated input ID</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_base_invalidparamexception.html">yii\base\InvalidParamException</a></td>
+				  <td class="paramDescCol">if the attribute name contains non-word characters.</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Generates an appropriate input ID for the specified attribute name or expression.</strong></p>
+	<p>This method converts the result <a href="yii_helpers_basehtml.html#getInputName()-detail">getInputName()</a> into a valid input ID.
+For example, if <a href="yii_helpers_basehtml.html#getInputName()-detail">getInputName()</a> returns <code>Post[content]</code>, this method will return <code>post-content</code>.</p>
+
+	
+			</div><!-- end of content -->
+
+		<div id="apiFooter">
+			<p>&copy; 2008-2013 by <a href="http://www.yiisoft.com">Yii Software LLC</a></p>
+			<p>All Rights Reserved.</p>
+		</div><!-- end of footer -->
+
+<script type="text/javascript">
+/*<![CDATA[*/
+$("a.toggle").on('click', function() {
+	var $this = $(this);
+	if ($this.hasClass('properties-hidden')) {
+		$this.text($this.text().replace(/Show/,'Hide'));
+		$this.parents(".summary").find(".inherited").show();
+		$this.removeClass('properties-hidden');
+	} else {
+		$this.text($this.text().replace(/Hide/,'Show'));
+		$this.parents(".summary").find(".inherited").hide();
+		$this.addClass('properties-hidden');
+	}
+	return false;
+});
+/*
+$(".sourceCode a.show").toggle(function(){
+	$(this).text($(this).text().replace(/show/,'hide'));
+	$(this).parents(".sourceCode").find("div.code").show();
+},function(){
+	$(this).text($(this).text().replace(/hide/,'show'));
+	$(this).parents(".sourceCode").find("div.code").hide();
+});
+$("a.sourceLink").click(function(){
+	$(this).attr('target','_blank');
+});
+*/
+/*]]>*/
+</script>
+
+	</div><!-- end of page -->
+</body>
+</html>

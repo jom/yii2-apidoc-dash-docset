@@ -1,0 +1,767 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="language" content="en" />
+<link href="./assets/4138e429/api.css" rel="stylesheet">
+<link href="./assets/4138e429/style.css" rel="stylesheet">
+<script src="./assets/a91b37a6/jquery.js"></script><title>Yii Framework 2.0 API Documentation</title>
+</head>
+
+<body>
+	<div id="apiPage">
+
+		<div id="apiHeader">
+			<a href="http://www.yiiframework.com">Yii Framework</a> v2.0.0-dev Class Reference
+		</div><!-- end of header -->
+
+		<div id="content">
+		<h1>Class yii\helpers\BaseSecurity</h1>
+<div id="nav">
+	<a href="index.html">All Classes</a>
+				| <a href="#methods">Methods</a>
+					| <a href="#constants">Constants</a>
+	</div>
+
+<table class="summaryTable docClass">
+	<colgroup>
+		<col class="col-name" />
+		<col class="col-value" />
+	</colgroup>
+			<tr><th>Inheritance</th><td><a href="yii_helpers_basesecurity.html">yii\helpers\BaseSecurity</a></td></tr>
+						<tr><th>Subclasses</th><td><a href="yii_helpers_security.html">yii\helpers\Security</a></td></tr>
+						<tr><th>Available since version</th><td>2.0</td></tr>
+		<tr>
+	  <th>Source Code</th>
+	  <td></td>
+	</tr>
+</table>
+
+<div id="classDescription">
+	<strong>BaseSecurity provides concrete implementation for <a href="yii_helpers_security.html">yii\helpers\Security</a>.</strong>
+	<p>Do not use BaseSecurity. Use <a href="yii_helpers_security.html">yii\helpers\Security</a> instead.</p>
+</div>
+
+<a name="properties"></a>
+
+<a name="methods"></a>
+
+<div class="summary docMethod">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr id="encrypt()">
+		<td><a href="yii_helpers_basesecurity.html#encrypt()-detail">encrypt()</a></td>
+		<td>Encrypts data.</td>
+		<td><a href="yii_helpers_basesecurity.html">yii\helpers\BaseSecurity</a></td>
+	</tr>
+			<tr id="decrypt()">
+		<td><a href="yii_helpers_basesecurity.html#decrypt()-detail">decrypt()</a></td>
+		<td>Decrypts data</td>
+		<td><a href="yii_helpers_basesecurity.html">yii\helpers\BaseSecurity</a></td>
+	</tr>
+						<tr id="hashData()">
+		<td><a href="yii_helpers_basesecurity.html#hashData()-detail">hashData()</a></td>
+		<td>Prefixes data with a keyed hash value so that it can later be detected if it is tampered.</td>
+		<td><a href="yii_helpers_basesecurity.html">yii\helpers\BaseSecurity</a></td>
+	</tr>
+			<tr id="validateData()">
+		<td><a href="yii_helpers_basesecurity.html#validateData()-detail">validateData()</a></td>
+		<td>Validates if the given data is tampered.</td>
+		<td><a href="yii_helpers_basesecurity.html">yii\helpers\BaseSecurity</a></td>
+	</tr>
+			<tr id="getSecretKey()">
+		<td><a href="yii_helpers_basesecurity.html#getSecretKey()-detail">getSecretKey()</a></td>
+		<td>Returns a secret key associated with the specified name.</td>
+		<td><a href="yii_helpers_basesecurity.html">yii\helpers\BaseSecurity</a></td>
+	</tr>
+			<tr id="generateRandomKey()">
+		<td><a href="yii_helpers_basesecurity.html#generateRandomKey()-detail">generateRandomKey()</a></td>
+		<td>Generates a random key. The key may contain uppercase and lowercase latin letters, digits, underscore, dash and dot.</td>
+		<td><a href="yii_helpers_basesecurity.html">yii\helpers\BaseSecurity</a></td>
+	</tr>
+				<tr id="generatePasswordHash()">
+		<td><a href="yii_helpers_basesecurity.html#generatePasswordHash()-detail">generatePasswordHash()</a></td>
+		<td>Generates a secure hash from a password and a random salt.</td>
+		<td><a href="yii_helpers_basesecurity.html">yii\helpers\BaseSecurity</a></td>
+	</tr>
+			<tr id="validatePassword()">
+		<td><a href="yii_helpers_basesecurity.html#validatePassword()-detail">validatePassword()</a></td>
+		<td>Verifies a password against a hash.</td>
+		<td><a href="yii_helpers_basesecurity.html">yii\helpers\BaseSecurity</a></td>
+	</tr>
+		</table>
+</div>
+<div class="summary docMethod">
+<h2>Protected Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+				<tr id="addPadding()">
+		<td><a href="yii_helpers_basesecurity.html#addPadding()-detail">addPadding()</a></td>
+		<td>Adds a padding to the given data (PKCS #7).</td>
+		<td><a href="yii_helpers_basesecurity.html">yii\helpers\BaseSecurity</a></td>
+	</tr>
+			<tr id="stripPadding()">
+		<td><a href="yii_helpers_basesecurity.html#stripPadding()-detail">stripPadding()</a></td>
+		<td>Strips the padding from the given data.</td>
+		<td><a href="yii_helpers_basesecurity.html">yii\helpers\BaseSecurity</a></td>
+	</tr>
+			<tr id="deriveKey()">
+		<td><a href="yii_helpers_basesecurity.html#deriveKey()-detail">deriveKey()</a></td>
+		<td>Derives a key from the given password (PBKDF2).</td>
+		<td><a href="yii_helpers_basesecurity.html">yii\helpers\BaseSecurity</a></td>
+	</tr>
+							<tr id="openCryptModule()">
+		<td><a href="yii_helpers_basesecurity.html#openCryptModule()-detail">openCryptModule()</a></td>
+		<td>Opens the mcrypt module.</td>
+		<td><a href="yii_helpers_basesecurity.html">yii\helpers\BaseSecurity</a></td>
+	</tr>
+					<tr id="generateSalt()">
+		<td><a href="yii_helpers_basesecurity.html#generateSalt()-detail">generateSalt()</a></td>
+		<td>Generates a salt that can be used to generate a password hash.</td>
+		<td><a href="yii_helpers_basesecurity.html">yii\helpers\BaseSecurity</a></td>
+	</tr>
+	</table>
+</div>
+<a name="events"></a>
+
+<a name="constants"></a>
+<div class="summary docConst">
+<h2>Constants</h2>
+
+<p><a href="#" class="toggle">Hide inherited constants</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-const" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Constant</th><th>Value</th><th>Description</th><th>Defined By</th>
+</tr>
+	<tr id="CRYPT_BLOCK_SIZE">
+	  <td>CRYPT_BLOCK_SIZE<a name="CRYPT_BLOCK_SIZE-detail"></a></td>
+	  <td>16</td>
+	  <td>Uses AES, block size is 128-bit (16 bytes).</td>
+	  <td><a href="yii_helpers_basesecurity.html">yii\helpers\BaseSecurity</a></td>
+	</tr>
+	<tr id="CRYPT_KEY_SIZE">
+	  <td>CRYPT_KEY_SIZE<a name="CRYPT_KEY_SIZE-detail"></a></td>
+	  <td>24</td>
+	  <td>Uses AES-192, key size is 192-bit (24 bytes).</td>
+	  <td><a href="yii_helpers_basesecurity.html">yii\helpers\BaseSecurity</a></td>
+	</tr>
+	<tr id="DERIVATION_HASH">
+	  <td>DERIVATION_HASH<a name="DERIVATION_HASH-detail"></a></td>
+	  <td>'sha256'</td>
+	  <td>Uses SHA-256.</td>
+	  <td><a href="yii_helpers_basesecurity.html">yii\helpers\BaseSecurity</a></td>
+	</tr>
+	<tr id="DERIVATION_ITERATIONS">
+	  <td>DERIVATION_ITERATIONS<a name="DERIVATION_ITERATIONS-detail"></a></td>
+	  <td>1000</td>
+	  <td>Uses 1000 iterations.</td>
+	  <td><a href="yii_helpers_basesecurity.html">yii\helpers\BaseSecurity</a></td>
+	</tr>
+</table>
+</div>
+<h2>Method Details</h2>
+
+
+	<div class="detailHeader" id="encrypt()-detail">
+		encrypt()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basesecurity.html#encrypt()-detail">encrypt</a>( $data, $password )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$data</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Data to be encrypted.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$password</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The encryption password</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the encrypted data</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_base_exception.html">yii\base\Exception</a></td>
+				  <td class="paramDescCol">if PHP Mcrypt extension is not loaded or failed to be initialized</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Encrypts data.</strong></p>
+	<p></p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_helpers_basesecurity.html#decrypt()-detail">decrypt()</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="decrypt()-detail">
+		decrypt()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basesecurity.html#decrypt()-detail">decrypt</a>( $data, $password )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$data</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Data to be decrypted.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$password</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The decryption password</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the decrypted data</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_base_exception.html">yii\base\Exception</a></td>
+				  <td class="paramDescCol">if PHP Mcrypt extension is not loaded or failed to be initialized</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Decrypts data</strong></p>
+	<p></p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_helpers_basesecurity.html#encrypt()-detail">encrypt()</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="addPadding()-detail">
+		addPadding()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basesecurity.html#addPadding()-detail">addPadding</a>( $data )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$data</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The data to pad</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the padded data</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Adds a padding to the given data (PKCS #7).</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="stripPadding()-detail">
+		stripPadding()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basesecurity.html#stripPadding()-detail">stripPadding</a>( $data )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$data</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The data to trim</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the trimmed data</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Strips the padding from the given data.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="deriveKey()-detail">
+		deriveKey()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basesecurity.html#deriveKey()-detail">deriveKey</a>( $password, $salt )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$password</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The source password</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$salt</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The random salt</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the derived key</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Derives a key from the given password (PBKDF2).</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="hashData()-detail">
+		hashData()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basesecurity.html#hashData()-detail">hashData</a>( $data, $key, $algorithm = 'sha256' )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$data</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The data to be protected</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$key</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The secret key to be used for generating hash</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$algorithm</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The hashing algorithm (e.g. "md5", "sha1", "sha256", etc.). Call PHP "hash_algos()"
+function to see the supported hashing algorithms on your system.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the data prefixed with the keyed hash</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Prefixes data with a keyed hash value so that it can later be detected if it is tampered.</strong></p>
+	<p></p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_helpers_basesecurity.html#validateData()-detail">validateData()</a></li>
+	<li><a href="yii_helpers_basesecurity.html#getSecretKey()-detail">getSecretKey()</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="validateData()-detail">
+		validateData()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basesecurity.html#validateData()-detail">validateData</a>( $data, $key, $algorithm = 'sha256' )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$data</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The data to be validated. The data must be previously
+generated by <a href="yii_helpers_basesecurity.html#hashData()-detail">hashData()</a>.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$key</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The secret key that was previously used to generate the hash for the data in <a href="yii_helpers_basesecurity.html#hashData()-detail">hashData()</a>.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$algorithm</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The hashing algorithm (e.g. "md5", "sha1", "sha256", etc.). Call PHP "hash_algos()"
+function to see the supported hashing algorithms on your system. This must be the same
+as the value passed to <a href="yii_helpers_basesecurity.html#hashData()-detail">hashData()</a> when generating the hash for the data.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the real data with the hash stripped off. False if the data is tampered.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Validates if the given data is tampered.</strong></p>
+	<p></p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_helpers_basesecurity.html#hashData()-detail">hashData()</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="getSecretKey()-detail">
+		getSecretKey()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basesecurity.html#getSecretKey()-detail">getSecretKey</a>( $name, $length = 32 )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The name that is associated with the secret key</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$length</td>
+				  <td class="paramTypeCol">integer</td>
+				  <td class="paramDescCol">The length of the key that should be generated if not exists</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the secret key associated with the specified name</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns a secret key associated with the specified name.</strong></p>
+	<p>If the secret key does not exist, a random key will be generated
+and saved in the file "keys.json" under the application's runtime directory
+so that the same secret key can be returned in future requests.</p>
+
+	
+
+	<div class="detailHeader" id="generateRandomKey()-detail">
+		generateRandomKey()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basesecurity.html#generateRandomKey()-detail">generateRandomKey</a>( $length = 32 )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$length</td>
+				  <td class="paramTypeCol">integer</td>
+				  <td class="paramDescCol">The length of the key that should be generated</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the generated random key</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Generates a random key. The key may contain uppercase and lowercase latin letters, digits, underscore, dash and dot.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="openCryptModule()-detail">
+		openCryptModule()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			resource <a href="yii_helpers_basesecurity.html#openCryptModule()-detail">openCryptModule</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">resource</td>
+				  <td class="paramDescCol">the mcrypt module handle.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_base_invalidconfigexception.html">yii\base\InvalidConfigException</a></td>
+				  <td class="paramDescCol">if mcrypt extension is not installed</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_base_exception.html">yii\base\Exception</a></td>
+				  <td class="paramDescCol">if mcrypt initialization fails</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Opens the mcrypt module.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="generatePasswordHash()-detail">
+		generatePasswordHash()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basesecurity.html#generatePasswordHash()-detail">generatePasswordHash</a>( $password, $cost = 13 )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$password</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The password to be hashed.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$cost</td>
+				  <td class="paramTypeCol">integer</td>
+				  <td class="paramDescCol">Cost parameter used by the Blowfish hash algorithm.
+The higher the value of cost,
+the longer it takes to generate the hash and to verify a password against it. Higher cost
+therefore slows down a brute-force attack. For best protection against brute for attacks,
+set it to the highest value that is tolerable on production servers. The time taken to
+compute the hash doubles for every increment by one of $cost. So, for example, if the
+hash takes 1 second to compute when $cost is 14 then then the compute time varies as
+2^($cost - 14) seconds.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The password hash string, ASCII and not longer than 64 characters.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_base_exception.html">yii\base\Exception</a></td>
+				  <td class="paramDescCol">on bad password parameter or cost parameter</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Generates a secure hash from a password and a random salt.</strong></p>
+	<p><p>The generated hash can be stored in database (e.g. <code>CHAR(64) CHARACTER SET latin1</code> on MySQL).
+Later when a password needs to be validated, the hash can be fetched and passed
+to <a href="yii_helpers_basesecurity.html#validatePassword()-detail">validatePassword()</a>. For example,</p>
+
+<pre><code>// generates the hash (usually done during user registration or when the password is changed)
+$hash = Security::generatePasswordHash($password);
+// ...save $hash in database...
+
+// during login, validate if the password entered is correct using $hash fetched from database
+if (Security::validatePassword($password, $hash) {
+    // password is good
+} else {
+    // password is bad
+}
+</code></pre></p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_helpers_basesecurity.html#validatePassword()-detail">validatePassword()</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="validatePassword()-detail">
+		validatePassword()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_helpers_basesecurity.html#validatePassword()-detail">validatePassword</a>( $password, $hash )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$password</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The password to verify.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$hash</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The hash to verify the password against.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether the password is correct.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_base_invalidparamexception.html">yii\base\InvalidParamException</a></td>
+				  <td class="paramDescCol">on bad password or hash parameters or if crypt() with Blowfish hash is not available.</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Verifies a password against a hash.</strong></p>
+	<p></p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_helpers_basesecurity.html#generatePasswordHash()-detail">generatePasswordHash()</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="generateSalt()-detail">
+		generateSalt()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_basesecurity.html#generateSalt()-detail">generateSalt</a>( $cost = 13 )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$cost</td>
+				  <td class="paramTypeCol">integer</td>
+				  <td class="paramDescCol">The cost parameter</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the random salt value.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_base_invalidparamexception.html">yii\base\InvalidParamException</a></td>
+				  <td class="paramDescCol">if the cost parameter is not between 4 and 31</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Generates a salt that can be used to generate a password hash.</strong></p>
+	<p>The PHP <a href="http://php.net/manual/en/function.crypt.php">crypt()</a> built-in function
+requires, for the Blowfish hash algorithm, a salt string in a specific format:
+"$2a$", "$2x$" or "$2y$", a two digit cost parameter, "$", and 22 characters
+from the alphabet "./0-9A-Za-z".</p>
+
+	
+			</div><!-- end of content -->
+
+		<div id="apiFooter">
+			<p>&copy; 2008-2013 by <a href="http://www.yiisoft.com">Yii Software LLC</a></p>
+			<p>All Rights Reserved.</p>
+		</div><!-- end of footer -->
+
+<script type="text/javascript">
+/*<![CDATA[*/
+$("a.toggle").on('click', function() {
+	var $this = $(this);
+	if ($this.hasClass('properties-hidden')) {
+		$this.text($this.text().replace(/Show/,'Hide'));
+		$this.parents(".summary").find(".inherited").show();
+		$this.removeClass('properties-hidden');
+	} else {
+		$this.text($this.text().replace(/Hide/,'Show'));
+		$this.parents(".summary").find(".inherited").hide();
+		$this.addClass('properties-hidden');
+	}
+	return false;
+});
+/*
+$(".sourceCode a.show").toggle(function(){
+	$(this).text($(this).text().replace(/show/,'hide'));
+	$(this).parents(".sourceCode").find("div.code").show();
+},function(){
+	$(this).text($(this).text().replace(/hide/,'show'));
+	$(this).parents(".sourceCode").find("div.code").hide();
+});
+$("a.sourceLink").click(function(){
+	$(this).attr('target','_blank');
+});
+*/
+/*]]>*/
+</script>
+
+	</div><!-- end of page -->
+</body>
+</html>

@@ -1,0 +1,838 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="language" content="en" />
+<link href="./assets/4138e429/api.css" rel="stylesheet">
+<link href="./assets/4138e429/style.css" rel="stylesheet">
+<script src="./assets/a91b37a6/jquery.js"></script><title>Yii Framework 2.0 API Documentation</title>
+</head>
+
+<body>
+	<div id="apiPage">
+
+		<div id="apiHeader">
+			<a href="http://www.yiiframework.com">Yii Framework</a> v2.0.0-dev Class Reference
+		</div><!-- end of header -->
+
+		<div id="content">
+		<h1>Class yii\log\Logger</h1>
+<div id="nav">
+	<a href="index.html">All Classes</a>
+			| <a href="#properties">Properties</a>
+				| <a href="#methods">Methods</a>
+					| <a href="#constants">Constants</a>
+	</div>
+
+<table class="summaryTable docClass">
+	<colgroup>
+		<col class="col-name" />
+		<col class="col-value" />
+	</colgroup>
+			<tr><th>Inheritance</th><td><a href="yii_log_logger.html">yii\log\Logger</a> &raquo;
+<a href="yii_base_component.html">yii\base\Component</a> &raquo;
+<a href="yii_base_object.html">yii\base\Object</a></td></tr>
+				<tr><th>Implements</th><td><a href="yii_base_arrayable.html">yii\base\Arrayable</a></td></tr>
+								<tr><th>Available since version</th><td>2.0</td></tr>
+		<tr>
+	  <th>Source Code</th>
+	  <td></td>
+	</tr>
+</table>
+
+<div id="classDescription">
+	<strong>Logger records logged messages in memory and sends them to different targets as needed.</strong>
+	<p>Logger is registered as a core application component and can be accessed using <code>Yii::$app-&gt;log</code>.
+You can call the method <a href="yii_log_logger.html#log()-detail">log()</a> to record a single log message. For convenience, a set of shortcut
+methods are provided for logging messages of various severity levels via the <a href="yii.html">Yii</a> class:</p>
+
+<ul>
+<li><a href="yii_baseyii.html#trace()-detail">Yii::trace()</a></li>
+<li><a href="yii_baseyii.html#error()-detail">Yii::error()</a></li>
+<li><a href="yii_baseyii.html#warning()-detail">Yii::warning()</a></li>
+<li><a href="yii_baseyii.html#info()-detail">Yii::info()</a></li>
+<li><a href="yii_baseyii.html#beginProfile()-detail">Yii::beginProfile()</a></li>
+<li><a href="yii_baseyii.html#endProfile()-detail">Yii::endProfile()</a></li>
+</ul>
+
+<p>When enough messages are accumulated in the logger, or when the current request finishes,
+the logged messages will be sent to different <a href="yii_log_logger.html#$targets-detail">$targets</a>, such as log files, emails.</p>
+
+<p>You may configure the targets in application configuration, like the following:</p>
+
+<pre><code>[
+    'components' =&gt; [
+        'log' =&gt; [
+            'targets' =&gt; [
+                'file' =&gt; [
+                    'class' =&gt; 'yii\log\FileTarget',
+                    'levels' =&gt; ['trace', 'info'],
+                    'categories' =&gt; ['yii\*'],
+                ],
+                'email' =&gt; [
+                    'class' =&gt; 'yii\log\EmailTarget',
+                    'levels' =&gt; ['error', 'warning'],
+                    'message' =&gt; [
+                        'to' =&gt; 'admin@example.com',
+                    ],
+                ],
+            ],
+        ],
+    ],
+]
+</code></pre>
+
+<p>Each log target can have a name and can be referenced via the <a href="yii_log_logger.html#$targets-detail">$targets</a> property
+as follows:</p>
+
+<pre><code>Yii::$app-&gt;log-&gt;targets['file']-&gt;enabled = false;
+</code></pre>
+
+<p>When the application ends or <a href="yii_log_logger.html#$flushInterval-detail">$flushInterval</a> is reached, Logger will call <a href="yii_log_logger.html#flush()-detail">flush()</a>
+to send logged messages to different log targets, such as file, email, Web.</p>
+</div>
+
+<a name="properties"></a>
+
+<div class="summary docProperty">
+<h2>Public Properties</h2>
+
+<p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-property" />
+	<col class="col-type" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Property</th><th>Type</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr id="$messages">
+		<td><a href="yii_log_logger.html#$messages-detail">$messages</a></td>
+		<td>array</td>
+		<td>Logged messages</td>
+		<td><a href="yii_log_logger.html">yii\log\Logger</a></td>
+	</tr>
+			<tr id="$data">
+		<td><a href="yii_log_logger.html#$data-detail">$data</a></td>
+		<td>array</td>
+		<td>Debug data</td>
+		<td><a href="yii_log_logger.html">yii\log\Logger</a></td>
+	</tr>
+			<tr id="$targets">
+		<td><a href="yii_log_logger.html#$targets-detail">$targets</a></td>
+		<td>array|<a href="yii_log_target.html">yii\log\Target</a>[]</td>
+		<td>The log targets</td>
+		<td><a href="yii_log_logger.html">yii\log\Logger</a></td>
+	</tr>
+			<tr id="$flushInterval">
+		<td><a href="yii_log_logger.html#$flushInterval-detail">$flushInterval</a></td>
+		<td>integer</td>
+		<td>How many messages should be logged before they are flushed from memory and sent to targets</td>
+		<td><a href="yii_log_logger.html">yii\log\Logger</a></td>
+	</tr>
+			<tr id="$traceLevel">
+		<td><a href="yii_log_logger.html#$traceLevel-detail">$traceLevel</a></td>
+		<td>integer</td>
+		<td>How much call stack information (file name and line number) should be logged for each message</td>
+		<td><a href="yii_log_logger.html">yii\log\Logger</a></td>
+	</tr>
+			<tr id="$behaviors">
+		<td><a href="yii_log_logger.html#$behaviors-detail">$behaviors</a></td>
+		<td><a href="yii_base_behavior.html">yii\base\Behavior</a>[]</td>
+		<td>list of behaviors attached to this component</td>
+		<td><a href="yii_log_logger.html">yii\log\Logger</a></td>
+	</tr>
+			<tr id="$elapsedTime">
+		<td><a href="yii_log_logger.html#$elapsedTime-detail">$elapsedTime</a></td>
+		<td>float</td>
+		<td>the total elapsed time in seconds for current request</td>
+		<td><a href="yii_log_logger.html">yii\log\Logger</a></td>
+	</tr>
+			<tr id="$profiling">
+		<td><a href="yii_log_logger.html#$profiling-detail">$profiling</a></td>
+		<td>array</td>
+		<td>the profiling results</td>
+		<td><a href="yii_log_logger.html">yii\log\Logger</a></td>
+	</tr>
+			<tr id="$dbProfiling">
+		<td><a href="yii_log_logger.html#$dbProfiling-detail">$dbProfiling</a></td>
+		<td>array</td>
+		<td>the first element indicates the number of SQL statements executed,
+and the second element the total time spent in SQL execution</td>
+		<td><a href="yii_log_logger.html">yii\log\Logger</a></td>
+	</tr>
+	</table>
+</div>
+<a name="methods"></a>
+
+<div class="summary docMethod">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr class="inherited" id="className()">
+		<td><a href="yii_base_object.html#className()-detail">className()</a></td>
+		<td></td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__construct()">
+		<td><a href="yii_base_object.html#__construct()-detail">__construct()</a></td>
+		<td>Constructor.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr id="init()">
+		<td><a href="yii_log_logger.html#init()-detail">init()</a></td>
+		<td>Initializes the logger by registering <a href="yii_log_logger.html#flush()-detail">flush()</a> as a shutdown function.</td>
+		<td><a href="yii_log_logger.html">yii\log\Logger</a></td>
+	</tr>
+			<tr class="inherited" id="__get()">
+		<td><a href="yii_base_component.html#__get()-detail">__get()</a></td>
+		<td>Returns the value of a component property.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__set()">
+		<td><a href="yii_base_component.html#__set()-detail">__set()</a></td>
+		<td>Sets the value of a component property.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__isset()">
+		<td><a href="yii_base_component.html#__isset()-detail">__isset()</a></td>
+		<td>Checks if a property value is null.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__unset()">
+		<td><a href="yii_base_component.html#__unset()-detail">__unset()</a></td>
+		<td>Sets a component property to be null.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__call()">
+		<td><a href="yii_base_component.html#__call()-detail">__call()</a></td>
+		<td>Calls the named method which is not a class method.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasProperty()">
+		<td><a href="yii_base_component.html#hasProperty()-detail">hasProperty()</a></td>
+		<td>Returns a value indicating whether a property is defined for this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="canGetProperty()">
+		<td><a href="yii_base_component.html#canGetProperty()-detail">canGetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be read.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="canSetProperty()">
+		<td><a href="yii_base_component.html#canSetProperty()-detail">canSetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be set.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasMethod()">
+		<td><a href="yii_base_component.html#hasMethod()-detail">hasMethod()</a></td>
+		<td>Returns a value indicating whether a method is defined.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="toArray()">
+		<td><a href="yii_base_object.html#toArray()-detail">toArray()</a></td>
+		<td>Converts the object into an array.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__clone()">
+		<td><a href="yii_base_component.html#__clone()-detail">__clone()</a></td>
+		<td>This method is called after the object is created by cloning an existing one.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="behaviors()">
+		<td><a href="yii_base_component.html#behaviors()-detail">behaviors()</a></td>
+		<td>Returns a list of behaviors that this component should behave as.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasEventHandlers()">
+		<td><a href="yii_base_component.html#hasEventHandlers()-detail">hasEventHandlers()</a></td>
+		<td>Returns a value indicating whether there is any handler attached to the named event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="on()">
+		<td><a href="yii_base_component.html#on()-detail">on()</a></td>
+		<td>Attaches an event handler to an event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="off()">
+		<td><a href="yii_base_component.html#off()-detail">off()</a></td>
+		<td>Detaches an existing event handler from this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="trigger()">
+		<td><a href="yii_base_component.html#trigger()-detail">trigger()</a></td>
+		<td>Triggers an event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="getBehavior()">
+		<td><a href="yii_base_component.html#getBehavior()-detail">getBehavior()</a></td>
+		<td>Returns the named behavior object.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="getBehaviors()">
+		<td><a href="yii_base_component.html#getBehaviors()-detail">getBehaviors()</a></td>
+		<td>Returns all behaviors attached to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="attachBehavior()">
+		<td><a href="yii_base_component.html#attachBehavior()-detail">attachBehavior()</a></td>
+		<td>Attaches a behavior to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="attachBehaviors()">
+		<td><a href="yii_base_component.html#attachBehaviors()-detail">attachBehaviors()</a></td>
+		<td>Attaches a list of behaviors to the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="detachBehavior()">
+		<td><a href="yii_base_component.html#detachBehavior()-detail">detachBehavior()</a></td>
+		<td>Detaches a behavior from the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="detachBehaviors()">
+		<td><a href="yii_base_component.html#detachBehaviors()-detail">detachBehaviors()</a></td>
+		<td>Detaches all behaviors from the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="ensureBehaviors()">
+		<td><a href="yii_base_component.html#ensureBehaviors()-detail">ensureBehaviors()</a></td>
+		<td>Makes sure that the behaviors declared in <a href="yii_base_component.html#behaviors()-detail">behaviors()</a> are attached to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr id="log()">
+		<td><a href="yii_log_logger.html#log()-detail">log()</a></td>
+		<td>Logs a message with the given type and category.</td>
+		<td><a href="yii_log_logger.html">yii\log\Logger</a></td>
+	</tr>
+			<tr id="flush()">
+		<td><a href="yii_log_logger.html#flush()-detail">flush()</a></td>
+		<td>Flushes log messages from memory to targets.</td>
+		<td><a href="yii_log_logger.html">yii\log\Logger</a></td>
+	</tr>
+			<tr id="getElapsedTime()">
+		<td><a href="yii_log_logger.html#getElapsedTime()-detail">getElapsedTime()</a></td>
+		<td>Returns the total elapsed time since the start of the current request.</td>
+		<td><a href="yii_log_logger.html">yii\log\Logger</a></td>
+	</tr>
+			<tr id="getProfiling()">
+		<td><a href="yii_log_logger.html#getProfiling()-detail">getProfiling()</a></td>
+		<td>Returns the profiling results.</td>
+		<td><a href="yii_log_logger.html">yii\log\Logger</a></td>
+	</tr>
+			<tr id="getDbProfiling()">
+		<td><a href="yii_log_logger.html#getDbProfiling()-detail">getDbProfiling()</a></td>
+		<td>Returns the statistical results of DB queries.</td>
+		<td><a href="yii_log_logger.html">yii\log\Logger</a></td>
+	</tr>
+			<tr id="calculateTimings()">
+		<td><a href="yii_log_logger.html#calculateTimings()-detail">calculateTimings()</a></td>
+		<td>Calculates the elapsed time for the given log messages.</td>
+		<td><a href="yii_log_logger.html">yii\log\Logger</a></td>
+	</tr>
+			<tr id="getLevelName()">
+		<td><a href="yii_log_logger.html#getLevelName()-detail">getLevelName()</a></td>
+		<td>Returns the text display of the specified level.</td>
+		<td><a href="yii_log_logger.html">yii\log\Logger</a></td>
+	</tr>
+	</table>
+</div>
+<a name="events"></a>
+
+<a name="constants"></a>
+<div class="summary docConst">
+<h2>Constants</h2>
+
+<p><a href="#" class="toggle">Hide inherited constants</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-const" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Constant</th><th>Value</th><th>Description</th><th>Defined By</th>
+</tr>
+	<tr id="LEVEL_ERROR">
+	  <td>LEVEL_ERROR<a name="LEVEL_ERROR-detail"></a></td>
+	  <td>1</td>
+	  <td>Error message level. An error message is one that indicates the abnormal termination of the
+application and may require developer's handling.</td>
+	  <td><a href="yii_log_logger.html">yii\log\Logger</a></td>
+	</tr>
+	<tr id="LEVEL_WARNING">
+	  <td>LEVEL_WARNING<a name="LEVEL_WARNING-detail"></a></td>
+	  <td>2</td>
+	  <td>Warning message level. A warning message is one that indicates some abnormal happens but
+the application is able to continue to run. Developers should pay attention to this message.</td>
+	  <td><a href="yii_log_logger.html">yii\log\Logger</a></td>
+	</tr>
+	<tr id="LEVEL_INFO">
+	  <td>LEVEL_INFO<a name="LEVEL_INFO-detail"></a></td>
+	  <td>4</td>
+	  <td>Informational message level. An informational message is one that includes certain information
+for developers to review.</td>
+	  <td><a href="yii_log_logger.html">yii\log\Logger</a></td>
+	</tr>
+	<tr id="LEVEL_TRACE">
+	  <td>LEVEL_TRACE<a name="LEVEL_TRACE-detail"></a></td>
+	  <td>8</td>
+	  <td>Tracing message level. An tracing message is one that reveals the code execution flow.</td>
+	  <td><a href="yii_log_logger.html">yii\log\Logger</a></td>
+	</tr>
+	<tr id="LEVEL_PROFILE">
+	  <td>LEVEL_PROFILE<a name="LEVEL_PROFILE-detail"></a></td>
+	  <td>64</td>
+	  <td>Profiling message level. This indicates the message is for profiling purpose.</td>
+	  <td><a href="yii_log_logger.html">yii\log\Logger</a></td>
+	</tr>
+	<tr id="LEVEL_PROFILE_BEGIN">
+	  <td>LEVEL_PROFILE_BEGIN<a name="LEVEL_PROFILE_BEGIN-detail"></a></td>
+	  <td>80</td>
+	  <td>Profiling message level. This indicates the message is for profiling purpose. It marks the
+beginning of a profiling block.</td>
+	  <td><a href="yii_log_logger.html">yii\log\Logger</a></td>
+	</tr>
+	<tr id="LEVEL_PROFILE_END">
+	  <td>LEVEL_PROFILE_END<a name="LEVEL_PROFILE_END-detail"></a></td>
+	  <td>96</td>
+	  <td>Profiling message level. This indicates the message is for profiling purpose. It marks the
+end of a profiling block.</td>
+	  <td><a href="yii_log_logger.html">yii\log\Logger</a></td>
+	</tr>
+</table>
+</div>
+<h2>Property Details</h2>
+
+
+	<div class="detailHeader" id="$messages-detail">
+		$messages		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array $messages = []	</div>
+
+	<p><p>Logged messages. This property is managed by <a href="yii_log_logger.html#log()-detail">log()</a> and <a href="yii_log_logger.html#flush()-detail">flush()</a>.
+Each log message is of the following structure:</p>
+
+<pre><code>[
+  [0] =&gt; message (mixed, can be a string or some complex data, such as an exception object)
+  [1] =&gt; level (integer)
+  [2] =&gt; category (string)
+  [3] =&gt; timestamp (float, obtained by microtime(true))
+  [4] =&gt; traces (array, debug backtrace, contains the application code call stacks)
+]
+</code></pre></p>
+
+	
+
+	<div class="detailHeader" id="$data-detail">
+		$data		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array $data = []	</div>
+
+	<p>Debug data. This property stores various types of debug data reported at
+different instrument places.</p>
+
+	
+
+	<div class="detailHeader" id="$targets-detail">
+		$targets		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array|<a href="yii_log_target.html">yii\log\Target</a>[] $targets = []	</div>
+
+	<p>The log targets. Each array element represents a single <a href="yii_log_target.html">yii\log\Target</a> instance
+or the configuration for creating the log target instance.</p>
+
+	
+
+	<div class="detailHeader" id="$flushInterval-detail">
+		$flushInterval		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	integer $flushInterval = 1000	</div>
+
+	<p>How many messages should be logged before they are flushed from memory and sent to targets.
+Defaults to 1000, meaning the <a href="yii_log_logger.html#flush()-detail">flush()</a> method will be invoked once every 1000 messages logged.
+Set this property to be 0 if you don't want to flush messages until the application terminates.
+This property mainly affects how much memory will be taken by the logged messages.
+A smaller value means less memory, but will increase the execution time due to the overhead of <a href="yii_log_logger.html#flush()-detail">flush()</a>.</p>
+
+	
+
+	<div class="detailHeader" id="$traceLevel-detail">
+		$traceLevel		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	integer $traceLevel = null	</div>
+
+	<p>How much call stack information (file name and line number) should be logged for each message.
+If it is greater than 0, at most that number of call stacks will be logged. Note that only application
+call stacks are counted.
+If not set, it will default to 3 when <code>YII_ENV</code> is set as "dev", and 0 otherwise.</p>
+
+	
+
+	<div class="detailHeader" id="$behaviors-detail">
+		$behaviors		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_base_behavior.html">yii\base\Behavior</a>[] <a href="yii_base_component.html#getBehaviors()-detail">getBehaviors</a>(  )	</div>
+
+	<p>list of behaviors attached to this component</p>
+
+	
+
+	<div class="detailHeader" id="$elapsedTime-detail">
+		$elapsedTime		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	float <a href="yii_log_logger.html#getElapsedTime()-detail">getElapsedTime</a>(  )	</div>
+
+	<p>the total elapsed time in seconds for current request.</p>
+
+	
+
+	<div class="detailHeader" id="$profiling-detail">
+		$profiling		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	array <a href="yii_log_logger.html#getProfiling()-detail">getProfiling</a>( $categories = [], $excludeCategories = [] )	</div>
+
+	<p>the profiling results. Each element is an array consisting of these elements:
+<code>info</code>, <code>category</code>, <code>timestamp</code>, <code>trace</code>, <code>level</code>, <code>duration</code>.</p>
+
+	
+
+	<div class="detailHeader" id="$dbProfiling-detail">
+		$dbProfiling		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	array <a href="yii_log_logger.html#getDbProfiling()-detail">getDbProfiling</a>(  )	</div>
+
+	<p>the first element indicates the number of SQL statements executed,
+and the second element the total time spent in SQL execution.</p>
+
+	
+<h2>Method Details</h2>
+
+
+	<div class="detailHeader" id="init()-detail">
+		init()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_log_logger.html#init()-detail">init</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p>Initializes the logger by registering <a href="yii_log_logger.html#flush()-detail">flush()</a> as a shutdown function.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="log()-detail">
+		log()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_log_logger.html#log()-detail">log</a>( $message, $level, $category = 'application' )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$message</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The message to be logged.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$level</td>
+				  <td class="paramTypeCol">integer</td>
+				  <td class="paramDescCol">The level of the message. This must be one of the following:
+<code>Logger::LEVEL_ERROR</code>, <code>Logger::LEVEL_WARNING</code>, <code>Logger::LEVEL_INFO</code>, <code>Logger::LEVEL_TRACE</code>,
+<code>Logger::LEVEL_PROFILE_BEGIN</code>, <code>Logger::LEVEL_PROFILE_END</code>.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$category</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The category of the message.</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Logs a message with the given type and category.</strong></p>
+	<p>If <a href="yii_log_logger.html#$traceLevel-detail">$traceLevel</a> is greater than 0, additional call stack information about
+the application code will be logged as well.</p>
+
+	
+
+	<div class="detailHeader" id="flush()-detail">
+		flush()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_log_logger.html#flush()-detail">flush</a>( $final = false )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$final</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">Whether this is a final call during a request.</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Flushes log messages from memory to targets.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getElapsedTime()-detail">
+		getElapsedTime()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			float <a href="yii_log_logger.html#getElapsedTime()-detail">getElapsedTime</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">float</td>
+				  <td class="paramDescCol">the total elapsed time in seconds for current request.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the total elapsed time since the start of the current request.</strong></p>
+	<p>This method calculates the difference between now and the timestamp
+defined by constant <code>YII_BEGIN_TIME</code> which is evaluated at the beginning
+of <span style="background: #f00;">\yii\log\BaseYii</span> class file.</p>
+
+	
+
+	<div class="detailHeader" id="getProfiling()-detail">
+		getProfiling()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			array <a href="yii_log_logger.html#getProfiling()-detail">getProfiling</a>( $categories = [], $excludeCategories = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$categories</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">List of categories that you are interested in.
+You can use an asterisk at the end of a category to do a prefix match.
+For example, 'yii\db&#42;' will match categories starting with 'yii\db\',
+such as 'yii\db\Connection'.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$excludeCategories</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">List of categories that you want to exclude</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">the profiling results. Each element is an array consisting of these elements:
+<code>info</code>, <code>category</code>, <code>timestamp</code>, <code>trace</code>, <code>level</code>, <code>duration</code>.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the profiling results.</strong></p>
+	<p>By default, all profiling results will be returned. You may provide
+<code>$categories</code> and <code>$excludeCategories</code> as parameters to retrieve the
+results that you are interested in.</p>
+
+	
+
+	<div class="detailHeader" id="getDbProfiling()-detail">
+		getDbProfiling()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			array <a href="yii_log_logger.html#getDbProfiling()-detail">getDbProfiling</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">the first element indicates the number of SQL statements executed,
+and the second element the total time spent in SQL execution.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the statistical results of DB queries.</strong></p>
+	<p>The results returned include the number of SQL statements executed and
+the total time spent.</p>
+
+	
+
+	<div class="detailHeader" id="calculateTimings()-detail">
+		calculateTimings()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			array <a href="yii_log_logger.html#calculateTimings()-detail">calculateTimings</a>( $messages )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$messages</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The log messages obtained from profiling</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">timings. Each element is an array consisting of these elements:
+<code>info</code>, <code>category</code>, <code>timestamp</code>, <code>trace</code>, <code>level</code>, <code>duration</code>.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Calculates the elapsed time for the given log messages.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getLevelName()-detail">
+		getLevelName()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_log_logger.html#getLevelName()-detail">getLevelName</a>( $level )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$level</td>
+				  <td class="paramTypeCol">integer</td>
+				  <td class="paramDescCol">The message level, e.g. <a href="yii_log_logger.html#LEVEL_ERROR-detail">LEVEL_ERROR</a>, <a href="yii_log_logger.html#LEVEL_WARNING-detail">LEVEL_WARNING</a>.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the text display of the level</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the text display of the specified level.</strong></p>
+	<p></p>
+
+	
+			</div><!-- end of content -->
+
+		<div id="apiFooter">
+			<p>&copy; 2008-2013 by <a href="http://www.yiisoft.com">Yii Software LLC</a></p>
+			<p>All Rights Reserved.</p>
+		</div><!-- end of footer -->
+
+<script type="text/javascript">
+/*<![CDATA[*/
+$("a.toggle").on('click', function() {
+	var $this = $(this);
+	if ($this.hasClass('properties-hidden')) {
+		$this.text($this.text().replace(/Show/,'Hide'));
+		$this.parents(".summary").find(".inherited").show();
+		$this.removeClass('properties-hidden');
+	} else {
+		$this.text($this.text().replace(/Hide/,'Show'));
+		$this.parents(".summary").find(".inherited").hide();
+		$this.addClass('properties-hidden');
+	}
+	return false;
+});
+/*
+$(".sourceCode a.show").toggle(function(){
+	$(this).text($(this).text().replace(/show/,'hide'));
+	$(this).parents(".sourceCode").find("div.code").show();
+},function(){
+	$(this).text($(this).text().replace(/hide/,'show'));
+	$(this).parents(".sourceCode").find("div.code").hide();
+});
+$("a.sourceLink").click(function(){
+	$(this).attr('target','_blank');
+});
+*/
+/*]]>*/
+</script>
+
+	</div><!-- end of page -->
+</body>
+</html>

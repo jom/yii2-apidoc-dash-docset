@@ -1,0 +1,489 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="language" content="en" />
+<link href="./assets/4138e429/api.css" rel="stylesheet">
+<link href="./assets/4138e429/style.css" rel="stylesheet">
+<script src="./assets/a91b37a6/jquery.js"></script><title>Yii Framework 2.0 API Documentation</title>
+</head>
+
+<body>
+	<div id="apiPage">
+
+		<div id="apiHeader">
+			<a href="http://www.yiiframework.com">Yii Framework</a> v2.0.0-dev Class Reference
+		</div><!-- end of header -->
+
+		<div id="content">
+		<h1>Class yii\base\Theme</h1>
+<div id="nav">
+	<a href="index.html">All Classes</a>
+			| <a href="#properties">Properties</a>
+				| <a href="#methods">Methods</a>
+			</div>
+
+<table class="summaryTable docClass">
+	<colgroup>
+		<col class="col-name" />
+		<col class="col-value" />
+	</colgroup>
+			<tr><th>Inheritance</th><td><a href="yii_base_theme.html">yii\base\Theme</a> &raquo;
+<a href="yii_base_component.html">yii\base\Component</a> &raquo;
+<a href="yii_base_object.html">yii\base\Object</a></td></tr>
+				<tr><th>Implements</th><td><a href="yii_base_arrayable.html">yii\base\Arrayable</a></td></tr>
+								<tr><th>Available since version</th><td>2.0</td></tr>
+		<tr>
+	  <th>Source Code</th>
+	  <td></td>
+	</tr>
+</table>
+
+<div id="classDescription">
+	<strong>Theme represents an application theme.</strong>
+	<p>When <a href="yii_base_view.html">yii\base\View</a> renders a view file, it will check the <span style="background: #ff0;">yii\base\Application</span><span style="background: #f00;">::theme</span>
+to see if there is a themed version of the view file exists. If so, the themed version will be rendered instead.</p>
+
+<p>A theme is a directory consisting of view files which are meant to replace their non-themed counterparts.</p>
+
+<p>Theme uses <a href="yii_base_theme.html#$pathMap-detail">$pathMap</a> to achieve the view file replacement:</p>
+
+<ol>
+<li>It first looks for a key in <a href="yii_base_theme.html#$pathMap-detail">$pathMap</a> that is a substring of the given view file path;</li>
+<li>If such a key exists, the corresponding value will be used to replace the corresponding part
+in the view file path;</li>
+<li>It will then check if the updated view file exists or not. If so, that file will be used
+to replace the original view file.</li>
+<li>If Step 2 or 3 fails, the original view file will be used.</li>
+</ol>
+
+<p>For example, if <a href="yii_base_theme.html#$pathMap-detail">$pathMap</a> is <code>['/web/views' =&gt; '/web/themes/basic']</code>,
+then the themed version for a view file <code>/web/views/site/index.php</code> will be
+<code>/web/themes/basic/site/index.php</code>.</p>
+
+<p>It is possible to map a single path to multiple paths. For example,</p>
+
+<pre><code>'pathMap' =&gt; [
+    '/web/views' =&gt; [
+        '/web/themes/christmas',
+        '/web/themes/basic',
+    ],
+]
+</code></pre>
+
+<p>In this case, the themed version could be either <code>/web/themes/christmas/site/index.php</code> or
+<code>/web/themes/basic/site/index.php</code>. The former has precedence over the latter if both files exist.</p>
+
+<p>To use a theme, you should configure the <a href="yii_base_view.html#$theme-detail">theme</a> property of the "view" application
+component like the following:</p>
+
+<pre><code>'view' =&gt; [
+    'theme' =&gt; [
+        'basePath' =&gt; '@webroot/themes/basic',
+        'baseUrl' =&gt; '@web/themes/basic',
+    ],
+],
+</code></pre>
+
+<p>The above configuration specifies a theme located under the "themes/basic" directory of the Web folder
+that contains the entry script of the application. If your theme is designed to handle modules,
+you may configure the <a href="yii_base_theme.html#$pathMap-detail">$pathMap</a> property like described above.</p>
+</div>
+
+<a name="properties"></a>
+
+<div class="summary docProperty">
+<h2>Public Properties</h2>
+
+<p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-property" />
+	<col class="col-type" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Property</th><th>Type</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr id="$basePath">
+		<td><a href="yii_base_theme.html#$basePath-detail">$basePath</a></td>
+		<td>string</td>
+		<td>The root path or path alias of this theme</td>
+		<td><a href="yii_base_theme.html">yii\base\Theme</a></td>
+	</tr>
+			<tr id="$baseUrl">
+		<td><a href="yii_base_theme.html#$baseUrl-detail">$baseUrl</a></td>
+		<td>string</td>
+		<td>The base URL (or path alias) for this theme</td>
+		<td><a href="yii_base_theme.html">yii\base\Theme</a></td>
+	</tr>
+			<tr id="$pathMap">
+		<td><a href="yii_base_theme.html#$pathMap-detail">$pathMap</a></td>
+		<td>array</td>
+		<td>The mapping between view directories and their corresponding themed versions</td>
+		<td><a href="yii_base_theme.html">yii\base\Theme</a></td>
+	</tr>
+			<tr id="$behaviors">
+		<td><a href="yii_base_theme.html#$behaviors-detail">$behaviors</a></td>
+		<td><a href="yii_base_behavior.html">yii\base\Behavior</a>[]</td>
+		<td>list of behaviors attached to this component</td>
+		<td><a href="yii_base_theme.html">yii\base\Theme</a></td>
+	</tr>
+	</table>
+</div>
+<a name="methods"></a>
+
+<div class="summary docMethod">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr class="inherited" id="className()">
+		<td><a href="yii_base_object.html#className()-detail">className()</a></td>
+		<td></td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__construct()">
+		<td><a href="yii_base_object.html#__construct()-detail">__construct()</a></td>
+		<td>Constructor.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr id="init()">
+		<td><a href="yii_base_theme.html#init()-detail">init()</a></td>
+		<td>Initializes the theme.</td>
+		<td><a href="yii_base_theme.html">yii\base\Theme</a></td>
+	</tr>
+			<tr class="inherited" id="__get()">
+		<td><a href="yii_base_component.html#__get()-detail">__get()</a></td>
+		<td>Returns the value of a component property.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__set()">
+		<td><a href="yii_base_component.html#__set()-detail">__set()</a></td>
+		<td>Sets the value of a component property.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__isset()">
+		<td><a href="yii_base_component.html#__isset()-detail">__isset()</a></td>
+		<td>Checks if a property value is null.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__unset()">
+		<td><a href="yii_base_component.html#__unset()-detail">__unset()</a></td>
+		<td>Sets a component property to be null.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__call()">
+		<td><a href="yii_base_component.html#__call()-detail">__call()</a></td>
+		<td>Calls the named method which is not a class method.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasProperty()">
+		<td><a href="yii_base_component.html#hasProperty()-detail">hasProperty()</a></td>
+		<td>Returns a value indicating whether a property is defined for this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="canGetProperty()">
+		<td><a href="yii_base_component.html#canGetProperty()-detail">canGetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be read.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="canSetProperty()">
+		<td><a href="yii_base_component.html#canSetProperty()-detail">canSetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be set.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasMethod()">
+		<td><a href="yii_base_component.html#hasMethod()-detail">hasMethod()</a></td>
+		<td>Returns a value indicating whether a method is defined.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="toArray()">
+		<td><a href="yii_base_object.html#toArray()-detail">toArray()</a></td>
+		<td>Converts the object into an array.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__clone()">
+		<td><a href="yii_base_component.html#__clone()-detail">__clone()</a></td>
+		<td>This method is called after the object is created by cloning an existing one.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="behaviors()">
+		<td><a href="yii_base_component.html#behaviors()-detail">behaviors()</a></td>
+		<td>Returns a list of behaviors that this component should behave as.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasEventHandlers()">
+		<td><a href="yii_base_component.html#hasEventHandlers()-detail">hasEventHandlers()</a></td>
+		<td>Returns a value indicating whether there is any handler attached to the named event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="on()">
+		<td><a href="yii_base_component.html#on()-detail">on()</a></td>
+		<td>Attaches an event handler to an event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="off()">
+		<td><a href="yii_base_component.html#off()-detail">off()</a></td>
+		<td>Detaches an existing event handler from this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="trigger()">
+		<td><a href="yii_base_component.html#trigger()-detail">trigger()</a></td>
+		<td>Triggers an event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="getBehavior()">
+		<td><a href="yii_base_component.html#getBehavior()-detail">getBehavior()</a></td>
+		<td>Returns the named behavior object.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="getBehaviors()">
+		<td><a href="yii_base_component.html#getBehaviors()-detail">getBehaviors()</a></td>
+		<td>Returns all behaviors attached to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="attachBehavior()">
+		<td><a href="yii_base_component.html#attachBehavior()-detail">attachBehavior()</a></td>
+		<td>Attaches a behavior to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="attachBehaviors()">
+		<td><a href="yii_base_component.html#attachBehaviors()-detail">attachBehaviors()</a></td>
+		<td>Attaches a list of behaviors to the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="detachBehavior()">
+		<td><a href="yii_base_component.html#detachBehavior()-detail">detachBehavior()</a></td>
+		<td>Detaches a behavior from the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="detachBehaviors()">
+		<td><a href="yii_base_component.html#detachBehaviors()-detail">detachBehaviors()</a></td>
+		<td>Detaches all behaviors from the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="ensureBehaviors()">
+		<td><a href="yii_base_component.html#ensureBehaviors()-detail">ensureBehaviors()</a></td>
+		<td>Makes sure that the behaviors declared in <a href="yii_base_component.html#behaviors()-detail">behaviors()</a> are attached to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr id="applyTo()">
+		<td><a href="yii_base_theme.html#applyTo()-detail">applyTo()</a></td>
+		<td>Converts a file to a themed file if possible.</td>
+		<td><a href="yii_base_theme.html">yii\base\Theme</a></td>
+	</tr>
+			<tr id="getUrl()">
+		<td><a href="yii_base_theme.html#getUrl()-detail">getUrl()</a></td>
+		<td>Converts a relative URL into an absolute URL using <a href="yii_base_theme.html#$baseUrl-detail">$baseUrl</a>.</td>
+		<td><a href="yii_base_theme.html">yii\base\Theme</a></td>
+	</tr>
+	</table>
+</div>
+<a name="events"></a>
+
+<a name="constants"></a>
+
+<h2>Property Details</h2>
+
+
+	<div class="detailHeader" id="$basePath-detail">
+		$basePath		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $basePath = null	</div>
+
+	<p>The root path or path alias of this theme. All resources of this theme are located
+under this directory. This property must be set if <a href="yii_base_theme.html#$pathMap-detail">$pathMap</a> is not set.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_base_theme.html#$pathMap-detail">$pathMap</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="$baseUrl-detail">
+		$baseUrl		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $baseUrl = null	</div>
+
+	<p>The base URL (or path alias) for this theme. All resources of this theme are considered
+to be under this base URL. This property must be set. It is mainly used by <a href="yii_base_theme.html#getUrl()-detail">getUrl()</a>.</p>
+
+	
+
+	<div class="detailHeader" id="$pathMap-detail">
+		$pathMap		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array $pathMap = null	</div>
+
+	<p>The mapping between view directories and their corresponding themed versions.
+If not set, it will be initialized as a mapping from <a href="yii_base_application.html#$basePath-detail">yii\base\Application::$basePath</a> to <a href="yii_base_theme.html#$basePath-detail">$basePath</a>.
+This property is used by <a href="yii_base_theme.html#applyTo()-detail">applyTo()</a> when a view is trying to apply the theme.
+Path aliases can be used when specifying directories.</p>
+
+	
+
+	<div class="detailHeader" id="$behaviors-detail">
+		$behaviors		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_base_behavior.html">yii\base\Behavior</a>[] <a href="yii_base_component.html#getBehaviors()-detail">getBehaviors</a>(  )	</div>
+
+	<p>list of behaviors attached to this component</p>
+
+	
+<h2>Method Details</h2>
+
+
+	<div class="detailHeader" id="init()-detail">
+		init()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_base_theme.html#init()-detail">init</a>(  )			</div>
+		</td></tr>
+															<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_base_invalidconfigexception.html">yii\base\InvalidConfigException</a></td>
+				  <td class="paramDescCol">if <a href="yii_base_theme.html#$basePath-detail">$basePath</a> is not set.</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Initializes the theme.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="applyTo()-detail">
+		applyTo()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_base_theme.html#applyTo()-detail">applyTo</a>( $path )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$path</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The file to be themed</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the themed file, or the original file if the themed version is not available.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Converts a file to a themed file if possible.</strong></p>
+	<p>If there is no corresponding themed file, the original file will be returned.</p>
+
+	
+
+	<div class="detailHeader" id="getUrl()-detail">
+		getUrl()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_base_theme.html#getUrl()-detail">getUrl</a>( $url )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$url</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The relative URL to be converted.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the absolute URL</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Converts a relative URL into an absolute URL using <a href="yii_base_theme.html#$baseUrl-detail">$baseUrl</a>.</strong></p>
+	<p></p>
+
+	
+			</div><!-- end of content -->
+
+		<div id="apiFooter">
+			<p>&copy; 2008-2013 by <a href="http://www.yiisoft.com">Yii Software LLC</a></p>
+			<p>All Rights Reserved.</p>
+		</div><!-- end of footer -->
+
+<script type="text/javascript">
+/*<![CDATA[*/
+$("a.toggle").on('click', function() {
+	var $this = $(this);
+	if ($this.hasClass('properties-hidden')) {
+		$this.text($this.text().replace(/Show/,'Hide'));
+		$this.parents(".summary").find(".inherited").show();
+		$this.removeClass('properties-hidden');
+	} else {
+		$this.text($this.text().replace(/Hide/,'Show'));
+		$this.parents(".summary").find(".inherited").hide();
+		$this.addClass('properties-hidden');
+	}
+	return false;
+});
+/*
+$(".sourceCode a.show").toggle(function(){
+	$(this).text($(this).text().replace(/show/,'hide'));
+	$(this).parents(".sourceCode").find("div.code").show();
+},function(){
+	$(this).text($(this).text().replace(/hide/,'show'));
+	$(this).parents(".sourceCode").find("div.code").hide();
+});
+$("a.sourceLink").click(function(){
+	$(this).attr('target','_blank');
+});
+*/
+/*]]>*/
+</script>
+
+	</div><!-- end of page -->
+</body>
+</html>

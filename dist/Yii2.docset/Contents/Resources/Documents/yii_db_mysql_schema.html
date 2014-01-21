@@ -1,0 +1,888 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="language" content="en" />
+<link href="./assets/4138e429/api.css" rel="stylesheet">
+<link href="./assets/4138e429/style.css" rel="stylesheet">
+<script src="./assets/a91b37a6/jquery.js"></script><title>Yii Framework 2.0 API Documentation</title>
+</head>
+
+<body>
+	<div id="apiPage">
+
+		<div id="apiHeader">
+			<a href="http://www.yiiframework.com">Yii Framework</a> v2.0.0-dev Class Reference
+		</div><!-- end of header -->
+
+		<div id="content">
+		<h1>Class yii\db\mysql\Schema</h1>
+<div id="nav">
+	<a href="index.html">All Classes</a>
+			| <a href="#properties">Properties</a>
+				| <a href="#methods">Methods</a>
+					| <a href="#constants">Constants</a>
+	</div>
+
+<table class="summaryTable docClass">
+	<colgroup>
+		<col class="col-name" />
+		<col class="col-value" />
+	</colgroup>
+			<tr><th>Inheritance</th><td><a href="yii_db_mysql_schema.html">yii\db\mysql\Schema</a> &raquo;
+<a href="yii_db_schema.html">yii\db\Schema</a> &raquo;
+<a href="yii_base_object.html">yii\base\Object</a></td></tr>
+				<tr><th>Implements</th><td><a href="yii_base_arrayable.html">yii\base\Arrayable</a></td></tr>
+								<tr><th>Available since version</th><td>2.0</td></tr>
+		<tr>
+	  <th>Source Code</th>
+	  <td></td>
+	</tr>
+</table>
+
+<div id="classDescription">
+	<strong>Schema is the class for retrieving metadata from a MySQL database (version 4.1.x and 5.x).</strong>
+	<p></p>
+</div>
+
+<a name="properties"></a>
+
+<div class="summary docProperty">
+<h2>Public Properties</h2>
+
+<p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-property" />
+	<col class="col-type" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Property</th><th>Type</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr class="inherited" id="$db">
+		<td><a href="yii_db_schema.html#$db-detail">$db</a></td>
+		<td><a href="yii_db_connection.html">yii\db\Connection</a></td>
+		<td>The database connection</td>
+		<td><a href="yii_db_schema.html">yii\db\Schema</a></td>
+	</tr>
+			<tr class="inherited" id="$defaultSchema">
+		<td><a href="yii_db_schema.html#$defaultSchema-detail">$defaultSchema</a></td>
+		<td>string</td>
+		<td>The default schema name used for the current session</td>
+		<td><a href="yii_db_schema.html">yii\db\Schema</a></td>
+	</tr>
+			<tr id="$typeMap">
+		<td><a href="yii_db_mysql_schema.html#$typeMap-detail">$typeMap</a></td>
+		<td>array</td>
+		<td>Mapping from physical column types (keys) to abstract column types (values)</td>
+		<td><a href="yii_db_mysql_schema.html">yii\db\mysql\Schema</a></td>
+	</tr>
+			<tr id="$tableSchemas">
+		<td><a href="yii_db_mysql_schema.html#$tableSchemas-detail">$tableSchemas</a></td>
+		<td><a href="yii_db_tableschema.html">yii\db\TableSchema</a>[]</td>
+		<td>the metadata for all tables in the database</td>
+		<td><a href="yii_db_mysql_schema.html">yii\db\mysql\Schema</a></td>
+	</tr>
+			<tr id="$tableNames">
+		<td><a href="yii_db_mysql_schema.html#$tableNames-detail">$tableNames</a></td>
+		<td>string</td>
+		<td>all table names in the database</td>
+		<td><a href="yii_db_mysql_schema.html">yii\db\mysql\Schema</a></td>
+	</tr>
+			<tr id="$queryBuilder">
+		<td><a href="yii_db_mysql_schema.html#$queryBuilder-detail">$queryBuilder</a></td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+		<td>the query builder for this connection</td>
+		<td><a href="yii_db_mysql_schema.html">yii\db\mysql\Schema</a></td>
+	</tr>
+			<tr id="$lastInsertID">
+		<td><a href="yii_db_mysql_schema.html#$lastInsertID-detail">$lastInsertID</a></td>
+		<td>string</td>
+		<td>the row ID of the last row inserted, or the last value retrieved from the sequence object</td>
+		<td><a href="yii_db_mysql_schema.html">yii\db\mysql\Schema</a></td>
+	</tr>
+	</table>
+</div>
+<a name="methods"></a>
+
+<div class="summary docMethod">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr class="inherited" id="className()">
+		<td><a href="yii_base_object.html#className()-detail">className()</a></td>
+		<td></td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__construct()">
+		<td><a href="yii_base_object.html#__construct()-detail">__construct()</a></td>
+		<td>Constructor.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="init()">
+		<td><a href="yii_base_object.html#init()-detail">init()</a></td>
+		<td>Initializes the object.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__get()">
+		<td><a href="yii_base_object.html#__get()-detail">__get()</a></td>
+		<td>Returns the value of an object property.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__set()">
+		<td><a href="yii_base_object.html#__set()-detail">__set()</a></td>
+		<td>Sets value of an object property.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__isset()">
+		<td><a href="yii_base_object.html#__isset()-detail">__isset()</a></td>
+		<td>Checks if the named property is set (not null).</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__unset()">
+		<td><a href="yii_base_object.html#__unset()-detail">__unset()</a></td>
+		<td>Sets an object property to null.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__call()">
+		<td><a href="yii_base_object.html#__call()-detail">__call()</a></td>
+		<td>Calls the named method which is not a class method.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="hasProperty()">
+		<td><a href="yii_base_object.html#hasProperty()-detail">hasProperty()</a></td>
+		<td>Returns a value indicating whether a property is defined.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="canGetProperty()">
+		<td><a href="yii_base_object.html#canGetProperty()-detail">canGetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be read.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="canSetProperty()">
+		<td><a href="yii_base_object.html#canSetProperty()-detail">canSetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be set.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="hasMethod()">
+		<td><a href="yii_base_object.html#hasMethod()-detail">hasMethod()</a></td>
+		<td>Returns a value indicating whether a method is defined.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="toArray()">
+		<td><a href="yii_base_object.html#toArray()-detail">toArray()</a></td>
+		<td>Converts the object into an array.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+				<tr class="inherited" id="getTableSchema()">
+		<td><a href="yii_db_schema.html#getTableSchema()-detail">getTableSchema()</a></td>
+		<td>Obtains the metadata for the named table.</td>
+		<td><a href="yii_db_schema.html">yii\db\Schema</a></td>
+	</tr>
+					<tr class="inherited" id="getTableSchemas()">
+		<td><a href="yii_db_schema.html#getTableSchemas()-detail">getTableSchemas()</a></td>
+		<td>Returns the metadata for all tables in the database.</td>
+		<td><a href="yii_db_schema.html">yii\db\Schema</a></td>
+	</tr>
+			<tr class="inherited" id="getTableNames()">
+		<td><a href="yii_db_schema.html#getTableNames()-detail">getTableNames()</a></td>
+		<td>Returns all table names in the database.</td>
+		<td><a href="yii_db_schema.html">yii\db\Schema</a></td>
+	</tr>
+			<tr class="inherited" id="getQueryBuilder()">
+		<td><a href="yii_db_schema.html#getQueryBuilder()-detail">getQueryBuilder()</a></td>
+		<td></td>
+		<td><a href="yii_db_schema.html">yii\db\Schema</a></td>
+	</tr>
+			<tr class="inherited" id="getPdoType()">
+		<td><a href="yii_db_schema.html#getPdoType()-detail">getPdoType()</a></td>
+		<td>Determines the PDO type for the given PHP data value.</td>
+		<td><a href="yii_db_schema.html">yii\db\Schema</a></td>
+	</tr>
+			<tr class="inherited" id="refresh()">
+		<td><a href="yii_db_schema.html#refresh()-detail">refresh()</a></td>
+		<td>Refreshes the schema.</td>
+		<td><a href="yii_db_schema.html">yii\db\Schema</a></td>
+	</tr>
+			<tr id="createQueryBuilder()">
+		<td><a href="yii_db_mysql_schema.html#createQueryBuilder()-detail">createQueryBuilder()</a></td>
+		<td>Creates a query builder for the MySQL database.</td>
+		<td><a href="yii_db_mysql_schema.html">yii\db\mysql\Schema</a></td>
+	</tr>
+				<tr id="findUniqueIndexes()">
+		<td><a href="yii_db_mysql_schema.html#findUniqueIndexes()-detail">findUniqueIndexes()</a></td>
+		<td>Returns all unique indexes for the given table.</td>
+		<td><a href="yii_db_mysql_schema.html">yii\db\mysql\Schema</a></td>
+	</tr>
+			<tr class="inherited" id="getLastInsertID()">
+		<td><a href="yii_db_schema.html#getLastInsertID()-detail">getLastInsertID()</a></td>
+		<td>Returns the ID of the last inserted row or sequence value.</td>
+		<td><a href="yii_db_schema.html">yii\db\Schema</a></td>
+	</tr>
+			<tr class="inherited" id="quoteValue()">
+		<td><a href="yii_db_schema.html#quoteValue()-detail">quoteValue()</a></td>
+		<td>Quotes a string value for use in a query.</td>
+		<td><a href="yii_db_schema.html">yii\db\Schema</a></td>
+	</tr>
+			<tr class="inherited" id="quoteTableName()">
+		<td><a href="yii_db_schema.html#quoteTableName()-detail">quoteTableName()</a></td>
+		<td>Quotes a table name for use in a query.</td>
+		<td><a href="yii_db_schema.html">yii\db\Schema</a></td>
+	</tr>
+			<tr class="inherited" id="quoteColumnName()">
+		<td><a href="yii_db_schema.html#quoteColumnName()-detail">quoteColumnName()</a></td>
+		<td>Quotes a column name for use in a query.</td>
+		<td><a href="yii_db_schema.html">yii\db\Schema</a></td>
+	</tr>
+			<tr id="quoteSimpleTableName()">
+		<td><a href="yii_db_mysql_schema.html#quoteSimpleTableName()-detail">quoteSimpleTableName()</a></td>
+		<td>Quotes a table name for use in a query.</td>
+		<td><a href="yii_db_mysql_schema.html">yii\db\mysql\Schema</a></td>
+	</tr>
+			<tr id="quoteSimpleColumnName()">
+		<td><a href="yii_db_mysql_schema.html#quoteSimpleColumnName()-detail">quoteSimpleColumnName()</a></td>
+		<td>Quotes a column name for use in a query.</td>
+		<td><a href="yii_db_mysql_schema.html">yii\db\mysql\Schema</a></td>
+	</tr>
+			<tr class="inherited" id="getRawTableName()">
+		<td><a href="yii_db_schema.html#getRawTableName()-detail">getRawTableName()</a></td>
+		<td>Returns the actual name of a given table name.</td>
+		<td><a href="yii_db_schema.html">yii\db\Schema</a></td>
+	</tr>
+							</table>
+</div>
+<div class="summary docMethod">
+<h2>Protected Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+															<tr id="loadTableSchema()">
+		<td><a href="yii_db_mysql_schema.html#loadTableSchema()-detail">loadTableSchema()</a></td>
+		<td>Loads the metadata for the specified table.</td>
+		<td><a href="yii_db_mysql_schema.html">yii\db\mysql\Schema</a></td>
+	</tr>
+				<tr class="inherited" id="getCacheKey()">
+		<td><a href="yii_db_schema.html#getCacheKey()-detail">getCacheKey()</a></td>
+		<td>Returns the cache key for the specified table name.</td>
+		<td><a href="yii_db_schema.html">yii\db\Schema</a></td>
+	</tr>
+			<tr class="inherited" id="getCacheGroup()">
+		<td><a href="yii_db_schema.html#getCacheGroup()-detail">getCacheGroup()</a></td>
+		<td>Returns the cache group name.</td>
+		<td><a href="yii_db_schema.html">yii\db\Schema</a></td>
+	</tr>
+									<tr id="findTableNames()">
+		<td><a href="yii_db_mysql_schema.html#findTableNames()-detail">findTableNames()</a></td>
+		<td>Returns all table names in the database.</td>
+		<td><a href="yii_db_mysql_schema.html">yii\db\mysql\Schema</a></td>
+	</tr>
+											<tr class="inherited" id="getColumnPhpType()">
+		<td><a href="yii_db_schema.html#getColumnPhpType()-detail">getColumnPhpType()</a></td>
+		<td>Extracts the PHP type from abstract DB type.</td>
+		<td><a href="yii_db_schema.html">yii\db\Schema</a></td>
+	</tr>
+			<tr id="resolveTableNames()">
+		<td><a href="yii_db_mysql_schema.html#resolveTableNames()-detail">resolveTableNames()</a></td>
+		<td>Resolves the table name and schema name (if any).</td>
+		<td><a href="yii_db_mysql_schema.html">yii\db\mysql\Schema</a></td>
+	</tr>
+			<tr id="loadColumnSchema()">
+		<td><a href="yii_db_mysql_schema.html#loadColumnSchema()-detail">loadColumnSchema()</a></td>
+		<td>Loads the column information into a <a href="yii_db_columnschema.html">yii\db\ColumnSchema</a> object.</td>
+		<td><a href="yii_db_mysql_schema.html">yii\db\mysql\Schema</a></td>
+	</tr>
+			<tr id="findColumns()">
+		<td><a href="yii_db_mysql_schema.html#findColumns()-detail">findColumns()</a></td>
+		<td>Collects the metadata of table columns.</td>
+		<td><a href="yii_db_mysql_schema.html">yii\db\mysql\Schema</a></td>
+	</tr>
+			<tr id="getCreateTableSql()">
+		<td><a href="yii_db_mysql_schema.html#getCreateTableSql()-detail">getCreateTableSql()</a></td>
+		<td>Gets the CREATE TABLE sql string.</td>
+		<td><a href="yii_db_mysql_schema.html">yii\db\mysql\Schema</a></td>
+	</tr>
+			<tr id="findConstraints()">
+		<td><a href="yii_db_mysql_schema.html#findConstraints()-detail">findConstraints()</a></td>
+		<td>Collects the foreign key column details for the given table.</td>
+		<td><a href="yii_db_mysql_schema.html">yii\db\mysql\Schema</a></td>
+	</tr>
+	</table>
+</div>
+<a name="events"></a>
+
+<a name="constants"></a>
+<div class="summary docConst">
+<h2>Constants</h2>
+
+<p><a href="#" class="toggle">Hide inherited constants</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-const" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Constant</th><th>Value</th><th>Description</th><th>Defined By</th>
+</tr>
+	<tr class="inherited" id="TYPE_PK">
+	  <td>TYPE_PK<a name="TYPE_PK-detail"></a></td>
+	  <td>'pk'</td>
+	  <td>The followings are the supported abstract column data types.</td>
+	  <td><a href="yii_db_schema.html">yii\db\Schema</a></td>
+	</tr>
+	<tr class="inherited" id="TYPE_BIGPK">
+	  <td>TYPE_BIGPK<a name="TYPE_BIGPK-detail"></a></td>
+	  <td>'bigpk'</td>
+	  <td></td>
+	  <td><a href="yii_db_schema.html">yii\db\Schema</a></td>
+	</tr>
+	<tr class="inherited" id="TYPE_STRING">
+	  <td>TYPE_STRING<a name="TYPE_STRING-detail"></a></td>
+	  <td>'string'</td>
+	  <td></td>
+	  <td><a href="yii_db_schema.html">yii\db\Schema</a></td>
+	</tr>
+	<tr class="inherited" id="TYPE_TEXT">
+	  <td>TYPE_TEXT<a name="TYPE_TEXT-detail"></a></td>
+	  <td>'text'</td>
+	  <td></td>
+	  <td><a href="yii_db_schema.html">yii\db\Schema</a></td>
+	</tr>
+	<tr class="inherited" id="TYPE_SMALLINT">
+	  <td>TYPE_SMALLINT<a name="TYPE_SMALLINT-detail"></a></td>
+	  <td>'smallint'</td>
+	  <td></td>
+	  <td><a href="yii_db_schema.html">yii\db\Schema</a></td>
+	</tr>
+	<tr class="inherited" id="TYPE_INTEGER">
+	  <td>TYPE_INTEGER<a name="TYPE_INTEGER-detail"></a></td>
+	  <td>'integer'</td>
+	  <td></td>
+	  <td><a href="yii_db_schema.html">yii\db\Schema</a></td>
+	</tr>
+	<tr class="inherited" id="TYPE_BIGINT">
+	  <td>TYPE_BIGINT<a name="TYPE_BIGINT-detail"></a></td>
+	  <td>'bigint'</td>
+	  <td></td>
+	  <td><a href="yii_db_schema.html">yii\db\Schema</a></td>
+	</tr>
+	<tr class="inherited" id="TYPE_FLOAT">
+	  <td>TYPE_FLOAT<a name="TYPE_FLOAT-detail"></a></td>
+	  <td>'float'</td>
+	  <td></td>
+	  <td><a href="yii_db_schema.html">yii\db\Schema</a></td>
+	</tr>
+	<tr class="inherited" id="TYPE_DECIMAL">
+	  <td>TYPE_DECIMAL<a name="TYPE_DECIMAL-detail"></a></td>
+	  <td>'decimal'</td>
+	  <td></td>
+	  <td><a href="yii_db_schema.html">yii\db\Schema</a></td>
+	</tr>
+	<tr class="inherited" id="TYPE_DATETIME">
+	  <td>TYPE_DATETIME<a name="TYPE_DATETIME-detail"></a></td>
+	  <td>'datetime'</td>
+	  <td></td>
+	  <td><a href="yii_db_schema.html">yii\db\Schema</a></td>
+	</tr>
+	<tr class="inherited" id="TYPE_TIMESTAMP">
+	  <td>TYPE_TIMESTAMP<a name="TYPE_TIMESTAMP-detail"></a></td>
+	  <td>'timestamp'</td>
+	  <td></td>
+	  <td><a href="yii_db_schema.html">yii\db\Schema</a></td>
+	</tr>
+	<tr class="inherited" id="TYPE_TIME">
+	  <td>TYPE_TIME<a name="TYPE_TIME-detail"></a></td>
+	  <td>'time'</td>
+	  <td></td>
+	  <td><a href="yii_db_schema.html">yii\db\Schema</a></td>
+	</tr>
+	<tr class="inherited" id="TYPE_DATE">
+	  <td>TYPE_DATE<a name="TYPE_DATE-detail"></a></td>
+	  <td>'date'</td>
+	  <td></td>
+	  <td><a href="yii_db_schema.html">yii\db\Schema</a></td>
+	</tr>
+	<tr class="inherited" id="TYPE_BINARY">
+	  <td>TYPE_BINARY<a name="TYPE_BINARY-detail"></a></td>
+	  <td>'binary'</td>
+	  <td></td>
+	  <td><a href="yii_db_schema.html">yii\db\Schema</a></td>
+	</tr>
+	<tr class="inherited" id="TYPE_BOOLEAN">
+	  <td>TYPE_BOOLEAN<a name="TYPE_BOOLEAN-detail"></a></td>
+	  <td>'boolean'</td>
+	  <td></td>
+	  <td><a href="yii_db_schema.html">yii\db\Schema</a></td>
+	</tr>
+	<tr class="inherited" id="TYPE_MONEY">
+	  <td>TYPE_MONEY<a name="TYPE_MONEY-detail"></a></td>
+	  <td>'money'</td>
+	  <td></td>
+	  <td><a href="yii_db_schema.html">yii\db\Schema</a></td>
+	</tr>
+</table>
+</div>
+<h2>Property Details</h2>
+
+
+	<div class="detailHeader" id="$typeMap-detail">
+		$typeMap		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array $typeMap = ['tinyint' => self::TYPE_SMALLINT, 'bit' => self::TYPE_SMALLINT, 'smallint' => self::TYPE_SMALLINT, 'mediumint' => self::TYPE_INTEGER, 'int' => self::TYPE_INTEGER, 'integer' => self::TYPE_INTEGER, 'bigint' => self::TYPE_BIGINT, 'float' => self::TYPE_FLOAT, 'double' => self::TYPE_FLOAT, 'real' => self::TYPE_FLOAT, 'decimal' => self::TYPE_DECIMAL, 'numeric' => self::TYPE_DECIMAL, 'tinytext' => self::TYPE_TEXT, 'mediumtext' => self::TYPE_TEXT, 'longtext' => self::TYPE_TEXT, 'text' => self::TYPE_TEXT, 'varchar' => self::TYPE_STRING, 'string' => self::TYPE_STRING, 'char' => self::TYPE_STRING, 'datetime' => self::TYPE_DATETIME, 'year' => self::TYPE_DATE, 'date' => self::TYPE_DATE, 'time' => self::TYPE_TIME, 'timestamp' => self::TYPE_TIMESTAMP, 'enum' => self::TYPE_STRING]	</div>
+
+	<p>Mapping from physical column types (keys) to abstract column types (values)</p>
+
+	
+
+	<div class="detailHeader" id="$tableSchemas-detail">
+		$tableSchemas		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_db_tableschema.html">yii\db\TableSchema</a>[] <a href="yii_db_schema.html#getTableSchemas()-detail">getTableSchemas</a>( $schema = '', $refresh = false )	</div>
+
+	<p>the metadata for all tables in the database.
+Each array element is an instance of <a href="yii_db_tableschema.html">yii\db\TableSchema</a> or its child class.</p>
+
+	
+
+	<div class="detailHeader" id="$tableNames-detail">
+		$tableNames		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	string <a href="yii_db_schema.html#getTableNames()-detail">getTableNames</a>( $schema = '', $refresh = false )	</div>
+
+	<p>all table names in the database.</p>
+
+	
+
+	<div class="detailHeader" id="$queryBuilder-detail">
+		$queryBuilder		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a> <a href="yii_db_schema.html#getQueryBuilder()-detail">getQueryBuilder</a>(  )	</div>
+
+	<p>the query builder for this connection.</p>
+
+	
+
+	<div class="detailHeader" id="$lastInsertID-detail">
+		$lastInsertID		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	string <a href="yii_db_schema.html#getLastInsertID()-detail">getLastInsertID</a>( $sequenceName = '' )	</div>
+
+	<p>the row ID of the last row inserted, or the last value retrieved from the sequence object</p>
+
+	
+<h2>Method Details</h2>
+
+
+	<div class="detailHeader" id="loadTableSchema()-detail">
+		loadTableSchema()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			<a href="yii_db_tableschema.html">yii\db\TableSchema</a> <a href="yii_db_mysql_schema.html#loadTableSchema()-detail">loadTableSchema</a>( $name )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Table name</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol"><a href="yii_db_tableschema.html">yii\db\TableSchema</a></td>
+				  <td class="paramDescCol">driver dependent table metadata. Null if the table does not exist.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Loads the metadata for the specified table.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="createQueryBuilder()-detail">
+		createQueryBuilder()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			<a href="yii_db_mysql_querybuilder.html">yii\db\mysql\QueryBuilder</a> <a href="yii_db_mysql_schema.html#createQueryBuilder()-detail">createQueryBuilder</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol"><a href="yii_db_mysql_querybuilder.html">yii\db\mysql\QueryBuilder</a></td>
+				  <td class="paramDescCol">query builder instance</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Creates a query builder for the MySQL database.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="findTableNames()-detail">
+		findTableNames()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			array <a href="yii_db_mysql_schema.html#findTableNames()-detail">findTableNames</a>( $schema = '' )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$schema</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The schema of the tables. Defaults to empty string, meaning the current or default schema.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">all table names in the database. The names have NO schema name prefix.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns all table names in the database.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="findUniqueIndexes()-detail">
+		findUniqueIndexes()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			array <a href="yii_db_mysql_schema.html#findUniqueIndexes()-detail">findUniqueIndexes</a>( $table )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$table</td>
+				  <td class="paramTypeCol"><a href="yii_db_tableschema.html">yii\db\TableSchema</a></td>
+				  <td class="paramDescCol">The table metadata</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">all unique indexes for the given table.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns all unique indexes for the given table.</strong></p>
+	<p><p>Each array element is of the following structure:</p>
+
+<pre><code>[
+ 'IndexName1' =&gt; ['col1' [, ...]],
+ 'IndexName2' =&gt; ['col2' [, ...]],
+]
+</code></pre></p>
+
+	
+
+	<div class="detailHeader" id="quoteSimpleTableName()-detail">
+		quoteSimpleTableName()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_db_mysql_schema.html#quoteSimpleTableName()-detail">quoteSimpleTableName</a>( $name )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Table name</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the properly quoted table name</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Quotes a table name for use in a query.</strong></p>
+	<p>A simple table name has no schema prefix.</p>
+
+	
+
+	<div class="detailHeader" id="quoteSimpleColumnName()-detail">
+		quoteSimpleColumnName()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_db_mysql_schema.html#quoteSimpleColumnName()-detail">quoteSimpleColumnName</a>( $name )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Column name</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the properly quoted column name</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Quotes a column name for use in a query.</strong></p>
+	<p>A simple column name has no prefix.</p>
+
+	
+
+	<div class="detailHeader" id="resolveTableNames()-detail">
+		resolveTableNames()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_db_mysql_schema.html#resolveTableNames()-detail">resolveTableNames</a>( $table, $name )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$table</td>
+				  <td class="paramTypeCol"><a href="yii_db_tableschema.html">yii\db\TableSchema</a></td>
+				  <td class="paramDescCol">The table metadata object</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The table name</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Resolves the table name and schema name (if any).</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="loadColumnSchema()-detail">
+		loadColumnSchema()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			<a href="yii_db_columnschema.html">yii\db\ColumnSchema</a> <a href="yii_db_mysql_schema.html#loadColumnSchema()-detail">loadColumnSchema</a>( $info )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$info</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">Column information</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol"><a href="yii_db_columnschema.html">yii\db\ColumnSchema</a></td>
+				  <td class="paramDescCol">the column schema object</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Loads the column information into a <a href="yii_db_columnschema.html">yii\db\ColumnSchema</a> object.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="findColumns()-detail">
+		findColumns()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_db_mysql_schema.html#findColumns()-detail">findColumns</a>( $table )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$table</td>
+				  <td class="paramTypeCol"><a href="yii_db_tableschema.html">yii\db\TableSchema</a></td>
+				  <td class="paramDescCol">The table metadata</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether the table exists in the database</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol">\Exception</td>
+				  <td class="paramDescCol">if DB query fails</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Collects the metadata of table columns.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getCreateTableSql()-detail">
+		getCreateTableSql()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_db_mysql_schema.html#getCreateTableSql()-detail">getCreateTableSql</a>( $table )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$table</td>
+				  <td class="paramTypeCol"><a href="yii_db_tableschema.html">yii\db\TableSchema</a></td>
+				  <td class="paramDescCol">The table metadata</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">$sql the result of 'SHOW CREATE TABLE'</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Gets the CREATE TABLE sql string.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="findConstraints()-detail">
+		findConstraints()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_db_mysql_schema.html#findConstraints()-detail">findConstraints</a>( $table )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$table</td>
+				  <td class="paramTypeCol"><a href="yii_db_tableschema.html">yii\db\TableSchema</a></td>
+				  <td class="paramDescCol">The table metadata</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Collects the foreign key column details for the given table.</strong></p>
+	<p></p>
+
+	
+			</div><!-- end of content -->
+
+		<div id="apiFooter">
+			<p>&copy; 2008-2013 by <a href="http://www.yiisoft.com">Yii Software LLC</a></p>
+			<p>All Rights Reserved.</p>
+		</div><!-- end of footer -->
+
+<script type="text/javascript">
+/*<![CDATA[*/
+$("a.toggle").on('click', function() {
+	var $this = $(this);
+	if ($this.hasClass('properties-hidden')) {
+		$this.text($this.text().replace(/Show/,'Hide'));
+		$this.parents(".summary").find(".inherited").show();
+		$this.removeClass('properties-hidden');
+	} else {
+		$this.text($this.text().replace(/Hide/,'Show'));
+		$this.parents(".summary").find(".inherited").hide();
+		$this.addClass('properties-hidden');
+	}
+	return false;
+});
+/*
+$(".sourceCode a.show").toggle(function(){
+	$(this).text($(this).text().replace(/show/,'hide'));
+	$(this).parents(".sourceCode").find("div.code").show();
+},function(){
+	$(this).text($(this).text().replace(/hide/,'show'));
+	$(this).parents(".sourceCode").find("div.code").hide();
+});
+$("a.sourceLink").click(function(){
+	$(this).attr('target','_blank');
+});
+*/
+/*]]>*/
+</script>
+
+	</div><!-- end of page -->
+</body>
+</html>

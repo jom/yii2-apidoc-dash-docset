@@ -1,0 +1,321 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="language" content="en" />
+<link href="./assets/4138e429/api.css" rel="stylesheet">
+<link href="./assets/4138e429/style.css" rel="stylesheet">
+<script src="./assets/a91b37a6/jquery.js"></script><title>Yii Framework 2.0 API Documentation</title>
+</head>
+
+<body>
+	<div id="apiPage">
+
+		<div id="apiHeader">
+			<a href="http://www.yiiframework.com">Yii Framework</a> v2.0.0-dev Class Reference
+		</div><!-- end of header -->
+
+		<div id="content">
+		<h1>Trait yii\db\ActiveRelationTrait</h1>
+<div id="nav">
+	<a href="index.html">All Classes</a>
+			| <a href="#properties">Properties</a>
+				| <a href="#methods">Methods</a>
+			</div>
+
+<table class="summaryTable docClass">
+	<colgroup>
+		<col class="col-name" />
+		<col class="col-value" />
+	</colgroup>
+								<tr><th>Implemented by</th><td><a href="yii_db_activerelation.html">yii\db\ActiveRelation</a>, <a href="yii_redis_activerelation.html">yii\redis\ActiveRelation</a></td></tr>
+				<tr><th>Available since version</th><td>2.0</td></tr>
+		<tr>
+	  <th>Source Code</th>
+	  <td></td>
+	</tr>
+</table>
+
+<div id="classDescription">
+	<strong>ActiveRelationTrait implements the common methods and properties for active record relation classes.</strong>
+	<p></p>
+</div>
+
+<a name="properties"></a>
+
+<div class="summary docProperty">
+<h2>Public Properties</h2>
+
+<p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-property" />
+	<col class="col-type" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Property</th><th>Type</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr id="$multiple">
+		<td><a href="yii_db_activerelationtrait.html#$multiple-detail">$multiple</a></td>
+		<td>boolean</td>
+		<td>Whether this relation should populate all query results into AR instances</td>
+		<td><a href="yii_db_activerelationtrait.html">yii\db\ActiveRelationTrait</a></td>
+	</tr>
+			<tr id="$primaryModel">
+		<td><a href="yii_db_activerelationtrait.html#$primaryModel-detail">$primaryModel</a></td>
+		<td><a href="yii_db_activerecord.html">yii\db\ActiveRecord</a></td>
+		<td>The primary model that this relation is associated with</td>
+		<td><a href="yii_db_activerelationtrait.html">yii\db\ActiveRelationTrait</a></td>
+	</tr>
+			<tr id="$link">
+		<td><a href="yii_db_activerelationtrait.html#$link-detail">$link</a></td>
+		<td>array</td>
+		<td>The columns of the primary and foreign tables that establish the relation</td>
+		<td><a href="yii_db_activerelationtrait.html">yii\db\ActiveRelationTrait</a></td>
+	</tr>
+			<tr id="$via">
+		<td><a href="yii_db_activerelationtrait.html#$via-detail">$via</a></td>
+		<td>array</td>
+		<td>The query associated with the pivot table</td>
+		<td><a href="yii_db_activerelationtrait.html">yii\db\ActiveRelationTrait</a></td>
+	</tr>
+	</table>
+</div>
+<a name="methods"></a>
+
+<div class="summary docMethod">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr id="__clone()">
+		<td><a href="yii_db_activerelationtrait.html#__clone()-detail">__clone()</a></td>
+		<td>Clones internal objects.</td>
+		<td><a href="yii_db_activerelationtrait.html">yii\db\ActiveRelationTrait</a></td>
+	</tr>
+			<tr id="via()">
+		<td><a href="yii_db_activerelationtrait.html#via()-detail">via()</a></td>
+		<td>Specifies the relation associated with the pivot table.</td>
+		<td><a href="yii_db_activerelationtrait.html">yii\db\ActiveRelationTrait</a></td>
+	</tr>
+			<tr id="populateRelation()">
+		<td><a href="yii_db_activerelationtrait.html#populateRelation()-detail">populateRelation()</a></td>
+		<td>Finds the related records and populates them into the primary models.</td>
+		<td><a href="yii_db_activerelationtrait.html">yii\db\ActiveRelationTrait</a></td>
+	</tr>
+	</table>
+</div>
+<a name="events"></a>
+
+<a name="constants"></a>
+
+<h2>Property Details</h2>
+
+
+	<div class="detailHeader" id="$multiple-detail">
+		$multiple		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	boolean $multiple = null	</div>
+
+	<p>Whether this relation should populate all query results into AR instances.
+If false, only the first row of the results will be retrieved.</p>
+
+	
+
+	<div class="detailHeader" id="$primaryModel-detail">
+		$primaryModel		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_db_activerecord.html">yii\db\ActiveRecord</a> $primaryModel = null	</div>
+
+	<p>The primary model that this relation is associated with.
+This is used only in lazy loading with dynamic query options.</p>
+
+	
+
+	<div class="detailHeader" id="$link-detail">
+		$link		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array $link = null	</div>
+
+	<p>The columns of the primary and foreign tables that establish the relation.
+The array keys must be columns of the table for this relation, and the array values
+must be the corresponding columns from the primary table.
+Do not prefix or quote the column names as this will be done automatically by Yii.</p>
+
+	
+
+	<div class="detailHeader" id="$via-detail">
+		$via		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array $via = null	</div>
+
+	<p>The query associated with the pivot table. Please call <a href="yii_db_activerelationtrait.html#via()-detail">via()</a>
+to set this property instead of directly setting it.</p>
+
+	
+<h2>Method Details</h2>
+
+
+	<div class="detailHeader" id="__clone()-detail">
+		__clone()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_db_activerelationtrait.html#__clone()-detail">__clone</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p>Clones internal objects.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="via()-detail">
+		via()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			static <a href="yii_db_activerelationtrait.html#via()-detail">via</a>( $relationName, $callable = null )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$relationName</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The relation name. This refers to a relation declared in <a href="yii_db_activerelationtrait.html#$primaryModel-detail">$primaryModel</a>.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$callable</td>
+				  <td class="paramTypeCol">callable</td>
+				  <td class="paramDescCol">A PHP callback for customizing the relation associated with the pivot table.
+Its signature should be <code>function($query)</code>, where <code>$query</code> is the query to be customized.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">static</td>
+				  <td class="paramDescCol">the relation object itself.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Specifies the relation associated with the pivot table.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="populateRelation()-detail">
+		populateRelation()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			array <a href="yii_db_activerelationtrait.html#populateRelation()-detail">populateRelation</a>( $name, <b>&</b>$primaryModels )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The relation name</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$primaryModels</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">Primary models</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">the related models</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_base_invalidconfigexception.html">yii\base\InvalidConfigException</a></td>
+				  <td class="paramDescCol">if <a href="yii_db_activerelationtrait.html#$link-detail">$link</a> is invalid</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Finds the related records and populates them into the primary models.</strong></p>
+	<p></p>
+
+	
+		</div><!-- end of content -->
+
+		<div id="apiFooter">
+			<p>&copy; 2008-2013 by <a href="http://www.yiisoft.com">Yii Software LLC</a></p>
+			<p>All Rights Reserved.</p>
+		</div><!-- end of footer -->
+
+<script type="text/javascript">
+/*<![CDATA[*/
+$("a.toggle").on('click', function() {
+	var $this = $(this);
+	if ($this.hasClass('properties-hidden')) {
+		$this.text($this.text().replace(/Show/,'Hide'));
+		$this.parents(".summary").find(".inherited").show();
+		$this.removeClass('properties-hidden');
+	} else {
+		$this.text($this.text().replace(/Hide/,'Show'));
+		$this.parents(".summary").find(".inherited").hide();
+		$this.addClass('properties-hidden');
+	}
+	return false;
+});
+/*
+$(".sourceCode a.show").toggle(function(){
+	$(this).text($(this).text().replace(/show/,'hide'));
+	$(this).parents(".sourceCode").find("div.code").show();
+},function(){
+	$(this).text($(this).text().replace(/hide/,'show'));
+	$(this).parents(".sourceCode").find("div.code").hide();
+});
+$("a.sourceLink").click(function(){
+	$(this).attr('target','_blank');
+});
+*/
+/*]]>*/
+</script>
+
+	</div><!-- end of page -->
+</body>
+</html>

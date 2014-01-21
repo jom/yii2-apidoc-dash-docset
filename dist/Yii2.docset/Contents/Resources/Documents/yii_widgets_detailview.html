@@ -1,0 +1,682 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="language" content="en" />
+<link href="./assets/4138e429/api.css" rel="stylesheet">
+<link href="./assets/4138e429/style.css" rel="stylesheet">
+<script src="./assets/a91b37a6/jquery.js"></script><title>Yii Framework 2.0 API Documentation</title>
+</head>
+
+<body>
+	<div id="apiPage">
+
+		<div id="apiHeader">
+			<a href="http://www.yiiframework.com">Yii Framework</a> v2.0.0-dev Class Reference
+		</div><!-- end of header -->
+
+		<div id="content">
+		<h1>Class yii\widgets\DetailView</h1>
+<div id="nav">
+	<a href="index.html">All Classes</a>
+			| <a href="#properties">Properties</a>
+				| <a href="#methods">Methods</a>
+			</div>
+
+<table class="summaryTable docClass">
+	<colgroup>
+		<col class="col-name" />
+		<col class="col-value" />
+	</colgroup>
+			<tr><th>Inheritance</th><td><a href="yii_widgets_detailview.html">yii\widgets\DetailView</a> &raquo;
+<a href="yii_base_widget.html">yii\base\Widget</a> &raquo;
+<a href="yii_base_component.html">yii\base\Component</a> &raquo;
+<a href="yii_base_object.html">yii\base\Object</a></td></tr>
+				<tr><th>Implements</th><td><a href="yii_base_arrayable.html">yii\base\Arrayable</a>, <a href="yii_base_viewcontextinterface.html">yii\base\ViewContextInterface</a></td></tr>
+								<tr><th>Available since version</th><td>2.0</td></tr>
+		<tr>
+	  <th>Source Code</th>
+	  <td></td>
+	</tr>
+</table>
+
+<div id="classDescription">
+	<strong>DetailView displays the detail of a single data <a href="yii_widgets_detailview.html#$model-detail">$model</a>.</strong>
+	<p><p>DetailView is best used for displaying a model in a regular format (e.g. each model attribute
+is displayed as a row in a table.) The model can be either an instance of <a href="yii_base_model.html">yii\base\Model</a>
+or an associative array.</p>
+
+<p>DetailView uses the <a href="yii_widgets_detailview.html#$attributes-detail">$attributes</a> property to determines which model attributes
+should be displayed and how they should be formatted.</p>
+
+<p>A typical usage of DetailView is as follows:</p>
+
+<pre><code>echo DetailView::widget([
+    'model' =&gt; $model,
+    'attributes' =&gt; [
+        'title',             // title attribute (in plain text)
+        'description:html',  // description attribute in HTML
+        [                    // the owner name of the model
+            'label' =&gt; 'Owner',
+            'value' =&gt; $model-&gt;owner-&gt;name,
+        ],
+    ],
+]);
+</code></pre></p>
+</div>
+
+<a name="properties"></a>
+
+<div class="summary docProperty">
+<h2>Public Properties</h2>
+
+<p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-property" />
+	<col class="col-type" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Property</th><th>Type</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr class="inherited" id="$counter">
+		<td><a href="yii_base_widget.html#$counter-detail">$counter</a></td>
+		<td>integer</td>
+		<td>A counter used to generate <a href="yii_widgets_detailview.html#$id-detail">$id</a> for widgets</td>
+		<td><a href="yii_base_widget.html">yii\base\Widget</a></td>
+	</tr>
+			<tr class="inherited" id="$autoIdPrefix">
+		<td><a href="yii_base_widget.html#$autoIdPrefix-detail">$autoIdPrefix</a></td>
+		<td>string</td>
+		<td>The prefix to the automatically generated widget IDs</td>
+		<td><a href="yii_base_widget.html">yii\base\Widget</a></td>
+	</tr>
+			<tr class="inherited" id="$stack">
+		<td><a href="yii_base_widget.html#$stack-detail">$stack</a></td>
+		<td><a href="yii_base_widget.html">yii\base\Widget</a>[]</td>
+		<td>The widgets that are currently being rendered (not ended)</td>
+		<td><a href="yii_base_widget.html">yii\base\Widget</a></td>
+	</tr>
+			<tr id="$model">
+		<td><a href="yii_widgets_detailview.html#$model-detail">$model</a></td>
+		<td>array|object</td>
+		<td>The data model whose details are to be displayed</td>
+		<td><a href="yii_widgets_detailview.html">yii\widgets\DetailView</a></td>
+	</tr>
+			<tr id="$attributes">
+		<td><a href="yii_widgets_detailview.html#$attributes-detail">$attributes</a></td>
+		<td>array</td>
+		<td>A list of attributes to be displayed in the detail view</td>
+		<td><a href="yii_widgets_detailview.html">yii\widgets\DetailView</a></td>
+	</tr>
+			<tr id="$template">
+		<td><a href="yii_widgets_detailview.html#$template-detail">$template</a></td>
+		<td>string|callback</td>
+		<td>The template used to render a single attribute</td>
+		<td><a href="yii_widgets_detailview.html">yii\widgets\DetailView</a></td>
+	</tr>
+			<tr id="$options">
+		<td><a href="yii_widgets_detailview.html#$options-detail">$options</a></td>
+		<td>array</td>
+		<td>The HTML attributes for the container tag of this widget</td>
+		<td><a href="yii_widgets_detailview.html">yii\widgets\DetailView</a></td>
+	</tr>
+			<tr id="$formatter">
+		<td><a href="yii_widgets_detailview.html#$formatter-detail">$formatter</a></td>
+		<td>array|<a href="yii_base_formatter.html">yii\base\Formatter</a></td>
+		<td>The formatter used to format model attribute values into displayable texts</td>
+		<td><a href="yii_widgets_detailview.html">yii\widgets\DetailView</a></td>
+	</tr>
+			<tr id="$behaviors">
+		<td><a href="yii_widgets_detailview.html#$behaviors-detail">$behaviors</a></td>
+		<td><a href="yii_base_behavior.html">yii\base\Behavior</a>[]</td>
+		<td>list of behaviors attached to this component</td>
+		<td><a href="yii_widgets_detailview.html">yii\widgets\DetailView</a></td>
+	</tr>
+			<tr id="$id">
+		<td><a href="yii_widgets_detailview.html#$id-detail">$id</a></td>
+		<td>string</td>
+		<td>ID of the widget</td>
+		<td><a href="yii_widgets_detailview.html">yii\widgets\DetailView</a></td>
+	</tr>
+			<tr id="$view">
+		<td><a href="yii_widgets_detailview.html#$view-detail">$view</a></td>
+		<td><a href="yii_web_view.html">yii\web\View</a></td>
+		<td>the view object that can be used to render views or view files</td>
+		<td><a href="yii_widgets_detailview.html">yii\widgets\DetailView</a></td>
+	</tr>
+			<tr id="$viewPath">
+		<td><a href="yii_widgets_detailview.html#$viewPath-detail">$viewPath</a></td>
+		<td>string</td>
+		<td>the directory containing the view files for this widget</td>
+		<td><a href="yii_widgets_detailview.html">yii\widgets\DetailView</a></td>
+	</tr>
+	</table>
+</div>
+<a name="methods"></a>
+
+<div class="summary docMethod">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr class="inherited" id="className()">
+		<td><a href="yii_base_object.html#className()-detail">className()</a></td>
+		<td></td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__construct()">
+		<td><a href="yii_base_object.html#__construct()-detail">__construct()</a></td>
+		<td>Constructor.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr id="init()">
+		<td><a href="yii_widgets_detailview.html#init()-detail">init()</a></td>
+		<td>Initializes the detail view.</td>
+		<td><a href="yii_widgets_detailview.html">yii\widgets\DetailView</a></td>
+	</tr>
+			<tr class="inherited" id="__get()">
+		<td><a href="yii_base_component.html#__get()-detail">__get()</a></td>
+		<td>Returns the value of a component property.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__set()">
+		<td><a href="yii_base_component.html#__set()-detail">__set()</a></td>
+		<td>Sets the value of a component property.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__isset()">
+		<td><a href="yii_base_component.html#__isset()-detail">__isset()</a></td>
+		<td>Checks if a property value is null.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__unset()">
+		<td><a href="yii_base_component.html#__unset()-detail">__unset()</a></td>
+		<td>Sets a component property to be null.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__call()">
+		<td><a href="yii_base_component.html#__call()-detail">__call()</a></td>
+		<td>Calls the named method which is not a class method.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasProperty()">
+		<td><a href="yii_base_component.html#hasProperty()-detail">hasProperty()</a></td>
+		<td>Returns a value indicating whether a property is defined for this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="canGetProperty()">
+		<td><a href="yii_base_component.html#canGetProperty()-detail">canGetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be read.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="canSetProperty()">
+		<td><a href="yii_base_component.html#canSetProperty()-detail">canSetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be set.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasMethod()">
+		<td><a href="yii_base_component.html#hasMethod()-detail">hasMethod()</a></td>
+		<td>Returns a value indicating whether a method is defined.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="toArray()">
+		<td><a href="yii_base_object.html#toArray()-detail">toArray()</a></td>
+		<td>Converts the object into an array.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__clone()">
+		<td><a href="yii_base_component.html#__clone()-detail">__clone()</a></td>
+		<td>This method is called after the object is created by cloning an existing one.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="behaviors()">
+		<td><a href="yii_base_component.html#behaviors()-detail">behaviors()</a></td>
+		<td>Returns a list of behaviors that this component should behave as.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasEventHandlers()">
+		<td><a href="yii_base_component.html#hasEventHandlers()-detail">hasEventHandlers()</a></td>
+		<td>Returns a value indicating whether there is any handler attached to the named event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="on()">
+		<td><a href="yii_base_component.html#on()-detail">on()</a></td>
+		<td>Attaches an event handler to an event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="off()">
+		<td><a href="yii_base_component.html#off()-detail">off()</a></td>
+		<td>Detaches an existing event handler from this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="trigger()">
+		<td><a href="yii_base_component.html#trigger()-detail">trigger()</a></td>
+		<td>Triggers an event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="getBehavior()">
+		<td><a href="yii_base_component.html#getBehavior()-detail">getBehavior()</a></td>
+		<td>Returns the named behavior object.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="getBehaviors()">
+		<td><a href="yii_base_component.html#getBehaviors()-detail">getBehaviors()</a></td>
+		<td>Returns all behaviors attached to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="attachBehavior()">
+		<td><a href="yii_base_component.html#attachBehavior()-detail">attachBehavior()</a></td>
+		<td>Attaches a behavior to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="attachBehaviors()">
+		<td><a href="yii_base_component.html#attachBehaviors()-detail">attachBehaviors()</a></td>
+		<td>Attaches a list of behaviors to the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="detachBehavior()">
+		<td><a href="yii_base_component.html#detachBehavior()-detail">detachBehavior()</a></td>
+		<td>Detaches a behavior from the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="detachBehaviors()">
+		<td><a href="yii_base_component.html#detachBehaviors()-detail">detachBehaviors()</a></td>
+		<td>Detaches all behaviors from the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="ensureBehaviors()">
+		<td><a href="yii_base_component.html#ensureBehaviors()-detail">ensureBehaviors()</a></td>
+		<td>Makes sure that the behaviors declared in <a href="yii_base_component.html#behaviors()-detail">behaviors()</a> are attached to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="begin()">
+		<td><a href="yii_base_widget.html#begin()-detail">begin()</a></td>
+		<td>Begins a widget.</td>
+		<td><a href="yii_base_widget.html">yii\base\Widget</a></td>
+	</tr>
+			<tr class="inherited" id="end()">
+		<td><a href="yii_base_widget.html#end()-detail">end()</a></td>
+		<td>Ends a widget.</td>
+		<td><a href="yii_base_widget.html">yii\base\Widget</a></td>
+	</tr>
+			<tr class="inherited" id="widget()">
+		<td><a href="yii_base_widget.html#widget()-detail">widget()</a></td>
+		<td>Creates a widget instance and runs it.</td>
+		<td><a href="yii_base_widget.html">yii\base\Widget</a></td>
+	</tr>
+			<tr class="inherited" id="getId()">
+		<td><a href="yii_base_widget.html#getId()-detail">getId()</a></td>
+		<td>Returns the ID of the widget.</td>
+		<td><a href="yii_base_widget.html">yii\base\Widget</a></td>
+	</tr>
+			<tr class="inherited" id="setId()">
+		<td><a href="yii_base_widget.html#setId()-detail">setId()</a></td>
+		<td>Sets the ID of the widget.</td>
+		<td><a href="yii_base_widget.html">yii\base\Widget</a></td>
+	</tr>
+			<tr class="inherited" id="getView()">
+		<td><a href="yii_base_widget.html#getView()-detail">getView()</a></td>
+		<td>Returns the view object that can be used to render views or view files.</td>
+		<td><a href="yii_base_widget.html">yii\base\Widget</a></td>
+	</tr>
+			<tr class="inherited" id="setView()">
+		<td><a href="yii_base_widget.html#setView()-detail">setView()</a></td>
+		<td>Sets the view object to be used by this widget.</td>
+		<td><a href="yii_base_widget.html">yii\base\Widget</a></td>
+	</tr>
+			<tr id="run()">
+		<td><a href="yii_widgets_detailview.html#run()-detail">run()</a></td>
+		<td>Renders the detail view.</td>
+		<td><a href="yii_widgets_detailview.html">yii\widgets\DetailView</a></td>
+	</tr>
+			<tr class="inherited" id="render()">
+		<td><a href="yii_base_widget.html#render()-detail">render()</a></td>
+		<td>Renders a view.</td>
+		<td><a href="yii_base_widget.html">yii\base\Widget</a></td>
+	</tr>
+			<tr class="inherited" id="renderFile()">
+		<td><a href="yii_base_widget.html#renderFile()-detail">renderFile()</a></td>
+		<td>Renders a view file.</td>
+		<td><a href="yii_base_widget.html">yii\base\Widget</a></td>
+	</tr>
+			<tr class="inherited" id="getViewPath()">
+		<td><a href="yii_base_widget.html#getViewPath()-detail">getViewPath()</a></td>
+		<td>Returns the directory containing the view files for this widget.</td>
+		<td><a href="yii_base_widget.html">yii\base\Widget</a></td>
+	</tr>
+			<tr class="inherited" id="findViewFile()">
+		<td><a href="yii_base_widget.html#findViewFile()-detail">findViewFile()</a></td>
+		<td>Finds the view file based on the given view name.</td>
+		<td><a href="yii_base_widget.html">yii\base\Widget</a></td>
+	</tr>
+			</table>
+</div>
+<div class="summary docMethod">
+<h2>Protected Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+																																								<tr id="renderAttribute()">
+		<td><a href="yii_widgets_detailview.html#renderAttribute()-detail">renderAttribute()</a></td>
+		<td>Renders a single attribute.</td>
+		<td><a href="yii_widgets_detailview.html">yii\widgets\DetailView</a></td>
+	</tr>
+			<tr id="normalizeAttributes()">
+		<td><a href="yii_widgets_detailview.html#normalizeAttributes()-detail">normalizeAttributes()</a></td>
+		<td>Normalizes the attribute specifications.</td>
+		<td><a href="yii_widgets_detailview.html">yii\widgets\DetailView</a></td>
+	</tr>
+	</table>
+</div>
+<a name="events"></a>
+
+<a name="constants"></a>
+
+<h2>Property Details</h2>
+
+
+	<div class="detailHeader" id="$model-detail">
+		$model		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array|object $model = null	</div>
+
+	<p>The data model whose details are to be displayed. This can be either a <a href="yii_base_model.html">yii\base\Model</a> instance
+or an associative array.</p>
+
+	
+
+	<div class="detailHeader" id="$attributes-detail">
+		$attributes		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array $attributes = null	</div>
+
+	<p>A list of attributes to be displayed in the detail view. Each array element
+represents the specification for displaying one particular attribute.
+An attribute can be specified as a string in the format of "Name" or "Name:Format", where "Name" refers to
+the attribute name, and "Format" represents the format of the attribute. The "Format" is passed to the <a href="yii_base_formatter.html#format()-detail">yii\base\Formatter::format()</a>
+method to format an attribute value into a displayable text. Please refer to <a href="yii_base_formatter.html">yii\base\Formatter</a> for the supported types.
+An attribute can also be specified in terms of an array with the following elements:
+- name: the attribute name. This is required if either "label" or "value" is not specified.
+- label: the label associated with the attribute. If this is not specified, it will be generated from the attribute name.
+- value: the value to be displayed. If this is not specified, it will be retrieved from <a href="yii_widgets_detailview.html#$model-detail">$model</a> using the attribute name
+  by calling <a href="yii_helpers_basearrayhelper.html#getValue()-detail">yii\helpers\ArrayHelper::getValue()</a>. Note that this value will be formatted into a displayable text
+  according to the "format" option.
+- format: the type of the value that determines how the value would be formatted into a displayable text.
+  Please refer to <a href="yii_base_formatter.html">yii\base\Formatter</a> for supported types.
+- visible: whether the attribute is visible. If set to <code>false</code>, the attribute will NOT be displayed.</p>
+
+	
+
+	<div class="detailHeader" id="$template-detail">
+		$template		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string|callback $template = "<tr><th>{label}</th><td>{value}</td></tr>"	</div>
+
+	<p>The template used to render a single attribute. If a string, the token <code>{label}</code>
+and <code>{value}</code> will be replaced with the label and the value of the corresponding attribute.
+If a callback (e.g. an anonymous function), the signature must be as follows:</p>
+
+<pre><code>function ($attribute, $index, $widget)
+</code></pre>
+
+<p>where <code>$attribute</code> refer to the specification of the attribute being rendered, <code>$index</code> is the zero-based
+index of the attribute in the <a href="yii_widgets_detailview.html#$attributes-detail">$attributes</a> array, and <code>$widget</code> refers to this widget instance.</p>
+
+	
+
+	<div class="detailHeader" id="$options-detail">
+		$options		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array $options = ['class' => 'table table-striped table-bordered detail-view']	</div>
+
+	<p>The HTML attributes for the container tag of this widget. The "tag" option specifies
+what container tag should be used. It defaults to "table" if not set.</p>
+
+	
+
+	<div class="detailHeader" id="$formatter-detail">
+		$formatter		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array|<a href="yii_base_formatter.html">yii\base\Formatter</a> $formatter = null	</div>
+
+	<p>The formatter used to format model attribute values into displayable texts.
+This can be either an instance of <a href="yii_base_formatter.html">yii\base\Formatter</a> or an configuration array for creating the <a href="yii_base_formatter.html">yii\base\Formatter</a>
+instance. If this property is not set, the "formatter" application component will be used.</p>
+
+	
+
+	<div class="detailHeader" id="$behaviors-detail">
+		$behaviors		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_base_behavior.html">yii\base\Behavior</a>[] <a href="yii_base_component.html#getBehaviors()-detail">getBehaviors</a>(  )	</div>
+
+	<p>list of behaviors attached to this component</p>
+
+	
+
+	<div class="detailHeader" id="$id-detail">
+		$id		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string <a href="yii_base_widget.html#getId()-detail">getId</a>( $autoGenerate = true )<br />void <a href="yii_base_widget.html#setId()-detail">setId</a>( $value )	</div>
+
+	<p>ID of the widget.</p>
+
+	
+
+	<div class="detailHeader" id="$view-detail">
+		$view		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_web_view.html">yii\web\View</a> <a href="yii_base_widget.html#getView()-detail">getView</a>(  )<br />void <a href="yii_base_widget.html#setView()-detail">setView</a>( $view )	</div>
+
+	<p>the view object that can be used to render views or view files.</p>
+
+	
+
+	<div class="detailHeader" id="$viewPath-detail">
+		$viewPath		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	string <a href="yii_base_widget.html#getViewPath()-detail">getViewPath</a>(  )	</div>
+
+	<p>the directory containing the view files for this widget.</p>
+
+	
+<h2>Method Details</h2>
+
+
+	<div class="detailHeader" id="init()-detail">
+		init()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_widgets_detailview.html#init()-detail">init</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p>Initializes the detail view.</strong></p>
+	<p>This method will initialize required property values.</p>
+
+	
+
+	<div class="detailHeader" id="run()-detail">
+		run()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_widgets_detailview.html#run()-detail">run</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p>Renders the detail view.</strong></p>
+	<p>This is the main entry of the whole detail view rendering.</p>
+
+	
+
+	<div class="detailHeader" id="renderAttribute()-detail">
+		renderAttribute()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_widgets_detailview.html#renderAttribute()-detail">renderAttribute</a>( $attribute, $index )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$attribute</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The specification of the attribute to be rendered.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$index</td>
+				  <td class="paramTypeCol">integer</td>
+				  <td class="paramDescCol">The zero-based index of the attribute in the <a href="yii_widgets_detailview.html#$attributes-detail">$attributes</a> array</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the rendering result</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Renders a single attribute.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="normalizeAttributes()-detail">
+		normalizeAttributes()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_widgets_detailview.html#normalizeAttributes()-detail">normalizeAttributes</a>(  )			</div>
+		</td></tr>
+															<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_base_invalidconfigexception.html">yii\base\InvalidConfigException</a></td>
+				  <td class="paramDescCol"></td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Normalizes the attribute specifications.</strong></p>
+	<p></p>
+
+	
+			</div><!-- end of content -->
+
+		<div id="apiFooter">
+			<p>&copy; 2008-2013 by <a href="http://www.yiisoft.com">Yii Software LLC</a></p>
+			<p>All Rights Reserved.</p>
+		</div><!-- end of footer -->
+
+<script type="text/javascript">
+/*<![CDATA[*/
+$("a.toggle").on('click', function() {
+	var $this = $(this);
+	if ($this.hasClass('properties-hidden')) {
+		$this.text($this.text().replace(/Show/,'Hide'));
+		$this.parents(".summary").find(".inherited").show();
+		$this.removeClass('properties-hidden');
+	} else {
+		$this.text($this.text().replace(/Hide/,'Show'));
+		$this.parents(".summary").find(".inherited").hide();
+		$this.addClass('properties-hidden');
+	}
+	return false;
+});
+/*
+$(".sourceCode a.show").toggle(function(){
+	$(this).text($(this).text().replace(/show/,'hide'));
+	$(this).parents(".sourceCode").find("div.code").show();
+},function(){
+	$(this).text($(this).text().replace(/hide/,'show'));
+	$(this).parents(".sourceCode").find("div.code").hide();
+});
+$("a.sourceLink").click(function(){
+	$(this).attr('target','_blank');
+});
+*/
+/*]]>*/
+</script>
+
+	</div><!-- end of page -->
+</body>
+</html>

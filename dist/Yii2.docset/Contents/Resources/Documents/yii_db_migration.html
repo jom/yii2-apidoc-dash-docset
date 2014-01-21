@@ -1,0 +1,1219 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="language" content="en" />
+<link href="./assets/4138e429/api.css" rel="stylesheet">
+<link href="./assets/4138e429/style.css" rel="stylesheet">
+<script src="./assets/a91b37a6/jquery.js"></script><title>Yii Framework 2.0 API Documentation</title>
+</head>
+
+<body>
+	<div id="apiPage">
+
+		<div id="apiHeader">
+			<a href="http://www.yiiframework.com">Yii Framework</a> v2.0.0-dev Class Reference
+		</div><!-- end of header -->
+
+		<div id="content">
+		<h1>Class yii\db\Migration</h1>
+<div id="nav">
+	<a href="index.html">All Classes</a>
+			| <a href="#properties">Properties</a>
+				| <a href="#methods">Methods</a>
+			</div>
+
+<table class="summaryTable docClass">
+	<colgroup>
+		<col class="col-name" />
+		<col class="col-value" />
+	</colgroup>
+			<tr><th>Inheritance</th><td><a href="yii_db_migration.html">yii\db\Migration</a> &raquo;
+<a href="yii_base_component.html">yii\base\Component</a> &raquo;
+<a href="yii_base_object.html">yii\base\Object</a></td></tr>
+				<tr><th>Implements</th><td><a href="yii_base_arrayable.html">yii\base\Arrayable</a></td></tr>
+								<tr><th>Available since version</th><td>2.0</td></tr>
+		<tr>
+	  <th>Source Code</th>
+	  <td></td>
+	</tr>
+</table>
+
+<div id="classDescription">
+	<strong>Migration is the base class for representing a database migration.</strong>
+	<p>Migration is designed to be used together with the "yii migrate" command.</p>
+
+<p>Each child class of Migration represents an individual database migration which
+is identified by the child class name.</p>
+
+<p>Within each migration, the <a href="yii_db_migration.html#up()-detail">up()</a> method should be overwritten to contain the logic
+for "upgrading" the database; while the <a href="yii_db_migration.html#down()-detail">down()</a> method for the "downgrading"
+logic. The "yii migrate" command manages all available migrations in an application.</p>
+
+<p>If the database supports transactions, you may also overwrite <a href="yii_db_migration.html#safeUp()-detail">safeUp()</a> and
+<a href="yii_db_migration.html#safeDown()-detail">safeDown()</a> so that if anything wrong happens during the upgrading or downgrading,
+the whole migration can be reverted in a whole.</p>
+
+<p>Migration provides a set of convenient methods for manipulating database data and schema.
+For example, the <a href="yii_db_migration.html#insert()-detail">insert()</a> method can be used to easily insert a row of data into
+a database table; the <a href="yii_db_migration.html#createTable()-detail">createTable()</a> method can be used to create a database table.
+Compared with the same methods in <a href="yii_db_command.html">yii\db\Command</a>, these methods will display extra
+information showing the method parameters and execution time, which may be useful when
+applying migrations.</p>
+</div>
+
+<a name="properties"></a>
+
+<div class="summary docProperty">
+<h2>Public Properties</h2>
+
+<p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-property" />
+	<col class="col-type" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Property</th><th>Type</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr id="$db">
+		<td><a href="yii_db_migration.html#$db-detail">$db</a></td>
+		<td><a href="yii_db_connection.html">yii\db\Connection</a></td>
+		<td>The database connection that this migration should work with</td>
+		<td><a href="yii_db_migration.html">yii\db\Migration</a></td>
+	</tr>
+			<tr id="$behaviors">
+		<td><a href="yii_db_migration.html#$behaviors-detail">$behaviors</a></td>
+		<td><a href="yii_base_behavior.html">yii\base\Behavior</a>[]</td>
+		<td>list of behaviors attached to this component</td>
+		<td><a href="yii_db_migration.html">yii\db\Migration</a></td>
+	</tr>
+	</table>
+</div>
+<a name="methods"></a>
+
+<div class="summary docMethod">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr class="inherited" id="className()">
+		<td><a href="yii_base_object.html#className()-detail">className()</a></td>
+		<td></td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__construct()">
+		<td><a href="yii_base_object.html#__construct()-detail">__construct()</a></td>
+		<td>Constructor.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr id="init()">
+		<td><a href="yii_db_migration.html#init()-detail">init()</a></td>
+		<td>Initializes the migration.</td>
+		<td><a href="yii_db_migration.html">yii\db\Migration</a></td>
+	</tr>
+			<tr class="inherited" id="__get()">
+		<td><a href="yii_base_component.html#__get()-detail">__get()</a></td>
+		<td>Returns the value of a component property.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__set()">
+		<td><a href="yii_base_component.html#__set()-detail">__set()</a></td>
+		<td>Sets the value of a component property.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__isset()">
+		<td><a href="yii_base_component.html#__isset()-detail">__isset()</a></td>
+		<td>Checks if a property value is null.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__unset()">
+		<td><a href="yii_base_component.html#__unset()-detail">__unset()</a></td>
+		<td>Sets a component property to be null.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__call()">
+		<td><a href="yii_base_component.html#__call()-detail">__call()</a></td>
+		<td>Calls the named method which is not a class method.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasProperty()">
+		<td><a href="yii_base_component.html#hasProperty()-detail">hasProperty()</a></td>
+		<td>Returns a value indicating whether a property is defined for this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="canGetProperty()">
+		<td><a href="yii_base_component.html#canGetProperty()-detail">canGetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be read.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="canSetProperty()">
+		<td><a href="yii_base_component.html#canSetProperty()-detail">canSetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be set.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasMethod()">
+		<td><a href="yii_base_component.html#hasMethod()-detail">hasMethod()</a></td>
+		<td>Returns a value indicating whether a method is defined.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="toArray()">
+		<td><a href="yii_base_object.html#toArray()-detail">toArray()</a></td>
+		<td>Converts the object into an array.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__clone()">
+		<td><a href="yii_base_component.html#__clone()-detail">__clone()</a></td>
+		<td>This method is called after the object is created by cloning an existing one.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="behaviors()">
+		<td><a href="yii_base_component.html#behaviors()-detail">behaviors()</a></td>
+		<td>Returns a list of behaviors that this component should behave as.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasEventHandlers()">
+		<td><a href="yii_base_component.html#hasEventHandlers()-detail">hasEventHandlers()</a></td>
+		<td>Returns a value indicating whether there is any handler attached to the named event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="on()">
+		<td><a href="yii_base_component.html#on()-detail">on()</a></td>
+		<td>Attaches an event handler to an event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="off()">
+		<td><a href="yii_base_component.html#off()-detail">off()</a></td>
+		<td>Detaches an existing event handler from this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="trigger()">
+		<td><a href="yii_base_component.html#trigger()-detail">trigger()</a></td>
+		<td>Triggers an event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="getBehavior()">
+		<td><a href="yii_base_component.html#getBehavior()-detail">getBehavior()</a></td>
+		<td>Returns the named behavior object.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="getBehaviors()">
+		<td><a href="yii_base_component.html#getBehaviors()-detail">getBehaviors()</a></td>
+		<td>Returns all behaviors attached to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="attachBehavior()">
+		<td><a href="yii_base_component.html#attachBehavior()-detail">attachBehavior()</a></td>
+		<td>Attaches a behavior to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="attachBehaviors()">
+		<td><a href="yii_base_component.html#attachBehaviors()-detail">attachBehaviors()</a></td>
+		<td>Attaches a list of behaviors to the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="detachBehavior()">
+		<td><a href="yii_base_component.html#detachBehavior()-detail">detachBehavior()</a></td>
+		<td>Detaches a behavior from the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="detachBehaviors()">
+		<td><a href="yii_base_component.html#detachBehaviors()-detail">detachBehaviors()</a></td>
+		<td>Detaches all behaviors from the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="ensureBehaviors()">
+		<td><a href="yii_base_component.html#ensureBehaviors()-detail">ensureBehaviors()</a></td>
+		<td>Makes sure that the behaviors declared in <a href="yii_base_component.html#behaviors()-detail">behaviors()</a> are attached to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr id="up()">
+		<td><a href="yii_db_migration.html#up()-detail">up()</a></td>
+		<td>This method contains the logic to be executed when applying this migration.</td>
+		<td><a href="yii_db_migration.html">yii\db\Migration</a></td>
+	</tr>
+			<tr id="down()">
+		<td><a href="yii_db_migration.html#down()-detail">down()</a></td>
+		<td>This method contains the logic to be executed when removing this migration.</td>
+		<td><a href="yii_db_migration.html">yii\db\Migration</a></td>
+	</tr>
+			<tr id="safeUp()">
+		<td><a href="yii_db_migration.html#safeUp()-detail">safeUp()</a></td>
+		<td>This method contains the logic to be executed when applying this migration.</td>
+		<td><a href="yii_db_migration.html">yii\db\Migration</a></td>
+	</tr>
+			<tr id="safeDown()">
+		<td><a href="yii_db_migration.html#safeDown()-detail">safeDown()</a></td>
+		<td>This method contains the logic to be executed when removing this migration.</td>
+		<td><a href="yii_db_migration.html">yii\db\Migration</a></td>
+	</tr>
+			<tr id="execute()">
+		<td><a href="yii_db_migration.html#execute()-detail">execute()</a></td>
+		<td>Executes a SQL statement.</td>
+		<td><a href="yii_db_migration.html">yii\db\Migration</a></td>
+	</tr>
+			<tr id="insert()">
+		<td><a href="yii_db_migration.html#insert()-detail">insert()</a></td>
+		<td>Creates and executes an INSERT SQL statement.</td>
+		<td><a href="yii_db_migration.html">yii\db\Migration</a></td>
+	</tr>
+			<tr id="batchInsert()">
+		<td><a href="yii_db_migration.html#batchInsert()-detail">batchInsert()</a></td>
+		<td>Creates and executes an batch INSERT SQL statement.</td>
+		<td><a href="yii_db_migration.html">yii\db\Migration</a></td>
+	</tr>
+			<tr id="update()">
+		<td><a href="yii_db_migration.html#update()-detail">update()</a></td>
+		<td>Creates and executes an UPDATE SQL statement.</td>
+		<td><a href="yii_db_migration.html">yii\db\Migration</a></td>
+	</tr>
+			<tr id="delete()">
+		<td><a href="yii_db_migration.html#delete()-detail">delete()</a></td>
+		<td>Creates and executes a DELETE SQL statement.</td>
+		<td><a href="yii_db_migration.html">yii\db\Migration</a></td>
+	</tr>
+			<tr id="createTable()">
+		<td><a href="yii_db_migration.html#createTable()-detail">createTable()</a></td>
+		<td>Builds and executes a SQL statement for creating a new DB table.</td>
+		<td><a href="yii_db_migration.html">yii\db\Migration</a></td>
+	</tr>
+			<tr id="renameTable()">
+		<td><a href="yii_db_migration.html#renameTable()-detail">renameTable()</a></td>
+		<td>Builds and executes a SQL statement for renaming a DB table.</td>
+		<td><a href="yii_db_migration.html">yii\db\Migration</a></td>
+	</tr>
+			<tr id="dropTable()">
+		<td><a href="yii_db_migration.html#dropTable()-detail">dropTable()</a></td>
+		<td>Builds and executes a SQL statement for dropping a DB table.</td>
+		<td><a href="yii_db_migration.html">yii\db\Migration</a></td>
+	</tr>
+			<tr id="truncateTable()">
+		<td><a href="yii_db_migration.html#truncateTable()-detail">truncateTable()</a></td>
+		<td>Builds and executes a SQL statement for truncating a DB table.</td>
+		<td><a href="yii_db_migration.html">yii\db\Migration</a></td>
+	</tr>
+			<tr id="addColumn()">
+		<td><a href="yii_db_migration.html#addColumn()-detail">addColumn()</a></td>
+		<td>Builds and executes a SQL statement for adding a new DB column.</td>
+		<td><a href="yii_db_migration.html">yii\db\Migration</a></td>
+	</tr>
+			<tr id="dropColumn()">
+		<td><a href="yii_db_migration.html#dropColumn()-detail">dropColumn()</a></td>
+		<td>Builds and executes a SQL statement for dropping a DB column.</td>
+		<td><a href="yii_db_migration.html">yii\db\Migration</a></td>
+	</tr>
+			<tr id="renameColumn()">
+		<td><a href="yii_db_migration.html#renameColumn()-detail">renameColumn()</a></td>
+		<td>Builds and executes a SQL statement for renaming a column.</td>
+		<td><a href="yii_db_migration.html">yii\db\Migration</a></td>
+	</tr>
+			<tr id="alterColumn()">
+		<td><a href="yii_db_migration.html#alterColumn()-detail">alterColumn()</a></td>
+		<td>Builds and executes a SQL statement for changing the definition of a column.</td>
+		<td><a href="yii_db_migration.html">yii\db\Migration</a></td>
+	</tr>
+			<tr id="addPrimaryKey()">
+		<td><a href="yii_db_migration.html#addPrimaryKey()-detail">addPrimaryKey()</a></td>
+		<td>Builds and executes a SQL statement for creating a primary key.</td>
+		<td><a href="yii_db_migration.html">yii\db\Migration</a></td>
+	</tr>
+			<tr id="dropPrimaryKey()">
+		<td><a href="yii_db_migration.html#dropPrimaryKey()-detail">dropPrimaryKey()</a></td>
+		<td>Builds and executes a SQL statement for dropping a primary key.</td>
+		<td><a href="yii_db_migration.html">yii\db\Migration</a></td>
+	</tr>
+			<tr id="addForeignKey()">
+		<td><a href="yii_db_migration.html#addForeignKey()-detail">addForeignKey()</a></td>
+		<td>Builds a SQL statement for adding a foreign key constraint to an existing table.</td>
+		<td><a href="yii_db_migration.html">yii\db\Migration</a></td>
+	</tr>
+			<tr id="dropForeignKey()">
+		<td><a href="yii_db_migration.html#dropForeignKey()-detail">dropForeignKey()</a></td>
+		<td>Builds a SQL statement for dropping a foreign key constraint.</td>
+		<td><a href="yii_db_migration.html">yii\db\Migration</a></td>
+	</tr>
+			<tr id="createIndex()">
+		<td><a href="yii_db_migration.html#createIndex()-detail">createIndex()</a></td>
+		<td>Builds and executes a SQL statement for creating a new index.</td>
+		<td><a href="yii_db_migration.html">yii\db\Migration</a></td>
+	</tr>
+			<tr id="dropIndex()">
+		<td><a href="yii_db_migration.html#dropIndex()-detail">dropIndex()</a></td>
+		<td>Builds and executes a SQL statement for dropping an index.</td>
+		<td><a href="yii_db_migration.html">yii\db\Migration</a></td>
+	</tr>
+	</table>
+</div>
+<a name="events"></a>
+
+<a name="constants"></a>
+
+<h2>Property Details</h2>
+
+
+	<div class="detailHeader" id="$db-detail">
+		$db		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_db_connection.html">yii\db\Connection</a> $db = null	</div>
+
+	<p>The database connection that this migration should work with.
+If not set, it will be initialized as the 'db' application component.</p>
+
+	
+
+	<div class="detailHeader" id="$behaviors-detail">
+		$behaviors		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_base_behavior.html">yii\base\Behavior</a>[] <a href="yii_base_component.html#getBehaviors()-detail">getBehaviors</a>(  )	</div>
+
+	<p>list of behaviors attached to this component</p>
+
+	
+<h2>Method Details</h2>
+
+
+	<div class="detailHeader" id="init()-detail">
+		init()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_db_migration.html#init()-detail">init</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p>Initializes the migration.</strong></p>
+	<p>This method will set <a href="yii_db_migration.html#$db-detail">$db</a> to be the 'db' application component, if it is null.</p>
+
+	
+
+	<div class="detailHeader" id="up()-detail">
+		up()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_db_migration.html#up()-detail">up</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">return a false value to indicate the migration fails
+and should not proceed further. All other return values mean the migration succeeds.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>This method contains the logic to be executed when applying this migration.</strong></p>
+	<p>Child classes may overwrite this method to provide actual migration logic.</p>
+
+	
+
+	<div class="detailHeader" id="down()-detail">
+		down()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_db_migration.html#down()-detail">down</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">return a false value to indicate the migration fails
+and should not proceed further. All other return values mean the migration succeeds.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>This method contains the logic to be executed when removing this migration.</strong></p>
+	<p>The default implementation throws an exception indicating the migration cannot be removed.
+Child classes may override this method if the corresponding migrations can be removed.</p>
+
+	
+
+	<div class="detailHeader" id="safeUp()-detail">
+		safeUp()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_db_migration.html#safeUp()-detail">safeUp</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">return a false value to indicate the migration fails
+and should not proceed further. All other return values mean the migration succeeds.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>This method contains the logic to be executed when applying this migration.</strong></p>
+	<p>This method differs from <a href="yii_db_migration.html#up()-detail">up()</a> in that the DB logic implemented here will
+be enclosed within a DB transaction.
+Child classes may implement this method instead of <a href="yii_db_migration.html#up()-detail">up()</a> if the DB logic
+needs to be within a transaction.</p>
+
+	
+
+	<div class="detailHeader" id="safeDown()-detail">
+		safeDown()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_db_migration.html#safeDown()-detail">safeDown</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">return a false value to indicate the migration fails
+and should not proceed further. All other return values mean the migration succeeds.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>This method contains the logic to be executed when removing this migration.</strong></p>
+	<p>This method differs from <a href="yii_db_migration.html#down()-detail">down()</a> in that the DB logic implemented here will
+be enclosed within a DB transaction.
+Child classes may implement this method instead of <a href="yii_db_migration.html#up()-detail">up()</a> if the DB logic
+needs to be within a transaction.</p>
+
+	
+
+	<div class="detailHeader" id="execute()-detail">
+		execute()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_db_migration.html#execute()-detail">execute</a>( $sql, $params = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$sql</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The SQL statement to be executed</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$params</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">Input parameters (name => value) for the SQL execution.
+See <a href="yii_db_command.html#execute()-detail">yii\db\Command::execute()</a> for more details.</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Executes a SQL statement.</strong></p>
+	<p>This method executes the specified SQL statement using <a href="yii_db_migration.html#$db-detail">$db</a>.</p>
+
+	
+
+	<div class="detailHeader" id="insert()-detail">
+		insert()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_db_migration.html#insert()-detail">insert</a>( $table, $columns )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$table</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The table that new rows will be inserted into.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$columns</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The column data (name => value) to be inserted into the table.</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Creates and executes an INSERT SQL statement.</strong></p>
+	<p>The method will properly escape the column names, and bind the values to be inserted.</p>
+
+	
+
+	<div class="detailHeader" id="batchInsert()-detail">
+		batchInsert()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_db_migration.html#batchInsert()-detail">batchInsert</a>( $table, $columns, $rows )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$table</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The table that new rows will be inserted into.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$columns</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The column names.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$rows</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The rows to be batch inserted into the table</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Creates and executes an batch INSERT SQL statement.</strong></p>
+	<p>The method will properly escape the column names, and bind the values to be inserted.</p>
+
+	
+
+	<div class="detailHeader" id="update()-detail">
+		update()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_db_migration.html#update()-detail">update</a>( $table, $columns, $condition = '', $params = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$table</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The table to be updated.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$columns</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The column data (name => value) to be updated.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$condition</td>
+				  <td class="paramTypeCol">array|string</td>
+				  <td class="paramDescCol">The conditions that will be put in the WHERE part. Please
+refer to <a href="yii_db_query.html#where()-detail">yii\db\Query::where()</a> on how to specify conditions.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$params</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The parameters to be bound to the query.</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Creates and executes an UPDATE SQL statement.</strong></p>
+	<p>The method will properly escape the column names and bind the values to be updated.</p>
+
+	
+
+	<div class="detailHeader" id="delete()-detail">
+		delete()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_db_migration.html#delete()-detail">delete</a>( $table, $condition = '', $params = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$table</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The table where the data will be deleted from.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$condition</td>
+				  <td class="paramTypeCol">array|string</td>
+				  <td class="paramDescCol">The conditions that will be put in the WHERE part. Please
+refer to <a href="yii_db_query.html#where()-detail">yii\db\Query::where()</a> on how to specify conditions.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$params</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The parameters to be bound to the query.</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Creates and executes a DELETE SQL statement.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="createTable()-detail">
+		createTable()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_db_migration.html#createTable()-detail">createTable</a>( $table, $columns, $options = null )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$table</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The name of the table to be created. The name will be properly quoted by the method.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$columns</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The columns (name => definition) in the new table.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Additional SQL fragment that will be appended to the generated SQL.</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Builds and executes a SQL statement for creating a new DB table.</strong></p>
+	<p>The columns in the new  table should be specified as name-definition pairs (e.g. 'name' => 'string'),
+where name stands for a column name which will be properly quoted by the method, and definition
+stands for the column type which can contain an abstract DB type.</p>
+
+<p>The <a href="yii_db_querybuilder.html#getColumnType()-detail">yii\db\QueryBuilder::getColumnType()</a> method will be invoked to convert any abstract type into a physical one.</p>
+
+<p>If a column is specified with definition only (e.g. 'PRIMARY KEY (name, type)'), it will be directly
+put into the generated SQL.</p>
+
+	
+
+	<div class="detailHeader" id="renameTable()-detail">
+		renameTable()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_db_migration.html#renameTable()-detail">renameTable</a>( $table, $newName )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$table</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The table to be renamed. The name will be properly quoted by the method.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$newName</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The new table name. The name will be properly quoted by the method.</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Builds and executes a SQL statement for renaming a DB table.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="dropTable()-detail">
+		dropTable()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_db_migration.html#dropTable()-detail">dropTable</a>( $table )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$table</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The table to be dropped. The name will be properly quoted by the method.</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Builds and executes a SQL statement for dropping a DB table.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="truncateTable()-detail">
+		truncateTable()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_db_migration.html#truncateTable()-detail">truncateTable</a>( $table )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$table</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The table to be truncated. The name will be properly quoted by the method.</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Builds and executes a SQL statement for truncating a DB table.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="addColumn()-detail">
+		addColumn()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_db_migration.html#addColumn()-detail">addColumn</a>( $table, $column, $type )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$table</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The table that the new column will be added to. The table name will be properly quoted by the method.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$column</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The name of the new column. The name will be properly quoted by the method.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$type</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The column type. The <a href="yii_db_querybuilder.html#getColumnType()-detail">yii\db\QueryBuilder::getColumnType()</a> method will be invoked to convert abstract column type (if any)
+into the physical one. Anything that is not recognized as abstract type will be kept in the generated SQL.
+For example, 'string' will be turned into 'varchar(255)', while 'string not null' will become 'varchar(255) not null'.</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Builds and executes a SQL statement for adding a new DB column.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="dropColumn()-detail">
+		dropColumn()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_db_migration.html#dropColumn()-detail">dropColumn</a>( $table, $column )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$table</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The table whose column is to be dropped. The name will be properly quoted by the method.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$column</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The name of the column to be dropped. The name will be properly quoted by the method.</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Builds and executes a SQL statement for dropping a DB column.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="renameColumn()-detail">
+		renameColumn()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_db_migration.html#renameColumn()-detail">renameColumn</a>( $table, $name, $newName )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$table</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The table whose column is to be renamed. The name will be properly quoted by the method.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The old name of the column. The name will be properly quoted by the method.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$newName</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The new name of the column. The name will be properly quoted by the method.</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Builds and executes a SQL statement for renaming a column.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="alterColumn()-detail">
+		alterColumn()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_db_migration.html#alterColumn()-detail">alterColumn</a>( $table, $column, $type )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$table</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The table whose column is to be changed. The table name will be properly quoted by the method.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$column</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The name of the column to be changed. The name will be properly quoted by the method.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$type</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The new column type. The <span style="background: #f00;">\yii\db\getColumnType()</span> method will be invoked to convert abstract column type (if any)
+into the physical one. Anything that is not recognized as abstract type will be kept in the generated SQL.
+For example, 'string' will be turned into 'varchar(255)', while 'string not null' will become 'varchar(255) not null'.</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Builds and executes a SQL statement for changing the definition of a column.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="addPrimaryKey()-detail">
+		addPrimaryKey()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_db_migration.html#addPrimaryKey()-detail">addPrimaryKey</a>( $name, $table, $columns )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The name of the primary key constraint.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$table</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The table that the primary key constraint will be added to.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$columns</td>
+				  <td class="paramTypeCol">string|array</td>
+				  <td class="paramDescCol">Comma separated string or array of columns that the primary key will consist of.</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Builds and executes a SQL statement for creating a primary key.</strong></p>
+	<p>The method will properly quote the table and column names.</p>
+
+	
+
+	<div class="detailHeader" id="dropPrimaryKey()-detail">
+		dropPrimaryKey()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_db_migration.html#dropPrimaryKey()-detail">dropPrimaryKey</a>( $name, $table )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The name of the primary key constraint to be removed.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$table</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The table that the primary key constraint will be removed from.</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Builds and executes a SQL statement for dropping a primary key.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="addForeignKey()-detail">
+		addForeignKey()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_db_migration.html#addForeignKey()-detail">addForeignKey</a>( $name, $table, $columns, $refTable, $refColumns, $delete = null, $update = null )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The name of the foreign key constraint.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$table</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The table that the foreign key constraint will be added to.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$columns</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The name of the column to that the constraint will be added on. If there are multiple columns, separate them with commas or use an array.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$refTable</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The table that the foreign key references to.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$refColumns</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The name of the column that the foreign key references to. If there are multiple columns, separate them with commas or use an array.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$delete</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The ON DELETE option. Most DBMS support these options: RESTRICT, CASCADE, NO ACTION, SET DEFAULT, SET NULL</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$update</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The ON UPDATE option. Most DBMS support these options: RESTRICT, CASCADE, NO ACTION, SET DEFAULT, SET NULL</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Builds a SQL statement for adding a foreign key constraint to an existing table.</strong></p>
+	<p>The method will properly quote the table and column names.</p>
+
+	
+
+	<div class="detailHeader" id="dropForeignKey()-detail">
+		dropForeignKey()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_db_migration.html#dropForeignKey()-detail">dropForeignKey</a>( $name, $table )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The name of the foreign key constraint to be dropped. The name will be properly quoted by the method.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$table</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The table whose foreign is to be dropped. The name will be properly quoted by the method.</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Builds a SQL statement for dropping a foreign key constraint.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="createIndex()-detail">
+		createIndex()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_db_migration.html#createIndex()-detail">createIndex</a>( $name, $table, $column, $unique = false )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The name of the index. The name will be properly quoted by the method.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$table</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The table that the new index will be created for. The table name will be properly quoted by the method.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$column</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The column(s) that should be included in the index. If there are multiple columns, please separate them
+by commas or use an array. The column names will be properly quoted by the method.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$unique</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">Whether to add UNIQUE constraint on the created index.</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Builds and executes a SQL statement for creating a new index.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="dropIndex()-detail">
+		dropIndex()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_db_migration.html#dropIndex()-detail">dropIndex</a>( $name, $table )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The name of the index to be dropped. The name will be properly quoted by the method.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$table</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The table whose index is to be dropped. The name will be properly quoted by the method.</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Builds and executes a SQL statement for dropping an index.</strong></p>
+	<p></p>
+
+	
+			</div><!-- end of content -->
+
+		<div id="apiFooter">
+			<p>&copy; 2008-2013 by <a href="http://www.yiisoft.com">Yii Software LLC</a></p>
+			<p>All Rights Reserved.</p>
+		</div><!-- end of footer -->
+
+<script type="text/javascript">
+/*<![CDATA[*/
+$("a.toggle").on('click', function() {
+	var $this = $(this);
+	if ($this.hasClass('properties-hidden')) {
+		$this.text($this.text().replace(/Show/,'Hide'));
+		$this.parents(".summary").find(".inherited").show();
+		$this.removeClass('properties-hidden');
+	} else {
+		$this.text($this.text().replace(/Hide/,'Show'));
+		$this.parents(".summary").find(".inherited").hide();
+		$this.addClass('properties-hidden');
+	}
+	return false;
+});
+/*
+$(".sourceCode a.show").toggle(function(){
+	$(this).text($(this).text().replace(/show/,'hide'));
+	$(this).parents(".sourceCode").find("div.code").show();
+},function(){
+	$(this).text($(this).text().replace(/hide/,'show'));
+	$(this).parents(".sourceCode").find("div.code").hide();
+});
+$("a.sourceLink").click(function(){
+	$(this).attr('target','_blank');
+});
+*/
+/*]]>*/
+</script>
+
+	</div><!-- end of page -->
+</body>
+</html>

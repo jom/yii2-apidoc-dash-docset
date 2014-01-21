@@ -1,0 +1,464 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="language" content="en" />
+<link href="./assets/4138e429/api.css" rel="stylesheet">
+<link href="./assets/4138e429/style.css" rel="stylesheet">
+<script src="./assets/a91b37a6/jquery.js"></script><title>Yii Framework 2.0 API Documentation</title>
+</head>
+
+<body>
+	<div id="apiPage">
+
+		<div id="apiHeader">
+			<a href="http://www.yiiframework.com">Yii Framework</a> v2.0.0-dev Class Reference
+		</div><!-- end of header -->
+
+		<div id="content">
+		<h1>Class yii\web\AccessControl</h1>
+<div id="nav">
+	<a href="index.html">All Classes</a>
+			| <a href="#properties">Properties</a>
+				| <a href="#methods">Methods</a>
+			</div>
+
+<table class="summaryTable docClass">
+	<colgroup>
+		<col class="col-name" />
+		<col class="col-value" />
+	</colgroup>
+			<tr><th>Inheritance</th><td><a href="yii_web_accesscontrol.html">yii\web\AccessControl</a> &raquo;
+<a href="yii_base_actionfilter.html">yii\base\ActionFilter</a> &raquo;
+<a href="yii_base_behavior.html">yii\base\Behavior</a> &raquo;
+<a href="yii_base_object.html">yii\base\Object</a></td></tr>
+				<tr><th>Implements</th><td><a href="yii_base_arrayable.html">yii\base\Arrayable</a></td></tr>
+								<tr><th>Available since version</th><td>2.0</td></tr>
+		<tr>
+	  <th>Source Code</th>
+	  <td></td>
+	</tr>
+</table>
+
+<div id="classDescription">
+	<strong>AccessControl provides simple access control based on a set of rules.</strong>
+	<p><p>AccessControl is an action filter. It will check its <a href="yii_web_accesscontrol.html#$rules-detail">$rules</a> to find
+the first rule that matches the current context variables (such as user IP address, user role).
+The matching rule will dictate whether to allow or deny the access to the requested controller
+action. If no rule matches, the access will be denied.</p>
+
+<p>To use AccessControl, declare it in the <code>behaviors()</code> method of your controller class.
+For example, the following declarations will allow authenticated users to access the "create"
+and "update" actions and deny all other users from accessing these two actions.</p>
+
+<pre><code>public function behaviors()
+{
+    return [
+        'access' =&gt; [
+            'class' =&gt; \yii\web\AccessControl::className(),
+            'only' =&gt; ['create', 'update'],
+            'rules' =&gt; [
+                // deny all POST requests
+                [
+                    'allow' =&gt; false,
+                    'verbs' =&gt; ['POST']
+                ],
+                // allow authenticated users
+                [
+                    'allow' =&gt; true,
+                    'roles' =&gt; ['@'],
+                ],
+                // everything else is denied
+            ],
+        ],
+    ];
+}
+</code></pre></p>
+</div>
+
+<a name="properties"></a>
+
+<div class="summary docProperty">
+<h2>Public Properties</h2>
+
+<p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-property" />
+	<col class="col-type" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Property</th><th>Type</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr class="inherited" id="$owner">
+		<td><a href="yii_base_behavior.html#$owner-detail">$owner</a></td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+		<td>The owner of this behavior</td>
+		<td><a href="yii_base_behavior.html">yii\base\Behavior</a></td>
+	</tr>
+			<tr class="inherited" id="$only">
+		<td><a href="yii_base_actionfilter.html#$only-detail">$only</a></td>
+		<td>array</td>
+		<td>List of action IDs that this filter should apply to</td>
+		<td><a href="yii_base_actionfilter.html">yii\base\ActionFilter</a></td>
+	</tr>
+			<tr class="inherited" id="$except">
+		<td><a href="yii_base_actionfilter.html#$except-detail">$except</a></td>
+		<td>array</td>
+		<td>List of action IDs that this filter should not apply to</td>
+		<td><a href="yii_base_actionfilter.html">yii\base\ActionFilter</a></td>
+	</tr>
+			<tr id="$denyCallback">
+		<td><a href="yii_web_accesscontrol.html#$denyCallback-detail">$denyCallback</a></td>
+		<td>callback</td>
+		<td>A callback that will be called if the access should be denied
+to the current user</td>
+		<td><a href="yii_web_accesscontrol.html">yii\web\AccessControl</a></td>
+	</tr>
+			<tr id="$ruleConfig">
+		<td><a href="yii_web_accesscontrol.html#$ruleConfig-detail">$ruleConfig</a></td>
+		<td>array</td>
+		<td>The default configuration of access rules</td>
+		<td><a href="yii_web_accesscontrol.html">yii\web\AccessControl</a></td>
+	</tr>
+			<tr id="$rules">
+		<td><a href="yii_web_accesscontrol.html#$rules-detail">$rules</a></td>
+		<td>array</td>
+		<td>A list of access rule objects or configuration arrays for creating the rule objects</td>
+		<td><a href="yii_web_accesscontrol.html">yii\web\AccessControl</a></td>
+	</tr>
+	</table>
+</div>
+<a name="methods"></a>
+
+<div class="summary docMethod">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr class="inherited" id="className()">
+		<td><a href="yii_base_object.html#className()-detail">className()</a></td>
+		<td></td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__construct()">
+		<td><a href="yii_base_object.html#__construct()-detail">__construct()</a></td>
+		<td>Constructor.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr id="init()">
+		<td><a href="yii_web_accesscontrol.html#init()-detail">init()</a></td>
+		<td>Initializes the <a href="yii_web_accesscontrol.html#$rules-detail">$rules</a> array by instantiating rule objects from configurations.</td>
+		<td><a href="yii_web_accesscontrol.html">yii\web\AccessControl</a></td>
+	</tr>
+			<tr class="inherited" id="__get()">
+		<td><a href="yii_base_object.html#__get()-detail">__get()</a></td>
+		<td>Returns the value of an object property.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__set()">
+		<td><a href="yii_base_object.html#__set()-detail">__set()</a></td>
+		<td>Sets value of an object property.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__isset()">
+		<td><a href="yii_base_object.html#__isset()-detail">__isset()</a></td>
+		<td>Checks if the named property is set (not null).</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__unset()">
+		<td><a href="yii_base_object.html#__unset()-detail">__unset()</a></td>
+		<td>Sets an object property to null.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__call()">
+		<td><a href="yii_base_object.html#__call()-detail">__call()</a></td>
+		<td>Calls the named method which is not a class method.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="hasProperty()">
+		<td><a href="yii_base_object.html#hasProperty()-detail">hasProperty()</a></td>
+		<td>Returns a value indicating whether a property is defined.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="canGetProperty()">
+		<td><a href="yii_base_object.html#canGetProperty()-detail">canGetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be read.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="canSetProperty()">
+		<td><a href="yii_base_object.html#canSetProperty()-detail">canSetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be set.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="hasMethod()">
+		<td><a href="yii_base_object.html#hasMethod()-detail">hasMethod()</a></td>
+		<td>Returns a value indicating whether a method is defined.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="toArray()">
+		<td><a href="yii_base_object.html#toArray()-detail">toArray()</a></td>
+		<td>Converts the object into an array.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="events()">
+		<td><a href="yii_base_actionfilter.html#events()-detail">events()</a></td>
+		<td>Declares event handlers for the <a href="yii_base_behavior.html#$owner-detail">$owner</a>'s events.</td>
+		<td><a href="yii_base_actionfilter.html">yii\base\ActionFilter</a></td>
+	</tr>
+			<tr class="inherited" id="attach()">
+		<td><a href="yii_base_behavior.html#attach()-detail">attach()</a></td>
+		<td>Attaches the behavior object to the component.</td>
+		<td><a href="yii_base_behavior.html">yii\base\Behavior</a></td>
+	</tr>
+			<tr class="inherited" id="detach()">
+		<td><a href="yii_base_behavior.html#detach()-detail">detach()</a></td>
+		<td>Detaches the behavior object from the component.</td>
+		<td><a href="yii_base_behavior.html">yii\base\Behavior</a></td>
+	</tr>
+			<tr class="inherited" id="beforeFilter()">
+		<td><a href="yii_base_actionfilter.html#beforeFilter()-detail">beforeFilter()</a></td>
+		<td></td>
+		<td><a href="yii_base_actionfilter.html">yii\base\ActionFilter</a></td>
+	</tr>
+			<tr class="inherited" id="afterFilter()">
+		<td><a href="yii_base_actionfilter.html#afterFilter()-detail">afterFilter()</a></td>
+		<td></td>
+		<td><a href="yii_base_actionfilter.html">yii\base\ActionFilter</a></td>
+	</tr>
+			<tr id="beforeAction()">
+		<td><a href="yii_web_accesscontrol.html#beforeAction()-detail">beforeAction()</a></td>
+		<td>This method is invoked right before an action is to be executed (after all possible filters.)
+You may override this method to do last-minute preparation for the action.</td>
+		<td><a href="yii_web_accesscontrol.html">yii\web\AccessControl</a></td>
+	</tr>
+			<tr class="inherited" id="afterAction()">
+		<td><a href="yii_base_actionfilter.html#afterAction()-detail">afterAction()</a></td>
+		<td>This method is invoked right after an action is executed.</td>
+		<td><a href="yii_base_actionfilter.html">yii\base\ActionFilter</a></td>
+	</tr>
+			</table>
+</div>
+<div class="summary docMethod">
+<h2>Protected Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+																						<tr class="inherited" id="isActive()">
+		<td><a href="yii_base_actionfilter.html#isActive()-detail">isActive()</a></td>
+		<td>Returns a value indicating whether the filer is active for the given action.</td>
+		<td><a href="yii_base_actionfilter.html">yii\base\ActionFilter</a></td>
+	</tr>
+			<tr id="denyAccess()">
+		<td><a href="yii_web_accesscontrol.html#denyAccess()-detail">denyAccess()</a></td>
+		<td>Denies the access of the user.</td>
+		<td><a href="yii_web_accesscontrol.html">yii\web\AccessControl</a></td>
+	</tr>
+	</table>
+</div>
+<a name="events"></a>
+
+<a name="constants"></a>
+
+<h2>Property Details</h2>
+
+
+	<div class="detailHeader" id="$denyCallback-detail">
+		$denyCallback		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	callback $denyCallback = null	</div>
+
+	<p>A callback that will be called if the access should be denied
+to the current user. If not set, <a href="yii_web_accesscontrol.html#denyAccess()-detail">denyAccess()</a> will be called.
+The signature of the callback should be as follows:</p>
+
+<pre><code>function ($rule, $action)
+</code></pre>
+
+<p>where <code>$rule</code> is this rule, and <code>$action</code> is the current <a href="yii_base_action.html">yii\base\Action</a> object.</p>
+
+	
+
+	<div class="detailHeader" id="$ruleConfig-detail">
+		$ruleConfig		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array $ruleConfig = ['class' => 'yii\web\AccessRule']	</div>
+
+	<p>The default configuration of access rules. Individual rule configurations
+specified via <a href="yii_web_accesscontrol.html#$rules-detail">$rules</a> will take precedence when the same property of the rule is configured.</p>
+
+	
+
+	<div class="detailHeader" id="$rules-detail">
+		$rules		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array $rules = []	</div>
+
+	<p>A list of access rule objects or configuration arrays for creating the rule objects.
+If a rule is specified via a configuration array, it will be merged with <a href="yii_web_accesscontrol.html#$ruleConfig-detail">$ruleConfig</a> first
+before it is used for creating the rule object.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_web_accesscontrol.html#$ruleConfig-detail">$ruleConfig</a></li>
+</ul>
+</div>
+
+<h2>Method Details</h2>
+
+
+	<div class="detailHeader" id="init()-detail">
+		init()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_web_accesscontrol.html#init()-detail">init</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p>Initializes the <a href="yii_web_accesscontrol.html#$rules-detail">$rules</a> array by instantiating rule objects from configurations.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="beforeAction()-detail">
+		beforeAction()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_web_accesscontrol.html#beforeAction()-detail">beforeAction</a>( $action )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$action</td>
+				  <td class="paramTypeCol"><a href="yii_base_action.html">yii\base\Action</a></td>
+				  <td class="paramDescCol">The action to be executed.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether the action should continue to be executed.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>This method is invoked right before an action is to be executed (after all possible filters.)
+You may override this method to do last-minute preparation for the action.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="denyAccess()-detail">
+		denyAccess()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_web_accesscontrol.html#denyAccess()-detail">denyAccess</a>( $user )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$user</td>
+				  <td class="paramTypeCol"><a href="yii_web_user.html">yii\web\User</a></td>
+				  <td class="paramDescCol">The current user</td>
+				</tr>
+													<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_web_accessdeniedhttpexception.html">yii\web\AccessDeniedHttpException</a></td>
+				  <td class="paramDescCol">if the user is already logged in.</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Denies the access of the user.</strong></p>
+	<p>The default implementation will redirect the user to the login page if he is a guest;
+if the user is already logged, a 403 HTTP exception will be thrown.</p>
+
+	
+			</div><!-- end of content -->
+
+		<div id="apiFooter">
+			<p>&copy; 2008-2013 by <a href="http://www.yiisoft.com">Yii Software LLC</a></p>
+			<p>All Rights Reserved.</p>
+		</div><!-- end of footer -->
+
+<script type="text/javascript">
+/*<![CDATA[*/
+$("a.toggle").on('click', function() {
+	var $this = $(this);
+	if ($this.hasClass('properties-hidden')) {
+		$this.text($this.text().replace(/Show/,'Hide'));
+		$this.parents(".summary").find(".inherited").show();
+		$this.removeClass('properties-hidden');
+	} else {
+		$this.text($this.text().replace(/Hide/,'Show'));
+		$this.parents(".summary").find(".inherited").hide();
+		$this.addClass('properties-hidden');
+	}
+	return false;
+});
+/*
+$(".sourceCode a.show").toggle(function(){
+	$(this).text($(this).text().replace(/show/,'hide'));
+	$(this).parents(".sourceCode").find("div.code").show();
+},function(){
+	$(this).text($(this).text().replace(/hide/,'show'));
+	$(this).parents(".sourceCode").find("div.code").hide();
+});
+$("a.sourceLink").click(function(){
+	$(this).attr('target','_blank');
+});
+*/
+/*]]>*/
+</script>
+
+	</div><!-- end of page -->
+</body>
+</html>

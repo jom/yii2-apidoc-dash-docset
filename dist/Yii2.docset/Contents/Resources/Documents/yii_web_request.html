@@ -1,0 +1,3438 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="language" content="en" />
+<link href="./assets/4138e429/api.css" rel="stylesheet">
+<link href="./assets/4138e429/style.css" rel="stylesheet">
+<script src="./assets/a91b37a6/jquery.js"></script><title>Yii Framework 2.0 API Documentation</title>
+</head>
+
+<body>
+	<div id="apiPage">
+
+		<div id="apiHeader">
+			<a href="http://www.yiiframework.com">Yii Framework</a> v2.0.0-dev Class Reference
+		</div><!-- end of header -->
+
+		<div id="content">
+		<h1>Class yii\web\Request</h1>
+<div id="nav">
+	<a href="index.html">All Classes</a>
+			| <a href="#properties">Properties</a>
+				| <a href="#methods">Methods</a>
+					| <a href="#constants">Constants</a>
+	</div>
+
+<table class="summaryTable docClass">
+	<colgroup>
+		<col class="col-name" />
+		<col class="col-value" />
+	</colgroup>
+			<tr><th>Inheritance</th><td><a href="yii_web_request.html">yii\web\Request</a> &raquo;
+<a href="yii_base_request.html">yii\base\Request</a> &raquo;
+<a href="yii_base_component.html">yii\base\Component</a> &raquo;
+<a href="yii_base_object.html">yii\base\Object</a></td></tr>
+				<tr><th>Implements</th><td><a href="yii_base_arrayable.html">yii\base\Arrayable</a></td></tr>
+								<tr><th>Available since version</th><td>2.0</td></tr>
+		<tr>
+	  <th>Source Code</th>
+	  <td></td>
+	</tr>
+</table>
+
+<div id="classDescription">
+	<strong>The web Request class represents an HTTP request</strong>
+	<p>It encapsulates the $_SERVER variable and resolves its inconsistency among different Web servers.
+Also it provides an interface to retrieve request parameters from $_POST, $_GET, $_COOKIES and REST
+parameters sent via other HTTP methods like PUT or DELETE.</p>
+
+<p>Request is configured as an application component in <span style="background: #f00;">\yii\web\yii\web\Application</span> by default.
+You can access that instance via <code>Yii::$app-&gt;request</code>.</p>
+</div>
+
+<a name="properties"></a>
+
+<div class="summary docProperty">
+<h2>Public Properties</h2>
+
+<p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-property" />
+	<col class="col-type" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Property</th><th>Type</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr id="$enableCsrfValidation">
+		<td><a href="yii_web_request.html#$enableCsrfValidation-detail">$enableCsrfValidation</a></td>
+		<td>boolean</td>
+		<td>Whether to enable CSRF (Cross-Site Request Forgery) validation</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="$csrfVar">
+		<td><a href="yii_web_request.html#$csrfVar-detail">$csrfVar</a></td>
+		<td>string</td>
+		<td>The name of the token used to prevent CSRF</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="$csrfCookie">
+		<td><a href="yii_web_request.html#$csrfCookie-detail">$csrfCookie</a></td>
+		<td>array</td>
+		<td>The configuration of the CSRF cookie</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="$enableCookieValidation">
+		<td><a href="yii_web_request.html#$enableCookieValidation-detail">$enableCookieValidation</a></td>
+		<td>boolean</td>
+		<td>Whether cookies should be validated to ensure they are not tampered</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="$restVar">
+		<td><a href="yii_web_request.html#$restVar-detail">$restVar</a></td>
+		<td>string|boolean</td>
+		<td>The name of the POST parameter that is used to indicate if a request is a PUT, PATCH or DELETE
+request tunneled through POST</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="$parsers">
+		<td><a href="yii_web_request.html#$parsers-detail">$parsers</a></td>
+		<td>array</td>
+		<td>The parsers for converting the raw HTTP request body into <a href="yii_web_request.html#$restParams-detail">$restParams</a></td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="$behaviors">
+		<td><a href="yii_web_request.html#$behaviors-detail">$behaviors</a></td>
+		<td><a href="yii_base_behavior.html">yii\base\Behavior</a>[]</td>
+		<td>list of behaviors attached to this component</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="$isConsoleRequest">
+		<td><a href="yii_web_request.html#$isConsoleRequest-detail">$isConsoleRequest</a></td>
+		<td>boolean</td>
+		<td>the value indicating whether the current request is made via console</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="$scriptFile">
+		<td><a href="yii_web_request.html#$scriptFile-detail">$scriptFile</a></td>
+		<td>string</td>
+		<td>the entry script file path</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="$method">
+		<td><a href="yii_web_request.html#$method-detail">$method</a></td>
+		<td>string</td>
+		<td>request method, such as GET, POST, HEAD, PUT, PATCH, DELETE</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="$isGet">
+		<td><a href="yii_web_request.html#$isGet-detail">$isGet</a></td>
+		<td>boolean</td>
+		<td>whether this is a GET request</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="$isOptions">
+		<td><a href="yii_web_request.html#$isOptions-detail">$isOptions</a></td>
+		<td>boolean</td>
+		<td>whether this is a OPTIONS request</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="$isHead">
+		<td><a href="yii_web_request.html#$isHead-detail">$isHead</a></td>
+		<td>boolean</td>
+		<td>whether this is a HEAD request</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="$isPost">
+		<td><a href="yii_web_request.html#$isPost-detail">$isPost</a></td>
+		<td>boolean</td>
+		<td>whether this is a POST request</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="$isDelete">
+		<td><a href="yii_web_request.html#$isDelete-detail">$isDelete</a></td>
+		<td>boolean</td>
+		<td>whether this is a DELETE request</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="$isPut">
+		<td><a href="yii_web_request.html#$isPut-detail">$isPut</a></td>
+		<td>boolean</td>
+		<td>whether this is a PUT request</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="$isPatch">
+		<td><a href="yii_web_request.html#$isPatch-detail">$isPatch</a></td>
+		<td>boolean</td>
+		<td>whether this is a PATCH request</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="$isAjax">
+		<td><a href="yii_web_request.html#$isAjax-detail">$isAjax</a></td>
+		<td>boolean</td>
+		<td>whether this is an AJAX (XMLHttpRequest) request</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="$isFlash">
+		<td><a href="yii_web_request.html#$isFlash-detail">$isFlash</a></td>
+		<td>boolean</td>
+		<td>whether this is an Adobe Flash or Adobe Flex request</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="$restParams">
+		<td><a href="yii_web_request.html#$restParams-detail">$restParams</a></td>
+		<td>array</td>
+		<td>the RESTful request parameters</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="$rawBody">
+		<td><a href="yii_web_request.html#$rawBody-detail">$rawBody</a></td>
+		<td>string</td>
+		<td>the request body</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="$">
+		<td><a href="yii_web_request.html#$-detail">$</a></td>
+		<td>mixed</td>
+		<td>the GET parameter value</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="$post">
+		<td><a href="yii_web_request.html#$post-detail">$post</a></td>
+		<td>mixed</td>
+		<td>the POST parameter value</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="$delete">
+		<td><a href="yii_web_request.html#$delete-detail">$delete</a></td>
+		<td>mixed</td>
+		<td>the DELETE parameter value</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="$put">
+		<td><a href="yii_web_request.html#$put-detail">$put</a></td>
+		<td>mixed</td>
+		<td>the PUT parameter value</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="$patch">
+		<td><a href="yii_web_request.html#$patch-detail">$patch</a></td>
+		<td>mixed</td>
+		<td>the PATCH parameter value</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="$hostInfo">
+		<td><a href="yii_web_request.html#$hostInfo-detail">$hostInfo</a></td>
+		<td>string</td>
+		<td>schema and hostname part (with port number if needed) of the request URL (e</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="$baseUrl">
+		<td><a href="yii_web_request.html#$baseUrl-detail">$baseUrl</a></td>
+		<td>string</td>
+		<td>the relative URL for the application</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="$scriptUrl">
+		<td><a href="yii_web_request.html#$scriptUrl-detail">$scriptUrl</a></td>
+		<td>string</td>
+		<td>the relative URL of the entry script</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="$pathInfo">
+		<td><a href="yii_web_request.html#$pathInfo-detail">$pathInfo</a></td>
+		<td>string</td>
+		<td>part of the request URL that is after the entry script and before the question mark</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="$absoluteUrl">
+		<td><a href="yii_web_request.html#$absoluteUrl-detail">$absoluteUrl</a></td>
+		<td>string</td>
+		<td>the currently requested absolute URL</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="$url">
+		<td><a href="yii_web_request.html#$url-detail">$url</a></td>
+		<td>string</td>
+		<td>the currently requested relative URL</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="$queryString">
+		<td><a href="yii_web_request.html#$queryString-detail">$queryString</a></td>
+		<td>string</td>
+		<td>part of the request URL that is after the question mark</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="$isSecureConnection">
+		<td><a href="yii_web_request.html#$isSecureConnection-detail">$isSecureConnection</a></td>
+		<td>boolean</td>
+		<td>if the request is sent via secure channel (https)</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="$serverName">
+		<td><a href="yii_web_request.html#$serverName-detail">$serverName</a></td>
+		<td>string</td>
+		<td>server name</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="$serverPort">
+		<td><a href="yii_web_request.html#$serverPort-detail">$serverPort</a></td>
+		<td>integer</td>
+		<td>server port number</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="$referrer">
+		<td><a href="yii_web_request.html#$referrer-detail">$referrer</a></td>
+		<td>string</td>
+		<td>URL referrer, null if not present</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="$userAgent">
+		<td><a href="yii_web_request.html#$userAgent-detail">$userAgent</a></td>
+		<td>string</td>
+		<td>user agent, null if not present</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="$userIP">
+		<td><a href="yii_web_request.html#$userIP-detail">$userIP</a></td>
+		<td>string</td>
+		<td>user IP address</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="$userHost">
+		<td><a href="yii_web_request.html#$userHost-detail">$userHost</a></td>
+		<td>string</td>
+		<td>user host name, null if cannot be determined</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="$port">
+		<td><a href="yii_web_request.html#$port-detail">$port</a></td>
+		<td>integer</td>
+		<td>port number for insecure requests</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="$securePort">
+		<td><a href="yii_web_request.html#$securePort-detail">$securePort</a></td>
+		<td>integer</td>
+		<td>port number for secure requests</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="$acceptableContentTypes">
+		<td><a href="yii_web_request.html#$acceptableContentTypes-detail">$acceptableContentTypes</a></td>
+		<td>array</td>
+		<td>the content types ordered by the preference level</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="$contentType">
+		<td><a href="yii_web_request.html#$contentType-detail">$contentType</a></td>
+		<td>string</td>
+		<td>request content-type</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="$acceptableLanguages">
+		<td><a href="yii_web_request.html#$acceptableLanguages-detail">$acceptableLanguages</a></td>
+		<td>array</td>
+		<td>the languages ordered by the preference level</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="$preferredLanguage">
+		<td><a href="yii_web_request.html#$preferredLanguage-detail">$preferredLanguage</a></td>
+		<td>string</td>
+		<td>the language that the application should use</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="$cookies">
+		<td><a href="yii_web_request.html#$cookies-detail">$cookies</a></td>
+		<td><a href="yii_web_cookiecollection.html">yii\web\CookieCollection</a></td>
+		<td>the cookie collection</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="$cookieValidationKey">
+		<td><a href="yii_web_request.html#$cookieValidationKey-detail">$cookieValidationKey</a></td>
+		<td>string</td>
+		<td>the secret key used for cookie validation</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="$rawCsrfToken">
+		<td><a href="yii_web_request.html#$rawCsrfToken-detail">$rawCsrfToken</a></td>
+		<td>string</td>
+		<td>the random token for CSRF validation</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="$csrfToken">
+		<td><a href="yii_web_request.html#$csrfToken-detail">$csrfToken</a></td>
+		<td>string</td>
+		<td>the token used to perform CSRF validation</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="$csrfTokenFromHeader">
+		<td><a href="yii_web_request.html#$csrfTokenFromHeader-detail">$csrfTokenFromHeader</a></td>
+		<td>string</td>
+		<td>the CSRF token sent via <a href="yii_web_request.html#CSRF_HEADER-detail">CSRF_HEADER</a> by browser</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+	</table>
+</div>
+<a name="methods"></a>
+
+<div class="summary docMethod">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr class="inherited" id="className()">
+		<td><a href="yii_base_object.html#className()-detail">className()</a></td>
+		<td></td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__construct()">
+		<td><a href="yii_base_object.html#__construct()-detail">__construct()</a></td>
+		<td>Constructor.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="init()">
+		<td><a href="yii_base_object.html#init()-detail">init()</a></td>
+		<td>Initializes the object.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__get()">
+		<td><a href="yii_base_component.html#__get()-detail">__get()</a></td>
+		<td>Returns the value of a component property.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__set()">
+		<td><a href="yii_base_component.html#__set()-detail">__set()</a></td>
+		<td>Sets the value of a component property.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__isset()">
+		<td><a href="yii_base_component.html#__isset()-detail">__isset()</a></td>
+		<td>Checks if a property value is null.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__unset()">
+		<td><a href="yii_base_component.html#__unset()-detail">__unset()</a></td>
+		<td>Sets a component property to be null.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__call()">
+		<td><a href="yii_base_component.html#__call()-detail">__call()</a></td>
+		<td>Calls the named method which is not a class method.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasProperty()">
+		<td><a href="yii_base_component.html#hasProperty()-detail">hasProperty()</a></td>
+		<td>Returns a value indicating whether a property is defined for this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="canGetProperty()">
+		<td><a href="yii_base_component.html#canGetProperty()-detail">canGetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be read.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="canSetProperty()">
+		<td><a href="yii_base_component.html#canSetProperty()-detail">canSetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be set.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasMethod()">
+		<td><a href="yii_base_component.html#hasMethod()-detail">hasMethod()</a></td>
+		<td>Returns a value indicating whether a method is defined.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="toArray()">
+		<td><a href="yii_base_object.html#toArray()-detail">toArray()</a></td>
+		<td>Converts the object into an array.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__clone()">
+		<td><a href="yii_base_component.html#__clone()-detail">__clone()</a></td>
+		<td>This method is called after the object is created by cloning an existing one.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="behaviors()">
+		<td><a href="yii_base_component.html#behaviors()-detail">behaviors()</a></td>
+		<td>Returns a list of behaviors that this component should behave as.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasEventHandlers()">
+		<td><a href="yii_base_component.html#hasEventHandlers()-detail">hasEventHandlers()</a></td>
+		<td>Returns a value indicating whether there is any handler attached to the named event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="on()">
+		<td><a href="yii_base_component.html#on()-detail">on()</a></td>
+		<td>Attaches an event handler to an event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="off()">
+		<td><a href="yii_base_component.html#off()-detail">off()</a></td>
+		<td>Detaches an existing event handler from this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="trigger()">
+		<td><a href="yii_base_component.html#trigger()-detail">trigger()</a></td>
+		<td>Triggers an event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="getBehavior()">
+		<td><a href="yii_base_component.html#getBehavior()-detail">getBehavior()</a></td>
+		<td>Returns the named behavior object.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="getBehaviors()">
+		<td><a href="yii_base_component.html#getBehaviors()-detail">getBehaviors()</a></td>
+		<td>Returns all behaviors attached to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="attachBehavior()">
+		<td><a href="yii_base_component.html#attachBehavior()-detail">attachBehavior()</a></td>
+		<td>Attaches a behavior to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="attachBehaviors()">
+		<td><a href="yii_base_component.html#attachBehaviors()-detail">attachBehaviors()</a></td>
+		<td>Attaches a list of behaviors to the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="detachBehavior()">
+		<td><a href="yii_base_component.html#detachBehavior()-detail">detachBehavior()</a></td>
+		<td>Detaches a behavior from the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="detachBehaviors()">
+		<td><a href="yii_base_component.html#detachBehaviors()-detail">detachBehaviors()</a></td>
+		<td>Detaches all behaviors from the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="ensureBehaviors()">
+		<td><a href="yii_base_component.html#ensureBehaviors()-detail">ensureBehaviors()</a></td>
+		<td>Makes sure that the behaviors declared in <a href="yii_base_component.html#behaviors()-detail">behaviors()</a> are attached to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr id="resolve()">
+		<td><a href="yii_web_request.html#resolve()-detail">resolve()</a></td>
+		<td>Resolves the current request into a route and the associated parameters.</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr class="inherited" id="getIsConsoleRequest()">
+		<td><a href="yii_base_request.html#getIsConsoleRequest()-detail">getIsConsoleRequest()</a></td>
+		<td>Returns a value indicating whether the current request is made via command line</td>
+		<td><a href="yii_base_request.html">yii\base\Request</a></td>
+	</tr>
+			<tr class="inherited" id="setIsConsoleRequest()">
+		<td><a href="yii_base_request.html#setIsConsoleRequest()-detail">setIsConsoleRequest()</a></td>
+		<td>Sets the value indicating whether the current request is made via command line</td>
+		<td><a href="yii_base_request.html">yii\base\Request</a></td>
+	</tr>
+			<tr id="getScriptFile()">
+		<td><a href="yii_web_request.html#getScriptFile()-detail">getScriptFile()</a></td>
+		<td>Returns the entry script file path.</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="setScriptFile()">
+		<td><a href="yii_web_request.html#setScriptFile()-detail">setScriptFile()</a></td>
+		<td>Sets the entry script file path.</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="getMethod()">
+		<td><a href="yii_web_request.html#getMethod()-detail">getMethod()</a></td>
+		<td>Returns the method of the current request (e.g. GET, POST, HEAD, PUT, PATCH, DELETE).</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="getIsGet()">
+		<td><a href="yii_web_request.html#getIsGet()-detail">getIsGet()</a></td>
+		<td>Returns whether this is a GET request.</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="getIsOptions()">
+		<td><a href="yii_web_request.html#getIsOptions()-detail">getIsOptions()</a></td>
+		<td>Returns whether this is an OPTIONS request.</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="getIsHead()">
+		<td><a href="yii_web_request.html#getIsHead()-detail">getIsHead()</a></td>
+		<td>Returns whether this is a HEAD request.</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="getIsPost()">
+		<td><a href="yii_web_request.html#getIsPost()-detail">getIsPost()</a></td>
+		<td>Returns whether this is a POST request.</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="getIsDelete()">
+		<td><a href="yii_web_request.html#getIsDelete()-detail">getIsDelete()</a></td>
+		<td>Returns whether this is a DELETE request.</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="getIsPut()">
+		<td><a href="yii_web_request.html#getIsPut()-detail">getIsPut()</a></td>
+		<td>Returns whether this is a PUT request.</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="getIsPatch()">
+		<td><a href="yii_web_request.html#getIsPatch()-detail">getIsPatch()</a></td>
+		<td>Returns whether this is a PATCH request.</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="getIsAjax()">
+		<td><a href="yii_web_request.html#getIsAjax()-detail">getIsAjax()</a></td>
+		<td>Returns whether this is an AJAX (XMLHttpRequest) request.</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="getIsFlash()">
+		<td><a href="yii_web_request.html#getIsFlash()-detail">getIsFlash()</a></td>
+		<td>Returns whether this is an Adobe Flash or Flex request.</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="getRestParams()">
+		<td><a href="yii_web_request.html#getRestParams()-detail">getRestParams()</a></td>
+		<td>Returns the request parameters for the RESTful request.</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="getRawBody()">
+		<td><a href="yii_web_request.html#getRawBody()-detail">getRawBody()</a></td>
+		<td>Returns the raw HTTP request body.</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="setRestParams()">
+		<td><a href="yii_web_request.html#setRestParams()-detail">setRestParams()</a></td>
+		<td>Sets the RESTful parameters.</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="getRestParam()">
+		<td><a href="yii_web_request.html#getRestParam()-detail">getRestParam()</a></td>
+		<td>Returns the named RESTful parameter value.</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="get()">
+		<td><a href="yii_web_request.html#get()-detail">get()</a></td>
+		<td>Returns the named GET parameter value.</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="getPost()">
+		<td><a href="yii_web_request.html#getPost()-detail">getPost()</a></td>
+		<td>Returns the named POST parameter value.</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="getDelete()">
+		<td><a href="yii_web_request.html#getDelete()-detail">getDelete()</a></td>
+		<td>Returns the named DELETE parameter value.</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="getPut()">
+		<td><a href="yii_web_request.html#getPut()-detail">getPut()</a></td>
+		<td>Returns the named PUT parameter value.</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="getPatch()">
+		<td><a href="yii_web_request.html#getPatch()-detail">getPatch()</a></td>
+		<td>Returns the named PATCH parameter value.</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="getHostInfo()">
+		<td><a href="yii_web_request.html#getHostInfo()-detail">getHostInfo()</a></td>
+		<td>Returns the schema and host part of the current request URL.</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="setHostInfo()">
+		<td><a href="yii_web_request.html#setHostInfo()-detail">setHostInfo()</a></td>
+		<td>Sets the schema and host part of the application URL.</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="getBaseUrl()">
+		<td><a href="yii_web_request.html#getBaseUrl()-detail">getBaseUrl()</a></td>
+		<td>Returns the relative URL for the application.</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="setBaseUrl()">
+		<td><a href="yii_web_request.html#setBaseUrl()-detail">setBaseUrl()</a></td>
+		<td>Sets the relative URL for the application.</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="getScriptUrl()">
+		<td><a href="yii_web_request.html#getScriptUrl()-detail">getScriptUrl()</a></td>
+		<td>Returns the relative URL of the entry script.</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="setScriptUrl()">
+		<td><a href="yii_web_request.html#setScriptUrl()-detail">setScriptUrl()</a></td>
+		<td>Sets the relative URL for the application entry script.</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="getPathInfo()">
+		<td><a href="yii_web_request.html#getPathInfo()-detail">getPathInfo()</a></td>
+		<td>Returns the path info of the currently requested URL.</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="setPathInfo()">
+		<td><a href="yii_web_request.html#setPathInfo()-detail">setPathInfo()</a></td>
+		<td>Sets the path info of the current request.</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+				<tr id="getAbsoluteUrl()">
+		<td><a href="yii_web_request.html#getAbsoluteUrl()-detail">getAbsoluteUrl()</a></td>
+		<td>Returns the currently requested absolute URL.</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="getUrl()">
+		<td><a href="yii_web_request.html#getUrl()-detail">getUrl()</a></td>
+		<td>Returns the currently requested relative URL.</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="setUrl()">
+		<td><a href="yii_web_request.html#setUrl()-detail">setUrl()</a></td>
+		<td>Sets the currently requested relative URL.</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+				<tr id="getQueryString()">
+		<td><a href="yii_web_request.html#getQueryString()-detail">getQueryString()</a></td>
+		<td>Returns part of the request URL that is after the question mark.</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="getIsSecureConnection()">
+		<td><a href="yii_web_request.html#getIsSecureConnection()-detail">getIsSecureConnection()</a></td>
+		<td>Return if the request is sent via secure channel (https).</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="getServerName()">
+		<td><a href="yii_web_request.html#getServerName()-detail">getServerName()</a></td>
+		<td>Returns the server name.</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="getServerPort()">
+		<td><a href="yii_web_request.html#getServerPort()-detail">getServerPort()</a></td>
+		<td>Returns the server port number.</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="getReferrer()">
+		<td><a href="yii_web_request.html#getReferrer()-detail">getReferrer()</a></td>
+		<td>Returns the URL referrer, null if not present</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="getUserAgent()">
+		<td><a href="yii_web_request.html#getUserAgent()-detail">getUserAgent()</a></td>
+		<td>Returns the user agent, null if not present.</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="getUserIP()">
+		<td><a href="yii_web_request.html#getUserIP()-detail">getUserIP()</a></td>
+		<td>Returns the user IP address.</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="getUserHost()">
+		<td><a href="yii_web_request.html#getUserHost()-detail">getUserHost()</a></td>
+		<td>Returns the user host name, null if it cannot be determined.</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="getPort()">
+		<td><a href="yii_web_request.html#getPort()-detail">getPort()</a></td>
+		<td>Returns the port to use for insecure requests.</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="setPort()">
+		<td><a href="yii_web_request.html#setPort()-detail">setPort()</a></td>
+		<td>Sets the port to use for insecure requests.</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="getSecurePort()">
+		<td><a href="yii_web_request.html#getSecurePort()-detail">getSecurePort()</a></td>
+		<td>Returns the port to use for secure requests.</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="setSecurePort()">
+		<td><a href="yii_web_request.html#setSecurePort()-detail">setSecurePort()</a></td>
+		<td>Sets the port to use for secure requests.</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="getAcceptableContentTypes()">
+		<td><a href="yii_web_request.html#getAcceptableContentTypes()-detail">getAcceptableContentTypes()</a></td>
+		<td>Returns the content types acceptable by the end user.</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="setAcceptableContentTypes()">
+		<td><a href="yii_web_request.html#setAcceptableContentTypes()-detail">setAcceptableContentTypes()</a></td>
+		<td></td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="getContentType()">
+		<td><a href="yii_web_request.html#getContentType()-detail">getContentType()</a></td>
+		<td>Returns request content-type
+The Content-Type header field indicates the MIME type of the data
+contained in <a href="yii_web_request.html#getRawBody()-detail">getRawBody()</a> or, in the case of the HEAD method, the
+media type that would have been sent had the request been a GET.</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="getAcceptableLanguages()">
+		<td><a href="yii_web_request.html#getAcceptableLanguages()-detail">getAcceptableLanguages()</a></td>
+		<td>Returns the languages acceptable by the end user.</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="setAcceptableLanguages()">
+		<td><a href="yii_web_request.html#setAcceptableLanguages()-detail">setAcceptableLanguages()</a></td>
+		<td></td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+				<tr id="getPreferredLanguage()">
+		<td><a href="yii_web_request.html#getPreferredLanguage()-detail">getPreferredLanguage()</a></td>
+		<td>Returns the user-preferred language that should be used by this application.</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="getCookies()">
+		<td><a href="yii_web_request.html#getCookies()-detail">getCookies()</a></td>
+		<td>Returns the cookie collection.</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+				<tr id="getCookieValidationKey()">
+		<td><a href="yii_web_request.html#getCookieValidationKey()-detail">getCookieValidationKey()</a></td>
+		<td></td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="setCookieValidationKey()">
+		<td><a href="yii_web_request.html#setCookieValidationKey()-detail">setCookieValidationKey()</a></td>
+		<td>Sets the secret key used for cookie validation.</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="getRawCsrfToken()">
+		<td><a href="yii_web_request.html#getRawCsrfToken()-detail">getRawCsrfToken()</a></td>
+		<td>Returns the unmasked random token used to perform CSRF validation.</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="getCsrfToken()">
+		<td><a href="yii_web_request.html#getCsrfToken()-detail">getCsrfToken()</a></td>
+		<td>Returns the token used to perform CSRF validation.</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+			<tr id="getCsrfTokenFromHeader()">
+		<td><a href="yii_web_request.html#getCsrfTokenFromHeader()-detail">getCsrfTokenFromHeader()</a></td>
+		<td></td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+				<tr id="validateCsrfToken()">
+		<td><a href="yii_web_request.html#validateCsrfToken()-detail">validateCsrfToken()</a></td>
+		<td>Performs the CSRF validation.</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+	</table>
+</div>
+<div class="summary docMethod">
+<h2>Protected Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+																																																												<tr id="resolvePathInfo()">
+		<td><a href="yii_web_request.html#resolvePathInfo()-detail">resolvePathInfo()</a></td>
+		<td>Resolves the path info part of the currently requested URL.</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+						<tr id="resolveRequestUri()">
+		<td><a href="yii_web_request.html#resolveRequestUri()-detail">resolveRequestUri()</a></td>
+		<td>Resolves the request URI portion for the currently requested URL.</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+																				<tr id="parseAcceptHeader()">
+		<td><a href="yii_web_request.html#parseAcceptHeader()-detail">parseAcceptHeader()</a></td>
+		<td>Parses the given <code>Accept</code> (or <code>Accept-Language</code>) header.</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+					<tr id="loadCookies()">
+		<td><a href="yii_web_request.html#loadCookies()-detail">loadCookies()</a></td>
+		<td>Converts <code>$_COOKIE</code> into an array of <a href="yii_web_cookie.html">yii\web\Cookie</a>.</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+								<tr id="createCsrfCookie()">
+		<td><a href="yii_web_request.html#createCsrfCookie()-detail">createCsrfCookie()</a></td>
+		<td>Creates a cookie with a randomly generated CSRF token.</td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+		</table>
+</div>
+<a name="events"></a>
+
+<a name="constants"></a>
+<div class="summary docConst">
+<h2>Constants</h2>
+
+<p><a href="#" class="toggle">Hide inherited constants</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-const" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Constant</th><th>Value</th><th>Description</th><th>Defined By</th>
+</tr>
+	<tr id="CSRF_HEADER">
+	  <td>CSRF_HEADER<a name="CSRF_HEADER-detail"></a></td>
+	  <td>'X-CSRF-Token'</td>
+	  <td>The name of the HTTP header for sending CSRF token.</td>
+	  <td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+	<tr id="CSRF_MASK_LENGTH">
+	  <td>CSRF_MASK_LENGTH<a name="CSRF_MASK_LENGTH-detail"></a></td>
+	  <td>8</td>
+	  <td>The length of the CSRF token mask.</td>
+	  <td><a href="yii_web_request.html">yii\web\Request</a></td>
+	</tr>
+</table>
+</div>
+<h2>Property Details</h2>
+
+
+	<div class="detailHeader" id="$enableCsrfValidation-detail">
+		$enableCsrfValidation		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	boolean $enableCsrfValidation = true	</div>
+
+	<p>Whether to enable CSRF (Cross-Site Request Forgery) validation. Defaults to true.
+When CSRF validation is enabled, forms submitted to an Yii Web application must be originated
+from the same application. If not, a 400 HTTP exception will be raised.
+Note, this feature requires that the user client accepts cookie. Also, to use this feature,
+forms submitted via POST method must contain a hidden input whose name is specified by <a href="yii_web_request.html#$csrfVar-detail">$csrfVar</a>.
+You may use <span style="background: #f00;">\yii\web\Html::beginForm()</span> to generate his hidden input.
+In JavaScript, you may get the values of <a href="yii_web_request.html#$csrfVar-detail">$csrfVar</a> and <a href="yii_web_request.html#$csrfToken-detail">$csrfToken</a> via <code>yii.getCsrfVar()</code> and
+<code>yii.getCsrfToken()</code>, respectively. The <a href="yii_web_yiiasset.html">yii\web\YiiAsset</a> asset must be registered.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_web_controller.html#$enableCsrfValidation-detail">yii\web\Controller::$enableCsrfValidation</a></li>
+	<li>http://en.wikipedia.org/wiki/Cross-site_request_forgery</li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="$csrfVar-detail">
+		$csrfVar		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $csrfVar = '_csrf'	</div>
+
+	<p>The name of the token used to prevent CSRF. Defaults to '_csrf'.
+This property is used only when <a href="yii_web_request.html#$enableCsrfValidation-detail">$enableCsrfValidation</a> is true.</p>
+
+	
+
+	<div class="detailHeader" id="$csrfCookie-detail">
+		$csrfCookie		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array $csrfCookie = ['httpOnly' => true]	</div>
+
+	<p>The configuration of the CSRF cookie. This property is used only when <a href="yii_web_request.html#$enableCsrfValidation-detail">$enableCsrfValidation</a> is true.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_web_cookie.html">yii\web\Cookie</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="$enableCookieValidation-detail">
+		$enableCookieValidation		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	boolean $enableCookieValidation = true	</div>
+
+	<p>Whether cookies should be validated to ensure they are not tampered. Defaults to true.</p>
+
+	
+
+	<div class="detailHeader" id="$restVar-detail">
+		$restVar		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string|boolean $restVar = '_method'	</div>
+
+	<p>The name of the POST parameter that is used to indicate if a request is a PUT, PATCH or DELETE
+request tunneled through POST. Default to '_method'.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_web_request.html#getMethod()-detail">getMethod()</a></li>
+	<li><a href="yii_web_request.html#getRestParams()-detail">getRestParams()</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="$parsers-detail">
+		$parsers		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array $parsers = []	</div>
+
+	<p>The parsers for converting the raw HTTP request body into <a href="yii_web_request.html#$restParams-detail">$restParams</a>.
+The array keys are the request <code>Content-Types</code>, and the array values are the
+corresponding configurations for <a href="yii_baseyii.html#createObject()-detail">creating the parser objects</a>.
+A parser must implement the <a href="yii_web_requestparserinterface.html">yii\web\RequestParserInterface</a>.
+To enable parsing for JSON requests you can use the <a href="yii_web_jsonparser.html">yii\web\JsonParser</a> class like in the following example:
+<code>[
+    'application/json' =&gt; 'yii\web\JsonParser',
+]</code>
+To register a parser for parsing all request types you can use <code>'*'</code> as the array key.
+This one will be used as a fallback in case no other types match.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_web_request.html#getRestParams()-detail">getRestParams()</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="$behaviors-detail">
+		$behaviors		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_base_behavior.html">yii\base\Behavior</a>[] <a href="yii_base_component.html#getBehaviors()-detail">getBehaviors</a>(  )	</div>
+
+	<p>list of behaviors attached to this component</p>
+
+	
+
+	<div class="detailHeader" id="$isConsoleRequest-detail">
+		$isConsoleRequest		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	boolean <a href="yii_base_request.html#getIsConsoleRequest()-detail">getIsConsoleRequest</a>(  )<br />void <a href="yii_base_request.html#setIsConsoleRequest()-detail">setIsConsoleRequest</a>( $value )	</div>
+
+	<p>the value indicating whether the current request is made via console</p>
+
+	
+
+	<div class="detailHeader" id="$scriptFile-detail">
+		$scriptFile		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string <a href="yii_web_request.html#getScriptFile()-detail">getScriptFile</a>(  )<br />void <a href="yii_web_request.html#setScriptFile()-detail">setScriptFile</a>( $value )	</div>
+
+	<p>the entry script file path</p>
+
+	
+
+	<div class="detailHeader" id="$method-detail">
+		$method		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	string <a href="yii_web_request.html#getMethod()-detail">getMethod</a>(  )	</div>
+
+	<p>request method, such as GET, POST, HEAD, PUT, PATCH, DELETE.
+The value returned is turned into upper case.</p>
+
+	
+
+	<div class="detailHeader" id="$isGet-detail">
+		$isGet		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	boolean <a href="yii_web_request.html#getIsGet()-detail">getIsGet</a>(  )	</div>
+
+	<p>whether this is a GET request.</p>
+
+	
+
+	<div class="detailHeader" id="$isOptions-detail">
+		$isOptions		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	boolean <a href="yii_web_request.html#getIsOptions()-detail">getIsOptions</a>(  )	</div>
+
+	<p>whether this is a OPTIONS request.</p>
+
+	
+
+	<div class="detailHeader" id="$isHead-detail">
+		$isHead		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	boolean <a href="yii_web_request.html#getIsHead()-detail">getIsHead</a>(  )	</div>
+
+	<p>whether this is a HEAD request.</p>
+
+	
+
+	<div class="detailHeader" id="$isPost-detail">
+		$isPost		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	boolean <a href="yii_web_request.html#getIsPost()-detail">getIsPost</a>(  )	</div>
+
+	<p>whether this is a POST request.</p>
+
+	
+
+	<div class="detailHeader" id="$isDelete-detail">
+		$isDelete		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	boolean <a href="yii_web_request.html#getIsDelete()-detail">getIsDelete</a>(  )	</div>
+
+	<p>whether this is a DELETE request.</p>
+
+	
+
+	<div class="detailHeader" id="$isPut-detail">
+		$isPut		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	boolean <a href="yii_web_request.html#getIsPut()-detail">getIsPut</a>(  )	</div>
+
+	<p>whether this is a PUT request.</p>
+
+	
+
+	<div class="detailHeader" id="$isPatch-detail">
+		$isPatch		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	boolean <a href="yii_web_request.html#getIsPatch()-detail">getIsPatch</a>(  )	</div>
+
+	<p>whether this is a PATCH request.</p>
+
+	
+
+	<div class="detailHeader" id="$isAjax-detail">
+		$isAjax		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	boolean <a href="yii_web_request.html#getIsAjax()-detail">getIsAjax</a>(  )	</div>
+
+	<p>whether this is an AJAX (XMLHttpRequest) request.</p>
+
+	
+
+	<div class="detailHeader" id="$isFlash-detail">
+		$isFlash		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	boolean <a href="yii_web_request.html#getIsFlash()-detail">getIsFlash</a>(  )	</div>
+
+	<p>whether this is an Adobe Flash or Adobe Flex request.</p>
+
+	
+
+	<div class="detailHeader" id="$restParams-detail">
+		$restParams		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array <a href="yii_web_request.html#getRestParams()-detail">getRestParams</a>(  )<br />void <a href="yii_web_request.html#setRestParams()-detail">setRestParams</a>( $values )	</div>
+
+	<p>the RESTful request parameters</p>
+
+	
+
+	<div class="detailHeader" id="$rawBody-detail">
+		$rawBody		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	string <a href="yii_web_request.html#getRawBody()-detail">getRawBody</a>(  )	</div>
+
+	<p>the request body</p>
+
+	
+
+	<div class="detailHeader" id="$-detail">
+		$		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	mixed <a href="yii_web_request.html#get()-detail">get</a>( $name = null, $defaultValue = null )	</div>
+
+	<p>the GET parameter value</p>
+
+	
+
+	<div class="detailHeader" id="$post-detail">
+		$post		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	mixed <a href="yii_web_request.html#getPost()-detail">getPost</a>( $name = null, $defaultValue = null )	</div>
+
+	<p>the POST parameter value</p>
+
+	
+
+	<div class="detailHeader" id="$delete-detail">
+		$delete		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	mixed <a href="yii_web_request.html#getDelete()-detail">getDelete</a>( $name = null, $defaultValue = null )	</div>
+
+	<p>the DELETE parameter value</p>
+
+	
+
+	<div class="detailHeader" id="$put-detail">
+		$put		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	mixed <a href="yii_web_request.html#getPut()-detail">getPut</a>( $name = null, $defaultValue = null )	</div>
+
+	<p>the PUT parameter value</p>
+
+	
+
+	<div class="detailHeader" id="$patch-detail">
+		$patch		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	mixed <a href="yii_web_request.html#getPatch()-detail">getPatch</a>( $name = null, $defaultValue = null )	</div>
+
+	<p>the PATCH parameter value</p>
+
+	
+
+	<div class="detailHeader" id="$hostInfo-detail">
+		$hostInfo		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string <a href="yii_web_request.html#getHostInfo()-detail">getHostInfo</a>(  )<br />void <a href="yii_web_request.html#setHostInfo()-detail">setHostInfo</a>( $value )	</div>
+
+	<p>schema and hostname part (with port number if needed) of the request URL (e.g. <code>http://www.yiiframework.com</code>)</p>
+
+	
+
+	<div class="detailHeader" id="$baseUrl-detail">
+		$baseUrl		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string <a href="yii_web_request.html#getBaseUrl()-detail">getBaseUrl</a>(  )<br />void <a href="yii_web_request.html#setBaseUrl()-detail">setBaseUrl</a>( $value )	</div>
+
+	<p>the relative URL for the application</p>
+
+	
+
+	<div class="detailHeader" id="$scriptUrl-detail">
+		$scriptUrl		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string <a href="yii_web_request.html#getScriptUrl()-detail">getScriptUrl</a>(  )<br />void <a href="yii_web_request.html#setScriptUrl()-detail">setScriptUrl</a>( $value )	</div>
+
+	<p>the relative URL of the entry script.</p>
+
+	
+
+	<div class="detailHeader" id="$pathInfo-detail">
+		$pathInfo		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string <a href="yii_web_request.html#getPathInfo()-detail">getPathInfo</a>(  )<br />void <a href="yii_web_request.html#setPathInfo()-detail">setPathInfo</a>( $value )	</div>
+
+	<p>part of the request URL that is after the entry script and before the question mark.
+Note, the returned path info is already URL-decoded.</p>
+
+	
+
+	<div class="detailHeader" id="$absoluteUrl-detail">
+		$absoluteUrl		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	string <a href="yii_web_request.html#getAbsoluteUrl()-detail">getAbsoluteUrl</a>(  )	</div>
+
+	<p>the currently requested absolute URL.</p>
+
+	
+
+	<div class="detailHeader" id="$url-detail">
+		$url		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string <a href="yii_web_request.html#getUrl()-detail">getUrl</a>(  )<br />void <a href="yii_web_request.html#setUrl()-detail">setUrl</a>( $value )	</div>
+
+	<p>the currently requested relative URL. Note that the URI returned is URL-encoded.</p>
+
+	
+
+	<div class="detailHeader" id="$queryString-detail">
+		$queryString		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	string <a href="yii_web_request.html#getQueryString()-detail">getQueryString</a>(  )	</div>
+
+	<p>part of the request URL that is after the question mark</p>
+
+	
+
+	<div class="detailHeader" id="$isSecureConnection-detail">
+		$isSecureConnection		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	boolean <a href="yii_web_request.html#getIsSecureConnection()-detail">getIsSecureConnection</a>(  )	</div>
+
+	<p>if the request is sent via secure channel (https)</p>
+
+	
+
+	<div class="detailHeader" id="$serverName-detail">
+		$serverName		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	string <a href="yii_web_request.html#getServerName()-detail">getServerName</a>(  )	</div>
+
+	<p>server name</p>
+
+	
+
+	<div class="detailHeader" id="$serverPort-detail">
+		$serverPort		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	integer <a href="yii_web_request.html#getServerPort()-detail">getServerPort</a>(  )	</div>
+
+	<p>server port number</p>
+
+	
+
+	<div class="detailHeader" id="$referrer-detail">
+		$referrer		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	string <a href="yii_web_request.html#getReferrer()-detail">getReferrer</a>(  )	</div>
+
+	<p>URL referrer, null if not present</p>
+
+	
+
+	<div class="detailHeader" id="$userAgent-detail">
+		$userAgent		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	string <a href="yii_web_request.html#getUserAgent()-detail">getUserAgent</a>(  )	</div>
+
+	<p>user agent, null if not present</p>
+
+	
+
+	<div class="detailHeader" id="$userIP-detail">
+		$userIP		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	string <a href="yii_web_request.html#getUserIP()-detail">getUserIP</a>(  )	</div>
+
+	<p>user IP address</p>
+
+	
+
+	<div class="detailHeader" id="$userHost-detail">
+		$userHost		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	string <a href="yii_web_request.html#getUserHost()-detail">getUserHost</a>(  )	</div>
+
+	<p>user host name, null if cannot be determined</p>
+
+	
+
+	<div class="detailHeader" id="$port-detail">
+		$port		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	integer <a href="yii_web_request.html#getPort()-detail">getPort</a>(  )<br />void <a href="yii_web_request.html#setPort()-detail">setPort</a>( $value )	</div>
+
+	<p>port number for insecure requests.</p>
+
+	
+
+	<div class="detailHeader" id="$securePort-detail">
+		$securePort		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	integer <a href="yii_web_request.html#getSecurePort()-detail">getSecurePort</a>(  )<br />void <a href="yii_web_request.html#setSecurePort()-detail">setSecurePort</a>( $value )	</div>
+
+	<p>port number for secure requests.</p>
+
+	
+
+	<div class="detailHeader" id="$acceptableContentTypes-detail">
+		$acceptableContentTypes		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array <a href="yii_web_request.html#getAcceptableContentTypes()-detail">getAcceptableContentTypes</a>(  )<br />void <a href="yii_web_request.html#setAcceptableContentTypes()-detail">setAcceptableContentTypes</a>( $value )	</div>
+
+	<p>the content types ordered by the preference level. The first element
+represents the most preferred content type.</p>
+
+	
+
+	<div class="detailHeader" id="$contentType-detail">
+		$contentType		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	string <a href="yii_web_request.html#getContentType()-detail">getContentType</a>(  )	</div>
+
+	<p>request content-type. Null is returned if this information is not available.</p>
+
+	
+
+	<div class="detailHeader" id="$acceptableLanguages-detail">
+		$acceptableLanguages		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array <a href="yii_web_request.html#getAcceptableLanguages()-detail">getAcceptableLanguages</a>(  )<br />void <a href="yii_web_request.html#setAcceptableLanguages()-detail">setAcceptableLanguages</a>( $value )	</div>
+
+	<p>the languages ordered by the preference level. The first element
+represents the most preferred language.</p>
+
+	
+
+	<div class="detailHeader" id="$preferredLanguage-detail">
+		$preferredLanguage		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	string <a href="yii_web_request.html#getPreferredLanguage()-detail">getPreferredLanguage</a>( array $languages = [] )	</div>
+
+	<p>the language that the application should use.</p>
+
+	
+
+	<div class="detailHeader" id="$cookies-detail">
+		$cookies		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_web_cookiecollection.html">yii\web\CookieCollection</a> <a href="yii_web_request.html#getCookies()-detail">getCookies</a>(  )	</div>
+
+	<p>the cookie collection.</p>
+
+	
+
+	<div class="detailHeader" id="$cookieValidationKey-detail">
+		$cookieValidationKey		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string <a href="yii_web_request.html#getCookieValidationKey()-detail">getCookieValidationKey</a>(  )<br />void <a href="yii_web_request.html#setCookieValidationKey()-detail">setCookieValidationKey</a>( $value )	</div>
+
+	<p>the secret key used for cookie validation. If it was not set previously,
+a random key will be generated and used.</p>
+
+	
+
+	<div class="detailHeader" id="$rawCsrfToken-detail">
+		$rawCsrfToken		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	string <a href="yii_web_request.html#getRawCsrfToken()-detail">getRawCsrfToken</a>(  )	</div>
+
+	<p>the random token for CSRF validation.</p>
+
+	
+
+	<div class="detailHeader" id="$csrfToken-detail">
+		$csrfToken		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	string <a href="yii_web_request.html#getCsrfToken()-detail">getCsrfToken</a>(  )	</div>
+
+	<p>the token used to perform CSRF validation.</p>
+
+	
+
+	<div class="detailHeader" id="$csrfTokenFromHeader-detail">
+		$csrfTokenFromHeader		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	string <a href="yii_web_request.html#getCsrfTokenFromHeader()-detail">getCsrfTokenFromHeader</a>(  )	</div>
+
+	<p>the CSRF token sent via <a href="yii_web_request.html#CSRF_HEADER-detail">CSRF_HEADER</a> by browser. Null is returned if no such header is sent.</p>
+
+	
+<h2>Method Details</h2>
+
+
+	<div class="detailHeader" id="resolve()-detail">
+		resolve()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			array <a href="yii_web_request.html#resolve()-detail">resolve</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">the first element is the route, and the second is the associated parameters.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_web_httpexception.html">yii\web\HttpException</a></td>
+				  <td class="paramDescCol">if the request cannot be resolved.</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Resolves the current request into a route and the associated parameters.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getScriptFile()-detail">
+		getScriptFile()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_web_request.html#getScriptFile()-detail">getScriptFile</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the entry script file path</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the entry script file path.</strong></p>
+	<p>The default implementation will simply return <code>$_SERVER['SCRIPT_FILENAME']</code>.</p>
+
+	
+
+	<div class="detailHeader" id="setScriptFile()-detail">
+		setScriptFile()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_web_request.html#setScriptFile()-detail">setScriptFile</a>( $value )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$value</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The entry script file path.</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Sets the entry script file path.</strong></p>
+	<p>The entry script file path normally can be obtained from <code>$_SERVER['SCRIPT_FILENAME']</code>.
+If your server configuration does not return the correct value, you may configure
+this property to make it right.</p>
+
+	
+
+	<div class="detailHeader" id="getMethod()-detail">
+		getMethod()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_web_request.html#getMethod()-detail">getMethod</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">request method, such as GET, POST, HEAD, PUT, PATCH, DELETE.
+The value returned is turned into upper case.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the method of the current request (e.g. GET, POST, HEAD, PUT, PATCH, DELETE).</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getIsGet()-detail">
+		getIsGet()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_web_request.html#getIsGet()-detail">getIsGet</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether this is a GET request.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns whether this is a GET request.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getIsOptions()-detail">
+		getIsOptions()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_web_request.html#getIsOptions()-detail">getIsOptions</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether this is a OPTIONS request.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns whether this is an OPTIONS request.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getIsHead()-detail">
+		getIsHead()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_web_request.html#getIsHead()-detail">getIsHead</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether this is a HEAD request.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns whether this is a HEAD request.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getIsPost()-detail">
+		getIsPost()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_web_request.html#getIsPost()-detail">getIsPost</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether this is a POST request.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns whether this is a POST request.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getIsDelete()-detail">
+		getIsDelete()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_web_request.html#getIsDelete()-detail">getIsDelete</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether this is a DELETE request.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns whether this is a DELETE request.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getIsPut()-detail">
+		getIsPut()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_web_request.html#getIsPut()-detail">getIsPut</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether this is a PUT request.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns whether this is a PUT request.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getIsPatch()-detail">
+		getIsPatch()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_web_request.html#getIsPatch()-detail">getIsPatch</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether this is a PATCH request.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns whether this is a PATCH request.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getIsAjax()-detail">
+		getIsAjax()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_web_request.html#getIsAjax()-detail">getIsAjax</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether this is an AJAX (XMLHttpRequest) request.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns whether this is an AJAX (XMLHttpRequest) request.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getIsFlash()-detail">
+		getIsFlash()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_web_request.html#getIsFlash()-detail">getIsFlash</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether this is an Adobe Flash or Adobe Flex request.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns whether this is an Adobe Flash or Flex request.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getRestParams()-detail">
+		getRestParams()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			array <a href="yii_web_request.html#getRestParams()-detail">getRestParams</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">the RESTful request parameters</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_base_invalidconfigexception.html">yii\base\InvalidConfigException</a></td>
+				  <td class="paramDescCol">if a registered parser does not implement the <a href="yii_web_requestparserinterface.html">yii\web\RequestParserInterface</a>.</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Returns the request parameters for the RESTful request.</strong></p>
+	<p>Request parameters are determined using the parsers configured in <a href="yii_web_request.html#$parsers-detail">$parsers</a> property.
+If no parsers are configured for the current <a href="yii_web_request.html#$contentType-detail">$contentType</a> it uses the PHP function <span style="background: #f00;">\yii\web\mb_parse_str()</span>
+to parse the <a href="yii_web_request.html#$rawBody-detail">request body</a>.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_web_request.html#getMethod()-detail">getMethod()</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="getRawBody()-detail">
+		getRawBody()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_web_request.html#getRawBody()-detail">getRawBody</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the request body</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the raw HTTP request body.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="setRestParams()-detail">
+		setRestParams()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_web_request.html#setRestParams()-detail">setRestParams</a>( $values )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$values</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The RESTful parameters (name-value pairs)</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Sets the RESTful parameters.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getRestParam()-detail">
+		getRestParam()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			mixed <a href="yii_web_request.html#getRestParam()-detail">getRestParam</a>( $name, $defaultValue = null )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The parameter name</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$defaultValue</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">The default parameter value if the parameter does not exist.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">the parameter value</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the named RESTful parameter value.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="get()-detail">
+		get()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			mixed <a href="yii_web_request.html#get()-detail">get</a>( $name = null, $defaultValue = null )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The GET parameter name. If not specified, whole $_GET is returned.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$defaultValue</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">The default parameter value if the GET parameter does not exist.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">the GET parameter value</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the named GET parameter value.</strong></p>
+	<p>If the GET parameter does not exist, the second parameter to this method will be returned.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_web_request.html#getPost()-detail">getPost()</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="getPost()-detail">
+		getPost()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			mixed <a href="yii_web_request.html#getPost()-detail">getPost</a>( $name = null, $defaultValue = null )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The POST parameter name. If not specified, whole $_POST is returned.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$defaultValue</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">The default parameter value if the POST parameter does not exist.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">the POST parameter value</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the named POST parameter value.</strong></p>
+	<p>If the POST parameter does not exist, the second parameter to this method will be returned.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_web_request.html#get()-detail">get()</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="getDelete()-detail">
+		getDelete()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			mixed <a href="yii_web_request.html#getDelete()-detail">getDelete</a>( $name = null, $defaultValue = null )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The DELETE parameter name. If not specified, an array of DELETE parameters is returned.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$defaultValue</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">The default parameter value if the DELETE parameter does not exist.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">the DELETE parameter value</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the named DELETE parameter value.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getPut()-detail">
+		getPut()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			mixed <a href="yii_web_request.html#getPut()-detail">getPut</a>( $name = null, $defaultValue = null )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The PUT parameter name. If not specified, an array of PUT parameters is returned.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$defaultValue</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">The default parameter value if the PUT parameter does not exist.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">the PUT parameter value</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the named PUT parameter value.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getPatch()-detail">
+		getPatch()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			mixed <a href="yii_web_request.html#getPatch()-detail">getPatch</a>( $name = null, $defaultValue = null )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The PATCH parameter name. If not specified, an array of PATCH parameters is returned.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$defaultValue</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">The default parameter value if the PATCH parameter does not exist.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">the PATCH parameter value</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the named PATCH parameter value.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getHostInfo()-detail">
+		getHostInfo()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_web_request.html#getHostInfo()-detail">getHostInfo</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">schema and hostname part (with port number if needed) of the request URL (e.g. <code>http://www.yiiframework.com</code>)</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the schema and host part of the current request URL.</strong></p>
+	<p>The returned URL does not have an ending slash.
+By default this is determined based on the user request information.
+You may explicitly specify it by setting the <a href="yii_web_request.html#setHostInfo()-detail">hostInfo</a> property.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_web_request.html#setHostInfo()-detail">setHostInfo()</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="setHostInfo()-detail">
+		setHostInfo()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_web_request.html#setHostInfo()-detail">setHostInfo</a>( $value )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$value</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The schema and host part of the application URL. The trailing slashes will be removed.</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Sets the schema and host part of the application URL.</strong></p>
+	<p>This setter is provided in case the schema and hostname cannot be determined
+on certain Web servers.</p>
+
+	
+
+	<div class="detailHeader" id="getBaseUrl()-detail">
+		getBaseUrl()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_web_request.html#getBaseUrl()-detail">getBaseUrl</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the relative URL for the application</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the relative URL for the application.</strong></p>
+	<p>This is similar to <a href="yii_web_request.html#$scriptUrl-detail">$scriptUrl</a> except that it does not include the script file name,
+and the ending slashes are removed.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_web_request.html#setScriptUrl()-detail">setScriptUrl()</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="setBaseUrl()-detail">
+		setBaseUrl()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_web_request.html#setBaseUrl()-detail">setBaseUrl</a>( $value )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$value</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The relative URL for the application</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Sets the relative URL for the application.</strong></p>
+	<p>By default the URL is determined based on the entry script URL.
+This setter is provided in case you want to change this behavior.</p>
+
+	
+
+	<div class="detailHeader" id="getScriptUrl()-detail">
+		getScriptUrl()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_web_request.html#getScriptUrl()-detail">getScriptUrl</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the relative URL of the entry script.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_base_invalidconfigexception.html">yii\base\InvalidConfigException</a></td>
+				  <td class="paramDescCol">if unable to determine the entry script URL</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Returns the relative URL of the entry script.</strong></p>
+	<p>The implementation of this method referenced Zend_Controller_Request_Http in Zend Framework.</p>
+
+	
+
+	<div class="detailHeader" id="setScriptUrl()-detail">
+		setScriptUrl()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_web_request.html#setScriptUrl()-detail">setScriptUrl</a>( $value )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$value</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The relative URL for the application entry script.</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Sets the relative URL for the application entry script.</strong></p>
+	<p>This setter is provided in case the entry script URL cannot be determined
+on certain Web servers.</p>
+
+	
+
+	<div class="detailHeader" id="getPathInfo()-detail">
+		getPathInfo()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_web_request.html#getPathInfo()-detail">getPathInfo</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">part of the request URL that is after the entry script and before the question mark.
+Note, the returned path info is already URL-decoded.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_base_invalidconfigexception.html">yii\base\InvalidConfigException</a></td>
+				  <td class="paramDescCol">if the path info cannot be determined due to unexpected server configuration</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Returns the path info of the currently requested URL.</strong></p>
+	<p>A path info refers to the part that is after the entry script and before the question mark (query string).
+The starting and ending slashes are both removed.</p>
+
+	
+
+	<div class="detailHeader" id="setPathInfo()-detail">
+		setPathInfo()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_web_request.html#setPathInfo()-detail">setPathInfo</a>( $value )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$value</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The path info of the current request</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Sets the path info of the current request.</strong></p>
+	<p>This method is mainly provided for testing purpose.</p>
+
+	
+
+	<div class="detailHeader" id="resolvePathInfo()-detail">
+		resolvePathInfo()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_web_request.html#resolvePathInfo()-detail">resolvePathInfo</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">part of the request URL that is after the entry script and before the question mark.
+Note, the returned path info is decoded.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_base_invalidconfigexception.html">yii\base\InvalidConfigException</a></td>
+				  <td class="paramDescCol">if the path info cannot be determined due to unexpected server configuration</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Resolves the path info part of the currently requested URL.</strong></p>
+	<p>A path info refers to the part that is after the entry script and before the question mark (query string).
+The starting slashes are both removed (ending slashes will be kept).</p>
+
+	
+
+	<div class="detailHeader" id="getAbsoluteUrl()-detail">
+		getAbsoluteUrl()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_web_request.html#getAbsoluteUrl()-detail">getAbsoluteUrl</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the currently requested absolute URL.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the currently requested absolute URL.</strong></p>
+	<p>This is a shortcut to the concatenation of <a href="yii_web_request.html#$hostInfo-detail">$hostInfo</a> and <a href="yii_web_request.html#$url-detail">$url</a>.</p>
+
+	
+
+	<div class="detailHeader" id="getUrl()-detail">
+		getUrl()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_web_request.html#getUrl()-detail">getUrl</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the currently requested relative URL. Note that the URI returned is URL-encoded.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_base_invalidconfigexception.html">yii\base\InvalidConfigException</a></td>
+				  <td class="paramDescCol">if the URL cannot be determined due to unusual server configuration</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Returns the currently requested relative URL.</strong></p>
+	<p>This refers to the portion of the URL that is after the <a href="yii_web_request.html#$hostInfo-detail">$hostInfo</a> part.
+It includes the <a href="yii_web_request.html#$queryString-detail">$queryString</a> part if any.</p>
+
+	
+
+	<div class="detailHeader" id="setUrl()-detail">
+		setUrl()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_web_request.html#setUrl()-detail">setUrl</a>( $value )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$value</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The request URI to be set</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Sets the currently requested relative URL.</strong></p>
+	<p>The URI must refer to the portion that is after <a href="yii_web_request.html#$hostInfo-detail">$hostInfo</a>.
+Note that the URI should be URL-encoded.</p>
+
+	
+
+	<div class="detailHeader" id="resolveRequestUri()-detail">
+		resolveRequestUri()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string|boolean <a href="yii_web_request.html#resolveRequestUri()-detail">resolveRequestUri</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string|boolean</td>
+				  <td class="paramDescCol">the request URI portion for the currently requested URL.
+Note that the URI returned is URL-encoded.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_base_invalidconfigexception.html">yii\base\InvalidConfigException</a></td>
+				  <td class="paramDescCol">if the request URI cannot be determined due to unusual server configuration</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Resolves the request URI portion for the currently requested URL.</strong></p>
+	<p>This refers to the portion that is after the <a href="yii_web_request.html#$hostInfo-detail">$hostInfo</a> part. It includes the <a href="yii_web_request.html#$queryString-detail">$queryString</a> part if any.
+The implementation of this method referenced Zend_Controller_Request_Http in Zend Framework.</p>
+
+	
+
+	<div class="detailHeader" id="getQueryString()-detail">
+		getQueryString()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_web_request.html#getQueryString()-detail">getQueryString</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">part of the request URL that is after the question mark</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns part of the request URL that is after the question mark.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getIsSecureConnection()-detail">
+		getIsSecureConnection()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_web_request.html#getIsSecureConnection()-detail">getIsSecureConnection</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">if the request is sent via secure channel (https)</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Return if the request is sent via secure channel (https).</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getServerName()-detail">
+		getServerName()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_web_request.html#getServerName()-detail">getServerName</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">server name</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the server name.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getServerPort()-detail">
+		getServerPort()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			integer <a href="yii_web_request.html#getServerPort()-detail">getServerPort</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">integer</td>
+				  <td class="paramDescCol">server port number</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the server port number.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getReferrer()-detail">
+		getReferrer()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_web_request.html#getReferrer()-detail">getReferrer</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">URL referrer, null if not present</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the URL referrer, null if not present</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getUserAgent()-detail">
+		getUserAgent()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_web_request.html#getUserAgent()-detail">getUserAgent</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">user agent, null if not present</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the user agent, null if not present.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getUserIP()-detail">
+		getUserIP()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_web_request.html#getUserIP()-detail">getUserIP</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">user IP address</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the user IP address.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getUserHost()-detail">
+		getUserHost()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_web_request.html#getUserHost()-detail">getUserHost</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">user host name, null if cannot be determined</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the user host name, null if it cannot be determined.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getPort()-detail">
+		getPort()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			integer <a href="yii_web_request.html#getPort()-detail">getPort</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">integer</td>
+				  <td class="paramDescCol">port number for insecure requests.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the port to use for insecure requests.</strong></p>
+	<p>Defaults to 80, or the port specified by the server if the current
+request is insecure.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_web_request.html#setPort()-detail">setPort()</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="setPort()-detail">
+		setPort()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_web_request.html#setPort()-detail">setPort</a>( $value )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$value</td>
+				  <td class="paramTypeCol">integer</td>
+				  <td class="paramDescCol">Port number.</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Sets the port to use for insecure requests.</strong></p>
+	<p>This setter is provided in case a custom port is necessary for certain
+server configurations.</p>
+
+	
+
+	<div class="detailHeader" id="getSecurePort()-detail">
+		getSecurePort()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			integer <a href="yii_web_request.html#getSecurePort()-detail">getSecurePort</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">integer</td>
+				  <td class="paramDescCol">port number for secure requests.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the port to use for secure requests.</strong></p>
+	<p>Defaults to 443, or the port specified by the server if the current
+request is secure.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_web_request.html#setSecurePort()-detail">setSecurePort()</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="setSecurePort()-detail">
+		setSecurePort()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_web_request.html#setSecurePort()-detail">setSecurePort</a>( $value )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$value</td>
+				  <td class="paramTypeCol">integer</td>
+				  <td class="paramDescCol">Port number.</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Sets the port to use for secure requests.</strong></p>
+	<p>This setter is provided in case a custom port is necessary for certain
+server configurations.</p>
+
+	
+
+	<div class="detailHeader" id="getAcceptableContentTypes()-detail">
+		getAcceptableContentTypes()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			array <a href="yii_web_request.html#getAcceptableContentTypes()-detail">getAcceptableContentTypes</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">the content types ordered by the preference level. The first element
+represents the most preferred content type.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the content types acceptable by the end user.</strong></p>
+	<p>This is determined by the <code>Accept</code> HTTP header.</p>
+
+	
+
+	<div class="detailHeader" id="setAcceptableContentTypes()-detail">
+		setAcceptableContentTypes()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_web_request.html#setAcceptableContentTypes()-detail">setAcceptableContentTypes</a>( $value )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$value</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The content types that are acceptable by the end user. They should
+be ordered by the preference level.</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getContentType()-detail">
+		getContentType()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_web_request.html#getContentType()-detail">getContentType</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">request content-type. Null is returned if this information is not available.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns request content-type
+The Content-Type header field indicates the MIME type of the data
+contained in <a href="yii_web_request.html#getRawBody()-detail">getRawBody()</a> or, in the case of the HEAD method, the
+media type that would have been sent had the request been a GET.</strong></p>
+	<p>For the MIME-types the user expects in response, see <a href="yii_web_request.html#$acceptableContentTypes-detail">$acceptableContentTypes</a>.</p>
+
+	
+
+	<div class="detailHeader" id="getAcceptableLanguages()-detail">
+		getAcceptableLanguages()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			array <a href="yii_web_request.html#getAcceptableLanguages()-detail">getAcceptableLanguages</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">the languages ordered by the preference level. The first element
+represents the most preferred language.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the languages acceptable by the end user.</strong></p>
+	<p>This is determined by the <code>Accept-Language</code> HTTP header.</p>
+
+	
+
+	<div class="detailHeader" id="setAcceptableLanguages()-detail">
+		setAcceptableLanguages()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_web_request.html#setAcceptableLanguages()-detail">setAcceptableLanguages</a>( $value )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$value</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The languages that are acceptable by the end user. They should
+be ordered by the preference level.</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="parseAcceptHeader()-detail">
+		parseAcceptHeader()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			array <a href="yii_web_request.html#parseAcceptHeader()-detail">parseAcceptHeader</a>( $header )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$header</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The header to be parsed</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">the accept values ordered by their preference level.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Parses the given <code>Accept</code> (or <code>Accept-Language</code>) header.</strong></p>
+	<p>This method will return the acceptable values ordered by their preference level.</p>
+
+	
+
+	<div class="detailHeader" id="getPreferredLanguage()-detail">
+		getPreferredLanguage()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_web_request.html#getPreferredLanguage()-detail">getPreferredLanguage</a>( array $languages = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$languages</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">A list of the languages supported by the application. If this is empty, the current
+application language will be returned without further processing.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the language that the application should use.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the user-preferred language that should be used by this application.</strong></p>
+	<p>The language resolution is based on the user preferred languages and the languages
+supported by the application. The method will try to find the best match.</p>
+
+	
+
+	<div class="detailHeader" id="getCookies()-detail">
+		getCookies()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			<a href="yii_web_cookiecollection.html">yii\web\CookieCollection</a> <a href="yii_web_request.html#getCookies()-detail">getCookies</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol"><a href="yii_web_cookiecollection.html">yii\web\CookieCollection</a></td>
+				  <td class="paramDescCol">the cookie collection.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the cookie collection.</strong></p>
+	<p><p>Through the returned cookie collection, you may access a cookie using the following syntax:</p>
+
+<pre><code>$cookie = $request-&gt;cookies['name']
+if ($cookie !== null) {
+    $value = $cookie-&gt;value;
+}
+
+// alternatively
+$value = $request-&gt;cookies-&gt;getValue('name');
+</code></pre></p>
+
+	
+
+	<div class="detailHeader" id="loadCookies()-detail">
+		loadCookies()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			array <a href="yii_web_request.html#loadCookies()-detail">loadCookies</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">the cookies obtained from request</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Converts <code>$_COOKIE</code> into an array of <a href="yii_web_cookie.html">yii\web\Cookie</a>.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getCookieValidationKey()-detail">
+		getCookieValidationKey()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_web_request.html#getCookieValidationKey()-detail">getCookieValidationKey</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the secret key used for cookie validation. If it was not set previously,
+a random key will be generated and used.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="setCookieValidationKey()-detail">
+		setCookieValidationKey()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_web_request.html#setCookieValidationKey()-detail">setCookieValidationKey</a>( $value )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$value</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The secret key used for cookie validation.</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Sets the secret key used for cookie validation.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getRawCsrfToken()-detail">
+		getRawCsrfToken()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_web_request.html#getRawCsrfToken()-detail">getRawCsrfToken</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the random token for CSRF validation.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the unmasked random token used to perform CSRF validation.</strong></p>
+	<p>This token is typically sent via a cookie. If such a cookie does not exist, a new token will be generated.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_web_request.html#$enableCsrfValidation-detail">$enableCsrfValidation</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="getCsrfToken()-detail">
+		getCsrfToken()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_web_request.html#getCsrfToken()-detail">getCsrfToken</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the token used to perform CSRF validation.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the token used to perform CSRF validation.</strong></p>
+	<p>This token is a masked version of <a href="yii_web_request.html#$rawCsrfToken-detail">$rawCsrfToken</a> to prevent <a href="http://breachattack.com/">BREACH attacks</a>.
+This token may be passed along via a hidden field of an HTML form or an HTTP header value
+to support CSRF validation.</p>
+
+	
+
+	<div class="detailHeader" id="getCsrfTokenFromHeader()-detail">
+		getCsrfTokenFromHeader()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_web_request.html#getCsrfTokenFromHeader()-detail">getCsrfTokenFromHeader</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the CSRF token sent via <a href="yii_web_request.html#CSRF_HEADER-detail">CSRF_HEADER</a> by browser. Null is returned if no such header is sent.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="createCsrfCookie()-detail">
+		createCsrfCookie()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			<a href="yii_web_cookie.html">yii\web\Cookie</a> <a href="yii_web_request.html#createCsrfCookie()-detail">createCsrfCookie</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol"><a href="yii_web_cookie.html">yii\web\Cookie</a></td>
+				  <td class="paramDescCol">the generated cookie</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Creates a cookie with a randomly generated CSRF token.</strong></p>
+	<p>Initial values specified in <a href="yii_web_request.html#$csrfCookie-detail">$csrfCookie</a> will be applied to the generated cookie.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_web_request.html#$enableCsrfValidation-detail">$enableCsrfValidation</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="validateCsrfToken()-detail">
+		validateCsrfToken()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_web_request.html#validateCsrfToken()-detail">validateCsrfToken</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether CSRF token is valid. If <a href="yii_web_request.html#$enableCsrfValidation-detail">$enableCsrfValidation</a> is false, this method will return true.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Performs the CSRF validation.</strong></p>
+	<p>The method will compare the CSRF token obtained from a cookie and from a POST field.
+If they are different, a CSRF attack is detected and a 400 HTTP exception will be raised.
+This method is called in <a href="yii_web_controller.html#beforeAction()-detail">yii\web\Controller::beforeAction()</a>.</p>
+
+	
+			</div><!-- end of content -->
+
+		<div id="apiFooter">
+			<p>&copy; 2008-2013 by <a href="http://www.yiisoft.com">Yii Software LLC</a></p>
+			<p>All Rights Reserved.</p>
+		</div><!-- end of footer -->
+
+<script type="text/javascript">
+/*<![CDATA[*/
+$("a.toggle").on('click', function() {
+	var $this = $(this);
+	if ($this.hasClass('properties-hidden')) {
+		$this.text($this.text().replace(/Show/,'Hide'));
+		$this.parents(".summary").find(".inherited").show();
+		$this.removeClass('properties-hidden');
+	} else {
+		$this.text($this.text().replace(/Hide/,'Show'));
+		$this.parents(".summary").find(".inherited").hide();
+		$this.addClass('properties-hidden');
+	}
+	return false;
+});
+/*
+$(".sourceCode a.show").toggle(function(){
+	$(this).text($(this).text().replace(/show/,'hide'));
+	$(this).parents(".sourceCode").find("div.code").show();
+},function(){
+	$(this).text($(this).text().replace(/hide/,'show'));
+	$(this).parents(".sourceCode").find("div.code").hide();
+});
+$("a.sourceLink").click(function(){
+	$(this).attr('target','_blank');
+});
+*/
+/*]]>*/
+</script>
+
+	</div><!-- end of page -->
+</body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="language" content="en" />
+<link href="./assets/4138e429/api.css" rel="stylesheet">
+<link href="./assets/4138e429/style.css" rel="stylesheet">
+<script src="./assets/a91b37a6/jquery.js"></script><title>Yii Framework 2.0 API Documentation</title>
+</head>
+
+<body>
+	<div id="apiPage">
+
+		<div id="apiHeader">
+			<a href="http://www.yiiframework.com">Yii Framework</a> v2.0.0-dev Class Reference
+		</div><!-- end of header -->
+
+		<div id="content">
+		<h1>Interface yii\db\ActiveQueryInterface</h1>
+<div id="nav">
+	<a href="index.html">All Classes</a>
+				| <a href="#methods">Methods</a>
+			</div>
+
+<table class="summaryTable docClass">
+	<colgroup>
+		<col class="col-name" />
+		<col class="col-value" />
+	</colgroup>
+							<tr><th>Implemented by</th><td><a href="yii_db_activequery.html">yii\db\ActiveQuery</a>, <a href="yii_db_activerelation.html">yii\db\ActiveRelation</a>, <a href="yii_redis_activequery.html">yii\redis\ActiveQuery</a>, <a href="yii_redis_activerelation.html">yii\redis\ActiveRelation</a></td></tr>
+					<tr><th>Available since version</th><td>2.0</td></tr>
+		<tr>
+	  <th>Source Code</th>
+	  <td></td>
+	</tr>
+</table>
+
+<div id="classDescription">
+	<strong>ActiveQueryInterface defines the common interface to be implemented by active record query classes.</strong>
+	<p>A class implementing this interface should also use <a href="yii_db_activequerytrait.html">yii\db\ActiveQueryTrait</a>.</p>
+</div>
+
+<a name="properties"></a>
+
+<a name="methods"></a>
+
+<div class="summary docMethod">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr id="asArray()">
+		<td><a href="yii_db_activequeryinterface.html#asArray()-detail">asArray()</a></td>
+		<td>Sets the <a href="yii_db_activequeryinterface.html#asArray()-detail">asArray()</a> property.</td>
+		<td><a href="yii_db_activequeryinterface.html">yii\db\ActiveQueryInterface</a></td>
+	</tr>
+			<tr id="indexBy()">
+		<td><a href="yii_db_activequeryinterface.html#indexBy()-detail">indexBy()</a></td>
+		<td>Sets the <a href="yii_db_activequeryinterface.html#indexBy()-detail">indexBy()</a> property.</td>
+		<td><a href="yii_db_activequeryinterface.html">yii\db\ActiveQueryInterface</a></td>
+	</tr>
+			<tr id="with()">
+		<td><a href="yii_db_activequeryinterface.html#with()-detail">with()</a></td>
+		<td>Specifies the relations with which this query should be performed.</td>
+		<td><a href="yii_db_activequeryinterface.html">yii\db\ActiveQueryInterface</a></td>
+	</tr>
+	</table>
+</div>
+<a name="events"></a>
+
+<a name="constants"></a>
+
+<h2>Method Details</h2>
+
+
+	<div class="detailHeader" id="asArray()-detail">
+		asArray()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			static <a href="yii_db_activequeryinterface.html#asArray()-detail">asArray</a>( $value = true )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$value</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">Whether to return the query results in terms of arrays instead of Active Records.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">static</td>
+				  <td class="paramDescCol">the query object itself</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Sets the <a href="yii_db_activequeryinterface.html#asArray()-detail">asArray()</a> property.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="indexBy()-detail">
+		indexBy()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			static <a href="yii_db_activequeryinterface.html#indexBy()-detail">indexBy</a>( $column )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$column</td>
+				  <td class="paramTypeCol">string|callable</td>
+				  <td class="paramDescCol"><p>The name of the column by which the query results should be indexed by.
+This can also be a callable (e.g. anonymous function) that returns the index value based on the given
+row or model data. The signature of the callable should be:</p>
+
+<pre><code>// $model is an AR instance when `asArray` is false,
+// or an array of column values when `asArray` is true.
+function ($model)
+{
+    // return the index value corresponding to $model
+}
+</code></pre></td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">static</td>
+				  <td class="paramDescCol">the query object itself</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Sets the <a href="yii_db_activequeryinterface.html#indexBy()-detail">indexBy()</a> property.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="with()-detail">
+		with()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			static <a href="yii_db_activequeryinterface.html#with()-detail">with</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">static</td>
+				  <td class="paramDescCol">the query object itself</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Specifies the relations with which this query should be performed.</strong></p>
+	<p><p>The parameters to this method can be either one or multiple strings, or a single array
+of relation names and the optional callbacks to customize the relations.</p>
+
+<p>A relation name can refer to a relation defined in <span style="background: #f00;">\yii\db\modelClass</span>
+or a sub-relation that stands for a relation of a related record.
+For example, <code>orders.address</code> means the <code>address</code> relation defined
+in the model class corresponding to the <code>orders</code> relation.</p>
+
+<p>The followings are some usage examples:</p>
+
+<pre><code>// find customers together with their orders and country
+Customer::find()-&gt;with('orders', 'country')-&gt;all();
+// find customers together with their orders and the orders' shipping address
+Customer::find()-&gt;with('orders.address')-&gt;all();
+// find customers together with their country and orders of status 1
+Customer::find()-&gt;with([
+    'orders' =&gt; function($query) {
+        $query-&gt;andWhere('status = 1');
+    },
+    'country',
+])-&gt;all();
+</code></pre></p>
+
+	
+		</div><!-- end of content -->
+
+		<div id="apiFooter">
+			<p>&copy; 2008-2013 by <a href="http://www.yiisoft.com">Yii Software LLC</a></p>
+			<p>All Rights Reserved.</p>
+		</div><!-- end of footer -->
+
+<script type="text/javascript">
+/*<![CDATA[*/
+$("a.toggle").on('click', function() {
+	var $this = $(this);
+	if ($this.hasClass('properties-hidden')) {
+		$this.text($this.text().replace(/Show/,'Hide'));
+		$this.parents(".summary").find(".inherited").show();
+		$this.removeClass('properties-hidden');
+	} else {
+		$this.text($this.text().replace(/Hide/,'Show'));
+		$this.parents(".summary").find(".inherited").hide();
+		$this.addClass('properties-hidden');
+	}
+	return false;
+});
+/*
+$(".sourceCode a.show").toggle(function(){
+	$(this).text($(this).text().replace(/show/,'hide'));
+	$(this).parents(".sourceCode").find("div.code").show();
+},function(){
+	$(this).text($(this).text().replace(/hide/,'show'));
+	$(this).parents(".sourceCode").find("div.code").hide();
+});
+$("a.sourceLink").click(function(){
+	$(this).attr('target','_blank');
+});
+*/
+/*]]>*/
+</script>
+
+	</div><!-- end of page -->
+</body>
+</html>

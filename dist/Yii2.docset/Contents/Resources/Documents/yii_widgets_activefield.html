@@ -1,0 +1,1529 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="language" content="en" />
+<link href="./assets/4138e429/api.css" rel="stylesheet">
+<link href="./assets/4138e429/style.css" rel="stylesheet">
+<script src="./assets/a91b37a6/jquery.js"></script><title>Yii Framework 2.0 API Documentation</title>
+</head>
+
+<body>
+	<div id="apiPage">
+
+		<div id="apiHeader">
+			<a href="http://www.yiiframework.com">Yii Framework</a> v2.0.0-dev Class Reference
+		</div><!-- end of header -->
+
+		<div id="content">
+		<h1>Class yii\widgets\ActiveField</h1>
+<div id="nav">
+	<a href="index.html">All Classes</a>
+			| <a href="#properties">Properties</a>
+				| <a href="#methods">Methods</a>
+			</div>
+
+<table class="summaryTable docClass">
+	<colgroup>
+		<col class="col-name" />
+		<col class="col-value" />
+	</colgroup>
+			<tr><th>Inheritance</th><td><a href="yii_widgets_activefield.html">yii\widgets\ActiveField</a> &raquo;
+<a href="yii_base_component.html">yii\base\Component</a> &raquo;
+<a href="yii_base_object.html">yii\base\Object</a></td></tr>
+				<tr><th>Implements</th><td><a href="yii_base_arrayable.html">yii\base\Arrayable</a></td></tr>
+					<tr><th>Subclasses</th><td><a href="yii_gii_components_activefield.html">yii\gii\components\ActiveField</a></td></tr>
+						<tr><th>Available since version</th><td>2.0</td></tr>
+		<tr>
+	  <th>Source Code</th>
+	  <td></td>
+	</tr>
+</table>
+
+<div id="classDescription">
+	<strong></strong>
+	<p></p>
+</div>
+
+<a name="properties"></a>
+
+<div class="summary docProperty">
+<h2>Public Properties</h2>
+
+<p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-property" />
+	<col class="col-type" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Property</th><th>Type</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr id="$form">
+		<td><a href="yii_widgets_activefield.html#$form-detail">$form</a></td>
+		<td><a href="yii_widgets_activeform.html">yii\widgets\ActiveForm</a></td>
+		<td>The form that this field is associated with</td>
+		<td><a href="yii_widgets_activefield.html">yii\widgets\ActiveField</a></td>
+	</tr>
+			<tr id="$model">
+		<td><a href="yii_widgets_activefield.html#$model-detail">$model</a></td>
+		<td><a href="yii_base_model.html">yii\base\Model</a></td>
+		<td>The data model that this field is associated with</td>
+		<td><a href="yii_widgets_activefield.html">yii\widgets\ActiveField</a></td>
+	</tr>
+			<tr id="$attribute">
+		<td><a href="yii_widgets_activefield.html#$attribute-detail">$attribute</a></td>
+		<td>string</td>
+		<td>The model attribute that this field is associated with</td>
+		<td><a href="yii_widgets_activefield.html">yii\widgets\ActiveField</a></td>
+	</tr>
+			<tr id="$options">
+		<td><a href="yii_widgets_activefield.html#$options-detail">$options</a></td>
+		<td>array</td>
+		<td>The HTML attributes (name-value pairs) for the field container tag</td>
+		<td><a href="yii_widgets_activefield.html">yii\widgets\ActiveField</a></td>
+	</tr>
+			<tr id="$template">
+		<td><a href="yii_widgets_activefield.html#$template-detail">$template</a></td>
+		<td>string</td>
+		<td>The template that is used to arrange the label, the input field, the error message and the hint text</td>
+		<td><a href="yii_widgets_activefield.html">yii\widgets\ActiveField</a></td>
+	</tr>
+			<tr id="$inputOptions">
+		<td><a href="yii_widgets_activefield.html#$inputOptions-detail">$inputOptions</a></td>
+		<td>array</td>
+		<td>The default options for the input tags</td>
+		<td><a href="yii_widgets_activefield.html">yii\widgets\ActiveField</a></td>
+	</tr>
+			<tr id="$errorOptions">
+		<td><a href="yii_widgets_activefield.html#$errorOptions-detail">$errorOptions</a></td>
+		<td>array</td>
+		<td>The default options for the error tags</td>
+		<td><a href="yii_widgets_activefield.html">yii\widgets\ActiveField</a></td>
+	</tr>
+			<tr id="$labelOptions">
+		<td><a href="yii_widgets_activefield.html#$labelOptions-detail">$labelOptions</a></td>
+		<td>array</td>
+		<td>The default options for the label tags</td>
+		<td><a href="yii_widgets_activefield.html">yii\widgets\ActiveField</a></td>
+	</tr>
+			<tr id="$hintOptions">
+		<td><a href="yii_widgets_activefield.html#$hintOptions-detail">$hintOptions</a></td>
+		<td>array</td>
+		<td>The default options for the hint tags</td>
+		<td><a href="yii_widgets_activefield.html">yii\widgets\ActiveField</a></td>
+	</tr>
+			<tr id="$enableClientValidation">
+		<td><a href="yii_widgets_activefield.html#$enableClientValidation-detail">$enableClientValidation</a></td>
+		<td>boolean</td>
+		<td>Whether to enable client-side data validation</td>
+		<td><a href="yii_widgets_activefield.html">yii\widgets\ActiveField</a></td>
+	</tr>
+			<tr id="$enableAjaxValidation">
+		<td><a href="yii_widgets_activefield.html#$enableAjaxValidation-detail">$enableAjaxValidation</a></td>
+		<td>boolean</td>
+		<td>Whether to enable AJAX-based data validation</td>
+		<td><a href="yii_widgets_activefield.html">yii\widgets\ActiveField</a></td>
+	</tr>
+			<tr id="$validateOnChange">
+		<td><a href="yii_widgets_activefield.html#$validateOnChange-detail">$validateOnChange</a></td>
+		<td>boolean</td>
+		<td>Whether to perform validation when the input field loses focus and its value is found changed</td>
+		<td><a href="yii_widgets_activefield.html">yii\widgets\ActiveField</a></td>
+	</tr>
+			<tr id="$validateOnType">
+		<td><a href="yii_widgets_activefield.html#$validateOnType-detail">$validateOnType</a></td>
+		<td>boolean</td>
+		<td>Whether to perform validation while the user is typing in the input field</td>
+		<td><a href="yii_widgets_activefield.html">yii\widgets\ActiveField</a></td>
+	</tr>
+			<tr id="$validationDelay">
+		<td><a href="yii_widgets_activefield.html#$validationDelay-detail">$validationDelay</a></td>
+		<td>integer</td>
+		<td>Number of milliseconds that the validation should be delayed when the input field
+is changed or the user types in the field</td>
+		<td><a href="yii_widgets_activefield.html">yii\widgets\ActiveField</a></td>
+	</tr>
+			<tr id="$selectors">
+		<td><a href="yii_widgets_activefield.html#$selectors-detail">$selectors</a></td>
+		<td>array</td>
+		<td>The jQuery selectors for selecting the container, input and error tags</td>
+		<td><a href="yii_widgets_activefield.html">yii\widgets\ActiveField</a></td>
+	</tr>
+			<tr id="$parts">
+		<td><a href="yii_widgets_activefield.html#$parts-detail">$parts</a></td>
+		<td>array</td>
+		<td>Different parts of the field (e</td>
+		<td><a href="yii_widgets_activefield.html">yii\widgets\ActiveField</a></td>
+	</tr>
+			<tr id="$behaviors">
+		<td><a href="yii_widgets_activefield.html#$behaviors-detail">$behaviors</a></td>
+		<td><a href="yii_base_behavior.html">yii\base\Behavior</a>[]</td>
+		<td>list of behaviors attached to this component</td>
+		<td><a href="yii_widgets_activefield.html">yii\widgets\ActiveField</a></td>
+	</tr>
+	</table>
+</div>
+<a name="methods"></a>
+
+<div class="summary docMethod">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr class="inherited" id="className()">
+		<td><a href="yii_base_object.html#className()-detail">className()</a></td>
+		<td></td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__construct()">
+		<td><a href="yii_base_object.html#__construct()-detail">__construct()</a></td>
+		<td>Constructor.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="init()">
+		<td><a href="yii_base_object.html#init()-detail">init()</a></td>
+		<td>Initializes the object.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__get()">
+		<td><a href="yii_base_component.html#__get()-detail">__get()</a></td>
+		<td>Returns the value of a component property.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__set()">
+		<td><a href="yii_base_component.html#__set()-detail">__set()</a></td>
+		<td>Sets the value of a component property.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__isset()">
+		<td><a href="yii_base_component.html#__isset()-detail">__isset()</a></td>
+		<td>Checks if a property value is null.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__unset()">
+		<td><a href="yii_base_component.html#__unset()-detail">__unset()</a></td>
+		<td>Sets a component property to be null.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__call()">
+		<td><a href="yii_base_component.html#__call()-detail">__call()</a></td>
+		<td>Calls the named method which is not a class method.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasProperty()">
+		<td><a href="yii_base_component.html#hasProperty()-detail">hasProperty()</a></td>
+		<td>Returns a value indicating whether a property is defined for this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="canGetProperty()">
+		<td><a href="yii_base_component.html#canGetProperty()-detail">canGetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be read.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="canSetProperty()">
+		<td><a href="yii_base_component.html#canSetProperty()-detail">canSetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be set.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasMethod()">
+		<td><a href="yii_base_component.html#hasMethod()-detail">hasMethod()</a></td>
+		<td>Returns a value indicating whether a method is defined.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="toArray()">
+		<td><a href="yii_base_object.html#toArray()-detail">toArray()</a></td>
+		<td>Converts the object into an array.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__clone()">
+		<td><a href="yii_base_component.html#__clone()-detail">__clone()</a></td>
+		<td>This method is called after the object is created by cloning an existing one.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="behaviors()">
+		<td><a href="yii_base_component.html#behaviors()-detail">behaviors()</a></td>
+		<td>Returns a list of behaviors that this component should behave as.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasEventHandlers()">
+		<td><a href="yii_base_component.html#hasEventHandlers()-detail">hasEventHandlers()</a></td>
+		<td>Returns a value indicating whether there is any handler attached to the named event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="on()">
+		<td><a href="yii_base_component.html#on()-detail">on()</a></td>
+		<td>Attaches an event handler to an event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="off()">
+		<td><a href="yii_base_component.html#off()-detail">off()</a></td>
+		<td>Detaches an existing event handler from this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="trigger()">
+		<td><a href="yii_base_component.html#trigger()-detail">trigger()</a></td>
+		<td>Triggers an event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="getBehavior()">
+		<td><a href="yii_base_component.html#getBehavior()-detail">getBehavior()</a></td>
+		<td>Returns the named behavior object.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="getBehaviors()">
+		<td><a href="yii_base_component.html#getBehaviors()-detail">getBehaviors()</a></td>
+		<td>Returns all behaviors attached to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="attachBehavior()">
+		<td><a href="yii_base_component.html#attachBehavior()-detail">attachBehavior()</a></td>
+		<td>Attaches a behavior to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="attachBehaviors()">
+		<td><a href="yii_base_component.html#attachBehaviors()-detail">attachBehaviors()</a></td>
+		<td>Attaches a list of behaviors to the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="detachBehavior()">
+		<td><a href="yii_base_component.html#detachBehavior()-detail">detachBehavior()</a></td>
+		<td>Detaches a behavior from the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="detachBehaviors()">
+		<td><a href="yii_base_component.html#detachBehaviors()-detail">detachBehaviors()</a></td>
+		<td>Detaches all behaviors from the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="ensureBehaviors()">
+		<td><a href="yii_base_component.html#ensureBehaviors()-detail">ensureBehaviors()</a></td>
+		<td>Makes sure that the behaviors declared in <a href="yii_base_component.html#behaviors()-detail">behaviors()</a> are attached to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr id="__toString()">
+		<td><a href="yii_widgets_activefield.html#__toString()-detail">__toString()</a></td>
+		<td>PHP magic method that returns the string representation of this object.</td>
+		<td><a href="yii_widgets_activefield.html">yii\widgets\ActiveField</a></td>
+	</tr>
+			<tr id="render()">
+		<td><a href="yii_widgets_activefield.html#render()-detail">render()</a></td>
+		<td>Renders the whole field.</td>
+		<td><a href="yii_widgets_activefield.html">yii\widgets\ActiveField</a></td>
+	</tr>
+			<tr id="begin()">
+		<td><a href="yii_widgets_activefield.html#begin()-detail">begin()</a></td>
+		<td>Renders the opening tag of the field container.</td>
+		<td><a href="yii_widgets_activefield.html">yii\widgets\ActiveField</a></td>
+	</tr>
+			<tr id="end()">
+		<td><a href="yii_widgets_activefield.html#end()-detail">end()</a></td>
+		<td>Renders the closing tag of the field container.</td>
+		<td><a href="yii_widgets_activefield.html">yii\widgets\ActiveField</a></td>
+	</tr>
+			<tr id="label()">
+		<td><a href="yii_widgets_activefield.html#label()-detail">label()</a></td>
+		<td>Generates a label tag for <a href="yii_widgets_activefield.html#$attribute-detail">$attribute</a>.</td>
+		<td><a href="yii_widgets_activefield.html">yii\widgets\ActiveField</a></td>
+	</tr>
+			<tr id="error()">
+		<td><a href="yii_widgets_activefield.html#error()-detail">error()</a></td>
+		<td>Generates a tag that contains the first validation error of <a href="yii_widgets_activefield.html#$attribute-detail">$attribute</a>.</td>
+		<td><a href="yii_widgets_activefield.html">yii\widgets\ActiveField</a></td>
+	</tr>
+			<tr id="hint()">
+		<td><a href="yii_widgets_activefield.html#hint()-detail">hint()</a></td>
+		<td>Renders the hint tag.</td>
+		<td><a href="yii_widgets_activefield.html">yii\widgets\ActiveField</a></td>
+	</tr>
+			<tr id="input()">
+		<td><a href="yii_widgets_activefield.html#input()-detail">input()</a></td>
+		<td>Renders an input tag.</td>
+		<td><a href="yii_widgets_activefield.html">yii\widgets\ActiveField</a></td>
+	</tr>
+			<tr id="textInput()">
+		<td><a href="yii_widgets_activefield.html#textInput()-detail">textInput()</a></td>
+		<td>Renders a text input.</td>
+		<td><a href="yii_widgets_activefield.html">yii\widgets\ActiveField</a></td>
+	</tr>
+			<tr id="passwordInput()">
+		<td><a href="yii_widgets_activefield.html#passwordInput()-detail">passwordInput()</a></td>
+		<td>Renders a password input.</td>
+		<td><a href="yii_widgets_activefield.html">yii\widgets\ActiveField</a></td>
+	</tr>
+			<tr id="fileInput()">
+		<td><a href="yii_widgets_activefield.html#fileInput()-detail">fileInput()</a></td>
+		<td>Renders a file input.</td>
+		<td><a href="yii_widgets_activefield.html">yii\widgets\ActiveField</a></td>
+	</tr>
+			<tr id="textarea()">
+		<td><a href="yii_widgets_activefield.html#textarea()-detail">textarea()</a></td>
+		<td>Renders a text area.</td>
+		<td><a href="yii_widgets_activefield.html">yii\widgets\ActiveField</a></td>
+	</tr>
+			<tr id="radio()">
+		<td><a href="yii_widgets_activefield.html#radio()-detail">radio()</a></td>
+		<td>Renders a radio button.</td>
+		<td><a href="yii_widgets_activefield.html">yii\widgets\ActiveField</a></td>
+	</tr>
+			<tr id="checkbox()">
+		<td><a href="yii_widgets_activefield.html#checkbox()-detail">checkbox()</a></td>
+		<td>Renders a checkbox.</td>
+		<td><a href="yii_widgets_activefield.html">yii\widgets\ActiveField</a></td>
+	</tr>
+			<tr id="dropDownList()">
+		<td><a href="yii_widgets_activefield.html#dropDownList()-detail">dropDownList()</a></td>
+		<td>Renders a drop-down list.</td>
+		<td><a href="yii_widgets_activefield.html">yii\widgets\ActiveField</a></td>
+	</tr>
+			<tr id="listBox()">
+		<td><a href="yii_widgets_activefield.html#listBox()-detail">listBox()</a></td>
+		<td>Renders a list box.</td>
+		<td><a href="yii_widgets_activefield.html">yii\widgets\ActiveField</a></td>
+	</tr>
+			<tr id="checkboxList()">
+		<td><a href="yii_widgets_activefield.html#checkboxList()-detail">checkboxList()</a></td>
+		<td>Renders a list of checkboxes.</td>
+		<td><a href="yii_widgets_activefield.html">yii\widgets\ActiveField</a></td>
+	</tr>
+			<tr id="radioList()">
+		<td><a href="yii_widgets_activefield.html#radioList()-detail">radioList()</a></td>
+		<td>Renders a list of radio buttons.</td>
+		<td><a href="yii_widgets_activefield.html">yii\widgets\ActiveField</a></td>
+	</tr>
+			<tr id="widget()">
+		<td><a href="yii_widgets_activefield.html#widget()-detail">widget()</a></td>
+		<td>Renders a widget as the input of the field.</td>
+		<td><a href="yii_widgets_activefield.html">yii\widgets\ActiveField</a></td>
+	</tr>
+			</table>
+</div>
+<div class="summary docMethod">
+<h2>Protected Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+																																															<tr id="adjustLabelFor()">
+		<td><a href="yii_widgets_activefield.html#adjustLabelFor()-detail">adjustLabelFor()</a></td>
+		<td>Adjusts the "for" attribute for the label based on the input options.</td>
+		<td><a href="yii_widgets_activefield.html">yii\widgets\ActiveField</a></td>
+	</tr>
+			<tr id="getClientOptions()">
+		<td><a href="yii_widgets_activefield.html#getClientOptions()-detail">getClientOptions()</a></td>
+		<td>Returns the JS options for the field.</td>
+		<td><a href="yii_widgets_activefield.html">yii\widgets\ActiveField</a></td>
+	</tr>
+	</table>
+</div>
+<a name="events"></a>
+
+<a name="constants"></a>
+
+<h2>Property Details</h2>
+
+
+	<div class="detailHeader" id="$form-detail">
+		$form		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_widgets_activeform.html">yii\widgets\ActiveForm</a> $form = null	</div>
+
+	<p>The form that this field is associated with.</p>
+
+	
+
+	<div class="detailHeader" id="$model-detail">
+		$model		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_base_model.html">yii\base\Model</a> $model = null	</div>
+
+	<p>The data model that this field is associated with</p>
+
+	
+
+	<div class="detailHeader" id="$attribute-detail">
+		$attribute		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $attribute = null	</div>
+
+	<p>The model attribute that this field is associated with</p>
+
+	
+
+	<div class="detailHeader" id="$options-detail">
+		$options		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array $options = ['class' => 'form-group']	</div>
+
+	<p>The HTML attributes (name-value pairs) for the field container tag.
+The values will be HTML-encoded using <a href="yii_helpers_basehtml.html#encode()-detail">yii\helpers\Html::encode()</a>.
+If a value is null, the corresponding attribute will not be rendered.
+The following special options are recognized:
+- tag: the tag name of the container element. Defaults to "div".</p>
+
+	
+
+	<div class="detailHeader" id="$template-detail">
+		$template		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $template = "{label}\n{input}\n{hint}\n{error}"	</div>
+
+	<p>The template that is used to arrange the label, the input field, the error message and the hint text.
+The following tokens will be replaced when <a href="yii_widgets_activefield.html#render()-detail">render()</a> is called: <code>{label}</code>, <code>{input}</code>, <code>{error}</code> and <code>{hint}</code>.</p>
+
+	
+
+	<div class="detailHeader" id="$inputOptions-detail">
+		$inputOptions		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array $inputOptions = ['class' => 'form-control']	</div>
+
+	<p>The default options for the input tags. The parameter passed to individual input methods
+(e.g. <a href="yii_widgets_activefield.html#textInput()-detail">textInput()</a>) will be merged with this property when rendering the input tag.</p>
+
+	
+
+	<div class="detailHeader" id="$errorOptions-detail">
+		$errorOptions		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array $errorOptions = ['class' => 'help-block']	</div>
+
+	<p>The default options for the error tags. The parameter passed to <a href="yii_widgets_activefield.html#error()-detail">error()</a> will be
+merged with this property when rendering the error tag.
+The following special options are recognized:
+- tag: the tag name of the container element. Defaults to "div".</p>
+
+	
+
+	<div class="detailHeader" id="$labelOptions-detail">
+		$labelOptions		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array $labelOptions = ['class' => 'control-label']	</div>
+
+	<p>The default options for the label tags. The parameter passed to <a href="yii_widgets_activefield.html#label()-detail">label()</a> will be
+merged with this property when rendering the label tag.</p>
+
+	
+
+	<div class="detailHeader" id="$hintOptions-detail">
+		$hintOptions		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array $hintOptions = ['class' => 'hint-block']	</div>
+
+	<p>The default options for the hint tags. The parameter passed to <a href="yii_widgets_activefield.html#hint()-detail">hint()</a> will be
+merged with this property when rendering the hint tag.
+The following special options are recognized:
+- tag: the tag name of the container element. Defaults to "div".</p>
+
+	
+
+	<div class="detailHeader" id="$enableClientValidation-detail">
+		$enableClientValidation		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	boolean $enableClientValidation = null	</div>
+
+	<p>Whether to enable client-side data validation.
+If not set, it will take the value of <a href="yii_widgets_activeform.html#$enableClientValidation-detail">yii\widgets\ActiveForm::$enableClientValidation</a>.</p>
+
+	
+
+	<div class="detailHeader" id="$enableAjaxValidation-detail">
+		$enableAjaxValidation		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	boolean $enableAjaxValidation = null	</div>
+
+	<p>Whether to enable AJAX-based data validation.
+If not set, it will take the value of <a href="yii_widgets_activeform.html#$enableAjaxValidation-detail">yii\widgets\ActiveForm::$enableAjaxValidation</a>.</p>
+
+	
+
+	<div class="detailHeader" id="$validateOnChange-detail">
+		$validateOnChange		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	boolean $validateOnChange = null	</div>
+
+	<p>Whether to perform validation when the input field loses focus and its value is found changed.
+If not set, it will take the value of <a href="yii_widgets_activeform.html#$validateOnChange-detail">yii\widgets\ActiveForm::$validateOnChange</a>.</p>
+
+	
+
+	<div class="detailHeader" id="$validateOnType-detail">
+		$validateOnType		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	boolean $validateOnType = null	</div>
+
+	<p>Whether to perform validation while the user is typing in the input field.
+If not set, it will take the value of <a href="yii_widgets_activeform.html#$validateOnType-detail">yii\widgets\ActiveForm::$validateOnType</a>.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_widgets_activefield.html#$validationDelay-detail">$validationDelay</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="$validationDelay-detail">
+		$validationDelay		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	integer $validationDelay = null	</div>
+
+	<p>Number of milliseconds that the validation should be delayed when the input field
+is changed or the user types in the field.
+If not set, it will take the value of <a href="yii_widgets_activeform.html#$validationDelay-detail">yii\widgets\ActiveForm::$validationDelay</a>.</p>
+
+	
+
+	<div class="detailHeader" id="$selectors-detail">
+		$selectors		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array $selectors = null	</div>
+
+	<p>The jQuery selectors for selecting the container, input and error tags.
+The array keys should be "container", "input", and/or "error", and the array values
+are the corresponding selectors. For example, <code>['input' =&gt; '#my-input']</code>.
+The container selector is used under the context of the form, while the input and the error
+selectors are used under the context of the container.
+You normally do not need to set this property as the default selectors should work well for most cases.</p>
+
+	
+
+	<div class="detailHeader" id="$parts-detail">
+		$parts		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array $parts = []	</div>
+
+	<p>Different parts of the field (e.g. input, label). This will be used together with
+<a href="yii_widgets_activefield.html#$template-detail">$template</a> to generate the final field HTML code. The keys are the token names in <a href="yii_widgets_activefield.html#$template-detail">$template</a>,
+while the values are the corresponding HTML code. Valid tokens include <code>{input}</code>, <code>{label}</code> and <code>{error}</code>. 
+Note that you normally don't need to access this property directly as
+it is maintained by various methods of this class.</p>
+
+	
+
+	<div class="detailHeader" id="$behaviors-detail">
+		$behaviors		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_base_behavior.html">yii\base\Behavior</a>[] <a href="yii_base_component.html#getBehaviors()-detail">getBehaviors</a>(  )	</div>
+
+	<p>list of behaviors attached to this component</p>
+
+	
+<h2>Method Details</h2>
+
+
+	<div class="detailHeader" id="__toString()-detail">
+		__toString()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_widgets_activefield.html#__toString()-detail">__toString</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the string representation of this object.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>PHP magic method that returns the string representation of this object.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="render()-detail">
+		render()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_widgets_activefield.html#render()-detail">render</a>( $content = null )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$content</td>
+				  <td class="paramTypeCol">string|callable</td>
+				  <td class="paramDescCol"><p>The content within the field container.
+If null (not set), the default methods will be called to generate the label, error tag and input tag,
+and use them as the content.
+If a callable, it will be called to generate the content. The signature of the callable should be:</p>
+
+<pre><code>function ($field) {
+    return $html;
+}
+</code></pre></td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the rendering result</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Renders the whole field.</strong></p>
+	<p>This method will generate the label, error tag, input tag and hint tag (if any), and
+assemble them into HTML according to <a href="yii_widgets_activefield.html#$template-detail">$template</a>.</p>
+
+	
+
+	<div class="detailHeader" id="begin()-detail">
+		begin()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_widgets_activefield.html#begin()-detail">begin</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the rendering result.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Renders the opening tag of the field container.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="end()-detail">
+		end()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_widgets_activefield.html#end()-detail">end</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the rendering result.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Renders the closing tag of the field container.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="label()-detail">
+		label()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			static <a href="yii_widgets_activefield.html#label()-detail">label</a>( $label = null, $options = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$label</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The label to use. If null, it will be generated via <a href="yii_base_model.html#getAttributeLabel()-detail">yii\base\Model::getAttributeLabel()</a>.
+Note that this will NOT be <a href="yii_helpers_basehtml.html#encode()-detail">encoded</a>.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The tag options in terms of name-value pairs. It will be merged with <a href="yii_widgets_activefield.html#$labelOptions-detail">$labelOptions</a>.
+The options will be rendered as the attributes of the resulting tag. The values will be HTML-encoded
+using <a href="yii_helpers_basehtml.html#encode()-detail">yii\helpers\Html::encode()</a>. If a value is null, the corresponding attribute will not be rendered.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">static</td>
+				  <td class="paramDescCol">the field object itself</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Generates a label tag for <a href="yii_widgets_activefield.html#$attribute-detail">$attribute</a>.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="error()-detail">
+		error()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			static <a href="yii_widgets_activefield.html#error()-detail">error</a>( $options = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The tag options in terms of name-value pairs. It will be merged with <a href="yii_widgets_activefield.html#$errorOptions-detail">$errorOptions</a>.
+The options will be rendered as the attributes of the resulting tag. The values will be HTML-encoded
+using <a href="yii_helpers_basehtml.html#encode()-detail">yii\helpers\Html::encode()</a>. If a value is null, the corresponding attribute will not be rendered.
+The following options are specially handled:
+- tag: this specifies the tag name. If not set, "div" will be used.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">static</td>
+				  <td class="paramDescCol">the field object itself</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Generates a tag that contains the first validation error of <a href="yii_widgets_activefield.html#$attribute-detail">$attribute</a>.</strong></p>
+	<p>Note that even if there is no validation error, this method will still return an empty error tag.</p>
+
+	
+
+	<div class="detailHeader" id="hint()-detail">
+		hint()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			static <a href="yii_widgets_activefield.html#hint()-detail">hint</a>( $content, $options = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$content</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The hint content. It will NOT be HTML-encoded.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The tag options in terms of name-value pairs. These will be rendered as
+the attributes of the hint tag. The values will be HTML-encoded using <a href="yii_helpers_basehtml.html#encode()-detail">yii\helpers\Html::encode()</a>.
+The following options are specially handled:
+- tag: this specifies the tag name. If not set, "div" will be used.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">static</td>
+				  <td class="paramDescCol">the field object itself</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Renders the hint tag.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="input()-detail">
+		input()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			static <a href="yii_widgets_activefield.html#input()-detail">input</a>( $type, $options = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$type</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The input type (e.g. 'text', 'password')</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The tag options in terms of name-value pairs. These will be rendered as
+the attributes of the resulting tag. The values will be HTML-encoded using <a href="yii_helpers_basehtml.html#encode()-detail">yii\helpers\Html::encode()</a>.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">static</td>
+				  <td class="paramDescCol">the field object itself</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Renders an input tag.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="textInput()-detail">
+		textInput()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			static <a href="yii_widgets_activefield.html#textInput()-detail">textInput</a>( $options = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The tag options in terms of name-value pairs. These will be rendered as
+the attributes of the resulting tag. The values will be HTML-encoded using <a href="yii_helpers_basehtml.html#encode()-detail">yii\helpers\Html::encode()</a>.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">static</td>
+				  <td class="paramDescCol">the field object itself</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Renders a text input.</strong></p>
+	<p>This method will generate the "name" and "value" tag attributes automatically for the model attribute
+unless they are explicitly specified in <code>$options</code>.</p>
+
+	
+
+	<div class="detailHeader" id="passwordInput()-detail">
+		passwordInput()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			static <a href="yii_widgets_activefield.html#passwordInput()-detail">passwordInput</a>( $options = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The tag options in terms of name-value pairs. These will be rendered as
+the attributes of the resulting tag. The values will be HTML-encoded using <a href="yii_helpers_basehtml.html#encode()-detail">yii\helpers\Html::encode()</a>.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">static</td>
+				  <td class="paramDescCol">the field object itself</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Renders a password input.</strong></p>
+	<p>This method will generate the "name" and "value" tag attributes automatically for the model attribute
+unless they are explicitly specified in <code>$options</code>.</p>
+
+	
+
+	<div class="detailHeader" id="fileInput()-detail">
+		fileInput()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			static <a href="yii_widgets_activefield.html#fileInput()-detail">fileInput</a>( $options = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The tag options in terms of name-value pairs. These will be rendered as
+the attributes of the resulting tag. The values will be HTML-encoded using <a href="yii_helpers_basehtml.html#encode()-detail">yii\helpers\Html::encode()</a>.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">static</td>
+				  <td class="paramDescCol">the field object itself</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Renders a file input.</strong></p>
+	<p>This method will generate the "name" and "value" tag attributes automatically for the model attribute
+unless they are explicitly specified in <code>$options</code>.</p>
+
+	
+
+	<div class="detailHeader" id="textarea()-detail">
+		textarea()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			static <a href="yii_widgets_activefield.html#textarea()-detail">textarea</a>( $options = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The tag options in terms of name-value pairs. These will be rendered as
+the attributes of the resulting tag. The values will be HTML-encoded using <a href="yii_helpers_basehtml.html#encode()-detail">yii\helpers\Html::encode()</a>.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">static</td>
+				  <td class="paramDescCol">the field object itself</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Renders a text area.</strong></p>
+	<p>The model attribute value will be used as the content in the textarea.</p>
+
+	
+
+	<div class="detailHeader" id="radio()-detail">
+		radio()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			static <a href="yii_widgets_activefield.html#radio()-detail">radio</a>( $options = [], $enclosedByLabel = true )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The tag options in terms of name-value pairs. The following options are specially handled:
+- uncheck: string, the value associated with the uncheck state of the radio button. If not set,
+  it will take the default value '0'. This method will render a hidden input so that if the radio button
+  is not checked and is submitted, the value of this attribute will still be submitted to the server
+  via the hidden input.
+- label: string, a label displayed next to the radio button.  It will NOT be HTML-encoded. Therefore you can pass
+  in HTML code such as an image tag. If this is is coming from end users, you should <a href="yii_helpers_basehtml.html#encode()-detail">yii\helpers\Html::encode()</a> it to prevent XSS attacks.
+  When this option is specified, the radio button will be enclosed by a label tag.
+- labelOptions: array, the HTML attributes for the label tag. This is only used when the "label" option is specified.
+The rest of the options will be rendered as the attributes of the resulting tag. The values will
+be HTML-encoded using <a href="yii_helpers_basehtml.html#encode()-detail">yii\helpers\Html::encode()</a>. If a value is null, the corresponding attribute will not be rendered.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$enclosedByLabel</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">Whether to enclose the radio within the label.
+If true, the method will still use <a href="yii_widgets_activefield.html#$template-detail">$template</a> to layout the checkbox and the error message
+except that the radio is enclosed by the label tag.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">static</td>
+				  <td class="paramDescCol">the field object itself</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Renders a radio button.</strong></p>
+	<p>This method will generate the "checked" tag attribute according to the model attribute value.</p>
+
+	
+
+	<div class="detailHeader" id="checkbox()-detail">
+		checkbox()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			static <a href="yii_widgets_activefield.html#checkbox()-detail">checkbox</a>( $options = [], $enclosedByLabel = true )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The tag options in terms of name-value pairs. The following options are specially handled:
+- uncheck: string, the value associated with the uncheck state of the radio button. If not set,
+  it will take the default value '0'. This method will render a hidden input so that if the radio button
+  is not checked and is submitted, the value of this attribute will still be submitted to the server
+  via the hidden input.
+- label: string, a label displayed next to the checkbox.  It will NOT be HTML-encoded. Therefore you can pass
+  in HTML code such as an image tag. If this is is coming from end users, you should <a href="yii_helpers_basehtml.html#encode()-detail">yii\helpers\Html::encode()</a> it to prevent XSS attacks.
+  When this option is specified, the checkbox will be enclosed by a label tag.
+- labelOptions: array, the HTML attributes for the label tag. This is only used when the "label" option is specified.
+The rest of the options will be rendered as the attributes of the resulting tag. The values will
+be HTML-encoded using <a href="yii_helpers_basehtml.html#encode()-detail">yii\helpers\Html::encode()</a>. If a value is null, the corresponding attribute will not be rendered.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$enclosedByLabel</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">Whether to enclose the checkbox within the label.
+If true, the method will still use <a href="yii_widgets_activefield.html#$template-detail">$template</a> to layout the checkbox and the error message
+except that the checkbox is enclosed by the label tag.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">static</td>
+				  <td class="paramDescCol">the field object itself</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Renders a checkbox.</strong></p>
+	<p>This method will generate the "checked" tag attribute according to the model attribute value.</p>
+
+	
+
+	<div class="detailHeader" id="dropDownList()-detail">
+		dropDownList()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			static <a href="yii_widgets_activefield.html#dropDownList()-detail">dropDownList</a>( $items, $options = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$items</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The option data items. The array keys are option values, and the array values
+are the corresponding option labels. The array can also be nested (i.e. some array values are arrays too).
+For each sub-array, an option group will be generated whose label is the key associated with the sub-array.
+If you have a list of data models, you may convert them into the format described above using
+<a href="yii_helpers_basearrayhelper.html#map()-detail">yii\helpers\ArrayHelper::map()</a>.
+Note, the values and labels will be automatically HTML-encoded by this method, and the blank spaces in
+the labels will also be HTML-encoded.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol"><p>The tag options in terms of name-value pairs. The following options are specially handled:
+- prompt: string, a prompt text to be displayed as the first option;
+- options: array, the attributes for the select option tags. The array keys must be valid option values,
+  and the array values are the extra attributes for the corresponding option tags. For example,</p>
+
+<pre><code>[
+    'value1' =&gt; ['disabled' =&gt; true],
+    'value2' =&gt; ['label' =&gt; 'value 2'],
+];
+</code></pre>
+
+<ul>
+<li>groups: array, the attributes for the optgroup tags. The structure of this is similar to that of 'options',
+except that the array keys represent the optgroup labels specified in $items.
+The rest of the options will be rendered as the attributes of the resulting tag. The values will
+be HTML-encoded using <a href="yii_helpers_basehtml.html#encode()-detail">yii\helpers\Html::encode()</a>. If a value is null, the corresponding attribute will not be rendered.</li>
+</ul></td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">static</td>
+				  <td class="paramDescCol">the field object itself</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Renders a drop-down list.</strong></p>
+	<p>The selection of the drop-down list is taken from the value of the model attribute.</p>
+
+	
+
+	<div class="detailHeader" id="listBox()-detail">
+		listBox()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			static <a href="yii_widgets_activefield.html#listBox()-detail">listBox</a>( $items, $options = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$items</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The option data items. The array keys are option values, and the array values
+are the corresponding option labels. The array can also be nested (i.e. some array values are arrays too).
+For each sub-array, an option group will be generated whose label is the key associated with the sub-array.
+If you have a list of data models, you may convert them into the format described above using
+<a href="yii_helpers_basearrayhelper.html#map()-detail">yii\helpers\ArrayHelper::map()</a>.
+Note, the values and labels will be automatically HTML-encoded by this method, and the blank spaces in
+the labels will also be HTML-encoded.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol"><p>The tag options in terms of name-value pairs. The following options are specially handled:
+- prompt: string, a prompt text to be displayed as the first option;
+- options: array, the attributes for the select option tags. The array keys must be valid option values,
+  and the array values are the extra attributes for the corresponding option tags. For example,</p>
+
+<pre><code>[
+    'value1' =&gt; ['disabled' =&gt; true],
+    'value2' =&gt; ['label' =&gt; 'value 2'],
+];
+</code></pre>
+
+<ul>
+<li>groups: array, the attributes for the optgroup tags. The structure of this is similar to that of 'options',
+except that the array keys represent the optgroup labels specified in $items.</li>
+<li>unselect: string, the value that will be submitted when no option is selected.
+When this attribute is set, a hidden field will be generated so that if no option is selected in multiple
+mode, we can still obtain the posted unselect value.
+The rest of the options will be rendered as the attributes of the resulting tag. The values will
+be HTML-encoded using <a href="yii_helpers_basehtml.html#encode()-detail">yii\helpers\Html::encode()</a>. If a value is null, the corresponding attribute will not be rendered.</li>
+</ul></td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">static</td>
+				  <td class="paramDescCol">the field object itself</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Renders a list box.</strong></p>
+	<p>The selection of the list box is taken from the value of the model attribute.</p>
+
+	
+
+	<div class="detailHeader" id="checkboxList()-detail">
+		checkboxList()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			static <a href="yii_widgets_activefield.html#checkboxList()-detail">checkboxList</a>( $items, $options = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$items</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The data item used to generate the checkboxes.
+The array values are the labels, while the array keys are the corresponding checkbox values.
+Note that the labels will NOT be HTML-encoded, while the values will.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">Options (name => config) for the checkbox list. The following options are specially handled:
+- unselect: string, the value that should be submitted when none of the checkboxes is selected.
+  By setting this option, a hidden input will be generated.
+- separator: string, the HTML code that separates items.
+- item: callable, a callback that can be used to customize the generation of the HTML code
+  corresponding to a single item in $items. The signature of this callback must be:</p>
+
+<pre><code>function ($index, $label, $name, $checked, $value)
+</code></pre>
+
+<p>where $index is the zero-based index of the checkbox in the whole list; $label
+is the label for the checkbox; and $name, $value and $checked represent the name,
+value and the checked status of the checkbox input.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">static</td>
+				  <td class="paramDescCol">the field object itself</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Renders a list of checkboxes.</strong></p>
+	<p>A checkbox list allows multiple selection, like <a href="yii_widgets_activefield.html#listBox()-detail">listBox()</a>.
+As a result, the corresponding submitted value is an array.
+The selection of the checkbox list is taken from the value of the model attribute.</p>
+
+	
+
+	<div class="detailHeader" id="radioList()-detail">
+		radioList()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			static <a href="yii_widgets_activefield.html#radioList()-detail">radioList</a>( $items, $options = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$items</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The data item used to generate the radio buttons.
+The array keys are the labels, while the array values are the corresponding radio button values.
+Note that the labels will NOT be HTML-encoded, while the values will.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">Options (name => config) for the radio button list. The following options are specially handled:
+- unselect: string, the value that should be submitted when none of the radio buttons is selected.
+  By setting this option, a hidden input will be generated.
+- separator: string, the HTML code that separates items.
+- item: callable, a callback that can be used to customize the generation of the HTML code
+  corresponding to a single item in $items. The signature of this callback must be:</p>
+
+<pre><code>function ($index, $label, $name, $checked, $value)
+</code></pre>
+
+<p>where $index is the zero-based index of the radio button in the whole list; $label
+is the label for the radio button; and $name, $value and $checked represent the name,
+value and the checked status of the radio button input.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">static</td>
+				  <td class="paramDescCol">the field object itself</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Renders a list of radio buttons.</strong></p>
+	<p>A radio button list is like a checkbox list, except that it only allows single selection.
+The selection of the radio buttons is taken from the value of the model attribute.</p>
+
+	
+
+	<div class="detailHeader" id="widget()-detail">
+		widget()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			static <a href="yii_widgets_activefield.html#widget()-detail">widget</a>( $class, $config = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$class</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The widget class name</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$config</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">Name-value pairs that will be used to initialize the widget</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">static</td>
+				  <td class="paramDescCol">the field object itself</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Renders a widget as the input of the field.</strong></p>
+	<p>Note that the widget must have both <code>model</code> and <code>attribute</code> properties. They will
+be initialized with <a href="yii_widgets_activefield.html#$model-detail">$model</a> and <a href="yii_widgets_activefield.html#$attribute-detail">$attribute</a> of this field, respectively.</p>
+
+<p>If you want to use a widget that does not have <code>model</code> and <code>attribute</code> properties,
+please use <a href="yii_widgets_activefield.html#render()-detail">render()</a> instead.</p>
+
+	
+
+	<div class="detailHeader" id="adjustLabelFor()-detail">
+		adjustLabelFor()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_widgets_activefield.html#adjustLabelFor()-detail">adjustLabelFor</a>( $options )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The input options</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Adjusts the "for" attribute for the label based on the input options.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getClientOptions()-detail">
+		getClientOptions()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			array <a href="yii_widgets_activefield.html#getClientOptions()-detail">getClientOptions</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">the JS options</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the JS options for the field.</strong></p>
+	<p></p>
+
+	
+			</div><!-- end of content -->
+
+		<div id="apiFooter">
+			<p>&copy; 2008-2013 by <a href="http://www.yiisoft.com">Yii Software LLC</a></p>
+			<p>All Rights Reserved.</p>
+		</div><!-- end of footer -->
+
+<script type="text/javascript">
+/*<![CDATA[*/
+$("a.toggle").on('click', function() {
+	var $this = $(this);
+	if ($this.hasClass('properties-hidden')) {
+		$this.text($this.text().replace(/Show/,'Hide'));
+		$this.parents(".summary").find(".inherited").show();
+		$this.removeClass('properties-hidden');
+	} else {
+		$this.text($this.text().replace(/Hide/,'Show'));
+		$this.parents(".summary").find(".inherited").hide();
+		$this.addClass('properties-hidden');
+	}
+	return false;
+});
+/*
+$(".sourceCode a.show").toggle(function(){
+	$(this).text($(this).text().replace(/show/,'hide'));
+	$(this).parents(".sourceCode").find("div.code").show();
+},function(){
+	$(this).text($(this).text().replace(/hide/,'show'));
+	$(this).parents(".sourceCode").find("div.code").hide();
+});
+$("a.sourceLink").click(function(){
+	$(this).attr('target','_blank');
+});
+*/
+/*]]>*/
+</script>
+
+	</div><!-- end of page -->
+</body>
+</html>

@@ -1,0 +1,831 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="language" content="en" />
+<link href="./assets/4138e429/api.css" rel="stylesheet">
+<link href="./assets/4138e429/style.css" rel="stylesheet">
+<script src="./assets/a91b37a6/jquery.js"></script><title>Yii Framework 2.0 API Documentation</title>
+</head>
+
+<body>
+	<div id="apiPage">
+
+		<div id="apiHeader">
+			<a href="http://www.yiiframework.com">Yii Framework</a> v2.0.0-dev Class Reference
+		</div><!-- end of header -->
+
+		<div id="content">
+		<h1>Class yii\web\UrlManager</h1>
+<div id="nav">
+	<a href="index.html">All Classes</a>
+			| <a href="#properties">Properties</a>
+				| <a href="#methods">Methods</a>
+			</div>
+
+<table class="summaryTable docClass">
+	<colgroup>
+		<col class="col-name" />
+		<col class="col-value" />
+	</colgroup>
+			<tr><th>Inheritance</th><td><a href="yii_web_urlmanager.html">yii\web\UrlManager</a> &raquo;
+<a href="yii_base_component.html">yii\base\Component</a> &raquo;
+<a href="yii_base_object.html">yii\base\Object</a></td></tr>
+				<tr><th>Implements</th><td><a href="yii_base_arrayable.html">yii\base\Arrayable</a></td></tr>
+								<tr><th>Available since version</th><td>2.0</td></tr>
+		<tr>
+	  <th>Source Code</th>
+	  <td></td>
+	</tr>
+</table>
+
+<div id="classDescription">
+	<strong>UrlManager handles HTTP request parsing and creation of URLs based on a set of rules.</strong>
+	<p><p>UrlManager is configured as an application component in <span style="background: #f00;">\yii\web\yii\base\Application</span> by default.
+You can access that instance via <code>Yii::$app-&gt;urlManager</code>.</p>
+
+<p>You can modify its configuration by adding an array to your application config under <code>components</code>
+as it is shown in the following example:</p>
+
+<pre><code>'urlManager' =&gt; [
+    'enablePrettyUrl' =&gt; true,
+    'rules' =&gt; [
+        // your rules go here
+    ],
+    // ...
+]
+</code></pre></p>
+</div>
+
+<a name="properties"></a>
+
+<div class="summary docProperty">
+<h2>Public Properties</h2>
+
+<p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-property" />
+	<col class="col-type" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Property</th><th>Type</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr id="$enablePrettyUrl">
+		<td><a href="yii_web_urlmanager.html#$enablePrettyUrl-detail">$enablePrettyUrl</a></td>
+		<td>boolean</td>
+		<td>Whether to enable pretty URLs</td>
+		<td><a href="yii_web_urlmanager.html">yii\web\UrlManager</a></td>
+	</tr>
+			<tr id="$enableStrictParsing">
+		<td><a href="yii_web_urlmanager.html#$enableStrictParsing-detail">$enableStrictParsing</a></td>
+		<td>boolean</td>
+		<td>Whether to enable strict parsing</td>
+		<td><a href="yii_web_urlmanager.html">yii\web\UrlManager</a></td>
+	</tr>
+			<tr id="$rules">
+		<td><a href="yii_web_urlmanager.html#$rules-detail">$rules</a></td>
+		<td>array</td>
+		<td>The rules for creating and parsing URLs when <a href="yii_web_urlmanager.html#$enablePrettyUrl-detail">$enablePrettyUrl</a> is true</td>
+		<td><a href="yii_web_urlmanager.html">yii\web\UrlManager</a></td>
+	</tr>
+			<tr id="$suffix">
+		<td><a href="yii_web_urlmanager.html#$suffix-detail">$suffix</a></td>
+		<td>string</td>
+		<td>The URL suffix used when in 'path' format</td>
+		<td><a href="yii_web_urlmanager.html">yii\web\UrlManager</a></td>
+	</tr>
+			<tr id="$showScriptName">
+		<td><a href="yii_web_urlmanager.html#$showScriptName-detail">$showScriptName</a></td>
+		<td>boolean</td>
+		<td>Whether to show entry script name in the constructed URL</td>
+		<td><a href="yii_web_urlmanager.html">yii\web\UrlManager</a></td>
+	</tr>
+			<tr id="$routeVar">
+		<td><a href="yii_web_urlmanager.html#$routeVar-detail">$routeVar</a></td>
+		<td>string</td>
+		<td>The GET variable name for route</td>
+		<td><a href="yii_web_urlmanager.html">yii\web\UrlManager</a></td>
+	</tr>
+			<tr id="$cache">
+		<td><a href="yii_web_urlmanager.html#$cache-detail">$cache</a></td>
+		<td><a href="yii_caching_cache.html">yii\caching\Cache</a>|string</td>
+		<td>The cache object or the application component ID of the cache object</td>
+		<td><a href="yii_web_urlmanager.html">yii\web\UrlManager</a></td>
+	</tr>
+			<tr id="$ruleConfig">
+		<td><a href="yii_web_urlmanager.html#$ruleConfig-detail">$ruleConfig</a></td>
+		<td>array</td>
+		<td>The default configuration of URL rules</td>
+		<td><a href="yii_web_urlmanager.html">yii\web\UrlManager</a></td>
+	</tr>
+			<tr id="$behaviors">
+		<td><a href="yii_web_urlmanager.html#$behaviors-detail">$behaviors</a></td>
+		<td><a href="yii_base_behavior.html">yii\base\Behavior</a>[]</td>
+		<td>list of behaviors attached to this component</td>
+		<td><a href="yii_web_urlmanager.html">yii\web\UrlManager</a></td>
+	</tr>
+			<tr id="$baseUrl">
+		<td><a href="yii_web_urlmanager.html#$baseUrl-detail">$baseUrl</a></td>
+		<td>string</td>
+		<td>the base URL that is used by <a href="yii_web_urlmanager.html#createUrl()-detail">createUrl()</a> to prepend URLs it creates</td>
+		<td><a href="yii_web_urlmanager.html">yii\web\UrlManager</a></td>
+	</tr>
+			<tr id="$hostInfo">
+		<td><a href="yii_web_urlmanager.html#$hostInfo-detail">$hostInfo</a></td>
+		<td>string</td>
+		<td>the host info (e</td>
+		<td><a href="yii_web_urlmanager.html">yii\web\UrlManager</a></td>
+	</tr>
+	</table>
+</div>
+<a name="methods"></a>
+
+<div class="summary docMethod">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr class="inherited" id="className()">
+		<td><a href="yii_base_object.html#className()-detail">className()</a></td>
+		<td></td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__construct()">
+		<td><a href="yii_base_object.html#__construct()-detail">__construct()</a></td>
+		<td>Constructor.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr id="init()">
+		<td><a href="yii_web_urlmanager.html#init()-detail">init()</a></td>
+		<td>Initializes UrlManager.</td>
+		<td><a href="yii_web_urlmanager.html">yii\web\UrlManager</a></td>
+	</tr>
+			<tr class="inherited" id="__get()">
+		<td><a href="yii_base_component.html#__get()-detail">__get()</a></td>
+		<td>Returns the value of a component property.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__set()">
+		<td><a href="yii_base_component.html#__set()-detail">__set()</a></td>
+		<td>Sets the value of a component property.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__isset()">
+		<td><a href="yii_base_component.html#__isset()-detail">__isset()</a></td>
+		<td>Checks if a property value is null.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__unset()">
+		<td><a href="yii_base_component.html#__unset()-detail">__unset()</a></td>
+		<td>Sets a component property to be null.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__call()">
+		<td><a href="yii_base_component.html#__call()-detail">__call()</a></td>
+		<td>Calls the named method which is not a class method.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasProperty()">
+		<td><a href="yii_base_component.html#hasProperty()-detail">hasProperty()</a></td>
+		<td>Returns a value indicating whether a property is defined for this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="canGetProperty()">
+		<td><a href="yii_base_component.html#canGetProperty()-detail">canGetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be read.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="canSetProperty()">
+		<td><a href="yii_base_component.html#canSetProperty()-detail">canSetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be set.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasMethod()">
+		<td><a href="yii_base_component.html#hasMethod()-detail">hasMethod()</a></td>
+		<td>Returns a value indicating whether a method is defined.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="toArray()">
+		<td><a href="yii_base_object.html#toArray()-detail">toArray()</a></td>
+		<td>Converts the object into an array.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__clone()">
+		<td><a href="yii_base_component.html#__clone()-detail">__clone()</a></td>
+		<td>This method is called after the object is created by cloning an existing one.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="behaviors()">
+		<td><a href="yii_base_component.html#behaviors()-detail">behaviors()</a></td>
+		<td>Returns a list of behaviors that this component should behave as.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasEventHandlers()">
+		<td><a href="yii_base_component.html#hasEventHandlers()-detail">hasEventHandlers()</a></td>
+		<td>Returns a value indicating whether there is any handler attached to the named event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="on()">
+		<td><a href="yii_base_component.html#on()-detail">on()</a></td>
+		<td>Attaches an event handler to an event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="off()">
+		<td><a href="yii_base_component.html#off()-detail">off()</a></td>
+		<td>Detaches an existing event handler from this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="trigger()">
+		<td><a href="yii_base_component.html#trigger()-detail">trigger()</a></td>
+		<td>Triggers an event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="getBehavior()">
+		<td><a href="yii_base_component.html#getBehavior()-detail">getBehavior()</a></td>
+		<td>Returns the named behavior object.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="getBehaviors()">
+		<td><a href="yii_base_component.html#getBehaviors()-detail">getBehaviors()</a></td>
+		<td>Returns all behaviors attached to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="attachBehavior()">
+		<td><a href="yii_base_component.html#attachBehavior()-detail">attachBehavior()</a></td>
+		<td>Attaches a behavior to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="attachBehaviors()">
+		<td><a href="yii_base_component.html#attachBehaviors()-detail">attachBehaviors()</a></td>
+		<td>Attaches a list of behaviors to the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="detachBehavior()">
+		<td><a href="yii_base_component.html#detachBehavior()-detail">detachBehavior()</a></td>
+		<td>Detaches a behavior from the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="detachBehaviors()">
+		<td><a href="yii_base_component.html#detachBehaviors()-detail">detachBehaviors()</a></td>
+		<td>Detaches all behaviors from the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="ensureBehaviors()">
+		<td><a href="yii_base_component.html#ensureBehaviors()-detail">ensureBehaviors()</a></td>
+		<td>Makes sure that the behaviors declared in <a href="yii_base_component.html#behaviors()-detail">behaviors()</a> are attached to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+				<tr id="parseRequest()">
+		<td><a href="yii_web_urlmanager.html#parseRequest()-detail">parseRequest()</a></td>
+		<td>Parses the user request.</td>
+		<td><a href="yii_web_urlmanager.html">yii\web\UrlManager</a></td>
+	</tr>
+			<tr id="createUrl()">
+		<td><a href="yii_web_urlmanager.html#createUrl()-detail">createUrl()</a></td>
+		<td>Creates a URL using the given route and parameters.</td>
+		<td><a href="yii_web_urlmanager.html">yii\web\UrlManager</a></td>
+	</tr>
+			<tr id="createAbsoluteUrl()">
+		<td><a href="yii_web_urlmanager.html#createAbsoluteUrl()-detail">createAbsoluteUrl()</a></td>
+		<td>Creates an absolute URL using the given route and parameters.</td>
+		<td><a href="yii_web_urlmanager.html">yii\web\UrlManager</a></td>
+	</tr>
+			<tr id="getBaseUrl()">
+		<td><a href="yii_web_urlmanager.html#getBaseUrl()-detail">getBaseUrl()</a></td>
+		<td>Returns the base URL that is used by <a href="yii_web_urlmanager.html#createUrl()-detail">createUrl()</a> to prepend URLs it creates.</td>
+		<td><a href="yii_web_urlmanager.html">yii\web\UrlManager</a></td>
+	</tr>
+			<tr id="setBaseUrl()">
+		<td><a href="yii_web_urlmanager.html#setBaseUrl()-detail">setBaseUrl()</a></td>
+		<td>Sets the base URL that is used by <a href="yii_web_urlmanager.html#createUrl()-detail">createUrl()</a> to prepend URLs it creates.</td>
+		<td><a href="yii_web_urlmanager.html">yii\web\UrlManager</a></td>
+	</tr>
+			<tr id="getHostInfo()">
+		<td><a href="yii_web_urlmanager.html#getHostInfo()-detail">getHostInfo()</a></td>
+		<td>Returns the host info that is used by <a href="yii_web_urlmanager.html#createAbsoluteUrl()-detail">createAbsoluteUrl()</a> to prepend URLs it creates.</td>
+		<td><a href="yii_web_urlmanager.html">yii\web\UrlManager</a></td>
+	</tr>
+			<tr id="setHostInfo()">
+		<td><a href="yii_web_urlmanager.html#setHostInfo()-detail">setHostInfo()</a></td>
+		<td>Sets the host info that is used by <a href="yii_web_urlmanager.html#createAbsoluteUrl()-detail">createAbsoluteUrl()</a> to prepend URLs it creates.</td>
+		<td><a href="yii_web_urlmanager.html">yii\web\UrlManager</a></td>
+	</tr>
+	</table>
+</div>
+<div class="summary docMethod">
+<h2>Protected Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+																												<tr id="compileRules()">
+		<td><a href="yii_web_urlmanager.html#compileRules()-detail">compileRules()</a></td>
+		<td>Parses the URL rules.</td>
+		<td><a href="yii_web_urlmanager.html">yii\web\UrlManager</a></td>
+	</tr>
+								</table>
+</div>
+<a name="events"></a>
+
+<a name="constants"></a>
+
+<h2>Property Details</h2>
+
+
+	<div class="detailHeader" id="$enablePrettyUrl-detail">
+		$enablePrettyUrl		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	boolean $enablePrettyUrl = false	</div>
+
+	<p>Whether to enable pretty URLs. Instead of putting all parameters in the query
+string part of a URL, pretty URLs allow using path info to represent some of the parameters
+and can thus produce more user-friendly URLs, such as "/news/Yii-is-released", instead of
+"/index.php?r=news/view&amp;id=100".</p>
+
+	
+
+	<div class="detailHeader" id="$enableStrictParsing-detail">
+		$enableStrictParsing		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	boolean $enableStrictParsing = false	</div>
+
+	<p>Whether to enable strict parsing. If strict parsing is enabled, the incoming
+requested URL must match at least one of the <a href="yii_web_urlmanager.html#$rules-detail">$rules</a> in order to be treated as a valid request.
+Otherwise, the path info part of the request will be treated as the requested route.
+This property is used only when <a href="yii_web_urlmanager.html#$enablePrettyUrl-detail">$enablePrettyUrl</a> is true.</p>
+
+	
+
+	<div class="detailHeader" id="$rules-detail">
+		$rules		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array $rules = []	</div>
+
+	<p>The rules for creating and parsing URLs when <a href="yii_web_urlmanager.html#$enablePrettyUrl-detail">$enablePrettyUrl</a> is true.
+This property is used only if <a href="yii_web_urlmanager.html#$enablePrettyUrl-detail">$enablePrettyUrl</a> is true. Each element in the array
+is the configuration array for creating a single URL rule. The configuration will
+be merged with <a href="yii_web_urlmanager.html#$ruleConfig-detail">$ruleConfig</a> first before it is used for creating the rule object.
+A special shortcut format can be used if a rule only specifies <a href="yii_web_urlrule.html#$pattern-detail">pattern</a>
+and <a href="yii_web_urlrule.html#$route-detail">route</a>: <code>'pattern' =&gt; 'route'</code>. That is, instead of using a configuration
+array, one can use the key to represent the pattern and the value the corresponding route.
+For example, <code>'post/&lt;id:\d+&gt;' =&gt; 'post/view'</code>.
+For RESTful routing the mentioned shortcut format also allows you to specify the
+<a href="yii_web_urlrule.html#$verb-detail">HTTP verb</a> that the rule should apply for.
+You can do that  by prepending it to the pattern, separated by space.
+For example, <code>'PUT post/&lt;id:\d+&gt;' =&gt; 'post/update'</code>.
+You may specify multiple verbs by separating them with comma
+like this: <code>'POST,PUT post/index' =&gt; 'post/create'</code>.
+The supported verbs in the shortcut format are: GET, HEAD, POST, PUT, PATCH and DELETE.
+Note that <a href="yii_web_urlrule.html#$mode-detail">mode</a> will be set to PARSING_ONLY when specifying verb in this way
+so you normally would not specify a verb for normal GET request.
+Here is an example configuration for RESTful CRUD controller:</p>
+
+<pre><code class="php">[
+    'dashboard' =&gt; 'site/index',
+    'POST &lt;controller:\w+&gt;s' =&gt; '&lt;controller&gt;/create',
+    '&lt;controller:\w+&gt;s' =&gt; '&lt;controller&gt;/index',
+    'PUT &lt;controller:\w+&gt;/&lt;id:\d+&gt;'    =&gt; '&lt;controller&gt;/update',
+    'DELETE &lt;controller:\w+&gt;/&lt;id:\d+&gt;' =&gt; '&lt;controller&gt;/delete',
+    '&lt;controller:\w+&gt;/&lt;id:\d+&gt;'        =&gt; '&lt;controller&gt;/view',
+];
+</code></pre>
+
+<p>Note that if you modify this property after the UrlManager object is created, make sure
+you populate the array with rule objects instead of rule configurations.</p>
+
+	
+
+	<div class="detailHeader" id="$suffix-detail">
+		$suffix		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $suffix = null	</div>
+
+	<p>The URL suffix used when in 'path' format.
+For example, ".html" can be used so that the URL looks like pointing to a static HTML page.
+This property is used only if <a href="yii_web_urlmanager.html#$enablePrettyUrl-detail">$enablePrettyUrl</a> is true.</p>
+
+	
+
+	<div class="detailHeader" id="$showScriptName-detail">
+		$showScriptName		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	boolean $showScriptName = true	</div>
+
+	<p>Whether to show entry script name in the constructed URL. Defaults to true.
+This property is used only if <a href="yii_web_urlmanager.html#$enablePrettyUrl-detail">$enablePrettyUrl</a> is true.</p>
+
+	
+
+	<div class="detailHeader" id="$routeVar-detail">
+		$routeVar		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $routeVar = 'r'	</div>
+
+	<p>The GET variable name for route. This property is used only if <a href="yii_web_urlmanager.html#$enablePrettyUrl-detail">$enablePrettyUrl</a> is false.</p>
+
+	
+
+	<div class="detailHeader" id="$cache-detail">
+		$cache		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_caching_cache.html">yii\caching\Cache</a>|string $cache = 'cache'	</div>
+
+	<p>The cache object or the application component ID of the cache object.
+Compiled URL rules will be cached through this cache object, if it is available.
+After the UrlManager object is created, if you want to change this property,
+you should only assign it with a cache object.
+Set this property to null if you do not want to cache the URL rules.</p>
+
+	
+
+	<div class="detailHeader" id="$ruleConfig-detail">
+		$ruleConfig		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array $ruleConfig = ['class' => 'yii\web\UrlRule']	</div>
+
+	<p>The default configuration of URL rules. Individual rule configurations
+specified via <a href="yii_web_urlmanager.html#$rules-detail">$rules</a> will take precedence when the same property of the rule is configured.</p>
+
+	
+
+	<div class="detailHeader" id="$behaviors-detail">
+		$behaviors		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_base_behavior.html">yii\base\Behavior</a>[] <a href="yii_base_component.html#getBehaviors()-detail">getBehaviors</a>(  )	</div>
+
+	<p>list of behaviors attached to this component</p>
+
+	
+
+	<div class="detailHeader" id="$baseUrl-detail">
+		$baseUrl		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string <a href="yii_web_urlmanager.html#getBaseUrl()-detail">getBaseUrl</a>(  )<br />void <a href="yii_web_urlmanager.html#setBaseUrl()-detail">setBaseUrl</a>( $value )	</div>
+
+	<p>the base URL that is used by <a href="yii_web_urlmanager.html#createUrl()-detail">createUrl()</a> to prepend URLs it creates.</p>
+
+	
+
+	<div class="detailHeader" id="$hostInfo-detail">
+		$hostInfo		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string <a href="yii_web_urlmanager.html#getHostInfo()-detail">getHostInfo</a>(  )<br />void <a href="yii_web_urlmanager.html#setHostInfo()-detail">setHostInfo</a>( $value )	</div>
+
+	<p>the host info (e.g. "http://www.example.com") that is used by <a href="yii_web_urlmanager.html#createAbsoluteUrl()-detail">createAbsoluteUrl()</a> to prepend URLs it creates.</p>
+
+	
+<h2>Method Details</h2>
+
+
+	<div class="detailHeader" id="init()-detail">
+		init()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_web_urlmanager.html#init()-detail">init</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p>Initializes UrlManager.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="compileRules()-detail">
+		compileRules()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_web_urlmanager.html#compileRules()-detail">compileRules</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p>Parses the URL rules.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="parseRequest()-detail">
+		parseRequest()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			array|boolean <a href="yii_web_urlmanager.html#parseRequest()-detail">parseRequest</a>( $request )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$request</td>
+				  <td class="paramTypeCol"><a href="yii_web_request.html">yii\web\Request</a></td>
+				  <td class="paramDescCol">The request component</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">array|boolean</td>
+				  <td class="paramDescCol">the route and the associated parameters. The latter is always empty
+if <a href="yii_web_urlmanager.html#$enablePrettyUrl-detail">$enablePrettyUrl</a> is false. False is returned if the current request cannot be successfully parsed.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Parses the user request.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="createUrl()-detail">
+		createUrl()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_web_urlmanager.html#createUrl()-detail">createUrl</a>( $route, $params = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$route</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The route</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$params</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The parameters (name-value pairs)</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the created URL</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Creates a URL using the given route and parameters.</strong></p>
+	<p>The URL created is a relative one. Use <a href="yii_web_urlmanager.html#createAbsoluteUrl()-detail">createAbsoluteUrl()</a> to create an absolute URL.</p>
+
+	
+
+	<div class="detailHeader" id="createAbsoluteUrl()-detail">
+		createAbsoluteUrl()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_web_urlmanager.html#createAbsoluteUrl()-detail">createAbsoluteUrl</a>( $route, $params = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$route</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The route</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$params</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The parameters (name-value pairs)</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the created URL</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Creates an absolute URL using the given route and parameters.</strong></p>
+	<p>This method prepends the URL created by <a href="yii_web_urlmanager.html#createUrl()-detail">createUrl()</a> with the <a href="yii_web_urlmanager.html#$hostInfo-detail">$hostInfo</a>.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_web_urlmanager.html#createUrl()-detail">createUrl()</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="getBaseUrl()-detail">
+		getBaseUrl()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_web_urlmanager.html#getBaseUrl()-detail">getBaseUrl</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the base URL that is used by <a href="yii_web_urlmanager.html#createUrl()-detail">createUrl()</a> to prepend URLs it creates.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the base URL that is used by <a href="yii_web_urlmanager.html#createUrl()-detail">createUrl()</a> to prepend URLs it creates.</strong></p>
+	<p>It defaults to <a href="yii_web_request.html#$scriptUrl-detail">yii\web\Request::$scriptUrl</a> if <a href="yii_web_urlmanager.html#$showScriptName-detail">$showScriptName</a> is true or <a href="yii_web_urlmanager.html#$enablePrettyUrl-detail">$enablePrettyUrl</a> is false;
+otherwise, it defaults to <a href="yii_web_request.html#$baseUrl-detail">yii\web\Request::$baseUrl</a>.</p>
+
+	
+
+	<div class="detailHeader" id="setBaseUrl()-detail">
+		setBaseUrl()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_web_urlmanager.html#setBaseUrl()-detail">setBaseUrl</a>( $value )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$value</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The base URL that is used by <a href="yii_web_urlmanager.html#createUrl()-detail">createUrl()</a> to prepend URLs it creates.</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Sets the base URL that is used by <a href="yii_web_urlmanager.html#createUrl()-detail">createUrl()</a> to prepend URLs it creates.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getHostInfo()-detail">
+		getHostInfo()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_web_urlmanager.html#getHostInfo()-detail">getHostInfo</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the host info (e.g. "http://www.example.com") that is used by <a href="yii_web_urlmanager.html#createAbsoluteUrl()-detail">createAbsoluteUrl()</a> to prepend URLs it creates.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the host info that is used by <a href="yii_web_urlmanager.html#createAbsoluteUrl()-detail">createAbsoluteUrl()</a> to prepend URLs it creates.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="setHostInfo()-detail">
+		setHostInfo()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_web_urlmanager.html#setHostInfo()-detail">setHostInfo</a>( $value )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$value</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The host info (e.g. "http://www.example.com") that is used by <a href="yii_web_urlmanager.html#createAbsoluteUrl()-detail">createAbsoluteUrl()</a> to prepend URLs it creates.</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Sets the host info that is used by <a href="yii_web_urlmanager.html#createAbsoluteUrl()-detail">createAbsoluteUrl()</a> to prepend URLs it creates.</strong></p>
+	<p></p>
+
+	
+			</div><!-- end of content -->
+
+		<div id="apiFooter">
+			<p>&copy; 2008-2013 by <a href="http://www.yiisoft.com">Yii Software LLC</a></p>
+			<p>All Rights Reserved.</p>
+		</div><!-- end of footer -->
+
+<script type="text/javascript">
+/*<![CDATA[*/
+$("a.toggle").on('click', function() {
+	var $this = $(this);
+	if ($this.hasClass('properties-hidden')) {
+		$this.text($this.text().replace(/Show/,'Hide'));
+		$this.parents(".summary").find(".inherited").show();
+		$this.removeClass('properties-hidden');
+	} else {
+		$this.text($this.text().replace(/Hide/,'Show'));
+		$this.parents(".summary").find(".inherited").hide();
+		$this.addClass('properties-hidden');
+	}
+	return false;
+});
+/*
+$(".sourceCode a.show").toggle(function(){
+	$(this).text($(this).text().replace(/show/,'hide'));
+	$(this).parents(".sourceCode").find("div.code").show();
+},function(){
+	$(this).text($(this).text().replace(/hide/,'show'));
+	$(this).parents(".sourceCode").find("div.code").hide();
+});
+$("a.sourceLink").click(function(){
+	$(this).attr('target','_blank');
+});
+*/
+/*]]>*/
+</script>
+
+	</div><!-- end of page -->
+</body>
+</html>

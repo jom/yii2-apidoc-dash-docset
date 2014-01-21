@@ -1,0 +1,238 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="language" content="en" />
+<link href="./assets/4138e429/api.css" rel="stylesheet">
+<link href="./assets/4138e429/style.css" rel="stylesheet">
+<script src="./assets/a91b37a6/jquery.js"></script><title>Yii Framework 2.0 API Documentation</title>
+</head>
+
+<body>
+	<div id="apiPage">
+
+		<div id="apiHeader">
+			<a href="http://www.yiiframework.com">Yii Framework</a> v2.0.0-dev Class Reference
+		</div><!-- end of header -->
+
+		<div id="content">
+		<h1>Class yii\helpers\Security</h1>
+<div id="nav">
+	<a href="index.html">All Classes</a>
+				| <a href="#methods">Methods</a>
+					| <a href="#constants">Constants</a>
+	</div>
+
+<table class="summaryTable docClass">
+	<colgroup>
+		<col class="col-name" />
+		<col class="col-value" />
+	</colgroup>
+			<tr><th>Inheritance</th><td><a href="yii_helpers_security.html">yii\helpers\Security</a> &raquo;
+<a href="yii_helpers_basesecurity.html">yii\helpers\BaseSecurity</a></td></tr>
+									<tr><th>Available since version</th><td>2.0</td></tr>
+		<tr>
+	  <th>Source Code</th>
+	  <td></td>
+	</tr>
+</table>
+
+<div id="classDescription">
+	<strong>Security provides a set of methods to handle common security-related tasks.</strong>
+	<p>In particular, Security supports the following features:</p>
+
+<ul>
+<li>Encryption/decryption: <a href="yii_helpers_basesecurity.html#encrypt()-detail">encrypt()</a> and <a href="yii_helpers_basesecurity.html#decrypt()-detail">decrypt()</a></li>
+<li>Data tampering prevention: <a href="yii_helpers_basesecurity.html#hashData()-detail">hashData()</a> and <a href="yii_helpers_basesecurity.html#validateData()-detail">validateData()</a></li>
+<li>Password validation: <a href="yii_helpers_basesecurity.html#generatePasswordHash()-detail">generatePasswordHash()</a> and <a href="yii_helpers_basesecurity.html#validatePassword()-detail">validatePassword()</a></li>
+</ul>
+
+<p>Additionally, Security provides <a href="yii_helpers_basesecurity.html#getSecretKey()-detail">getSecretKey()</a> to support generating
+named secret keys. These secret keys, once generated, will be stored in a file
+and made available in future requests.</p>
+</div>
+
+<a name="properties"></a>
+
+<a name="methods"></a>
+
+<div class="summary docMethod">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr class="inherited" id="encrypt()">
+		<td><a href="yii_helpers_basesecurity.html#encrypt()-detail">encrypt()</a></td>
+		<td>Encrypts data.</td>
+		<td><a href="yii_helpers_basesecurity.html">yii\helpers\BaseSecurity</a></td>
+	</tr>
+			<tr class="inherited" id="decrypt()">
+		<td><a href="yii_helpers_basesecurity.html#decrypt()-detail">decrypt()</a></td>
+		<td>Decrypts data</td>
+		<td><a href="yii_helpers_basesecurity.html">yii\helpers\BaseSecurity</a></td>
+	</tr>
+						<tr class="inherited" id="hashData()">
+		<td><a href="yii_helpers_basesecurity.html#hashData()-detail">hashData()</a></td>
+		<td>Prefixes data with a keyed hash value so that it can later be detected if it is tampered.</td>
+		<td><a href="yii_helpers_basesecurity.html">yii\helpers\BaseSecurity</a></td>
+	</tr>
+			<tr class="inherited" id="validateData()">
+		<td><a href="yii_helpers_basesecurity.html#validateData()-detail">validateData()</a></td>
+		<td>Validates if the given data is tampered.</td>
+		<td><a href="yii_helpers_basesecurity.html">yii\helpers\BaseSecurity</a></td>
+	</tr>
+			<tr class="inherited" id="getSecretKey()">
+		<td><a href="yii_helpers_basesecurity.html#getSecretKey()-detail">getSecretKey()</a></td>
+		<td>Returns a secret key associated with the specified name.</td>
+		<td><a href="yii_helpers_basesecurity.html">yii\helpers\BaseSecurity</a></td>
+	</tr>
+			<tr class="inherited" id="generateRandomKey()">
+		<td><a href="yii_helpers_basesecurity.html#generateRandomKey()-detail">generateRandomKey()</a></td>
+		<td>Generates a random key. The key may contain uppercase and lowercase latin letters, digits, underscore, dash and dot.</td>
+		<td><a href="yii_helpers_basesecurity.html">yii\helpers\BaseSecurity</a></td>
+	</tr>
+				<tr class="inherited" id="generatePasswordHash()">
+		<td><a href="yii_helpers_basesecurity.html#generatePasswordHash()-detail">generatePasswordHash()</a></td>
+		<td>Generates a secure hash from a password and a random salt.</td>
+		<td><a href="yii_helpers_basesecurity.html">yii\helpers\BaseSecurity</a></td>
+	</tr>
+			<tr class="inherited" id="validatePassword()">
+		<td><a href="yii_helpers_basesecurity.html#validatePassword()-detail">validatePassword()</a></td>
+		<td>Verifies a password against a hash.</td>
+		<td><a href="yii_helpers_basesecurity.html">yii\helpers\BaseSecurity</a></td>
+	</tr>
+		</table>
+</div>
+<div class="summary docMethod">
+<h2>Protected Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+				<tr class="inherited" id="addPadding()">
+		<td><a href="yii_helpers_basesecurity.html#addPadding()-detail">addPadding()</a></td>
+		<td>Adds a padding to the given data (PKCS #7).</td>
+		<td><a href="yii_helpers_basesecurity.html">yii\helpers\BaseSecurity</a></td>
+	</tr>
+			<tr class="inherited" id="stripPadding()">
+		<td><a href="yii_helpers_basesecurity.html#stripPadding()-detail">stripPadding()</a></td>
+		<td>Strips the padding from the given data.</td>
+		<td><a href="yii_helpers_basesecurity.html">yii\helpers\BaseSecurity</a></td>
+	</tr>
+			<tr class="inherited" id="deriveKey()">
+		<td><a href="yii_helpers_basesecurity.html#deriveKey()-detail">deriveKey()</a></td>
+		<td>Derives a key from the given password (PBKDF2).</td>
+		<td><a href="yii_helpers_basesecurity.html">yii\helpers\BaseSecurity</a></td>
+	</tr>
+							<tr class="inherited" id="openCryptModule()">
+		<td><a href="yii_helpers_basesecurity.html#openCryptModule()-detail">openCryptModule()</a></td>
+		<td>Opens the mcrypt module.</td>
+		<td><a href="yii_helpers_basesecurity.html">yii\helpers\BaseSecurity</a></td>
+	</tr>
+					<tr class="inherited" id="generateSalt()">
+		<td><a href="yii_helpers_basesecurity.html#generateSalt()-detail">generateSalt()</a></td>
+		<td>Generates a salt that can be used to generate a password hash.</td>
+		<td><a href="yii_helpers_basesecurity.html">yii\helpers\BaseSecurity</a></td>
+	</tr>
+	</table>
+</div>
+<a name="events"></a>
+
+<a name="constants"></a>
+<div class="summary docConst">
+<h2>Constants</h2>
+
+<p><a href="#" class="toggle">Hide inherited constants</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-const" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Constant</th><th>Value</th><th>Description</th><th>Defined By</th>
+</tr>
+	<tr class="inherited" id="CRYPT_BLOCK_SIZE">
+	  <td>CRYPT_BLOCK_SIZE<a name="CRYPT_BLOCK_SIZE-detail"></a></td>
+	  <td>16</td>
+	  <td>Uses AES, block size is 128-bit (16 bytes).</td>
+	  <td><a href="yii_helpers_basesecurity.html">yii\helpers\BaseSecurity</a></td>
+	</tr>
+	<tr class="inherited" id="CRYPT_KEY_SIZE">
+	  <td>CRYPT_KEY_SIZE<a name="CRYPT_KEY_SIZE-detail"></a></td>
+	  <td>24</td>
+	  <td>Uses AES-192, key size is 192-bit (24 bytes).</td>
+	  <td><a href="yii_helpers_basesecurity.html">yii\helpers\BaseSecurity</a></td>
+	</tr>
+	<tr class="inherited" id="DERIVATION_HASH">
+	  <td>DERIVATION_HASH<a name="DERIVATION_HASH-detail"></a></td>
+	  <td>'sha256'</td>
+	  <td>Uses SHA-256.</td>
+	  <td><a href="yii_helpers_basesecurity.html">yii\helpers\BaseSecurity</a></td>
+	</tr>
+	<tr class="inherited" id="DERIVATION_ITERATIONS">
+	  <td>DERIVATION_ITERATIONS<a name="DERIVATION_ITERATIONS-detail"></a></td>
+	  <td>1000</td>
+	  <td>Uses 1000 iterations.</td>
+	  <td><a href="yii_helpers_basesecurity.html">yii\helpers\BaseSecurity</a></td>
+	</tr>
+</table>
+</div>
+			</div><!-- end of content -->
+
+		<div id="apiFooter">
+			<p>&copy; 2008-2013 by <a href="http://www.yiisoft.com">Yii Software LLC</a></p>
+			<p>All Rights Reserved.</p>
+		</div><!-- end of footer -->
+
+<script type="text/javascript">
+/*<![CDATA[*/
+$("a.toggle").on('click', function() {
+	var $this = $(this);
+	if ($this.hasClass('properties-hidden')) {
+		$this.text($this.text().replace(/Show/,'Hide'));
+		$this.parents(".summary").find(".inherited").show();
+		$this.removeClass('properties-hidden');
+	} else {
+		$this.text($this.text().replace(/Hide/,'Show'));
+		$this.parents(".summary").find(".inherited").hide();
+		$this.addClass('properties-hidden');
+	}
+	return false;
+});
+/*
+$(".sourceCode a.show").toggle(function(){
+	$(this).text($(this).text().replace(/show/,'hide'));
+	$(this).parents(".sourceCode").find("div.code").show();
+},function(){
+	$(this).text($(this).text().replace(/hide/,'show'));
+	$(this).parents(".sourceCode").find("div.code").hide();
+});
+$("a.sourceLink").click(function(){
+	$(this).attr('target','_blank');
+});
+*/
+/*]]>*/
+</script>
+
+	</div><!-- end of page -->
+</body>
+</html>

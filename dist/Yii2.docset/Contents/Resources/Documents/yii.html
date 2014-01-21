@@ -1,0 +1,230 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="language" content="en" />
+<link href="./assets/4138e429/api.css" rel="stylesheet">
+<link href="./assets/4138e429/style.css" rel="stylesheet">
+<script src="./assets/a91b37a6/jquery.js"></script><title>Yii Framework 2.0 API Documentation</title>
+</head>
+
+<body>
+	<div id="apiPage">
+
+		<div id="apiHeader">
+			<a href="http://www.yiiframework.com">Yii Framework</a> v2.0.0-dev Class Reference
+		</div><!-- end of header -->
+
+		<div id="content">
+		<h1>Class Yii</h1>
+<div id="nav">
+	<a href="index.html">All Classes</a>
+			| <a href="#properties">Properties</a>
+				| <a href="#methods">Methods</a>
+			</div>
+
+<table class="summaryTable docClass">
+	<colgroup>
+		<col class="col-name" />
+		<col class="col-value" />
+	</colgroup>
+			<tr><th>Inheritance</th><td><a href="yii.html">Yii</a> &raquo;
+<a href="yii_baseyii.html">yii\BaseYii</a></td></tr>
+									<tr><th>Available since version</th><td>2.0</td></tr>
+		<tr>
+	  <th>Source Code</th>
+	  <td></td>
+	</tr>
+</table>
+
+<div id="classDescription">
+	<strong>Yii is a helper class serving common framework functionalities.</strong>
+	<p>It extends from <a href="yii_baseyii.html">yii\BaseYii</a> which provides the actual implementation.
+By writing your own Yii class, you can customize some functionalities of <a href="yii_baseyii.html">yii\BaseYii</a>.</p>
+</div>
+
+<a name="properties"></a>
+
+<div class="summary docProperty">
+<h2>Public Properties</h2>
+
+<p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-property" />
+	<col class="col-type" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Property</th><th>Type</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr class="inherited" id="$classMap">
+		<td><a href="yii_baseyii.html#$classMap-detail">$classMap</a></td>
+		<td>array</td>
+		<td>Class map used by the Yii autoloading mechanism</td>
+		<td><a href="yii_baseyii.html">yii\BaseYii</a></td>
+	</tr>
+			<tr class="inherited" id="$app">
+		<td><a href="yii_baseyii.html#$app-detail">$app</a></td>
+		<td><a href="yii_console_application.html">yii\console\Application</a>|<a href="yii_web_application.html">yii\web\Application</a></td>
+		<td>The application instance</td>
+		<td><a href="yii_baseyii.html">yii\BaseYii</a></td>
+	</tr>
+			<tr class="inherited" id="$aliases">
+		<td><a href="yii_baseyii.html#$aliases-detail">$aliases</a></td>
+		<td>array</td>
+		<td>Registered path aliases</td>
+		<td><a href="yii_baseyii.html">yii\BaseYii</a></td>
+	</tr>
+			<tr class="inherited" id="$objectConfig">
+		<td><a href="yii_baseyii.html#$objectConfig-detail">$objectConfig</a></td>
+		<td>array</td>
+		<td>Initial property values that will be applied to objects newly created via <a href="yii_baseyii.html#createObject()-detail">createObject()</a></td>
+		<td><a href="yii_baseyii.html">yii\BaseYii</a></td>
+	</tr>
+	</table>
+</div>
+<a name="methods"></a>
+
+<div class="summary docMethod">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr class="inherited" id="getVersion()">
+		<td><a href="yii_baseyii.html#getVersion()-detail">getVersion()</a></td>
+		<td></td>
+		<td><a href="yii_baseyii.html">yii\BaseYii</a></td>
+	</tr>
+			<tr class="inherited" id="getAlias()">
+		<td><a href="yii_baseyii.html#getAlias()-detail">getAlias()</a></td>
+		<td>Translates a path alias into an actual path.</td>
+		<td><a href="yii_baseyii.html">yii\BaseYii</a></td>
+	</tr>
+			<tr class="inherited" id="getRootAlias()">
+		<td><a href="yii_baseyii.html#getRootAlias()-detail">getRootAlias()</a></td>
+		<td>Returns the root alias part of a given alias.</td>
+		<td><a href="yii_baseyii.html">yii\BaseYii</a></td>
+	</tr>
+			<tr class="inherited" id="setAlias()">
+		<td><a href="yii_baseyii.html#setAlias()-detail">setAlias()</a></td>
+		<td>Registers a path alias.</td>
+		<td><a href="yii_baseyii.html">yii\BaseYii</a></td>
+	</tr>
+			<tr class="inherited" id="autoload()">
+		<td><a href="yii_baseyii.html#autoload()-detail">autoload()</a></td>
+		<td>Class autoload loader.</td>
+		<td><a href="yii_baseyii.html">yii\BaseYii</a></td>
+	</tr>
+			<tr class="inherited" id="createObject()">
+		<td><a href="yii_baseyii.html#createObject()-detail">createObject()</a></td>
+		<td>Creates a new object using the given configuration.</td>
+		<td><a href="yii_baseyii.html">yii\BaseYii</a></td>
+	</tr>
+			<tr class="inherited" id="trace()">
+		<td><a href="yii_baseyii.html#trace()-detail">trace()</a></td>
+		<td>Logs a trace message.</td>
+		<td><a href="yii_baseyii.html">yii\BaseYii</a></td>
+	</tr>
+			<tr class="inherited" id="error()">
+		<td><a href="yii_baseyii.html#error()-detail">error()</a></td>
+		<td>Logs an error message.</td>
+		<td><a href="yii_baseyii.html">yii\BaseYii</a></td>
+	</tr>
+			<tr class="inherited" id="warning()">
+		<td><a href="yii_baseyii.html#warning()-detail">warning()</a></td>
+		<td>Logs a warning message.</td>
+		<td><a href="yii_baseyii.html">yii\BaseYii</a></td>
+	</tr>
+			<tr class="inherited" id="info()">
+		<td><a href="yii_baseyii.html#info()-detail">info()</a></td>
+		<td>Logs an informative message.</td>
+		<td><a href="yii_baseyii.html">yii\BaseYii</a></td>
+	</tr>
+			<tr class="inherited" id="beginProfile()">
+		<td><a href="yii_baseyii.html#beginProfile()-detail">beginProfile()</a></td>
+		<td>Marks the beginning of a code block for profiling.</td>
+		<td><a href="yii_baseyii.html">yii\BaseYii</a></td>
+	</tr>
+			<tr class="inherited" id="endProfile()">
+		<td><a href="yii_baseyii.html#endProfile()-detail">endProfile()</a></td>
+		<td>Marks the end of a code block for profiling.</td>
+		<td><a href="yii_baseyii.html">yii\BaseYii</a></td>
+	</tr>
+			<tr class="inherited" id="powered()">
+		<td><a href="yii_baseyii.html#powered()-detail">powered()</a></td>
+		<td>Returns an HTML hyperlink that can be displayed on your Web page showing Powered by Yii" information.</td>
+		<td><a href="yii_baseyii.html">yii\BaseYii</a></td>
+	</tr>
+			<tr class="inherited" id="t()">
+		<td><a href="yii_baseyii.html#t()-detail">t()</a></td>
+		<td>Translates a message to the specified language.</td>
+		<td><a href="yii_baseyii.html">yii\BaseYii</a></td>
+	</tr>
+			<tr class="inherited" id="configure()">
+		<td><a href="yii_baseyii.html#configure()-detail">configure()</a></td>
+		<td>Configures an object with the initial property values.</td>
+		<td><a href="yii_baseyii.html">yii\BaseYii</a></td>
+	</tr>
+			<tr class="inherited" id="getObjectVars()">
+		<td><a href="yii_baseyii.html#getObjectVars()-detail">getObjectVars()</a></td>
+		<td>Returns the public member variables of an object.</td>
+		<td><a href="yii_baseyii.html">yii\BaseYii</a></td>
+	</tr>
+	</table>
+</div>
+<a name="events"></a>
+
+<a name="constants"></a>
+
+			</div><!-- end of content -->
+
+		<div id="apiFooter">
+			<p>&copy; 2008-2013 by <a href="http://www.yiisoft.com">Yii Software LLC</a></p>
+			<p>All Rights Reserved.</p>
+		</div><!-- end of footer -->
+
+<script type="text/javascript">
+/*<![CDATA[*/
+$("a.toggle").on('click', function() {
+	var $this = $(this);
+	if ($this.hasClass('properties-hidden')) {
+		$this.text($this.text().replace(/Show/,'Hide'));
+		$this.parents(".summary").find(".inherited").show();
+		$this.removeClass('properties-hidden');
+	} else {
+		$this.text($this.text().replace(/Hide/,'Show'));
+		$this.parents(".summary").find(".inherited").hide();
+		$this.addClass('properties-hidden');
+	}
+	return false;
+});
+/*
+$(".sourceCode a.show").toggle(function(){
+	$(this).text($(this).text().replace(/show/,'hide'));
+	$(this).parents(".sourceCode").find("div.code").show();
+},function(){
+	$(this).text($(this).text().replace(/hide/,'show'));
+	$(this).parents(".sourceCode").find("div.code").hide();
+});
+$("a.sourceLink").click(function(){
+	$(this).attr('target','_blank');
+});
+*/
+/*]]>*/
+</script>
+
+	</div><!-- end of page -->
+</body>
+</html>

@@ -1,0 +1,1597 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="language" content="en" />
+<link href="./assets/4138e429/api.css" rel="stylesheet">
+<link href="./assets/4138e429/style.css" rel="stylesheet">
+<script src="./assets/a91b37a6/jquery.js"></script><title>Yii Framework 2.0 API Documentation</title>
+</head>
+
+<body>
+	<div id="apiPage">
+
+		<div id="apiHeader">
+			<a href="http://www.yiiframework.com">Yii Framework</a> v2.0.0-dev Class Reference
+		</div><!-- end of header -->
+
+		<div id="content">
+		<h1>Class yii\web\Application</h1>
+<div id="nav">
+	<a href="index.html">All Classes</a>
+			| <a href="#properties">Properties</a>
+				| <a href="#methods">Methods</a>
+				| <a href="#events">Events</a>
+		</div>
+
+<table class="summaryTable docClass">
+	<colgroup>
+		<col class="col-name" />
+		<col class="col-value" />
+	</colgroup>
+			<tr><th>Inheritance</th><td><a href="yii_web_application.html">yii\web\Application</a> &raquo;
+<a href="yii_base_application.html">yii\base\Application</a> &raquo;
+<a href="yii_base_module.html">yii\base\Module</a> &raquo;
+<a href="yii_base_component.html">yii\base\Component</a> &raquo;
+<a href="yii_base_object.html">yii\base\Object</a></td></tr>
+				<tr><th>Implements</th><td><a href="yii_base_arrayable.html">yii\base\Arrayable</a></td></tr>
+								<tr><th>Available since version</th><td>2.0</td></tr>
+		<tr>
+	  <th>Source Code</th>
+	  <td></td>
+	</tr>
+</table>
+
+<div id="classDescription">
+	<strong>Application is the base class for all web application classes.</strong>
+	<p></p>
+</div>
+
+<a name="properties"></a>
+
+<div class="summary docProperty">
+<h2>Public Properties</h2>
+
+<p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-property" />
+	<col class="col-type" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Property</th><th>Type</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr class="inherited" id="$params">
+		<td><a href="yii_base_module.html#$params-detail">$params</a></td>
+		<td>array</td>
+		<td>Custom module parameters (name => value)</td>
+		<td><a href="yii_base_module.html">yii\base\Module</a></td>
+	</tr>
+			<tr class="inherited" id="$preload">
+		<td><a href="yii_base_module.html#$preload-detail">$preload</a></td>
+		<td>array</td>
+		<td>The IDs of the components or modules that should be preloaded right after initialization</td>
+		<td><a href="yii_base_module.html">yii\base\Module</a></td>
+	</tr>
+			<tr class="inherited" id="$id">
+		<td><a href="yii_base_module.html#$id-detail">$id</a></td>
+		<td>string</td>
+		<td>An ID that uniquely identifies this module among other modules which have the same <a href="yii_base_module.html#$module-detail">parent</a></td>
+		<td><a href="yii_base_module.html">yii\base\Module</a></td>
+	</tr>
+			<tr class="inherited" id="$module">
+		<td><a href="yii_base_module.html#$module-detail">$module</a></td>
+		<td><a href="yii_base_module.html">yii\base\Module</a></td>
+		<td>The parent module of this module</td>
+		<td><a href="yii_base_module.html">yii\base\Module</a></td>
+	</tr>
+			<tr class="inherited" id="$layout">
+		<td><a href="yii_base_application.html#$layout-detail">$layout</a></td>
+		<td>string|boolean</td>
+		<td>The layout that should be applied for views in this application</td>
+		<td><a href="yii_base_application.html">yii\base\Application</a></td>
+	</tr>
+			<tr class="inherited" id="$controllerMap">
+		<td><a href="yii_base_module.html#$controllerMap-detail">$controllerMap</a></td>
+		<td>array</td>
+		<td>Mapping from controller ID to controller configurations</td>
+		<td><a href="yii_base_module.html">yii\base\Module</a></td>
+	</tr>
+			<tr class="inherited" id="$controllerNamespace">
+		<td><a href="yii_base_application.html#$controllerNamespace-detail">$controllerNamespace</a></td>
+		<td>string</td>
+		<td>The namespace that controller classes are in</td>
+		<td><a href="yii_base_application.html">yii\base\Application</a></td>
+	</tr>
+			<tr id="$defaultRoute">
+		<td><a href="yii_web_application.html#$defaultRoute-detail">$defaultRoute</a></td>
+		<td>string</td>
+		<td>The default route of this application</td>
+		<td><a href="yii_web_application.html">yii\web\Application</a></td>
+	</tr>
+			<tr class="inherited" id="$name">
+		<td><a href="yii_base_application.html#$name-detail">$name</a></td>
+		<td>string</td>
+		<td>The application name</td>
+		<td><a href="yii_base_application.html">yii\base\Application</a></td>
+	</tr>
+			<tr class="inherited" id="$version">
+		<td><a href="yii_base_application.html#$version-detail">$version</a></td>
+		<td>string</td>
+		<td>The version of this application</td>
+		<td><a href="yii_base_application.html">yii\base\Application</a></td>
+	</tr>
+			<tr class="inherited" id="$charset">
+		<td><a href="yii_base_application.html#$charset-detail">$charset</a></td>
+		<td>string</td>
+		<td>The charset currently used for the application</td>
+		<td><a href="yii_base_application.html">yii\base\Application</a></td>
+	</tr>
+			<tr class="inherited" id="$language">
+		<td><a href="yii_base_application.html#$language-detail">$language</a></td>
+		<td>string</td>
+		<td>The language that is meant to be used for end users</td>
+		<td><a href="yii_base_application.html">yii\base\Application</a></td>
+	</tr>
+			<tr class="inherited" id="$sourceLanguage">
+		<td><a href="yii_base_application.html#$sourceLanguage-detail">$sourceLanguage</a></td>
+		<td>string</td>
+		<td>The language that the application is written in</td>
+		<td><a href="yii_base_application.html">yii\base\Application</a></td>
+	</tr>
+			<tr id="$controller">
+		<td><a href="yii_web_application.html#$controller-detail">$controller</a></td>
+		<td><a href="yii_web_controller.html">yii\web\Controller</a></td>
+		<td>The currently active controller instance</td>
+		<td><a href="yii_web_application.html">yii\web\Application</a></td>
+	</tr>
+			<tr class="inherited" id="$memoryReserveSize">
+		<td><a href="yii_base_application.html#$memoryReserveSize-detail">$memoryReserveSize</a></td>
+		<td>integer</td>
+		<td>The size of the reserved memory</td>
+		<td><a href="yii_base_application.html">yii\base\Application</a></td>
+	</tr>
+			<tr class="inherited" id="$requestedRoute">
+		<td><a href="yii_base_application.html#$requestedRoute-detail">$requestedRoute</a></td>
+		<td>string</td>
+		<td>The requested route</td>
+		<td><a href="yii_base_application.html">yii\base\Application</a></td>
+	</tr>
+			<tr class="inherited" id="$requestedAction">
+		<td><a href="yii_base_application.html#$requestedAction-detail">$requestedAction</a></td>
+		<td><a href="yii_base_action.html">yii\base\Action</a></td>
+		<td>The requested Action</td>
+		<td><a href="yii_base_application.html">yii\base\Application</a></td>
+	</tr>
+			<tr class="inherited" id="$requestedParams">
+		<td><a href="yii_base_application.html#$requestedParams-detail">$requestedParams</a></td>
+		<td>array</td>
+		<td>The parameters supplied to the requested action</td>
+		<td><a href="yii_base_application.html">yii\base\Application</a></td>
+	</tr>
+			<tr class="inherited" id="$extensions">
+		<td><a href="yii_base_application.html#$extensions-detail">$extensions</a></td>
+		<td>array</td>
+		<td>List of installed Yii extensions</td>
+		<td><a href="yii_base_application.html">yii\base\Application</a></td>
+	</tr>
+			<tr class="inherited" id="$exception">
+		<td><a href="yii_base_application.html#$exception-detail">$exception</a></td>
+		<td>\Exception</td>
+		<td>The exception that is being handled currently</td>
+		<td><a href="yii_base_application.html">yii\base\Application</a></td>
+	</tr>
+			<tr id="$catchAll">
+		<td><a href="yii_web_application.html#$catchAll-detail">$catchAll</a></td>
+		<td>array</td>
+		<td>The configuration specifying a controller action which should handle
+all user requests</td>
+		<td><a href="yii_web_application.html">yii\web\Application</a></td>
+	</tr>
+			<tr id="$behaviors">
+		<td><a href="yii_web_application.html#$behaviors-detail">$behaviors</a></td>
+		<td><a href="yii_base_behavior.html">yii\base\Behavior</a>[]</td>
+		<td>list of behaviors attached to this component</td>
+		<td><a href="yii_web_application.html">yii\web\Application</a></td>
+	</tr>
+			<tr id="$uniqueId">
+		<td><a href="yii_web_application.html#$uniqueId-detail">$uniqueId</a></td>
+		<td>string</td>
+		<td>the unique ID of the module</td>
+		<td><a href="yii_web_application.html">yii\web\Application</a></td>
+	</tr>
+			<tr id="$basePath">
+		<td><a href="yii_web_application.html#$basePath-detail">$basePath</a></td>
+		<td>string</td>
+		<td>the root directory of the module</td>
+		<td><a href="yii_web_application.html">yii\web\Application</a></td>
+	</tr>
+			<tr id="$controllerPath">
+		<td><a href="yii_web_application.html#$controllerPath-detail">$controllerPath</a></td>
+		<td>string</td>
+		<td>the directory that contains the controller classes</td>
+		<td><a href="yii_web_application.html">yii\web\Application</a></td>
+	</tr>
+			<tr id="$viewPath">
+		<td><a href="yii_web_application.html#$viewPath-detail">$viewPath</a></td>
+		<td>string</td>
+		<td>the root directory of view files</td>
+		<td><a href="yii_web_application.html">yii\web\Application</a></td>
+	</tr>
+			<tr id="$layoutPath">
+		<td><a href="yii_web_application.html#$layoutPath-detail">$layoutPath</a></td>
+		<td>string</td>
+		<td>the root directory of layout files</td>
+		<td><a href="yii_web_application.html">yii\web\Application</a></td>
+	</tr>
+			<tr id="$aliases">
+		<td><a href="yii_web_application.html#$aliases-detail">$aliases</a></td>
+		<td>array</td>
+		<td>List of path aliases to be defined</td>
+		<td><a href="yii_web_application.html">yii\web\Application</a></td>
+	</tr>
+			<tr id="$modules">
+		<td><a href="yii_web_application.html#$modules-detail">$modules</a></td>
+		<td>array</td>
+		<td>the modules (indexed by their IDs)</td>
+		<td><a href="yii_web_application.html">yii\web\Application</a></td>
+	</tr>
+			<tr id="$components">
+		<td><a href="yii_web_application.html#$components-detail">$components</a></td>
+		<td>array</td>
+		<td>the components (indexed by their IDs)</td>
+		<td><a href="yii_web_application.html">yii\web\Application</a></td>
+	</tr>
+			<tr id="$runtimePath">
+		<td><a href="yii_web_application.html#$runtimePath-detail">$runtimePath</a></td>
+		<td>string</td>
+		<td>the directory that stores runtime files</td>
+		<td><a href="yii_web_application.html">yii\web\Application</a></td>
+	</tr>
+			<tr id="$vendorPath">
+		<td><a href="yii_web_application.html#$vendorPath-detail">$vendorPath</a></td>
+		<td>string</td>
+		<td>the directory that stores vendor files</td>
+		<td><a href="yii_web_application.html">yii\web\Application</a></td>
+	</tr>
+			<tr id="$timeZone">
+		<td><a href="yii_web_application.html#$timeZone-detail">$timeZone</a></td>
+		<td>string</td>
+		<td>the time zone used by this application</td>
+		<td><a href="yii_web_application.html">yii\web\Application</a></td>
+	</tr>
+			<tr id="$db">
+		<td><a href="yii_web_application.html#$db-detail">$db</a></td>
+		<td><a href="yii_db_connection.html">yii\db\Connection</a></td>
+		<td>the database connection</td>
+		<td><a href="yii_web_application.html">yii\web\Application</a></td>
+	</tr>
+			<tr id="$log">
+		<td><a href="yii_web_application.html#$log-detail">$log</a></td>
+		<td><a href="yii_log_logger.html">yii\log\Logger</a></td>
+		<td>the log component</td>
+		<td><a href="yii_web_application.html">yii\web\Application</a></td>
+	</tr>
+			<tr id="$errorHandler">
+		<td><a href="yii_web_application.html#$errorHandler-detail">$errorHandler</a></td>
+		<td><a href="yii_base_errorhandler.html">yii\base\ErrorHandler</a></td>
+		<td>the error handler application component</td>
+		<td><a href="yii_web_application.html">yii\web\Application</a></td>
+	</tr>
+			<tr id="$cache">
+		<td><a href="yii_web_application.html#$cache-detail">$cache</a></td>
+		<td><a href="yii_caching_cache.html">yii\caching\Cache</a></td>
+		<td>the cache application component</td>
+		<td><a href="yii_web_application.html">yii\web\Application</a></td>
+	</tr>
+			<tr id="$formatter">
+		<td><a href="yii_web_application.html#$formatter-detail">$formatter</a></td>
+		<td><a href="yii_base_formatter.html">yii\base\Formatter</a></td>
+		<td>the formatter application component</td>
+		<td><a href="yii_web_application.html">yii\web\Application</a></td>
+	</tr>
+			<tr id="$request">
+		<td><a href="yii_web_application.html#$request-detail">$request</a></td>
+		<td><a href="yii_web_request.html">yii\web\Request</a></td>
+		<td>the request component</td>
+		<td><a href="yii_web_application.html">yii\web\Application</a></td>
+	</tr>
+			<tr id="$view">
+		<td><a href="yii_web_application.html#$view-detail">$view</a></td>
+		<td><a href="yii_base_view.html">yii\base\View</a>|<a href="yii_web_view.html">yii\web\View</a></td>
+		<td>the view object that is used to render various view files</td>
+		<td><a href="yii_web_application.html">yii\web\Application</a></td>
+	</tr>
+			<tr id="$urlManager">
+		<td><a href="yii_web_application.html#$urlManager-detail">$urlManager</a></td>
+		<td><a href="yii_web_urlmanager.html">yii\web\UrlManager</a></td>
+		<td>the URL manager for this application</td>
+		<td><a href="yii_web_application.html">yii\web\Application</a></td>
+	</tr>
+			<tr id="$i18n">
+		<td><a href="yii_web_application.html#$i18n-detail">$i18n</a></td>
+		<td><a href="yii_i18n_i18n.html">yii\i18n\I18N</a></td>
+		<td>the internationalization component</td>
+		<td><a href="yii_web_application.html">yii\web\Application</a></td>
+	</tr>
+			<tr id="$mail">
+		<td><a href="yii_web_application.html#$mail-detail">$mail</a></td>
+		<td><a href="yii_mail_mailerinterface.html">yii\mail\MailerInterface</a></td>
+		<td>the mailer interface</td>
+		<td><a href="yii_web_application.html">yii\web\Application</a></td>
+	</tr>
+			<tr id="$authManager">
+		<td><a href="yii_web_application.html#$authManager-detail">$authManager</a></td>
+		<td><a href="yii_rbac_manager.html">yii\rbac\Manager</a></td>
+		<td>the auth manager for this application</td>
+		<td><a href="yii_web_application.html">yii\web\Application</a></td>
+	</tr>
+			<tr id="$homeUrl">
+		<td><a href="yii_web_application.html#$homeUrl-detail">$homeUrl</a></td>
+		<td>string</td>
+		<td>the homepage URL</td>
+		<td><a href="yii_web_application.html">yii\web\Application</a></td>
+	</tr>
+			<tr id="$response">
+		<td><a href="yii_web_application.html#$response-detail">$response</a></td>
+		<td><a href="yii_web_response.html">yii\web\Response</a></td>
+		<td>the response component</td>
+		<td><a href="yii_web_application.html">yii\web\Application</a></td>
+	</tr>
+			<tr id="$session">
+		<td><a href="yii_web_application.html#$session-detail">$session</a></td>
+		<td><a href="yii_web_session.html">yii\web\Session</a></td>
+		<td>the session component</td>
+		<td><a href="yii_web_application.html">yii\web\Application</a></td>
+	</tr>
+			<tr id="$user">
+		<td><a href="yii_web_application.html#$user-detail">$user</a></td>
+		<td><a href="yii_web_user.html">yii\web\User</a></td>
+		<td>the user component</td>
+		<td><a href="yii_web_application.html">yii\web\Application</a></td>
+	</tr>
+			<tr id="$assetManager">
+		<td><a href="yii_web_application.html#$assetManager-detail">$assetManager</a></td>
+		<td><a href="yii_web_assetmanager.html">yii\web\AssetManager</a></td>
+		<td>the asset manager component</td>
+		<td><a href="yii_web_application.html">yii\web\Application</a></td>
+	</tr>
+	</table>
+</div>
+<a name="methods"></a>
+
+<div class="summary docMethod">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr class="inherited" id="className()">
+		<td><a href="yii_base_object.html#className()-detail">className()</a></td>
+		<td></td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__construct()">
+		<td><a href="yii_base_application.html#__construct()-detail">__construct()</a></td>
+		<td>Constructor.</td>
+		<td><a href="yii_base_application.html">yii\base\Application</a></td>
+	</tr>
+			<tr class="inherited" id="init()">
+		<td><a href="yii_base_application.html#init()-detail">init()</a></td>
+		<td></td>
+		<td><a href="yii_base_application.html">yii\base\Application</a></td>
+	</tr>
+			<tr class="inherited" id="__get()">
+		<td><a href="yii_base_component.html#__get()-detail">__get()</a></td>
+		<td>Returns the value of a component property.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__set()">
+		<td><a href="yii_base_component.html#__set()-detail">__set()</a></td>
+		<td>Sets the value of a component property.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__isset()">
+		<td><a href="yii_base_component.html#__isset()-detail">__isset()</a></td>
+		<td>Checks if a property value is null.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__unset()">
+		<td><a href="yii_base_component.html#__unset()-detail">__unset()</a></td>
+		<td>Sets a component property to be null.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__call()">
+		<td><a href="yii_base_component.html#__call()-detail">__call()</a></td>
+		<td>Calls the named method which is not a class method.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasProperty()">
+		<td><a href="yii_base_component.html#hasProperty()-detail">hasProperty()</a></td>
+		<td>Returns a value indicating whether a property is defined for this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="canGetProperty()">
+		<td><a href="yii_base_component.html#canGetProperty()-detail">canGetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be read.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="canSetProperty()">
+		<td><a href="yii_base_component.html#canSetProperty()-detail">canSetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be set.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasMethod()">
+		<td><a href="yii_base_component.html#hasMethod()-detail">hasMethod()</a></td>
+		<td>Returns a value indicating whether a method is defined.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="toArray()">
+		<td><a href="yii_base_object.html#toArray()-detail">toArray()</a></td>
+		<td>Converts the object into an array.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__clone()">
+		<td><a href="yii_base_component.html#__clone()-detail">__clone()</a></td>
+		<td>This method is called after the object is created by cloning an existing one.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="behaviors()">
+		<td><a href="yii_base_component.html#behaviors()-detail">behaviors()</a></td>
+		<td>Returns a list of behaviors that this component should behave as.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasEventHandlers()">
+		<td><a href="yii_base_component.html#hasEventHandlers()-detail">hasEventHandlers()</a></td>
+		<td>Returns a value indicating whether there is any handler attached to the named event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="on()">
+		<td><a href="yii_base_component.html#on()-detail">on()</a></td>
+		<td>Attaches an event handler to an event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="off()">
+		<td><a href="yii_base_component.html#off()-detail">off()</a></td>
+		<td>Detaches an existing event handler from this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="trigger()">
+		<td><a href="yii_base_component.html#trigger()-detail">trigger()</a></td>
+		<td>Triggers an event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="getBehavior()">
+		<td><a href="yii_base_component.html#getBehavior()-detail">getBehavior()</a></td>
+		<td>Returns the named behavior object.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="getBehaviors()">
+		<td><a href="yii_base_component.html#getBehaviors()-detail">getBehaviors()</a></td>
+		<td>Returns all behaviors attached to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="attachBehavior()">
+		<td><a href="yii_base_component.html#attachBehavior()-detail">attachBehavior()</a></td>
+		<td>Attaches a behavior to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="attachBehaviors()">
+		<td><a href="yii_base_component.html#attachBehaviors()-detail">attachBehaviors()</a></td>
+		<td>Attaches a list of behaviors to the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="detachBehavior()">
+		<td><a href="yii_base_component.html#detachBehavior()-detail">detachBehavior()</a></td>
+		<td>Detaches a behavior from the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="detachBehaviors()">
+		<td><a href="yii_base_component.html#detachBehaviors()-detail">detachBehaviors()</a></td>
+		<td>Detaches all behaviors from the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="ensureBehaviors()">
+		<td><a href="yii_base_component.html#ensureBehaviors()-detail">ensureBehaviors()</a></td>
+		<td>Makes sure that the behaviors declared in <a href="yii_base_component.html#behaviors()-detail">behaviors()</a> are attached to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="getUniqueId()">
+		<td><a href="yii_base_application.html#getUniqueId()-detail">getUniqueId()</a></td>
+		<td>Returns an ID that uniquely identifies this module among all modules within the current application.</td>
+		<td><a href="yii_base_application.html">yii\base\Application</a></td>
+	</tr>
+			<tr class="inherited" id="getBasePath()">
+		<td><a href="yii_base_module.html#getBasePath()-detail">getBasePath()</a></td>
+		<td>Returns the root directory of the module.</td>
+		<td><a href="yii_base_module.html">yii\base\Module</a></td>
+	</tr>
+			<tr class="inherited" id="setBasePath()">
+		<td><a href="yii_base_application.html#setBasePath()-detail">setBasePath()</a></td>
+		<td>Sets the root directory of the application and the @app alias.</td>
+		<td><a href="yii_base_application.html">yii\base\Application</a></td>
+	</tr>
+			<tr class="inherited" id="getControllerPath()">
+		<td><a href="yii_base_module.html#getControllerPath()-detail">getControllerPath()</a></td>
+		<td>Returns the directory that contains the controller classes.</td>
+		<td><a href="yii_base_module.html">yii\base\Module</a></td>
+	</tr>
+			<tr class="inherited" id="setControllerPath()">
+		<td><a href="yii_base_module.html#setControllerPath()-detail">setControllerPath()</a></td>
+		<td>Sets the directory that contains the controller classes.</td>
+		<td><a href="yii_base_module.html">yii\base\Module</a></td>
+	</tr>
+			<tr class="inherited" id="getViewPath()">
+		<td><a href="yii_base_module.html#getViewPath()-detail">getViewPath()</a></td>
+		<td>Returns the directory that contains the view files for this module.</td>
+		<td><a href="yii_base_module.html">yii\base\Module</a></td>
+	</tr>
+			<tr class="inherited" id="setViewPath()">
+		<td><a href="yii_base_module.html#setViewPath()-detail">setViewPath()</a></td>
+		<td>Sets the directory that contains the view files.</td>
+		<td><a href="yii_base_module.html">yii\base\Module</a></td>
+	</tr>
+			<tr class="inherited" id="getLayoutPath()">
+		<td><a href="yii_base_module.html#getLayoutPath()-detail">getLayoutPath()</a></td>
+		<td>Returns the directory that contains layout view files for this module.</td>
+		<td><a href="yii_base_module.html">yii\base\Module</a></td>
+	</tr>
+			<tr class="inherited" id="setLayoutPath()">
+		<td><a href="yii_base_module.html#setLayoutPath()-detail">setLayoutPath()</a></td>
+		<td>Sets the directory that contains the layout files.</td>
+		<td><a href="yii_base_module.html">yii\base\Module</a></td>
+	</tr>
+			<tr class="inherited" id="setAliases()">
+		<td><a href="yii_base_module.html#setAliases()-detail">setAliases()</a></td>
+		<td>Defines path aliases.</td>
+		<td><a href="yii_base_module.html">yii\base\Module</a></td>
+	</tr>
+			<tr class="inherited" id="hasModule()">
+		<td><a href="yii_base_module.html#hasModule()-detail">hasModule()</a></td>
+		<td>Checks whether the child module of the specified ID exists.</td>
+		<td><a href="yii_base_module.html">yii\base\Module</a></td>
+	</tr>
+			<tr class="inherited" id="getModule()">
+		<td><a href="yii_base_module.html#getModule()-detail">getModule()</a></td>
+		<td>Retrieves the child module of the specified ID.</td>
+		<td><a href="yii_base_module.html">yii\base\Module</a></td>
+	</tr>
+			<tr class="inherited" id="setModule()">
+		<td><a href="yii_base_module.html#setModule()-detail">setModule()</a></td>
+		<td>Adds a sub-module to this module.</td>
+		<td><a href="yii_base_module.html">yii\base\Module</a></td>
+	</tr>
+			<tr class="inherited" id="getModules()">
+		<td><a href="yii_base_module.html#getModules()-detail">getModules()</a></td>
+		<td>Returns the sub-modules in this module.</td>
+		<td><a href="yii_base_module.html">yii\base\Module</a></td>
+	</tr>
+			<tr class="inherited" id="setModules()">
+		<td><a href="yii_base_module.html#setModules()-detail">setModules()</a></td>
+		<td>Registers sub-modules in the current module.</td>
+		<td><a href="yii_base_module.html">yii\base\Module</a></td>
+	</tr>
+			<tr class="inherited" id="hasComponent()">
+		<td><a href="yii_base_module.html#hasComponent()-detail">hasComponent()</a></td>
+		<td>Checks whether the named component exists.</td>
+		<td><a href="yii_base_module.html">yii\base\Module</a></td>
+	</tr>
+			<tr class="inherited" id="getComponent()">
+		<td><a href="yii_base_module.html#getComponent()-detail">getComponent()</a></td>
+		<td>Retrieves the named component.</td>
+		<td><a href="yii_base_module.html">yii\base\Module</a></td>
+	</tr>
+			<tr class="inherited" id="setComponent()">
+		<td><a href="yii_base_module.html#setComponent()-detail">setComponent()</a></td>
+		<td>Registers a component with this module.</td>
+		<td><a href="yii_base_module.html">yii\base\Module</a></td>
+	</tr>
+			<tr class="inherited" id="getComponents()">
+		<td><a href="yii_base_module.html#getComponents()-detail">getComponents()</a></td>
+		<td>Returns the registered components.</td>
+		<td><a href="yii_base_module.html">yii\base\Module</a></td>
+	</tr>
+			<tr class="inherited" id="setComponents()">
+		<td><a href="yii_base_module.html#setComponents()-detail">setComponents()</a></td>
+		<td>Registers a set of components in this module.</td>
+		<td><a href="yii_base_module.html">yii\base\Module</a></td>
+	</tr>
+			<tr id="preloadComponents()">
+		<td><a href="yii_web_application.html#preloadComponents()-detail">preloadComponents()</a></td>
+		<td></td>
+		<td><a href="yii_web_application.html">yii\web\Application</a></td>
+	</tr>
+			<tr class="inherited" id="runAction()">
+		<td><a href="yii_base_module.html#runAction()-detail">runAction()</a></td>
+		<td>Runs a controller action specified by a route.</td>
+		<td><a href="yii_base_module.html">yii\base\Module</a></td>
+	</tr>
+			<tr class="inherited" id="createController()">
+		<td><a href="yii_base_module.html#createController()-detail">createController()</a></td>
+		<td>Creates a controller instance based on the controller ID.</td>
+		<td><a href="yii_base_module.html">yii\base\Module</a></td>
+	</tr>
+			<tr class="inherited" id="beforeAction()">
+		<td><a href="yii_base_module.html#beforeAction()-detail">beforeAction()</a></td>
+		<td>This method is invoked right before an action of this module is to be executed (after all possible filters.)
+You may override this method to do last-minute preparation for the action.</td>
+		<td><a href="yii_base_module.html">yii\base\Module</a></td>
+	</tr>
+			<tr class="inherited" id="afterAction()">
+		<td><a href="yii_base_module.html#afterAction()-detail">afterAction()</a></td>
+		<td>This method is invoked right after an action of this module has been executed.</td>
+		<td><a href="yii_base_module.html">yii\base\Module</a></td>
+	</tr>
+			<tr class="inherited" id="preInit()">
+		<td><a href="yii_base_application.html#preInit()-detail">preInit()</a></td>
+		<td>Pre-initializes the application.</td>
+		<td><a href="yii_base_application.html">yii\base\Application</a></td>
+	</tr>
+				<tr class="inherited" id="registerErrorHandlers()">
+		<td><a href="yii_base_application.html#registerErrorHandlers()-detail">registerErrorHandlers()</a></td>
+		<td>Registers error handlers.</td>
+		<td><a href="yii_base_application.html">yii\base\Application</a></td>
+	</tr>
+			<tr class="inherited" id="run()">
+		<td><a href="yii_base_application.html#run()-detail">run()</a></td>
+		<td>Runs the application.</td>
+		<td><a href="yii_base_application.html">yii\base\Application</a></td>
+	</tr>
+			<tr id="handleRequest()">
+		<td><a href="yii_web_application.html#handleRequest()-detail">handleRequest()</a></td>
+		<td>Handles the specified request.</td>
+		<td><a href="yii_web_application.html">yii\web\Application</a></td>
+	</tr>
+			<tr class="inherited" id="getRuntimePath()">
+		<td><a href="yii_base_application.html#getRuntimePath()-detail">getRuntimePath()</a></td>
+		<td>Returns the directory that stores runtime files.</td>
+		<td><a href="yii_base_application.html">yii\base\Application</a></td>
+	</tr>
+			<tr class="inherited" id="setRuntimePath()">
+		<td><a href="yii_base_application.html#setRuntimePath()-detail">setRuntimePath()</a></td>
+		<td>Sets the directory that stores runtime files.</td>
+		<td><a href="yii_base_application.html">yii\base\Application</a></td>
+	</tr>
+			<tr class="inherited" id="getVendorPath()">
+		<td><a href="yii_base_application.html#getVendorPath()-detail">getVendorPath()</a></td>
+		<td>Returns the directory that stores vendor files.</td>
+		<td><a href="yii_base_application.html">yii\base\Application</a></td>
+	</tr>
+			<tr class="inherited" id="setVendorPath()">
+		<td><a href="yii_base_application.html#setVendorPath()-detail">setVendorPath()</a></td>
+		<td>Sets the directory that stores vendor files.</td>
+		<td><a href="yii_base_application.html">yii\base\Application</a></td>
+	</tr>
+			<tr class="inherited" id="getTimeZone()">
+		<td><a href="yii_base_application.html#getTimeZone()-detail">getTimeZone()</a></td>
+		<td>Returns the time zone used by this application.</td>
+		<td><a href="yii_base_application.html">yii\base\Application</a></td>
+	</tr>
+			<tr class="inherited" id="setTimeZone()">
+		<td><a href="yii_base_application.html#setTimeZone()-detail">setTimeZone()</a></td>
+		<td>Sets the time zone used by this application.</td>
+		<td><a href="yii_base_application.html">yii\base\Application</a></td>
+	</tr>
+			<tr class="inherited" id="getDb()">
+		<td><a href="yii_base_application.html#getDb()-detail">getDb()</a></td>
+		<td>Returns the database connection component.</td>
+		<td><a href="yii_base_application.html">yii\base\Application</a></td>
+	</tr>
+			<tr class="inherited" id="getLog()">
+		<td><a href="yii_base_application.html#getLog()-detail">getLog()</a></td>
+		<td>Returns the log component.</td>
+		<td><a href="yii_base_application.html">yii\base\Application</a></td>
+	</tr>
+			<tr class="inherited" id="getErrorHandler()">
+		<td><a href="yii_base_application.html#getErrorHandler()-detail">getErrorHandler()</a></td>
+		<td>Returns the error handler component.</td>
+		<td><a href="yii_base_application.html">yii\base\Application</a></td>
+	</tr>
+			<tr class="inherited" id="getCache()">
+		<td><a href="yii_base_application.html#getCache()-detail">getCache()</a></td>
+		<td>Returns the cache component.</td>
+		<td><a href="yii_base_application.html">yii\base\Application</a></td>
+	</tr>
+			<tr class="inherited" id="getFormatter()">
+		<td><a href="yii_base_application.html#getFormatter()-detail">getFormatter()</a></td>
+		<td>Returns the formatter component.</td>
+		<td><a href="yii_base_application.html">yii\base\Application</a></td>
+	</tr>
+			<tr id="getRequest()">
+		<td><a href="yii_web_application.html#getRequest()-detail">getRequest()</a></td>
+		<td>Returns the request component.</td>
+		<td><a href="yii_web_application.html">yii\web\Application</a></td>
+	</tr>
+			<tr class="inherited" id="getView()">
+		<td><a href="yii_base_application.html#getView()-detail">getView()</a></td>
+		<td>Returns the view object.</td>
+		<td><a href="yii_base_application.html">yii\base\Application</a></td>
+	</tr>
+			<tr class="inherited" id="getUrlManager()">
+		<td><a href="yii_base_application.html#getUrlManager()-detail">getUrlManager()</a></td>
+		<td>Returns the URL manager for this application.</td>
+		<td><a href="yii_base_application.html">yii\base\Application</a></td>
+	</tr>
+			<tr class="inherited" id="getI18n()">
+		<td><a href="yii_base_application.html#getI18n()-detail">getI18n()</a></td>
+		<td>Returns the internationalization (i18n) component</td>
+		<td><a href="yii_base_application.html">yii\base\Application</a></td>
+	</tr>
+			<tr class="inherited" id="getMail()">
+		<td><a href="yii_base_application.html#getMail()-detail">getMail()</a></td>
+		<td>Returns the mailer component.</td>
+		<td><a href="yii_base_application.html">yii\base\Application</a></td>
+	</tr>
+			<tr class="inherited" id="getAuthManager()">
+		<td><a href="yii_base_application.html#getAuthManager()-detail">getAuthManager()</a></td>
+		<td>Returns the auth manager for this application.</td>
+		<td><a href="yii_base_application.html">yii\base\Application</a></td>
+	</tr>
+			<tr id="registerCoreComponents()">
+		<td><a href="yii_web_application.html#registerCoreComponents()-detail">registerCoreComponents()</a></td>
+		<td>Registers the core application components.</td>
+		<td><a href="yii_web_application.html">yii\web\Application</a></td>
+	</tr>
+			<tr class="inherited" id="handleException()">
+		<td><a href="yii_base_application.html#handleException()-detail">handleException()</a></td>
+		<td>Handles uncaught PHP exceptions.</td>
+		<td><a href="yii_base_application.html">yii\base\Application</a></td>
+	</tr>
+			<tr class="inherited" id="handleError()">
+		<td><a href="yii_base_application.html#handleError()-detail">handleError()</a></td>
+		<td>Handles PHP execution errors such as warnings, notices.</td>
+		<td><a href="yii_base_application.html">yii\base\Application</a></td>
+	</tr>
+			<tr class="inherited" id="handleFatalError()">
+		<td><a href="yii_base_application.html#handleFatalError()-detail">handleFatalError()</a></td>
+		<td>Handles fatal PHP errors</td>
+		<td><a href="yii_base_application.html">yii\base\Application</a></td>
+	</tr>
+			<tr class="inherited" id="renderException()">
+		<td><a href="yii_base_application.html#renderException()-detail">renderException()</a></td>
+		<td>Renders an exception without using rich format.</td>
+		<td><a href="yii_base_application.html">yii\base\Application</a></td>
+	</tr>
+				<tr id="getHomeUrl()">
+		<td><a href="yii_web_application.html#getHomeUrl()-detail">getHomeUrl()</a></td>
+		<td></td>
+		<td><a href="yii_web_application.html">yii\web\Application</a></td>
+	</tr>
+			<tr id="setHomeUrl()">
+		<td><a href="yii_web_application.html#setHomeUrl()-detail">setHomeUrl()</a></td>
+		<td></td>
+		<td><a href="yii_web_application.html">yii\web\Application</a></td>
+	</tr>
+			<tr id="getResponse()">
+		<td><a href="yii_web_application.html#getResponse()-detail">getResponse()</a></td>
+		<td>Returns the response component.</td>
+		<td><a href="yii_web_application.html">yii\web\Application</a></td>
+	</tr>
+			<tr id="getSession()">
+		<td><a href="yii_web_application.html#getSession()-detail">getSession()</a></td>
+		<td>Returns the session component.</td>
+		<td><a href="yii_web_application.html">yii\web\Application</a></td>
+	</tr>
+			<tr id="getUser()">
+		<td><a href="yii_web_application.html#getUser()-detail">getUser()</a></td>
+		<td>Returns the user component.</td>
+		<td><a href="yii_web_application.html">yii\web\Application</a></td>
+	</tr>
+			<tr id="getAssetManager()">
+		<td><a href="yii_web_application.html#getAssetManager()-detail">getAssetManager()</a></td>
+		<td>Returns the asset manager.</td>
+		<td><a href="yii_web_application.html">yii\web\Application</a></td>
+	</tr>
+	</table>
+</div>
+<div class="summary docMethod">
+<h2>Protected Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+																																																						<tr class="inherited" id="initExtensions()">
+		<td><a href="yii_base_application.html#initExtensions()-detail">initExtensions()</a></td>
+		<td>Initializes the extensions.</td>
+		<td><a href="yii_base_application.html">yii\base\Application</a></td>
+	</tr>
+																												<tr class="inherited" id="logException()">
+		<td><a href="yii_base_application.html#logException()-detail">logException()</a></td>
+		<td>Logs the given exception</td>
+		<td><a href="yii_base_application.html">yii\base\Application</a></td>
+	</tr>
+							</table>
+</div>
+<a name="events"></a>
+<div class="summary docEvent">
+<h2>Events</h2>
+
+<p><a href="#" class="toggle">Hide inherited events</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-event" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Event</th><th>Type</th><th>Description</th><th>Defined By</th>
+</tr>
+<tr class="inherited" id="EVENT_BEFORE_REQUEST">
+	<td><a href="yii_base_application.html#EVENT_BEFORE_REQUEST-detail">EVENT_BEFORE_REQUEST</a></td>
+	<td><a href="yii_base_event.html">yii\base\Event</a></td>
+	<td>
+		An event raised before the application starts to handle a request			</td>
+	<td><a href="yii_base_application.html">yii\base\Application</a></td>
+</tr>
+<tr class="inherited" id="EVENT_AFTER_REQUEST">
+	<td><a href="yii_base_application.html#EVENT_AFTER_REQUEST-detail">EVENT_AFTER_REQUEST</a></td>
+	<td><a href="yii_base_event.html">yii\base\Event</a></td>
+	<td>
+		An event raised after the application successfully handles a request (before the response is sent out)			</td>
+	<td><a href="yii_base_application.html">yii\base\Application</a></td>
+</tr>
+<tr class="inherited" id="EVENT_BEFORE_ACTION">
+	<td><a href="yii_base_application.html#EVENT_BEFORE_ACTION-detail">EVENT_BEFORE_ACTION</a></td>
+	<td><a href="yii_base_actionevent.html">yii\base\ActionEvent</a></td>
+	<td>
+		An event raised before executing a controller action			</td>
+	<td><a href="yii_base_application.html">yii\base\Application</a></td>
+</tr>
+<tr class="inherited" id="EVENT_AFTER_ACTION">
+	<td><a href="yii_base_application.html#EVENT_AFTER_ACTION-detail">EVENT_AFTER_ACTION</a></td>
+	<td><a href="yii_base_actionevent.html">yii\base\ActionEvent</a></td>
+	<td>
+		An event raised after executing a controller action			</td>
+	<td><a href="yii_base_application.html">yii\base\Application</a></td>
+</tr>
+</table>
+</div>
+<a name="constants"></a>
+
+<h2>Property Details</h2>
+
+
+	<div class="detailHeader" id="$defaultRoute-detail">
+		$defaultRoute		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $defaultRoute = 'site'	</div>
+
+	<p>The default route of this application. Defaults to 'site'.</p>
+
+	
+
+	<div class="detailHeader" id="$controller-detail">
+		$controller		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_web_controller.html">yii\web\Controller</a> $controller = null	</div>
+
+	<p>The currently active controller instance</p>
+
+	
+
+	<div class="detailHeader" id="$catchAll-detail">
+		$catchAll		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array $catchAll = null	</div>
+
+	<p>The configuration specifying a controller action which should handle
+all user requests. This is mainly used when the application is in maintenance mode
+and needs to handle all incoming requests via a single action.
+The configuration is an array whose first element specifies the route of the action.
+The rest of the array elements (key-value pairs) specify the parameters to be bound
+to the action. For example,</p>
+
+<pre><code>[
+    'offline/notice',
+    'param1' =&gt; 'value1',
+    'param2' =&gt; 'value2',
+]
+</code></pre>
+
+<p>Defaults to null, meaning catch-all is not used.</p>
+
+	
+
+	<div class="detailHeader" id="$behaviors-detail">
+		$behaviors		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_base_behavior.html">yii\base\Behavior</a>[] <a href="yii_base_component.html#getBehaviors()-detail">getBehaviors</a>(  )	</div>
+
+	<p>list of behaviors attached to this component</p>
+
+	
+
+	<div class="detailHeader" id="$uniqueId-detail">
+		$uniqueId		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	string <a href="yii_base_application.html#getUniqueId()-detail">getUniqueId</a>(  )	</div>
+
+	<p>the unique ID of the module.</p>
+
+	
+
+	<div class="detailHeader" id="$basePath-detail">
+		$basePath		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string <a href="yii_base_module.html#getBasePath()-detail">getBasePath</a>(  )<br />void <a href="yii_base_application.html#setBasePath()-detail">setBasePath</a>( $path )	</div>
+
+	<p>the root directory of the module.</p>
+
+	
+
+	<div class="detailHeader" id="$controllerPath-detail">
+		$controllerPath		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string <a href="yii_base_module.html#getControllerPath()-detail">getControllerPath</a>(  )<br />void <a href="yii_base_module.html#setControllerPath()-detail">setControllerPath</a>( $path )	</div>
+
+	<p>the directory that contains the controller classes.</p>
+
+	
+
+	<div class="detailHeader" id="$viewPath-detail">
+		$viewPath		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string <a href="yii_base_module.html#getViewPath()-detail">getViewPath</a>(  )<br />void <a href="yii_base_module.html#setViewPath()-detail">setViewPath</a>( $path )	</div>
+
+	<p>the root directory of view files. Defaults to "<a href="yii_web_application.html#$basePath-detail">$basePath</a>/view".</p>
+
+	
+
+	<div class="detailHeader" id="$layoutPath-detail">
+		$layoutPath		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string <a href="yii_base_module.html#getLayoutPath()-detail">getLayoutPath</a>(  )<br />void <a href="yii_base_module.html#setLayoutPath()-detail">setLayoutPath</a>( $path )	</div>
+
+	<p>the root directory of layout files. Defaults to "<a href="yii_web_application.html#$viewPath-detail">$viewPath</a>/layouts".</p>
+
+	
+
+	<div class="detailHeader" id="$aliases-detail">
+		$aliases		<span class="detailHeaderTag">
+			property
+						 <em>write-only</em> 					</span>
+	</div>
+
+	<div class="signature">
+	void <a href="yii_base_module.html#setAliases()-detail">setAliases</a>( $aliases )	</div>
+
+	<p><p>List of path aliases to be defined. The array keys are alias names
+(must start with '@') and the array values are the corresponding paths or aliases.
+For example,</p>
+
+<pre><code>[
+'@models' =&gt; '@app/models', // an existing alias
+'@backend' =&gt; __DIR__ . '/../backend',  // a directory
+]
+</code></pre></p>
+
+	
+
+	<div class="detailHeader" id="$modules-detail">
+		$modules		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array <a href="yii_base_module.html#getModules()-detail">getModules</a>( $loadedOnly = false )<br />void <a href="yii_base_module.html#setModules()-detail">setModules</a>( $modules )	</div>
+
+	<p>the modules (indexed by their IDs)</p>
+
+	
+
+	<div class="detailHeader" id="$components-detail">
+		$components		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array <a href="yii_base_module.html#getComponents()-detail">getComponents</a>( $loadedOnly = false )<br />void <a href="yii_base_module.html#setComponents()-detail">setComponents</a>( $components )	</div>
+
+	<p>the components (indexed by their IDs)</p>
+
+	
+
+	<div class="detailHeader" id="$runtimePath-detail">
+		$runtimePath		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string <a href="yii_base_application.html#getRuntimePath()-detail">getRuntimePath</a>(  )<br />void <a href="yii_base_application.html#setRuntimePath()-detail">setRuntimePath</a>( $path )	</div>
+
+	<p>the directory that stores runtime files.
+Defaults to the "runtime" subdirectory under <a href="yii_web_application.html#$basePath-detail">$basePath</a>.</p>
+
+	
+
+	<div class="detailHeader" id="$vendorPath-detail">
+		$vendorPath		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string <a href="yii_base_application.html#getVendorPath()-detail">getVendorPath</a>(  )<br />void <a href="yii_base_application.html#setVendorPath()-detail">setVendorPath</a>( $path )	</div>
+
+	<p>the directory that stores vendor files.
+Defaults to "vendor" directory under <a href="yii_web_application.html#$basePath-detail">$basePath</a>.</p>
+
+	
+
+	<div class="detailHeader" id="$timeZone-detail">
+		$timeZone		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string <a href="yii_base_application.html#getTimeZone()-detail">getTimeZone</a>(  )<br />void <a href="yii_base_application.html#setTimeZone()-detail">setTimeZone</a>( $value )	</div>
+
+	<p>the time zone used by this application.</p>
+
+	
+
+	<div class="detailHeader" id="$db-detail">
+		$db		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_db_connection.html">yii\db\Connection</a> <a href="yii_base_application.html#getDb()-detail">getDb</a>(  )	</div>
+
+	<p>the database connection</p>
+
+	
+
+	<div class="detailHeader" id="$log-detail">
+		$log		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_log_logger.html">yii\log\Logger</a> <a href="yii_base_application.html#getLog()-detail">getLog</a>(  )	</div>
+
+	<p>the log component</p>
+
+	
+
+	<div class="detailHeader" id="$errorHandler-detail">
+		$errorHandler		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_base_errorhandler.html">yii\base\ErrorHandler</a> <a href="yii_base_application.html#getErrorHandler()-detail">getErrorHandler</a>(  )	</div>
+
+	<p>the error handler application component.</p>
+
+	
+
+	<div class="detailHeader" id="$cache-detail">
+		$cache		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_caching_cache.html">yii\caching\Cache</a> <a href="yii_base_application.html#getCache()-detail">getCache</a>(  )	</div>
+
+	<p>the cache application component. Null if the component is not enabled.</p>
+
+	
+
+	<div class="detailHeader" id="$formatter-detail">
+		$formatter		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_base_formatter.html">yii\base\Formatter</a> <a href="yii_base_application.html#getFormatter()-detail">getFormatter</a>(  )	</div>
+
+	<p>the formatter application component.</p>
+
+	
+
+	<div class="detailHeader" id="$request-detail">
+		$request		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_web_request.html">yii\web\Request</a> <a href="yii_web_application.html#getRequest()-detail">getRequest</a>(  )	</div>
+
+	<p>the request component</p>
+
+	
+
+	<div class="detailHeader" id="$view-detail">
+		$view		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_base_view.html">yii\base\View</a>|<a href="yii_web_view.html">yii\web\View</a> <a href="yii_base_application.html#getView()-detail">getView</a>(  )	</div>
+
+	<p>the view object that is used to render various view files.</p>
+
+	
+
+	<div class="detailHeader" id="$urlManager-detail">
+		$urlManager		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_web_urlmanager.html">yii\web\UrlManager</a> <a href="yii_base_application.html#getUrlManager()-detail">getUrlManager</a>(  )	</div>
+
+	<p>the URL manager for this application.</p>
+
+	
+
+	<div class="detailHeader" id="$i18n-detail">
+		$i18n		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_i18n_i18n.html">yii\i18n\I18N</a> <a href="yii_base_application.html#getI18n()-detail">getI18n</a>(  )	</div>
+
+	<p>the internationalization component</p>
+
+	
+
+	<div class="detailHeader" id="$mail-detail">
+		$mail		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_mail_mailerinterface.html">yii\mail\MailerInterface</a> <a href="yii_base_application.html#getMail()-detail">getMail</a>(  )	</div>
+
+	<p>the mailer interface</p>
+
+	
+
+	<div class="detailHeader" id="$authManager-detail">
+		$authManager		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_rbac_manager.html">yii\rbac\Manager</a> <a href="yii_base_application.html#getAuthManager()-detail">getAuthManager</a>(  )	</div>
+
+	<p>the auth manager for this application.</p>
+
+	
+
+	<div class="detailHeader" id="$homeUrl-detail">
+		$homeUrl		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string <a href="yii_web_application.html#getHomeUrl()-detail">getHomeUrl</a>(  )<br />void <a href="yii_web_application.html#setHomeUrl()-detail">setHomeUrl</a>( $value )	</div>
+
+	<p>the homepage URL</p>
+
+	
+
+	<div class="detailHeader" id="$response-detail">
+		$response		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_web_response.html">yii\web\Response</a> <a href="yii_web_application.html#getResponse()-detail">getResponse</a>(  )	</div>
+
+	<p>the response component</p>
+
+	
+
+	<div class="detailHeader" id="$session-detail">
+		$session		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_web_session.html">yii\web\Session</a> <a href="yii_web_application.html#getSession()-detail">getSession</a>(  )	</div>
+
+	<p>the session component</p>
+
+	
+
+	<div class="detailHeader" id="$user-detail">
+		$user		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_web_user.html">yii\web\User</a> <a href="yii_web_application.html#getUser()-detail">getUser</a>(  )	</div>
+
+	<p>the user component</p>
+
+	
+
+	<div class="detailHeader" id="$assetManager-detail">
+		$assetManager		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_web_assetmanager.html">yii\web\AssetManager</a> <a href="yii_web_application.html#getAssetManager()-detail">getAssetManager</a>(  )	</div>
+
+	<p>the asset manager component</p>
+
+	
+<h2>Method Details</h2>
+
+
+	<div class="detailHeader" id="preloadComponents()-detail">
+		preloadComponents()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_web_application.html#preloadComponents()-detail">preloadComponents</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="handleRequest()-detail">
+		handleRequest()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			<a href="yii_web_response.html">yii\web\Response</a> <a href="yii_web_application.html#handleRequest()-detail">handleRequest</a>( $request )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$request</td>
+				  <td class="paramTypeCol"><a href="yii_web_request.html">yii\web\Request</a></td>
+				  <td class="paramDescCol">The request to be handled</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol"><a href="yii_web_response.html">yii\web\Response</a></td>
+				  <td class="paramDescCol">the resulting response</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_web_notfoundhttpexception.html">yii\web\NotFoundHttpException</a></td>
+				  <td class="paramDescCol">if the requested route is invalid</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Handles the specified request.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getRequest()-detail">
+		getRequest()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			<a href="yii_web_request.html">yii\web\Request</a> <a href="yii_web_application.html#getRequest()-detail">getRequest</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol"><a href="yii_web_request.html">yii\web\Request</a></td>
+				  <td class="paramDescCol">the request component</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the request component.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="registerCoreComponents()-detail">
+		registerCoreComponents()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_web_application.html#registerCoreComponents()-detail">registerCoreComponents</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p>Registers the core application components.</strong></p>
+	<p></p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_base_module.html#setComponents()-detail">setComponents()</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="getHomeUrl()-detail">
+		getHomeUrl()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_web_application.html#getHomeUrl()-detail">getHomeUrl</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the homepage URL</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="setHomeUrl()-detail">
+		setHomeUrl()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_web_application.html#setHomeUrl()-detail">setHomeUrl</a>( $value )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$value</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The homepage URL</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getResponse()-detail">
+		getResponse()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			<a href="yii_web_response.html">yii\web\Response</a> <a href="yii_web_application.html#getResponse()-detail">getResponse</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol"><a href="yii_web_response.html">yii\web\Response</a></td>
+				  <td class="paramDescCol">the response component</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the response component.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getSession()-detail">
+		getSession()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			<a href="yii_web_session.html">yii\web\Session</a> <a href="yii_web_application.html#getSession()-detail">getSession</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol"><a href="yii_web_session.html">yii\web\Session</a></td>
+				  <td class="paramDescCol">the session component</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the session component.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getUser()-detail">
+		getUser()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			<a href="yii_web_user.html">yii\web\User</a> <a href="yii_web_application.html#getUser()-detail">getUser</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol"><a href="yii_web_user.html">yii\web\User</a></td>
+				  <td class="paramDescCol">the user component</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the user component.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getAssetManager()-detail">
+		getAssetManager()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			<a href="yii_web_assetmanager.html">yii\web\AssetManager</a> <a href="yii_web_application.html#getAssetManager()-detail">getAssetManager</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol"><a href="yii_web_assetmanager.html">yii\web\AssetManager</a></td>
+				  <td class="paramDescCol">the asset manager component</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the asset manager.</strong></p>
+	<p></p>
+
+	
+			</div><!-- end of content -->
+
+		<div id="apiFooter">
+			<p>&copy; 2008-2013 by <a href="http://www.yiisoft.com">Yii Software LLC</a></p>
+			<p>All Rights Reserved.</p>
+		</div><!-- end of footer -->
+
+<script type="text/javascript">
+/*<![CDATA[*/
+$("a.toggle").on('click', function() {
+	var $this = $(this);
+	if ($this.hasClass('properties-hidden')) {
+		$this.text($this.text().replace(/Show/,'Hide'));
+		$this.parents(".summary").find(".inherited").show();
+		$this.removeClass('properties-hidden');
+	} else {
+		$this.text($this.text().replace(/Hide/,'Show'));
+		$this.parents(".summary").find(".inherited").hide();
+		$this.addClass('properties-hidden');
+	}
+	return false;
+});
+/*
+$(".sourceCode a.show").toggle(function(){
+	$(this).text($(this).text().replace(/show/,'hide'));
+	$(this).parents(".sourceCode").find("div.code").show();
+},function(){
+	$(this).text($(this).text().replace(/hide/,'show'));
+	$(this).parents(".sourceCode").find("div.code").hide();
+});
+$("a.sourceLink").click(function(){
+	$(this).attr('target','_blank');
+});
+*/
+/*]]>*/
+</script>
+
+	</div><!-- end of page -->
+</body>
+</html>

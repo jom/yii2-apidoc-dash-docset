@@ -1,0 +1,720 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="language" content="en" />
+<link href="./assets/4138e429/api.css" rel="stylesheet">
+<link href="./assets/4138e429/style.css" rel="stylesheet">
+<script src="./assets/a91b37a6/jquery.js"></script><title>Yii Framework 2.0 API Documentation</title>
+</head>
+
+<body>
+	<div id="apiPage">
+
+		<div id="apiHeader">
+			<a href="http://www.yiiframework.com">Yii Framework</a> v2.0.0-dev Class Reference
+		</div><!-- end of header -->
+
+		<div id="content">
+		<h1>Class yii\web\UploadedFile</h1>
+<div id="nav">
+	<a href="index.html">All Classes</a>
+			| <a href="#properties">Properties</a>
+				| <a href="#methods">Methods</a>
+			</div>
+
+<table class="summaryTable docClass">
+	<colgroup>
+		<col class="col-name" />
+		<col class="col-value" />
+	</colgroup>
+			<tr><th>Inheritance</th><td><a href="yii_web_uploadedfile.html">yii\web\UploadedFile</a> &raquo;
+<a href="yii_base_object.html">yii\base\Object</a></td></tr>
+				<tr><th>Implements</th><td><a href="yii_base_arrayable.html">yii\base\Arrayable</a></td></tr>
+								<tr><th>Available since version</th><td>2.0</td></tr>
+		<tr>
+	  <th>Source Code</th>
+	  <td></td>
+	</tr>
+</table>
+
+<div id="classDescription">
+	<strong>UploadedFile represents the information for an uploaded file.</strong>
+	<p>You can call <a href="yii_web_uploadedfile.html#getInstance()-detail">getInstance()</a> to retrieve the instance of an uploaded file,
+and then use <a href="yii_web_uploadedfile.html#saveAs()-detail">saveAs()</a> to save it on the server.
+You may also query other information about the file, including <a href="yii_web_uploadedfile.html#$name-detail">$name</a>,
+<a href="yii_web_uploadedfile.html#$tempName-detail">$tempName</a>, <a href="yii_web_uploadedfile.html#$type-detail">$type</a>, <a href="yii_web_uploadedfile.html#$size-detail">$size</a> and <a href="yii_web_uploadedfile.html#$error-detail">$error</a>.</p>
+</div>
+
+<a name="properties"></a>
+
+<div class="summary docProperty">
+<h2>Public Properties</h2>
+
+<p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-property" />
+	<col class="col-type" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Property</th><th>Type</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr id="$name">
+		<td><a href="yii_web_uploadedfile.html#$name-detail">$name</a></td>
+		<td>string</td>
+		<td>The original name of the file being uploaded</td>
+		<td><a href="yii_web_uploadedfile.html">yii\web\UploadedFile</a></td>
+	</tr>
+			<tr id="$tempName">
+		<td><a href="yii_web_uploadedfile.html#$tempName-detail">$tempName</a></td>
+		<td>string</td>
+		<td>The path of the uploaded file on the server</td>
+		<td><a href="yii_web_uploadedfile.html">yii\web\UploadedFile</a></td>
+	</tr>
+			<tr id="$type">
+		<td><a href="yii_web_uploadedfile.html#$type-detail">$type</a></td>
+		<td>string</td>
+		<td>The MIME-type of the uploaded file (such as "image/gif")</td>
+		<td><a href="yii_web_uploadedfile.html">yii\web\UploadedFile</a></td>
+	</tr>
+			<tr id="$size">
+		<td><a href="yii_web_uploadedfile.html#$size-detail">$size</a></td>
+		<td>integer</td>
+		<td>The actual size of the uploaded file in bytes</td>
+		<td><a href="yii_web_uploadedfile.html">yii\web\UploadedFile</a></td>
+	</tr>
+			<tr id="$error">
+		<td><a href="yii_web_uploadedfile.html#$error-detail">$error</a></td>
+		<td>integer</td>
+		<td>An error code describing the status of this file uploading</td>
+		<td><a href="yii_web_uploadedfile.html">yii\web\UploadedFile</a></td>
+	</tr>
+			<tr id="$baseName">
+		<td><a href="yii_web_uploadedfile.html#$baseName-detail">$baseName</a></td>
+		<td>string</td>
+		<td>original file base name</td>
+		<td><a href="yii_web_uploadedfile.html">yii\web\UploadedFile</a></td>
+	</tr>
+			<tr id="$extension">
+		<td><a href="yii_web_uploadedfile.html#$extension-detail">$extension</a></td>
+		<td>string</td>
+		<td>file extension</td>
+		<td><a href="yii_web_uploadedfile.html">yii\web\UploadedFile</a></td>
+	</tr>
+			<tr id="$hasError">
+		<td><a href="yii_web_uploadedfile.html#$hasError-detail">$hasError</a></td>
+		<td>boolean</td>
+		<td>whether there is an error with the uploaded file</td>
+		<td><a href="yii_web_uploadedfile.html">yii\web\UploadedFile</a></td>
+	</tr>
+	</table>
+</div>
+<a name="methods"></a>
+
+<div class="summary docMethod">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr class="inherited" id="className()">
+		<td><a href="yii_base_object.html#className()-detail">className()</a></td>
+		<td></td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__construct()">
+		<td><a href="yii_base_object.html#__construct()-detail">__construct()</a></td>
+		<td>Constructor.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="init()">
+		<td><a href="yii_base_object.html#init()-detail">init()</a></td>
+		<td>Initializes the object.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__get()">
+		<td><a href="yii_base_object.html#__get()-detail">__get()</a></td>
+		<td>Returns the value of an object property.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__set()">
+		<td><a href="yii_base_object.html#__set()-detail">__set()</a></td>
+		<td>Sets value of an object property.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__isset()">
+		<td><a href="yii_base_object.html#__isset()-detail">__isset()</a></td>
+		<td>Checks if the named property is set (not null).</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__unset()">
+		<td><a href="yii_base_object.html#__unset()-detail">__unset()</a></td>
+		<td>Sets an object property to null.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__call()">
+		<td><a href="yii_base_object.html#__call()-detail">__call()</a></td>
+		<td>Calls the named method which is not a class method.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="hasProperty()">
+		<td><a href="yii_base_object.html#hasProperty()-detail">hasProperty()</a></td>
+		<td>Returns a value indicating whether a property is defined.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="canGetProperty()">
+		<td><a href="yii_base_object.html#canGetProperty()-detail">canGetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be read.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="canSetProperty()">
+		<td><a href="yii_base_object.html#canSetProperty()-detail">canSetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be set.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="hasMethod()">
+		<td><a href="yii_base_object.html#hasMethod()-detail">hasMethod()</a></td>
+		<td>Returns a value indicating whether a method is defined.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="toArray()">
+		<td><a href="yii_base_object.html#toArray()-detail">toArray()</a></td>
+		<td>Converts the object into an array.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr id="__toString()">
+		<td><a href="yii_web_uploadedfile.html#__toString()-detail">__toString()</a></td>
+		<td>String output.</td>
+		<td><a href="yii_web_uploadedfile.html">yii\web\UploadedFile</a></td>
+	</tr>
+			<tr id="getInstance()">
+		<td><a href="yii_web_uploadedfile.html#getInstance()-detail">getInstance()</a></td>
+		<td>Returns an uploaded file for the given model attribute.</td>
+		<td><a href="yii_web_uploadedfile.html">yii\web\UploadedFile</a></td>
+	</tr>
+			<tr id="getInstances()">
+		<td><a href="yii_web_uploadedfile.html#getInstances()-detail">getInstances()</a></td>
+		<td>Returns all uploaded files for the given model attribute.</td>
+		<td><a href="yii_web_uploadedfile.html">yii\web\UploadedFile</a></td>
+	</tr>
+			<tr id="getInstanceByName()">
+		<td><a href="yii_web_uploadedfile.html#getInstanceByName()-detail">getInstanceByName()</a></td>
+		<td>Returns an uploaded file according to the given file input name.</td>
+		<td><a href="yii_web_uploadedfile.html">yii\web\UploadedFile</a></td>
+	</tr>
+			<tr id="getInstancesByName()">
+		<td><a href="yii_web_uploadedfile.html#getInstancesByName()-detail">getInstancesByName()</a></td>
+		<td>Returns an array of uploaded files corresponding to the specified file input name.</td>
+		<td><a href="yii_web_uploadedfile.html">yii\web\UploadedFile</a></td>
+	</tr>
+			<tr id="reset()">
+		<td><a href="yii_web_uploadedfile.html#reset()-detail">reset()</a></td>
+		<td>Cleans up the loaded UploadedFile instances.</td>
+		<td><a href="yii_web_uploadedfile.html">yii\web\UploadedFile</a></td>
+	</tr>
+			<tr id="saveAs()">
+		<td><a href="yii_web_uploadedfile.html#saveAs()-detail">saveAs()</a></td>
+		<td>Saves the uploaded file.</td>
+		<td><a href="yii_web_uploadedfile.html">yii\web\UploadedFile</a></td>
+	</tr>
+			<tr id="getBaseName()">
+		<td><a href="yii_web_uploadedfile.html#getBaseName()-detail">getBaseName()</a></td>
+		<td></td>
+		<td><a href="yii_web_uploadedfile.html">yii\web\UploadedFile</a></td>
+	</tr>
+			<tr id="getExtension()">
+		<td><a href="yii_web_uploadedfile.html#getExtension()-detail">getExtension()</a></td>
+		<td></td>
+		<td><a href="yii_web_uploadedfile.html">yii\web\UploadedFile</a></td>
+	</tr>
+			<tr id="getHasError()">
+		<td><a href="yii_web_uploadedfile.html#getHasError()-detail">getHasError()</a></td>
+		<td></td>
+		<td><a href="yii_web_uploadedfile.html">yii\web\UploadedFile</a></td>
+	</tr>
+	</table>
+</div>
+<a name="events"></a>
+
+<a name="constants"></a>
+
+<h2>Property Details</h2>
+
+
+	<div class="detailHeader" id="$name-detail">
+		$name		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $name = null	</div>
+
+	<p>The original name of the file being uploaded</p>
+
+	
+
+	<div class="detailHeader" id="$tempName-detail">
+		$tempName		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $tempName = null	</div>
+
+	<p>The path of the uploaded file on the server.
+Note, this is a temporary file which will be automatically deleted by PHP
+after the current request is processed.</p>
+
+	
+
+	<div class="detailHeader" id="$type-detail">
+		$type		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $type = null	</div>
+
+	<p>The MIME-type of the uploaded file (such as "image/gif").
+Since this MIME type is not checked on the server side, do not take this value for granted.
+Instead, use <span style="background: #f00;">\yii\web\FileHelper::getMimeType()</span> to determine the exact MIME type.</p>
+
+	
+
+	<div class="detailHeader" id="$size-detail">
+		$size		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	integer $size = null	</div>
+
+	<p>The actual size of the uploaded file in bytes</p>
+
+	
+
+	<div class="detailHeader" id="$error-detail">
+		$error		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	integer $error = null	</div>
+
+	<p>An error code describing the status of this file uploading.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li>http://www.php.net/manual/en/features.file-upload.errors.php</li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="$baseName-detail">
+		$baseName		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	string <a href="yii_web_uploadedfile.html#getBaseName()-detail">getBaseName</a>(  )	</div>
+
+	<p>original file base name</p>
+
+	
+
+	<div class="detailHeader" id="$extension-detail">
+		$extension		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	string <a href="yii_web_uploadedfile.html#getExtension()-detail">getExtension</a>(  )	</div>
+
+	<p>file extension</p>
+
+	
+
+	<div class="detailHeader" id="$hasError-detail">
+		$hasError		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	boolean <a href="yii_web_uploadedfile.html#getHasError()-detail">getHasError</a>(  )	</div>
+
+	<p>whether there is an error with the uploaded file.
+Check <a href="yii_web_uploadedfile.html#$error-detail">$error</a> for detailed error code information.</p>
+
+	
+<h2>Method Details</h2>
+
+
+	<div class="detailHeader" id="__toString()-detail">
+		__toString()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_web_uploadedfile.html#__toString()-detail">__toString</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the string representation of the object</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>String output.</strong></p>
+	<p>This is PHP magic method that returns string representation of an object.
+The implementation here returns the uploaded file's name.</p>
+
+	
+
+	<div class="detailHeader" id="getInstance()-detail">
+		getInstance()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			<a href="yii_web_uploadedfile.html">yii\web\UploadedFile</a> <a href="yii_web_uploadedfile.html#getInstance()-detail">getInstance</a>( $model, $attribute )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$model</td>
+				  <td class="paramTypeCol"><a href="yii_base_model.html">yii\base\Model</a></td>
+				  <td class="paramDescCol">The data model</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$attribute</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The attribute name. The attribute name may contain array indexes.
+For example, '[1]file' for tabular file uploading; and 'file[1]' for an element in a file array.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol"><a href="yii_web_uploadedfile.html">yii\web\UploadedFile</a></td>
+				  <td class="paramDescCol">the instance of the uploaded file.
+Null is returned if no file is uploaded for the specified model attribute.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns an uploaded file for the given model attribute.</strong></p>
+	<p>The file should be uploaded using <span style="background: #f00;">\yii\web\ActiveForm::fileInput()</span>.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_web_uploadedfile.html#getInstanceByName()-detail">getInstanceByName()</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="getInstances()-detail">
+		getInstances()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			<a href="yii_web_uploadedfile.html">yii\web\UploadedFile</a>[] <a href="yii_web_uploadedfile.html#getInstances()-detail">getInstances</a>( $model, $attribute )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$model</td>
+				  <td class="paramTypeCol"><a href="yii_base_model.html">yii\base\Model</a></td>
+				  <td class="paramDescCol">The data model</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$attribute</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The attribute name. The attribute name may contain array indexes
+for tabular file uploading, e.g. '[1]file'.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol"><a href="yii_web_uploadedfile.html">yii\web\UploadedFile</a>[]</td>
+				  <td class="paramDescCol">array of UploadedFile objects.
+Empty array is returned if no available file was found for the given attribute.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns all uploaded files for the given model attribute.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getInstanceByName()-detail">
+		getInstanceByName()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			<a href="yii_web_uploadedfile.html">yii\web\UploadedFile</a> <a href="yii_web_uploadedfile.html#getInstanceByName()-detail">getInstanceByName</a>( $name )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The name of the file input field.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol"><a href="yii_web_uploadedfile.html">yii\web\UploadedFile</a></td>
+				  <td class="paramDescCol">the instance of the uploaded file.
+Null is returned if no file is uploaded for the specified name.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns an uploaded file according to the given file input name.</strong></p>
+	<p>The name can be a plain string or a string like an array element (e.g. 'Post[imageFile]', or 'Post[0][imageFile]').</p>
+
+	
+
+	<div class="detailHeader" id="getInstancesByName()-detail">
+		getInstancesByName()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			<a href="yii_web_uploadedfile.html">yii\web\UploadedFile</a>[] <a href="yii_web_uploadedfile.html#getInstancesByName()-detail">getInstancesByName</a>( $name )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The name of the array of files</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol"><a href="yii_web_uploadedfile.html">yii\web\UploadedFile</a>[]</td>
+				  <td class="paramDescCol">the array of CUploadedFile objects. Empty array is returned
+if no adequate upload was found. Please note that this array will contain
+all files from all sub-arrays regardless how deeply nested they are.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns an array of uploaded files corresponding to the specified file input name.</strong></p>
+	<p>This is mainly used when multiple files were uploaded and saved as 'files[0]', 'files[1]',
+'files[n]'..., and you can retrieve them all by passing 'files' as the name.</p>
+
+	
+
+	<div class="detailHeader" id="reset()-detail">
+		reset()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_web_uploadedfile.html#reset()-detail">reset</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p>Cleans up the loaded UploadedFile instances.</strong></p>
+	<p>This method is mainly used by test scripts to set up a fixture.</p>
+
+	
+
+	<div class="detailHeader" id="saveAs()-detail">
+		saveAs()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_web_uploadedfile.html#saveAs()-detail">saveAs</a>( $file, $deleteTempFile = true )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$file</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The file path used to save the uploaded file</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$deleteTempFile</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">Whether to delete the temporary file after saving.
+If true, you will not be able to save the uploaded file again in the current request.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">true whether the file is saved successfully</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Saves the uploaded file.</strong></p>
+	<p>Note that this method uses php's move_uploaded_file() method. If the target file <code>$file</code>
+already exists, it will be overwritten.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_web_uploadedfile.html#$error-detail">$error</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="getBaseName()-detail">
+		getBaseName()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_web_uploadedfile.html#getBaseName()-detail">getBaseName</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">original file base name</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getExtension()-detail">
+		getExtension()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_web_uploadedfile.html#getExtension()-detail">getExtension</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">file extension</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getHasError()-detail">
+		getHasError()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_web_uploadedfile.html#getHasError()-detail">getHasError</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether there is an error with the uploaded file.
+Check <a href="yii_web_uploadedfile.html#$error-detail">$error</a> for detailed error code information.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+			</div><!-- end of content -->
+
+		<div id="apiFooter">
+			<p>&copy; 2008-2013 by <a href="http://www.yiisoft.com">Yii Software LLC</a></p>
+			<p>All Rights Reserved.</p>
+		</div><!-- end of footer -->
+
+<script type="text/javascript">
+/*<![CDATA[*/
+$("a.toggle").on('click', function() {
+	var $this = $(this);
+	if ($this.hasClass('properties-hidden')) {
+		$this.text($this.text().replace(/Show/,'Hide'));
+		$this.parents(".summary").find(".inherited").show();
+		$this.removeClass('properties-hidden');
+	} else {
+		$this.text($this.text().replace(/Hide/,'Show'));
+		$this.parents(".summary").find(".inherited").hide();
+		$this.addClass('properties-hidden');
+	}
+	return false;
+});
+/*
+$(".sourceCode a.show").toggle(function(){
+	$(this).text($(this).text().replace(/show/,'hide'));
+	$(this).parents(".sourceCode").find("div.code").show();
+},function(){
+	$(this).text($(this).text().replace(/hide/,'show'));
+	$(this).parents(".sourceCode").find("div.code").hide();
+});
+$("a.sourceLink").click(function(){
+	$(this).attr('target','_blank');
+});
+*/
+/*]]>*/
+</script>
+
+	</div><!-- end of page -->
+</body>
+</html>

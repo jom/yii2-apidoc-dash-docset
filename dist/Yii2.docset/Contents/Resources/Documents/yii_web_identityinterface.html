@@ -1,0 +1,281 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="language" content="en" />
+<link href="./assets/4138e429/api.css" rel="stylesheet">
+<link href="./assets/4138e429/style.css" rel="stylesheet">
+<script src="./assets/a91b37a6/jquery.js"></script><title>Yii Framework 2.0 API Documentation</title>
+</head>
+
+<body>
+	<div id="apiPage">
+
+		<div id="apiHeader">
+			<a href="http://www.yiiframework.com">Yii Framework</a> v2.0.0-dev Class Reference
+		</div><!-- end of header -->
+
+		<div id="content">
+		<h1>Interface yii\web\IdentityInterface</h1>
+<div id="nav">
+	<a href="index.html">All Classes</a>
+				| <a href="#methods">Methods</a>
+			</div>
+
+<table class="summaryTable docClass">
+	<colgroup>
+		<col class="col-name" />
+		<col class="col-value" />
+	</colgroup>
+									<tr><th>Available since version</th><td>2.0</td></tr>
+		<tr>
+	  <th>Source Code</th>
+	  <td></td>
+	</tr>
+</table>
+
+<div id="classDescription">
+	<strong>IdentityInterface is the interface that should be implemented by a class providing identity information.</strong>
+	<p><p>This interface can typically be implemented by a user model class. For example, the following
+code shows how to implement this interface by a User ActiveRecord class:</p>
+
+<pre><code>class User extends ActiveRecord implements IdentityInterface
+{
+    public static function findIdentity($id)
+    {
+        return static::find($id);
+    }
+
+    public function getId()
+    {
+        return $this-&gt;id;
+    }
+
+    public function getAuthKey()
+    {
+        return $this-&gt;authKey;
+    }
+
+    public function validateAuthKey($authKey)
+    {
+        return $this-&gt;authKey === $authKey;
+    }
+}
+</code></pre></p>
+</div>
+
+<a name="properties"></a>
+
+<a name="methods"></a>
+
+<div class="summary docMethod">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr id="findIdentity()">
+		<td><a href="yii_web_identityinterface.html#findIdentity()-detail">findIdentity()</a></td>
+		<td>Finds an identity by the given ID.</td>
+		<td><a href="yii_web_identityinterface.html">yii\web\IdentityInterface</a></td>
+	</tr>
+			<tr id="getId()">
+		<td><a href="yii_web_identityinterface.html#getId()-detail">getId()</a></td>
+		<td>Returns an ID that can uniquely identify a user identity.</td>
+		<td><a href="yii_web_identityinterface.html">yii\web\IdentityInterface</a></td>
+	</tr>
+			<tr id="getAuthKey()">
+		<td><a href="yii_web_identityinterface.html#getAuthKey()-detail">getAuthKey()</a></td>
+		<td>Returns a key that can be used to check the validity of a given identity ID.</td>
+		<td><a href="yii_web_identityinterface.html">yii\web\IdentityInterface</a></td>
+	</tr>
+			<tr id="validateAuthKey()">
+		<td><a href="yii_web_identityinterface.html#validateAuthKey()-detail">validateAuthKey()</a></td>
+		<td>Validates the given auth key.</td>
+		<td><a href="yii_web_identityinterface.html">yii\web\IdentityInterface</a></td>
+	</tr>
+	</table>
+</div>
+<a name="events"></a>
+
+<a name="constants"></a>
+
+<h2>Method Details</h2>
+
+
+	<div class="detailHeader" id="findIdentity()-detail">
+		findIdentity()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			<a href="yii_web_identityinterface.html">yii\web\IdentityInterface</a> <a href="yii_web_identityinterface.html#findIdentity()-detail">findIdentity</a>( $id )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$id</td>
+				  <td class="paramTypeCol">string|integer</td>
+				  <td class="paramDescCol">The ID to be looked for</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol"><a href="yii_web_identityinterface.html">yii\web\IdentityInterface</a></td>
+				  <td class="paramDescCol">the identity object that matches the given ID.
+Null should be returned if such an identity cannot be found
+or the identity is not in an active state (disabled, deleted, etc.)</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Finds an identity by the given ID.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getId()-detail">
+		getId()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string|integer <a href="yii_web_identityinterface.html#getId()-detail">getId</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string|integer</td>
+				  <td class="paramDescCol">an ID that uniquely identifies a user identity.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns an ID that can uniquely identify a user identity.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getAuthKey()-detail">
+		getAuthKey()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_web_identityinterface.html#getAuthKey()-detail">getAuthKey</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">a key that is used to check the validity of a given identity ID.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns a key that can be used to check the validity of a given identity ID.</strong></p>
+	<p>The key should be unique for each individual user, and should be persistent
+so that it can be used to check the validity of the user identity.</p>
+
+<p>The space of such keys should be big enough to defeat potential identity attacks.</p>
+
+<p>This is required if <a href="yii_web_user.html#$enableAutoLogin-detail">yii\web\User::$enableAutoLogin</a> is enabled.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_web_identityinterface.html#validateAuthKey()-detail">validateAuthKey()</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="validateAuthKey()-detail">
+		validateAuthKey()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_web_identityinterface.html#validateAuthKey()-detail">validateAuthKey</a>( $authKey )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$authKey</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The given auth key</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether the given auth key is valid.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Validates the given auth key.</strong></p>
+	<p>This is required if <a href="yii_web_user.html#$enableAutoLogin-detail">yii\web\User::$enableAutoLogin</a> is enabled.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_web_identityinterface.html#getAuthKey()-detail">getAuthKey()</a></li>
+</ul>
+</div>
+
+		</div><!-- end of content -->
+
+		<div id="apiFooter">
+			<p>&copy; 2008-2013 by <a href="http://www.yiisoft.com">Yii Software LLC</a></p>
+			<p>All Rights Reserved.</p>
+		</div><!-- end of footer -->
+
+<script type="text/javascript">
+/*<![CDATA[*/
+$("a.toggle").on('click', function() {
+	var $this = $(this);
+	if ($this.hasClass('properties-hidden')) {
+		$this.text($this.text().replace(/Show/,'Hide'));
+		$this.parents(".summary").find(".inherited").show();
+		$this.removeClass('properties-hidden');
+	} else {
+		$this.text($this.text().replace(/Hide/,'Show'));
+		$this.parents(".summary").find(".inherited").hide();
+		$this.addClass('properties-hidden');
+	}
+	return false;
+});
+/*
+$(".sourceCode a.show").toggle(function(){
+	$(this).text($(this).text().replace(/show/,'hide'));
+	$(this).parents(".sourceCode").find("div.code").show();
+},function(){
+	$(this).text($(this).text().replace(/hide/,'show'));
+	$(this).parents(".sourceCode").find("div.code").hide();
+});
+$("a.sourceLink").click(function(){
+	$(this).attr('target','_blank');
+});
+*/
+/*]]>*/
+</script>
+
+	</div><!-- end of page -->
+</body>
+</html>

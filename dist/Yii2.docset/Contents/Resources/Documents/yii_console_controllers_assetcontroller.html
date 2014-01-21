@@ -1,0 +1,1400 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="language" content="en" />
+<link href="./assets/4138e429/api.css" rel="stylesheet">
+<link href="./assets/4138e429/style.css" rel="stylesheet">
+<script src="./assets/a91b37a6/jquery.js"></script><title>Yii Framework 2.0 API Documentation</title>
+</head>
+
+<body>
+	<div id="apiPage">
+
+		<div id="apiHeader">
+			<a href="http://www.yiiframework.com">Yii Framework</a> v2.0.0-dev Class Reference
+		</div><!-- end of header -->
+
+		<div id="content">
+		<h1>Class yii\console\controllers\AssetController</h1>
+<div id="nav">
+	<a href="index.html">All Classes</a>
+			| <a href="#properties">Properties</a>
+				| <a href="#methods">Methods</a>
+				| <a href="#events">Events</a>
+		</div>
+
+<table class="summaryTable docClass">
+	<colgroup>
+		<col class="col-name" />
+		<col class="col-value" />
+	</colgroup>
+			<tr><th>Inheritance</th><td><a href="yii_console_controllers_assetcontroller.html">yii\console\controllers\AssetController</a> &raquo;
+<a href="yii_console_controller.html">yii\console\Controller</a> &raquo;
+<a href="yii_base_controller.html">yii\base\Controller</a> &raquo;
+<a href="yii_base_component.html">yii\base\Component</a> &raquo;
+<a href="yii_base_object.html">yii\base\Object</a></td></tr>
+				<tr><th>Implements</th><td><a href="yii_base_arrayable.html">yii\base\Arrayable</a>, <a href="yii_base_viewcontextinterface.html">yii\base\ViewContextInterface</a></td></tr>
+								<tr><th>Available since version</th><td>2.0</td></tr>
+		<tr>
+	  <th>Source Code</th>
+	  <td></td>
+	</tr>
+</table>
+
+<div id="classDescription">
+	<strong>This command allows you to combine and compress your JavaScript and CSS files.</strong>
+	<p>Usage:
+1. Create a configuration file using 'template' action:
+   yii asset/template /path/to/myapp/config.php
+2. Edit the created config file, adjusting it for your web application needs.
+3. Run the 'compress' action, using created config:
+   yii asset /path/to/myapp/config.php /path/to/myapp/config/assets_compressed.php
+4. Adjust your web application config to use compressed assets.</p>
+
+<p>Note: in the console environment some path aliases like '@webroot' and '@web' may not exist,
+so corresponding paths inside the configuration should be specified directly.</p>
+
+<p>Note: by default this command relies on an external tools to perform actual files compression,
+check <a href="yii_console_controllers_assetcontroller.html#$jsCompressor-detail">$jsCompressor</a> and <a href="yii_console_controllers_assetcontroller.html#$cssCompressor-detail">$cssCompressor</a> for more details.</p>
+</div>
+
+<a name="properties"></a>
+
+<div class="summary docProperty">
+<h2>Public Properties</h2>
+
+<p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-property" />
+	<col class="col-type" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Property</th><th>Type</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr class="inherited" id="$id">
+		<td><a href="yii_base_controller.html#$id-detail">$id</a></td>
+		<td>string</td>
+		<td>The ID of this controller</td>
+		<td><a href="yii_base_controller.html">yii\base\Controller</a></td>
+	</tr>
+			<tr class="inherited" id="$module">
+		<td><a href="yii_base_controller.html#$module-detail">$module</a></td>
+		<td><a href="yii_base_module.html">yii\base\Module</a></td>
+		<td>The module that this controller belongs to</td>
+		<td><a href="yii_base_controller.html">yii\base\Controller</a></td>
+	</tr>
+			<tr id="$defaultAction">
+		<td><a href="yii_console_controllers_assetcontroller.html#$defaultAction-detail">$defaultAction</a></td>
+		<td>string</td>
+		<td>Controller default action ID</td>
+		<td><a href="yii_console_controllers_assetcontroller.html">yii\console\controllers\AssetController</a></td>
+	</tr>
+			<tr class="inherited" id="$layout">
+		<td><a href="yii_base_controller.html#$layout-detail">$layout</a></td>
+		<td>string|boolean</td>
+		<td>The name of the layout to be applied to this controller's views</td>
+		<td><a href="yii_base_controller.html">yii\base\Controller</a></td>
+	</tr>
+			<tr class="inherited" id="$action">
+		<td><a href="yii_base_controller.html#$action-detail">$action</a></td>
+		<td><a href="yii_base_action.html">yii\base\Action</a></td>
+		<td>The action that is currently being executed</td>
+		<td><a href="yii_base_controller.html">yii\base\Controller</a></td>
+	</tr>
+			<tr class="inherited" id="$interactive">
+		<td><a href="yii_console_controller.html#$interactive-detail">$interactive</a></td>
+		<td>boolean</td>
+		<td>Whether to run the command interactively</td>
+		<td><a href="yii_console_controller.html">yii\console\Controller</a></td>
+	</tr>
+			<tr class="inherited" id="$color">
+		<td><a href="yii_console_controller.html#$color-detail">$color</a></td>
+		<td>boolean</td>
+		<td>Whether to enable ANSI color in the output</td>
+		<td><a href="yii_console_controller.html">yii\console\Controller</a></td>
+	</tr>
+			<tr id="$bundles">
+		<td><a href="yii_console_controllers_assetcontroller.html#$bundles-detail">$bundles</a></td>
+		<td>array</td>
+		<td>List of asset bundles to be compressed</td>
+		<td><a href="yii_console_controllers_assetcontroller.html">yii\console\controllers\AssetController</a></td>
+	</tr>
+			<tr id="$targets">
+		<td><a href="yii_console_controllers_assetcontroller.html#$targets-detail">$targets</a></td>
+		<td>array</td>
+		<td>List of asset bundles, which represents output compressed files</td>
+		<td><a href="yii_console_controllers_assetcontroller.html">yii\console\controllers\AssetController</a></td>
+	</tr>
+			<tr id="$jsCompressor">
+		<td><a href="yii_console_controllers_assetcontroller.html#$jsCompressor-detail">$jsCompressor</a></td>
+		<td>string|callback</td>
+		<td>JavaScript file compressor</td>
+		<td><a href="yii_console_controllers_assetcontroller.html">yii\console\controllers\AssetController</a></td>
+	</tr>
+			<tr id="$cssCompressor">
+		<td><a href="yii_console_controllers_assetcontroller.html#$cssCompressor-detail">$cssCompressor</a></td>
+		<td>string|callback</td>
+		<td>CSS file compressor</td>
+		<td><a href="yii_console_controllers_assetcontroller.html">yii\console\controllers\AssetController</a></td>
+	</tr>
+			<tr id="$behaviors">
+		<td><a href="yii_console_controllers_assetcontroller.html#$behaviors-detail">$behaviors</a></td>
+		<td><a href="yii_base_behavior.html">yii\base\Behavior</a>[]</td>
+		<td>list of behaviors attached to this component</td>
+		<td><a href="yii_console_controllers_assetcontroller.html">yii\console\controllers\AssetController</a></td>
+	</tr>
+			<tr id="$uniqueId">
+		<td><a href="yii_console_controllers_assetcontroller.html#$uniqueId-detail">$uniqueId</a></td>
+		<td>string</td>
+		<td>the controller ID that is prefixed with the module ID (if any)</td>
+		<td><a href="yii_console_controllers_assetcontroller.html">yii\console\controllers\AssetController</a></td>
+	</tr>
+			<tr id="$route">
+		<td><a href="yii_console_controllers_assetcontroller.html#$route-detail">$route</a></td>
+		<td>string</td>
+		<td>the route (module ID, controller ID and action ID) of the current request</td>
+		<td><a href="yii_console_controllers_assetcontroller.html">yii\console\controllers\AssetController</a></td>
+	</tr>
+			<tr id="$view">
+		<td><a href="yii_console_controllers_assetcontroller.html#$view-detail">$view</a></td>
+		<td><a href="yii_base_view.html">yii\base\View</a></td>
+		<td>the view object that can be used to render views or view files</td>
+		<td><a href="yii_console_controllers_assetcontroller.html">yii\console\controllers\AssetController</a></td>
+	</tr>
+			<tr id="$viewPath">
+		<td><a href="yii_console_controllers_assetcontroller.html#$viewPath-detail">$viewPath</a></td>
+		<td>string</td>
+		<td>the directory containing the view files for this controller</td>
+		<td><a href="yii_console_controllers_assetcontroller.html">yii\console\controllers\AssetController</a></td>
+	</tr>
+			<tr id="$assetManager">
+		<td><a href="yii_console_controllers_assetcontroller.html#$assetManager-detail">$assetManager</a></td>
+		<td><a href="yii_web_assetmanager.html">yii\web\AssetManager</a></td>
+		<td>asset manager instance</td>
+		<td><a href="yii_console_controllers_assetcontroller.html">yii\console\controllers\AssetController</a></td>
+	</tr>
+	</table>
+</div>
+<a name="methods"></a>
+
+<div class="summary docMethod">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr class="inherited" id="className()">
+		<td><a href="yii_base_object.html#className()-detail">className()</a></td>
+		<td></td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__construct()">
+		<td><a href="yii_base_controller.html#__construct()-detail">__construct()</a></td>
+		<td></td>
+		<td><a href="yii_base_controller.html">yii\base\Controller</a></td>
+	</tr>
+			<tr class="inherited" id="init()">
+		<td><a href="yii_base_object.html#init()-detail">init()</a></td>
+		<td>Initializes the object.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__get()">
+		<td><a href="yii_base_component.html#__get()-detail">__get()</a></td>
+		<td>Returns the value of a component property.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__set()">
+		<td><a href="yii_base_component.html#__set()-detail">__set()</a></td>
+		<td>Sets the value of a component property.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__isset()">
+		<td><a href="yii_base_component.html#__isset()-detail">__isset()</a></td>
+		<td>Checks if a property value is null.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__unset()">
+		<td><a href="yii_base_component.html#__unset()-detail">__unset()</a></td>
+		<td>Sets a component property to be null.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__call()">
+		<td><a href="yii_base_component.html#__call()-detail">__call()</a></td>
+		<td>Calls the named method which is not a class method.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasProperty()">
+		<td><a href="yii_base_component.html#hasProperty()-detail">hasProperty()</a></td>
+		<td>Returns a value indicating whether a property is defined for this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="canGetProperty()">
+		<td><a href="yii_base_component.html#canGetProperty()-detail">canGetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be read.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="canSetProperty()">
+		<td><a href="yii_base_component.html#canSetProperty()-detail">canSetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be set.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasMethod()">
+		<td><a href="yii_base_component.html#hasMethod()-detail">hasMethod()</a></td>
+		<td>Returns a value indicating whether a method is defined.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="toArray()">
+		<td><a href="yii_base_object.html#toArray()-detail">toArray()</a></td>
+		<td>Converts the object into an array.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__clone()">
+		<td><a href="yii_base_component.html#__clone()-detail">__clone()</a></td>
+		<td>This method is called after the object is created by cloning an existing one.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="behaviors()">
+		<td><a href="yii_base_component.html#behaviors()-detail">behaviors()</a></td>
+		<td>Returns a list of behaviors that this component should behave as.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasEventHandlers()">
+		<td><a href="yii_base_component.html#hasEventHandlers()-detail">hasEventHandlers()</a></td>
+		<td>Returns a value indicating whether there is any handler attached to the named event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="on()">
+		<td><a href="yii_base_component.html#on()-detail">on()</a></td>
+		<td>Attaches an event handler to an event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="off()">
+		<td><a href="yii_base_component.html#off()-detail">off()</a></td>
+		<td>Detaches an existing event handler from this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="trigger()">
+		<td><a href="yii_base_component.html#trigger()-detail">trigger()</a></td>
+		<td>Triggers an event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="getBehavior()">
+		<td><a href="yii_base_component.html#getBehavior()-detail">getBehavior()</a></td>
+		<td>Returns the named behavior object.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="getBehaviors()">
+		<td><a href="yii_base_component.html#getBehaviors()-detail">getBehaviors()</a></td>
+		<td>Returns all behaviors attached to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="attachBehavior()">
+		<td><a href="yii_base_component.html#attachBehavior()-detail">attachBehavior()</a></td>
+		<td>Attaches a behavior to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="attachBehaviors()">
+		<td><a href="yii_base_component.html#attachBehaviors()-detail">attachBehaviors()</a></td>
+		<td>Attaches a list of behaviors to the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="detachBehavior()">
+		<td><a href="yii_base_component.html#detachBehavior()-detail">detachBehavior()</a></td>
+		<td>Detaches a behavior from the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="detachBehaviors()">
+		<td><a href="yii_base_component.html#detachBehaviors()-detail">detachBehaviors()</a></td>
+		<td>Detaches all behaviors from the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="ensureBehaviors()">
+		<td><a href="yii_base_component.html#ensureBehaviors()-detail">ensureBehaviors()</a></td>
+		<td>Makes sure that the behaviors declared in <a href="yii_base_component.html#behaviors()-detail">behaviors()</a> are attached to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="actions()">
+		<td><a href="yii_base_controller.html#actions()-detail">actions()</a></td>
+		<td>Declares external actions for the controller.</td>
+		<td><a href="yii_base_controller.html">yii\base\Controller</a></td>
+	</tr>
+			<tr class="inherited" id="runAction()">
+		<td><a href="yii_console_controller.html#runAction()-detail">runAction()</a></td>
+		<td>Runs an action with the specified action ID and parameters.</td>
+		<td><a href="yii_console_controller.html">yii\console\Controller</a></td>
+	</tr>
+			<tr class="inherited" id="run()">
+		<td><a href="yii_base_controller.html#run()-detail">run()</a></td>
+		<td>Runs a request specified in terms of a route.</td>
+		<td><a href="yii_base_controller.html">yii\base\Controller</a></td>
+	</tr>
+			<tr class="inherited" id="bindActionParams()">
+		<td><a href="yii_console_controller.html#bindActionParams()-detail">bindActionParams()</a></td>
+		<td>Binds the parameters to the action.</td>
+		<td><a href="yii_console_controller.html">yii\console\Controller</a></td>
+	</tr>
+			<tr class="inherited" id="createAction()">
+		<td><a href="yii_base_controller.html#createAction()-detail">createAction()</a></td>
+		<td>Creates an action based on the given action ID.</td>
+		<td><a href="yii_base_controller.html">yii\base\Controller</a></td>
+	</tr>
+			<tr class="inherited" id="beforeAction()">
+		<td><a href="yii_base_controller.html#beforeAction()-detail">beforeAction()</a></td>
+		<td>This method is invoked right before an action is to be executed (after all possible filters).</td>
+		<td><a href="yii_base_controller.html">yii\base\Controller</a></td>
+	</tr>
+			<tr class="inherited" id="afterAction()">
+		<td><a href="yii_base_controller.html#afterAction()-detail">afterAction()</a></td>
+		<td>This method is invoked right after an action is executed.</td>
+		<td><a href="yii_base_controller.html">yii\base\Controller</a></td>
+	</tr>
+			<tr class="inherited" id="getUniqueId()">
+		<td><a href="yii_base_controller.html#getUniqueId()-detail">getUniqueId()</a></td>
+		<td></td>
+		<td><a href="yii_base_controller.html">yii\base\Controller</a></td>
+	</tr>
+			<tr class="inherited" id="getRoute()">
+		<td><a href="yii_base_controller.html#getRoute()-detail">getRoute()</a></td>
+		<td>Returns the route of the current request.</td>
+		<td><a href="yii_base_controller.html">yii\base\Controller</a></td>
+	</tr>
+			<tr class="inherited" id="render()">
+		<td><a href="yii_base_controller.html#render()-detail">render()</a></td>
+		<td>Renders a view and applies layout if available.</td>
+		<td><a href="yii_base_controller.html">yii\base\Controller</a></td>
+	</tr>
+			<tr class="inherited" id="renderPartial()">
+		<td><a href="yii_base_controller.html#renderPartial()-detail">renderPartial()</a></td>
+		<td>Renders a view.</td>
+		<td><a href="yii_base_controller.html">yii\base\Controller</a></td>
+	</tr>
+			<tr class="inherited" id="renderFile()">
+		<td><a href="yii_base_controller.html#renderFile()-detail">renderFile()</a></td>
+		<td>Renders a view file.</td>
+		<td><a href="yii_base_controller.html">yii\base\Controller</a></td>
+	</tr>
+			<tr class="inherited" id="getView()">
+		<td><a href="yii_base_controller.html#getView()-detail">getView()</a></td>
+		<td>Returns the view object that can be used to render views or view files.</td>
+		<td><a href="yii_base_controller.html">yii\base\Controller</a></td>
+	</tr>
+			<tr class="inherited" id="setView()">
+		<td><a href="yii_base_controller.html#setView()-detail">setView()</a></td>
+		<td>Sets the view object to be used by this controller.</td>
+		<td><a href="yii_base_controller.html">yii\base\Controller</a></td>
+	</tr>
+			<tr class="inherited" id="getViewPath()">
+		<td><a href="yii_base_controller.html#getViewPath()-detail">getViewPath()</a></td>
+		<td>Returns the directory containing view files for this controller.</td>
+		<td><a href="yii_base_controller.html">yii\base\Controller</a></td>
+	</tr>
+			<tr class="inherited" id="findViewFile()">
+		<td><a href="yii_base_controller.html#findViewFile()-detail">findViewFile()</a></td>
+		<td>Finds the view file based on the given view name.</td>
+		<td><a href="yii_base_controller.html">yii\base\Controller</a></td>
+	</tr>
+				<tr class="inherited" id="isColorEnabled()">
+		<td><a href="yii_console_controller.html#isColorEnabled()-detail">isColorEnabled()</a></td>
+		<td>Returns a value indicating whether ANSI color is enabled.</td>
+		<td><a href="yii_console_controller.html">yii\console\Controller</a></td>
+	</tr>
+			<tr class="inherited" id="ansiFormat()">
+		<td><a href="yii_console_controller.html#ansiFormat()-detail">ansiFormat()</a></td>
+		<td>Formats a string with ANSI codes</td>
+		<td><a href="yii_console_controller.html">yii\console\Controller</a></td>
+	</tr>
+			<tr class="inherited" id="stdout()">
+		<td><a href="yii_console_controller.html#stdout()-detail">stdout()</a></td>
+		<td>Prints a string to STDOUT</td>
+		<td><a href="yii_console_controller.html">yii\console\Controller</a></td>
+	</tr>
+			<tr class="inherited" id="stderr()">
+		<td><a href="yii_console_controller.html#stderr()-detail">stderr()</a></td>
+		<td>Prints a string to STDERR</td>
+		<td><a href="yii_console_controller.html">yii\console\Controller</a></td>
+	</tr>
+			<tr class="inherited" id="prompt()">
+		<td><a href="yii_console_controller.html#prompt()-detail">prompt()</a></td>
+		<td>Prompts the user for input and validates it</td>
+		<td><a href="yii_console_controller.html">yii\console\Controller</a></td>
+	</tr>
+			<tr class="inherited" id="confirm()">
+		<td><a href="yii_console_controller.html#confirm()-detail">confirm()</a></td>
+		<td>Asks user to confirm by typing y or n.</td>
+		<td><a href="yii_console_controller.html">yii\console\Controller</a></td>
+	</tr>
+			<tr class="inherited" id="select()">
+		<td><a href="yii_console_controller.html#select()-detail">select()</a></td>
+		<td>Gives the user an option to choose from. Giving '?' as an input will show
+a list of options to choose from and their explanations.</td>
+		<td><a href="yii_console_controller.html">yii\console\Controller</a></td>
+	</tr>
+			<tr class="inherited" id="globalOptions()">
+		<td><a href="yii_console_controller.html#globalOptions()-detail">globalOptions()</a></td>
+		<td>Returns the names of the global options for this command.</td>
+		<td><a href="yii_console_controller.html">yii\console\Controller</a></td>
+	</tr>
+			<tr id="getAssetManager()">
+		<td><a href="yii_console_controllers_assetcontroller.html#getAssetManager()-detail">getAssetManager()</a></td>
+		<td>Returns the asset manager instance.</td>
+		<td><a href="yii_console_controllers_assetcontroller.html">yii\console\controllers\AssetController</a></td>
+	</tr>
+			<tr id="setAssetManager()">
+		<td><a href="yii_console_controllers_assetcontroller.html#setAssetManager()-detail">setAssetManager()</a></td>
+		<td>Sets asset manager instance or configuration.</td>
+		<td><a href="yii_console_controllers_assetcontroller.html">yii\console\controllers\AssetController</a></td>
+	</tr>
+			<tr id="actionCompress()">
+		<td><a href="yii_console_controllers_assetcontroller.html#actionCompress()-detail">actionCompress()</a></td>
+		<td>Combines and compresses the asset files according to the given configuration.</td>
+		<td><a href="yii_console_controllers_assetcontroller.html">yii\console\controllers\AssetController</a></td>
+	</tr>
+													<tr id="combineJsFiles()">
+		<td><a href="yii_console_controllers_assetcontroller.html#combineJsFiles()-detail">combineJsFiles()</a></td>
+		<td>Combines JavaScript files into a single one.</td>
+		<td><a href="yii_console_controllers_assetcontroller.html">yii\console\controllers\AssetController</a></td>
+	</tr>
+			<tr id="combineCssFiles()">
+		<td><a href="yii_console_controllers_assetcontroller.html#combineCssFiles()-detail">combineCssFiles()</a></td>
+		<td>Combines CSS files into a single one.</td>
+		<td><a href="yii_console_controllers_assetcontroller.html">yii\console\controllers\AssetController</a></td>
+	</tr>
+				<tr id="actionTemplate()">
+		<td><a href="yii_console_controllers_assetcontroller.html#actionTemplate()-detail">actionTemplate()</a></td>
+		<td>Creates template of configuration file for <a href="yii_console_controllers_assetcontroller.html#actionCompress()-detail">actionCompress()</a>.</td>
+		<td><a href="yii_console_controllers_assetcontroller.html">yii\console\controllers\AssetController</a></td>
+	</tr>
+	</table>
+</div>
+<div class="summary docMethod">
+<h2>Protected Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+																																												<tr class="inherited" id="findLayoutFile()">
+		<td><a href="yii_base_controller.html#findLayoutFile()-detail">findLayoutFile()</a></td>
+		<td>Finds the applicable layout file.</td>
+		<td><a href="yii_base_controller.html">yii\base\Controller</a></td>
+	</tr>
+														<tr id="loadConfiguration()">
+		<td><a href="yii_console_controllers_assetcontroller.html#loadConfiguration()-detail">loadConfiguration()</a></td>
+		<td>Applies configuration from the given file to self instance.</td>
+		<td><a href="yii_console_controllers_assetcontroller.html">yii\console\controllers\AssetController</a></td>
+	</tr>
+			<tr id="loadBundles()">
+		<td><a href="yii_console_controllers_assetcontroller.html#loadBundles()-detail">loadBundles()</a></td>
+		<td>Creates full list of source asset bundles.</td>
+		<td><a href="yii_console_controllers_assetcontroller.html">yii\console\controllers\AssetController</a></td>
+	</tr>
+			<tr id="loadDependency()">
+		<td><a href="yii_console_controllers_assetcontroller.html#loadDependency()-detail">loadDependency()</a></td>
+		<td>Loads asset bundle dependencies recursively.</td>
+		<td><a href="yii_console_controllers_assetcontroller.html">yii\console\controllers\AssetController</a></td>
+	</tr>
+			<tr id="loadTargets()">
+		<td><a href="yii_console_controllers_assetcontroller.html#loadTargets()-detail">loadTargets()</a></td>
+		<td>Creates full list of output asset bundles.</td>
+		<td><a href="yii_console_controllers_assetcontroller.html">yii\console\controllers\AssetController</a></td>
+	</tr>
+			<tr id="buildTarget()">
+		<td><a href="yii_console_controllers_assetcontroller.html#buildTarget()-detail">buildTarget()</a></td>
+		<td>Builds output asset bundle.</td>
+		<td><a href="yii_console_controllers_assetcontroller.html">yii\console\controllers\AssetController</a></td>
+	</tr>
+			<tr id="adjustDependency()">
+		<td><a href="yii_console_controllers_assetcontroller.html#adjustDependency()-detail">adjustDependency()</a></td>
+		<td>Adjust dependencies between asset bundles in the way source bundles begin to depend on output ones.</td>
+		<td><a href="yii_console_controllers_assetcontroller.html">yii\console\controllers\AssetController</a></td>
+	</tr>
+			<tr id="registerBundle()">
+		<td><a href="yii_console_controllers_assetcontroller.html#registerBundle()-detail">registerBundle()</a></td>
+		<td>Registers asset bundles including their dependencies.</td>
+		<td><a href="yii_console_controllers_assetcontroller.html">yii\console\controllers\AssetController</a></td>
+	</tr>
+			<tr id="saveTargets()">
+		<td><a href="yii_console_controllers_assetcontroller.html#saveTargets()-detail">saveTargets()</a></td>
+		<td>Saves new asset bundles configuration.</td>
+		<td><a href="yii_console_controllers_assetcontroller.html">yii\console\controllers\AssetController</a></td>
+	</tr>
+			<tr id="compressJsFiles()">
+		<td><a href="yii_console_controllers_assetcontroller.html#compressJsFiles()-detail">compressJsFiles()</a></td>
+		<td>Compresses given JavaScript files and combines them into the single one.</td>
+		<td><a href="yii_console_controllers_assetcontroller.html">yii\console\controllers\AssetController</a></td>
+	</tr>
+			<tr id="compressCssFiles()">
+		<td><a href="yii_console_controllers_assetcontroller.html#compressCssFiles()-detail">compressCssFiles()</a></td>
+		<td>Compresses given CSS files and combines them into the single one.</td>
+		<td><a href="yii_console_controllers_assetcontroller.html">yii\console\controllers\AssetController</a></td>
+	</tr>
+					<tr id="adjustCssUrl()">
+		<td><a href="yii_console_controllers_assetcontroller.html#adjustCssUrl()-detail">adjustCssUrl()</a></td>
+		<td>Adjusts CSS content allowing URL references pointing to the original resources.</td>
+		<td><a href="yii_console_controllers_assetcontroller.html">yii\console\controllers\AssetController</a></td>
+	</tr>
+		</table>
+</div>
+<a name="events"></a>
+<div class="summary docEvent">
+<h2>Events</h2>
+
+<p><a href="#" class="toggle">Hide inherited events</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-event" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Event</th><th>Type</th><th>Description</th><th>Defined By</th>
+</tr>
+<tr class="inherited" id="EVENT_BEFORE_ACTION">
+	<td><a href="yii_base_controller.html#EVENT_BEFORE_ACTION-detail">EVENT_BEFORE_ACTION</a></td>
+	<td><a href="yii_base_actionevent.html">yii\base\ActionEvent</a></td>
+	<td>
+		An event raised right before executing a controller action			</td>
+	<td><a href="yii_base_controller.html">yii\base\Controller</a></td>
+</tr>
+<tr class="inherited" id="EVENT_AFTER_ACTION">
+	<td><a href="yii_base_controller.html#EVENT_AFTER_ACTION-detail">EVENT_AFTER_ACTION</a></td>
+	<td><a href="yii_base_actionevent.html">yii\base\ActionEvent</a></td>
+	<td>
+		An event raised right after executing a controller action			</td>
+	<td><a href="yii_base_controller.html">yii\base\Controller</a></td>
+</tr>
+</table>
+</div>
+<a name="constants"></a>
+
+<h2>Property Details</h2>
+
+
+	<div class="detailHeader" id="$defaultAction-detail">
+		$defaultAction		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $defaultAction = 'compress'	</div>
+
+	<p>Controller default action ID.</p>
+
+	
+
+	<div class="detailHeader" id="$bundles-detail">
+		$bundles		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array $bundles = []	</div>
+
+	<p>List of asset bundles to be compressed.</p>
+
+	
+
+	<div class="detailHeader" id="$targets-detail">
+		$targets		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array $targets = []	</div>
+
+	<p>List of asset bundles, which represents output compressed files.
+You can specify the name of the output compressed file using 'css' and 'js' keys:
+For example:</p>
+
+<pre><code>'app\config\AllAsset' =&gt; [
+    'js' =&gt; 'js/all-{ts}.js',
+    'css' =&gt; 'css/all-{ts}.css',
+    'depends' =&gt; [ ... ],
+]
+</code></pre>
+
+<p>File names can contain placeholder "{ts}", which will be filled by current timestamp, while
+file creation.</p>
+
+	
+
+	<div class="detailHeader" id="$jsCompressor-detail">
+		$jsCompressor		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string|callback $jsCompressor = 'java -jar compiler.jar --js {from} --js_output_file {to}'	</div>
+
+	<p>JavaScript file compressor.
+If a string, it is treated as shell command template, which should contain
+placeholders {from} - source file name - and {to} - output file name.
+Otherwise, it is treated as PHP callback, which should perform the compression.
+Default value relies on usage of "Closure Compiler"</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li>https://developers.google.com/closure/compiler/</li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="$cssCompressor-detail">
+		$cssCompressor		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string|callback $cssCompressor = 'java -jar yuicompressor.jar {from} -o {to}'	</div>
+
+	<p>CSS file compressor.
+If a string, it is treated as shell command template, which should contain
+placeholders {from} - source file name - and {to} - output file name.
+Otherwise, it is treated as PHP callback, which should perform the compression.
+Default value relies on usage of "YUI Compressor"</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li>https://github.com/yui/yuicompressor/</li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="$behaviors-detail">
+		$behaviors		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_base_behavior.html">yii\base\Behavior</a>[] <a href="yii_base_component.html#getBehaviors()-detail">getBehaviors</a>(  )	</div>
+
+	<p>list of behaviors attached to this component</p>
+
+	
+
+	<div class="detailHeader" id="$uniqueId-detail">
+		$uniqueId		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	string <a href="yii_base_controller.html#getUniqueId()-detail">getUniqueId</a>(  )	</div>
+
+	<p>the controller ID that is prefixed with the module ID (if any).</p>
+
+	
+
+	<div class="detailHeader" id="$route-detail">
+		$route		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	string <a href="yii_base_controller.html#getRoute()-detail">getRoute</a>(  )	</div>
+
+	<p>the route (module ID, controller ID and action ID) of the current request.</p>
+
+	
+
+	<div class="detailHeader" id="$view-detail">
+		$view		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_base_view.html">yii\base\View</a> <a href="yii_base_controller.html#getView()-detail">getView</a>(  )<br />void <a href="yii_base_controller.html#setView()-detail">setView</a>( $view )	</div>
+
+	<p>the view object that can be used to render views or view files.</p>
+
+	
+
+	<div class="detailHeader" id="$viewPath-detail">
+		$viewPath		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	string <a href="yii_base_controller.html#getViewPath()-detail">getViewPath</a>(  )	</div>
+
+	<p>the directory containing the view files for this controller.</p>
+
+	
+
+	<div class="detailHeader" id="$assetManager-detail">
+		$assetManager		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_web_assetmanager.html">yii\web\AssetManager</a> <a href="yii_console_controllers_assetcontroller.html#getAssetManager()-detail">getAssetManager</a>(  )<br />void <a href="yii_console_controllers_assetcontroller.html#setAssetManager()-detail">setAssetManager</a>( $assetManager )	</div>
+
+	<p>asset manager instance.</p>
+
+	
+<h2>Method Details</h2>
+
+
+	<div class="detailHeader" id="getAssetManager()-detail">
+		getAssetManager()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			<a href="yii_web_assetmanager.html">yii\web\AssetManager</a> <a href="yii_console_controllers_assetcontroller.html#getAssetManager()-detail">getAssetManager</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol"><a href="yii_web_assetmanager.html">yii\web\AssetManager</a></td>
+				  <td class="paramDescCol">asset manager instance.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_console_exception.html">yii\console\Exception</a></td>
+				  <td class="paramDescCol">on invalid configuration.</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Returns the asset manager instance.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="setAssetManager()-detail">
+		setAssetManager()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_console_controllers_assetcontroller.html#setAssetManager()-detail">setAssetManager</a>( $assetManager )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$assetManager</td>
+				  <td class="paramTypeCol"><a href="yii_web_assetmanager.html">yii\web\AssetManager</a>|array</td>
+				  <td class="paramDescCol">Asset manager instance or its array configuration.</td>
+				</tr>
+													<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_console_exception.html">yii\console\Exception</a></td>
+				  <td class="paramDescCol">on invalid argument type.</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Sets asset manager instance or configuration.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="actionCompress()-detail">
+		actionCompress()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_console_controllers_assetcontroller.html#actionCompress()-detail">actionCompress</a>( $configFile, $bundleFile )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$configFile</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Configuration file name.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$bundleFile</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Output asset bundles configuration file name.</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Combines and compresses the asset files according to the given configuration.</strong></p>
+	<p>During the process new asset bundle configuration file will be created.
+You should replace your original asset bundle configuration with this file in order to use compressed files.</p>
+
+	
+
+	<div class="detailHeader" id="loadConfiguration()-detail">
+		loadConfiguration()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_console_controllers_assetcontroller.html#loadConfiguration()-detail">loadConfiguration</a>( $configFile )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$configFile</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Configuration file name.</td>
+				</tr>
+													<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_console_exception.html">yii\console\Exception</a></td>
+				  <td class="paramDescCol">on failure.</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Applies configuration from the given file to self instance.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="loadBundles()-detail">
+		loadBundles()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			<a href="yii_web_assetbundle.html">yii\web\AssetBundle</a>[] <a href="yii_console_controllers_assetcontroller.html#loadBundles()-detail">loadBundles</a>( $bundles )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$bundles</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">List of asset bundle names</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol"><a href="yii_web_assetbundle.html">yii\web\AssetBundle</a>[]</td>
+				  <td class="paramDescCol">list of source asset bundles.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Creates full list of source asset bundles.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="loadDependency()-detail">
+		loadDependency()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_console_controllers_assetcontroller.html#loadDependency()-detail">loadDependency</a>( $bundle, <b>&</b>$result )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$bundle</td>
+				  <td class="paramTypeCol"><a href="yii_web_assetbundle.html">yii\web\AssetBundle</a></td>
+				  <td class="paramDescCol">Bundle instance</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$result</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">Already loaded bundles list.</td>
+				</tr>
+													<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_console_exception.html">yii\console\Exception</a></td>
+				  <td class="paramDescCol">on failure.</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Loads asset bundle dependencies recursively.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="loadTargets()-detail">
+		loadTargets()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			<a href="yii_web_assetbundle.html">yii\web\AssetBundle</a>[] <a href="yii_console_controllers_assetcontroller.html#loadTargets()-detail">loadTargets</a>( $targets, $bundles )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$targets</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">Output asset bundles configuration.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$bundles</td>
+				  <td class="paramTypeCol"><a href="yii_web_assetbundle.html">yii\web\AssetBundle</a>[]</td>
+				  <td class="paramDescCol">List of source asset bundles.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol"><a href="yii_web_assetbundle.html">yii\web\AssetBundle</a>[]</td>
+				  <td class="paramDescCol">list of output asset bundles.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_console_exception.html">yii\console\Exception</a></td>
+				  <td class="paramDescCol">on failure.</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Creates full list of output asset bundles.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="buildTarget()-detail">
+		buildTarget()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_console_controllers_assetcontroller.html#buildTarget()-detail">buildTarget</a>( $target, $type, $bundles, $timestamp )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$target</td>
+				  <td class="paramTypeCol"><a href="yii_web_assetbundle.html">yii\web\AssetBundle</a></td>
+				  <td class="paramDescCol">Output asset bundle</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$type</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Either 'js' or 'css'.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$bundles</td>
+				  <td class="paramTypeCol"><a href="yii_web_assetbundle.html">yii\web\AssetBundle</a>[]</td>
+				  <td class="paramDescCol">Source asset bundles.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$timestamp</td>
+				  <td class="paramTypeCol">integer</td>
+				  <td class="paramDescCol">Current timestamp.</td>
+				</tr>
+													<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_console_exception.html">yii\console\Exception</a></td>
+				  <td class="paramDescCol">on failure.</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Builds output asset bundle.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="adjustDependency()-detail">
+		adjustDependency()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			<a href="yii_web_assetbundle.html">yii\web\AssetBundle</a>[] <a href="yii_console_controllers_assetcontroller.html#adjustDependency()-detail">adjustDependency</a>( $targets, $bundles )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$targets</td>
+				  <td class="paramTypeCol"><a href="yii_web_assetbundle.html">yii\web\AssetBundle</a>[]</td>
+				  <td class="paramDescCol">Output asset bundles.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$bundles</td>
+				  <td class="paramTypeCol"><a href="yii_web_assetbundle.html">yii\web\AssetBundle</a>[]</td>
+				  <td class="paramDescCol">Source asset bundles.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol"><a href="yii_web_assetbundle.html">yii\web\AssetBundle</a>[]</td>
+				  <td class="paramDescCol">output asset bundles.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Adjust dependencies between asset bundles in the way source bundles begin to depend on output ones.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="registerBundle()-detail">
+		registerBundle()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_console_controllers_assetcontroller.html#registerBundle()-detail">registerBundle</a>( $bundles, $name, <b>&</b>$registered )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$bundles</td>
+				  <td class="paramTypeCol"><a href="yii_web_assetbundle.html">yii\web\AssetBundle</a>[]</td>
+				  <td class="paramDescCol">Asset bundles list.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Bundle name.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$registered</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">Stores already registered names.</td>
+				</tr>
+													<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_console_exception.html">yii\console\Exception</a></td>
+				  <td class="paramDescCol">if circular dependency is detected.</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Registers asset bundles including their dependencies.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="saveTargets()-detail">
+		saveTargets()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_console_controllers_assetcontroller.html#saveTargets()-detail">saveTargets</a>( $targets, $bundleFile )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$targets</td>
+				  <td class="paramTypeCol"><a href="yii_web_assetbundle.html">yii\web\AssetBundle</a>[]</td>
+				  <td class="paramDescCol">List of asset bundles to be saved.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$bundleFile</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Output file name.</td>
+				</tr>
+													<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_console_exception.html">yii\console\Exception</a></td>
+				  <td class="paramDescCol">on failure.</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Saves new asset bundles configuration.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="compressJsFiles()-detail">
+		compressJsFiles()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_console_controllers_assetcontroller.html#compressJsFiles()-detail">compressJsFiles</a>( $inputFiles, $outputFile )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$inputFiles</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">List of source file names.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$outputFile</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Output file name.</td>
+				</tr>
+													<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_console_exception.html">yii\console\Exception</a></td>
+				  <td class="paramDescCol">on failure</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Compresses given JavaScript files and combines them into the single one.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="compressCssFiles()-detail">
+		compressCssFiles()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_console_controllers_assetcontroller.html#compressCssFiles()-detail">compressCssFiles</a>( $inputFiles, $outputFile )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$inputFiles</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">List of source file names.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$outputFile</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Output file name.</td>
+				</tr>
+													<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_console_exception.html">yii\console\Exception</a></td>
+				  <td class="paramDescCol">on failure</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Compresses given CSS files and combines them into the single one.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="combineJsFiles()-detail">
+		combineJsFiles()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_console_controllers_assetcontroller.html#combineJsFiles()-detail">combineJsFiles</a>( $inputFiles, $outputFile )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$inputFiles</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">Source file names.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$outputFile</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Output file name.</td>
+				</tr>
+													<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_console_exception.html">yii\console\Exception</a></td>
+				  <td class="paramDescCol">on failure.</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Combines JavaScript files into a single one.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="combineCssFiles()-detail">
+		combineCssFiles()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_console_controllers_assetcontroller.html#combineCssFiles()-detail">combineCssFiles</a>( $inputFiles, $outputFile )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$inputFiles</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">Source file names.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$outputFile</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Output file name.</td>
+				</tr>
+													<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_console_exception.html">yii\console\Exception</a></td>
+				  <td class="paramDescCol">on failure.</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Combines CSS files into a single one.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="adjustCssUrl()-detail">
+		adjustCssUrl()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_console_controllers_assetcontroller.html#adjustCssUrl()-detail">adjustCssUrl</a>( $cssContent, $inputFilePath, $outputFilePath )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$cssContent</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Source CSS content.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$inputFilePath</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Input CSS file name.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$outputFilePath</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Output CSS file name.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">adjusted CSS content.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Adjusts CSS content allowing URL references pointing to the original resources.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="actionTemplate()-detail">
+		actionTemplate()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_console_controllers_assetcontroller.html#actionTemplate()-detail">actionTemplate</a>( $configFile )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$configFile</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Output file name.</td>
+				</tr>
+													<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_console_exception.html">yii\console\Exception</a></td>
+				  <td class="paramDescCol">on failure.</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Creates template of configuration file for <a href="yii_console_controllers_assetcontroller.html#actionCompress()-detail">actionCompress()</a>.</strong></p>
+	<p></p>
+
+	
+			</div><!-- end of content -->
+
+		<div id="apiFooter">
+			<p>&copy; 2008-2013 by <a href="http://www.yiisoft.com">Yii Software LLC</a></p>
+			<p>All Rights Reserved.</p>
+		</div><!-- end of footer -->
+
+<script type="text/javascript">
+/*<![CDATA[*/
+$("a.toggle").on('click', function() {
+	var $this = $(this);
+	if ($this.hasClass('properties-hidden')) {
+		$this.text($this.text().replace(/Show/,'Hide'));
+		$this.parents(".summary").find(".inherited").show();
+		$this.removeClass('properties-hidden');
+	} else {
+		$this.text($this.text().replace(/Hide/,'Show'));
+		$this.parents(".summary").find(".inherited").hide();
+		$this.addClass('properties-hidden');
+	}
+	return false;
+});
+/*
+$(".sourceCode a.show").toggle(function(){
+	$(this).text($(this).text().replace(/show/,'hide'));
+	$(this).parents(".sourceCode").find("div.code").show();
+},function(){
+	$(this).text($(this).text().replace(/hide/,'show'));
+	$(this).parents(".sourceCode").find("div.code").hide();
+});
+$("a.sourceLink").click(function(){
+	$(this).attr('target','_blank');
+});
+*/
+/*]]>*/
+</script>
+
+	</div><!-- end of page -->
+</body>
+</html>

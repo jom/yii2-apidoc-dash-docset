@@ -1,0 +1,632 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="language" content="en" />
+<link href="./assets/4138e429/api.css" rel="stylesheet">
+<link href="./assets/4138e429/style.css" rel="stylesheet">
+<script src="./assets/a91b37a6/jquery.js"></script><title>Yii Framework 2.0 API Documentation</title>
+</head>
+
+<body>
+	<div id="apiPage">
+
+		<div id="apiHeader">
+			<a href="http://www.yiiframework.com">Yii Framework</a> v2.0.0-dev Class Reference
+		</div><!-- end of header -->
+
+		<div id="content">
+		<h1>Class yii\db\mssql\QueryBuilder</h1>
+<div id="nav">
+	<a href="index.html">All Classes</a>
+			| <a href="#properties">Properties</a>
+				| <a href="#methods">Methods</a>
+					| <a href="#constants">Constants</a>
+	</div>
+
+<table class="summaryTable docClass">
+	<colgroup>
+		<col class="col-name" />
+		<col class="col-value" />
+	</colgroup>
+			<tr><th>Inheritance</th><td><a href="yii_db_mssql_querybuilder.html">yii\db\mssql\QueryBuilder</a> &raquo;
+<a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a> &raquo;
+<a href="yii_base_object.html">yii\base\Object</a></td></tr>
+				<tr><th>Implements</th><td><a href="yii_base_arrayable.html">yii\base\Arrayable</a></td></tr>
+								<tr><th>Available since version</th><td>2.0</td></tr>
+		<tr>
+	  <th>Source Code</th>
+	  <td></td>
+	</tr>
+</table>
+
+<div id="classDescription">
+	<strong>QueryBuilder is the query builder for MS SQL Server databases (version 2008 and above).</strong>
+	<p></p>
+</div>
+
+<a name="properties"></a>
+
+<div class="summary docProperty">
+<h2>Public Properties</h2>
+
+<p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-property" />
+	<col class="col-type" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Property</th><th>Type</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr class="inherited" id="$db">
+		<td><a href="yii_db_querybuilder.html#$db-detail">$db</a></td>
+		<td><a href="yii_db_connection.html">yii\db\Connection</a></td>
+		<td>The database connection</td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr class="inherited" id="$separator">
+		<td><a href="yii_db_querybuilder.html#$separator-detail">$separator</a></td>
+		<td>string</td>
+		<td>The separator between different fragments of a SQL statement</td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr id="$typeMap">
+		<td><a href="yii_db_mssql_querybuilder.html#$typeMap-detail">$typeMap</a></td>
+		<td>array</td>
+		<td>Mapping from abstract column types (keys) to physical column types (values)</td>
+		<td><a href="yii_db_mssql_querybuilder.html">yii\db\mssql\QueryBuilder</a></td>
+	</tr>
+	</table>
+</div>
+<a name="methods"></a>
+
+<div class="summary docMethod">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr class="inherited" id="className()">
+		<td><a href="yii_base_object.html#className()-detail">className()</a></td>
+		<td></td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__construct()">
+		<td><a href="yii_base_object.html#__construct()-detail">__construct()</a></td>
+		<td>Constructor.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="init()">
+		<td><a href="yii_base_object.html#init()-detail">init()</a></td>
+		<td>Initializes the object.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__get()">
+		<td><a href="yii_base_object.html#__get()-detail">__get()</a></td>
+		<td>Returns the value of an object property.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__set()">
+		<td><a href="yii_base_object.html#__set()-detail">__set()</a></td>
+		<td>Sets value of an object property.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__isset()">
+		<td><a href="yii_base_object.html#__isset()-detail">__isset()</a></td>
+		<td>Checks if the named property is set (not null).</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__unset()">
+		<td><a href="yii_base_object.html#__unset()-detail">__unset()</a></td>
+		<td>Sets an object property to null.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__call()">
+		<td><a href="yii_base_object.html#__call()-detail">__call()</a></td>
+		<td>Calls the named method which is not a class method.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="hasProperty()">
+		<td><a href="yii_base_object.html#hasProperty()-detail">hasProperty()</a></td>
+		<td>Returns a value indicating whether a property is defined.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="canGetProperty()">
+		<td><a href="yii_base_object.html#canGetProperty()-detail">canGetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be read.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="canSetProperty()">
+		<td><a href="yii_base_object.html#canSetProperty()-detail">canSetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be set.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="hasMethod()">
+		<td><a href="yii_base_object.html#hasMethod()-detail">hasMethod()</a></td>
+		<td>Returns a value indicating whether a method is defined.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="toArray()">
+		<td><a href="yii_base_object.html#toArray()-detail">toArray()</a></td>
+		<td>Converts the object into an array.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="build()">
+		<td><a href="yii_db_querybuilder.html#build()-detail">build()</a></td>
+		<td>Generates a SELECT SQL statement from a <span style="background: #f00;">\yii\db\mssql\Query</span> object.</td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr class="inherited" id="insert()">
+		<td><a href="yii_db_querybuilder.html#insert()-detail">insert()</a></td>
+		<td>Creates an INSERT SQL statement.</td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr class="inherited" id="batchInsert()">
+		<td><a href="yii_db_querybuilder.html#batchInsert()-detail">batchInsert()</a></td>
+		<td>Generates a batch INSERT SQL statement.</td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr class="inherited" id="update()">
+		<td><a href="yii_db_querybuilder.html#update()-detail">update()</a></td>
+		<td>Creates an UPDATE SQL statement.</td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr class="inherited" id="delete()">
+		<td><a href="yii_db_querybuilder.html#delete()-detail">delete()</a></td>
+		<td>Creates a DELETE SQL statement.</td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr class="inherited" id="createTable()">
+		<td><a href="yii_db_querybuilder.html#createTable()-detail">createTable()</a></td>
+		<td>Builds a SQL statement for creating a new DB table.</td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr id="renameTable()">
+		<td><a href="yii_db_mssql_querybuilder.html#renameTable()-detail">renameTable()</a></td>
+		<td>Builds a SQL statement for renaming a DB table.</td>
+		<td><a href="yii_db_mssql_querybuilder.html">yii\db\mssql\QueryBuilder</a></td>
+	</tr>
+			<tr class="inherited" id="dropTable()">
+		<td><a href="yii_db_querybuilder.html#dropTable()-detail">dropTable()</a></td>
+		<td>Builds a SQL statement for dropping a DB table.</td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr class="inherited" id="addPrimaryKey()">
+		<td><a href="yii_db_querybuilder.html#addPrimaryKey()-detail">addPrimaryKey()</a></td>
+		<td>Builds a SQL statement for adding a primary key constraint to an existing table.</td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr class="inherited" id="dropPrimaryKey()">
+		<td><a href="yii_db_querybuilder.html#dropPrimaryKey()-detail">dropPrimaryKey()</a></td>
+		<td>Builds a SQL statement for removing a primary key constraint to an existing table.</td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr class="inherited" id="truncateTable()">
+		<td><a href="yii_db_querybuilder.html#truncateTable()-detail">truncateTable()</a></td>
+		<td>Builds a SQL statement for truncating a DB table.</td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr class="inherited" id="addColumn()">
+		<td><a href="yii_db_querybuilder.html#addColumn()-detail">addColumn()</a></td>
+		<td>Builds a SQL statement for adding a new DB column.</td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr class="inherited" id="dropColumn()">
+		<td><a href="yii_db_querybuilder.html#dropColumn()-detail">dropColumn()</a></td>
+		<td>Builds a SQL statement for dropping a DB column.</td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr id="renameColumn()">
+		<td><a href="yii_db_mssql_querybuilder.html#renameColumn()-detail">renameColumn()</a></td>
+		<td>Builds a SQL statement for renaming a column.</td>
+		<td><a href="yii_db_mssql_querybuilder.html">yii\db\mssql\QueryBuilder</a></td>
+	</tr>
+			<tr id="alterColumn()">
+		<td><a href="yii_db_mssql_querybuilder.html#alterColumn()-detail">alterColumn()</a></td>
+		<td>Builds a SQL statement for changing the definition of a column.</td>
+		<td><a href="yii_db_mssql_querybuilder.html">yii\db\mssql\QueryBuilder</a></td>
+	</tr>
+			<tr class="inherited" id="addForeignKey()">
+		<td><a href="yii_db_querybuilder.html#addForeignKey()-detail">addForeignKey()</a></td>
+		<td>Builds a SQL statement for adding a foreign key constraint to an existing table.</td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr class="inherited" id="dropForeignKey()">
+		<td><a href="yii_db_querybuilder.html#dropForeignKey()-detail">dropForeignKey()</a></td>
+		<td>Builds a SQL statement for dropping a foreign key constraint.</td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr class="inherited" id="createIndex()">
+		<td><a href="yii_db_querybuilder.html#createIndex()-detail">createIndex()</a></td>
+		<td>Builds a SQL statement for creating a new index.</td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr class="inherited" id="dropIndex()">
+		<td><a href="yii_db_querybuilder.html#dropIndex()-detail">dropIndex()</a></td>
+		<td>Builds a SQL statement for dropping an index.</td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr class="inherited" id="resetSequence()">
+		<td><a href="yii_db_querybuilder.html#resetSequence()-detail">resetSequence()</a></td>
+		<td>Creates a SQL statement for resetting the sequence value of a table's primary key.</td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr id="checkIntegrity()">
+		<td><a href="yii_db_mssql_querybuilder.html#checkIntegrity()-detail">checkIntegrity()</a></td>
+		<td>Builds a SQL statement for enabling or disabling integrity check.</td>
+		<td><a href="yii_db_mssql_querybuilder.html">yii\db\mssql\QueryBuilder</a></td>
+	</tr>
+			<tr class="inherited" id="getColumnType()">
+		<td><a href="yii_db_querybuilder.html#getColumnType()-detail">getColumnType()</a></td>
+		<td>Converts an abstract column type into a physical column type.</td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr class="inherited" id="buildSelect()">
+		<td><a href="yii_db_querybuilder.html#buildSelect()-detail">buildSelect()</a></td>
+		<td></td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr class="inherited" id="buildFrom()">
+		<td><a href="yii_db_querybuilder.html#buildFrom()-detail">buildFrom()</a></td>
+		<td></td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr class="inherited" id="buildJoin()">
+		<td><a href="yii_db_querybuilder.html#buildJoin()-detail">buildJoin()</a></td>
+		<td></td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr class="inherited" id="buildWhere()">
+		<td><a href="yii_db_querybuilder.html#buildWhere()-detail">buildWhere()</a></td>
+		<td></td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr class="inherited" id="buildGroupBy()">
+		<td><a href="yii_db_querybuilder.html#buildGroupBy()-detail">buildGroupBy()</a></td>
+		<td></td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr class="inherited" id="buildHaving()">
+		<td><a href="yii_db_querybuilder.html#buildHaving()-detail">buildHaving()</a></td>
+		<td></td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr class="inherited" id="buildOrderBy()">
+		<td><a href="yii_db_querybuilder.html#buildOrderBy()-detail">buildOrderBy()</a></td>
+		<td></td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr class="inherited" id="buildLimit()">
+		<td><a href="yii_db_querybuilder.html#buildLimit()-detail">buildLimit()</a></td>
+		<td></td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr class="inherited" id="buildUnion()">
+		<td><a href="yii_db_querybuilder.html#buildUnion()-detail">buildUnion()</a></td>
+		<td></td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr class="inherited" id="buildColumns()">
+		<td><a href="yii_db_querybuilder.html#buildColumns()-detail">buildColumns()</a></td>
+		<td>Processes columns and properly quote them if necessary.</td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr class="inherited" id="buildCondition()">
+		<td><a href="yii_db_querybuilder.html#buildCondition()-detail">buildCondition()</a></td>
+		<td>Parses the condition specification and generates the corresponding SQL expression.</td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr class="inherited" id="buildHashCondition()">
+		<td><a href="yii_db_querybuilder.html#buildHashCondition()-detail">buildHashCondition()</a></td>
+		<td>Creates a condition based on column-value pairs.</td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr class="inherited" id="buildAndCondition()">
+		<td><a href="yii_db_querybuilder.html#buildAndCondition()-detail">buildAndCondition()</a></td>
+		<td>Connects two or more SQL expressions with the <code>AND</code> or <code>OR</code> operator.</td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr class="inherited" id="buildNotCondition()">
+		<td><a href="yii_db_querybuilder.html#buildNotCondition()-detail">buildNotCondition()</a></td>
+		<td>Inverts an SQL expressions with <code>NOT</code> operator.</td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr class="inherited" id="buildBetweenCondition()">
+		<td><a href="yii_db_querybuilder.html#buildBetweenCondition()-detail">buildBetweenCondition()</a></td>
+		<td>Creates an SQL expressions with the <code>BETWEEN</code> operator.</td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr class="inherited" id="buildInCondition()">
+		<td><a href="yii_db_querybuilder.html#buildInCondition()-detail">buildInCondition()</a></td>
+		<td>Creates an SQL expressions with the <code>IN</code> operator.</td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+				<tr class="inherited" id="buildLikeCondition()">
+		<td><a href="yii_db_querybuilder.html#buildLikeCondition()-detail">buildLikeCondition()</a></td>
+		<td>Creates an SQL expressions with the <code>LIKE</code> operator.</td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			<tr class="inherited" id="buildExistsCondition()">
+		<td><a href="yii_db_querybuilder.html#buildExistsCondition()-detail">buildExistsCondition()</a></td>
+		<td>Creates an SQL expressions with the <code>EXISTS</code> operator.</td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+	</table>
+</div>
+<div class="summary docMethod">
+<h2>Protected Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+																																																					<tr class="inherited" id="buildCompositeInCondition()">
+		<td><a href="yii_db_querybuilder.html#buildCompositeInCondition()-detail">buildCompositeInCondition()</a></td>
+		<td></td>
+		<td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+			</table>
+</div>
+<a name="events"></a>
+
+<a name="constants"></a>
+<div class="summary docConst">
+<h2>Constants</h2>
+
+<p><a href="#" class="toggle">Hide inherited constants</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-const" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Constant</th><th>Value</th><th>Description</th><th>Defined By</th>
+</tr>
+	<tr class="inherited" id="PARAM_PREFIX">
+	  <td>PARAM_PREFIX<a name="PARAM_PREFIX-detail"></a></td>
+	  <td>':qp'</td>
+	  <td>The prefix for automatically generated query binding parameters.</td>
+	  <td><a href="yii_db_querybuilder.html">yii\db\QueryBuilder</a></td>
+	</tr>
+</table>
+</div>
+<h2>Property Details</h2>
+
+
+	<div class="detailHeader" id="$typeMap-detail">
+		$typeMap		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array $typeMap = [\yii\db\mssql\Schema::TYPE_PK => 'int IDENTITY PRIMARY KEY', \yii\db\mssql\Schema::TYPE_BIGPK => 'bigint IDENTITY PRIMARY KEY', \yii\db\mssql\Schema::TYPE_STRING => 'varchar(255)', \yii\db\mssql\Schema::TYPE_TEXT => 'text', \yii\db\mssql\Schema::TYPE_SMALLINT => 'smallint', \yii\db\mssql\Schema::TYPE_INTEGER => 'int', \yii\db\mssql\Schema::TYPE_BIGINT => 'bigint', \yii\db\mssql\Schema::TYPE_FLOAT => 'float', \yii\db\mssql\Schema::TYPE_DECIMAL => 'decimal', \yii\db\mssql\Schema::TYPE_DATETIME => 'datetime', \yii\db\mssql\Schema::TYPE_TIMESTAMP => 'timestamp', \yii\db\mssql\Schema::TYPE_TIME => 'time', \yii\db\mssql\Schema::TYPE_DATE => 'date', \yii\db\mssql\Schema::TYPE_BINARY => 'binary', \yii\db\mssql\Schema::TYPE_BOOLEAN => 'bit', \yii\db\mssql\Schema::TYPE_MONEY => 'decimal(19,4)']	</div>
+
+	<p>Mapping from abstract column types (keys) to physical column types (values).</p>
+
+	
+<h2>Method Details</h2>
+
+
+	<div class="detailHeader" id="renameTable()-detail">
+		renameTable()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_db_mssql_querybuilder.html#renameTable()-detail">renameTable</a>( $table, $newName )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$table</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The table to be renamed. The name will be properly quoted by the method.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$newName</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The new table name. The name will be properly quoted by the method.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the SQL statement for renaming a DB table.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Builds a SQL statement for renaming a DB table.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="renameColumn()-detail">
+		renameColumn()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_db_mssql_querybuilder.html#renameColumn()-detail">renameColumn</a>( $table, $name, $newName )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$table</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The table whose column is to be renamed. The name will be properly quoted by the method.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The old name of the column. The name will be properly quoted by the method.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$newName</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The new name of the column. The name will be properly quoted by the method.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the SQL statement for renaming a DB column.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Builds a SQL statement for renaming a column.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="alterColumn()-detail">
+		alterColumn()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_db_mssql_querybuilder.html#alterColumn()-detail">alterColumn</a>( $table, $column, $type )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$table</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The table whose column is to be changed. The table name will be properly quoted by the method.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$column</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The name of the column to be changed. The name will be properly quoted by the method.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$type</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The new column type. The {@link getColumnType} method will be invoked to convert abstract column type (if any)
+into the physical one. Anything that is not recognized as abstract type will be kept in the generated SQL.
+For example, 'string' will be turned into 'varchar(255)', while 'string not null' will become 'varchar(255) not null'.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the SQL statement for changing the definition of a column.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Builds a SQL statement for changing the definition of a column.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="checkIntegrity()-detail">
+		checkIntegrity()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_db_mssql_querybuilder.html#checkIntegrity()-detail">checkIntegrity</a>( $check = true, $schema = '', $table = '' )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$check</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">Whether to turn on or off the integrity check.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$schema</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The schema of the tables. Defaults to empty string, meaning the current or default schema.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$table</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The table name. Defaults to empty string, meaning that no table will be changed.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the SQL statement for checking integrity</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_base_invalidparamexception.html">yii\base\InvalidParamException</a></td>
+				  <td class="paramDescCol">if the table does not exist or there is no sequence associated with the table.</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Builds a SQL statement for enabling or disabling integrity check.</strong></p>
+	<p></p>
+
+	
+			</div><!-- end of content -->
+
+		<div id="apiFooter">
+			<p>&copy; 2008-2013 by <a href="http://www.yiisoft.com">Yii Software LLC</a></p>
+			<p>All Rights Reserved.</p>
+		</div><!-- end of footer -->
+
+<script type="text/javascript">
+/*<![CDATA[*/
+$("a.toggle").on('click', function() {
+	var $this = $(this);
+	if ($this.hasClass('properties-hidden')) {
+		$this.text($this.text().replace(/Show/,'Hide'));
+		$this.parents(".summary").find(".inherited").show();
+		$this.removeClass('properties-hidden');
+	} else {
+		$this.text($this.text().replace(/Hide/,'Show'));
+		$this.parents(".summary").find(".inherited").hide();
+		$this.addClass('properties-hidden');
+	}
+	return false;
+});
+/*
+$(".sourceCode a.show").toggle(function(){
+	$(this).text($(this).text().replace(/show/,'hide'));
+	$(this).parents(".sourceCode").find("div.code").show();
+},function(){
+	$(this).text($(this).text().replace(/hide/,'show'));
+	$(this).parents(".sourceCode").find("div.code").hide();
+});
+$("a.sourceLink").click(function(){
+	$(this).attr('target','_blank');
+});
+*/
+/*]]>*/
+</script>
+
+	</div><!-- end of page -->
+</body>
+</html>

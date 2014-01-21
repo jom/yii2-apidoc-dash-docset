@@ -1,0 +1,2233 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="language" content="en" />
+<link href="./assets/4138e429/api.css" rel="stylesheet">
+<link href="./assets/4138e429/style.css" rel="stylesheet">
+<script src="./assets/a91b37a6/jquery.js"></script><title>Yii Framework 2.0 API Documentation</title>
+</head>
+
+<body>
+	<div id="apiPage">
+
+		<div id="apiHeader">
+			<a href="http://www.yiiframework.com">Yii Framework</a> v2.0.0-dev Class Reference
+		</div><!-- end of header -->
+
+		<div id="content">
+		<h1>Class yii\web\Session</h1>
+<div id="nav">
+	<a href="index.html">All Classes</a>
+			| <a href="#properties">Properties</a>
+				| <a href="#methods">Methods</a>
+			</div>
+
+<table class="summaryTable docClass">
+	<colgroup>
+		<col class="col-name" />
+		<col class="col-value" />
+	</colgroup>
+			<tr><th>Inheritance</th><td><a href="yii_web_session.html">yii\web\Session</a> &raquo;
+<a href="yii_base_component.html">yii\base\Component</a> &raquo;
+<a href="yii_base_object.html">yii\base\Object</a></td></tr>
+				<tr><th>Implements</th><td>ArrayAccess, Countable, IteratorAggregate, <a href="yii_base_arrayable.html">yii\base\Arrayable</a></td></tr>
+					<tr><th>Subclasses</th><td><a href="yii_redis_session.html">yii\redis\Session</a>, <a href="yii_web_cachesession.html">yii\web\CacheSession</a>, <a href="yii_web_dbsession.html">yii\web\DbSession</a></td></tr>
+						<tr><th>Available since version</th><td>2.0</td></tr>
+		<tr>
+	  <th>Source Code</th>
+	  <td></td>
+	</tr>
+</table>
+
+<div id="classDescription">
+	<strong>Session provides session data management and the related configurations.</strong>
+	<p>Session is a Web application component that can be accessed via <code>Yii::$app-&gt;session</code>.</p>
+
+<p>To start the session, call <a href="yii_web_session.html#open()-detail">open()</a>; To complete and send out session data, call <a href="yii_web_session.html#close()-detail">close()</a>;
+To destroy the session, call <a href="yii_web_session.html#destroy()-detail">destroy()</a>.</p>
+
+<p>By default, <a href="yii_web_session.html#$autoStart-detail">$autoStart</a> is true which means the session will be started automatically
+when the session component is accessed the first time.</p>
+
+<p>Session can be used like an array to set and get session data. For example,</p>
+
+<pre><code>$session = new Session;
+$session-&gt;open();
+$value1 = $session['name1'];  // get session variable 'name1'
+$value2 = $session['name2'];  // get session variable 'name2'
+foreach ($session as $name =&gt; $value) // traverse all session variables
+$session['name3'] = $value3;  // set session variable 'name3'
+</code></pre>
+
+<p>Session can be extended to support customized session storage.
+To do so, override <span style="background: #f00;">\yii\web\useCustomStorage()</span> so that it returns true, and
+override these methods with the actual logic about using custom storage:
+<a href="yii_web_session.html#openSession()-detail">openSession()</a>, <a href="yii_web_session.html#closeSession()-detail">closeSession()</a>, <a href="yii_web_session.html#readSession()-detail">readSession()</a>, <a href="yii_web_session.html#writeSession()-detail">writeSession()</a>,
+<a href="yii_web_session.html#destroySession()-detail">destroySession()</a> and <a href="yii_web_session.html#gcSession()-detail">gcSession()</a>.</p>
+
+<p>Session also supports a special type of session data, called <em>flash messages</em>.
+A flash message is available only in the current request and the next request.
+After that, it will be deleted automatically. Flash messages are particularly
+useful for displaying confirmation messages. To use flash messages, simply
+call methods such as <a href="yii_web_session.html#setFlash()-detail">setFlash()</a>, <a href="yii_web_session.html#getFlash()-detail">getFlash()</a>.</p>
+</div>
+
+<a name="properties"></a>
+
+<div class="summary docProperty">
+<h2>Public Properties</h2>
+
+<p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-property" />
+	<col class="col-type" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Property</th><th>Type</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr id="$autoStart">
+		<td><a href="yii_web_session.html#$autoStart-detail">$autoStart</a></td>
+		<td>boolean</td>
+		<td>Whether the session should be automatically started when the session component is initialized</td>
+		<td><a href="yii_web_session.html">yii\web\Session</a></td>
+	</tr>
+			<tr id="$flashVar">
+		<td><a href="yii_web_session.html#$flashVar-detail">$flashVar</a></td>
+		<td>string</td>
+		<td>The name of the session variable that stores the flash message data</td>
+		<td><a href="yii_web_session.html">yii\web\Session</a></td>
+	</tr>
+			<tr id="$handler">
+		<td><a href="yii_web_session.html#$handler-detail">$handler</a></td>
+		<td>\SessionHandlerInterface|array</td>
+		<td>An object implementing the SessionHandlerInterface or a configuration array</td>
+		<td><a href="yii_web_session.html">yii\web\Session</a></td>
+	</tr>
+			<tr id="$behaviors">
+		<td><a href="yii_web_session.html#$behaviors-detail">$behaviors</a></td>
+		<td><a href="yii_base_behavior.html">yii\base\Behavior</a>[]</td>
+		<td>list of behaviors attached to this component</td>
+		<td><a href="yii_web_session.html">yii\web\Session</a></td>
+	</tr>
+			<tr id="$useCustomStorage">
+		<td><a href="yii_web_session.html#$useCustomStorage-detail">$useCustomStorage</a></td>
+		<td>boolean</td>
+		<td>whether to use custom storage</td>
+		<td><a href="yii_web_session.html">yii\web\Session</a></td>
+	</tr>
+			<tr id="$isActive">
+		<td><a href="yii_web_session.html#$isActive-detail">$isActive</a></td>
+		<td>boolean</td>
+		<td>whether the session has started</td>
+		<td><a href="yii_web_session.html">yii\web\Session</a></td>
+	</tr>
+			<tr id="$id">
+		<td><a href="yii_web_session.html#$id-detail">$id</a></td>
+		<td>string</td>
+		<td>the current session ID</td>
+		<td><a href="yii_web_session.html">yii\web\Session</a></td>
+	</tr>
+			<tr id="$name">
+		<td><a href="yii_web_session.html#$name-detail">$name</a></td>
+		<td>string</td>
+		<td>the current session name</td>
+		<td><a href="yii_web_session.html">yii\web\Session</a></td>
+	</tr>
+			<tr id="$savePath">
+		<td><a href="yii_web_session.html#$savePath-detail">$savePath</a></td>
+		<td>string</td>
+		<td>the current session save path, defaults to '/tmp'</td>
+		<td><a href="yii_web_session.html">yii\web\Session</a></td>
+	</tr>
+			<tr id="$cookieParams">
+		<td><a href="yii_web_session.html#$cookieParams-detail">$cookieParams</a></td>
+		<td>array</td>
+		<td>the session cookie parameters</td>
+		<td><a href="yii_web_session.html">yii\web\Session</a></td>
+	</tr>
+			<tr id="$useCookies">
+		<td><a href="yii_web_session.html#$useCookies-detail">$useCookies</a></td>
+		<td>boolean|null</td>
+		<td>the value indicating whether cookies should be used to store session IDs</td>
+		<td><a href="yii_web_session.html">yii\web\Session</a></td>
+	</tr>
+			<tr id="$gCProbability">
+		<td><a href="yii_web_session.html#$gCProbability-detail">$gCProbability</a></td>
+		<td>float</td>
+		<td>the probability (percentage) that the GC (garbage collection) process is started on every session initialization, defaults to 1 meaning 1% chance</td>
+		<td><a href="yii_web_session.html">yii\web\Session</a></td>
+	</tr>
+			<tr id="$useTransparentSessionID">
+		<td><a href="yii_web_session.html#$useTransparentSessionID-detail">$useTransparentSessionID</a></td>
+		<td>boolean</td>
+		<td>whether transparent sid support is enabled or not, defaults to false</td>
+		<td><a href="yii_web_session.html">yii\web\Session</a></td>
+	</tr>
+			<tr id="$timeout">
+		<td><a href="yii_web_session.html#$timeout-detail">$timeout</a></td>
+		<td>integer</td>
+		<td>the number of seconds after which data will be seen as 'garbage' and cleaned up</td>
+		<td><a href="yii_web_session.html">yii\web\Session</a></td>
+	</tr>
+			<tr id="$iterator">
+		<td><a href="yii_web_session.html#$iterator-detail">$iterator</a></td>
+		<td><a href="yii_web_sessioniterator.html">yii\web\SessionIterator</a></td>
+		<td>an iterator for traversing the session variables</td>
+		<td><a href="yii_web_session.html">yii\web\Session</a></td>
+	</tr>
+			<tr id="$count">
+		<td><a href="yii_web_session.html#$count-detail">$count</a></td>
+		<td>integer</td>
+		<td>the number of session variables</td>
+		<td><a href="yii_web_session.html">yii\web\Session</a></td>
+	</tr>
+			<tr id="$allFlashes">
+		<td><a href="yii_web_session.html#$allFlashes-detail">$allFlashes</a></td>
+		<td>array</td>
+		<td>flash messages (key => message)</td>
+		<td><a href="yii_web_session.html">yii\web\Session</a></td>
+	</tr>
+			<tr id="$flash">
+		<td><a href="yii_web_session.html#$flash-detail">$flash</a></td>
+		<td>string</td>
+		<td>The key identifying the flash message</td>
+		<td><a href="yii_web_session.html">yii\web\Session</a></td>
+	</tr>
+	</table>
+</div>
+<a name="methods"></a>
+
+<div class="summary docMethod">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr class="inherited" id="className()">
+		<td><a href="yii_base_object.html#className()-detail">className()</a></td>
+		<td></td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__construct()">
+		<td><a href="yii_base_object.html#__construct()-detail">__construct()</a></td>
+		<td>Constructor.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr id="init()">
+		<td><a href="yii_web_session.html#init()-detail">init()</a></td>
+		<td>Initializes the application component.</td>
+		<td><a href="yii_web_session.html">yii\web\Session</a></td>
+	</tr>
+			<tr class="inherited" id="__get()">
+		<td><a href="yii_base_component.html#__get()-detail">__get()</a></td>
+		<td>Returns the value of a component property.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__set()">
+		<td><a href="yii_base_component.html#__set()-detail">__set()</a></td>
+		<td>Sets the value of a component property.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__isset()">
+		<td><a href="yii_base_component.html#__isset()-detail">__isset()</a></td>
+		<td>Checks if a property value is null.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__unset()">
+		<td><a href="yii_base_component.html#__unset()-detail">__unset()</a></td>
+		<td>Sets a component property to be null.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__call()">
+		<td><a href="yii_base_component.html#__call()-detail">__call()</a></td>
+		<td>Calls the named method which is not a class method.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasProperty()">
+		<td><a href="yii_base_component.html#hasProperty()-detail">hasProperty()</a></td>
+		<td>Returns a value indicating whether a property is defined for this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="canGetProperty()">
+		<td><a href="yii_base_component.html#canGetProperty()-detail">canGetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be read.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="canSetProperty()">
+		<td><a href="yii_base_component.html#canSetProperty()-detail">canSetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be set.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasMethod()">
+		<td><a href="yii_base_component.html#hasMethod()-detail">hasMethod()</a></td>
+		<td>Returns a value indicating whether a method is defined.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr id="toArray()">
+		<td><a href="yii_web_session.html#toArray()-detail">toArray()</a></td>
+		<td></td>
+		<td><a href="yii_web_session.html">yii\web\Session</a></td>
+	</tr>
+			<tr class="inherited" id="__clone()">
+		<td><a href="yii_base_component.html#__clone()-detail">__clone()</a></td>
+		<td>This method is called after the object is created by cloning an existing one.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="behaviors()">
+		<td><a href="yii_base_component.html#behaviors()-detail">behaviors()</a></td>
+		<td>Returns a list of behaviors that this component should behave as.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasEventHandlers()">
+		<td><a href="yii_base_component.html#hasEventHandlers()-detail">hasEventHandlers()</a></td>
+		<td>Returns a value indicating whether there is any handler attached to the named event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="on()">
+		<td><a href="yii_base_component.html#on()-detail">on()</a></td>
+		<td>Attaches an event handler to an event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="off()">
+		<td><a href="yii_base_component.html#off()-detail">off()</a></td>
+		<td>Detaches an existing event handler from this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="trigger()">
+		<td><a href="yii_base_component.html#trigger()-detail">trigger()</a></td>
+		<td>Triggers an event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="getBehavior()">
+		<td><a href="yii_base_component.html#getBehavior()-detail">getBehavior()</a></td>
+		<td>Returns the named behavior object.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="getBehaviors()">
+		<td><a href="yii_base_component.html#getBehaviors()-detail">getBehaviors()</a></td>
+		<td>Returns all behaviors attached to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="attachBehavior()">
+		<td><a href="yii_base_component.html#attachBehavior()-detail">attachBehavior()</a></td>
+		<td>Attaches a behavior to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="attachBehaviors()">
+		<td><a href="yii_base_component.html#attachBehaviors()-detail">attachBehaviors()</a></td>
+		<td>Attaches a list of behaviors to the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="detachBehavior()">
+		<td><a href="yii_base_component.html#detachBehavior()-detail">detachBehavior()</a></td>
+		<td>Detaches a behavior from the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="detachBehaviors()">
+		<td><a href="yii_base_component.html#detachBehaviors()-detail">detachBehaviors()</a></td>
+		<td>Detaches all behaviors from the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="ensureBehaviors()">
+		<td><a href="yii_base_component.html#ensureBehaviors()-detail">ensureBehaviors()</a></td>
+		<td>Makes sure that the behaviors declared in <a href="yii_base_component.html#behaviors()-detail">behaviors()</a> are attached to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr id="getUseCustomStorage()">
+		<td><a href="yii_web_session.html#getUseCustomStorage()-detail">getUseCustomStorage()</a></td>
+		<td>Returns a value indicating whether to use custom session storage.</td>
+		<td><a href="yii_web_session.html">yii\web\Session</a></td>
+	</tr>
+			<tr id="open()">
+		<td><a href="yii_web_session.html#open()-detail">open()</a></td>
+		<td>Starts the session.</td>
+		<td><a href="yii_web_session.html">yii\web\Session</a></td>
+	</tr>
+			<tr id="close()">
+		<td><a href="yii_web_session.html#close()-detail">close()</a></td>
+		<td>Ends the current session and store session data.</td>
+		<td><a href="yii_web_session.html">yii\web\Session</a></td>
+	</tr>
+			<tr id="destroy()">
+		<td><a href="yii_web_session.html#destroy()-detail">destroy()</a></td>
+		<td>Frees all session variables and destroys all data registered to a session.</td>
+		<td><a href="yii_web_session.html">yii\web\Session</a></td>
+	</tr>
+			<tr id="getIsActive()">
+		<td><a href="yii_web_session.html#getIsActive()-detail">getIsActive()</a></td>
+		<td></td>
+		<td><a href="yii_web_session.html">yii\web\Session</a></td>
+	</tr>
+			<tr id="getId()">
+		<td><a href="yii_web_session.html#getId()-detail">getId()</a></td>
+		<td></td>
+		<td><a href="yii_web_session.html">yii\web\Session</a></td>
+	</tr>
+			<tr id="setId()">
+		<td><a href="yii_web_session.html#setId()-detail">setId()</a></td>
+		<td></td>
+		<td><a href="yii_web_session.html">yii\web\Session</a></td>
+	</tr>
+			<tr id="regenerateID()">
+		<td><a href="yii_web_session.html#regenerateID()-detail">regenerateID()</a></td>
+		<td>Updates the current session ID with a newly generated one .</td>
+		<td><a href="yii_web_session.html">yii\web\Session</a></td>
+	</tr>
+			<tr id="getName()">
+		<td><a href="yii_web_session.html#getName()-detail">getName()</a></td>
+		<td></td>
+		<td><a href="yii_web_session.html">yii\web\Session</a></td>
+	</tr>
+			<tr id="setName()">
+		<td><a href="yii_web_session.html#setName()-detail">setName()</a></td>
+		<td></td>
+		<td><a href="yii_web_session.html">yii\web\Session</a></td>
+	</tr>
+			<tr id="getSavePath()">
+		<td><a href="yii_web_session.html#getSavePath()-detail">getSavePath()</a></td>
+		<td></td>
+		<td><a href="yii_web_session.html">yii\web\Session</a></td>
+	</tr>
+			<tr id="setSavePath()">
+		<td><a href="yii_web_session.html#setSavePath()-detail">setSavePath()</a></td>
+		<td></td>
+		<td><a href="yii_web_session.html">yii\web\Session</a></td>
+	</tr>
+			<tr id="getCookieParams()">
+		<td><a href="yii_web_session.html#getCookieParams()-detail">getCookieParams()</a></td>
+		<td></td>
+		<td><a href="yii_web_session.html">yii\web\Session</a></td>
+	</tr>
+			<tr id="setCookieParams()">
+		<td><a href="yii_web_session.html#setCookieParams()-detail">setCookieParams()</a></td>
+		<td>Sets the session cookie parameters.</td>
+		<td><a href="yii_web_session.html">yii\web\Session</a></td>
+	</tr>
+			<tr id="getUseCookies()">
+		<td><a href="yii_web_session.html#getUseCookies()-detail">getUseCookies()</a></td>
+		<td>Returns the value indicating whether cookies should be used to store session IDs.</td>
+		<td><a href="yii_web_session.html">yii\web\Session</a></td>
+	</tr>
+			<tr id="setUseCookies()">
+		<td><a href="yii_web_session.html#setUseCookies()-detail">setUseCookies()</a></td>
+		<td>Sets the value indicating whether cookies should be used to store session IDs.</td>
+		<td><a href="yii_web_session.html">yii\web\Session</a></td>
+	</tr>
+			<tr id="getGCProbability()">
+		<td><a href="yii_web_session.html#getGCProbability()-detail">getGCProbability()</a></td>
+		<td></td>
+		<td><a href="yii_web_session.html">yii\web\Session</a></td>
+	</tr>
+			<tr id="setGCProbability()">
+		<td><a href="yii_web_session.html#setGCProbability()-detail">setGCProbability()</a></td>
+		<td></td>
+		<td><a href="yii_web_session.html">yii\web\Session</a></td>
+	</tr>
+			<tr id="getUseTransparentSessionID()">
+		<td><a href="yii_web_session.html#getUseTransparentSessionID()-detail">getUseTransparentSessionID()</a></td>
+		<td></td>
+		<td><a href="yii_web_session.html">yii\web\Session</a></td>
+	</tr>
+			<tr id="setUseTransparentSessionID()">
+		<td><a href="yii_web_session.html#setUseTransparentSessionID()-detail">setUseTransparentSessionID()</a></td>
+		<td></td>
+		<td><a href="yii_web_session.html">yii\web\Session</a></td>
+	</tr>
+			<tr id="getTimeout()">
+		<td><a href="yii_web_session.html#getTimeout()-detail">getTimeout()</a></td>
+		<td></td>
+		<td><a href="yii_web_session.html">yii\web\Session</a></td>
+	</tr>
+			<tr id="setTimeout()">
+		<td><a href="yii_web_session.html#setTimeout()-detail">setTimeout()</a></td>
+		<td></td>
+		<td><a href="yii_web_session.html">yii\web\Session</a></td>
+	</tr>
+			<tr id="openSession()">
+		<td><a href="yii_web_session.html#openSession()-detail">openSession()</a></td>
+		<td>Session open handler.</td>
+		<td><a href="yii_web_session.html">yii\web\Session</a></td>
+	</tr>
+			<tr id="closeSession()">
+		<td><a href="yii_web_session.html#closeSession()-detail">closeSession()</a></td>
+		<td>Session close handler.</td>
+		<td><a href="yii_web_session.html">yii\web\Session</a></td>
+	</tr>
+			<tr id="readSession()">
+		<td><a href="yii_web_session.html#readSession()-detail">readSession()</a></td>
+		<td>Session read handler.</td>
+		<td><a href="yii_web_session.html">yii\web\Session</a></td>
+	</tr>
+			<tr id="writeSession()">
+		<td><a href="yii_web_session.html#writeSession()-detail">writeSession()</a></td>
+		<td>Session write handler.</td>
+		<td><a href="yii_web_session.html">yii\web\Session</a></td>
+	</tr>
+			<tr id="destroySession()">
+		<td><a href="yii_web_session.html#destroySession()-detail">destroySession()</a></td>
+		<td>Session destroy handler.</td>
+		<td><a href="yii_web_session.html">yii\web\Session</a></td>
+	</tr>
+			<tr id="gcSession()">
+		<td><a href="yii_web_session.html#gcSession()-detail">gcSession()</a></td>
+		<td>Session GC (garbage collection) handler.</td>
+		<td><a href="yii_web_session.html">yii\web\Session</a></td>
+	</tr>
+			<tr id="getIterator()">
+		<td><a href="yii_web_session.html#getIterator()-detail">getIterator()</a></td>
+		<td>Returns an iterator for traversing the session variables.</td>
+		<td><a href="yii_web_session.html">yii\web\Session</a></td>
+	</tr>
+			<tr id="getCount()">
+		<td><a href="yii_web_session.html#getCount()-detail">getCount()</a></td>
+		<td>Returns the number of items in the session.</td>
+		<td><a href="yii_web_session.html">yii\web\Session</a></td>
+	</tr>
+			<tr id="count()">
+		<td><a href="yii_web_session.html#count()-detail">count()</a></td>
+		<td>Returns the number of items in the session.</td>
+		<td><a href="yii_web_session.html">yii\web\Session</a></td>
+	</tr>
+			<tr id="get()">
+		<td><a href="yii_web_session.html#get()-detail">get()</a></td>
+		<td>Returns the session variable value with the session variable name.</td>
+		<td><a href="yii_web_session.html">yii\web\Session</a></td>
+	</tr>
+			<tr id="set()">
+		<td><a href="yii_web_session.html#set()-detail">set()</a></td>
+		<td>Adds a session variable.</td>
+		<td><a href="yii_web_session.html">yii\web\Session</a></td>
+	</tr>
+			<tr id="remove()">
+		<td><a href="yii_web_session.html#remove()-detail">remove()</a></td>
+		<td>Removes a session variable.</td>
+		<td><a href="yii_web_session.html">yii\web\Session</a></td>
+	</tr>
+			<tr id="removeAll()">
+		<td><a href="yii_web_session.html#removeAll()-detail">removeAll()</a></td>
+		<td>Removes all session variables</td>
+		<td><a href="yii_web_session.html">yii\web\Session</a></td>
+	</tr>
+			<tr id="has()">
+		<td><a href="yii_web_session.html#has()-detail">has()</a></td>
+		<td></td>
+		<td><a href="yii_web_session.html">yii\web\Session</a></td>
+	</tr>
+				<tr id="getFlash()">
+		<td><a href="yii_web_session.html#getFlash()-detail">getFlash()</a></td>
+		<td>Returns a flash message.</td>
+		<td><a href="yii_web_session.html">yii\web\Session</a></td>
+	</tr>
+			<tr id="getAllFlashes()">
+		<td><a href="yii_web_session.html#getAllFlashes()-detail">getAllFlashes()</a></td>
+		<td>Returns all flash messages.</td>
+		<td><a href="yii_web_session.html">yii\web\Session</a></td>
+	</tr>
+			<tr id="setFlash()">
+		<td><a href="yii_web_session.html#setFlash()-detail">setFlash()</a></td>
+		<td>Stores a flash message.</td>
+		<td><a href="yii_web_session.html">yii\web\Session</a></td>
+	</tr>
+			<tr id="removeFlash()">
+		<td><a href="yii_web_session.html#removeFlash()-detail">removeFlash()</a></td>
+		<td>Removes a flash message.</td>
+		<td><a href="yii_web_session.html">yii\web\Session</a></td>
+	</tr>
+			<tr id="removeAllFlashes()">
+		<td><a href="yii_web_session.html#removeAllFlashes()-detail">removeAllFlashes()</a></td>
+		<td>Removes all flash messages.</td>
+		<td><a href="yii_web_session.html">yii\web\Session</a></td>
+	</tr>
+			<tr id="hasFlash()">
+		<td><a href="yii_web_session.html#hasFlash()-detail">hasFlash()</a></td>
+		<td>Returns a value indicating whether there is a flash message associated with the specified key.</td>
+		<td><a href="yii_web_session.html">yii\web\Session</a></td>
+	</tr>
+			<tr id="offsetExists()">
+		<td><a href="yii_web_session.html#offsetExists()-detail">offsetExists()</a></td>
+		<td>This method is required by the interface ArrayAccess.</td>
+		<td><a href="yii_web_session.html">yii\web\Session</a></td>
+	</tr>
+			<tr id="offsetGet()">
+		<td><a href="yii_web_session.html#offsetGet()-detail">offsetGet()</a></td>
+		<td>This method is required by the interface ArrayAccess.</td>
+		<td><a href="yii_web_session.html">yii\web\Session</a></td>
+	</tr>
+			<tr id="offsetSet()">
+		<td><a href="yii_web_session.html#offsetSet()-detail">offsetSet()</a></td>
+		<td>This method is required by the interface ArrayAccess.</td>
+		<td><a href="yii_web_session.html">yii\web\Session</a></td>
+	</tr>
+			<tr id="offsetUnset()">
+		<td><a href="yii_web_session.html#offsetUnset()-detail">offsetUnset()</a></td>
+		<td>This method is required by the interface ArrayAccess.</td>
+		<td><a href="yii_web_session.html">yii\web\Session</a></td>
+	</tr>
+	</table>
+</div>
+<div class="summary docMethod">
+<h2>Protected Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+																																																																<tr id="updateFlashCounters()">
+		<td><a href="yii_web_session.html#updateFlashCounters()-detail">updateFlashCounters()</a></td>
+		<td>Updates the counters for flash messages and removes outdated flash messages.</td>
+		<td><a href="yii_web_session.html">yii\web\Session</a></td>
+	</tr>
+											</table>
+</div>
+<a name="events"></a>
+
+<a name="constants"></a>
+
+<h2>Property Details</h2>
+
+
+	<div class="detailHeader" id="$autoStart-detail">
+		$autoStart		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	boolean $autoStart = true	</div>
+
+	<p>Whether the session should be automatically started when the session component is initialized.</p>
+
+	
+
+	<div class="detailHeader" id="$flashVar-detail">
+		$flashVar		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $flashVar = '__flash'	</div>
+
+	<p>The name of the session variable that stores the flash message data.</p>
+
+	
+
+	<div class="detailHeader" id="$handler-detail">
+		$handler		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	\SessionHandlerInterface|array $handler = null	</div>
+
+	<p>An object implementing the SessionHandlerInterface or a configuration array. If set, will be used to provide persistency instead of build-in methods.</p>
+
+	
+
+	<div class="detailHeader" id="$behaviors-detail">
+		$behaviors		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_base_behavior.html">yii\base\Behavior</a>[] <a href="yii_base_component.html#getBehaviors()-detail">getBehaviors</a>(  )	</div>
+
+	<p>list of behaviors attached to this component</p>
+
+	
+
+	<div class="detailHeader" id="$useCustomStorage-detail">
+		$useCustomStorage		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	boolean <a href="yii_web_session.html#getUseCustomStorage()-detail">getUseCustomStorage</a>(  )	</div>
+
+	<p>whether to use custom storage.</p>
+
+	
+
+	<div class="detailHeader" id="$isActive-detail">
+		$isActive		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	boolean <a href="yii_web_session.html#getIsActive()-detail">getIsActive</a>(  )	</div>
+
+	<p>whether the session has started</p>
+
+	
+
+	<div class="detailHeader" id="$id-detail">
+		$id		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string <a href="yii_web_session.html#getId()-detail">getId</a>(  )<br />void <a href="yii_web_session.html#setId()-detail">setId</a>( $value )	</div>
+
+	<p>the current session ID</p>
+
+	
+
+	<div class="detailHeader" id="$name-detail">
+		$name		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string <a href="yii_web_session.html#getName()-detail">getName</a>(  )<br />void <a href="yii_web_session.html#setName()-detail">setName</a>( $value )	</div>
+
+	<p>the current session name</p>
+
+	
+
+	<div class="detailHeader" id="$savePath-detail">
+		$savePath		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string <a href="yii_web_session.html#getSavePath()-detail">getSavePath</a>(  )<br />void <a href="yii_web_session.html#setSavePath()-detail">setSavePath</a>( $value )	</div>
+
+	<p>the current session save path, defaults to '/tmp'.</p>
+
+	
+
+	<div class="detailHeader" id="$cookieParams-detail">
+		$cookieParams		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array <a href="yii_web_session.html#getCookieParams()-detail">getCookieParams</a>(  )<br />void <a href="yii_web_session.html#setCookieParams()-detail">setCookieParams</a>( array $value )	</div>
+
+	<p>the session cookie parameters.</p>
+
+	
+
+	<div class="detailHeader" id="$useCookies-detail">
+		$useCookies		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	boolean|null <a href="yii_web_session.html#getUseCookies()-detail">getUseCookies</a>(  )<br />void <a href="yii_web_session.html#setUseCookies()-detail">setUseCookies</a>( $value )	</div>
+
+	<p>the value indicating whether cookies should be used to store session IDs.</p>
+
+	
+
+	<div class="detailHeader" id="$gCProbability-detail">
+		$gCProbability		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	float <a href="yii_web_session.html#getGCProbability()-detail">getGCProbability</a>(  )<br />void <a href="yii_web_session.html#setGCProbability()-detail">setGCProbability</a>( $value )	</div>
+
+	<p>the probability (percentage) that the GC (garbage collection) process is started on every session initialization, defaults to 1 meaning 1% chance.</p>
+
+	
+
+	<div class="detailHeader" id="$useTransparentSessionID-detail">
+		$useTransparentSessionID		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	boolean <a href="yii_web_session.html#getUseTransparentSessionID()-detail">getUseTransparentSessionID</a>(  )<br />void <a href="yii_web_session.html#setUseTransparentSessionID()-detail">setUseTransparentSessionID</a>( $value )	</div>
+
+	<p>whether transparent sid support is enabled or not, defaults to false.</p>
+
+	
+
+	<div class="detailHeader" id="$timeout-detail">
+		$timeout		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	integer <a href="yii_web_session.html#getTimeout()-detail">getTimeout</a>(  )<br />void <a href="yii_web_session.html#setTimeout()-detail">setTimeout</a>( $value )	</div>
+
+	<p>the number of seconds after which data will be seen as 'garbage' and cleaned up.
+The default value is 1440 seconds (or the value of "session.gc_maxlifetime" set in php.ini).</p>
+
+	
+
+	<div class="detailHeader" id="$iterator-detail">
+		$iterator		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_web_sessioniterator.html">yii\web\SessionIterator</a> <a href="yii_web_session.html#getIterator()-detail">getIterator</a>(  )	</div>
+
+	<p>an iterator for traversing the session variables.</p>
+
+	
+
+	<div class="detailHeader" id="$count-detail">
+		$count		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	integer <a href="yii_web_session.html#getCount()-detail">getCount</a>(  )	</div>
+
+	<p>the number of session variables</p>
+
+	
+
+	<div class="detailHeader" id="$allFlashes-detail">
+		$allFlashes		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	array <a href="yii_web_session.html#getAllFlashes()-detail">getAllFlashes</a>(  )	</div>
+
+	<p>flash messages (key => message).</p>
+
+	
+
+	<div class="detailHeader" id="$flash-detail">
+		$flash		<span class="detailHeaderTag">
+			property
+						 <em>write-only</em> 					</span>
+	</div>
+
+	<div class="signature">
+	void <a href="yii_web_session.html#setFlash()-detail">setFlash</a>( $key, $value = true )	</div>
+
+	<p>The key identifying the flash message. Note that flash messages
+and normal session variables share the same name space. If you have a normal
+session variable using the same name, its value will be overwritten by this method.</p>
+
+	
+<h2>Method Details</h2>
+
+
+	<div class="detailHeader" id="init()-detail">
+		init()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_web_session.html#init()-detail">init</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p>Initializes the application component.</strong></p>
+	<p>This method is required by IApplicationComponent and is invoked by application.</p>
+
+	
+
+	<div class="detailHeader" id="toArray()-detail">
+		toArray()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			array <a href="yii_web_session.html#toArray()-detail">toArray</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">the list of all session variables in array</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getUseCustomStorage()-detail">
+		getUseCustomStorage()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_web_session.html#getUseCustomStorage()-detail">getUseCustomStorage</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether to use custom storage.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns a value indicating whether to use custom session storage.</strong></p>
+	<p>This method should be overridden to return true by child classes that implement custom session storage.
+To implement custom session storage, override these methods: <a href="yii_web_session.html#openSession()-detail">openSession()</a>, <a href="yii_web_session.html#closeSession()-detail">closeSession()</a>,
+<a href="yii_web_session.html#readSession()-detail">readSession()</a>, <a href="yii_web_session.html#writeSession()-detail">writeSession()</a>, <a href="yii_web_session.html#destroySession()-detail">destroySession()</a> and <a href="yii_web_session.html#gcSession()-detail">gcSession()</a>.</p>
+
+	
+
+	<div class="detailHeader" id="open()-detail">
+		open()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_web_session.html#open()-detail">open</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p>Starts the session.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="close()-detail">
+		close()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_web_session.html#close()-detail">close</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p>Ends the current session and store session data.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="destroy()-detail">
+		destroy()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_web_session.html#destroy()-detail">destroy</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p>Frees all session variables and destroys all data registered to a session.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getIsActive()-detail">
+		getIsActive()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_web_session.html#getIsActive()-detail">getIsActive</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether the session has started</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getId()-detail">
+		getId()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_web_session.html#getId()-detail">getId</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the current session ID</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="setId()-detail">
+		setId()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_web_session.html#setId()-detail">setId</a>( $value )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$value</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The session ID for the current session</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="regenerateID()-detail">
+		regenerateID()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_web_session.html#regenerateID()-detail">regenerateID</a>( $deleteOldSession = false )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$deleteOldSession</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">Whether to delete the old associated session file or not.</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Updates the current session ID with a newly generated one .</strong></p>
+	<p>Please refer to <a href="http://php.net/session_regenerate_id">http://php.net/session_regenerate_id</a> for more details.</p>
+
+	
+
+	<div class="detailHeader" id="getName()-detail">
+		getName()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_web_session.html#getName()-detail">getName</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the current session name</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="setName()-detail">
+		setName()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_web_session.html#setName()-detail">setName</a>( $value )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$value</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The session name for the current session, must be an alphanumeric string.
+It defaults to "PHPSESSID".</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getSavePath()-detail">
+		getSavePath()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_web_session.html#getSavePath()-detail">getSavePath</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the current session save path, defaults to '/tmp'.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="setSavePath()-detail">
+		setSavePath()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_web_session.html#setSavePath()-detail">setSavePath</a>( $value )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$value</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The current session save path. This can be either a directory name or a path alias.</td>
+				</tr>
+													<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_base_invalidparamexception.html">yii\base\InvalidParamException</a></td>
+				  <td class="paramDescCol">if the path is not a valid directory</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getCookieParams()-detail">
+		getCookieParams()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			array <a href="yii_web_session.html#getCookieParams()-detail">getCookieParams</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">the session cookie parameters.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li>http://us2.php.net/manual/en/function.session-get-cookie-params.php</li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="setCookieParams()-detail">
+		setCookieParams()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_web_session.html#setCookieParams()-detail">setCookieParams</a>( array $value )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$value</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">Cookie parameters, valid keys include: <code>lifetime</code>, <code>path</code>, <code>domain</code>, <code>secure</code> and <code>httpOnly</code>.</td>
+				</tr>
+													<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_base_invalidparamexception.html">yii\base\InvalidParamException</a></td>
+				  <td class="paramDescCol">if the parameters are incomplete.</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Sets the session cookie parameters.</strong></p>
+	<p>The cookie parameters passed to this method will be merged with the result
+of <code>session_get_cookie_params()</code>.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li>http://us2.php.net/manual/en/function.session-set-cookie-params.php</li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="getUseCookies()-detail">
+		getUseCookies()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean|null <a href="yii_web_session.html#getUseCookies()-detail">getUseCookies</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean|null</td>
+				  <td class="paramDescCol">the value indicating whether cookies should be used to store session IDs.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the value indicating whether cookies should be used to store session IDs.</strong></p>
+	<p></p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_web_session.html#setUseCookies()-detail">setUseCookies()</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="setUseCookies()-detail">
+		setUseCookies()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_web_session.html#setUseCookies()-detail">setUseCookies</a>( $value )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$value</td>
+				  <td class="paramTypeCol">boolean|null</td>
+				  <td class="paramDescCol">The value indicating whether cookies should be used to store session IDs.</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Sets the value indicating whether cookies should be used to store session IDs.</strong></p>
+	<p><p>Three states are possible:</p>
+
+<ul>
+<li>true: cookies and only cookies will be used to store session IDs.</li>
+<li>false: cookies will not be used to store session IDs.</li>
+<li>null: if possible, cookies will be used to store session IDs; if not, other mechanisms will be used (e.g. GET parameter)</li>
+</ul></p>
+
+	
+
+	<div class="detailHeader" id="getGCProbability()-detail">
+		getGCProbability()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			float <a href="yii_web_session.html#getGCProbability()-detail">getGCProbability</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">float</td>
+				  <td class="paramDescCol">the probability (percentage) that the GC (garbage collection) process is started on every session initialization, defaults to 1 meaning 1% chance.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="setGCProbability()-detail">
+		setGCProbability()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_web_session.html#setGCProbability()-detail">setGCProbability</a>( $value )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$value</td>
+				  <td class="paramTypeCol">float</td>
+				  <td class="paramDescCol">The probability (percentage) that the GC (garbage collection) process is started on every session initialization.</td>
+				</tr>
+													<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_base_invalidparamexception.html">yii\base\InvalidParamException</a></td>
+				  <td class="paramDescCol">if the value is not between 0 and 100.</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getUseTransparentSessionID()-detail">
+		getUseTransparentSessionID()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_web_session.html#getUseTransparentSessionID()-detail">getUseTransparentSessionID</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether transparent sid support is enabled or not, defaults to false.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="setUseTransparentSessionID()-detail">
+		setUseTransparentSessionID()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_web_session.html#setUseTransparentSessionID()-detail">setUseTransparentSessionID</a>( $value )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$value</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">Whether transparent sid support is enabled or not.</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getTimeout()-detail">
+		getTimeout()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			integer <a href="yii_web_session.html#getTimeout()-detail">getTimeout</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">integer</td>
+				  <td class="paramDescCol">the number of seconds after which data will be seen as 'garbage' and cleaned up.
+The default value is 1440 seconds (or the value of "session.gc_maxlifetime" set in php.ini).</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="setTimeout()-detail">
+		setTimeout()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_web_session.html#setTimeout()-detail">setTimeout</a>( $value )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$value</td>
+				  <td class="paramTypeCol">integer</td>
+				  <td class="paramDescCol">The number of seconds after which data will be seen as 'garbage' and cleaned up</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="openSession()-detail">
+		openSession()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_web_session.html#openSession()-detail">openSession</a>( $savePath, $sessionName )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$savePath</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Session save path</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$sessionName</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Session name</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether session is opened successfully</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Session open handler.</strong></p>
+	<p>This method should be overridden if <span style="background: #f00;">\yii\web\useCustomStorage()</span> returns true.
+Do not call this method directly.</p>
+
+	
+
+	<div class="detailHeader" id="closeSession()-detail">
+		closeSession()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_web_session.html#closeSession()-detail">closeSession</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether session is closed successfully</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Session close handler.</strong></p>
+	<p>This method should be overridden if <span style="background: #f00;">\yii\web\useCustomStorage()</span> returns true.
+Do not call this method directly.</p>
+
+	
+
+	<div class="detailHeader" id="readSession()-detail">
+		readSession()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_web_session.html#readSession()-detail">readSession</a>( $id )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$id</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Session ID</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the session data</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Session read handler.</strong></p>
+	<p>This method should be overridden if <span style="background: #f00;">\yii\web\useCustomStorage()</span> returns true.
+Do not call this method directly.</p>
+
+	
+
+	<div class="detailHeader" id="writeSession()-detail">
+		writeSession()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_web_session.html#writeSession()-detail">writeSession</a>( $id, $data )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$id</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Session ID</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$data</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Session data</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether session write is successful</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Session write handler.</strong></p>
+	<p>This method should be overridden if <span style="background: #f00;">\yii\web\useCustomStorage()</span> returns true.
+Do not call this method directly.</p>
+
+	
+
+	<div class="detailHeader" id="destroySession()-detail">
+		destroySession()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_web_session.html#destroySession()-detail">destroySession</a>( $id )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$id</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Session ID</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether session is destroyed successfully</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Session destroy handler.</strong></p>
+	<p>This method should be overridden if <span style="background: #f00;">\yii\web\useCustomStorage()</span> returns true.
+Do not call this method directly.</p>
+
+	
+
+	<div class="detailHeader" id="gcSession()-detail">
+		gcSession()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_web_session.html#gcSession()-detail">gcSession</a>( $maxLifetime )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$maxLifetime</td>
+				  <td class="paramTypeCol">integer</td>
+				  <td class="paramDescCol">The number of seconds after which data will be seen as 'garbage' and cleaned up.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether session is GCed successfully</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Session GC (garbage collection) handler.</strong></p>
+	<p>This method should be overridden if <span style="background: #f00;">\yii\web\useCustomStorage()</span> returns true.
+Do not call this method directly.</p>
+
+	
+
+	<div class="detailHeader" id="getIterator()-detail">
+		getIterator()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			<a href="yii_web_sessioniterator.html">yii\web\SessionIterator</a> <a href="yii_web_session.html#getIterator()-detail">getIterator</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol"><a href="yii_web_sessioniterator.html">yii\web\SessionIterator</a></td>
+				  <td class="paramDescCol">an iterator for traversing the session variables.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns an iterator for traversing the session variables.</strong></p>
+	<p>This method is required by the interface IteratorAggregate.</p>
+
+	
+
+	<div class="detailHeader" id="getCount()-detail">
+		getCount()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			integer <a href="yii_web_session.html#getCount()-detail">getCount</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">integer</td>
+				  <td class="paramDescCol">the number of session variables</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the number of items in the session.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="count()-detail">
+		count()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			integer <a href="yii_web_session.html#count()-detail">count</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">integer</td>
+				  <td class="paramDescCol">number of items in the session.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the number of items in the session.</strong></p>
+	<p>This method is required by Countable interface.</p>
+
+	
+
+	<div class="detailHeader" id="get()-detail">
+		get()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			mixed <a href="yii_web_session.html#get()-detail">get</a>( $key, $defaultValue = null )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$key</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The session variable name</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$defaultValue</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">The default value to be returned when the session variable does not exist.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">the session variable value, or $defaultValue if the session variable does not exist.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the session variable value with the session variable name.</strong></p>
+	<p>If the session variable does not exist, the <code>$defaultValue</code> will be returned.</p>
+
+	
+
+	<div class="detailHeader" id="set()-detail">
+		set()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_web_session.html#set()-detail">set</a>( $key, $value )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$key</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Session variable name</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$value</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">Session variable value</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Adds a session variable.</strong></p>
+	<p>If the specified name already exists, the old value will be overwritten.</p>
+
+	
+
+	<div class="detailHeader" id="remove()-detail">
+		remove()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			mixed <a href="yii_web_session.html#remove()-detail">remove</a>( $key )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$key</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The name of the session variable to be removed</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">the removed value, null if no such session variable.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Removes a session variable.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="removeAll()-detail">
+		removeAll()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_web_session.html#removeAll()-detail">removeAll</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p>Removes all session variables</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="has()-detail">
+		has()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_web_session.html#has()-detail">has</a>( $key )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$key</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">Session variable name</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether there is the named session variable</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="updateFlashCounters()-detail">
+		updateFlashCounters()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_web_session.html#updateFlashCounters()-detail">updateFlashCounters</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p>Updates the counters for flash messages and removes outdated flash messages.</strong></p>
+	<p>This method should only be called once in <a href="yii_web_session.html#init()-detail">init()</a>.</p>
+
+	
+
+	<div class="detailHeader" id="getFlash()-detail">
+		getFlash()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			mixed <a href="yii_web_session.html#getFlash()-detail">getFlash</a>( $key, $defaultValue = null, $delete = false )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$key</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The key identifying the flash message</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$defaultValue</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">Value to be returned if the flash message does not exist.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$delete</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">Whether to delete this flash message right after this method is called.
+If false, the flash message will be automatically deleted after the next request.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">the flash message</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns a flash message.</strong></p>
+	<p>A flash message is available only in the current request and the next request.</p>
+
+	
+
+	<div class="detailHeader" id="getAllFlashes()-detail">
+		getAllFlashes()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			array <a href="yii_web_session.html#getAllFlashes()-detail">getAllFlashes</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">flash messages (key => message).</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns all flash messages.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="setFlash()-detail">
+		setFlash()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_web_session.html#setFlash()-detail">setFlash</a>( $key, $value = true )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$key</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The key identifying the flash message. Note that flash messages
+and normal session variables share the same name space. If you have a normal
+session variable using the same name, its value will be overwritten by this method.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$value</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">Flash message</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Stores a flash message.</strong></p>
+	<p>A flash message is available only in the current request and the next request.</p>
+
+	
+
+	<div class="detailHeader" id="removeFlash()-detail">
+		removeFlash()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			mixed <a href="yii_web_session.html#removeFlash()-detail">removeFlash</a>( $key )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$key</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The key identifying the flash message. Note that flash messages
+and normal session variables share the same name space.  If you have a normal
+session variable using the same name, it will be removed by this method.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">the removed flash message. Null if the flash message does not exist.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Removes a flash message.</strong></p>
+	<p>Note that flash messages will be automatically removed after the next request.</p>
+
+	
+
+	<div class="detailHeader" id="removeAllFlashes()-detail">
+		removeAllFlashes()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_web_session.html#removeAllFlashes()-detail">removeAllFlashes</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p>Removes all flash messages.</strong></p>
+	<p>Note that flash messages and normal session variables share the same name space.
+If you have a normal session variable using the same name, it will be removed
+by this method.</p>
+
+	
+
+	<div class="detailHeader" id="hasFlash()-detail">
+		hasFlash()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_web_session.html#hasFlash()-detail">hasFlash</a>( $key )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$key</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Key identifying the flash message</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether the specified flash message exists</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns a value indicating whether there is a flash message associated with the specified key.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="offsetExists()-detail">
+		offsetExists()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_web_session.html#offsetExists()-detail">offsetExists</a>( $offset )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$offset</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">The offset to check on</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>This method is required by the interface ArrayAccess.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="offsetGet()-detail">
+		offsetGet()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			mixed <a href="yii_web_session.html#offsetGet()-detail">offsetGet</a>( $offset )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$offset</td>
+				  <td class="paramTypeCol">integer</td>
+				  <td class="paramDescCol">The offset to retrieve element.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">the element at the offset, null if no element is found at the offset</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>This method is required by the interface ArrayAccess.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="offsetSet()-detail">
+		offsetSet()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_web_session.html#offsetSet()-detail">offsetSet</a>( $offset, $item )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$offset</td>
+				  <td class="paramTypeCol">integer</td>
+				  <td class="paramDescCol">The offset to set element</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$item</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">The element value</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>This method is required by the interface ArrayAccess.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="offsetUnset()-detail">
+		offsetUnset()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_web_session.html#offsetUnset()-detail">offsetUnset</a>( $offset )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$offset</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">The offset to unset element</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>This method is required by the interface ArrayAccess.</strong></p>
+	<p></p>
+
+	
+			</div><!-- end of content -->
+
+		<div id="apiFooter">
+			<p>&copy; 2008-2013 by <a href="http://www.yiisoft.com">Yii Software LLC</a></p>
+			<p>All Rights Reserved.</p>
+		</div><!-- end of footer -->
+
+<script type="text/javascript">
+/*<![CDATA[*/
+$("a.toggle").on('click', function() {
+	var $this = $(this);
+	if ($this.hasClass('properties-hidden')) {
+		$this.text($this.text().replace(/Show/,'Hide'));
+		$this.parents(".summary").find(".inherited").show();
+		$this.removeClass('properties-hidden');
+	} else {
+		$this.text($this.text().replace(/Hide/,'Show'));
+		$this.parents(".summary").find(".inherited").hide();
+		$this.addClass('properties-hidden');
+	}
+	return false;
+});
+/*
+$(".sourceCode a.show").toggle(function(){
+	$(this).text($(this).text().replace(/show/,'hide'));
+	$(this).parents(".sourceCode").find("div.code").show();
+},function(){
+	$(this).text($(this).text().replace(/hide/,'show'));
+	$(this).parents(".sourceCode").find("div.code").hide();
+});
+$("a.sourceLink").click(function(){
+	$(this).attr('target','_blank');
+});
+*/
+/*]]>*/
+</script>
+
+	</div><!-- end of page -->
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="language" content="en" />
+<link href="./assets/4138e429/api.css" rel="stylesheet">
+<link href="./assets/4138e429/style.css" rel="stylesheet">
+<script src="./assets/a91b37a6/jquery.js"></script><title>Yii Framework 2.0 API Documentation</title>
+</head>
+
+<body>
+	<div id="apiPage">
+
+		<div id="apiHeader">
+			<a href="http://www.yiiframework.com">Yii Framework</a> v2.0.0-dev Class Reference
+		</div><!-- end of header -->
+
+		<div id="content">
+		<h1>Interface yii\base\ViewContextInterface</h1>
+<div id="nav">
+	<a href="index.html">All Classes</a>
+				| <a href="#methods">Methods</a>
+			</div>
+
+<table class="summaryTable docClass">
+	<colgroup>
+		<col class="col-name" />
+		<col class="col-value" />
+	</colgroup>
+							<tr><th>Implemented by</th><td><a href="yii_base_controller.html">yii\base\Controller</a>, <a href="yii_base_widget.html">yii\base\Widget</a>, <a href="yii_bootstrap_alert.html">yii\bootstrap\Alert</a>, <a href="yii_bootstrap_button.html">yii\bootstrap\Button</a>, <a href="yii_bootstrap_buttondropdown.html">yii\bootstrap\ButtonDropdown</a>, <a href="yii_bootstrap_buttongroup.html">yii\bootstrap\ButtonGroup</a>, <a href="yii_bootstrap_carousel.html">yii\bootstrap\Carousel</a>, <a href="yii_bootstrap_collapse.html">yii\bootstrap\Collapse</a>, <a href="yii_bootstrap_dropdown.html">yii\bootstrap\Dropdown</a>, <a href="yii_bootstrap_modal.html">yii\bootstrap\Modal</a>, <a href="yii_bootstrap_nav.html">yii\bootstrap\Nav</a>, <a href="yii_bootstrap_navbar.html">yii\bootstrap\NavBar</a>, <a href="yii_bootstrap_progress.html">yii\bootstrap\Progress</a>, <a href="yii_bootstrap_tabs.html">yii\bootstrap\Tabs</a>, <a href="yii_bootstrap_widget.html">yii\bootstrap\Widget</a>, <a href="yii_captcha_captcha.html">yii\captcha\Captcha</a>, <a href="yii_console_controller.html">yii\console\Controller</a>, <a href="yii_console_controllers_assetcontroller.html">yii\console\controllers\AssetController</a>, <a href="yii_console_controllers_cachecontroller.html">yii\console\controllers\CacheController</a>, <a href="yii_console_controllers_fixturecontroller.html">yii\console\controllers\FixtureController</a>, <a href="yii_console_controllers_helpcontroller.html">yii\console\controllers\HelpController</a>, <a href="yii_console_controllers_messagecontroller.html">yii\console\controllers\MessageController</a>, <a href="yii_console_controllers_migratecontroller.html">yii\console\controllers\MigrateController</a>, <a href="yii_debug_controllers_defaultcontroller.html">yii\debug\controllers\DefaultController</a>, <a href="yii_gii_controllers_defaultcontroller.html">yii\gii\controllers\DefaultController</a>, <a href="yii_grid_gridview.html">yii\grid\GridView</a>, <a href="yii_jui_accordion.html">yii\jui\Accordion</a>, <a href="yii_jui_autocomplete.html">yii\jui\AutoComplete</a>, <a href="yii_jui_datepicker.html">yii\jui\DatePicker</a>, <a href="yii_jui_dialog.html">yii\jui\Dialog</a>, <a href="yii_jui_draggable.html">yii\jui\Draggable</a>, <a href="yii_jui_droppable.html">yii\jui\Droppable</a>, <a href="yii_jui_inputwidget.html">yii\jui\InputWidget</a>, <a href="yii_jui_menu.html">yii\jui\Menu</a>, <a href="yii_jui_progressbar.html">yii\jui\ProgressBar</a>, <a href="yii_jui_resizable.html">yii\jui\Resizable</a>, <a href="yii_jui_selectable.html">yii\jui\Selectable</a>, <a href="yii_jui_slider.html">yii\jui\Slider</a>, <a href="yii_jui_sliderinput.html">yii\jui\SliderInput</a>, <a href="yii_jui_sortable.html">yii\jui\Sortable</a>, <a href="yii_jui_spinner.html">yii\jui\Spinner</a>, <a href="yii_jui_tabs.html">yii\jui\Tabs</a>, <a href="yii_jui_widget.html">yii\jui\Widget</a>, <a href="yii_mail_basemailer.html">yii\mail\BaseMailer</a>, <a href="yii_web_controller.html">yii\web\Controller</a>, <a href="yii_widgets_activeform.html">yii\widgets\ActiveForm</a>, <a href="yii_widgets_baselistview.html">yii\widgets\BaseListView</a>, <a href="yii_widgets_block.html">yii\widgets\Block</a>, <a href="yii_widgets_breadcrumbs.html">yii\widgets\Breadcrumbs</a>, <a href="yii_widgets_contentdecorator.html">yii\widgets\ContentDecorator</a>, <a href="yii_widgets_detailview.html">yii\widgets\DetailView</a>, <a href="yii_widgets_fragmentcache.html">yii\widgets\FragmentCache</a>, <a href="yii_widgets_inputwidget.html">yii\widgets\InputWidget</a>, <a href="yii_widgets_linkpager.html">yii\widgets\LinkPager</a>, <a href="yii_widgets_linksorter.html">yii\widgets\LinkSorter</a>, <a href="yii_widgets_listview.html">yii\widgets\ListView</a>, <a href="yii_widgets_maskedinput.html">yii\widgets\MaskedInput</a>, <a href="yii_widgets_menu.html">yii\widgets\Menu</a>, <a href="yii_widgets_spaceless.html">yii\widgets\Spaceless</a></td></tr>
+					<tr><th>Available since version</th><td>2.0</td></tr>
+		<tr>
+	  <th>Source Code</th>
+	  <td></td>
+	</tr>
+</table>
+
+<div id="classDescription">
+	<strong>ViewContextInterface is the interface that should implemented by classes who want to support relative view names.</strong>
+	<p>The method <a href="yii_base_viewcontextinterface.html#findViewFile()-detail">findViewFile()</a> should be implemented to convert a relative view name into a file path.</p>
+</div>
+
+<a name="properties"></a>
+
+<a name="methods"></a>
+
+<div class="summary docMethod">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr id="findViewFile()">
+		<td><a href="yii_base_viewcontextinterface.html#findViewFile()-detail">findViewFile()</a></td>
+		<td>Finds the view file corresponding to the specified relative view name.</td>
+		<td><a href="yii_base_viewcontextinterface.html">yii\base\ViewContextInterface</a></td>
+	</tr>
+	</table>
+</div>
+<a name="events"></a>
+
+<a name="constants"></a>
+
+<h2>Method Details</h2>
+
+
+	<div class="detailHeader" id="findViewFile()-detail">
+		findViewFile()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_base_viewcontextinterface.html#findViewFile()-detail">findViewFile</a>( $view )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$view</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">A relative view name. The name does NOT start with a slash.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the view file path. Note that the file may not exist.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Finds the view file corresponding to the specified relative view name.</strong></p>
+	<p></p>
+
+	
+		</div><!-- end of content -->
+
+		<div id="apiFooter">
+			<p>&copy; 2008-2013 by <a href="http://www.yiisoft.com">Yii Software LLC</a></p>
+			<p>All Rights Reserved.</p>
+		</div><!-- end of footer -->
+
+<script type="text/javascript">
+/*<![CDATA[*/
+$("a.toggle").on('click', function() {
+	var $this = $(this);
+	if ($this.hasClass('properties-hidden')) {
+		$this.text($this.text().replace(/Show/,'Hide'));
+		$this.parents(".summary").find(".inherited").show();
+		$this.removeClass('properties-hidden');
+	} else {
+		$this.text($this.text().replace(/Hide/,'Show'));
+		$this.parents(".summary").find(".inherited").hide();
+		$this.addClass('properties-hidden');
+	}
+	return false;
+});
+/*
+$(".sourceCode a.show").toggle(function(){
+	$(this).text($(this).text().replace(/show/,'hide'));
+	$(this).parents(".sourceCode").find("div.code").show();
+},function(){
+	$(this).text($(this).text().replace(/hide/,'show'));
+	$(this).parents(".sourceCode").find("div.code").hide();
+});
+$("a.sourceLink").click(function(){
+	$(this).attr('target','_blank');
+});
+*/
+/*]]>*/
+</script>
+
+	</div><!-- end of page -->
+</body>
+</html>

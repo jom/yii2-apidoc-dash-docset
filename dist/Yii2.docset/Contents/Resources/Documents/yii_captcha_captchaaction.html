@@ -1,0 +1,979 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="language" content="en" />
+<link href="./assets/4138e429/api.css" rel="stylesheet">
+<link href="./assets/4138e429/style.css" rel="stylesheet">
+<script src="./assets/a91b37a6/jquery.js"></script><title>Yii Framework 2.0 API Documentation</title>
+</head>
+
+<body>
+	<div id="apiPage">
+
+		<div id="apiHeader">
+			<a href="http://www.yiiframework.com">Yii Framework</a> v2.0.0-dev Class Reference
+		</div><!-- end of header -->
+
+		<div id="content">
+		<h1>Class yii\captcha\CaptchaAction</h1>
+<div id="nav">
+	<a href="index.html">All Classes</a>
+			| <a href="#properties">Properties</a>
+				| <a href="#methods">Methods</a>
+					| <a href="#constants">Constants</a>
+	</div>
+
+<table class="summaryTable docClass">
+	<colgroup>
+		<col class="col-name" />
+		<col class="col-value" />
+	</colgroup>
+			<tr><th>Inheritance</th><td><a href="yii_captcha_captchaaction.html">yii\captcha\CaptchaAction</a> &raquo;
+<a href="yii_base_action.html">yii\base\Action</a> &raquo;
+<a href="yii_base_component.html">yii\base\Component</a> &raquo;
+<a href="yii_base_object.html">yii\base\Object</a></td></tr>
+				<tr><th>Implements</th><td><a href="yii_base_arrayable.html">yii\base\Arrayable</a></td></tr>
+								<tr><th>Available since version</th><td>2.0</td></tr>
+		<tr>
+	  <th>Source Code</th>
+	  <td></td>
+	</tr>
+</table>
+
+<div id="classDescription">
+	<strong>CaptchaAction renders a CAPTCHA image.</strong>
+	<p><p>CaptchaAction is used together with <a href="yii_captcha_captcha.html">yii\captcha\Captcha</a> and <span style="background: #f00;">\yii\validators\CaptchaValidator</span>
+to provide the <a href="http://en.wikipedia.org/wiki/Captcha">CAPTCHA</a> feature.</p>
+
+<p>By configuring the properties of CaptchaAction, you may customize the appearance of
+the generated CAPTCHA images, such as the font color, the background color, etc.</p>
+
+<p>Note that CaptchaAction requires either GD2 extension or ImageMagick PHP extension.</p>
+
+<p>Using CAPTCHA involves the following steps:</p>
+
+<ol>
+<li>Override <a href="yii_base_controller.html#actions()-detail">yii\web\Controller::actions()</a> and register an action of class CaptchaAction with ID 'captcha'</li>
+<li>In the form model, declare an attribute to store user-entered verification code, and declare the attribute
+to be validated by the 'captcha' validator.</li>
+<li>In the controller view, insert a <a href="yii_captcha_captcha.html">yii\captcha\Captcha</a> widget in the form.</li>
+</ol></p>
+</div>
+
+<a name="properties"></a>
+
+<div class="summary docProperty">
+<h2>Public Properties</h2>
+
+<p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-property" />
+	<col class="col-type" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Property</th><th>Type</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr class="inherited" id="$id">
+		<td><a href="yii_base_action.html#$id-detail">$id</a></td>
+		<td>string</td>
+		<td>ID of the action</td>
+		<td><a href="yii_base_action.html">yii\base\Action</a></td>
+	</tr>
+			<tr class="inherited" id="$controller">
+		<td><a href="yii_base_action.html#$controller-detail">$controller</a></td>
+		<td><a href="yii_base_controller.html">yii\base\Controller</a></td>
+		<td>The controller that owns this action</td>
+		<td><a href="yii_base_action.html">yii\base\Action</a></td>
+	</tr>
+			<tr id="$testLimit">
+		<td><a href="yii_captcha_captchaaction.html#$testLimit-detail">$testLimit</a></td>
+		<td>integer</td>
+		<td>How many times should the same CAPTCHA be displayed</td>
+		<td><a href="yii_captcha_captchaaction.html">yii\captcha\CaptchaAction</a></td>
+	</tr>
+			<tr id="$width">
+		<td><a href="yii_captcha_captchaaction.html#$width-detail">$width</a></td>
+		<td>integer</td>
+		<td>The width of the generated CAPTCHA image</td>
+		<td><a href="yii_captcha_captchaaction.html">yii\captcha\CaptchaAction</a></td>
+	</tr>
+			<tr id="$height">
+		<td><a href="yii_captcha_captchaaction.html#$height-detail">$height</a></td>
+		<td>integer</td>
+		<td>The height of the generated CAPTCHA image</td>
+		<td><a href="yii_captcha_captchaaction.html">yii\captcha\CaptchaAction</a></td>
+	</tr>
+			<tr id="$padding">
+		<td><a href="yii_captcha_captchaaction.html#$padding-detail">$padding</a></td>
+		<td>integer</td>
+		<td>Padding around the text</td>
+		<td><a href="yii_captcha_captchaaction.html">yii\captcha\CaptchaAction</a></td>
+	</tr>
+			<tr id="$backColor">
+		<td><a href="yii_captcha_captchaaction.html#$backColor-detail">$backColor</a></td>
+		<td>integer</td>
+		<td>The background color</td>
+		<td><a href="yii_captcha_captchaaction.html">yii\captcha\CaptchaAction</a></td>
+	</tr>
+			<tr id="$foreColor">
+		<td><a href="yii_captcha_captchaaction.html#$foreColor-detail">$foreColor</a></td>
+		<td>integer</td>
+		<td>The font color</td>
+		<td><a href="yii_captcha_captchaaction.html">yii\captcha\CaptchaAction</a></td>
+	</tr>
+			<tr id="$transparent">
+		<td><a href="yii_captcha_captchaaction.html#$transparent-detail">$transparent</a></td>
+		<td>boolean</td>
+		<td>Whether to use transparent background</td>
+		<td><a href="yii_captcha_captchaaction.html">yii\captcha\CaptchaAction</a></td>
+	</tr>
+			<tr id="$minLength">
+		<td><a href="yii_captcha_captchaaction.html#$minLength-detail">$minLength</a></td>
+		<td>integer</td>
+		<td>The minimum length for randomly generated word</td>
+		<td><a href="yii_captcha_captchaaction.html">yii\captcha\CaptchaAction</a></td>
+	</tr>
+			<tr id="$maxLength">
+		<td><a href="yii_captcha_captchaaction.html#$maxLength-detail">$maxLength</a></td>
+		<td>integer</td>
+		<td>The maximum length for randomly generated word</td>
+		<td><a href="yii_captcha_captchaaction.html">yii\captcha\CaptchaAction</a></td>
+	</tr>
+			<tr id="$offset">
+		<td><a href="yii_captcha_captchaaction.html#$offset-detail">$offset</a></td>
+		<td>integer</td>
+		<td>The offset between characters</td>
+		<td><a href="yii_captcha_captchaaction.html">yii\captcha\CaptchaAction</a></td>
+	</tr>
+			<tr id="$fontFile">
+		<td><a href="yii_captcha_captchaaction.html#$fontFile-detail">$fontFile</a></td>
+		<td>string</td>
+		<td>The TrueType font file</td>
+		<td><a href="yii_captcha_captchaaction.html">yii\captcha\CaptchaAction</a></td>
+	</tr>
+			<tr id="$fixedVerifyCode">
+		<td><a href="yii_captcha_captchaaction.html#$fixedVerifyCode-detail">$fixedVerifyCode</a></td>
+		<td>string</td>
+		<td>The fixed verification code</td>
+		<td><a href="yii_captcha_captchaaction.html">yii\captcha\CaptchaAction</a></td>
+	</tr>
+			<tr id="$behaviors">
+		<td><a href="yii_captcha_captchaaction.html#$behaviors-detail">$behaviors</a></td>
+		<td><a href="yii_base_behavior.html">yii\base\Behavior</a>[]</td>
+		<td>list of behaviors attached to this component</td>
+		<td><a href="yii_captcha_captchaaction.html">yii\captcha\CaptchaAction</a></td>
+	</tr>
+			<tr id="$uniqueId">
+		<td><a href="yii_captcha_captchaaction.html#$uniqueId-detail">$uniqueId</a></td>
+		<td>string</td>
+		<td>the unique ID of this action among the whole application</td>
+		<td><a href="yii_captcha_captchaaction.html">yii\captcha\CaptchaAction</a></td>
+	</tr>
+			<tr id="$verifyCode">
+		<td><a href="yii_captcha_captchaaction.html#$verifyCode-detail">$verifyCode</a></td>
+		<td>string</td>
+		<td>the verification code</td>
+		<td><a href="yii_captcha_captchaaction.html">yii\captcha\CaptchaAction</a></td>
+	</tr>
+	</table>
+</div>
+<a name="methods"></a>
+
+<div class="summary docMethod">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr class="inherited" id="className()">
+		<td><a href="yii_base_object.html#className()-detail">className()</a></td>
+		<td></td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__construct()">
+		<td><a href="yii_base_action.html#__construct()-detail">__construct()</a></td>
+		<td>Constructor.</td>
+		<td><a href="yii_base_action.html">yii\base\Action</a></td>
+	</tr>
+			<tr id="init()">
+		<td><a href="yii_captcha_captchaaction.html#init()-detail">init()</a></td>
+		<td>Initializes the action.</td>
+		<td><a href="yii_captcha_captchaaction.html">yii\captcha\CaptchaAction</a></td>
+	</tr>
+			<tr class="inherited" id="__get()">
+		<td><a href="yii_base_component.html#__get()-detail">__get()</a></td>
+		<td>Returns the value of a component property.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__set()">
+		<td><a href="yii_base_component.html#__set()-detail">__set()</a></td>
+		<td>Sets the value of a component property.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__isset()">
+		<td><a href="yii_base_component.html#__isset()-detail">__isset()</a></td>
+		<td>Checks if a property value is null.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__unset()">
+		<td><a href="yii_base_component.html#__unset()-detail">__unset()</a></td>
+		<td>Sets a component property to be null.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__call()">
+		<td><a href="yii_base_component.html#__call()-detail">__call()</a></td>
+		<td>Calls the named method which is not a class method.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasProperty()">
+		<td><a href="yii_base_component.html#hasProperty()-detail">hasProperty()</a></td>
+		<td>Returns a value indicating whether a property is defined for this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="canGetProperty()">
+		<td><a href="yii_base_component.html#canGetProperty()-detail">canGetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be read.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="canSetProperty()">
+		<td><a href="yii_base_component.html#canSetProperty()-detail">canSetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be set.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasMethod()">
+		<td><a href="yii_base_component.html#hasMethod()-detail">hasMethod()</a></td>
+		<td>Returns a value indicating whether a method is defined.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="toArray()">
+		<td><a href="yii_base_object.html#toArray()-detail">toArray()</a></td>
+		<td>Converts the object into an array.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__clone()">
+		<td><a href="yii_base_component.html#__clone()-detail">__clone()</a></td>
+		<td>This method is called after the object is created by cloning an existing one.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="behaviors()">
+		<td><a href="yii_base_component.html#behaviors()-detail">behaviors()</a></td>
+		<td>Returns a list of behaviors that this component should behave as.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasEventHandlers()">
+		<td><a href="yii_base_component.html#hasEventHandlers()-detail">hasEventHandlers()</a></td>
+		<td>Returns a value indicating whether there is any handler attached to the named event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="on()">
+		<td><a href="yii_base_component.html#on()-detail">on()</a></td>
+		<td>Attaches an event handler to an event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="off()">
+		<td><a href="yii_base_component.html#off()-detail">off()</a></td>
+		<td>Detaches an existing event handler from this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="trigger()">
+		<td><a href="yii_base_component.html#trigger()-detail">trigger()</a></td>
+		<td>Triggers an event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="getBehavior()">
+		<td><a href="yii_base_component.html#getBehavior()-detail">getBehavior()</a></td>
+		<td>Returns the named behavior object.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="getBehaviors()">
+		<td><a href="yii_base_component.html#getBehaviors()-detail">getBehaviors()</a></td>
+		<td>Returns all behaviors attached to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="attachBehavior()">
+		<td><a href="yii_base_component.html#attachBehavior()-detail">attachBehavior()</a></td>
+		<td>Attaches a behavior to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="attachBehaviors()">
+		<td><a href="yii_base_component.html#attachBehaviors()-detail">attachBehaviors()</a></td>
+		<td>Attaches a list of behaviors to the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="detachBehavior()">
+		<td><a href="yii_base_component.html#detachBehavior()-detail">detachBehavior()</a></td>
+		<td>Detaches a behavior from the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="detachBehaviors()">
+		<td><a href="yii_base_component.html#detachBehaviors()-detail">detachBehaviors()</a></td>
+		<td>Detaches all behaviors from the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="ensureBehaviors()">
+		<td><a href="yii_base_component.html#ensureBehaviors()-detail">ensureBehaviors()</a></td>
+		<td>Makes sure that the behaviors declared in <a href="yii_base_component.html#behaviors()-detail">behaviors()</a> are attached to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="getUniqueId()">
+		<td><a href="yii_base_action.html#getUniqueId()-detail">getUniqueId()</a></td>
+		<td>Returns the unique ID of this action among the whole application.</td>
+		<td><a href="yii_base_action.html">yii\base\Action</a></td>
+	</tr>
+			<tr class="inherited" id="runWithParams()">
+		<td><a href="yii_base_action.html#runWithParams()-detail">runWithParams()</a></td>
+		<td>Runs this action with the specified parameters.</td>
+		<td><a href="yii_base_action.html">yii\base\Action</a></td>
+	</tr>
+			<tr id="run()">
+		<td><a href="yii_captcha_captchaaction.html#run()-detail">run()</a></td>
+		<td>Runs the action.</td>
+		<td><a href="yii_captcha_captchaaction.html">yii\captcha\CaptchaAction</a></td>
+	</tr>
+			<tr id="generateValidationHash()">
+		<td><a href="yii_captcha_captchaaction.html#generateValidationHash()-detail">generateValidationHash()</a></td>
+		<td>Generates a hash code that can be used for client side validation.</td>
+		<td><a href="yii_captcha_captchaaction.html">yii\captcha\CaptchaAction</a></td>
+	</tr>
+			<tr id="getVerifyCode()">
+		<td><a href="yii_captcha_captchaaction.html#getVerifyCode()-detail">getVerifyCode()</a></td>
+		<td>Gets the verification code.</td>
+		<td><a href="yii_captcha_captchaaction.html">yii\captcha\CaptchaAction</a></td>
+	</tr>
+			<tr id="validate()">
+		<td><a href="yii_captcha_captchaaction.html#validate()-detail">validate()</a></td>
+		<td>Validates the input to see if it matches the generated code.</td>
+		<td><a href="yii_captcha_captchaaction.html">yii\captcha\CaptchaAction</a></td>
+	</tr>
+							</table>
+</div>
+<div class="summary docMethod">
+<h2>Protected Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+																																		<tr id="generateVerifyCode()">
+		<td><a href="yii_captcha_captchaaction.html#generateVerifyCode()-detail">generateVerifyCode()</a></td>
+		<td>Generates a new verification code.</td>
+		<td><a href="yii_captcha_captchaaction.html">yii\captcha\CaptchaAction</a></td>
+	</tr>
+			<tr id="getSessionKey()">
+		<td><a href="yii_captcha_captchaaction.html#getSessionKey()-detail">getSessionKey()</a></td>
+		<td>Returns the session variable name used to store verification code.</td>
+		<td><a href="yii_captcha_captchaaction.html">yii\captcha\CaptchaAction</a></td>
+	</tr>
+			<tr id="renderImage()">
+		<td><a href="yii_captcha_captchaaction.html#renderImage()-detail">renderImage()</a></td>
+		<td>Renders the CAPTCHA image.</td>
+		<td><a href="yii_captcha_captchaaction.html">yii\captcha\CaptchaAction</a></td>
+	</tr>
+			<tr id="renderImageByGD()">
+		<td><a href="yii_captcha_captchaaction.html#renderImageByGD()-detail">renderImageByGD()</a></td>
+		<td>Renders the CAPTCHA image based on the code using GD library.</td>
+		<td><a href="yii_captcha_captchaaction.html">yii\captcha\CaptchaAction</a></td>
+	</tr>
+			<tr id="renderImageByImagick()">
+		<td><a href="yii_captcha_captchaaction.html#renderImageByImagick()-detail">renderImageByImagick()</a></td>
+		<td>Renders the CAPTCHA image based on the code using ImageMagick library.</td>
+		<td><a href="yii_captcha_captchaaction.html">yii\captcha\CaptchaAction</a></td>
+	</tr>
+			<tr id="setHttpHeaders()">
+		<td><a href="yii_captcha_captchaaction.html#setHttpHeaders()-detail">setHttpHeaders()</a></td>
+		<td>Sets the HTTP headers needed by image response.</td>
+		<td><a href="yii_captcha_captchaaction.html">yii\captcha\CaptchaAction</a></td>
+	</tr>
+	</table>
+</div>
+<a name="events"></a>
+
+<a name="constants"></a>
+<div class="summary docConst">
+<h2>Constants</h2>
+
+<p><a href="#" class="toggle">Hide inherited constants</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-const" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Constant</th><th>Value</th><th>Description</th><th>Defined By</th>
+</tr>
+	<tr id="REFRESH_GET_VAR">
+	  <td>REFRESH_GET_VAR<a name="REFRESH_GET_VAR-detail"></a></td>
+	  <td>'refresh'</td>
+	  <td>The name of the GET parameter indicating whether the CAPTCHA image should be regenerated.</td>
+	  <td><a href="yii_captcha_captchaaction.html">yii\captcha\CaptchaAction</a></td>
+	</tr>
+</table>
+</div>
+<h2>Property Details</h2>
+
+
+	<div class="detailHeader" id="$testLimit-detail">
+		$testLimit		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	integer $testLimit = 3	</div>
+
+	<p>How many times should the same CAPTCHA be displayed. Defaults to 3.
+A value less than or equal to 0 means the test is unlimited (available since version 1.1.2).</p>
+
+	
+
+	<div class="detailHeader" id="$width-detail">
+		$width		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	integer $width = 120	</div>
+
+	<p>The width of the generated CAPTCHA image. Defaults to 120.</p>
+
+	
+
+	<div class="detailHeader" id="$height-detail">
+		$height		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	integer $height = 50	</div>
+
+	<p>The height of the generated CAPTCHA image. Defaults to 50.</p>
+
+	
+
+	<div class="detailHeader" id="$padding-detail">
+		$padding		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	integer $padding = 2	</div>
+
+	<p>Padding around the text. Defaults to 2.</p>
+
+	
+
+	<div class="detailHeader" id="$backColor-detail">
+		$backColor		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	integer $backColor = 16777215	</div>
+
+	<p>The background color. For example, 0x55FF00.
+Defaults to 0xFFFFFF, meaning white color.</p>
+
+	
+
+	<div class="detailHeader" id="$foreColor-detail">
+		$foreColor		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	integer $foreColor = 2113696	</div>
+
+	<p>The font color. For example, 0x55FF00. Defaults to 0x2040A0 (blue color).</p>
+
+	
+
+	<div class="detailHeader" id="$transparent-detail">
+		$transparent		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	boolean $transparent = false	</div>
+
+	<p>Whether to use transparent background. Defaults to false.</p>
+
+	
+
+	<div class="detailHeader" id="$minLength-detail">
+		$minLength		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	integer $minLength = 6	</div>
+
+	<p>The minimum length for randomly generated word. Defaults to 6.</p>
+
+	
+
+	<div class="detailHeader" id="$maxLength-detail">
+		$maxLength		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	integer $maxLength = 7	</div>
+
+	<p>The maximum length for randomly generated word. Defaults to 7.</p>
+
+	
+
+	<div class="detailHeader" id="$offset-detail">
+		$offset		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	integer $offset = -2	</div>
+
+	<p>The offset between characters. Defaults to -2. You can adjust this property
+in order to decrease or increase the readability of the captcha.</p>
+
+	
+
+	<div class="detailHeader" id="$fontFile-detail">
+		$fontFile		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $fontFile = '@yii/captcha/SpicyRice.ttf'	</div>
+
+	<p>The TrueType font file. This can be either a file path or path alias.</p>
+
+	
+
+	<div class="detailHeader" id="$fixedVerifyCode-detail">
+		$fixedVerifyCode		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $fixedVerifyCode = null	</div>
+
+	<p>The fixed verification code. When this property is set,
+<a href="yii_captcha_captchaaction.html#getVerifyCode()-detail">getVerifyCode()</a> will always return the value of this property.
+This is mainly used in automated tests where we want to be able to reproduce
+the same verification code each time we run the tests.
+If not set, it means the verification code will be randomly generated.</p>
+
+	
+
+	<div class="detailHeader" id="$behaviors-detail">
+		$behaviors		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_base_behavior.html">yii\base\Behavior</a>[] <a href="yii_base_component.html#getBehaviors()-detail">getBehaviors</a>(  )	</div>
+
+	<p>list of behaviors attached to this component</p>
+
+	
+
+	<div class="detailHeader" id="$uniqueId-detail">
+		$uniqueId		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	string <a href="yii_base_action.html#getUniqueId()-detail">getUniqueId</a>(  )	</div>
+
+	<p>the unique ID of this action among the whole application.</p>
+
+	
+
+	<div class="detailHeader" id="$verifyCode-detail">
+		$verifyCode		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	string <a href="yii_captcha_captchaaction.html#getVerifyCode()-detail">getVerifyCode</a>( $regenerate = false )	</div>
+
+	<p>the verification code.</p>
+
+	
+<h2>Method Details</h2>
+
+
+	<div class="detailHeader" id="init()-detail">
+		init()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_captcha_captchaaction.html#init()-detail">init</a>(  )			</div>
+		</td></tr>
+															<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_base_invalidconfigexception.html">yii\base\InvalidConfigException</a></td>
+				  <td class="paramDescCol">if the font file does not exist.</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Initializes the action.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="run()-detail">
+		run()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_captcha_captchaaction.html#run()-detail">run</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p>Runs the action.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="generateValidationHash()-detail">
+		generateValidationHash()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_captcha_captchaaction.html#generateValidationHash()-detail">generateValidationHash</a>( $code )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$code</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The CAPTCHA code</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">a hash code generated from the CAPTCHA code</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Generates a hash code that can be used for client side validation.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getVerifyCode()-detail">
+		getVerifyCode()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_captcha_captchaaction.html#getVerifyCode()-detail">getVerifyCode</a>( $regenerate = false )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$regenerate</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">Whether the verification code should be regenerated.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the verification code.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Gets the verification code.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="validate()-detail">
+		validate()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_captcha_captchaaction.html#validate()-detail">validate</a>( $input, $caseSensitive )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$input</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">User input</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$caseSensitive</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">Whether the comparison should be case-sensitive</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether the input is valid</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Validates the input to see if it matches the generated code.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="generateVerifyCode()-detail">
+		generateVerifyCode()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_captcha_captchaaction.html#generateVerifyCode()-detail">generateVerifyCode</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the generated verification code</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Generates a new verification code.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getSessionKey()-detail">
+		getSessionKey()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_captcha_captchaaction.html#getSessionKey()-detail">getSessionKey</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the session variable name</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the session variable name used to store verification code.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="renderImage()-detail">
+		renderImage()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_captcha_captchaaction.html#renderImage()-detail">renderImage</a>( $code )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$code</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The verification code</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">image contents</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Renders the CAPTCHA image.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="renderImageByGD()-detail">
+		renderImageByGD()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_captcha_captchaaction.html#renderImageByGD()-detail">renderImageByGD</a>( $code )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$code</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The verification code</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">image contents</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Renders the CAPTCHA image based on the code using GD library.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="renderImageByImagick()-detail">
+		renderImageByImagick()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			\Imagick <a href="yii_captcha_captchaaction.html#renderImageByImagick()-detail">renderImageByImagick</a>( $code )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$code</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The verification code</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">\Imagick</td>
+				  <td class="paramDescCol">image instance. Can be used as string. In this case it will contain image contents.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Renders the CAPTCHA image based on the code using ImageMagick library.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="setHttpHeaders()-detail">
+		setHttpHeaders()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_captcha_captchaaction.html#setHttpHeaders()-detail">setHttpHeaders</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p>Sets the HTTP headers needed by image response.</strong></p>
+	<p></p>
+
+	
+			</div><!-- end of content -->
+
+		<div id="apiFooter">
+			<p>&copy; 2008-2013 by <a href="http://www.yiisoft.com">Yii Software LLC</a></p>
+			<p>All Rights Reserved.</p>
+		</div><!-- end of footer -->
+
+<script type="text/javascript">
+/*<![CDATA[*/
+$("a.toggle").on('click', function() {
+	var $this = $(this);
+	if ($this.hasClass('properties-hidden')) {
+		$this.text($this.text().replace(/Show/,'Hide'));
+		$this.parents(".summary").find(".inherited").show();
+		$this.removeClass('properties-hidden');
+	} else {
+		$this.text($this.text().replace(/Hide/,'Show'));
+		$this.parents(".summary").find(".inherited").hide();
+		$this.addClass('properties-hidden');
+	}
+	return false;
+});
+/*
+$(".sourceCode a.show").toggle(function(){
+	$(this).text($(this).text().replace(/show/,'hide'));
+	$(this).parents(".sourceCode").find("div.code").show();
+},function(){
+	$(this).text($(this).text().replace(/hide/,'show'));
+	$(this).parents(".sourceCode").find("div.code").hide();
+});
+$("a.sourceLink").click(function(){
+	$(this).attr('target','_blank');
+});
+*/
+/*]]>*/
+</script>
+
+	</div><!-- end of page -->
+</body>
+</html>

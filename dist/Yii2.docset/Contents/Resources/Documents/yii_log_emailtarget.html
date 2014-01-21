@@ -1,0 +1,511 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="language" content="en" />
+<link href="./assets/4138e429/api.css" rel="stylesheet">
+<link href="./assets/4138e429/style.css" rel="stylesheet">
+<script src="./assets/a91b37a6/jquery.js"></script><title>Yii Framework 2.0 API Documentation</title>
+</head>
+
+<body>
+	<div id="apiPage">
+
+		<div id="apiHeader">
+			<a href="http://www.yiiframework.com">Yii Framework</a> v2.0.0-dev Class Reference
+		</div><!-- end of header -->
+
+		<div id="content">
+		<h1>Class yii\log\EmailTarget</h1>
+<div id="nav">
+	<a href="index.html">All Classes</a>
+			| <a href="#properties">Properties</a>
+				| <a href="#methods">Methods</a>
+			</div>
+
+<table class="summaryTable docClass">
+	<colgroup>
+		<col class="col-name" />
+		<col class="col-value" />
+	</colgroup>
+			<tr><th>Inheritance</th><td><a href="yii_log_emailtarget.html">yii\log\EmailTarget</a> &raquo;
+<a href="yii_log_target.html">yii\log\Target</a> &raquo;
+<a href="yii_base_component.html">yii\base\Component</a> &raquo;
+<a href="yii_base_object.html">yii\base\Object</a></td></tr>
+				<tr><th>Implements</th><td><a href="yii_base_arrayable.html">yii\base\Arrayable</a></td></tr>
+								<tr><th>Available since version</th><td>2.0</td></tr>
+		<tr>
+	  <th>Source Code</th>
+	  <td></td>
+	</tr>
+</table>
+
+<div id="classDescription">
+	<strong>EmailTarget sends selected log messages to the specified email addresses.</strong>
+	<p>You may configure the email to be sent by setting the <a href="yii_log_emailtarget.html#$message-detail">$message</a> property, through which
+you can set the target email addresses, subject, etc.</p>
+</div>
+
+<a name="properties"></a>
+
+<div class="summary docProperty">
+<h2>Public Properties</h2>
+
+<p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-property" />
+	<col class="col-type" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Property</th><th>Type</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr class="inherited" id="$enabled">
+		<td><a href="yii_log_target.html#$enabled-detail">$enabled</a></td>
+		<td>boolean</td>
+		<td>Whether to enable this log target</td>
+		<td><a href="yii_log_target.html">yii\log\Target</a></td>
+	</tr>
+			<tr class="inherited" id="$categories">
+		<td><a href="yii_log_target.html#$categories-detail">$categories</a></td>
+		<td>array</td>
+		<td>List of message categories that this target is interested in</td>
+		<td><a href="yii_log_target.html">yii\log\Target</a></td>
+	</tr>
+			<tr class="inherited" id="$except">
+		<td><a href="yii_log_target.html#$except-detail">$except</a></td>
+		<td>array</td>
+		<td>List of message categories that this target is NOT interested in</td>
+		<td><a href="yii_log_target.html">yii\log\Target</a></td>
+	</tr>
+			<tr class="inherited" id="$logUser">
+		<td><a href="yii_log_target.html#$logUser-detail">$logUser</a></td>
+		<td>boolean</td>
+		<td>Whether to log a message containing the current user name and ID</td>
+		<td><a href="yii_log_target.html">yii\log\Target</a></td>
+	</tr>
+			<tr class="inherited" id="$logVars">
+		<td><a href="yii_log_target.html#$logVars-detail">$logVars</a></td>
+		<td>array</td>
+		<td>List of the PHP predefined variables that should be logged in a message</td>
+		<td><a href="yii_log_target.html">yii\log\Target</a></td>
+	</tr>
+			<tr class="inherited" id="$exportInterval">
+		<td><a href="yii_log_target.html#$exportInterval-detail">$exportInterval</a></td>
+		<td>integer</td>
+		<td>How many messages should be accumulated before they are exported</td>
+		<td><a href="yii_log_target.html">yii\log\Target</a></td>
+	</tr>
+			<tr class="inherited" id="$messages">
+		<td><a href="yii_log_target.html#$messages-detail">$messages</a></td>
+		<td>array</td>
+		<td>The messages that are retrieved from the logger so far by this log target</td>
+		<td><a href="yii_log_target.html">yii\log\Target</a></td>
+	</tr>
+			<tr id="$message">
+		<td><a href="yii_log_emailtarget.html#$message-detail">$message</a></td>
+		<td>array</td>
+		<td>The configuration array for creating a <a href="yii_mail_messageinterface.html">yii\mail\MessageInterface</a> object</td>
+		<td><a href="yii_log_emailtarget.html">yii\log\EmailTarget</a></td>
+	</tr>
+			<tr id="$mail">
+		<td><a href="yii_log_emailtarget.html#$mail-detail">$mail</a></td>
+		<td><a href="yii_mail_mailerinterface.html">yii\mail\MailerInterface</a>|string</td>
+		<td>The mailer object or the application component ID of the mailer object</td>
+		<td><a href="yii_log_emailtarget.html">yii\log\EmailTarget</a></td>
+	</tr>
+			<tr id="$behaviors">
+		<td><a href="yii_log_emailtarget.html#$behaviors-detail">$behaviors</a></td>
+		<td><a href="yii_base_behavior.html">yii\base\Behavior</a>[]</td>
+		<td>list of behaviors attached to this component</td>
+		<td><a href="yii_log_emailtarget.html">yii\log\EmailTarget</a></td>
+	</tr>
+			<tr id="$levels">
+		<td><a href="yii_log_emailtarget.html#$levels-detail">$levels</a></td>
+		<td>integer</td>
+		<td>the message levels that this target is interested in</td>
+		<td><a href="yii_log_emailtarget.html">yii\log\EmailTarget</a></td>
+	</tr>
+	</table>
+</div>
+<a name="methods"></a>
+
+<div class="summary docMethod">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr class="inherited" id="className()">
+		<td><a href="yii_base_object.html#className()-detail">className()</a></td>
+		<td></td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__construct()">
+		<td><a href="yii_base_object.html#__construct()-detail">__construct()</a></td>
+		<td>Constructor.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr id="init()">
+		<td><a href="yii_log_emailtarget.html#init()-detail">init()</a></td>
+		<td></td>
+		<td><a href="yii_log_emailtarget.html">yii\log\EmailTarget</a></td>
+	</tr>
+			<tr class="inherited" id="__get()">
+		<td><a href="yii_base_component.html#__get()-detail">__get()</a></td>
+		<td>Returns the value of a component property.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__set()">
+		<td><a href="yii_base_component.html#__set()-detail">__set()</a></td>
+		<td>Sets the value of a component property.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__isset()">
+		<td><a href="yii_base_component.html#__isset()-detail">__isset()</a></td>
+		<td>Checks if a property value is null.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__unset()">
+		<td><a href="yii_base_component.html#__unset()-detail">__unset()</a></td>
+		<td>Sets a component property to be null.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__call()">
+		<td><a href="yii_base_component.html#__call()-detail">__call()</a></td>
+		<td>Calls the named method which is not a class method.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasProperty()">
+		<td><a href="yii_base_component.html#hasProperty()-detail">hasProperty()</a></td>
+		<td>Returns a value indicating whether a property is defined for this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="canGetProperty()">
+		<td><a href="yii_base_component.html#canGetProperty()-detail">canGetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be read.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="canSetProperty()">
+		<td><a href="yii_base_component.html#canSetProperty()-detail">canSetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be set.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasMethod()">
+		<td><a href="yii_base_component.html#hasMethod()-detail">hasMethod()</a></td>
+		<td>Returns a value indicating whether a method is defined.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="toArray()">
+		<td><a href="yii_base_object.html#toArray()-detail">toArray()</a></td>
+		<td>Converts the object into an array.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__clone()">
+		<td><a href="yii_base_component.html#__clone()-detail">__clone()</a></td>
+		<td>This method is called after the object is created by cloning an existing one.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="behaviors()">
+		<td><a href="yii_base_component.html#behaviors()-detail">behaviors()</a></td>
+		<td>Returns a list of behaviors that this component should behave as.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasEventHandlers()">
+		<td><a href="yii_base_component.html#hasEventHandlers()-detail">hasEventHandlers()</a></td>
+		<td>Returns a value indicating whether there is any handler attached to the named event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="on()">
+		<td><a href="yii_base_component.html#on()-detail">on()</a></td>
+		<td>Attaches an event handler to an event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="off()">
+		<td><a href="yii_base_component.html#off()-detail">off()</a></td>
+		<td>Detaches an existing event handler from this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="trigger()">
+		<td><a href="yii_base_component.html#trigger()-detail">trigger()</a></td>
+		<td>Triggers an event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="getBehavior()">
+		<td><a href="yii_base_component.html#getBehavior()-detail">getBehavior()</a></td>
+		<td>Returns the named behavior object.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="getBehaviors()">
+		<td><a href="yii_base_component.html#getBehaviors()-detail">getBehaviors()</a></td>
+		<td>Returns all behaviors attached to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="attachBehavior()">
+		<td><a href="yii_base_component.html#attachBehavior()-detail">attachBehavior()</a></td>
+		<td>Attaches a behavior to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="attachBehaviors()">
+		<td><a href="yii_base_component.html#attachBehaviors()-detail">attachBehaviors()</a></td>
+		<td>Attaches a list of behaviors to the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="detachBehavior()">
+		<td><a href="yii_base_component.html#detachBehavior()-detail">detachBehavior()</a></td>
+		<td>Detaches a behavior from the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="detachBehaviors()">
+		<td><a href="yii_base_component.html#detachBehaviors()-detail">detachBehaviors()</a></td>
+		<td>Detaches all behaviors from the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="ensureBehaviors()">
+		<td><a href="yii_base_component.html#ensureBehaviors()-detail">ensureBehaviors()</a></td>
+		<td>Makes sure that the behaviors declared in <a href="yii_base_component.html#behaviors()-detail">behaviors()</a> are attached to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr id="export()">
+		<td><a href="yii_log_emailtarget.html#export()-detail">export()</a></td>
+		<td>Sends log messages to specified email addresses.</td>
+		<td><a href="yii_log_emailtarget.html">yii\log\EmailTarget</a></td>
+	</tr>
+			<tr class="inherited" id="collect()">
+		<td><a href="yii_log_target.html#collect()-detail">collect()</a></td>
+		<td>Processes the given log messages.</td>
+		<td><a href="yii_log_target.html">yii\log\Target</a></td>
+	</tr>
+				<tr class="inherited" id="getLevels()">
+		<td><a href="yii_log_target.html#getLevels()-detail">getLevels()</a></td>
+		<td></td>
+		<td><a href="yii_log_target.html">yii\log\Target</a></td>
+	</tr>
+			<tr class="inherited" id="setLevels()">
+		<td><a href="yii_log_target.html#setLevels()-detail">setLevels()</a></td>
+		<td>Sets the message levels that this target is interested in.</td>
+		<td><a href="yii_log_target.html">yii\log\Target</a></td>
+	</tr>
+			<tr class="inherited" id="filterMessages()">
+		<td><a href="yii_log_target.html#filterMessages()-detail">filterMessages()</a></td>
+		<td>Filters the given messages according to their categories and levels.</td>
+		<td><a href="yii_log_target.html">yii\log\Target</a></td>
+	</tr>
+			<tr class="inherited" id="formatMessage()">
+		<td><a href="yii_log_target.html#formatMessage()-detail">formatMessage()</a></td>
+		<td>Formats a log message.</td>
+		<td><a href="yii_log_target.html">yii\log\Target</a></td>
+	</tr>
+		</table>
+</div>
+<div class="summary docMethod">
+<h2>Protected Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+																														<tr class="inherited" id="getContextMessage()">
+		<td><a href="yii_log_target.html#getContextMessage()-detail">getContextMessage()</a></td>
+		<td>Generates the context information to be logged.</td>
+		<td><a href="yii_log_target.html">yii\log\Target</a></td>
+	</tr>
+							<tr id="composeMessage()">
+		<td><a href="yii_log_emailtarget.html#composeMessage()-detail">composeMessage()</a></td>
+		<td>Composes a mail message with the given body content.</td>
+		<td><a href="yii_log_emailtarget.html">yii\log\EmailTarget</a></td>
+	</tr>
+	</table>
+</div>
+<a name="events"></a>
+
+<a name="constants"></a>
+
+<h2>Property Details</h2>
+
+
+	<div class="detailHeader" id="$message-detail">
+		$message		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array $message = []	</div>
+
+	<p>The configuration array for creating a <a href="yii_mail_messageinterface.html">yii\mail\MessageInterface</a> object.
+Note that the "to" option must be set, which specifies the destination email address(es).</p>
+
+	
+
+	<div class="detailHeader" id="$mail-detail">
+		$mail		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_mail_mailerinterface.html">yii\mail\MailerInterface</a>|string $mail = 'mail'	</div>
+
+	<p>The mailer object or the application component ID of the mailer object.
+After the EmailTarget object is created, if you want to change this property, you should only assign it
+with a mailer object.</p>
+
+	
+
+	<div class="detailHeader" id="$behaviors-detail">
+		$behaviors		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_base_behavior.html">yii\base\Behavior</a>[] <a href="yii_base_component.html#getBehaviors()-detail">getBehaviors</a>(  )	</div>
+
+	<p>list of behaviors attached to this component</p>
+
+	
+
+	<div class="detailHeader" id="$levels-detail">
+		$levels		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	integer <a href="yii_log_target.html#getLevels()-detail">getLevels</a>(  )<br />void <a href="yii_log_target.html#setLevels()-detail">setLevels</a>( $levels )	</div>
+
+	<p>the message levels that this target is interested in. This is a bitmap of
+level values. Defaults to 0, meaning  all available levels.</p>
+
+	
+<h2>Method Details</h2>
+
+
+	<div class="detailHeader" id="init()-detail">
+		init()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_log_emailtarget.html#init()-detail">init</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="export()-detail">
+		export()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_log_emailtarget.html#export()-detail">export</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p>Sends log messages to specified email addresses.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="composeMessage()-detail">
+		composeMessage()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			<a href="yii_mail_messageinterface.html">yii\mail\MessageInterface</a> <a href="yii_log_emailtarget.html#composeMessage()-detail">composeMessage</a>( $body )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$body</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The body content</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol"><a href="yii_mail_messageinterface.html">yii\mail\MessageInterface</a></td>
+				  <td class="paramDescCol">$message</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Composes a mail message with the given body content.</strong></p>
+	<p></p>
+
+	
+			</div><!-- end of content -->
+
+		<div id="apiFooter">
+			<p>&copy; 2008-2013 by <a href="http://www.yiisoft.com">Yii Software LLC</a></p>
+			<p>All Rights Reserved.</p>
+		</div><!-- end of footer -->
+
+<script type="text/javascript">
+/*<![CDATA[*/
+$("a.toggle").on('click', function() {
+	var $this = $(this);
+	if ($this.hasClass('properties-hidden')) {
+		$this.text($this.text().replace(/Show/,'Hide'));
+		$this.parents(".summary").find(".inherited").show();
+		$this.removeClass('properties-hidden');
+	} else {
+		$this.text($this.text().replace(/Hide/,'Show'));
+		$this.parents(".summary").find(".inherited").hide();
+		$this.addClass('properties-hidden');
+	}
+	return false;
+});
+/*
+$(".sourceCode a.show").toggle(function(){
+	$(this).text($(this).text().replace(/show/,'hide'));
+	$(this).parents(".sourceCode").find("div.code").show();
+},function(){
+	$(this).text($(this).text().replace(/hide/,'show'));
+	$(this).parents(".sourceCode").find("div.code").hide();
+});
+$("a.sourceLink").click(function(){
+	$(this).attr('target','_blank');
+});
+*/
+/*]]>*/
+</script>
+
+	</div><!-- end of page -->
+</body>
+</html>

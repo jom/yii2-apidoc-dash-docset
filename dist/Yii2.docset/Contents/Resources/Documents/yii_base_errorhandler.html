@@ -1,0 +1,929 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="language" content="en" />
+<link href="./assets/4138e429/api.css" rel="stylesheet">
+<link href="./assets/4138e429/style.css" rel="stylesheet">
+<script src="./assets/a91b37a6/jquery.js"></script><title>Yii Framework 2.0 API Documentation</title>
+</head>
+
+<body>
+	<div id="apiPage">
+
+		<div id="apiHeader">
+			<a href="http://www.yiiframework.com">Yii Framework</a> v2.0.0-dev Class Reference
+		</div><!-- end of header -->
+
+		<div id="content">
+		<h1>Class yii\base\ErrorHandler</h1>
+<div id="nav">
+	<a href="index.html">All Classes</a>
+			| <a href="#properties">Properties</a>
+				| <a href="#methods">Methods</a>
+			</div>
+
+<table class="summaryTable docClass">
+	<colgroup>
+		<col class="col-name" />
+		<col class="col-value" />
+	</colgroup>
+			<tr><th>Inheritance</th><td><a href="yii_base_errorhandler.html">yii\base\ErrorHandler</a> &raquo;
+<a href="yii_base_component.html">yii\base\Component</a> &raquo;
+<a href="yii_base_object.html">yii\base\Object</a></td></tr>
+				<tr><th>Implements</th><td><a href="yii_base_arrayable.html">yii\base\Arrayable</a></td></tr>
+								<tr><th>Available since version</th><td>2.0</td></tr>
+		<tr>
+	  <th>Source Code</th>
+	  <td></td>
+	</tr>
+</table>
+
+<div id="classDescription">
+	<strong>ErrorHandler handles uncaught PHP errors and exceptions.</strong>
+	<p>ErrorHandler displays these errors using appropriate views based on the
+nature of the errors and the mode the application runs at.</p>
+
+<p>ErrorHandler is configured as an application component in <span style="background: #f00;">\yii\base\yii\base\Application</span> by default.
+You can access that instance via <code>Yii::$app-&gt;errorHandler</code>.</p>
+</div>
+
+<a name="properties"></a>
+
+<div class="summary docProperty">
+<h2>Public Properties</h2>
+
+<p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-property" />
+	<col class="col-type" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Property</th><th>Type</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr id="$maxSourceLines">
+		<td><a href="yii_base_errorhandler.html#$maxSourceLines-detail">$maxSourceLines</a></td>
+		<td>integer</td>
+		<td>Maximum number of source code lines to be displayed</td>
+		<td><a href="yii_base_errorhandler.html">yii\base\ErrorHandler</a></td>
+	</tr>
+			<tr id="$maxTraceSourceLines">
+		<td><a href="yii_base_errorhandler.html#$maxTraceSourceLines-detail">$maxTraceSourceLines</a></td>
+		<td>integer</td>
+		<td>Maximum number of trace source code lines to be displayed</td>
+		<td><a href="yii_base_errorhandler.html">yii\base\ErrorHandler</a></td>
+	</tr>
+			<tr id="$discardExistingOutput">
+		<td><a href="yii_base_errorhandler.html#$discardExistingOutput-detail">$discardExistingOutput</a></td>
+		<td>boolean</td>
+		<td>Whether to discard any existing page output before error display</td>
+		<td><a href="yii_base_errorhandler.html">yii\base\ErrorHandler</a></td>
+	</tr>
+			<tr id="$errorAction">
+		<td><a href="yii_base_errorhandler.html#$errorAction-detail">$errorAction</a></td>
+		<td>string</td>
+		<td>The route (e</td>
+		<td><a href="yii_base_errorhandler.html">yii\base\ErrorHandler</a></td>
+	</tr>
+			<tr id="$errorView">
+		<td><a href="yii_base_errorhandler.html#$errorView-detail">$errorView</a></td>
+		<td>string</td>
+		<td>The path of the view file for rendering exceptions without call stack information</td>
+		<td><a href="yii_base_errorhandler.html">yii\base\ErrorHandler</a></td>
+	</tr>
+			<tr id="$exceptionView">
+		<td><a href="yii_base_errorhandler.html#$exceptionView-detail">$exceptionView</a></td>
+		<td>string</td>
+		<td>The path of the view file for rendering exceptions</td>
+		<td><a href="yii_base_errorhandler.html">yii\base\ErrorHandler</a></td>
+	</tr>
+			<tr id="$callStackItemView">
+		<td><a href="yii_base_errorhandler.html#$callStackItemView-detail">$callStackItemView</a></td>
+		<td>string</td>
+		<td>The path of the view file for rendering exceptions and errors call stack element</td>
+		<td><a href="yii_base_errorhandler.html">yii\base\ErrorHandler</a></td>
+	</tr>
+			<tr id="$previousExceptionView">
+		<td><a href="yii_base_errorhandler.html#$previousExceptionView-detail">$previousExceptionView</a></td>
+		<td>string</td>
+		<td>The path of the view file for rendering previous exceptions</td>
+		<td><a href="yii_base_errorhandler.html">yii\base\ErrorHandler</a></td>
+	</tr>
+			<tr id="$exception">
+		<td><a href="yii_base_errorhandler.html#$exception-detail">$exception</a></td>
+		<td>\Exception</td>
+		<td>The exception that is being handled currently</td>
+		<td><a href="yii_base_errorhandler.html">yii\base\ErrorHandler</a></td>
+	</tr>
+			<tr id="$behaviors">
+		<td><a href="yii_base_errorhandler.html#$behaviors-detail">$behaviors</a></td>
+		<td><a href="yii_base_behavior.html">yii\base\Behavior</a>[]</td>
+		<td>list of behaviors attached to this component</td>
+		<td><a href="yii_base_errorhandler.html">yii\base\ErrorHandler</a></td>
+	</tr>
+	</table>
+</div>
+<a name="methods"></a>
+
+<div class="summary docMethod">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr class="inherited" id="className()">
+		<td><a href="yii_base_object.html#className()-detail">className()</a></td>
+		<td></td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__construct()">
+		<td><a href="yii_base_object.html#__construct()-detail">__construct()</a></td>
+		<td>Constructor.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="init()">
+		<td><a href="yii_base_object.html#init()-detail">init()</a></td>
+		<td>Initializes the object.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__get()">
+		<td><a href="yii_base_component.html#__get()-detail">__get()</a></td>
+		<td>Returns the value of a component property.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__set()">
+		<td><a href="yii_base_component.html#__set()-detail">__set()</a></td>
+		<td>Sets the value of a component property.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__isset()">
+		<td><a href="yii_base_component.html#__isset()-detail">__isset()</a></td>
+		<td>Checks if a property value is null.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__unset()">
+		<td><a href="yii_base_component.html#__unset()-detail">__unset()</a></td>
+		<td>Sets a component property to be null.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__call()">
+		<td><a href="yii_base_component.html#__call()-detail">__call()</a></td>
+		<td>Calls the named method which is not a class method.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasProperty()">
+		<td><a href="yii_base_component.html#hasProperty()-detail">hasProperty()</a></td>
+		<td>Returns a value indicating whether a property is defined for this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="canGetProperty()">
+		<td><a href="yii_base_component.html#canGetProperty()-detail">canGetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be read.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="canSetProperty()">
+		<td><a href="yii_base_component.html#canSetProperty()-detail">canSetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be set.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasMethod()">
+		<td><a href="yii_base_component.html#hasMethod()-detail">hasMethod()</a></td>
+		<td>Returns a value indicating whether a method is defined.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="toArray()">
+		<td><a href="yii_base_object.html#toArray()-detail">toArray()</a></td>
+		<td>Converts the object into an array.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__clone()">
+		<td><a href="yii_base_component.html#__clone()-detail">__clone()</a></td>
+		<td>This method is called after the object is created by cloning an existing one.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="behaviors()">
+		<td><a href="yii_base_component.html#behaviors()-detail">behaviors()</a></td>
+		<td>Returns a list of behaviors that this component should behave as.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasEventHandlers()">
+		<td><a href="yii_base_component.html#hasEventHandlers()-detail">hasEventHandlers()</a></td>
+		<td>Returns a value indicating whether there is any handler attached to the named event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="on()">
+		<td><a href="yii_base_component.html#on()-detail">on()</a></td>
+		<td>Attaches an event handler to an event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="off()">
+		<td><a href="yii_base_component.html#off()-detail">off()</a></td>
+		<td>Detaches an existing event handler from this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="trigger()">
+		<td><a href="yii_base_component.html#trigger()-detail">trigger()</a></td>
+		<td>Triggers an event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="getBehavior()">
+		<td><a href="yii_base_component.html#getBehavior()-detail">getBehavior()</a></td>
+		<td>Returns the named behavior object.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="getBehaviors()">
+		<td><a href="yii_base_component.html#getBehaviors()-detail">getBehaviors()</a></td>
+		<td>Returns all behaviors attached to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="attachBehavior()">
+		<td><a href="yii_base_component.html#attachBehavior()-detail">attachBehavior()</a></td>
+		<td>Attaches a behavior to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="attachBehaviors()">
+		<td><a href="yii_base_component.html#attachBehaviors()-detail">attachBehaviors()</a></td>
+		<td>Attaches a list of behaviors to the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="detachBehavior()">
+		<td><a href="yii_base_component.html#detachBehavior()-detail">detachBehavior()</a></td>
+		<td>Detaches a behavior from the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="detachBehaviors()">
+		<td><a href="yii_base_component.html#detachBehaviors()-detail">detachBehaviors()</a></td>
+		<td>Detaches all behaviors from the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="ensureBehaviors()">
+		<td><a href="yii_base_component.html#ensureBehaviors()-detail">ensureBehaviors()</a></td>
+		<td>Makes sure that the behaviors declared in <a href="yii_base_component.html#behaviors()-detail">behaviors()</a> are attached to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr id="handle()">
+		<td><a href="yii_base_errorhandler.html#handle()-detail">handle()</a></td>
+		<td>Handles exception.</td>
+		<td><a href="yii_base_errorhandler.html">yii\base\ErrorHandler</a></td>
+	</tr>
+				<tr id="htmlEncode()">
+		<td><a href="yii_base_errorhandler.html#htmlEncode()-detail">htmlEncode()</a></td>
+		<td>Converts special characters to HTML entities.</td>
+		<td><a href="yii_base_errorhandler.html">yii\base\ErrorHandler</a></td>
+	</tr>
+			<tr id="clearOutput()">
+		<td><a href="yii_base_errorhandler.html#clearOutput()-detail">clearOutput()</a></td>
+		<td>Removes all output echoed before calling this method.</td>
+		<td><a href="yii_base_errorhandler.html">yii\base\ErrorHandler</a></td>
+	</tr>
+			<tr id="addTypeLinks()">
+		<td><a href="yii_base_errorhandler.html#addTypeLinks()-detail">addTypeLinks()</a></td>
+		<td>Adds informational links to the given PHP type/class.</td>
+		<td><a href="yii_base_errorhandler.html">yii\base\ErrorHandler</a></td>
+	</tr>
+			<tr id="renderFile()">
+		<td><a href="yii_base_errorhandler.html#renderFile()-detail">renderFile()</a></td>
+		<td>Renders a view file as a PHP script.</td>
+		<td><a href="yii_base_errorhandler.html">yii\base\ErrorHandler</a></td>
+	</tr>
+			<tr id="renderPreviousExceptions()">
+		<td><a href="yii_base_errorhandler.html#renderPreviousExceptions()-detail">renderPreviousExceptions()</a></td>
+		<td>Renders the previous exception stack for a given Exception.</td>
+		<td><a href="yii_base_errorhandler.html">yii\base\ErrorHandler</a></td>
+	</tr>
+			<tr id="renderCallStackItem()">
+		<td><a href="yii_base_errorhandler.html#renderCallStackItem()-detail">renderCallStackItem()</a></td>
+		<td>Renders a single call stack element.</td>
+		<td><a href="yii_base_errorhandler.html">yii\base\ErrorHandler</a></td>
+	</tr>
+			<tr id="renderRequest()">
+		<td><a href="yii_base_errorhandler.html#renderRequest()-detail">renderRequest()</a></td>
+		<td>Renders the request information.</td>
+		<td><a href="yii_base_errorhandler.html">yii\base\ErrorHandler</a></td>
+	</tr>
+			<tr id="isCoreFile()">
+		<td><a href="yii_base_errorhandler.html#isCoreFile()-detail">isCoreFile()</a></td>
+		<td>Determines whether given name of the file belongs to the framework.</td>
+		<td><a href="yii_base_errorhandler.html">yii\base\ErrorHandler</a></td>
+	</tr>
+			<tr id="createHttpStatusLink()">
+		<td><a href="yii_base_errorhandler.html#createHttpStatusLink()-detail">createHttpStatusLink()</a></td>
+		<td>Creates HTML containing link to the page with the information on given HTTP status code.</td>
+		<td><a href="yii_base_errorhandler.html">yii\base\ErrorHandler</a></td>
+	</tr>
+			<tr id="createServerInformationLink()">
+		<td><a href="yii_base_errorhandler.html#createServerInformationLink()-detail">createServerInformationLink()</a></td>
+		<td>Creates string containing HTML link which refers to the home page of determined web-server software
+and its full name.</td>
+		<td><a href="yii_base_errorhandler.html">yii\base\ErrorHandler</a></td>
+	</tr>
+			<tr id="createFrameworkVersionLink()">
+		<td><a href="yii_base_errorhandler.html#createFrameworkVersionLink()-detail">createFrameworkVersionLink()</a></td>
+		<td>Creates string containing HTML link which refers to the page with the current version
+of the framework and version number text.</td>
+		<td><a href="yii_base_errorhandler.html">yii\base\ErrorHandler</a></td>
+	</tr>
+	</table>
+</div>
+<div class="summary docMethod">
+<h2>Protected Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+																													<tr id="renderException()">
+		<td><a href="yii_base_errorhandler.html#renderException()-detail">renderException()</a></td>
+		<td>Renders the exception.</td>
+		<td><a href="yii_base_errorhandler.html">yii\base\ErrorHandler</a></td>
+	</tr>
+												</table>
+</div>
+<a name="events"></a>
+
+<a name="constants"></a>
+
+<h2>Property Details</h2>
+
+
+	<div class="detailHeader" id="$maxSourceLines-detail">
+		$maxSourceLines		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	integer $maxSourceLines = 25	</div>
+
+	<p>Maximum number of source code lines to be displayed. Defaults to 25.</p>
+
+	
+
+	<div class="detailHeader" id="$maxTraceSourceLines-detail">
+		$maxTraceSourceLines		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	integer $maxTraceSourceLines = 10	</div>
+
+	<p>Maximum number of trace source code lines to be displayed. Defaults to 10.</p>
+
+	
+
+	<div class="detailHeader" id="$discardExistingOutput-detail">
+		$discardExistingOutput		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	boolean $discardExistingOutput = true	</div>
+
+	<p>Whether to discard any existing page output before error display. Defaults to true.</p>
+
+	
+
+	<div class="detailHeader" id="$errorAction-detail">
+		$errorAction		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $errorAction = null	</div>
+
+	<p>The route (e.g. 'site/error') to the controller action that will be used
+to display external errors. Inside the action, it can retrieve the error information
+by Yii::$app->exception. This property defaults to null, meaning ErrorHandler
+will handle the error display.</p>
+
+	
+
+	<div class="detailHeader" id="$errorView-detail">
+		$errorView		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $errorView = '@yii/views/errorHandler/error.php'	</div>
+
+	<p>The path of the view file for rendering exceptions without call stack information.</p>
+
+	
+
+	<div class="detailHeader" id="$exceptionView-detail">
+		$exceptionView		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $exceptionView = '@yii/views/errorHandler/exception.php'	</div>
+
+	<p>The path of the view file for rendering exceptions.</p>
+
+	
+
+	<div class="detailHeader" id="$callStackItemView-detail">
+		$callStackItemView		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $callStackItemView = '@yii/views/errorHandler/callStackItem.php'	</div>
+
+	<p>The path of the view file for rendering exceptions and errors call stack element.</p>
+
+	
+
+	<div class="detailHeader" id="$previousExceptionView-detail">
+		$previousExceptionView		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $previousExceptionView = '@yii/views/errorHandler/previousException.php'	</div>
+
+	<p>The path of the view file for rendering previous exceptions.</p>
+
+	
+
+	<div class="detailHeader" id="$exception-detail">
+		$exception		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	\Exception $exception = null	</div>
+
+	<p>The exception that is being handled currently.</p>
+
+	
+
+	<div class="detailHeader" id="$behaviors-detail">
+		$behaviors		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_base_behavior.html">yii\base\Behavior</a>[] <a href="yii_base_component.html#getBehaviors()-detail">getBehaviors</a>(  )	</div>
+
+	<p>list of behaviors attached to this component</p>
+
+	
+<h2>Method Details</h2>
+
+
+	<div class="detailHeader" id="handle()-detail">
+		handle()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_base_errorhandler.html#handle()-detail">handle</a>( $exception )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$exception</td>
+				  <td class="paramTypeCol">\Exception</td>
+				  <td class="paramDescCol">To be handled.</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Handles exception.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="renderException()-detail">
+		renderException()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_base_errorhandler.html#renderException()-detail">renderException</a>( $exception )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$exception</td>
+				  <td class="paramTypeCol">\Exception</td>
+				  <td class="paramDescCol">The exception to be handled.</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Renders the exception.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="htmlEncode()-detail">
+		htmlEncode()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_base_errorhandler.html#htmlEncode()-detail">htmlEncode</a>( $text )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$text</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">To encode.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">encoded original text.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Converts special characters to HTML entities.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="clearOutput()-detail">
+		clearOutput()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_base_errorhandler.html#clearOutput()-detail">clearOutput</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p>Removes all output echoed before calling this method.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="addTypeLinks()-detail">
+		addTypeLinks()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_base_errorhandler.html#addTypeLinks()-detail">addTypeLinks</a>( $code )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$code</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Type/class name to be linkified.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">linkified with HTML type/class name.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Adds informational links to the given PHP type/class.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="renderFile()-detail">
+		renderFile()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_base_errorhandler.html#renderFile()-detail">renderFile</a>( $_file_, $_params_ )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$_file_</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The view file.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$_params_</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The parameters (name-value pairs) that will be extracted and made available in the view file.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the rendering result</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Renders a view file as a PHP script.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="renderPreviousExceptions()-detail">
+		renderPreviousExceptions()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_base_errorhandler.html#renderPreviousExceptions()-detail">renderPreviousExceptions</a>( $exception )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$exception</td>
+				  <td class="paramTypeCol">\Exception</td>
+				  <td class="paramDescCol">The exception whose precursors should be rendered.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">HTML content of the rendered previous exceptions.
+Empty string if there are none.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Renders the previous exception stack for a given Exception.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="renderCallStackItem()-detail">
+		renderCallStackItem()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_base_errorhandler.html#renderCallStackItem()-detail">renderCallStackItem</a>( $file, $line, $class, $method, $index )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$file</td>
+				  <td class="paramTypeCol">string|null</td>
+				  <td class="paramDescCol">Name where call has happened.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$line</td>
+				  <td class="paramTypeCol">integer|null</td>
+				  <td class="paramDescCol">Number on which call has happened.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$class</td>
+				  <td class="paramTypeCol">string|null</td>
+				  <td class="paramDescCol">Called class name.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$method</td>
+				  <td class="paramTypeCol">string|null</td>
+				  <td class="paramDescCol">Called function/method name.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$index</td>
+				  <td class="paramTypeCol">integer</td>
+				  <td class="paramDescCol">Number of the call stack element.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">HTML content of the rendered call stack element.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Renders a single call stack element.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="renderRequest()-detail">
+		renderRequest()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_base_errorhandler.html#renderRequest()-detail">renderRequest</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the rendering result</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Renders the request information.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="isCoreFile()-detail">
+		isCoreFile()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_base_errorhandler.html#isCoreFile()-detail">isCoreFile</a>( $file )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$file</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Name to be checked.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether given name of the file belongs to the framework.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Determines whether given name of the file belongs to the framework.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="createHttpStatusLink()-detail">
+		createHttpStatusLink()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_base_errorhandler.html#createHttpStatusLink()-detail">createHttpStatusLink</a>( $statusCode, $statusDescription )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$statusCode</td>
+				  <td class="paramTypeCol">integer</td>
+				  <td class="paramDescCol">To be used to generate information link.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$statusDescription</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Description to display after the the status code.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">generated HTML with HTTP status code information.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Creates HTML containing link to the page with the information on given HTTP status code.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="createServerInformationLink()-detail">
+		createServerInformationLink()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_base_errorhandler.html#createServerInformationLink()-detail">createServerInformationLink</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">server software information hyperlink.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Creates string containing HTML link which refers to the home page of determined web-server software
+and its full name.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="createFrameworkVersionLink()-detail">
+		createFrameworkVersionLink()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_base_errorhandler.html#createFrameworkVersionLink()-detail">createFrameworkVersionLink</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">framework version information hyperlink.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Creates string containing HTML link which refers to the page with the current version
+of the framework and version number text.</strong></p>
+	<p></p>
+
+	
+			</div><!-- end of content -->
+
+		<div id="apiFooter">
+			<p>&copy; 2008-2013 by <a href="http://www.yiisoft.com">Yii Software LLC</a></p>
+			<p>All Rights Reserved.</p>
+		</div><!-- end of footer -->
+
+<script type="text/javascript">
+/*<![CDATA[*/
+$("a.toggle").on('click', function() {
+	var $this = $(this);
+	if ($this.hasClass('properties-hidden')) {
+		$this.text($this.text().replace(/Show/,'Hide'));
+		$this.parents(".summary").find(".inherited").show();
+		$this.removeClass('properties-hidden');
+	} else {
+		$this.text($this.text().replace(/Hide/,'Show'));
+		$this.parents(".summary").find(".inherited").hide();
+		$this.addClass('properties-hidden');
+	}
+	return false;
+});
+/*
+$(".sourceCode a.show").toggle(function(){
+	$(this).text($(this).text().replace(/show/,'hide'));
+	$(this).parents(".sourceCode").find("div.code").show();
+},function(){
+	$(this).text($(this).text().replace(/hide/,'show'));
+	$(this).parents(".sourceCode").find("div.code").hide();
+});
+$("a.sourceLink").click(function(){
+	$(this).attr('target','_blank');
+});
+*/
+/*]]>*/
+</script>
+
+	</div><!-- end of page -->
+</body>
+</html>

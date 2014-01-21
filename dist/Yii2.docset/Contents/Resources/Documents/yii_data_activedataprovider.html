@@ -1,0 +1,710 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="language" content="en" />
+<link href="./assets/4138e429/api.css" rel="stylesheet">
+<link href="./assets/4138e429/style.css" rel="stylesheet">
+<script src="./assets/a91b37a6/jquery.js"></script><title>Yii Framework 2.0 API Documentation</title>
+</head>
+
+<body>
+	<div id="apiPage">
+
+		<div id="apiHeader">
+			<a href="http://www.yiiframework.com">Yii Framework</a> v2.0.0-dev Class Reference
+		</div><!-- end of header -->
+
+		<div id="content">
+		<h1>Class yii\data\ActiveDataProvider</h1>
+<div id="nav">
+	<a href="index.html">All Classes</a>
+			| <a href="#properties">Properties</a>
+				| <a href="#methods">Methods</a>
+			</div>
+
+<table class="summaryTable docClass">
+	<colgroup>
+		<col class="col-name" />
+		<col class="col-value" />
+	</colgroup>
+			<tr><th>Inheritance</th><td><a href="yii_data_activedataprovider.html">yii\data\ActiveDataProvider</a> &raquo;
+<a href="yii_data_basedataprovider.html">yii\data\BaseDataProvider</a> &raquo;
+<a href="yii_base_component.html">yii\base\Component</a> &raquo;
+<a href="yii_base_object.html">yii\base\Object</a></td></tr>
+				<tr><th>Implements</th><td><a href="yii_base_arrayable.html">yii\base\Arrayable</a>, <a href="yii_data_dataproviderinterface.html">yii\data\DataProviderInterface</a></td></tr>
+								<tr><th>Available since version</th><td>2.0</td></tr>
+		<tr>
+	  <th>Source Code</th>
+	  <td></td>
+	</tr>
+</table>
+
+<div id="classDescription">
+	<strong>ActiveDataProvider implements a data provider based on <a href="yii_db_query.html">yii\db\Query</a> and <a href="yii_db_activequery.html">yii\db\ActiveQuery</a>.</strong>
+	<p><p>ActiveDataProvider provides data by performing DB queries using <a href="yii_data_activedataprovider.html#$query-detail">$query</a>.</p>
+
+<p>The following is an example of using ActiveDataProvider to provide ActiveRecord instances:</p>
+
+<pre><code>$provider = new ActiveDataProvider([
+    'query' =&gt; Post::find(),
+    'pagination' =&gt; [
+        'pageSize' =&gt; 20,
+    ],
+]);
+
+// get the posts in the current page
+$posts = $provider-&gt;getModels();
+</code></pre>
+
+<p>And the following example shows how to use ActiveDataProvider without ActiveRecord:</p>
+
+<pre><code>$query = new Query;
+$provider = new ActiveDataProvider([
+    'query' =&gt; $query-&gt;from('tbl_post'),
+    'pagination' =&gt; [
+        'pageSize' =&gt; 20,
+    ],
+]);
+
+// get the posts in the current page
+$posts = $provider-&gt;getModels();
+</code></pre></p>
+</div>
+
+<a name="properties"></a>
+
+<div class="summary docProperty">
+<h2>Public Properties</h2>
+
+<p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-property" />
+	<col class="col-type" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Property</th><th>Type</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr class="inherited" id="$id">
+		<td><a href="yii_data_basedataprovider.html#$id-detail">$id</a></td>
+		<td>string</td>
+		<td>An ID that uniquely identifies the data provider among all data providers</td>
+		<td><a href="yii_data_basedataprovider.html">yii\data\BaseDataProvider</a></td>
+	</tr>
+			<tr id="$query">
+		<td><a href="yii_data_activedataprovider.html#$query-detail">$query</a></td>
+		<td><a href="yii_db_queryinterface.html">yii\db\QueryInterface</a></td>
+		<td>The query that is used to fetch data models and <a href="yii_data_activedataprovider.html#$totalCount-detail">$totalCount</a>
+if it is not explicitly set</td>
+		<td><a href="yii_data_activedataprovider.html">yii\data\ActiveDataProvider</a></td>
+	</tr>
+			<tr id="$key">
+		<td><a href="yii_data_activedataprovider.html#$key-detail">$key</a></td>
+		<td>string|callable</td>
+		<td>The column that is used as the key of the data models</td>
+		<td><a href="yii_data_activedataprovider.html">yii\data\ActiveDataProvider</a></td>
+	</tr>
+			<tr id="$db">
+		<td><a href="yii_data_activedataprovider.html#$db-detail">$db</a></td>
+		<td><a href="yii_db_connection.html">yii\db\Connection</a>|string</td>
+		<td>The DB connection object or the application component ID of the DB connection</td>
+		<td><a href="yii_data_activedataprovider.html">yii\data\ActiveDataProvider</a></td>
+	</tr>
+			<tr id="$behaviors">
+		<td><a href="yii_data_activedataprovider.html#$behaviors-detail">$behaviors</a></td>
+		<td><a href="yii_base_behavior.html">yii\base\Behavior</a>[]</td>
+		<td>list of behaviors attached to this component</td>
+		<td><a href="yii_data_activedataprovider.html">yii\data\ActiveDataProvider</a></td>
+	</tr>
+			<tr id="$models">
+		<td><a href="yii_data_activedataprovider.html#$models-detail">$models</a></td>
+		<td>array</td>
+		<td>the list of data models in the current page</td>
+		<td><a href="yii_data_activedataprovider.html">yii\data\ActiveDataProvider</a></td>
+	</tr>
+			<tr id="$keys">
+		<td><a href="yii_data_activedataprovider.html#$keys-detail">$keys</a></td>
+		<td>array</td>
+		<td>the list of key values corresponding to <a href="yii_data_activedataprovider.html#$models-detail">$models</a></td>
+		<td><a href="yii_data_activedataprovider.html">yii\data\ActiveDataProvider</a></td>
+	</tr>
+			<tr id="$count">
+		<td><a href="yii_data_activedataprovider.html#$count-detail">$count</a></td>
+		<td>integer</td>
+		<td>the number of data models in the current page</td>
+		<td><a href="yii_data_activedataprovider.html">yii\data\ActiveDataProvider</a></td>
+	</tr>
+			<tr id="$totalCount">
+		<td><a href="yii_data_activedataprovider.html#$totalCount-detail">$totalCount</a></td>
+		<td>integer</td>
+		<td>total number of possible data models</td>
+		<td><a href="yii_data_activedataprovider.html">yii\data\ActiveDataProvider</a></td>
+	</tr>
+			<tr id="$pagination">
+		<td><a href="yii_data_activedataprovider.html#$pagination-detail">$pagination</a></td>
+		<td><a href="yii_data_pagination.html">yii\data\Pagination</a>|boolean</td>
+		<td>the pagination object</td>
+		<td><a href="yii_data_activedataprovider.html">yii\data\ActiveDataProvider</a></td>
+	</tr>
+			<tr id="$sort">
+		<td><a href="yii_data_activedataprovider.html#$sort-detail">$sort</a></td>
+		<td><a href="yii_data_sort.html">yii\data\Sort</a>|boolean</td>
+		<td>the sorting object</td>
+		<td><a href="yii_data_activedataprovider.html">yii\data\ActiveDataProvider</a></td>
+	</tr>
+	</table>
+</div>
+<a name="methods"></a>
+
+<div class="summary docMethod">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr class="inherited" id="className()">
+		<td><a href="yii_base_object.html#className()-detail">className()</a></td>
+		<td></td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__construct()">
+		<td><a href="yii_base_object.html#__construct()-detail">__construct()</a></td>
+		<td>Constructor.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr id="init()">
+		<td><a href="yii_data_activedataprovider.html#init()-detail">init()</a></td>
+		<td>Initializes the DB connection component.</td>
+		<td><a href="yii_data_activedataprovider.html">yii\data\ActiveDataProvider</a></td>
+	</tr>
+			<tr class="inherited" id="__get()">
+		<td><a href="yii_base_component.html#__get()-detail">__get()</a></td>
+		<td>Returns the value of a component property.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__set()">
+		<td><a href="yii_base_component.html#__set()-detail">__set()</a></td>
+		<td>Sets the value of a component property.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__isset()">
+		<td><a href="yii_base_component.html#__isset()-detail">__isset()</a></td>
+		<td>Checks if a property value is null.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__unset()">
+		<td><a href="yii_base_component.html#__unset()-detail">__unset()</a></td>
+		<td>Sets a component property to be null.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__call()">
+		<td><a href="yii_base_component.html#__call()-detail">__call()</a></td>
+		<td>Calls the named method which is not a class method.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasProperty()">
+		<td><a href="yii_base_component.html#hasProperty()-detail">hasProperty()</a></td>
+		<td>Returns a value indicating whether a property is defined for this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="canGetProperty()">
+		<td><a href="yii_base_component.html#canGetProperty()-detail">canGetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be read.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="canSetProperty()">
+		<td><a href="yii_base_component.html#canSetProperty()-detail">canSetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be set.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasMethod()">
+		<td><a href="yii_base_component.html#hasMethod()-detail">hasMethod()</a></td>
+		<td>Returns a value indicating whether a method is defined.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="toArray()">
+		<td><a href="yii_base_object.html#toArray()-detail">toArray()</a></td>
+		<td>Converts the object into an array.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__clone()">
+		<td><a href="yii_base_component.html#__clone()-detail">__clone()</a></td>
+		<td>This method is called after the object is created by cloning an existing one.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="behaviors()">
+		<td><a href="yii_base_component.html#behaviors()-detail">behaviors()</a></td>
+		<td>Returns a list of behaviors that this component should behave as.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasEventHandlers()">
+		<td><a href="yii_base_component.html#hasEventHandlers()-detail">hasEventHandlers()</a></td>
+		<td>Returns a value indicating whether there is any handler attached to the named event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="on()">
+		<td><a href="yii_base_component.html#on()-detail">on()</a></td>
+		<td>Attaches an event handler to an event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="off()">
+		<td><a href="yii_base_component.html#off()-detail">off()</a></td>
+		<td>Detaches an existing event handler from this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="trigger()">
+		<td><a href="yii_base_component.html#trigger()-detail">trigger()</a></td>
+		<td>Triggers an event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="getBehavior()">
+		<td><a href="yii_base_component.html#getBehavior()-detail">getBehavior()</a></td>
+		<td>Returns the named behavior object.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="getBehaviors()">
+		<td><a href="yii_base_component.html#getBehaviors()-detail">getBehaviors()</a></td>
+		<td>Returns all behaviors attached to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="attachBehavior()">
+		<td><a href="yii_base_component.html#attachBehavior()-detail">attachBehavior()</a></td>
+		<td>Attaches a behavior to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="attachBehaviors()">
+		<td><a href="yii_base_component.html#attachBehaviors()-detail">attachBehaviors()</a></td>
+		<td>Attaches a list of behaviors to the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="detachBehavior()">
+		<td><a href="yii_base_component.html#detachBehavior()-detail">detachBehavior()</a></td>
+		<td>Detaches a behavior from the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="detachBehaviors()">
+		<td><a href="yii_base_component.html#detachBehaviors()-detail">detachBehaviors()</a></td>
+		<td>Detaches all behaviors from the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="ensureBehaviors()">
+		<td><a href="yii_base_component.html#ensureBehaviors()-detail">ensureBehaviors()</a></td>
+		<td>Makes sure that the behaviors declared in <a href="yii_base_component.html#behaviors()-detail">behaviors()</a> are attached to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+						<tr class="inherited" id="prepare()">
+		<td><a href="yii_data_basedataprovider.html#prepare()-detail">prepare()</a></td>
+		<td>Prepares the data models and keys.</td>
+		<td><a href="yii_data_basedataprovider.html">yii\data\BaseDataProvider</a></td>
+	</tr>
+			<tr class="inherited" id="getModels()">
+		<td><a href="yii_data_basedataprovider.html#getModels()-detail">getModels()</a></td>
+		<td>Returns the data models in the current page.</td>
+		<td><a href="yii_data_basedataprovider.html">yii\data\BaseDataProvider</a></td>
+	</tr>
+			<tr class="inherited" id="setModels()">
+		<td><a href="yii_data_basedataprovider.html#setModels()-detail">setModels()</a></td>
+		<td>Sets the data models in the current page.</td>
+		<td><a href="yii_data_basedataprovider.html">yii\data\BaseDataProvider</a></td>
+	</tr>
+			<tr class="inherited" id="getKeys()">
+		<td><a href="yii_data_basedataprovider.html#getKeys()-detail">getKeys()</a></td>
+		<td>Returns the key values associated with the data models.</td>
+		<td><a href="yii_data_basedataprovider.html">yii\data\BaseDataProvider</a></td>
+	</tr>
+			<tr class="inherited" id="setKeys()">
+		<td><a href="yii_data_basedataprovider.html#setKeys()-detail">setKeys()</a></td>
+		<td>Sets the key values associated with the data models.</td>
+		<td><a href="yii_data_basedataprovider.html">yii\data\BaseDataProvider</a></td>
+	</tr>
+			<tr class="inherited" id="getCount()">
+		<td><a href="yii_data_basedataprovider.html#getCount()-detail">getCount()</a></td>
+		<td>Returns the number of data models in the current page.</td>
+		<td><a href="yii_data_basedataprovider.html">yii\data\BaseDataProvider</a></td>
+	</tr>
+			<tr class="inherited" id="getTotalCount()">
+		<td><a href="yii_data_basedataprovider.html#getTotalCount()-detail">getTotalCount()</a></td>
+		<td>Returns the total number of data models.</td>
+		<td><a href="yii_data_basedataprovider.html">yii\data\BaseDataProvider</a></td>
+	</tr>
+			<tr class="inherited" id="setTotalCount()">
+		<td><a href="yii_data_basedataprovider.html#setTotalCount()-detail">setTotalCount()</a></td>
+		<td>Sets the total number of data models.</td>
+		<td><a href="yii_data_basedataprovider.html">yii\data\BaseDataProvider</a></td>
+	</tr>
+			<tr class="inherited" id="getPagination()">
+		<td><a href="yii_data_basedataprovider.html#getPagination()-detail">getPagination()</a></td>
+		<td>Returns the pagination object used by this data provider.</td>
+		<td><a href="yii_data_basedataprovider.html">yii\data\BaseDataProvider</a></td>
+	</tr>
+			<tr class="inherited" id="setPagination()">
+		<td><a href="yii_data_basedataprovider.html#setPagination()-detail">setPagination()</a></td>
+		<td>Sets the pagination for this data provider.</td>
+		<td><a href="yii_data_basedataprovider.html">yii\data\BaseDataProvider</a></td>
+	</tr>
+			<tr class="inherited" id="getSort()">
+		<td><a href="yii_data_basedataprovider.html#getSort()-detail">getSort()</a></td>
+		<td></td>
+		<td><a href="yii_data_basedataprovider.html">yii\data\BaseDataProvider</a></td>
+	</tr>
+			<tr id="setSort()">
+		<td><a href="yii_data_activedataprovider.html#setSort()-detail">setSort()</a></td>
+		<td></td>
+		<td><a href="yii_data_activedataprovider.html">yii\data\ActiveDataProvider</a></td>
+	</tr>
+			<tr class="inherited" id="refresh()">
+		<td><a href="yii_data_basedataprovider.html#refresh()-detail">refresh()</a></td>
+		<td>Refreshes the data provider.</td>
+		<td><a href="yii_data_basedataprovider.html">yii\data\BaseDataProvider</a></td>
+	</tr>
+	</table>
+</div>
+<div class="summary docMethod">
+<h2>Protected Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+																												<tr id="prepareModels()">
+		<td><a href="yii_data_activedataprovider.html#prepareModels()-detail">prepareModels()</a></td>
+		<td></td>
+		<td><a href="yii_data_activedataprovider.html">yii\data\ActiveDataProvider</a></td>
+	</tr>
+			<tr id="prepareKeys()">
+		<td><a href="yii_data_activedataprovider.html#prepareKeys()-detail">prepareKeys()</a></td>
+		<td></td>
+		<td><a href="yii_data_activedataprovider.html">yii\data\ActiveDataProvider</a></td>
+	</tr>
+			<tr id="prepareTotalCount()">
+		<td><a href="yii_data_activedataprovider.html#prepareTotalCount()-detail">prepareTotalCount()</a></td>
+		<td></td>
+		<td><a href="yii_data_activedataprovider.html">yii\data\ActiveDataProvider</a></td>
+	</tr>
+														</table>
+</div>
+<a name="events"></a>
+
+<a name="constants"></a>
+
+<h2>Property Details</h2>
+
+
+	<div class="detailHeader" id="$query-detail">
+		$query		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_db_queryinterface.html">yii\db\QueryInterface</a> $query = null	</div>
+
+	<p>The query that is used to fetch data models and <a href="yii_data_activedataprovider.html#$totalCount-detail">$totalCount</a>
+if it is not explicitly set.</p>
+
+	
+
+	<div class="detailHeader" id="$key-detail">
+		$key		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string|callable $key = null	</div>
+
+	<p>The column that is used as the key of the data models.
+This can be either a column name, or a callable that returns the key value of a given data model.
+If this is not set, the following rules will be used to determine the keys of the data models:
+- If <a href="yii_data_activedataprovider.html#$query-detail">$query</a> is an <span style="background: #f00;">\yii\data\ActiveQuery</span> instance, the primary keys of <span style="background: #f00;">\yii\data\ActiveQuery::modelClass</span> will be used.
+- Otherwise, the keys of the <a href="yii_data_activedataprovider.html#$models-detail">$models</a> array will be used.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_data_basedataprovider.html#getKeys()-detail">getKeys()</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="$db-detail">
+		$db		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_db_connection.html">yii\db\Connection</a>|string $db = null	</div>
+
+	<p>The DB connection object or the application component ID of the DB connection.
+If not set, the default DB connection will be used.</p>
+
+	
+
+	<div class="detailHeader" id="$behaviors-detail">
+		$behaviors		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_base_behavior.html">yii\base\Behavior</a>[] <a href="yii_base_component.html#getBehaviors()-detail">getBehaviors</a>(  )	</div>
+
+	<p>list of behaviors attached to this component</p>
+
+	
+
+	<div class="detailHeader" id="$models-detail">
+		$models		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array <a href="yii_data_basedataprovider.html#getModels()-detail">getModels</a>(  )<br />void <a href="yii_data_basedataprovider.html#setModels()-detail">setModels</a>( $models )	</div>
+
+	<p>the list of data models in the current page.</p>
+
+	
+
+	<div class="detailHeader" id="$keys-detail">
+		$keys		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array <a href="yii_data_basedataprovider.html#getKeys()-detail">getKeys</a>(  )<br />void <a href="yii_data_basedataprovider.html#setKeys()-detail">setKeys</a>( $keys )	</div>
+
+	<p>the list of key values corresponding to <a href="yii_data_activedataprovider.html#$models-detail">$models</a>. Each data model in <a href="yii_data_activedataprovider.html#$models-detail">$models</a>
+is uniquely identified by the corresponding key value in this array.</p>
+
+	
+
+	<div class="detailHeader" id="$count-detail">
+		$count		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	integer <a href="yii_data_basedataprovider.html#getCount()-detail">getCount</a>(  )	</div>
+
+	<p>the number of data models in the current page.</p>
+
+	
+
+	<div class="detailHeader" id="$totalCount-detail">
+		$totalCount		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	integer <a href="yii_data_basedataprovider.html#getTotalCount()-detail">getTotalCount</a>(  )<br />void <a href="yii_data_basedataprovider.html#setTotalCount()-detail">setTotalCount</a>( $value )	</div>
+
+	<p>total number of possible data models.</p>
+
+	
+
+	<div class="detailHeader" id="$pagination-detail">
+		$pagination		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_data_pagination.html">yii\data\Pagination</a>|boolean <a href="yii_data_basedataprovider.html#getPagination()-detail">getPagination</a>(  )<br />void <a href="yii_data_basedataprovider.html#setPagination()-detail">setPagination</a>( $value )	</div>
+
+	<p>the pagination object. If this is false, it means the pagination is disabled.</p>
+
+	
+
+	<div class="detailHeader" id="$sort-detail">
+		$sort		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_data_sort.html">yii\data\Sort</a>|boolean <a href="yii_data_basedataprovider.html#getSort()-detail">getSort</a>(  )<br />void <a href="yii_data_activedataprovider.html#setSort()-detail">setSort</a>( $value )	</div>
+
+	<p>the sorting object. If this is false, it means the sorting is disabled.</p>
+
+	
+<h2>Method Details</h2>
+
+
+	<div class="detailHeader" id="init()-detail">
+		init()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_data_activedataprovider.html#init()-detail">init</a>(  )			</div>
+		</td></tr>
+															<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_base_invalidconfigexception.html">yii\base\InvalidConfigException</a></td>
+				  <td class="paramDescCol">if <a href="yii_data_activedataprovider.html#$db-detail">$db</a> is invalid.</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Initializes the DB connection component.</strong></p>
+	<p>This method will initialize the <a href="yii_data_activedataprovider.html#$db-detail">$db</a> property to make sure it refers to a valid DB connection.</p>
+
+	
+
+	<div class="detailHeader" id="prepareModels()-detail">
+		prepareModels()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_data_activedataprovider.html#prepareModels()-detail">prepareModels</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="prepareKeys()-detail">
+		prepareKeys()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_data_activedataprovider.html#prepareKeys()-detail">prepareKeys</a>( $models )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$models</td>
+				  <td class="paramTypeCol"></td>
+				  <td class="paramDescCol"></td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="prepareTotalCount()-detail">
+		prepareTotalCount()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_data_activedataprovider.html#prepareTotalCount()-detail">prepareTotalCount</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="setSort()-detail">
+		setSort()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_data_activedataprovider.html#setSort()-detail">setSort</a>( $value )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$value</td>
+				  <td class="paramTypeCol"></td>
+				  <td class="paramDescCol"></td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+			</div><!-- end of content -->
+
+		<div id="apiFooter">
+			<p>&copy; 2008-2013 by <a href="http://www.yiisoft.com">Yii Software LLC</a></p>
+			<p>All Rights Reserved.</p>
+		</div><!-- end of footer -->
+
+<script type="text/javascript">
+/*<![CDATA[*/
+$("a.toggle").on('click', function() {
+	var $this = $(this);
+	if ($this.hasClass('properties-hidden')) {
+		$this.text($this.text().replace(/Show/,'Hide'));
+		$this.parents(".summary").find(".inherited").show();
+		$this.removeClass('properties-hidden');
+	} else {
+		$this.text($this.text().replace(/Hide/,'Show'));
+		$this.parents(".summary").find(".inherited").hide();
+		$this.addClass('properties-hidden');
+	}
+	return false;
+});
+/*
+$(".sourceCode a.show").toggle(function(){
+	$(this).text($(this).text().replace(/show/,'hide'));
+	$(this).parents(".sourceCode").find("div.code").show();
+},function(){
+	$(this).text($(this).text().replace(/hide/,'show'));
+	$(this).parents(".sourceCode").find("div.code").hide();
+});
+$("a.sourceLink").click(function(){
+	$(this).attr('target','_blank');
+});
+*/
+/*]]>*/
+</script>
+
+	</div><!-- end of page -->
+</body>
+</html>

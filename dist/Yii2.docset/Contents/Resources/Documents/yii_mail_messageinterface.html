@@ -1,0 +1,894 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="language" content="en" />
+<link href="./assets/4138e429/api.css" rel="stylesheet">
+<link href="./assets/4138e429/style.css" rel="stylesheet">
+<script src="./assets/a91b37a6/jquery.js"></script><title>Yii Framework 2.0 API Documentation</title>
+</head>
+
+<body>
+	<div id="apiPage">
+
+		<div id="apiHeader">
+			<a href="http://www.yiiframework.com">Yii Framework</a> v2.0.0-dev Class Reference
+		</div><!-- end of header -->
+
+		<div id="content">
+		<h1>Interface yii\mail\MessageInterface</h1>
+<div id="nav">
+	<a href="index.html">All Classes</a>
+				| <a href="#methods">Methods</a>
+			</div>
+
+<table class="summaryTable docClass">
+	<colgroup>
+		<col class="col-name" />
+		<col class="col-value" />
+	</colgroup>
+							<tr><th>Implemented by</th><td><a href="yii_mail_basemessage.html">yii\mail\BaseMessage</a></td></tr>
+					<tr><th>Available since version</th><td>2.0</td></tr>
+		<tr>
+	  <th>Source Code</th>
+	  <td></td>
+	</tr>
+</table>
+
+<div id="classDescription">
+	<strong>MessageInterface is the interface that should be implemented by mail message classes.</strong>
+	<p><p>A message represents the settings and content of an email, such as the sender, recipient,
+subject, body, etc.</p>
+
+<p>Messages are sent by a <a href="yii_mail_mailerinterface.html">yii\mail\MailerInterface</a>, like the following,</p>
+
+<pre><code>Yii::$app-&gt;mail-&gt;compose()
+    -&gt;setFrom('from@domain.com')
+    -&gt;setTo($form-&gt;email)
+    -&gt;setSubject($form-&gt;subject)
+    -&gt;setTextBody('Plain text content')
+    -&gt;setHtmlBody('&lt;b&gt;HTML content&lt;/b&gt;')
+    -&gt;send();
+</code></pre></p>
+</div>
+
+<a name="properties"></a>
+
+<a name="methods"></a>
+
+<div class="summary docMethod">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr id="getCharset()">
+		<td><a href="yii_mail_messageinterface.html#getCharset()-detail">getCharset()</a></td>
+		<td>Returns the character set of this message.</td>
+		<td><a href="yii_mail_messageinterface.html">yii\mail\MessageInterface</a></td>
+	</tr>
+			<tr id="setCharset()">
+		<td><a href="yii_mail_messageinterface.html#setCharset()-detail">setCharset()</a></td>
+		<td>Sets the character set of this message.</td>
+		<td><a href="yii_mail_messageinterface.html">yii\mail\MessageInterface</a></td>
+	</tr>
+			<tr id="getFrom()">
+		<td><a href="yii_mail_messageinterface.html#getFrom()-detail">getFrom()</a></td>
+		<td>Returns the message sender.</td>
+		<td><a href="yii_mail_messageinterface.html">yii\mail\MessageInterface</a></td>
+	</tr>
+			<tr id="setFrom()">
+		<td><a href="yii_mail_messageinterface.html#setFrom()-detail">setFrom()</a></td>
+		<td>Sets the message sender.</td>
+		<td><a href="yii_mail_messageinterface.html">yii\mail\MessageInterface</a></td>
+	</tr>
+			<tr id="getTo()">
+		<td><a href="yii_mail_messageinterface.html#getTo()-detail">getTo()</a></td>
+		<td>Returns the message recipient(s).</td>
+		<td><a href="yii_mail_messageinterface.html">yii\mail\MessageInterface</a></td>
+	</tr>
+			<tr id="setTo()">
+		<td><a href="yii_mail_messageinterface.html#setTo()-detail">setTo()</a></td>
+		<td>Sets the message recipient(s).</td>
+		<td><a href="yii_mail_messageinterface.html">yii\mail\MessageInterface</a></td>
+	</tr>
+			<tr id="getReplyTo()">
+		<td><a href="yii_mail_messageinterface.html#getReplyTo()-detail">getReplyTo()</a></td>
+		<td>Returns the reply-to address of this message.</td>
+		<td><a href="yii_mail_messageinterface.html">yii\mail\MessageInterface</a></td>
+	</tr>
+			<tr id="setReplyTo()">
+		<td><a href="yii_mail_messageinterface.html#setReplyTo()-detail">setReplyTo()</a></td>
+		<td>Sets the reply-to address of this message.</td>
+		<td><a href="yii_mail_messageinterface.html">yii\mail\MessageInterface</a></td>
+	</tr>
+			<tr id="getCc()">
+		<td><a href="yii_mail_messageinterface.html#getCc()-detail">getCc()</a></td>
+		<td>Returns the Cc (additional copy receiver) addresses of this message.</td>
+		<td><a href="yii_mail_messageinterface.html">yii\mail\MessageInterface</a></td>
+	</tr>
+			<tr id="setCc()">
+		<td><a href="yii_mail_messageinterface.html#setCc()-detail">setCc()</a></td>
+		<td>Sets the Cc (additional copy receiver) addresses of this message.</td>
+		<td><a href="yii_mail_messageinterface.html">yii\mail\MessageInterface</a></td>
+	</tr>
+			<tr id="getBcc()">
+		<td><a href="yii_mail_messageinterface.html#getBcc()-detail">getBcc()</a></td>
+		<td>Returns the Bcc (hidden copy receiver) addresses of this message.</td>
+		<td><a href="yii_mail_messageinterface.html">yii\mail\MessageInterface</a></td>
+	</tr>
+			<tr id="setBcc()">
+		<td><a href="yii_mail_messageinterface.html#setBcc()-detail">setBcc()</a></td>
+		<td>Sets the Bcc (hidden copy receiver) addresses of this message.</td>
+		<td><a href="yii_mail_messageinterface.html">yii\mail\MessageInterface</a></td>
+	</tr>
+			<tr id="getSubject()">
+		<td><a href="yii_mail_messageinterface.html#getSubject()-detail">getSubject()</a></td>
+		<td>Returns the message subject.</td>
+		<td><a href="yii_mail_messageinterface.html">yii\mail\MessageInterface</a></td>
+	</tr>
+			<tr id="setSubject()">
+		<td><a href="yii_mail_messageinterface.html#setSubject()-detail">setSubject()</a></td>
+		<td>Sets the message subject.</td>
+		<td><a href="yii_mail_messageinterface.html">yii\mail\MessageInterface</a></td>
+	</tr>
+			<tr id="setTextBody()">
+		<td><a href="yii_mail_messageinterface.html#setTextBody()-detail">setTextBody()</a></td>
+		<td>Sets message plain text content.</td>
+		<td><a href="yii_mail_messageinterface.html">yii\mail\MessageInterface</a></td>
+	</tr>
+			<tr id="setHtmlBody()">
+		<td><a href="yii_mail_messageinterface.html#setHtmlBody()-detail">setHtmlBody()</a></td>
+		<td>Sets message HTML content.</td>
+		<td><a href="yii_mail_messageinterface.html">yii\mail\MessageInterface</a></td>
+	</tr>
+			<tr id="attach()">
+		<td><a href="yii_mail_messageinterface.html#attach()-detail">attach()</a></td>
+		<td>Attaches existing file to the email message.</td>
+		<td><a href="yii_mail_messageinterface.html">yii\mail\MessageInterface</a></td>
+	</tr>
+			<tr id="attachContent()">
+		<td><a href="yii_mail_messageinterface.html#attachContent()-detail">attachContent()</a></td>
+		<td>Attach specified content as file for the email message.</td>
+		<td><a href="yii_mail_messageinterface.html">yii\mail\MessageInterface</a></td>
+	</tr>
+			<tr id="embed()">
+		<td><a href="yii_mail_messageinterface.html#embed()-detail">embed()</a></td>
+		<td>Attach a file and return it's CID source.</td>
+		<td><a href="yii_mail_messageinterface.html">yii\mail\MessageInterface</a></td>
+	</tr>
+			<tr id="embedContent()">
+		<td><a href="yii_mail_messageinterface.html#embedContent()-detail">embedContent()</a></td>
+		<td>Attach a content as file and return it's CID source.</td>
+		<td><a href="yii_mail_messageinterface.html">yii\mail\MessageInterface</a></td>
+	</tr>
+			<tr id="send()">
+		<td><a href="yii_mail_messageinterface.html#send()-detail">send()</a></td>
+		<td>Sends this email message.</td>
+		<td><a href="yii_mail_messageinterface.html">yii\mail\MessageInterface</a></td>
+	</tr>
+			<tr id="toString()">
+		<td><a href="yii_mail_messageinterface.html#toString()-detail">toString()</a></td>
+		<td>Returns string representation of this message.</td>
+		<td><a href="yii_mail_messageinterface.html">yii\mail\MessageInterface</a></td>
+	</tr>
+	</table>
+</div>
+<a name="events"></a>
+
+<a name="constants"></a>
+
+<h2>Method Details</h2>
+
+
+	<div class="detailHeader" id="getCharset()-detail">
+		getCharset()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_mail_messageinterface.html#getCharset()-detail">getCharset</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the character set of this message.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the character set of this message.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="setCharset()-detail">
+		setCharset()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			static <a href="yii_mail_messageinterface.html#setCharset()-detail">setCharset</a>( $charset )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$charset</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Character set name.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">static</td>
+				  <td class="paramDescCol">self reference.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Sets the character set of this message.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getFrom()-detail">
+		getFrom()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_mail_messageinterface.html#getFrom()-detail">getFrom</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the sender</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the message sender.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="setFrom()-detail">
+		setFrom()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			static <a href="yii_mail_messageinterface.html#setFrom()-detail">setFrom</a>( $from )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$from</td>
+				  <td class="paramTypeCol">string|array</td>
+				  <td class="paramDescCol">Sender email address.
+You may pass an array of addresses if this message is from multiple people.
+You may also specify sender name in addition to email address using format:
+<code>[email =&gt; name]</code>.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">static</td>
+				  <td class="paramDescCol">self reference.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Sets the message sender.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getTo()-detail">
+		getTo()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			array <a href="yii_mail_messageinterface.html#getTo()-detail">getTo</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">the message recipients</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the message recipient(s).</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="setTo()-detail">
+		setTo()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			static <a href="yii_mail_messageinterface.html#setTo()-detail">setTo</a>( $to )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$to</td>
+				  <td class="paramTypeCol">string|array</td>
+				  <td class="paramDescCol">Receiver email address.
+You may pass an array of addresses if multiple recipients should receive this message.
+You may also specify receiver name in addition to email address using format:
+<code>[email =&gt; name]</code>.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">static</td>
+				  <td class="paramDescCol">self reference.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Sets the message recipient(s).</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getReplyTo()-detail">
+		getReplyTo()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_mail_messageinterface.html#getReplyTo()-detail">getReplyTo</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the reply-to address of this message.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the reply-to address of this message.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="setReplyTo()-detail">
+		setReplyTo()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			static <a href="yii_mail_messageinterface.html#setReplyTo()-detail">setReplyTo</a>( $replyTo )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$replyTo</td>
+				  <td class="paramTypeCol">string|array</td>
+				  <td class="paramDescCol">The reply-to address.
+You may pass an array of addresses if this message should be replied to multiple people.
+You may also specify reply-to name in addition to email address using format:
+<code>[email =&gt; name]</code>.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">static</td>
+				  <td class="paramDescCol">self reference.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Sets the reply-to address of this message.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getCc()-detail">
+		getCc()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			array <a href="yii_mail_messageinterface.html#getCc()-detail">getCc</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">the Cc (additional copy receiver) addresses of this message.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the Cc (additional copy receiver) addresses of this message.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="setCc()-detail">
+		setCc()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			static <a href="yii_mail_messageinterface.html#setCc()-detail">setCc</a>( $cc )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$cc</td>
+				  <td class="paramTypeCol">string|array</td>
+				  <td class="paramDescCol">Copy receiver email address.
+You may pass an array of addresses if multiple recipients should receive this message.
+You may also specify receiver name in addition to email address using format:
+<code>[email =&gt; name]</code>.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">static</td>
+				  <td class="paramDescCol">self reference.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Sets the Cc (additional copy receiver) addresses of this message.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getBcc()-detail">
+		getBcc()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			array <a href="yii_mail_messageinterface.html#getBcc()-detail">getBcc</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">the Bcc (hidden copy receiver) addresses of this message.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the Bcc (hidden copy receiver) addresses of this message.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="setBcc()-detail">
+		setBcc()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			static <a href="yii_mail_messageinterface.html#setBcc()-detail">setBcc</a>( $bcc )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$bcc</td>
+				  <td class="paramTypeCol">string|array</td>
+				  <td class="paramDescCol">Hidden copy receiver email address.
+You may pass an array of addresses if multiple recipients should receive this message.
+You may also specify receiver name in addition to email address using format:
+<code>[email =&gt; name]</code>.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">static</td>
+				  <td class="paramDescCol">self reference.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Sets the Bcc (hidden copy receiver) addresses of this message.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getSubject()-detail">
+		getSubject()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_mail_messageinterface.html#getSubject()-detail">getSubject</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the message subject</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the message subject.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="setSubject()-detail">
+		setSubject()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			static <a href="yii_mail_messageinterface.html#setSubject()-detail">setSubject</a>( $subject )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$subject</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Message subject</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">static</td>
+				  <td class="paramDescCol">self reference.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Sets the message subject.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="setTextBody()-detail">
+		setTextBody()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			static <a href="yii_mail_messageinterface.html#setTextBody()-detail">setTextBody</a>( $text )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$text</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Message plain text content.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">static</td>
+				  <td class="paramDescCol">self reference.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Sets message plain text content.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="setHtmlBody()-detail">
+		setHtmlBody()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			static <a href="yii_mail_messageinterface.html#setHtmlBody()-detail">setHtmlBody</a>( $html )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$html</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Message HTML content.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">static</td>
+				  <td class="paramDescCol">self reference.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Sets message HTML content.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="attach()-detail">
+		attach()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			static <a href="yii_mail_messageinterface.html#attach()-detail">attach</a>( $fileName, array $options = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$fileName</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Full file name</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">Options for embed file. Valid options are:
+- fileName: name, which should be used to attach file.
+- contentType: attached file MIME type.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">static</td>
+				  <td class="paramDescCol">self reference.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Attaches existing file to the email message.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="attachContent()-detail">
+		attachContent()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			static <a href="yii_mail_messageinterface.html#attachContent()-detail">attachContent</a>( $content, array $options = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$content</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Attachment file content.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">Options for embed file. Valid options are:
+- fileName: name, which should be used to attach file.
+- contentType: attached file MIME type.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">static</td>
+				  <td class="paramDescCol">self reference.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Attach specified content as file for the email message.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="embed()-detail">
+		embed()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_mail_messageinterface.html#embed()-detail">embed</a>( $fileName, array $options = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$fileName</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">File name.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">Options for embed file. Valid options are:
+- fileName: name, which should be used to attach file.
+- contentType: attached file MIME type.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">attachment CID.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Attach a file and return it's CID source.</strong></p>
+	<p>This method should be used when embedding images or other data in a message.</p>
+
+	
+
+	<div class="detailHeader" id="embedContent()-detail">
+		embedContent()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_mail_messageinterface.html#embedContent()-detail">embedContent</a>( $content, array $options = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$content</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Attachment file content.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">Options for embed file. Valid options are:
+- fileName: name, which should be used to attach file.
+- contentType: attached file MIME type.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">attachment CID.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Attach a content as file and return it's CID source.</strong></p>
+	<p>This method should be used when embedding images or other data in a message.</p>
+
+	
+
+	<div class="detailHeader" id="send()-detail">
+		send()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			boolean <a href="yii_mail_messageinterface.html#send()-detail">send</a>( \yii\mail\MailerInterface $mailer = null )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$mailer</td>
+				  <td class="paramTypeCol"><a href="yii_mail_mailerinterface.html">yii\mail\MailerInterface</a></td>
+				  <td class="paramDescCol">The mailer that should be used to send this message.
+If null, the "mail" application component will be used instead.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">whether this message is sent successfully.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Sends this email message.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="toString()-detail">
+		toString()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_mail_messageinterface.html#toString()-detail">toString</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the string representation of this message.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns string representation of this message.</strong></p>
+	<p></p>
+
+	
+		</div><!-- end of content -->
+
+		<div id="apiFooter">
+			<p>&copy; 2008-2013 by <a href="http://www.yiisoft.com">Yii Software LLC</a></p>
+			<p>All Rights Reserved.</p>
+		</div><!-- end of footer -->
+
+<script type="text/javascript">
+/*<![CDATA[*/
+$("a.toggle").on('click', function() {
+	var $this = $(this);
+	if ($this.hasClass('properties-hidden')) {
+		$this.text($this.text().replace(/Show/,'Hide'));
+		$this.parents(".summary").find(".inherited").show();
+		$this.removeClass('properties-hidden');
+	} else {
+		$this.text($this.text().replace(/Hide/,'Show'));
+		$this.parents(".summary").find(".inherited").hide();
+		$this.addClass('properties-hidden');
+	}
+	return false;
+});
+/*
+$(".sourceCode a.show").toggle(function(){
+	$(this).text($(this).text().replace(/show/,'hide'));
+	$(this).parents(".sourceCode").find("div.code").show();
+},function(){
+	$(this).text($(this).text().replace(/hide/,'show'));
+	$(this).parents(".sourceCode").find("div.code").hide();
+});
+$("a.sourceLink").click(function(){
+	$(this).attr('target','_blank');
+});
+*/
+/*]]>*/
+</script>
+
+	</div><!-- end of page -->
+</body>
+</html>

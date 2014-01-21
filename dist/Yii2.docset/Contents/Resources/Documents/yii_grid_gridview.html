@@ -1,0 +1,1385 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="language" content="en" />
+<link href="./assets/4138e429/api.css" rel="stylesheet">
+<link href="./assets/4138e429/style.css" rel="stylesheet">
+<script src="./assets/a91b37a6/jquery.js"></script><title>Yii Framework 2.0 API Documentation</title>
+</head>
+
+<body>
+	<div id="apiPage">
+
+		<div id="apiHeader">
+			<a href="http://www.yiiframework.com">Yii Framework</a> v2.0.0-dev Class Reference
+		</div><!-- end of header -->
+
+		<div id="content">
+		<h1>Class yii\grid\GridView</h1>
+<div id="nav">
+	<a href="index.html">All Classes</a>
+			| <a href="#properties">Properties</a>
+				| <a href="#methods">Methods</a>
+					| <a href="#constants">Constants</a>
+	</div>
+
+<table class="summaryTable docClass">
+	<colgroup>
+		<col class="col-name" />
+		<col class="col-value" />
+	</colgroup>
+			<tr><th>Inheritance</th><td><a href="yii_grid_gridview.html">yii\grid\GridView</a> &raquo;
+<a href="yii_widgets_baselistview.html">yii\widgets\BaseListView</a> &raquo;
+<a href="yii_base_widget.html">yii\base\Widget</a> &raquo;
+<a href="yii_base_component.html">yii\base\Component</a> &raquo;
+<a href="yii_base_object.html">yii\base\Object</a></td></tr>
+				<tr><th>Implements</th><td><a href="yii_base_arrayable.html">yii\base\Arrayable</a>, <a href="yii_base_viewcontextinterface.html">yii\base\ViewContextInterface</a></td></tr>
+								<tr><th>Available since version</th><td>2.0</td></tr>
+		<tr>
+	  <th>Source Code</th>
+	  <td></td>
+	</tr>
+</table>
+
+<div id="classDescription">
+	<strong>The GridView widget is used to display data in a grid.</strong>
+	<p>It provides features like sorting, paging and also filtering the data.</p>
+</div>
+
+<a name="properties"></a>
+
+<div class="summary docProperty">
+<h2>Public Properties</h2>
+
+<p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-property" />
+	<col class="col-type" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Property</th><th>Type</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr class="inherited" id="$counter">
+		<td><a href="yii_base_widget.html#$counter-detail">$counter</a></td>
+		<td>integer</td>
+		<td>A counter used to generate <a href="yii_grid_gridview.html#$id-detail">$id</a> for widgets</td>
+		<td><a href="yii_base_widget.html">yii\base\Widget</a></td>
+	</tr>
+			<tr class="inherited" id="$autoIdPrefix">
+		<td><a href="yii_base_widget.html#$autoIdPrefix-detail">$autoIdPrefix</a></td>
+		<td>string</td>
+		<td>The prefix to the automatically generated widget IDs</td>
+		<td><a href="yii_base_widget.html">yii\base\Widget</a></td>
+	</tr>
+			<tr class="inherited" id="$stack">
+		<td><a href="yii_base_widget.html#$stack-detail">$stack</a></td>
+		<td><a href="yii_base_widget.html">yii\base\Widget</a>[]</td>
+		<td>The widgets that are currently being rendered (not ended)</td>
+		<td><a href="yii_base_widget.html">yii\base\Widget</a></td>
+	</tr>
+			<tr id="$options">
+		<td><a href="yii_grid_gridview.html#$options-detail">$options</a></td>
+		<td>array</td>
+		<td>The HTML attributes for the container tag of the grid view</td>
+		<td><a href="yii_grid_gridview.html">yii\grid\GridView</a></td>
+	</tr>
+			<tr class="inherited" id="$dataProvider">
+		<td><a href="yii_widgets_baselistview.html#$dataProvider-detail">$dataProvider</a></td>
+		<td><a href="yii_data_dataproviderinterface.html">yii\data\DataProviderInterface</a></td>
+		<td>The data provider for the view</td>
+		<td><a href="yii_widgets_baselistview.html">yii\widgets\BaseListView</a></td>
+	</tr>
+			<tr class="inherited" id="$pager">
+		<td><a href="yii_widgets_baselistview.html#$pager-detail">$pager</a></td>
+		<td>array</td>
+		<td>The configuration for the pager widget</td>
+		<td><a href="yii_widgets_baselistview.html">yii\widgets\BaseListView</a></td>
+	</tr>
+			<tr class="inherited" id="$sorter">
+		<td><a href="yii_widgets_baselistview.html#$sorter-detail">$sorter</a></td>
+		<td>array</td>
+		<td>The configuration for the sorter widget</td>
+		<td><a href="yii_widgets_baselistview.html">yii\widgets\BaseListView</a></td>
+	</tr>
+			<tr class="inherited" id="$summary">
+		<td><a href="yii_widgets_baselistview.html#$summary-detail">$summary</a></td>
+		<td>string</td>
+		<td>The HTML content to be displayed as the summary of the list view</td>
+		<td><a href="yii_widgets_baselistview.html">yii\widgets\BaseListView</a></td>
+	</tr>
+			<tr id="$showOnEmpty">
+		<td><a href="yii_grid_gridview.html#$showOnEmpty-detail">$showOnEmpty</a></td>
+		<td>boolean</td>
+		<td>Whether to show the grid view if <a href="yii_widgets_baselistview.html#$dataProvider-detail">$dataProvider</a> returns no data</td>
+		<td><a href="yii_grid_gridview.html">yii\grid\GridView</a></td>
+	</tr>
+			<tr class="inherited" id="$emptyText">
+		<td><a href="yii_widgets_baselistview.html#$emptyText-detail">$emptyText</a></td>
+		<td>string</td>
+		<td>The HTML content to be displayed when <a href="yii_widgets_baselistview.html#$dataProvider-detail">$dataProvider</a> does not have any data</td>
+		<td><a href="yii_widgets_baselistview.html">yii\widgets\BaseListView</a></td>
+	</tr>
+			<tr class="inherited" id="$layout">
+		<td><a href="yii_widgets_baselistview.html#$layout-detail">$layout</a></td>
+		<td>string</td>
+		<td>The layout that determines how different sections of the list view should be organized</td>
+		<td><a href="yii_widgets_baselistview.html">yii\widgets\BaseListView</a></td>
+	</tr>
+			<tr id="$dataColumnClass">
+		<td><a href="yii_grid_gridview.html#$dataColumnClass-detail">$dataColumnClass</a></td>
+		<td>string</td>
+		<td>The default data column class if the class name is not explicitly specified when configuring a data column</td>
+		<td><a href="yii_grid_gridview.html">yii\grid\GridView</a></td>
+	</tr>
+			<tr id="$caption">
+		<td><a href="yii_grid_gridview.html#$caption-detail">$caption</a></td>
+		<td>string</td>
+		<td>The caption of the grid table</td>
+		<td><a href="yii_grid_gridview.html">yii\grid\GridView</a></td>
+	</tr>
+			<tr id="$captionOptions">
+		<td><a href="yii_grid_gridview.html#$captionOptions-detail">$captionOptions</a></td>
+		<td>array</td>
+		<td>The HTML attributes for the caption element</td>
+		<td><a href="yii_grid_gridview.html">yii\grid\GridView</a></td>
+	</tr>
+			<tr id="$tableOptions">
+		<td><a href="yii_grid_gridview.html#$tableOptions-detail">$tableOptions</a></td>
+		<td>array</td>
+		<td>The HTML attributes for the grid table element</td>
+		<td><a href="yii_grid_gridview.html">yii\grid\GridView</a></td>
+	</tr>
+			<tr id="$headerRowOptions">
+		<td><a href="yii_grid_gridview.html#$headerRowOptions-detail">$headerRowOptions</a></td>
+		<td>array</td>
+		<td>The HTML attributes for the table header row</td>
+		<td><a href="yii_grid_gridview.html">yii\grid\GridView</a></td>
+	</tr>
+			<tr id="$footerRowOptions">
+		<td><a href="yii_grid_gridview.html#$footerRowOptions-detail">$footerRowOptions</a></td>
+		<td>array</td>
+		<td>The HTML attributes for the table footer row</td>
+		<td><a href="yii_grid_gridview.html">yii\grid\GridView</a></td>
+	</tr>
+			<tr id="$rowOptions">
+		<td><a href="yii_grid_gridview.html#$rowOptions-detail">$rowOptions</a></td>
+		<td>array|\Closure</td>
+		<td>The HTML attributes for the table body rows</td>
+		<td><a href="yii_grid_gridview.html">yii\grid\GridView</a></td>
+	</tr>
+			<tr id="$beforeRow">
+		<td><a href="yii_grid_gridview.html#$beforeRow-detail">$beforeRow</a></td>
+		<td>\Closure</td>
+		<td>An anonymous function that is called once BEFORE rendering each data model</td>
+		<td><a href="yii_grid_gridview.html">yii\grid\GridView</a></td>
+	</tr>
+			<tr id="$afterRow">
+		<td><a href="yii_grid_gridview.html#$afterRow-detail">$afterRow</a></td>
+		<td>\Closure</td>
+		<td>An anonymous function that is called once AFTER rendering each data model</td>
+		<td><a href="yii_grid_gridview.html">yii\grid\GridView</a></td>
+	</tr>
+			<tr id="$showHeader">
+		<td><a href="yii_grid_gridview.html#$showHeader-detail">$showHeader</a></td>
+		<td>boolean</td>
+		<td>Whether to show the header section of the grid table</td>
+		<td><a href="yii_grid_gridview.html">yii\grid\GridView</a></td>
+	</tr>
+			<tr id="$showFooter">
+		<td><a href="yii_grid_gridview.html#$showFooter-detail">$showFooter</a></td>
+		<td>boolean</td>
+		<td>Whether to show the footer section of the grid table</td>
+		<td><a href="yii_grid_gridview.html">yii\grid\GridView</a></td>
+	</tr>
+			<tr id="$formatter">
+		<td><a href="yii_grid_gridview.html#$formatter-detail">$formatter</a></td>
+		<td>array|<a href="yii_base_formatter.html">yii\base\Formatter</a></td>
+		<td>The formatter used to format model attribute values into displayable texts</td>
+		<td><a href="yii_grid_gridview.html">yii\grid\GridView</a></td>
+	</tr>
+			<tr id="$columns">
+		<td><a href="yii_grid_gridview.html#$columns-detail">$columns</a></td>
+		<td>array</td>
+		<td>Grid column configuration</td>
+		<td><a href="yii_grid_gridview.html">yii\grid\GridView</a></td>
+	</tr>
+			<tr id="$emptyCell">
+		<td><a href="yii_grid_gridview.html#$emptyCell-detail">$emptyCell</a></td>
+		<td></td>
+		<td></td>
+		<td><a href="yii_grid_gridview.html">yii\grid\GridView</a></td>
+	</tr>
+			<tr id="$filterModel">
+		<td><a href="yii_grid_gridview.html#$filterModel-detail">$filterModel</a></td>
+		<td><a href="yii_base_model.html">yii\base\Model</a></td>
+		<td>The model that keeps the user-entered filter data</td>
+		<td><a href="yii_grid_gridview.html">yii\grid\GridView</a></td>
+	</tr>
+			<tr id="$filterUrl">
+		<td><a href="yii_grid_gridview.html#$filterUrl-detail">$filterUrl</a></td>
+		<td>string|array</td>
+		<td>The URL for returning the filtering result</td>
+		<td><a href="yii_grid_gridview.html">yii\grid\GridView</a></td>
+	</tr>
+			<tr id="$filterSelector">
+		<td><a href="yii_grid_gridview.html#$filterSelector-detail">$filterSelector</a></td>
+		<td></td>
+		<td></td>
+		<td><a href="yii_grid_gridview.html">yii\grid\GridView</a></td>
+	</tr>
+			<tr id="$filterPosition">
+		<td><a href="yii_grid_gridview.html#$filterPosition-detail">$filterPosition</a></td>
+		<td>string</td>
+		<td>Whether the filters should be displayed in the grid view</td>
+		<td><a href="yii_grid_gridview.html">yii\grid\GridView</a></td>
+	</tr>
+			<tr id="$filterRowOptions">
+		<td><a href="yii_grid_gridview.html#$filterRowOptions-detail">$filterRowOptions</a></td>
+		<td>array</td>
+		<td>The HTML attributes for the filter row element</td>
+		<td><a href="yii_grid_gridview.html">yii\grid\GridView</a></td>
+	</tr>
+			<tr id="$behaviors">
+		<td><a href="yii_grid_gridview.html#$behaviors-detail">$behaviors</a></td>
+		<td><a href="yii_base_behavior.html">yii\base\Behavior</a>[]</td>
+		<td>list of behaviors attached to this component</td>
+		<td><a href="yii_grid_gridview.html">yii\grid\GridView</a></td>
+	</tr>
+			<tr id="$id">
+		<td><a href="yii_grid_gridview.html#$id-detail">$id</a></td>
+		<td>string</td>
+		<td>ID of the widget</td>
+		<td><a href="yii_grid_gridview.html">yii\grid\GridView</a></td>
+	</tr>
+			<tr id="$view">
+		<td><a href="yii_grid_gridview.html#$view-detail">$view</a></td>
+		<td><a href="yii_web_view.html">yii\web\View</a></td>
+		<td>the view object that can be used to render views or view files</td>
+		<td><a href="yii_grid_gridview.html">yii\grid\GridView</a></td>
+	</tr>
+			<tr id="$viewPath">
+		<td><a href="yii_grid_gridview.html#$viewPath-detail">$viewPath</a></td>
+		<td>string</td>
+		<td>the directory containing the view files for this widget</td>
+		<td><a href="yii_grid_gridview.html">yii\grid\GridView</a></td>
+	</tr>
+	</table>
+</div>
+<a name="methods"></a>
+
+<div class="summary docMethod">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr class="inherited" id="className()">
+		<td><a href="yii_base_object.html#className()-detail">className()</a></td>
+		<td></td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__construct()">
+		<td><a href="yii_base_object.html#__construct()-detail">__construct()</a></td>
+		<td>Constructor.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr id="init()">
+		<td><a href="yii_grid_gridview.html#init()-detail">init()</a></td>
+		<td>Initializes the grid view.</td>
+		<td><a href="yii_grid_gridview.html">yii\grid\GridView</a></td>
+	</tr>
+			<tr class="inherited" id="__get()">
+		<td><a href="yii_base_component.html#__get()-detail">__get()</a></td>
+		<td>Returns the value of a component property.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__set()">
+		<td><a href="yii_base_component.html#__set()-detail">__set()</a></td>
+		<td>Sets the value of a component property.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__isset()">
+		<td><a href="yii_base_component.html#__isset()-detail">__isset()</a></td>
+		<td>Checks if a property value is null.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__unset()">
+		<td><a href="yii_base_component.html#__unset()-detail">__unset()</a></td>
+		<td>Sets a component property to be null.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__call()">
+		<td><a href="yii_base_component.html#__call()-detail">__call()</a></td>
+		<td>Calls the named method which is not a class method.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasProperty()">
+		<td><a href="yii_base_component.html#hasProperty()-detail">hasProperty()</a></td>
+		<td>Returns a value indicating whether a property is defined for this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="canGetProperty()">
+		<td><a href="yii_base_component.html#canGetProperty()-detail">canGetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be read.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="canSetProperty()">
+		<td><a href="yii_base_component.html#canSetProperty()-detail">canSetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be set.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasMethod()">
+		<td><a href="yii_base_component.html#hasMethod()-detail">hasMethod()</a></td>
+		<td>Returns a value indicating whether a method is defined.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="toArray()">
+		<td><a href="yii_base_object.html#toArray()-detail">toArray()</a></td>
+		<td>Converts the object into an array.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__clone()">
+		<td><a href="yii_base_component.html#__clone()-detail">__clone()</a></td>
+		<td>This method is called after the object is created by cloning an existing one.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="behaviors()">
+		<td><a href="yii_base_component.html#behaviors()-detail">behaviors()</a></td>
+		<td>Returns a list of behaviors that this component should behave as.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasEventHandlers()">
+		<td><a href="yii_base_component.html#hasEventHandlers()-detail">hasEventHandlers()</a></td>
+		<td>Returns a value indicating whether there is any handler attached to the named event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="on()">
+		<td><a href="yii_base_component.html#on()-detail">on()</a></td>
+		<td>Attaches an event handler to an event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="off()">
+		<td><a href="yii_base_component.html#off()-detail">off()</a></td>
+		<td>Detaches an existing event handler from this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="trigger()">
+		<td><a href="yii_base_component.html#trigger()-detail">trigger()</a></td>
+		<td>Triggers an event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="getBehavior()">
+		<td><a href="yii_base_component.html#getBehavior()-detail">getBehavior()</a></td>
+		<td>Returns the named behavior object.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="getBehaviors()">
+		<td><a href="yii_base_component.html#getBehaviors()-detail">getBehaviors()</a></td>
+		<td>Returns all behaviors attached to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="attachBehavior()">
+		<td><a href="yii_base_component.html#attachBehavior()-detail">attachBehavior()</a></td>
+		<td>Attaches a behavior to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="attachBehaviors()">
+		<td><a href="yii_base_component.html#attachBehaviors()-detail">attachBehaviors()</a></td>
+		<td>Attaches a list of behaviors to the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="detachBehavior()">
+		<td><a href="yii_base_component.html#detachBehavior()-detail">detachBehavior()</a></td>
+		<td>Detaches a behavior from the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="detachBehaviors()">
+		<td><a href="yii_base_component.html#detachBehaviors()-detail">detachBehaviors()</a></td>
+		<td>Detaches all behaviors from the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="ensureBehaviors()">
+		<td><a href="yii_base_component.html#ensureBehaviors()-detail">ensureBehaviors()</a></td>
+		<td>Makes sure that the behaviors declared in <a href="yii_base_component.html#behaviors()-detail">behaviors()</a> are attached to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="begin()">
+		<td><a href="yii_base_widget.html#begin()-detail">begin()</a></td>
+		<td>Begins a widget.</td>
+		<td><a href="yii_base_widget.html">yii\base\Widget</a></td>
+	</tr>
+			<tr class="inherited" id="end()">
+		<td><a href="yii_base_widget.html#end()-detail">end()</a></td>
+		<td>Ends a widget.</td>
+		<td><a href="yii_base_widget.html">yii\base\Widget</a></td>
+	</tr>
+			<tr class="inherited" id="widget()">
+		<td><a href="yii_base_widget.html#widget()-detail">widget()</a></td>
+		<td>Creates a widget instance and runs it.</td>
+		<td><a href="yii_base_widget.html">yii\base\Widget</a></td>
+	</tr>
+			<tr class="inherited" id="getId()">
+		<td><a href="yii_base_widget.html#getId()-detail">getId()</a></td>
+		<td>Returns the ID of the widget.</td>
+		<td><a href="yii_base_widget.html">yii\base\Widget</a></td>
+	</tr>
+			<tr class="inherited" id="setId()">
+		<td><a href="yii_base_widget.html#setId()-detail">setId()</a></td>
+		<td>Sets the ID of the widget.</td>
+		<td><a href="yii_base_widget.html">yii\base\Widget</a></td>
+	</tr>
+			<tr class="inherited" id="getView()">
+		<td><a href="yii_base_widget.html#getView()-detail">getView()</a></td>
+		<td>Returns the view object that can be used to render views or view files.</td>
+		<td><a href="yii_base_widget.html">yii\base\Widget</a></td>
+	</tr>
+			<tr class="inherited" id="setView()">
+		<td><a href="yii_base_widget.html#setView()-detail">setView()</a></td>
+		<td>Sets the view object to be used by this widget.</td>
+		<td><a href="yii_base_widget.html">yii\base\Widget</a></td>
+	</tr>
+			<tr id="run()">
+		<td><a href="yii_grid_gridview.html#run()-detail">run()</a></td>
+		<td>Runs the widget.</td>
+		<td><a href="yii_grid_gridview.html">yii\grid\GridView</a></td>
+	</tr>
+			<tr class="inherited" id="render()">
+		<td><a href="yii_base_widget.html#render()-detail">render()</a></td>
+		<td>Renders a view.</td>
+		<td><a href="yii_base_widget.html">yii\base\Widget</a></td>
+	</tr>
+			<tr class="inherited" id="renderFile()">
+		<td><a href="yii_base_widget.html#renderFile()-detail">renderFile()</a></td>
+		<td>Renders a view file.</td>
+		<td><a href="yii_base_widget.html">yii\base\Widget</a></td>
+	</tr>
+			<tr class="inherited" id="getViewPath()">
+		<td><a href="yii_base_widget.html#getViewPath()-detail">getViewPath()</a></td>
+		<td>Returns the directory containing the view files for this widget.</td>
+		<td><a href="yii_base_widget.html">yii\base\Widget</a></td>
+	</tr>
+			<tr class="inherited" id="findViewFile()">
+		<td><a href="yii_base_widget.html#findViewFile()-detail">findViewFile()</a></td>
+		<td>Finds the view file based on the given view name.</td>
+		<td><a href="yii_base_widget.html">yii\base\Widget</a></td>
+	</tr>
+			<tr id="renderItems()">
+		<td><a href="yii_grid_gridview.html#renderItems()-detail">renderItems()</a></td>
+		<td>Renders the data models for the grid view.</td>
+		<td><a href="yii_grid_gridview.html">yii\grid\GridView</a></td>
+	</tr>
+			<tr class="inherited" id="renderSection()">
+		<td><a href="yii_widgets_baselistview.html#renderSection()-detail">renderSection()</a></td>
+		<td>Renders a section of the specified name.</td>
+		<td><a href="yii_widgets_baselistview.html">yii\widgets\BaseListView</a></td>
+	</tr>
+			<tr class="inherited" id="renderEmpty()">
+		<td><a href="yii_widgets_baselistview.html#renderEmpty()-detail">renderEmpty()</a></td>
+		<td>Renders the HTML content indicating that the list view has no data.</td>
+		<td><a href="yii_widgets_baselistview.html">yii\widgets\BaseListView</a></td>
+	</tr>
+			<tr class="inherited" id="renderSummary()">
+		<td><a href="yii_widgets_baselistview.html#renderSummary()-detail">renderSummary()</a></td>
+		<td>Renders the summary text.</td>
+		<td><a href="yii_widgets_baselistview.html">yii\widgets\BaseListView</a></td>
+	</tr>
+			<tr class="inherited" id="renderPager()">
+		<td><a href="yii_widgets_baselistview.html#renderPager()-detail">renderPager()</a></td>
+		<td>Renders the pager.</td>
+		<td><a href="yii_widgets_baselistview.html">yii\widgets\BaseListView</a></td>
+	</tr>
+			<tr class="inherited" id="renderSorter()">
+		<td><a href="yii_widgets_baselistview.html#renderSorter()-detail">renderSorter()</a></td>
+		<td>Renders the sorter.</td>
+		<td><a href="yii_widgets_baselistview.html">yii\widgets\BaseListView</a></td>
+	</tr>
+				<tr id="renderCaption()">
+		<td><a href="yii_grid_gridview.html#renderCaption()-detail">renderCaption()</a></td>
+		<td></td>
+		<td><a href="yii_grid_gridview.html">yii\grid\GridView</a></td>
+	</tr>
+			<tr id="renderColumnGroup()">
+		<td><a href="yii_grid_gridview.html#renderColumnGroup()-detail">renderColumnGroup()</a></td>
+		<td></td>
+		<td><a href="yii_grid_gridview.html">yii\grid\GridView</a></td>
+	</tr>
+			<tr id="renderTableHeader()">
+		<td><a href="yii_grid_gridview.html#renderTableHeader()-detail">renderTableHeader()</a></td>
+		<td>Renders the table header.</td>
+		<td><a href="yii_grid_gridview.html">yii\grid\GridView</a></td>
+	</tr>
+			<tr id="renderTableFooter()">
+		<td><a href="yii_grid_gridview.html#renderTableFooter()-detail">renderTableFooter()</a></td>
+		<td>Renders the table footer.</td>
+		<td><a href="yii_grid_gridview.html">yii\grid\GridView</a></td>
+	</tr>
+			<tr id="renderFilters()">
+		<td><a href="yii_grid_gridview.html#renderFilters()-detail">renderFilters()</a></td>
+		<td>Renders the filter.</td>
+		<td><a href="yii_grid_gridview.html">yii\grid\GridView</a></td>
+	</tr>
+			<tr id="renderTableBody()">
+		<td><a href="yii_grid_gridview.html#renderTableBody()-detail">renderTableBody()</a></td>
+		<td>Renders the table body.</td>
+		<td><a href="yii_grid_gridview.html">yii\grid\GridView</a></td>
+	</tr>
+			<tr id="renderTableRow()">
+		<td><a href="yii_grid_gridview.html#renderTableRow()-detail">renderTableRow()</a></td>
+		<td>Renders a table row with the given data model and key.</td>
+		<td><a href="yii_grid_gridview.html">yii\grid\GridView</a></td>
+	</tr>
+				</table>
+</div>
+<div class="summary docMethod">
+<h2>Protected Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+																																														<tr id="getClientOptions()">
+		<td><a href="yii_grid_gridview.html#getClientOptions()-detail">getClientOptions()</a></td>
+		<td>Returns the options for the grid view JS widget.</td>
+		<td><a href="yii_grid_gridview.html">yii\grid\GridView</a></td>
+	</tr>
+										<tr id="initColumns()">
+		<td><a href="yii_grid_gridview.html#initColumns()-detail">initColumns()</a></td>
+		<td>Creates column objects and initializes them.</td>
+		<td><a href="yii_grid_gridview.html">yii\grid\GridView</a></td>
+	</tr>
+			<tr id="createDataColumn()">
+		<td><a href="yii_grid_gridview.html#createDataColumn()-detail">createDataColumn()</a></td>
+		<td>Creates a <a href="yii_grid_datacolumn.html">yii\grid\DataColumn</a> object based on a string in the format of "attribute:format:label".</td>
+		<td><a href="yii_grid_gridview.html">yii\grid\GridView</a></td>
+	</tr>
+			<tr id="guessColumns()">
+		<td><a href="yii_grid_gridview.html#guessColumns()-detail">guessColumns()</a></td>
+		<td></td>
+		<td><a href="yii_grid_gridview.html">yii\grid\GridView</a></td>
+	</tr>
+	</table>
+</div>
+<a name="events"></a>
+
+<a name="constants"></a>
+<div class="summary docConst">
+<h2>Constants</h2>
+
+<p><a href="#" class="toggle">Hide inherited constants</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-const" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Constant</th><th>Value</th><th>Description</th><th>Defined By</th>
+</tr>
+	<tr id="FILTER_POS_HEADER">
+	  <td>FILTER_POS_HEADER<a name="FILTER_POS_HEADER-detail"></a></td>
+	  <td>'header'</td>
+	  <td></td>
+	  <td><a href="yii_grid_gridview.html">yii\grid\GridView</a></td>
+	</tr>
+	<tr id="FILTER_POS_FOOTER">
+	  <td>FILTER_POS_FOOTER<a name="FILTER_POS_FOOTER-detail"></a></td>
+	  <td>'footer'</td>
+	  <td></td>
+	  <td><a href="yii_grid_gridview.html">yii\grid\GridView</a></td>
+	</tr>
+	<tr id="FILTER_POS_BODY">
+	  <td>FILTER_POS_BODY<a name="FILTER_POS_BODY-detail"></a></td>
+	  <td>'body'</td>
+	  <td></td>
+	  <td><a href="yii_grid_gridview.html">yii\grid\GridView</a></td>
+	</tr>
+</table>
+</div>
+<h2>Property Details</h2>
+
+
+	<div class="detailHeader" id="$options-detail">
+		$options		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array $options = ['class' => 'grid-view']	</div>
+
+	<p>The HTML attributes for the container tag of the grid view.
+The "tag" element specifies the tag name of the container element and defaults to "div".</p>
+
+	
+
+	<div class="detailHeader" id="$showOnEmpty-detail">
+		$showOnEmpty		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	boolean $showOnEmpty = true	</div>
+
+	<p>Whether to show the grid view if <a href="yii_widgets_baselistview.html#$dataProvider-detail">$dataProvider</a> returns no data.</p>
+
+	
+
+	<div class="detailHeader" id="$dataColumnClass-detail">
+		$dataColumnClass		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $dataColumnClass = null	</div>
+
+	<p>The default data column class if the class name is not explicitly specified when configuring a data column.
+Defaults to 'yii\grid\DataColumn'.</p>
+
+	
+
+	<div class="detailHeader" id="$caption-detail">
+		$caption		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $caption = null	</div>
+
+	<p>The caption of the grid table</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_grid_gridview.html#$captionOptions-detail">$captionOptions</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="$captionOptions-detail">
+		$captionOptions		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array $captionOptions = []	</div>
+
+	<p>The HTML attributes for the caption element</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_grid_gridview.html#$caption-detail">$caption</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="$tableOptions-detail">
+		$tableOptions		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array $tableOptions = ['class' => 'table table-striped table-bordered']	</div>
+
+	<p>The HTML attributes for the grid table element</p>
+
+	
+
+	<div class="detailHeader" id="$headerRowOptions-detail">
+		$headerRowOptions		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array $headerRowOptions = []	</div>
+
+	<p>The HTML attributes for the table header row</p>
+
+	
+
+	<div class="detailHeader" id="$footerRowOptions-detail">
+		$footerRowOptions		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array $footerRowOptions = []	</div>
+
+	<p>The HTML attributes for the table footer row</p>
+
+	
+
+	<div class="detailHeader" id="$rowOptions-detail">
+		$rowOptions		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array|\Closure $rowOptions = []	</div>
+
+	<p><p>The HTML attributes for the table body rows. This can be either an array
+specifying the common HTML attributes for all body rows, or an anonymous function that
+returns an array of the HTML attributes. The anonymous function will be called once for every
+data model returned by <a href="yii_widgets_baselistview.html#$dataProvider-detail">$dataProvider</a>. It should have the following signature:</p>
+
+<pre><code class="php">function ($model, $key, $index, $grid)
+</code></pre>
+
+<ul>
+<li><code>$model</code>: the current data model being rendered</li>
+<li><code>$key</code>: the key value associated with the current data model</li>
+<li><code>$index</code>: the zero-based index of the data model in the model array returned by <a href="yii_widgets_baselistview.html#$dataProvider-detail">$dataProvider</a></li>
+<li><code>$grid</code>: the GridView object</li>
+</ul></p>
+
+	
+
+	<div class="detailHeader" id="$beforeRow-detail">
+		$beforeRow		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	\Closure $beforeRow = null	</div>
+
+	<p>An anonymous function that is called once BEFORE rendering each data model.
+It should have the similar signature as <a href="yii_grid_gridview.html#$rowOptions-detail">$rowOptions</a>. The return result of the function
+will be rendered directly.</p>
+
+	
+
+	<div class="detailHeader" id="$afterRow-detail">
+		$afterRow		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	\Closure $afterRow = null	</div>
+
+	<p>An anonymous function that is called once AFTER rendering each data model.
+It should have the similar signature as <a href="yii_grid_gridview.html#$rowOptions-detail">$rowOptions</a>. The return result of the function
+will be rendered directly.</p>
+
+	
+
+	<div class="detailHeader" id="$showHeader-detail">
+		$showHeader		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	boolean $showHeader = true	</div>
+
+	<p>Whether to show the header section of the grid table.</p>
+
+	
+
+	<div class="detailHeader" id="$showFooter-detail">
+		$showFooter		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	boolean $showFooter = false	</div>
+
+	<p>Whether to show the footer section of the grid table.</p>
+
+	
+
+	<div class="detailHeader" id="$formatter-detail">
+		$formatter		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array|<a href="yii_base_formatter.html">yii\base\Formatter</a> $formatter = null	</div>
+
+	<p>The formatter used to format model attribute values into displayable texts.
+This can be either an instance of <a href="yii_base_formatter.html">yii\base\Formatter</a> or an configuration array for creating the <a href="yii_base_formatter.html">yii\base\Formatter</a>
+instance. If this property is not set, the "formatter" application component will be used.</p>
+
+	
+
+	<div class="detailHeader" id="$columns-detail">
+		$columns		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array $columns = []	</div>
+
+	<p>Grid column configuration. Each array element represents the configuration
+for one particular grid column. For example,</p>
+
+<pre><code class="php">[
+    ['class' =&gt; SerialColumn::className()],
+    [
+        'class' =&gt; DataColumn::className(),
+        'attribute' =&gt; 'name',
+        'format' =&gt; 'text',
+        'label' =&gt; 'Name',
+    ],
+    ['class' =&gt; CheckboxColumn::className()],
+]
+</code></pre>
+
+<p>If a column is of class <a href="yii_grid_datacolumn.html">yii\grid\DataColumn</a>, the "class" element can be omitted.
+As a shortcut format, a string may be used to specify the configuration of a data column
+which only contains "attribute", "format", and/or "label" options: <code>"attribute:format:label"</code>.
+For example, the above "name" column can also be specified as: <code>"name:text:Name"</code>.
+Both "format" and "label" are optional. They will take default values if absent.</p>
+
+	
+
+	<div class="detailHeader" id="$emptyCell-detail">
+		$emptyCell		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	 $emptyCell = '&nbsp;'	</div>
+
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="$filterModel-detail">
+		$filterModel		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_base_model.html">yii\base\Model</a> $filterModel = null	</div>
+
+	<p>The model that keeps the user-entered filter data. When this property is set,
+the grid view will enable column-based filtering. Each data column by default will display a text field
+at the top that users can fill in to filter the data.
+Note that in order to show an input field for filtering, a column must have its <a href="yii_grid_datacolumn.html#$attribute-detail">yii\grid\DataColumn::$attribute</a>
+property set or have <a href="yii_grid_datacolumn.html#$filter-detail">yii\grid\DataColumn::$filter</a> set as the HTML code for the input field.
+When this property is not set (null) the filtering feature is disabled.</p>
+
+	
+
+	<div class="detailHeader" id="$filterUrl-detail">
+		$filterUrl		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string|array $filterUrl = null	</div>
+
+	<p>The URL for returning the filtering result. <a href="yii_helpers_basehtml.html#url()-detail">yii\helpers\Html::url()</a> will be called to
+normalize the URL. If not set, the current controller action will be used.
+When the user makes change to any filter input, the current filtering inputs will be appended
+as GET parameters to this URL.</p>
+
+	
+
+	<div class="detailHeader" id="$filterSelector-detail">
+		$filterSelector		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	 $filterSelector = null	</div>
+
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="$filterPosition-detail">
+		$filterPosition		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string $filterPosition = self::FILTER_POS_BODY	</div>
+
+	<p>Whether the filters should be displayed in the grid view. Valid values include:
+- <a href="yii_grid_gridview.html#FILTER_POS_HEADER-detail">FILTER_POS_HEADER</a>: the filters will be displayed on top of each column's header cell.
+- <a href="yii_grid_gridview.html#FILTER_POS_BODY-detail">FILTER_POS_BODY</a>: the filters will be displayed right below each column's header cell.
+- <a href="yii_grid_gridview.html#FILTER_POS_FOOTER-detail">FILTER_POS_FOOTER</a>: the filters will be displayed below each column's footer cell.</p>
+
+	
+
+	<div class="detailHeader" id="$filterRowOptions-detail">
+		$filterRowOptions		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array $filterRowOptions = ['class' => 'filters']	</div>
+
+	<p>The HTML attributes for the filter row element</p>
+
+	
+
+	<div class="detailHeader" id="$behaviors-detail">
+		$behaviors		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_base_behavior.html">yii\base\Behavior</a>[] <a href="yii_base_component.html#getBehaviors()-detail">getBehaviors</a>(  )	</div>
+
+	<p>list of behaviors attached to this component</p>
+
+	
+
+	<div class="detailHeader" id="$id-detail">
+		$id		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string <a href="yii_base_widget.html#getId()-detail">getId</a>( $autoGenerate = true )<br />void <a href="yii_base_widget.html#setId()-detail">setId</a>( $value )	</div>
+
+	<p>ID of the widget.</p>
+
+	
+
+	<div class="detailHeader" id="$view-detail">
+		$view		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_web_view.html">yii\web\View</a> <a href="yii_base_widget.html#getView()-detail">getView</a>(  )<br />void <a href="yii_base_widget.html#setView()-detail">setView</a>( $view )	</div>
+
+	<p>the view object that can be used to render views or view files.</p>
+
+	
+
+	<div class="detailHeader" id="$viewPath-detail">
+		$viewPath		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	string <a href="yii_base_widget.html#getViewPath()-detail">getViewPath</a>(  )	</div>
+
+	<p>the directory containing the view files for this widget.</p>
+
+	
+<h2>Method Details</h2>
+
+
+	<div class="detailHeader" id="init()-detail">
+		init()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_grid_gridview.html#init()-detail">init</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p>Initializes the grid view.</strong></p>
+	<p>This method will initialize required property values and instantiate <a href="yii_grid_gridview.html#$columns-detail">$columns</a> objects.</p>
+
+	
+
+	<div class="detailHeader" id="run()-detail">
+		run()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_grid_gridview.html#run()-detail">run</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p>Runs the widget.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="renderItems()-detail">
+		renderItems()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_grid_gridview.html#renderItems()-detail">renderItems</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p>Renders the data models for the grid view.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getClientOptions()-detail">
+		getClientOptions()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			array <a href="yii_grid_gridview.html#getClientOptions()-detail">getClientOptions</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">the options</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the options for the grid view JS widget.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="renderCaption()-detail">
+		renderCaption()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_grid_gridview.html#renderCaption()-detail">renderCaption</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="renderColumnGroup()-detail">
+		renderColumnGroup()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_grid_gridview.html#renderColumnGroup()-detail">renderColumnGroup</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="renderTableHeader()-detail">
+		renderTableHeader()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_grid_gridview.html#renderTableHeader()-detail">renderTableHeader</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the rendering result</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Renders the table header.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="renderTableFooter()-detail">
+		renderTableFooter()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_grid_gridview.html#renderTableFooter()-detail">renderTableFooter</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the rendering result</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Renders the table footer.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="renderFilters()-detail">
+		renderFilters()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_grid_gridview.html#renderFilters()-detail">renderFilters</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p>Renders the filter.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="renderTableBody()-detail">
+		renderTableBody()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_grid_gridview.html#renderTableBody()-detail">renderTableBody</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the rendering result</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Renders the table body.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="renderTableRow()-detail">
+		renderTableRow()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_grid_gridview.html#renderTableRow()-detail">renderTableRow</a>( $model, $key, $index )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$model</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">The data model to be rendered</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$key</td>
+				  <td class="paramTypeCol">mixed</td>
+				  <td class="paramDescCol">The key associated with the data model</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$index</td>
+				  <td class="paramTypeCol">integer</td>
+				  <td class="paramDescCol">The zero-based index of the data model among the model array returned by <a href="yii_widgets_baselistview.html#$dataProvider-detail">$dataProvider</a>.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the rendering result</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Renders a table row with the given data model and key.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="initColumns()-detail">
+		initColumns()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_grid_gridview.html#initColumns()-detail">initColumns</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p>Creates column objects and initializes them.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="createDataColumn()-detail">
+		createDataColumn()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			<a href="yii_grid_datacolumn.html">yii\grid\DataColumn</a> <a href="yii_grid_gridview.html#createDataColumn()-detail">createDataColumn</a>( $text )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$text</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The column specification string</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol"><a href="yii_grid_datacolumn.html">yii\grid\DataColumn</a></td>
+				  <td class="paramDescCol">the column instance</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_base_invalidconfigexception.html">yii\base\InvalidConfigException</a></td>
+				  <td class="paramDescCol">if the column specification is invalid</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Creates a <a href="yii_grid_datacolumn.html">yii\grid\DataColumn</a> object based on a string in the format of "attribute:format:label".</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="guessColumns()-detail">
+		guessColumns()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_grid_gridview.html#guessColumns()-detail">guessColumns</a>(  )			</div>
+		</td></tr>
+			</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+			</div><!-- end of content -->
+
+		<div id="apiFooter">
+			<p>&copy; 2008-2013 by <a href="http://www.yiisoft.com">Yii Software LLC</a></p>
+			<p>All Rights Reserved.</p>
+		</div><!-- end of footer -->
+
+<script type="text/javascript">
+/*<![CDATA[*/
+$("a.toggle").on('click', function() {
+	var $this = $(this);
+	if ($this.hasClass('properties-hidden')) {
+		$this.text($this.text().replace(/Show/,'Hide'));
+		$this.parents(".summary").find(".inherited").show();
+		$this.removeClass('properties-hidden');
+	} else {
+		$this.text($this.text().replace(/Hide/,'Show'));
+		$this.parents(".summary").find(".inherited").hide();
+		$this.addClass('properties-hidden');
+	}
+	return false;
+});
+/*
+$(".sourceCode a.show").toggle(function(){
+	$(this).text($(this).text().replace(/show/,'hide'));
+	$(this).parents(".sourceCode").find("div.code").show();
+},function(){
+	$(this).text($(this).text().replace(/hide/,'show'));
+	$(this).parents(".sourceCode").find("div.code").hide();
+});
+$("a.sourceLink").click(function(){
+	$(this).attr('target','_blank');
+});
+*/
+/*]]>*/
+</script>
+
+	</div><!-- end of page -->
+</body>
+</html>

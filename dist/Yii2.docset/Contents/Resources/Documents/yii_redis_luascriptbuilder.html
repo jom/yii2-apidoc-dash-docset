@@ -1,0 +1,552 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="language" content="en" />
+<link href="./assets/4138e429/api.css" rel="stylesheet">
+<link href="./assets/4138e429/style.css" rel="stylesheet">
+<script src="./assets/a91b37a6/jquery.js"></script><title>Yii Framework 2.0 API Documentation</title>
+</head>
+
+<body>
+	<div id="apiPage">
+
+		<div id="apiHeader">
+			<a href="http://www.yiiframework.com">Yii Framework</a> v2.0.0-dev Class Reference
+		</div><!-- end of header -->
+
+		<div id="content">
+		<h1>Class yii\redis\LuaScriptBuilder</h1>
+<div id="nav">
+	<a href="index.html">All Classes</a>
+				| <a href="#methods">Methods</a>
+			</div>
+
+<table class="summaryTable docClass">
+	<colgroup>
+		<col class="col-name" />
+		<col class="col-value" />
+	</colgroup>
+			<tr><th>Inheritance</th><td><a href="yii_redis_luascriptbuilder.html">yii\redis\LuaScriptBuilder</a> &raquo;
+<a href="yii_base_object.html">yii\base\Object</a></td></tr>
+				<tr><th>Implements</th><td><a href="yii_base_arrayable.html">yii\base\Arrayable</a></td></tr>
+								<tr><th>Available since version</th><td>2.0</td></tr>
+		<tr>
+	  <th>Source Code</th>
+	  <td></td>
+	</tr>
+</table>
+
+<div id="classDescription">
+	<strong>LuaScriptBuilder builds lua scripts used for retrieving data from redis.</strong>
+	<p></p>
+</div>
+
+<a name="properties"></a>
+
+<a name="methods"></a>
+
+<div class="summary docMethod">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr class="inherited" id="className()">
+		<td><a href="yii_base_object.html#className()-detail">className()</a></td>
+		<td></td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__construct()">
+		<td><a href="yii_base_object.html#__construct()-detail">__construct()</a></td>
+		<td>Constructor.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="init()">
+		<td><a href="yii_base_object.html#init()-detail">init()</a></td>
+		<td>Initializes the object.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__get()">
+		<td><a href="yii_base_object.html#__get()-detail">__get()</a></td>
+		<td>Returns the value of an object property.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__set()">
+		<td><a href="yii_base_object.html#__set()-detail">__set()</a></td>
+		<td>Sets value of an object property.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__isset()">
+		<td><a href="yii_base_object.html#__isset()-detail">__isset()</a></td>
+		<td>Checks if the named property is set (not null).</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__unset()">
+		<td><a href="yii_base_object.html#__unset()-detail">__unset()</a></td>
+		<td>Sets an object property to null.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__call()">
+		<td><a href="yii_base_object.html#__call()-detail">__call()</a></td>
+		<td>Calls the named method which is not a class method.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="hasProperty()">
+		<td><a href="yii_base_object.html#hasProperty()-detail">hasProperty()</a></td>
+		<td>Returns a value indicating whether a property is defined.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="canGetProperty()">
+		<td><a href="yii_base_object.html#canGetProperty()-detail">canGetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be read.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="canSetProperty()">
+		<td><a href="yii_base_object.html#canSetProperty()-detail">canSetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be set.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="hasMethod()">
+		<td><a href="yii_base_object.html#hasMethod()-detail">hasMethod()</a></td>
+		<td>Returns a value indicating whether a method is defined.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="toArray()">
+		<td><a href="yii_base_object.html#toArray()-detail">toArray()</a></td>
+		<td>Converts the object into an array.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr id="buildAll()">
+		<td><a href="yii_redis_luascriptbuilder.html#buildAll()-detail">buildAll()</a></td>
+		<td>Builds a Lua script for finding a list of records</td>
+		<td><a href="yii_redis_luascriptbuilder.html">yii\redis\LuaScriptBuilder</a></td>
+	</tr>
+			<tr id="buildOne()">
+		<td><a href="yii_redis_luascriptbuilder.html#buildOne()-detail">buildOne()</a></td>
+		<td>Builds a Lua script for finding one record</td>
+		<td><a href="yii_redis_luascriptbuilder.html">yii\redis\LuaScriptBuilder</a></td>
+	</tr>
+			<tr id="buildColumn()">
+		<td><a href="yii_redis_luascriptbuilder.html#buildColumn()-detail">buildColumn()</a></td>
+		<td>Builds a Lua script for finding a column</td>
+		<td><a href="yii_redis_luascriptbuilder.html">yii\redis\LuaScriptBuilder</a></td>
+	</tr>
+			<tr id="buildCount()">
+		<td><a href="yii_redis_luascriptbuilder.html#buildCount()-detail">buildCount()</a></td>
+		<td>Builds a Lua script for getting count of records</td>
+		<td><a href="yii_redis_luascriptbuilder.html">yii\redis\LuaScriptBuilder</a></td>
+	</tr>
+			<tr id="buildSum()">
+		<td><a href="yii_redis_luascriptbuilder.html#buildSum()-detail">buildSum()</a></td>
+		<td>Builds a Lua script for finding the sum of a column</td>
+		<td><a href="yii_redis_luascriptbuilder.html">yii\redis\LuaScriptBuilder</a></td>
+	</tr>
+			<tr id="buildAverage()">
+		<td><a href="yii_redis_luascriptbuilder.html#buildAverage()-detail">buildAverage()</a></td>
+		<td>Builds a Lua script for finding the average of a column</td>
+		<td><a href="yii_redis_luascriptbuilder.html">yii\redis\LuaScriptBuilder</a></td>
+	</tr>
+			<tr id="buildMin()">
+		<td><a href="yii_redis_luascriptbuilder.html#buildMin()-detail">buildMin()</a></td>
+		<td>Builds a Lua script for finding the min value of a column</td>
+		<td><a href="yii_redis_luascriptbuilder.html">yii\redis\LuaScriptBuilder</a></td>
+	</tr>
+			<tr id="buildMax()">
+		<td><a href="yii_redis_luascriptbuilder.html#buildMax()-detail">buildMax()</a></td>
+		<td>Builds a Lua script for finding the max value of a column</td>
+		<td><a href="yii_redis_luascriptbuilder.html">yii\redis\LuaScriptBuilder</a></td>
+	</tr>
+			<tr id="buildCondition()">
+		<td><a href="yii_redis_luascriptbuilder.html#buildCondition()-detail">buildCondition()</a></td>
+		<td>Parses the condition specification and generates the corresponding Lua expression.</td>
+		<td><a href="yii_redis_luascriptbuilder.html">yii\redis\LuaScriptBuilder</a></td>
+	</tr>
+		</table>
+</div>
+<div class="summary docMethod">
+<h2>Protected Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+																								<tr id="buildCompositeInCondition()">
+		<td><a href="yii_redis_luascriptbuilder.html#buildCompositeInCondition()-detail">buildCompositeInCondition()</a></td>
+		<td></td>
+		<td><a href="yii_redis_luascriptbuilder.html">yii\redis\LuaScriptBuilder</a></td>
+	</tr>
+	</table>
+</div>
+<a name="events"></a>
+
+<a name="constants"></a>
+
+<h2>Method Details</h2>
+
+
+	<div class="detailHeader" id="buildAll()-detail">
+		buildAll()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_redis_luascriptbuilder.html#buildAll()-detail">buildAll</a>( $query )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$query</td>
+				  <td class="paramTypeCol"><a href="yii_redis_activequery.html">yii\redis\ActiveQuery</a></td>
+				  <td class="paramDescCol">The query used to build the script</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Builds a Lua script for finding a list of records</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="buildOne()-detail">
+		buildOne()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_redis_luascriptbuilder.html#buildOne()-detail">buildOne</a>( $query )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$query</td>
+				  <td class="paramTypeCol"><a href="yii_redis_activequery.html">yii\redis\ActiveQuery</a></td>
+				  <td class="paramDescCol">The query used to build the script</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Builds a Lua script for finding one record</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="buildColumn()-detail">
+		buildColumn()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_redis_luascriptbuilder.html#buildColumn()-detail">buildColumn</a>( $query, $column )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$query</td>
+				  <td class="paramTypeCol"><a href="yii_redis_activequery.html">yii\redis\ActiveQuery</a></td>
+				  <td class="paramDescCol">The query used to build the script</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$column</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Name of the column</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Builds a Lua script for finding a column</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="buildCount()-detail">
+		buildCount()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_redis_luascriptbuilder.html#buildCount()-detail">buildCount</a>( $query )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$query</td>
+				  <td class="paramTypeCol"><a href="yii_redis_activequery.html">yii\redis\ActiveQuery</a></td>
+				  <td class="paramDescCol">The query used to build the script</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Builds a Lua script for getting count of records</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="buildSum()-detail">
+		buildSum()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_redis_luascriptbuilder.html#buildSum()-detail">buildSum</a>( $query, $column )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$query</td>
+				  <td class="paramTypeCol"><a href="yii_redis_activequery.html">yii\redis\ActiveQuery</a></td>
+				  <td class="paramDescCol">The query used to build the script</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$column</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Name of the column</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Builds a Lua script for finding the sum of a column</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="buildAverage()-detail">
+		buildAverage()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_redis_luascriptbuilder.html#buildAverage()-detail">buildAverage</a>( $query, $column )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$query</td>
+				  <td class="paramTypeCol"><a href="yii_redis_activequery.html">yii\redis\ActiveQuery</a></td>
+				  <td class="paramDescCol">The query used to build the script</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$column</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Name of the column</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Builds a Lua script for finding the average of a column</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="buildMin()-detail">
+		buildMin()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_redis_luascriptbuilder.html#buildMin()-detail">buildMin</a>( $query, $column )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$query</td>
+				  <td class="paramTypeCol"><a href="yii_redis_activequery.html">yii\redis\ActiveQuery</a></td>
+				  <td class="paramDescCol">The query used to build the script</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$column</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Name of the column</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Builds a Lua script for finding the min value of a column</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="buildMax()-detail">
+		buildMax()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_redis_luascriptbuilder.html#buildMax()-detail">buildMax</a>( $query, $column )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$query</td>
+				  <td class="paramTypeCol"><a href="yii_redis_activequery.html">yii\redis\ActiveQuery</a></td>
+				  <td class="paramDescCol">The query used to build the script</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$column</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Name of the column</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Builds a Lua script for finding the max value of a column</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="buildCondition()-detail">
+		buildCondition()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_redis_luascriptbuilder.html#buildCondition()-detail">buildCondition</a>( $condition, <b>&</b>$columns )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$condition</td>
+				  <td class="paramTypeCol">string|array</td>
+				  <td class="paramDescCol">The condition specification. Please refer to <a href="yii_db_querytrait.html#where()-detail">yii\redis\ActiveQuery::where()</a>
+on how to specify a condition.</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$columns</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The list of columns and aliases to be used</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the generated SQL expression</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_db_exception.html">yii\db\Exception</a></td>
+				  <td class="paramDescCol">if the condition is in bad format</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_base_notsupportedexception.html">yii\base\NotSupportedException</a></td>
+				  <td class="paramDescCol">if the condition is not an array</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Parses the condition specification and generates the corresponding Lua expression.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="buildCompositeInCondition()-detail">
+		buildCompositeInCondition()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_redis_luascriptbuilder.html#buildCompositeInCondition()-detail">buildCompositeInCondition</a>( $operator, $inColumns, $values, <b>&</b>$columns )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$operator</td>
+				  <td class="paramTypeCol"></td>
+				  <td class="paramDescCol"></td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$inColumns</td>
+				  <td class="paramTypeCol"></td>
+				  <td class="paramDescCol"></td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$values</td>
+				  <td class="paramTypeCol"></td>
+				  <td class="paramDescCol"></td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$columns</td>
+				  <td class="paramTypeCol"></td>
+				  <td class="paramDescCol"></td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+			</div><!-- end of content -->
+
+		<div id="apiFooter">
+			<p>&copy; 2008-2013 by <a href="http://www.yiisoft.com">Yii Software LLC</a></p>
+			<p>All Rights Reserved.</p>
+		</div><!-- end of footer -->
+
+<script type="text/javascript">
+/*<![CDATA[*/
+$("a.toggle").on('click', function() {
+	var $this = $(this);
+	if ($this.hasClass('properties-hidden')) {
+		$this.text($this.text().replace(/Show/,'Hide'));
+		$this.parents(".summary").find(".inherited").show();
+		$this.removeClass('properties-hidden');
+	} else {
+		$this.text($this.text().replace(/Hide/,'Show'));
+		$this.parents(".summary").find(".inherited").hide();
+		$this.addClass('properties-hidden');
+	}
+	return false;
+});
+/*
+$(".sourceCode a.show").toggle(function(){
+	$(this).text($(this).text().replace(/show/,'hide'));
+	$(this).parents(".sourceCode").find("div.code").show();
+},function(){
+	$(this).text($(this).text().replace(/hide/,'show'));
+	$(this).parents(".sourceCode").find("div.code").hide();
+});
+$("a.sourceLink").click(function(){
+	$(this).attr('target','_blank');
+});
+*/
+/*]]>*/
+</script>
+
+	</div><!-- end of page -->
+</body>
+</html>

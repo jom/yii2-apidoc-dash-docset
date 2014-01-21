@@ -1,0 +1,623 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="language" content="en" />
+<link href="./assets/4138e429/api.css" rel="stylesheet">
+<link href="./assets/4138e429/style.css" rel="stylesheet">
+<script src="./assets/a91b37a6/jquery.js"></script><title>Yii Framework 2.0 API Documentation</title>
+</head>
+
+<body>
+	<div id="apiPage">
+
+		<div id="apiHeader">
+			<a href="http://www.yiiframework.com">Yii Framework</a> v2.0.0-dev Class Reference
+		</div><!-- end of header -->
+
+		<div id="content">
+		<h1>Trait yii\db\QueryTrait</h1>
+<div id="nav">
+	<a href="index.html">All Classes</a>
+			| <a href="#properties">Properties</a>
+				| <a href="#methods">Methods</a>
+			</div>
+
+<table class="summaryTable docClass">
+	<colgroup>
+		<col class="col-name" />
+		<col class="col-value" />
+	</colgroup>
+								<tr><th>Implemented by</th><td><a href="yii_db_activequery.html">yii\db\ActiveQuery</a>, <a href="yii_db_activerelation.html">yii\db\ActiveRelation</a>, <a href="yii_db_query.html">yii\db\Query</a>, <a href="yii_redis_activequery.html">yii\redis\ActiveQuery</a>, <a href="yii_redis_activerelation.html">yii\redis\ActiveRelation</a></td></tr>
+				<tr><th>Available since version</th><td>2.0</td></tr>
+		<tr>
+	  <th>Source Code</th>
+	  <td></td>
+	</tr>
+</table>
+
+<div id="classDescription">
+	<strong>The BaseQuery trait represents the minimum method set of a database Query.</strong>
+	<p>It has support for getting <span style="background: #f00;">\yii\db\one</span> instance or <span style="background: #f00;">\yii\db\all</span>.
+Allows pagination via <a href="yii_db_querytrait.html#limit()-detail">limit()</a> and <a href="yii_db_querytrait.html#offset()-detail">offset()</a>.
+Sorting is supported via <a href="yii_db_querytrait.html#orderBy()-detail">orderBy()</a> and items can be limited to match some conditions unsing <a href="yii_db_querytrait.html#where()-detail">where()</a>.</p>
+
+<p>By calling <span style="background: #f00;">\yii\db\createCommand()</span>, we can get a <a href="yii_db_command.html">yii\db\Command</a> instance which can be further
+used to perform/execute the DB query against a database.</p>
+</div>
+
+<a name="properties"></a>
+
+<div class="summary docProperty">
+<h2>Public Properties</h2>
+
+<p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-property" />
+	<col class="col-type" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Property</th><th>Type</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr id="$where">
+		<td><a href="yii_db_querytrait.html#$where-detail">$where</a></td>
+		<td>string|array</td>
+		<td>Query condition</td>
+		<td><a href="yii_db_querytrait.html">yii\db\QueryTrait</a></td>
+	</tr>
+			<tr id="$limit">
+		<td><a href="yii_db_querytrait.html#$limit-detail">$limit</a></td>
+		<td>integer</td>
+		<td>Maximum number of records to be returned</td>
+		<td><a href="yii_db_querytrait.html">yii\db\QueryTrait</a></td>
+	</tr>
+			<tr id="$offset">
+		<td><a href="yii_db_querytrait.html#$offset-detail">$offset</a></td>
+		<td>integer</td>
+		<td>Zero-based offset from where the records are to be returned</td>
+		<td><a href="yii_db_querytrait.html">yii\db\QueryTrait</a></td>
+	</tr>
+			<tr id="$orderBy">
+		<td><a href="yii_db_querytrait.html#$orderBy-detail">$orderBy</a></td>
+		<td>array</td>
+		<td>How to sort the query results</td>
+		<td><a href="yii_db_querytrait.html">yii\db\QueryTrait</a></td>
+	</tr>
+			<tr id="$indexBy">
+		<td><a href="yii_db_querytrait.html#$indexBy-detail">$indexBy</a></td>
+		<td>string|callable</td>
+		<td>The name of the column by which the query results should be indexed by</td>
+		<td><a href="yii_db_querytrait.html">yii\db\QueryTrait</a></td>
+	</tr>
+	</table>
+</div>
+<a name="methods"></a>
+
+<div class="summary docMethod">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr id="indexBy()">
+		<td><a href="yii_db_querytrait.html#indexBy()-detail">indexBy()</a></td>
+		<td>Sets the <a href="yii_db_querytrait.html#indexBy()-detail">indexBy()</a> property.</td>
+		<td><a href="yii_db_querytrait.html">yii\db\QueryTrait</a></td>
+	</tr>
+			<tr id="where()">
+		<td><a href="yii_db_querytrait.html#where()-detail">where()</a></td>
+		<td>Sets the WHERE part of the query.</td>
+		<td><a href="yii_db_querytrait.html">yii\db\QueryTrait</a></td>
+	</tr>
+			<tr id="andWhere()">
+		<td><a href="yii_db_querytrait.html#andWhere()-detail">andWhere()</a></td>
+		<td>Adds an additional WHERE condition to the existing one.</td>
+		<td><a href="yii_db_querytrait.html">yii\db\QueryTrait</a></td>
+	</tr>
+			<tr id="orWhere()">
+		<td><a href="yii_db_querytrait.html#orWhere()-detail">orWhere()</a></td>
+		<td>Adds an additional WHERE condition to the existing one.</td>
+		<td><a href="yii_db_querytrait.html">yii\db\QueryTrait</a></td>
+	</tr>
+			<tr id="orderBy()">
+		<td><a href="yii_db_querytrait.html#orderBy()-detail">orderBy()</a></td>
+		<td>Sets the ORDER BY part of the query.</td>
+		<td><a href="yii_db_querytrait.html">yii\db\QueryTrait</a></td>
+	</tr>
+			<tr id="addOrderBy()">
+		<td><a href="yii_db_querytrait.html#addOrderBy()-detail">addOrderBy()</a></td>
+		<td>Adds additional ORDER BY columns to the query.</td>
+		<td><a href="yii_db_querytrait.html">yii\db\QueryTrait</a></td>
+	</tr>
+				<tr id="limit()">
+		<td><a href="yii_db_querytrait.html#limit()-detail">limit()</a></td>
+		<td>Sets the LIMIT part of the query.</td>
+		<td><a href="yii_db_querytrait.html">yii\db\QueryTrait</a></td>
+	</tr>
+			<tr id="offset()">
+		<td><a href="yii_db_querytrait.html#offset()-detail">offset()</a></td>
+		<td>Sets the OFFSET part of the query.</td>
+		<td><a href="yii_db_querytrait.html">yii\db\QueryTrait</a></td>
+	</tr>
+	</table>
+</div>
+<div class="summary docMethod">
+<h2>Protected Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+								<tr id="normalizeOrderBy()">
+		<td><a href="yii_db_querytrait.html#normalizeOrderBy()-detail">normalizeOrderBy()</a></td>
+		<td></td>
+		<td><a href="yii_db_querytrait.html">yii\db\QueryTrait</a></td>
+	</tr>
+			</table>
+</div>
+<a name="events"></a>
+
+<a name="constants"></a>
+
+<h2>Property Details</h2>
+
+
+	<div class="detailHeader" id="$where-detail">
+		$where		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string|array $where = null	</div>
+
+	<p>Query condition. This refers to the WHERE clause in a SQL statement.
+For example, <code>age &gt; 31 AND team = 1</code>.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_db_querytrait.html#where()-detail">where()</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="$limit-detail">
+		$limit		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	integer $limit = null	</div>
+
+	<p>Maximum number of records to be returned. If not set or less than 0, it means no limit.</p>
+
+	
+
+	<div class="detailHeader" id="$offset-detail">
+		$offset		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	integer $offset = null	</div>
+
+	<p>Zero-based offset from where the records are to be returned. If not set or
+less than 0, it means starting from the beginning.</p>
+
+	
+
+	<div class="detailHeader" id="$orderBy-detail">
+		$orderBy		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array $orderBy = null	</div>
+
+	<p>How to sort the query results. This is used to construct the ORDER BY clause in a SQL statement.
+The array keys are the columns to be sorted by, and the array values are the corresponding sort directions which
+can be either <a href="http://php.net/manual/en/array.constants.php#constant.sort-asc">SORT_ASC</a>
+or <a href="http://php.net/manual/en/array.constants.php#constant.sort-desc">SORT_DESC</a>.
+The array may also contain <a href="yii_db_expression.html">yii\db\Expression</a> objects. If that is the case, the expressions
+will be converted into strings without any change.</p>
+
+	
+
+	<div class="detailHeader" id="$indexBy-detail">
+		$indexBy		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	string|callable $indexBy = null	</div>
+
+	<p>The name of the column by which the query results should be indexed by.
+This can also be a callable (e.g. anonymous function) that returns the index value based on the given
+row data. For more details, see <a href="yii_db_querytrait.html#indexBy()-detail">indexBy()</a>. This property is only used by <span style="background: #f00;">\yii\db\all()</span>.</p>
+
+	
+<h2>Method Details</h2>
+
+
+	<div class="detailHeader" id="indexBy()-detail">
+		indexBy()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			static <a href="yii_db_querytrait.html#indexBy()-detail">indexBy</a>( $column )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$column</td>
+				  <td class="paramTypeCol">string|callable</td>
+				  <td class="paramDescCol"><p>The name of the column by which the query results should be indexed by.
+This can also be a callable (e.g. anonymous function) that returns the index value based on the given
+row data. The signature of the callable should be:</p>
+
+<pre><code>function ($row)
+{
+    // return the index value corresponding to $row
+}
+</code></pre></td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">static</td>
+				  <td class="paramDescCol">the query object itself</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Sets the <a href="yii_db_querytrait.html#indexBy()-detail">indexBy()</a> property.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="where()-detail">
+		where()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			static <a href="yii_db_querytrait.html#where()-detail">where</a>( $condition )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$condition</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The conditions that should be put in the WHERE part.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">static</td>
+				  <td class="paramDescCol">the query object itself</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Sets the WHERE part of the query.</strong></p>
+	<p>See <a href="yii_db_queryinterface.html#where()-detail">yii\db\QueryInterface::where()</a> for detailed documentation.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_db_querytrait.html#andWhere()-detail">andWhere()</a></li>
+	<li><a href="yii_db_querytrait.html#orWhere()-detail">orWhere()</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="andWhere()-detail">
+		andWhere()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			static <a href="yii_db_querytrait.html#andWhere()-detail">andWhere</a>( $condition )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$condition</td>
+				  <td class="paramTypeCol">string|array</td>
+				  <td class="paramDescCol">The new WHERE condition. Please refer to <a href="yii_db_querytrait.html#where()-detail">where()</a>
+on how to specify this parameter.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">static</td>
+				  <td class="paramDescCol">the query object itself</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Adds an additional WHERE condition to the existing one.</strong></p>
+	<p>The new condition and the existing one will be joined using the 'AND' operator.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_db_querytrait.html#where()-detail">where()</a></li>
+	<li><a href="yii_db_querytrait.html#orWhere()-detail">orWhere()</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="orWhere()-detail">
+		orWhere()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			static <a href="yii_db_querytrait.html#orWhere()-detail">orWhere</a>( $condition )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$condition</td>
+				  <td class="paramTypeCol">string|array</td>
+				  <td class="paramDescCol">The new WHERE condition. Please refer to <a href="yii_db_querytrait.html#where()-detail">where()</a>
+on how to specify this parameter.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">static</td>
+				  <td class="paramDescCol">the query object itself</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Adds an additional WHERE condition to the existing one.</strong></p>
+	<p>The new condition and the existing one will be joined using the 'OR' operator.</p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_db_querytrait.html#where()-detail">where()</a></li>
+	<li><a href="yii_db_querytrait.html#andWhere()-detail">andWhere()</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="orderBy()-detail">
+		orderBy()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			static <a href="yii_db_querytrait.html#orderBy()-detail">orderBy</a>( $columns )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$columns</td>
+				  <td class="paramTypeCol">string|array</td>
+				  <td class="paramDescCol">The columns (and the directions) to be ordered by.
+Columns can be specified in either a string (e.g. "id ASC, name DESC") or an array
+(e.g. <code>['id' =&gt; SORT_ASC, 'name' =&gt; SORT_DESC]</code>).
+The method will automatically quote the column names unless a column contains some parenthesis
+(which means the column contains a DB expression).
+Note that if your order-by is an expression containing commas, you should always use an array
+to represent the order-by information. Otherwise, the method will not be able to correctly determine
+the order-by columns.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">static</td>
+				  <td class="paramDescCol">the query object itself</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Sets the ORDER BY part of the query.</strong></p>
+	<p></p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_db_querytrait.html#addOrderBy()-detail">addOrderBy()</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="addOrderBy()-detail">
+		addOrderBy()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			static <a href="yii_db_querytrait.html#addOrderBy()-detail">addOrderBy</a>( $columns )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$columns</td>
+				  <td class="paramTypeCol">string|array</td>
+				  <td class="paramDescCol">The columns (and the directions) to be ordered by.
+Columns can be specified in either a string (e.g. "id ASC, name DESC") or an array
+(e.g. <code>['id' =&gt; SORT_ASC, 'name' =&gt; SORT_DESC]</code>).
+The method will automatically quote the column names unless a column contains some parenthesis
+(which means the column contains a DB expression).</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">static</td>
+				  <td class="paramDescCol">the query object itself</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Adds additional ORDER BY columns to the query.</strong></p>
+	<p></p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_db_querytrait.html#orderBy()-detail">orderBy()</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="normalizeOrderBy()-detail">
+		normalizeOrderBy()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_db_querytrait.html#normalizeOrderBy()-detail">normalizeOrderBy</a>( $columns )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$columns</td>
+				  <td class="paramTypeCol"></td>
+				  <td class="paramDescCol"></td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p></strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="limit()-detail">
+		limit()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			static <a href="yii_db_querytrait.html#limit()-detail">limit</a>( $limit )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$limit</td>
+				  <td class="paramTypeCol">integer</td>
+				  <td class="paramDescCol">The limit. Use null or negative value to disable limit.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">static</td>
+				  <td class="paramDescCol">the query object itself</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Sets the LIMIT part of the query.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="offset()-detail">
+		offset()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			static <a href="yii_db_querytrait.html#offset()-detail">offset</a>( $offset )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$offset</td>
+				  <td class="paramTypeCol">integer</td>
+				  <td class="paramDescCol">The offset. Use null or negative value to disable offset.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">static</td>
+				  <td class="paramDescCol">the query object itself</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Sets the OFFSET part of the query.</strong></p>
+	<p></p>
+
+	
+		</div><!-- end of content -->
+
+		<div id="apiFooter">
+			<p>&copy; 2008-2013 by <a href="http://www.yiisoft.com">Yii Software LLC</a></p>
+			<p>All Rights Reserved.</p>
+		</div><!-- end of footer -->
+
+<script type="text/javascript">
+/*<![CDATA[*/
+$("a.toggle").on('click', function() {
+	var $this = $(this);
+	if ($this.hasClass('properties-hidden')) {
+		$this.text($this.text().replace(/Show/,'Hide'));
+		$this.parents(".summary").find(".inherited").show();
+		$this.removeClass('properties-hidden');
+	} else {
+		$this.text($this.text().replace(/Hide/,'Show'));
+		$this.parents(".summary").find(".inherited").hide();
+		$this.addClass('properties-hidden');
+	}
+	return false;
+});
+/*
+$(".sourceCode a.show").toggle(function(){
+	$(this).text($(this).text().replace(/show/,'hide'));
+	$(this).parents(".sourceCode").find("div.code").show();
+},function(){
+	$(this).text($(this).text().replace(/hide/,'show'));
+	$(this).parents(".sourceCode").find("div.code").hide();
+});
+$("a.sourceLink").click(function(){
+	$(this).attr('target','_blank');
+});
+*/
+/*]]>*/
+</script>
+
+	</div><!-- end of page -->
+</body>
+</html>

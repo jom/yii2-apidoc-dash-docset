@@ -1,0 +1,718 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="language" content="en" />
+<link href="./assets/4138e429/api.css" rel="stylesheet">
+<link href="./assets/4138e429/style.css" rel="stylesheet">
+<script src="./assets/a91b37a6/jquery.js"></script><title>Yii Framework 2.0 API Documentation</title>
+</head>
+
+<body>
+	<div id="apiPage">
+
+		<div id="apiHeader">
+			<a href="http://www.yiiframework.com">Yii Framework</a> v2.0.0-dev Class Reference
+		</div><!-- end of header -->
+
+		<div id="content">
+		<h1>Class yii\helpers\BaseInflector</h1>
+<div id="nav">
+	<a href="index.html">All Classes</a>
+			| <a href="#properties">Properties</a>
+				| <a href="#methods">Methods</a>
+			</div>
+
+<table class="summaryTable docClass">
+	<colgroup>
+		<col class="col-name" />
+		<col class="col-value" />
+	</colgroup>
+			<tr><th>Inheritance</th><td><a href="yii_helpers_baseinflector.html">yii\helpers\BaseInflector</a></td></tr>
+						<tr><th>Subclasses</th><td><a href="yii_helpers_inflector.html">yii\helpers\Inflector</a></td></tr>
+						<tr><th>Available since version</th><td>2.0</td></tr>
+		<tr>
+	  <th>Source Code</th>
+	  <td></td>
+	</tr>
+</table>
+
+<div id="classDescription">
+	<strong>BaseInflector provides concrete implementation for <a href="yii_helpers_inflector.html">yii\helpers\Inflector</a>.</strong>
+	<p>Do not use BaseInflector. Use <a href="yii_helpers_inflector.html">yii\helpers\Inflector</a> instead.</p>
+</div>
+
+<a name="properties"></a>
+
+<div class="summary docProperty">
+<h2>Public Properties</h2>
+
+<p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-property" />
+	<col class="col-type" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Property</th><th>Type</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr id="$plurals">
+		<td><a href="yii_helpers_baseinflector.html#$plurals-detail">$plurals</a></td>
+		<td>array</td>
+		<td>The rules for converting a word into its plural form</td>
+		<td><a href="yii_helpers_baseinflector.html">yii\helpers\BaseInflector</a></td>
+	</tr>
+			<tr id="$singulars">
+		<td><a href="yii_helpers_baseinflector.html#$singulars-detail">$singulars</a></td>
+		<td>array</td>
+		<td>The rules for converting a word into its singular form</td>
+		<td><a href="yii_helpers_baseinflector.html">yii\helpers\BaseInflector</a></td>
+	</tr>
+			<tr id="$specials">
+		<td><a href="yii_helpers_baseinflector.html#$specials-detail">$specials</a></td>
+		<td>array</td>
+		<td>The special rules for converting a word between its plural form and singular form</td>
+		<td><a href="yii_helpers_baseinflector.html">yii\helpers\BaseInflector</a></td>
+	</tr>
+			<tr id="$transliteration">
+		<td><a href="yii_helpers_baseinflector.html#$transliteration-detail">$transliteration</a></td>
+		<td>array</td>
+		<td>Map of special chars and its translation</td>
+		<td><a href="yii_helpers_baseinflector.html">yii\helpers\BaseInflector</a></td>
+	</tr>
+	</table>
+</div>
+<a name="methods"></a>
+
+<div class="summary docMethod">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr id="pluralize()">
+		<td><a href="yii_helpers_baseinflector.html#pluralize()-detail">pluralize()</a></td>
+		<td>Converts a word to its plural form.</td>
+		<td><a href="yii_helpers_baseinflector.html">yii\helpers\BaseInflector</a></td>
+	</tr>
+			<tr id="singularize()">
+		<td><a href="yii_helpers_baseinflector.html#singularize()-detail">singularize()</a></td>
+		<td>Returns the singular of the $word</td>
+		<td><a href="yii_helpers_baseinflector.html">yii\helpers\BaseInflector</a></td>
+	</tr>
+			<tr id="titleize()">
+		<td><a href="yii_helpers_baseinflector.html#titleize()-detail">titleize()</a></td>
+		<td>Converts an underscored or CamelCase word into a English
+sentence.</td>
+		<td><a href="yii_helpers_baseinflector.html">yii\helpers\BaseInflector</a></td>
+	</tr>
+			<tr id="camelize()">
+		<td><a href="yii_helpers_baseinflector.html#camelize()-detail">camelize()</a></td>
+		<td>Returns given word as CamelCased
+Converts a word like "send_email" to "SendEmail". It
+will remove non alphanumeric character from the word, so
+"who's online" will be converted to "WhoSOnline"</td>
+		<td><a href="yii_helpers_baseinflector.html">yii\helpers\BaseInflector</a></td>
+	</tr>
+			<tr id="camel2words()">
+		<td><a href="yii_helpers_baseinflector.html#camel2words()-detail">camel2words()</a></td>
+		<td>Converts a CamelCase name into space-separated words.</td>
+		<td><a href="yii_helpers_baseinflector.html">yii\helpers\BaseInflector</a></td>
+	</tr>
+			<tr id="camel2id()">
+		<td><a href="yii_helpers_baseinflector.html#camel2id()-detail">camel2id()</a></td>
+		<td>Converts a CamelCase name into an ID in lowercase.</td>
+		<td><a href="yii_helpers_baseinflector.html">yii\helpers\BaseInflector</a></td>
+	</tr>
+			<tr id="id2camel()">
+		<td><a href="yii_helpers_baseinflector.html#id2camel()-detail">id2camel()</a></td>
+		<td>Converts an ID into a CamelCase name.</td>
+		<td><a href="yii_helpers_baseinflector.html">yii\helpers\BaseInflector</a></td>
+	</tr>
+			<tr id="underscore()">
+		<td><a href="yii_helpers_baseinflector.html#underscore()-detail">underscore()</a></td>
+		<td>Converts any "CamelCased" into an "underscored_word".</td>
+		<td><a href="yii_helpers_baseinflector.html">yii\helpers\BaseInflector</a></td>
+	</tr>
+			<tr id="humanize()">
+		<td><a href="yii_helpers_baseinflector.html#humanize()-detail">humanize()</a></td>
+		<td>Returns a human-readable string from $word</td>
+		<td><a href="yii_helpers_baseinflector.html">yii\helpers\BaseInflector</a></td>
+	</tr>
+			<tr id="variablize()">
+		<td><a href="yii_helpers_baseinflector.html#variablize()-detail">variablize()</a></td>
+		<td>Same as camelize but first char is in lowercase.</td>
+		<td><a href="yii_helpers_baseinflector.html">yii\helpers\BaseInflector</a></td>
+	</tr>
+			<tr id="tableize()">
+		<td><a href="yii_helpers_baseinflector.html#tableize()-detail">tableize()</a></td>
+		<td>Converts a class name to its table name (pluralized)
+naming conventions. For example, converts "Person" to "people"</td>
+		<td><a href="yii_helpers_baseinflector.html">yii\helpers\BaseInflector</a></td>
+	</tr>
+			<tr id="slug()">
+		<td><a href="yii_helpers_baseinflector.html#slug()-detail">slug()</a></td>
+		<td>Returns a string with all spaces converted to given replacement and
+non word characters removed.  Maps special characters to ASCII using
+[[$transliteration]] array.</td>
+		<td><a href="yii_helpers_baseinflector.html">yii\helpers\BaseInflector</a></td>
+	</tr>
+			<tr id="classify()">
+		<td><a href="yii_helpers_baseinflector.html#classify()-detail">classify()</a></td>
+		<td>Converts a table name to its class name. For example, converts "people" to "Person"</td>
+		<td><a href="yii_helpers_baseinflector.html">yii\helpers\BaseInflector</a></td>
+	</tr>
+			<tr id="ordinalize()">
+		<td><a href="yii_helpers_baseinflector.html#ordinalize()-detail">ordinalize()</a></td>
+		<td>Converts number to its ordinal English form. For example, converts 13 to 13th, 2 to 2nd .</td>
+		<td><a href="yii_helpers_baseinflector.html">yii\helpers\BaseInflector</a></td>
+	</tr>
+	</table>
+</div>
+<a name="events"></a>
+
+<a name="constants"></a>
+
+<h2>Property Details</h2>
+
+
+	<div class="detailHeader" id="$plurals-detail">
+		$plurals		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array $plurals = ['/([nrlm]ese|deer|fish|sheep|measles|ois|pox|media)$/i' => '\1', '/^(sea[- ]bass)$/i' => '\1', '/(m)ove$/i' => '\1oves', '/(f)oot$/i' => '\1eet', '/(h)uman$/i' => '\1umans', '/(s)tatus$/i' => '\1tatuses', '/(s)taff$/i' => '\1taff', '/(t)ooth$/i' => '\1eeth', '/(quiz)$/i' => '\1zes', '/^(ox)$/i' => '\1\2en', '/([m|l])ouse$/i' => '\1ice', '/(matr|vert|ind)(ix|ex)$/i' => '\1ices', '/(x|ch|ss|sh)$/i' => '\1es', '/([^aeiouy]|qu)y$/i' => '\1ies', '/(hive)$/i' => '\1s', '/(?:([^f])fe|([lr])f)$/i' => '\1\2ves', '/sis$/i' => 'ses', '/([ti])um$/i' => '\1a', '/(p)erson$/i' => '\1eople', '/(m)an$/i' => '\1en', '/(c)hild$/i' => '\1hildren', '/(buffal|tomat|potat|ech|her|vet)o$/i' => '\1oes', '/(alumn|bacill|cact|foc|fung|nucle|radi|stimul|syllab|termin|vir)us$/i' => '\1i', '/us$/i' => 'uses', '/(alias)$/i' => '\1es', '/(ax|cris|test)is$/i' => '\1es', '/s$/' => 's', '/^$/' => '', '/$/' => 's']	</div>
+
+	<p>The rules for converting a word into its plural form.
+The keys are the regular expressions and the values are the corresponding replacements.</p>
+
+	
+
+	<div class="detailHeader" id="$singulars-detail">
+		$singulars		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array $singulars = ['/([nrlm]ese|deer|fish|sheep|measles|ois|pox|media|ss)$/i' => '\1', '/^(sea[- ]bass)$/i' => '\1', '/(s)tatuses$/i' => '\1tatus', '/(f)eet$/i' => '\1oot', '/(t)eeth$/i' => '\1ooth', '/^(.*)(menu)s$/i' => '\1\2', '/(quiz)zes$/i' => '\\1', '/(matr)ices$/i' => '\1ix', '/(vert|ind)ices$/i' => '\1ex', '/^(ox)en/i' => '\1', '/(alias)(es)*$/i' => '\1', '/(alumn|bacill|cact|foc|fung|nucle|radi|stimul|syllab|termin|viri?)i$/i' => '\1us', '/([ftw]ax)es/i' => '\1', '/(cris|ax|test)es$/i' => '\1is', '/(shoe|slave)s$/i' => '\1', '/(o)es$/i' => '\1', '/ouses$/' => 'ouse', '/([^a])uses$/' => '\1us', '/([m|l])ice$/i' => '\1ouse', '/(x|ch|ss|sh)es$/i' => '\1', '/(m)ovies$/i' => '\1\2ovie', '/(s)eries$/i' => '\1\2eries', '/([^aeiouy]|qu)ies$/i' => '\1y', '/([lr])ves$/i' => '\1f', '/(tive)s$/i' => '\1', '/(hive)s$/i' => '\1', '/(drive)s$/i' => '\1', '/([^fo])ves$/i' => '\1fe', '/(^analy)ses$/i' => '\1sis', '/(analy|diagno|^ba|(p)arenthe|(p)rogno|(s)ynop|(t)he)ses$/i' => '\1\2sis', '/([ti])a$/i' => '\1um', '/(p)eople$/i' => '\1\2erson', '/(m)en$/i' => '\1an', '/(c)hildren$/i' => '\1\2hild', '/(n)ews$/i' => '\1\2ews', '/eaus$/' => 'eau', '/^(.*us)$/' => '\\1', '/s$/i' => '']	</div>
+
+	<p>The rules for converting a word into its singular form.
+The keys are the regular expressions and the values are the corresponding replacements.</p>
+
+	
+
+	<div class="detailHeader" id="$specials-detail">
+		$specials		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array $specials = ['atlas' => 'atlases', 'beef' => 'beefs', 'brother' => 'brothers', 'cafe' => 'cafes', 'child' => 'children', 'cookie' => 'cookies', 'corpus' => 'corpuses', 'cow' => 'cows', 'curve' => 'curves', 'foe' => 'foes', 'ganglion' => 'ganglions', 'genie' => 'genies', 'genus' => 'genera', 'graffito' => 'graffiti', 'hoof' => 'hoofs', 'loaf' => 'loaves', 'man' => 'men', 'money' => 'monies', 'mongoose' => 'mongooses', 'move' => 'moves', 'mythos' => 'mythoi', 'niche' => 'niches', 'numen' => 'numina', 'occiput' => 'occiputs', 'octopus' => 'octopuses', 'opus' => 'opuses', 'ox' => 'oxen', 'penis' => 'penises', 'sex' => 'sexes', 'soliloquy' => 'soliloquies', 'testis' => 'testes', 'trilby' => 'trilbys', 'turf' => 'turfs', 'wave' => 'waves', 'Amoyese' => 'Amoyese', 'bison' => 'bison', 'Borghese' => 'Borghese', 'bream' => 'bream', 'breeches' => 'breeches', 'britches' => 'britches', 'buffalo' => 'buffalo', 'cantus' => 'cantus', 'carp' => 'carp', 'chassis' => 'chassis', 'clippers' => 'clippers', 'cod' => 'cod', 'coitus' => 'coitus', 'Congoese' => 'Congoese', 'contretemps' => 'contretemps', 'corps' => 'corps', 'debris' => 'debris', 'diabetes' => 'diabetes', 'djinn' => 'djinn', 'eland' => 'eland', 'elk' => 'elk', 'equipment' => 'equipment', 'Faroese' => 'Faroese', 'flounder' => 'flounder', 'Foochowese' => 'Foochowese', 'gallows' => 'gallows', 'Genevese' => 'Genevese', 'Genoese' => 'Genoese', 'Gilbertese' => 'Gilbertese', 'graffiti' => 'graffiti', 'headquarters' => 'headquarters', 'herpes' => 'herpes', 'hijinks' => 'hijinks', 'Hottentotese' => 'Hottentotese', 'information' => 'information', 'innings' => 'innings', 'jackanapes' => 'jackanapes', 'Kiplingese' => 'Kiplingese', 'Kongoese' => 'Kongoese', 'Lucchese' => 'Lucchese', 'mackerel' => 'mackerel', 'Maltese' => 'Maltese', 'mews' => 'mews', 'moose' => 'moose', 'mumps' => 'mumps', 'Nankingese' => 'Nankingese', 'news' => 'news', 'nexus' => 'nexus', 'Niasese' => 'Niasese', 'Pekingese' => 'Pekingese', 'Piedmontese' => 'Piedmontese', 'pincers' => 'pincers', 'Pistoiese' => 'Pistoiese', 'pliers' => 'pliers', 'Portuguese' => 'Portuguese', 'proceedings' => 'proceedings', 'rabies' => 'rabies', 'rice' => 'rice', 'rhinoceros' => 'rhinoceros', 'salmon' => 'salmon', 'Sarawakese' => 'Sarawakese', 'scissors' => 'scissors', 'series' => 'series', 'Shavese' => 'Shavese', 'shears' => 'shears', 'siemens' => 'siemens', 'species' => 'species', 'swine' => 'swine', 'testes' => 'testes', 'trousers' => 'trousers', 'trout' => 'trout', 'tuna' => 'tuna', 'Vermontese' => 'Vermontese', 'Wenchowese' => 'Wenchowese', 'whiting' => 'whiting', 'wildebeest' => 'wildebeest', 'Yengeese' => 'Yengeese']	</div>
+
+	<p>The special rules for converting a word between its plural form and singular form.
+The keys are the special words in singular form, and the values are the corresponding plural form.</p>
+
+	
+
+	<div class="detailHeader" id="$transliteration-detail">
+		$transliteration		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array $transliteration = ['À' => 'A', 'Á' => 'A', 'Â' => 'A', 'Ã' => 'A', 'Ä' => 'A', 'Å' => 'A', 'Æ' => 'AE', 'Ç' => 'C', 'È' => 'E', 'É' => 'E', 'Ê' => 'E', 'Ë' => 'E', 'Ì' => 'I', 'Í' => 'I', 'Î' => 'I', 'Ï' => 'I', 'Ð' => 'D', 'Ñ' => 'N', 'Ò' => 'O', 'Ó' => 'O', 'Ô' => 'O', 'Õ' => 'O', 'Ö' => 'O', 'Ő' => 'O', 'Ø' => 'O', 'Ù' => 'U', 'Ú' => 'U', 'Û' => 'U', 'Ü' => 'U', 'Ű' => 'U', 'Ý' => 'Y', 'Þ' => 'TH', 'ß' => 'ss', 'à' => 'a', 'á' => 'a', 'â' => 'a', 'ã' => 'a', 'ä' => 'a', 'å' => 'a', 'æ' => 'ae', 'ç' => 'c', 'è' => 'e', 'é' => 'e', 'ê' => 'e', 'ë' => 'e', 'ì' => 'i', 'í' => 'i', 'î' => 'i', 'ï' => 'i', 'ð' => 'd', 'ñ' => 'n', 'ò' => 'o', 'ó' => 'o', 'ô' => 'o', 'õ' => 'o', 'ö' => 'o', 'ő' => 'o', 'ø' => 'o', 'ù' => 'u', 'ú' => 'u', 'û' => 'u', 'ü' => 'u', 'ű' => 'u', 'ý' => 'y', 'þ' => 'th', 'ÿ' => 'y', '©' => '(c)', 'Α' => 'A', 'Β' => 'B', 'Γ' => 'G', 'Δ' => 'D', 'Ε' => 'E', 'Ζ' => 'Z', 'Η' => 'H', 'Θ' => '8', 'Ι' => 'I', 'Κ' => 'K', 'Λ' => 'L', 'Μ' => 'M', 'Ν' => 'N', 'Ξ' => '3', 'Ο' => 'O', 'Π' => 'P', 'Ρ' => 'R', 'Σ' => 'S', 'Τ' => 'T', 'Υ' => 'Y', 'Φ' => 'F', 'Χ' => 'X', 'Ψ' => 'PS', 'Ω' => 'W', 'Ά' => 'A', 'Έ' => 'E', 'Ί' => 'I', 'Ό' => 'O', 'Ύ' => 'Y', 'Ή' => 'H', 'Ώ' => 'W', 'Ϊ' => 'I', 'Ϋ' => 'Y', 'α' => 'a', 'β' => 'b', 'γ' => 'g', 'δ' => 'd', 'ε' => 'e', 'ζ' => 'z', 'η' => 'h', 'θ' => '8', 'ι' => 'i', 'κ' => 'k', 'λ' => 'l', 'μ' => 'm', 'ν' => 'n', 'ξ' => '3', 'ο' => 'o', 'π' => 'p', 'ρ' => 'r', 'σ' => 's', 'τ' => 't', 'υ' => 'y', 'φ' => 'f', 'χ' => 'x', 'ψ' => 'ps', 'ω' => 'w', 'ά' => 'a', 'έ' => 'e', 'ί' => 'i', 'ό' => 'o', 'ύ' => 'y', 'ή' => 'h', 'ώ' => 'w', 'ς' => 's', 'ϊ' => 'i', 'ΰ' => 'y', 'ϋ' => 'y', 'ΐ' => 'i', 'Ş' => 'S', 'İ' => 'I', 'Ç' => 'C', 'Ü' => 'U', 'Ö' => 'O', 'Ğ' => 'G', 'ş' => 's', 'ı' => 'i', 'ç' => 'c', 'ü' => 'u', 'ö' => 'o', 'ğ' => 'g', 'А' => 'A', 'Б' => 'B', 'В' => 'V', 'Г' => 'G', 'Д' => 'D', 'Е' => 'E', 'Ё' => 'Yo', 'Ж' => 'Zh', 'З' => 'Z', 'И' => 'I', 'Й' => 'J', 'К' => 'K', 'Л' => 'L', 'М' => 'M', 'Н' => 'N', 'О' => 'O', 'П' => 'P', 'Р' => 'R', 'С' => 'S', 'Т' => 'T', 'У' => 'U', 'Ф' => 'F', 'Х' => 'H', 'Ц' => 'C', 'Ч' => 'Ch', 'Ш' => 'Sh', 'Щ' => 'Sh', 'Ъ' => '', 'Ы' => 'Y', 'Ь' => '', 'Э' => 'E', 'Ю' => 'Yu', 'Я' => 'Ya', 'а' => 'a', 'б' => 'b', 'в' => 'v', 'г' => 'g', 'д' => 'd', 'е' => 'e', 'ё' => 'yo', 'ж' => 'zh', 'з' => 'z', 'и' => 'i', 'й' => 'j', 'к' => 'k', 'л' => 'l', 'м' => 'm', 'н' => 'n', 'о' => 'o', 'п' => 'p', 'р' => 'r', 'с' => 's', 'т' => 't', 'у' => 'u', 'ф' => 'f', 'х' => 'h', 'ц' => 'c', 'ч' => 'ch', 'ш' => 'sh', 'щ' => 'sh', 'ъ' => '', 'ы' => 'y', 'ь' => '', 'э' => 'e', 'ю' => 'yu', 'я' => 'ya', 'Є' => 'Ye', 'І' => 'I', 'Ї' => 'Yi', 'Ґ' => 'G', 'є' => 'ye', 'і' => 'i', 'ї' => 'yi', 'ґ' => 'g', 'Č' => 'C', 'Ď' => 'D', 'Ě' => 'E', 'Ň' => 'N', 'Ř' => 'R', 'Š' => 'S', 'Ť' => 'T', 'Ů' => 'U', 'Ž' => 'Z', 'č' => 'c', 'ď' => 'd', 'ě' => 'e', 'ň' => 'n', 'ř' => 'r', 'š' => 's', 'ť' => 't', 'ů' => 'u', 'ž' => 'z', 'Ą' => 'A', 'Ć' => 'C', 'Ę' => 'e', 'Ł' => 'L', 'Ń' => 'N', 'Ó' => 'o', 'Ś' => 'S', 'Ź' => 'Z', 'Ż' => 'Z', 'ą' => 'a', 'ć' => 'c', 'ę' => 'e', 'ł' => 'l', 'ń' => 'n', 'ó' => 'o', 'ś' => 's', 'ź' => 'z', 'ż' => 'z', 'Ā' => 'A', 'Č' => 'C', 'Ē' => 'E', 'Ģ' => 'G', 'Ī' => 'i', 'Ķ' => 'k', 'Ļ' => 'L', 'Ņ' => 'N', 'Š' => 'S', 'Ū' => 'u', 'Ž' => 'Z', 'ā' => 'a', 'č' => 'c', 'ē' => 'e', 'ģ' => 'g', 'ī' => 'i', 'ķ' => 'k', 'ļ' => 'l', 'ņ' => 'n', 'š' => 's', 'ū' => 'u', 'ž' => 'z']	</div>
+
+	<p>Map of special chars and its translation. This is used by <a href="yii_helpers_baseinflector.html#slug()-detail">slug()</a>.</p>
+
+	
+<h2>Method Details</h2>
+
+
+	<div class="detailHeader" id="pluralize()-detail">
+		pluralize()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_baseinflector.html#pluralize()-detail">pluralize</a>( $word )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$word</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The word to be pluralized</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the pluralized word</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Converts a word to its plural form.</strong></p>
+	<p>Note that this is for English only!
+For example, 'apple' will become 'apples', and 'child' will become 'children'.</p>
+
+	
+
+	<div class="detailHeader" id="singularize()-detail">
+		singularize()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_baseinflector.html#singularize()-detail">singularize</a>( $word )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$word</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The english word to singularize</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Singular noun.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the singular of the $word</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="titleize()-detail">
+		titleize()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_baseinflector.html#titleize()-detail">titleize</a>( $words, $ucAll = false )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$words</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol"></td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$ucAll</td>
+				  <td class="paramTypeCol">bool</td>
+				  <td class="paramDescCol">Whether to set all words to uppercase</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Converts an underscored or CamelCase word into a English
+sentence.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="camelize()-detail">
+		camelize()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_baseinflector.html#camelize()-detail">camelize</a>( $word )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$word</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The word to CamelCase</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Returns given word as CamelCased
+Converts a word like "send_email" to "SendEmail". It
+will remove non alphanumeric character from the word, so
+"who's online" will be converted to "WhoSOnline"</strong></p>
+	<p></p>
+
+	<div class="SeeAlso">
+<h4>See Also</h4>
+<ul>
+	<li><a href="yii_helpers_baseinflector.html#variablize()-detail">variablize()</a></li>
+</ul>
+</div>
+
+
+	<div class="detailHeader" id="camel2words()-detail">
+		camel2words()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_baseinflector.html#camel2words()-detail">camel2words</a>( $name, $ucwords = true )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The string to be converted</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$ucwords</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">Whether to capitalize the first letter in each word</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the resulting words</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Converts a CamelCase name into space-separated words.</strong></p>
+	<p>For example, 'PostTag' will be converted to 'Post Tag'.</p>
+
+	
+
+	<div class="detailHeader" id="camel2id()-detail">
+		camel2id()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_baseinflector.html#camel2id()-detail">camel2id</a>( $name, $separator = '-' )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The string to be converted</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$separator</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The character used to concatenate the words in the ID</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the resulting ID</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Converts a CamelCase name into an ID in lowercase.</strong></p>
+	<p>Words in the ID may be concatenated using the specified character (defaults to '-').
+For example, 'PostTag' will be converted to 'post-tag'.</p>
+
+	
+
+	<div class="detailHeader" id="id2camel()-detail">
+		id2camel()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_baseinflector.html#id2camel()-detail">id2camel</a>( $id, $separator = '-' )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$id</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The ID to be converted</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$separator</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The character used to separate the words in the ID</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the resulting CamelCase name</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Converts an ID into a CamelCase name.</strong></p>
+	<p>Words in the ID separated by <code>$separator</code> (defaults to '-') will be concatenated into a CamelCase name.
+For example, 'post-tag' is converted to 'PostTag'.</p>
+
+	
+
+	<div class="detailHeader" id="underscore()-detail">
+		underscore()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_baseinflector.html#underscore()-detail">underscore</a>( $words )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$words</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The word(s) to underscore</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Converts any "CamelCased" into an "underscored_word".</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="humanize()-detail">
+		humanize()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_baseinflector.html#humanize()-detail">humanize</a>( $word, $ucAll = false )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$word</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The string to humanize</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$ucAll</td>
+				  <td class="paramTypeCol">bool</td>
+				  <td class="paramDescCol">Whether to set all words to uppercase or not</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Returns a human-readable string from $word</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="variablize()-detail">
+		variablize()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_baseinflector.html#variablize()-detail">variablize</a>( $word )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$word</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">To lowerCamelCase</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Same as camelize but first char is in lowercase.</strong></p>
+	<p>Converts a word like "send_email" to "sendEmail". It
+will remove non alphanumeric character from the word, so
+"who's online" will be converted to "whoSOnline"</p>
+
+	
+
+	<div class="detailHeader" id="tableize()-detail">
+		tableize()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_baseinflector.html#tableize()-detail">tableize</a>( $className )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$className</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The class name for getting related table_name</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Converts a class name to its table name (pluralized)
+naming conventions. For example, converts "Person" to "people"</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="slug()-detail">
+		slug()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_baseinflector.html#slug()-detail">slug</a>( $string, $replacement = '-', $lowercase = true )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$string</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">An arbitrary string to convert</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$replacement</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The replacement to use for spaces</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$lowercase</td>
+				  <td class="paramTypeCol">bool</td>
+				  <td class="paramDescCol">Whether to return the string in lowercase or not. Defaults to <code>true</code>.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The converted string.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns a string with all spaces converted to given replacement and
+non word characters removed.  Maps special characters to ASCII using
+[[$transliteration]] array.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="classify()-detail">
+		classify()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_baseinflector.html#classify()-detail">classify</a>( $tableName )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$tableName</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol"></td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Converts a table name to its class name. For example, converts "people" to "Person"</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="ordinalize()-detail">
+		ordinalize()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_helpers_baseinflector.html#ordinalize()-detail">ordinalize</a>( $number )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$number</td>
+				  <td class="paramTypeCol">int</td>
+				  <td class="paramDescCol">The number to get its ordinal value</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Converts number to its ordinal English form. For example, converts 13 to 13th, 2 to 2nd .</strong></p>
+	<p>..</p>
+
+	
+			</div><!-- end of content -->
+
+		<div id="apiFooter">
+			<p>&copy; 2008-2013 by <a href="http://www.yiisoft.com">Yii Software LLC</a></p>
+			<p>All Rights Reserved.</p>
+		</div><!-- end of footer -->
+
+<script type="text/javascript">
+/*<![CDATA[*/
+$("a.toggle").on('click', function() {
+	var $this = $(this);
+	if ($this.hasClass('properties-hidden')) {
+		$this.text($this.text().replace(/Show/,'Hide'));
+		$this.parents(".summary").find(".inherited").show();
+		$this.removeClass('properties-hidden');
+	} else {
+		$this.text($this.text().replace(/Hide/,'Show'));
+		$this.parents(".summary").find(".inherited").hide();
+		$this.addClass('properties-hidden');
+	}
+	return false;
+});
+/*
+$(".sourceCode a.show").toggle(function(){
+	$(this).text($(this).text().replace(/show/,'hide'));
+	$(this).parents(".sourceCode").find("div.code").show();
+},function(){
+	$(this).text($(this).text().replace(/hide/,'show'));
+	$(this).parents(".sourceCode").find("div.code").hide();
+});
+$("a.sourceLink").click(function(){
+	$(this).attr('target','_blank');
+});
+*/
+/*]]>*/
+</script>
+
+	</div><!-- end of page -->
+</body>
+</html>

@@ -1,0 +1,789 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="language" content="en" />
+<link href="./assets/4138e429/api.css" rel="stylesheet">
+<link href="./assets/4138e429/style.css" rel="stylesheet">
+<script src="./assets/a91b37a6/jquery.js"></script><title>Yii Framework 2.0 API Documentation</title>
+</head>
+
+<body>
+	<div id="apiPage">
+
+		<div id="apiHeader">
+			<a href="http://www.yiiframework.com">Yii Framework</a> v2.0.0-dev Class Reference
+		</div><!-- end of header -->
+
+		<div id="content">
+		<h1>Class yii\web\AssetManager</h1>
+<div id="nav">
+	<a href="index.html">All Classes</a>
+			| <a href="#properties">Properties</a>
+				| <a href="#methods">Methods</a>
+			</div>
+
+<table class="summaryTable docClass">
+	<colgroup>
+		<col class="col-name" />
+		<col class="col-value" />
+	</colgroup>
+			<tr><th>Inheritance</th><td><a href="yii_web_assetmanager.html">yii\web\AssetManager</a> &raquo;
+<a href="yii_base_component.html">yii\base\Component</a> &raquo;
+<a href="yii_base_object.html">yii\base\Object</a></td></tr>
+				<tr><th>Implements</th><td><a href="yii_base_arrayable.html">yii\base\Arrayable</a></td></tr>
+								<tr><th>Available since version</th><td>2.0</td></tr>
+		<tr>
+	  <th>Source Code</th>
+	  <td></td>
+	</tr>
+</table>
+
+<div id="classDescription">
+	<strong>AssetManager manages asset bundles and asset publishing.</strong>
+	<p><p>AssetManager is configured as an application component in <span style="background: #f00;">\yii\web\yii\web\Application</span> by default.
+You can access that instance via <code>Yii::$app-&gt;assetManager</code>.</p>
+
+<p>You can modify its configuration by adding an array to your application config under <code>components</code>
+as it is shown in the following example:</p>
+
+<pre><code>'assetManager' =&gt; [
+    'bundles' =&gt; [
+        // you can override AssetBundle configs here
+    ],
+    //'linkAssets' =&gt; true,
+    // ...
+]
+</code></pre></p>
+</div>
+
+<a name="properties"></a>
+
+<div class="summary docProperty">
+<h2>Public Properties</h2>
+
+<p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-property" />
+	<col class="col-type" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Property</th><th>Type</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr id="$bundles">
+		<td><a href="yii_web_assetmanager.html#$bundles-detail">$bundles</a></td>
+		<td>array</td>
+		<td>List of available asset bundles</td>
+		<td><a href="yii_web_assetmanager.html">yii\web\AssetManager</a></td>
+	</tr>
+			<tr id="$basePath">
+		<td><a href="yii_web_assetmanager.html#$basePath-detail">$basePath</a></td>
+		<td></td>
+		<td></td>
+		<td><a href="yii_web_assetmanager.html">yii\web\AssetManager</a></td>
+	</tr>
+			<tr id="$baseUrl">
+		<td><a href="yii_web_assetmanager.html#$baseUrl-detail">$baseUrl</a></td>
+		<td></td>
+		<td></td>
+		<td><a href="yii_web_assetmanager.html">yii\web\AssetManager</a></td>
+	</tr>
+			<tr id="$linkAssets">
+		<td><a href="yii_web_assetmanager.html#$linkAssets-detail">$linkAssets</a></td>
+		<td>boolean</td>
+		<td>Whether to use symbolic link to publish asset files</td>
+		<td><a href="yii_web_assetmanager.html">yii\web\AssetManager</a></td>
+	</tr>
+			<tr id="$fileMode">
+		<td><a href="yii_web_assetmanager.html#$fileMode-detail">$fileMode</a></td>
+		<td>integer</td>
+		<td>The permission to be set for newly published asset files</td>
+		<td><a href="yii_web_assetmanager.html">yii\web\AssetManager</a></td>
+	</tr>
+			<tr id="$dirMode">
+		<td><a href="yii_web_assetmanager.html#$dirMode-detail">$dirMode</a></td>
+		<td>integer</td>
+		<td>The permission to be set for newly generated asset directories</td>
+		<td><a href="yii_web_assetmanager.html">yii\web\AssetManager</a></td>
+	</tr>
+			<tr id="$behaviors">
+		<td><a href="yii_web_assetmanager.html#$behaviors-detail">$behaviors</a></td>
+		<td><a href="yii_base_behavior.html">yii\base\Behavior</a>[]</td>
+		<td>list of behaviors attached to this component</td>
+		<td><a href="yii_web_assetmanager.html">yii\web\AssetManager</a></td>
+	</tr>
+			<tr id="$converter">
+		<td><a href="yii_web_assetmanager.html#$converter-detail">$converter</a></td>
+		<td><a href="yii_web_assetconverterinterface.html">yii\web\AssetConverterInterface</a></td>
+		<td>the asset converter</td>
+		<td><a href="yii_web_assetmanager.html">yii\web\AssetManager</a></td>
+	</tr>
+	</table>
+</div>
+<a name="methods"></a>
+
+<div class="summary docMethod">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+		<tr class="inherited" id="className()">
+		<td><a href="yii_base_object.html#className()-detail">className()</a></td>
+		<td></td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__construct()">
+		<td><a href="yii_base_object.html#__construct()-detail">__construct()</a></td>
+		<td>Constructor.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr id="init()">
+		<td><a href="yii_web_assetmanager.html#init()-detail">init()</a></td>
+		<td>Initializes the component.</td>
+		<td><a href="yii_web_assetmanager.html">yii\web\AssetManager</a></td>
+	</tr>
+			<tr class="inherited" id="__get()">
+		<td><a href="yii_base_component.html#__get()-detail">__get()</a></td>
+		<td>Returns the value of a component property.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__set()">
+		<td><a href="yii_base_component.html#__set()-detail">__set()</a></td>
+		<td>Sets the value of a component property.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__isset()">
+		<td><a href="yii_base_component.html#__isset()-detail">__isset()</a></td>
+		<td>Checks if a property value is null.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__unset()">
+		<td><a href="yii_base_component.html#__unset()-detail">__unset()</a></td>
+		<td>Sets a component property to be null.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="__call()">
+		<td><a href="yii_base_component.html#__call()-detail">__call()</a></td>
+		<td>Calls the named method which is not a class method.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasProperty()">
+		<td><a href="yii_base_component.html#hasProperty()-detail">hasProperty()</a></td>
+		<td>Returns a value indicating whether a property is defined for this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="canGetProperty()">
+		<td><a href="yii_base_component.html#canGetProperty()-detail">canGetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be read.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="canSetProperty()">
+		<td><a href="yii_base_component.html#canSetProperty()-detail">canSetProperty()</a></td>
+		<td>Returns a value indicating whether a property can be set.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasMethod()">
+		<td><a href="yii_base_component.html#hasMethod()-detail">hasMethod()</a></td>
+		<td>Returns a value indicating whether a method is defined.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="toArray()">
+		<td><a href="yii_base_object.html#toArray()-detail">toArray()</a></td>
+		<td>Converts the object into an array.</td>
+		<td><a href="yii_base_object.html">yii\base\Object</a></td>
+	</tr>
+			<tr class="inherited" id="__clone()">
+		<td><a href="yii_base_component.html#__clone()-detail">__clone()</a></td>
+		<td>This method is called after the object is created by cloning an existing one.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="behaviors()">
+		<td><a href="yii_base_component.html#behaviors()-detail">behaviors()</a></td>
+		<td>Returns a list of behaviors that this component should behave as.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="hasEventHandlers()">
+		<td><a href="yii_base_component.html#hasEventHandlers()-detail">hasEventHandlers()</a></td>
+		<td>Returns a value indicating whether there is any handler attached to the named event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="on()">
+		<td><a href="yii_base_component.html#on()-detail">on()</a></td>
+		<td>Attaches an event handler to an event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="off()">
+		<td><a href="yii_base_component.html#off()-detail">off()</a></td>
+		<td>Detaches an existing event handler from this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="trigger()">
+		<td><a href="yii_base_component.html#trigger()-detail">trigger()</a></td>
+		<td>Triggers an event.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="getBehavior()">
+		<td><a href="yii_base_component.html#getBehavior()-detail">getBehavior()</a></td>
+		<td>Returns the named behavior object.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="getBehaviors()">
+		<td><a href="yii_base_component.html#getBehaviors()-detail">getBehaviors()</a></td>
+		<td>Returns all behaviors attached to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="attachBehavior()">
+		<td><a href="yii_base_component.html#attachBehavior()-detail">attachBehavior()</a></td>
+		<td>Attaches a behavior to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="attachBehaviors()">
+		<td><a href="yii_base_component.html#attachBehaviors()-detail">attachBehaviors()</a></td>
+		<td>Attaches a list of behaviors to the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="detachBehavior()">
+		<td><a href="yii_base_component.html#detachBehavior()-detail">detachBehavior()</a></td>
+		<td>Detaches a behavior from the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="detachBehaviors()">
+		<td><a href="yii_base_component.html#detachBehaviors()-detail">detachBehaviors()</a></td>
+		<td>Detaches all behaviors from the component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr class="inherited" id="ensureBehaviors()">
+		<td><a href="yii_base_component.html#ensureBehaviors()-detail">ensureBehaviors()</a></td>
+		<td>Makes sure that the behaviors declared in <a href="yii_base_component.html#behaviors()-detail">behaviors()</a> are attached to this component.</td>
+		<td><a href="yii_base_component.html">yii\base\Component</a></td>
+	</tr>
+			<tr id="getBundle()">
+		<td><a href="yii_web_assetmanager.html#getBundle()-detail">getBundle()</a></td>
+		<td>Returns the named asset bundle.</td>
+		<td><a href="yii_web_assetmanager.html">yii\web\AssetManager</a></td>
+	</tr>
+			<tr id="getConverter()">
+		<td><a href="yii_web_assetmanager.html#getConverter()-detail">getConverter()</a></td>
+		<td>Returns the asset converter.</td>
+		<td><a href="yii_web_assetmanager.html">yii\web\AssetManager</a></td>
+	</tr>
+			<tr id="setConverter()">
+		<td><a href="yii_web_assetmanager.html#setConverter()-detail">setConverter()</a></td>
+		<td>Sets the asset converter.</td>
+		<td><a href="yii_web_assetmanager.html">yii\web\AssetManager</a></td>
+	</tr>
+			<tr id="publish()">
+		<td><a href="yii_web_assetmanager.html#publish()-detail">publish()</a></td>
+		<td>Publishes a file or a directory.</td>
+		<td><a href="yii_web_assetmanager.html">yii\web\AssetManager</a></td>
+	</tr>
+			<tr id="getPublishedPath()">
+		<td><a href="yii_web_assetmanager.html#getPublishedPath()-detail">getPublishedPath()</a></td>
+		<td>Returns the published path of a file path.</td>
+		<td><a href="yii_web_assetmanager.html">yii\web\AssetManager</a></td>
+	</tr>
+			<tr id="getPublishedUrl()">
+		<td><a href="yii_web_assetmanager.html#getPublishedUrl()-detail">getPublishedUrl()</a></td>
+		<td>Returns the URL of a published file path.</td>
+		<td><a href="yii_web_assetmanager.html">yii\web\AssetManager</a></td>
+	</tr>
+		</table>
+</div>
+<div class="summary docMethod">
+<h2>Protected Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+																																		<tr id="hash()">
+		<td><a href="yii_web_assetmanager.html#hash()-detail">hash()</a></td>
+		<td>Generate a CRC32 hash for the directory path. Collisions are higher
+than MD5 but generates a much smaller hash string.</td>
+		<td><a href="yii_web_assetmanager.html">yii\web\AssetManager</a></td>
+	</tr>
+	</table>
+</div>
+<a name="events"></a>
+
+<a name="constants"></a>
+
+<h2>Property Details</h2>
+
+
+	<div class="detailHeader" id="$bundles-detail">
+		$bundles		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	array $bundles = []	</div>
+
+	<p><p>List of available asset bundles. The keys are the class names (without leading backslash)
+of the asset bundles, and the values are either the configuration arrays for creating the <a href="yii_web_assetbundle.html">yii\web\AssetBundle</a>
+objects or the corresponding asset bundle instances. For example, the following code disables
+the bootstrap css file used by Bootstrap widgets (because you want to use your own styles):</p>
+
+<pre><code>[
+    'yii\bootstrap\BootstrapAsset' =&gt; [
+        'css' =&gt; [],
+    ],
+]
+</code></pre></p>
+
+	
+
+	<div class="detailHeader" id="$basePath-detail">
+		$basePath		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	 $basePath = '@webroot/assets'	</div>
+
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="$baseUrl-detail">
+		$baseUrl		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	 $baseUrl = '@web/assets'	</div>
+
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="$linkAssets-detail">
+		$linkAssets		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	boolean $linkAssets = false	</div>
+
+	<p><p>Whether to use symbolic link to publish asset files. Defaults to false, meaning
+asset files are copied to <a href="yii_web_assetmanager.html#$basePath-detail">$basePath</a>. Using symbolic links has the benefit that the published
+assets will always be consistent with the source assets and there is no copy operation required.
+This is especially useful during development.
+However, there are special requirements for hosting environments in order to use symbolic links.
+In particular, symbolic links are supported only on Linux/Unix, and Windows Vista/2008 or greater.
+Moreover, some Web servers need to be properly configured so that the linked assets are accessible
+to Web users. For example, for Apache Web server, the following configuration directive should be added
+for the Web folder:</p>
+
+<pre><code>Options FollowSymLinks
+</code></pre></p>
+
+	
+
+	<div class="detailHeader" id="$fileMode-detail">
+		$fileMode		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	integer $fileMode = null	</div>
+
+	<p>The permission to be set for newly published asset files.
+This value will be used by PHP chmod() function. No umask will be applied.
+If not set, the permission will be determined by the current environment.</p>
+
+	
+
+	<div class="detailHeader" id="$dirMode-detail">
+		$dirMode		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	integer $dirMode = 509	</div>
+
+	<p>The permission to be set for newly generated asset directories.
+This value will be used by PHP chmod() function. No umask will be applied.
+Defaults to 0775, meaning the directory is read-writable by owner and group,
+but read-only for other users.</p>
+
+	
+
+	<div class="detailHeader" id="$behaviors-detail">
+		$behaviors		<span class="detailHeaderTag">
+			property
+			 <em>read-only</em> 								</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_base_behavior.html">yii\base\Behavior</a>[] <a href="yii_base_component.html#getBehaviors()-detail">getBehaviors</a>(  )	</div>
+
+	<p>list of behaviors attached to this component</p>
+
+	
+
+	<div class="detailHeader" id="$converter-detail">
+		$converter		<span class="detailHeaderTag">
+			property
+											</span>
+	</div>
+
+	<div class="signature">
+	<a href="yii_web_assetconverterinterface.html">yii\web\AssetConverterInterface</a> <a href="yii_web_assetmanager.html#getConverter()-detail">getConverter</a>(  )<br />void <a href="yii_web_assetmanager.html#setConverter()-detail">setConverter</a>( $value )	</div>
+
+	<p>the asset converter.</p>
+
+	
+<h2>Method Details</h2>
+
+
+	<div class="detailHeader" id="init()-detail">
+		init()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_web_assetmanager.html#init()-detail">init</a>(  )			</div>
+		</td></tr>
+															<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_base_invalidconfigexception.html">yii\base\InvalidConfigException</a></td>
+				  <td class="paramDescCol">if <a href="yii_web_assetmanager.html#$basePath-detail">$basePath</a> is invalid</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Initializes the component.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="getBundle()-detail">
+		getBundle()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			<a href="yii_web_assetbundle.html">yii\web\AssetBundle</a> <a href="yii_web_assetmanager.html#getBundle()-detail">getBundle</a>( $name, $publish = true )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$name</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The class name of the asset bundle</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$publish</td>
+				  <td class="paramTypeCol">boolean</td>
+				  <td class="paramDescCol">Whether to publish the asset files in the asset bundle before it is returned.
+If you set this false, you must manually call <code>AssetBundle::publish()</code> to publish the asset files.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol"><a href="yii_web_assetbundle.html">yii\web\AssetBundle</a></td>
+				  <td class="paramDescCol">the asset bundle instance</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_base_invalidconfigexception.html">yii\base\InvalidConfigException</a></td>
+				  <td class="paramDescCol">if $name does not refer to a valid asset bundle</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Returns the named asset bundle.</strong></p>
+	<p>This method will first look for the bundle in <a href="yii_web_assetmanager.html#$bundles-detail">$bundles</a>. If not found,
+it will treat <code>$name</code> as the class of the asset bundle and create a new instance of it.</p>
+
+	
+
+	<div class="detailHeader" id="getConverter()-detail">
+		getConverter()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			<a href="yii_web_assetconverterinterface.html">yii\web\AssetConverterInterface</a> <a href="yii_web_assetmanager.html#getConverter()-detail">getConverter</a>(  )			</div>
+		</td></tr>
+												<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol"><a href="yii_web_assetconverterinterface.html">yii\web\AssetConverterInterface</a></td>
+				  <td class="paramDescCol">the asset converter.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the asset converter.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="setConverter()-detail">
+		setConverter()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			void <a href="yii_web_assetmanager.html#setConverter()-detail">setConverter</a>( $value )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$value</td>
+				  <td class="paramTypeCol">array|<a href="yii_web_assetconverterinterface.html">yii\web\AssetConverterInterface</a></td>
+				  <td class="paramDescCol">The asset converter. This can be either
+an object implementing the <a href="yii_web_assetconverterinterface.html">yii\web\AssetConverterInterface</a>, or a configuration
+array that can be used to create the asset converter object.</td>
+				</tr>
+												</table>
+
+<!--	-->
+	<p>Sets the asset converter.</strong></p>
+	<p></p>
+
+	
+
+	<div class="detailHeader" id="publish()-detail">
+		publish()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			array <a href="yii_web_assetmanager.html#publish()-detail">publish</a>( $path, $options = [] )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$path</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">The asset (file or directory) to be published</td>
+				</tr>
+							<tr>
+				  <td class="paramNameCol">$options</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">The options to  be applied when publishing a directory.
+The following options are supported:
+- beforeCopy: callback, a PHP callback that is called before copying each sub-directory or file.
+  This option is used only when publishing a directory. If the callback returns false, the copy
+  operation for the sub-directory or file will be cancelled.
+  The signature of the callback should be: <code>function ($from, $to)</code>, where <code>$from</code> is the sub-directory or
+  file to be copied from, while <code>$to</code> is the copy target.
+- afterCopy: callback, a PHP callback that is called after a sub-directory or file is successfully copied.
+  This option is used only when publishing a directory. The signature of the callback is similar to that
+  of <code>beforeCopy</code>.
+- forceCopy: boolean, whether the directory being published should be copied even if
+  it is found in the target directory. This option is used only when publishing a directory.
+  You may want to set this to be true during the development stage to make sure the published
+  directory is always up-to-date. Do not set this to true on production servers as it will
+  significantly degrade the performance.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">array</td>
+				  <td class="paramDescCol">the path (directory or file path) and the URL that the asset is published as.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">throws</td>
+				  <td class="paramTypeCol"><a href="yii_base_invalidparamexception.html">yii\base\InvalidParamException</a></td>
+				  <td class="paramDescCol">if the asset to be published does not exist.</td>
+				</tr>
+						</table>
+
+<!--	-->
+	<p>Publishes a file or a directory.</strong></p>
+	<p>This method will copy the specified file or directory to <a href="yii_web_assetmanager.html#$basePath-detail">$basePath</a> so that
+it can be accessed via the Web server.</p>
+
+<p>If the asset is a file, its file modification time will be checked to avoid
+unnecessary file copying.</p>
+
+<p>If the asset is a directory, all files and subdirectories under it will be published recursively.
+Note, in case $forceCopy is false the method only checks the existence of the target
+directory to avoid repetitive copying (which is very expensive).</p>
+
+<p>By default, when publishing a directory, subdirectories and files whose name starts with a dot "."
+will NOT be published. If you want to change this behavior, you may specify the "beforeCopy" option
+as explained in the <code>$options</code> parameter.</p>
+
+<p>Note: On rare scenario, a race condition can develop that will lead to a
+one-time-manifestation of a non-critical problem in the creation of the directory
+that holds the published assets. This problem can be avoided altogether by 'requesting'
+in advance all the resources that are supposed to trigger a 'publish()' call, and doing
+that in the application deployment phase, before system goes live. See more in the following
+discussion: http://code.google.com/p/yii/issues/detail?id=2579</p>
+
+	
+
+	<div class="detailHeader" id="getPublishedPath()-detail">
+		getPublishedPath()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_web_assetmanager.html#getPublishedPath()-detail">getPublishedPath</a>( $path )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$path</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Directory or file path being published</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the published file path. False if the file or directory does not exist</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the published path of a file path.</strong></p>
+	<p>This method does not perform any publishing. It merely tells you
+if the file or directory is published, where it will go.</p>
+
+	
+
+	<div class="detailHeader" id="getPublishedUrl()-detail">
+		getPublishedUrl()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_web_assetmanager.html#getPublishedUrl()-detail">getPublishedUrl</a>( $path )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$path</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">Directory or file path being published</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">the published URL for the file or directory. False if the file or directory does not exist.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Returns the URL of a published file path.</strong></p>
+	<p>This method does not perform any publishing. It merely tells you
+if the file path is published, what the URL will be to access it.</p>
+
+	
+
+	<div class="detailHeader" id="hash()-detail">
+		hash()
+		<span class="detailHeaderTag">
+			method
+					</span>
+	</div>
+
+	<table class="summaryTable">
+		<tr><td colspan="3">
+			<div class="signature2">
+			string <a href="yii_web_assetmanager.html#hash()-detail">hash</a>( $path )			</div>
+		</td></tr>
+									<tr>
+				  <td class="paramNameCol">$path</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">String to be hashed.</td>
+				</tr>
+										<tr>
+				  <td class="paramNameCol">return</td>
+				  <td class="paramTypeCol">string</td>
+				  <td class="paramDescCol">hashed string.</td>
+				</tr>
+									</table>
+
+<!--	-->
+	<p>Generate a CRC32 hash for the directory path. Collisions are higher
+than MD5 but generates a much smaller hash string.</strong></p>
+	<p></p>
+
+	
+			</div><!-- end of content -->
+
+		<div id="apiFooter">
+			<p>&copy; 2008-2013 by <a href="http://www.yiisoft.com">Yii Software LLC</a></p>
+			<p>All Rights Reserved.</p>
+		</div><!-- end of footer -->
+
+<script type="text/javascript">
+/*<![CDATA[*/
+$("a.toggle").on('click', function() {
+	var $this = $(this);
+	if ($this.hasClass('properties-hidden')) {
+		$this.text($this.text().replace(/Show/,'Hide'));
+		$this.parents(".summary").find(".inherited").show();
+		$this.removeClass('properties-hidden');
+	} else {
+		$this.text($this.text().replace(/Hide/,'Show'));
+		$this.parents(".summary").find(".inherited").hide();
+		$this.addClass('properties-hidden');
+	}
+	return false;
+});
+/*
+$(".sourceCode a.show").toggle(function(){
+	$(this).text($(this).text().replace(/show/,'hide'));
+	$(this).parents(".sourceCode").find("div.code").show();
+},function(){
+	$(this).text($(this).text().replace(/hide/,'show'));
+	$(this).parents(".sourceCode").find("div.code").hide();
+});
+$("a.sourceLink").click(function(){
+	$(this).attr('target','_blank');
+});
+*/
+/*]]>*/
+</script>
+
+	</div><!-- end of page -->
+</body>
+</html>
